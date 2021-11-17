@@ -1,0 +1,10 @@
+name: Trigger Website Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/6195302672f589386ea62c91
