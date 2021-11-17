@@ -8,7 +8,7 @@ autonumbering: true
 
 **NeTEx - Profil Français pour les horaires**
 
-# <span id="__RefHeading___Toc54967863" class="anchor"></span>Avant-propos !
+# <span id="__RefHeading___Toc54967863" class="anchor"></span>Avant-propos !!
 
 L’harmonisation des pratiques dans l’échange des données relatives aux
 offres de transport est essentielle :
