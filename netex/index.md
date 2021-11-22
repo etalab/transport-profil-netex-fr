@@ -8,7 +8,7 @@ autonumbering: true
 
 **NeTEx - Profil Français pour les horaires**
 
-# <span id="__RefHeading___Toc54967863" class="anchor"></span>Avant-propos
+# Avant-propos
 
 L’harmonisation des pratiques dans l’échange des données relatives aux
 offres de transport est essentielle :
@@ -52,7 +52,7 @@ données de description des horaires" (issu des travaux *NeTEx,
 Transmodel et IFOPT)* qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
-# <span id="__RefHeading___Toc54967864" class="anchor"></span>Introduction
+# Introduction
 
 Le présent format d’échange est un profil de NeTEx.
 
@@ -2772,8 +2772,7 @@ dans les éléments ***members*** du ***GeneralFrame***.
 </tbody>
 </table>
 
-<span id="__RefHeading___Toc54967895"
-class="anchor"></span>Bibliographie
+# Bibliographie
 
 EN 15531-1, Public transport - Service interface for real-time
 information relating to public transport operations - Part 1: Context
