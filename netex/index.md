@@ -11,7 +11,7 @@ autonumbering: true
 # Avant-propos
 
 L’harmonisation des pratiques dans l’échange des données relatives aux
-offres de transport est essentielle:
+offres de transport est essentielle :
 
 -   pour l’usager, aux fins d’une présentation homogène et
     compréhensible de l’offre de transport et de l’engagement
