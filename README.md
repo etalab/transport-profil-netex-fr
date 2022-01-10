@@ -22,6 +22,7 @@ Il pourra être utile de s'y référer par la suite pour la conversion de nouvea
 * Supprimer manuellement le sommaire (qui est régénéra par le générateur de site)
 * fermer le fichier sur Word
 
+## Modifier le .zip
 * renommer le .docx en .zip
 * ouvrir l'archive
 * ouvir le fichier `/word/document.xml`
