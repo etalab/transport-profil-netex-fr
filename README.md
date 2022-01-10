@@ -42,15 +42,15 @@ LibreOffice présente l'avantage de pouvoir sélectionner un texte qui est surli
 * Dans un terminal, entrer `pandoc -t gfm --extract-media ./md/norme_xxx/ -o ./md/norme_xxx/index.md norme_xxx.docx`, ce qui aura pour conséquence de créer un dossier `md/norme_xxx` contanant la conversion de `norme_xxx.docx` en markdown et en images dans le dossier media.
 
 ### Edition du markdown
-- Ajouter en tête au fichier index.md, en prenant modèle sur les autres normes.
-- Passer `Avant propos` et `Introduction` en gras (pas en H1, pour garder la numérotation inchangée)
+- Ajouter un en tête au fichier index.md, en prenant modèle sur les autres normes.
+- Dans le texte, passer `Avant propos` et `Introduction` en gras (pas en H1, pour garder la numérotation inchangée)
 - Remplacer les `\<span` par `<span` et les `\</span` par `</span`
 - Remplacer les `&lt;` par `<` et les `&gt;` par `>`
 - Si certaines images du dossier `media` ne sont pas en JPEG ou en PNG, les convertir (en faisant une copie d'écran si on ne peut pas faire mieux)
 - Remplacer les balises du style `<img src="./md/arrets//media/image1.png" style="width:4.54583in;height:4.18264in" />` par `![image](media/image1.png)` et mettre la légende juste en dessous en italique (entourés de \*) pour que la numérotation automatique des images se fasse.
 - Partie `termes et définitions` : mettre en ordre les parties, supprimer la numérotation manuelle.
 - Supprimer les numérotations manuelles des tables, et entourer les légendes des tables de `<div class="table-title"> ... </div>` pour que celles-ci soient numérotées automatiquement.
-- supprimer les mises en italiques (les `*) des légendes des tables
+- supprimer les mises en italiques (les `*`) des légendes des tables
 - changer `gris` en `jaune` dans le texte qui explique ce que signifie le texte surligné.
 - supprimer tous les `<!-- -->`
 
