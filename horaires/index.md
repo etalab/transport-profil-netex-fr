@@ -485,7 +485,7 @@ objets ci-dessous, toute information disponible est supposée être
 fournie (mais on ne crée pas d’information si elle n’est pas
 disponible).
 
-Table 1 – *Concepts relatifs à la LOM et à la Règlementation Européenne*
+<div class="table-title">*Concepts relatifs à la LOM et à la Règlementation Européenne*</div>
 
 <table>
 <colgroup>
@@ -711,7 +711,7 @@ TYPE DE JOUR donné.
 Le profil ne concerne que les COURSEs dans lequel les passagers seront
 autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 
-Table 2 – ServiceJourney – Element
+<div class="table-title">ServiceJourney – Element</div>
 
 <table>
 <colgroup>
@@ -1055,7 +1055,7 @@ Table 2 – ServiceJourney – Element
 
 Pour ***TrainSize*** voir *6.10.1-Train.*
 
-Table 3 – *Journey* – Element *(abstrait)*
+<div class="table-title">*Journey* – Element *(abstrait)*</div>
 
 <table>
 <colgroup>
@@ -1170,7 +1170,7 @@ Table 3 – *Journey* – Element *(abstrait)*
 ![image](media/image2.svg)
 *Vehicle Journey, Passing Times et Interchanges – Modèle conceptuel*
 
-Table 4 – *PassingTime* – Element *(objet inclus)*
+<div class="table-title">*PassingTime* – Element *(objet inclus)*</div>
 
 |                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
 |---------------------|---------------------------|------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1199,7 +1199,7 @@ arrêts.</span>*
 
 ### Propriétés de course flexible
 
-Table 5 — FlexibleServiceProperties – Element *(objet inclus)*
+<div class="table-title">FlexibleServiceProperties – Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -1277,7 +1277,7 @@ séries de voyages similaires à présenter sous forme de tableau ou dans
 les systèmes d’information voyageur, par exemple «*Tous les services au
 départ pour la ligne 2 en semaine*».
 
-Table 6 — GroupOfServices – Element
+<div class="table-title">GroupOfServices – Element</div>
 
 <table>
 <colgroup>
@@ -1377,7 +1377,7 @@ Par exemple : <em><strong>ScheduledStopPointRef, Name, StopType, etc</strong></
 
 Les PARTIEs DE COURSE seront généralement spécifiques au mode ferré.
 
-Table 7 – *JourneyPart* – Element *(objet inclus)*
+<div class="table-title">*JourneyPart* – Element *(objet inclus)*</div>
 
 |                    |                             |                              |                 |                                                                                                                                                                                                            |
 |--------------------|-----------------------------|------------------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1404,7 +1404,7 @@ JOURNEY PART POSITION décrit la position relative dans le train d'un
 JOURNEY PART à partir d'un arrêt donné. Cela peut changer en cours de
 route car les composants du train sont couplés et découplés.
 
-Table 8 – *JourneyPartPosition* – Element *(objet inclus)*
+<div class="table-title">*JourneyPartPosition* – Element *(objet inclus)*</div>
 
 |                    |                              |                            |                 |                                                             |
 |--------------------|------------------------------|----------------------------|-----------------|-------------------------------------------------------------|
@@ -1417,7 +1417,7 @@ Table 8 – *JourneyPartPosition* – Element *(objet inclus)*
 
 ## Numéro de train
 
-Table 9 – *TrainNumber* – Element *(objet inclus)*
+<div class="table-title">*TrainNumber* – Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -1495,7 +1495,7 @@ ne s'agit là que d'une convention, dans tous les cas, la partie heure de
 l'horaire de passage peut être ignorée dans le cadre des
 cadences.</span>
 
-Table 10 – *TemplateVehicleJourney* – Element
+<div class="table-title">*TemplateVehicleJourney* – Element</div>
 
 <table>
 <colgroup>
@@ -1546,7 +1546,7 @@ Table 10 – *TemplateVehicleJourney* – Element
 
 ### Course en fréquence
 
-Table 11 – *HeadwayJourneyGroup* – Element
+<div class="table-title">*HeadwayJourneyGroup* – Element</div>
 
 |                     |                                 |                         |                  |                                                                             |
 |---------------------|---------------------------------|-------------------------|------------------|-----------------------------------------------------------------------------|
@@ -1558,7 +1558,7 @@ Table 11 – *HeadwayJourneyGroup* – Element
 |                     |                                 |                         |                  |                                                                             |
 |                     | ***Description***               | *MultilingualString*    | 0:1              | Description du service en fréquence                                         |
 
-Table 12 – *JourneyFrequencyGroup* – Element *(abstrait)*
+<div class="table-title">*JourneyFrequencyGroup* – Element *(abstrait)*</div>
 
 <table>
 <colgroup>
@@ -1628,7 +1628,7 @@ Table 12 – *JourneyFrequencyGroup* – Element *(abstrait)*
 
 ### Course en cadence
 
-Table 13 – *RhythmicalJourneyGroup* – Element
+<div class="table-title">*RhythmicalJourneyGroup* – Element</div>
 
 |                     |           |                         |                  |                                                                                                                 |
 |---------------------|-----------|-------------------------|------------------|-----------------------------------------------------------------------------------------------------------------|
@@ -1641,7 +1641,7 @@ Table 13 – *RhythmicalJourneyGroup* – Element
 ![image](media/image5.svg)
 *Courses coupléed – Modèle conceptuel*
 
-Table 14 – *CoupledJourney* – Element
+<div class="table-title">*CoupledJourney* – Element</div>
 
 |                     |                   |                      |                  |                                                                                                                                                                                                               |
 |---------------------|-------------------|----------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1654,7 +1654,7 @@ Table 14 – *CoupledJourney* – Element
 
 ### Parties de courses couplées
 
-Table 15 – *JourneyPartCouple* – Element
+<div class="table-title">*JourneyPartCouple* – Element</div>
 
 <table>
 <colgroup>
@@ -1755,7 +1755,7 @@ Table 15 – *JourneyPartCouple* – Element
 
 ## Les correspondances entre course
 
-Table 16 – *ServiceJourneyInterchange* – Element
+<div class="table-title">*ServiceJourneyInterchange* – Element</div>
 
 |                     |                           |                         |                  |                                                                                                                                                         |
 |---------------------|---------------------------|-------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1769,7 +1769,7 @@ Table 16 – *ServiceJourneyInterchange* – Element
 | «FK»                | ***ToJourneyRef***        | *ServiceJourneyRef*     | 1:1              | COURSE à laquelle donne accès la correspondance.                                                                                                        |
 |                     |                           |                         |                  |                                                                                                                                                         |
 
-Table 17 – *Interchange* – Element *(abstrait)*
+<div class="table-title">*Interchange* – Element *(abstrait)*</div>
 
 <table>
 <colgroup>
@@ -1903,7 +1903,7 @@ Table 17 – *Interchange* – Element *(abstrait)*
 </tbody>
 </table>
 
-Table 18 – *InterchangeTimesGroup* – Element *(objet inclus)*
+<div class="table-title">*InterchangeTimesGroup* – Element *(objet inclus)*</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -1984,7 +1984,7 @@ class="hl">Profil NeTEx Réseau</span>***<span
 class="hl">)</span><span class="hl"> </span>dans le cas où
 l'identification des voitures est variable d'une course à l'autre.
 
-Table 19 – TrainComponentLabelAssignment – Element
+<div class="table-title">TrainComponentLabelAssignment – Element</div>
 
 |                     |                         |                      |                  |                                                                                                                                                                                                                                |
 |---------------------|-------------------------|----------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2000,7 +2000,7 @@ Table 19 – TrainComponentLabelAssignment – Element
 ![image](media/image6.svg)
 *Type de Vehicule et Trains – Modèle Conceptuel*
 
-Table 20 — *VehicleType – Element*
+<div class="table-title">*VehicleType – Element*</div>
 
 <table>
 <colgroup>
@@ -2205,7 +2205,7 @@ Table 20 — *VehicleType – Element*
 </tbody>
 </table>
 
-Table 21 — *PassengerCapacity – Element (objet inclus)*
+<div class="table-title">*PassengerCapacity – Element (objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -2294,7 +2294,7 @@ Table 21 — *PassengerCapacity – Element (objet inclus)*
 
 ### Train
 
-Table 22 — *Train – Element*
+<div class="table-title">*Train – Element*</div>
 
 <table>
 <colgroup>
@@ -2337,7 +2337,7 @@ Table 22 — *Train – Element*
 </tbody>
 </table>
 
-Table 23 – *TrainSize* – Structure *(objet inclus)*
+<div class="table-title">*TrainSize* – Structure *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -2377,7 +2377,7 @@ Table 23 – *TrainSize* – Structure *(objet inclus)*
 </tbody>
 </table>
 
-Table 24 — *TrainComponent – Element*
+<div class="table-title">*TrainComponent – Element*</div>
 
 <table>
 <colgroup>
@@ -2444,7 +2444,7 @@ Table 24 — *TrainComponent – Element*
 </tbody>
 </table>
 
-Table 25 — *TrainElement – Element*
+<div class="table-title">*TrainElement – Element*</div>
 
 <table>
 <colgroup>
@@ -2557,7 +2557,7 @@ Table 25 — *TrainElement – Element*
 
 ### Train composé
 
-Table 26 — CompoundTrain *– Element*
+<div class="table-title">CompoundTrain *– Element*</div>
 
 |                     |                  |                        |                  |                                                                                                                                              |
 |---------------------|------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2577,7 +2577,7 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 ***NETEX_HORAIRE***. Il apparaitra systématiquement et explicitement
 dans les éléments ***members*** du ***GeneralFrame***.
 
-Table 27 — *TypeOfFrame* – Element
+<div class="table-title">*TypeOfFrame* – Element</div>
 
 <table>
 <colgroup>
@@ -2714,7 +2714,7 @@ Table 27 — *TypeOfFrame* – Element
 </tbody>
 </table>
 
-Table 28 — *TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE)* – Element
+<div class="table-title">*TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE)* – Element</div>
 
 <table>
 <colgroup>
