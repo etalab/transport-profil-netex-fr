@@ -71,13 +71,13 @@ NeTEx se décompose en trois parties:
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-<!-- -->
+
 
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-<!-- -->
+
 
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
@@ -128,23 +128,23 @@ des informations comme :
 
 -   détail des services utilisés,
 
-<!-- -->
+
 
 -   détails des objets utilisés dans un échange,
 
-<!-- -->
+
 
 -   précisions sur les options proposées par la norme,
 
-<!-- -->
+
 
 -   précision sur les éléments facultatifs,
 
-<!-- -->
+
 
 -   précision sur les codifications à utiliser,
 
-<!-- -->
+
 
 -   etc.
 
@@ -769,48 +769,48 @@ proposent ces colonnes:
         unique, pérenne et non ambiguë. C'est l'identifiant qui sera
         utilisé pour référencer l'objet dans les relations.
 
-    <!-- -->
+    
 
     -   AK (Alternate Key) est un identifiant secondaire, généralement
         utilisé pour la communication, mais qui ne sera pas utilisé dans
         les relations.
 
-    <!-- -->
+    
 
     -   FK (Foreign Key) indique que l'attribut contient l'identifiant
         unique (PK) d'un autre objet avec lequel il est en relation.
 
-    <!-- -->
+    
 
     -   GROUP est un groupe XML nommé (ensemble d'attributs utilisables
         dans différents contextes) (cf:
         <http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/#AttrGroups>
         )
 
-<!-- -->
+
 
 -   **Nom** : nom de l'élément ou attribut XSD
 
-<!-- -->
+
 
 -   **Type** : type de l'élément ou attribut XSD (pour certains d'entre
     eux, il conviendra de se référer à la XSD NeTEx)
 
-<!-- -->
+
 
 -   **Cardinalité** : cardinalité de l'élément ou attribut XSD exprimée
     sous la forme "***minimum:maximum***" ("0:1" pour au plus une
     occurrence; "1:\*" au moins une occurrence et sans limites de nombre
     maximal; "1:1" une et une seule occurrence; etc.).
 
-<!-- -->
+
 
 -   Description : texte de description de l'élément ou attribut XSD
     (seul les attributs retenus par le profil ont un texte en français;
     les textes surlignés en jaune indiquent une spécificité du profil
     par rapport à NeTEx).
 
-Les textes surlignés en <span class="hl">Gris</span> sont ceux
+Les textes surlignés en <span class="hl">Jaune</span> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx: une
 codification particulière, une restriction d'usage, etc.
 
@@ -1305,20 +1305,8 @@ de nuit, etc.).
 <td><em>::></em></td>
 <td>DESTINATION DISPLAY hérite de <em><strong>DataManagedObject</strong></em> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td></td>
 <td><em><strong>SideText</strong></em></td>
@@ -1335,20 +1323,8 @@ de nuit, etc.).
 <td><p>Texte frontal (affiché sur le devant du véhicule) de l'AFFICHAGE DE DESTINATION.</p>
 <p><span class="hl">Au niveau du profil, ce texte est considéré comme étant le texte principal et est rendu obligatoire.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td>«AK»</td>
 <td><em><strong>PublicCode</strong></em></td>
@@ -1357,13 +1333,7 @@ de nuit, etc.).
 <td><p>Code associé à l'AFFICHAGE DE DESTINATION.</p>
 <p><span class="hl">Dans un certain nombre de cas l'AFFICHAGE DE DESTINATION n'est pas un texte mais un code (par exemple pour les RER et Transilen en IIe-de-France avec des codes comme PADO, DEFI ou encore PORO). Ce sont ces codes qui seront indiqué dans ce champ (on réservera les champs </span><em><strong><span class="hl">XxxxText</span></strong></em><span class="hl"> pour un texte compréhensible par tous)</span>.</p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong><del>vias</del></strong></em></td>
@@ -1408,13 +1378,7 @@ de nuit, etc.).
 <td><em>::></em></td>
 <td>DESTINATION DISPLAY VARIANT hérite de <em><strong>DataManagedObject</strong></em> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>DestinationDisplayVariantMediaType</strong></em></td>
@@ -1429,27 +1393,9 @@ de nuit, etc.).
 <li><p><em>other</em></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 <tr class="even">
 <td></td>
 <td><em><strong>FrontText</strong></em></td>
@@ -1459,20 +1405,8 @@ de nuit, etc.).
 <td><p>Texte "frontal" de la VARIANTE D'AFFICHAGE DE DESTINATION.</p>
 <p><span class="hl">Au niveau du profil, ce texte est considéré comme étant le texte principal et est rendu obligatoire.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -1920,55 +1854,13 @@ flexibilité.
 <td>0:1</td>
 <td>AFFICHAGE DE DESTINATION associée à la MISSION COMMERCIALE <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
+
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>pointsInSequence</strong></em></td>
@@ -1976,13 +1868,7 @@ flexibilité.
 <td>0:*</td>
 <td>Liste ordonnées des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>ServiceJourneyPatternType</strong></em></td>
@@ -2053,13 +1939,7 @@ manœuvre de retournement).
 <td><p>DESTINATION DISPLAY associée à ce POINT.</p>
 <p><span class="hl">Cette information, qui sert à changer l'AFFICHAGE DE DESTINATION lorsque le véhicule arrive à ce POINT ne sera renseignée que si </span><em><strong><span class="hl">ChangeOfDestinationDisplay</span></strong></em><span class="hl"> est VRAI</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>FlexiblePointProperties</strong></em></td>
@@ -2074,20 +1954,8 @@ manœuvre de retournement).
 <td>0:1</td>
 <td>Indique s'il faut changer l'AFFICHAGE DE DESTINATION en arrivant à ce POINT</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -2126,27 +1994,9 @@ manœuvre de retournement).
 <td>1:1</td>
 <td>Reference au POINT D'ARRÊT PLANIFIÉ.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 <tr class="odd">
 <td></td>
 <td><em><strong>ForAlighting</strong></em></td>
@@ -2169,20 +2019,8 @@ manœuvre de retournement).
 <td><p>DESTINATION DISPLAY associée ce POINT.</p>
 <p><span class="hl">Cette information, qui sert à changer l'AFFICHAGE DE DESTINATION lorsque le véhicule arrive à ce POINT ne sera renseignée que si </span><em><strong><span class="hl">ChangeOfDestinationDisplay</span></strong></em><span class="hl"> est VRAI</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td></td>
 <td><em><strong>FlexiblePointProperties</strong></em></td>
@@ -2197,13 +2035,7 @@ manœuvre de retournement).
 <td>0:1</td>
 <td>Indique s'il faut changer l'AFFICHAGE DE DESTINATION en arrivant à ce POINT.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>noticeAssignments</strong></em></td>
@@ -2255,20 +2087,8 @@ manœuvre de retournement).
 <td>0:1</td>
 <td>Conditions de réservation pour cet arrêt quand elles sont différentes du SERVICE JOURNEY.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -2299,13 +2119,7 @@ manœuvre de retournement).
 <td><em>::></em></td>
 <td>SCHEDULED STOP POINT hérite de TIMING POINT (voir ci-dessous).</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>tariffZones</strong></em></td>
@@ -2328,20 +2142,8 @@ manœuvre de retournement).
 <td>0:1</td>
 <td>Description du POINT D'ARRÊT PLANIFIÉ.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td>«AK»</td>
 <td><em><strong>PublicCode</strong></em></td>
@@ -2356,20 +2158,8 @@ manœuvre de retournement).
 <td>0:1</td>
 <td>Identifiant technique alternatif du POINT D'ARRÊT PLANIFIÉ.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td></td>
 <td><em><strong>StopType</strong></em></td>
@@ -2393,13 +2183,7 @@ manœuvre de retournement).
 <li><p><em>other</em></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>Presentation</strong></em></td>
@@ -2407,13 +2191,7 @@ manœuvre de retournement).
 <td>0:1</td>
 <td>Eléments de représentation associés au POINT D'ARRÊT PLANIFIÉ.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong><del>ForAlighting</del></strong></em></td>
@@ -2442,13 +2220,7 @@ manœuvre de retournement).
 <td></td>
 <td><span class="hl">Ces informations seront portées par le lieu d'arrêt.</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -2499,20 +2271,8 @@ retenues).
 <td>1:1</td>
 <td>Référence au POINT HORAIRE.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td rowspan="2"></td>
 <td></td>
@@ -2526,20 +2286,8 @@ retenues).
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -3106,13 +2854,7 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 <td><p>Classification du POINT OF INTEREST.</p>
 <p><span class="hl">Seul l'attribut Name de PointOfInterestClassificationView sera utilisé pour cette classification. Aucune classification standard n'est prédéfinie ni par NeTEx, ni par le profil.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>nearTopographic­Places</strong></em></td>
@@ -3120,13 +2862,7 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 <td>0:*</td>
 <td>TOPOGRAPHIC PLACEs proche du POINT OF INTEREST.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -3163,97 +2899,19 @@ une vue beaucoup plus détaillée du NavigationPath.</span>
 <td><em>::></em></td>
 <td>NAVIGATION PATH hérite de LINK SEQUENCE.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr class="even">
 <td></td>
 <td><em><strong>AccessFeature­List</strong></em></td>
@@ -3309,27 +2967,9 @@ une vue beaucoup plus détaillée du NavigationPath.</span>
 <li><p><em>other (autre)</em></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 </tbody>
 </table>
 
@@ -3382,13 +3022,7 @@ description des ITL (Interdiction de trafic local).
 <li><p><em>other</em></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>lines</strong></em></td>
@@ -3433,13 +3067,7 @@ description des ITL (Interdiction de trafic local).
 <td><em>::></em></td>
 <td>TRANSFER RESTRICTION hérite de DATA MANAGED OBJECT (via ASSIGNMENT) <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>Description</strong></em></td>
@@ -3447,13 +3075,7 @@ description des ITL (Interdiction de trafic local).
 <td>0:1</td>
 <td>Description de la restriction de correspondance (explication/justification de son utilisation).</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>BothWays</strong></em></td>
@@ -3554,13 +3176,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td>0:1</td>
 <td>Eventuelle référence à la ZONE D'EMBARQUEMENT concernée.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>trainElements</strong></em></td>
@@ -3630,20 +3246,8 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <li><p><span class="hl">L'attribut </span><em><strong><span class="hl">ref</span></strong></em><span class="hl"> de la référence est instancié avec le numéro de voiture (ex: "</span><em><span class="hl">12"</span></em><span class="hl">)</span></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>BoardingPositionRef</strong></em></td>
@@ -3656,13 +3260,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <li><p><span class="hl">L'attribut </span><em><strong><span class="hl">ref</span></strong></em><span class="hl"> de la référence est instancié avec le nom de la marque à quay (ex: </span><em><span class="hl">"W"</span></em><span class="hl">)</span></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -3712,13 +3310,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td>0:1</td>
 <td>Nom de la carte schématique</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>ImageUri</strong></em></td>
@@ -3769,13 +3361,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td>::></td>
 <td>SCHEMATIC MAP MEMBER hérite de GROUP MEMBER <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>VersionOfObjectRef</strong></em></td>
@@ -3783,20 +3369,8 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td>0:1</td>
 <td>Référence de l'objet transport (NeTEx) représenté sur la carte.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td></td>
 <td><em><strong>InfoLink</strong></em></td>
@@ -3819,13 +3393,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td>1:1</td>
 <td>Coordonnée (ordonnées) de l'objet dans l'environnement de la carte schématique (pixel ou unité graphique suivant le type de carte schématique)</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -3874,20 +3442,8 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 <td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
 <p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">LIGNE</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>classes</strong></em></td>
@@ -3929,20 +3485,8 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 <li><p><span class="hl">FLEXIBLE ROUTE</span></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -4064,20 +3608,8 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 <td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
 <p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">RESEAU</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>classes</strong></em></td>
@@ -4137,20 +3669,8 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 <li><p><span class="hl">SCHEMATIC MAP</span></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 

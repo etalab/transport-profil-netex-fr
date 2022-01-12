@@ -70,13 +70,13 @@ NeTEx se décompose en trois parties:
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-<!-- -->
+
 
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-<!-- -->
+
 
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
@@ -127,23 +127,23 @@ des informations comme :
 
 -   détail des services utilisés,
 
-<!-- -->
+
 
 -   détails des objets utilisés dans un échange,
 
-<!-- -->
+
 
 -   précisions sur les options proposées par la norme,
 
-<!-- -->
+
 
 -   précision sur les éléments facultatifs,
 
-<!-- -->
+
 
 -   précision sur les codifications à utiliser,
 
-<!-- -->
+
 
 -   etc.
 
@@ -587,48 +587,48 @@ proposent ces colonnes:
         unique, pérenne et non ambiguë. C'est l'identifiant qui sera
         utilisé pour référencer l'objet dans les relations.
 
-    <!-- -->
+    
 
     -   AK (Alternate Key) est un identifiant secondaire, généralement
         utilisé pour la communication, mais qui ne sera pas utilisé dans
         les relations.
 
-    <!-- -->
+    
 
     -   FK (Foreign Key) indique que l'attribut contient l'identifiant
         unique (PK) d'un autre objet avec lequel il est en relation.
 
-    <!-- -->
+    
 
     -   GROUP est un groupe XML nommé (ensemble d'attributs utilisables
         dans différents contextes) (cf:
         <http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/#AttrGroups>
         )
 
-<!-- -->
+
 
 -   **Nom** : nom de l'élément ou attribut XSD
 
-<!-- -->
+
 
 -   **Type** : type de l'élément ou attribut XSD (pour certains d'entre
     eux, il conviendra de se référer à la XSD NeTEx)
 
-<!-- -->
+
 
 -   **Cardinalité** : cardinalité de l'élément ou attribut XSD exprimée
     sous la forme "***minimum:maximum***" ("0:1" pour au plus une
     occurrence; "1:\*" au moins une occurrence et sans limites de nombre
     maximal; "1:1" une et une seule occurrence; etc.).
 
-<!-- -->
+
 
 -   Description : texte de description de l'élément ou attribut XSD
     (seul les attributs retenus par le profil ont un texte en français;
     les textes surlignés en jaune indiquent une spécificité du profil
     par rapport à NeTEx).
 
-Les textes surlignés en <span class="hl">Gris</span> sont ceux
+Les textes surlignés en <span class="hl">Jaune</span> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx: une
 codification particulière, une restriction d'usage, etc.
 
@@ -1021,13 +1021,7 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>TrainSize</strong></em></td>
@@ -1225,13 +1219,7 @@ arrêts.</span>*
 <td><p>FLEXIBLE SERVICE PROPERTIES hérite de DATA MANAGED OBJECT <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</p>
 <p><span class="hl">Non utilisé ici</span>.</p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>Booking­Arrangements</strong></em></td>
@@ -1309,27 +1297,9 @@ départ pour la ligne 2 en semaine*».
 <td>1:1</td>
 <td>Identifiant du GROUP OF SERVICEs.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 <tr class="odd">
 <td></td>
 <td><em><strong>origin</strong></em></td>
@@ -1457,13 +1427,7 @@ route car les composants du train sont couplés et découplés.
 <td>0:1</td>
 <td>NUMÉRO DE TRAIN utilisé pour la communication au public <span class="hl">(parfois différent du numéro technique: si ce champ est présent il sera systématiquement utilisé pour l'information voyageur).</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -1608,13 +1572,7 @@ cadences.</span>
 <td>0:1</td>
 <td>Éventuel décalage de jour pour l'heure de dernier départ (si la plage horaire est à cheval sur plusieurs jours).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>journeys</strong></em></td>
@@ -1794,34 +1752,10 @@ cadences.</span>
 <td><em>::></em></td>
 <td>INTERCHANGE hérite de DATA MANAGED OBJECT <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>ConnectionRef</strong></em></td>
@@ -1829,13 +1763,7 @@ cadences.</span>
 <td>0:1</td>
 <td>Lien avec la CORRESPONDANCE physique sur laquelle s'opère la CORRESPONDANCE ENTRE COURSEs <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx Réseau</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>StaySeated</strong></em></td>
@@ -1851,34 +1779,10 @@ cadences.</span>
 <td>0:1</td>
 <td>Indique que l’INTERCHANGE implique le franchissement d’une frontière nationale.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>Interchange­TimesGroup</strong></em></td>
@@ -1886,13 +1790,7 @@ cadences.</span>
 <td>0:*</td>
 <td>Information horaire de la correspondance.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>notice­Assignments</strong></em></td>
@@ -1921,27 +1819,9 @@ cadences.</span>
 <td><strong>Cardin­ality</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 <tr class="odd">
 <td></td>
 <td><em><strong>StandardTransferTime</strong></em></td>
@@ -1952,27 +1832,9 @@ cadences.</span>
 <p><span class="hl">Obligatoire dans le cadre du profil.</span></p>
 <p><span class="hl">Voir la CORRESPONDANCE physique pour les détails de temps de parcours de la correspondance (temps de marche, etc.) (</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx Réseau</span></strong></em><span class="hl">)</span><span class="hl">.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 </tbody>
 </table>
 
@@ -2032,13 +1894,7 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td>Nom du TYPE DE VEHICULE.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>Description</strong></em></td>
@@ -2046,20 +1902,8 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td>Description du TYPE DE VEHICULE.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td></td>
 <td><em><strong>SelfPropelled</strong></em></td>
@@ -2067,13 +1911,7 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td>Indique si le TYPE DE VEHICULE est autonome, ou s'il nécessite une motrice ou un véhicule tracteur.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>TypeOfFuel</strong></em></td>
@@ -2096,13 +1934,7 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td>Euroclasse du TYPE DE VEHICULE (normes européennes d'émission: <a href="http://fr.wikipedia.org/wiki/Normes_européennes_d&#39;émission">http://fr.wikipedia.org/wiki/Normes_europ%C3%A9ennes_d%27%C3%A9mission</a>).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>capacities</strong></em></td>
@@ -2160,13 +1992,7 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td>Poids du TYPE DE VEHICULE.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong><del>ClassifiedAsRef</del></strong></em></td>
@@ -2174,34 +2000,10 @@ l'identification des voitures est variable d'une course à l'autre.
 <td></td>
 <td><span class="hl">On utilise le champ Brand de l'héritage DATA MANAGED OBJECT pour éventuellement indiquer la marque et/ou le modèle du véhicule.</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
 </tbody>
 </table>
 
@@ -2268,20 +2070,8 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td>Nombre de places debout.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td></td>
 <td><em><strong>WheelchairPlace­Capacity</strong></em></td>
@@ -2517,41 +2307,11 @@ l'identification des voitures est variable d'une course à l'autre.
 <li><p><em>any (toutes)</em></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
+
 </tbody>
 </table>
 
@@ -2605,20 +2365,8 @@ dans les éléments ***members*** du ***GeneralFrame***.
 <td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
 <p><span class="hl">L'Id est imposé à NETEX_HORAIRE</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>classes</strong></em></td>
@@ -2697,20 +2445,8 @@ dans les éléments ***members*** du ***GeneralFrame***.
 <li><p><span class="hl">TRAIN COMPONENT LABEL ASSIGNMENT</span></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 

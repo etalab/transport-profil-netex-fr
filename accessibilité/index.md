@@ -69,7 +69,7 @@ NeTEx se décompose en trois parties:
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-<!-- -->
+
 
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
@@ -157,7 +157,7 @@ description des horaires de transport public de façon :
     l’usager des transports publics sur des supports différents (papier
     ou Internet),
 
-<!-- -->
+
 
 -   à pouvoir les échanger entre systèmes d’information (systèmes
     d’information voyageurs et systèmes d’information multimodale,
@@ -963,55 +963,55 @@ proposent ces colonnes:
         unique, pérenne et non ambiguë. C'est l'identifiant qui sera
         utilisé pour référencer l'objet dans les relations.
 
-    <!-- -->
+    
 
     -   AK (Alternate Key) est un identifiant secondaire, généralement
         utilisé pour la communication, mais qui ne sera pas utilisé dans
         les relations.
 
-    <!-- -->
+    
 
     -   FK (Foreign Key) indique que l'attribut contient l'identifiant
         unique (PK) d'un autre objet avec lequel il est en relation.
 
-    <!-- -->
+    
 
     -   GROUP est un groupe XML nommé (ensemble d'attributs utilisables
         dans différents contextes) (cf:
         <http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/#AttrGroups>
         )
 
-    <!-- -->
+    
 
     -   «cntd» (contained) indique un structure, un ensemble d'éléments,
         contenus dans l'objet décrit: on n'en donne alors que l'
         l'intituler et non le détail de façon à éviter de surcharger le
         tableau.
 
-<!-- -->
+
 
 -   **Nom** : nom de l'élément ou attribut XSD
 
-<!-- -->
+
 
 -   **Type** : type de l'élément ou attribut XSD (pour certains d'entre
     eux, il conviendra de se référer à la XSD NeTEx)
 
-<!-- -->
+
 
 -   **Cardinalité** : cardinalité de l'élément ou attribut XSD exprimée
     sous la forme "***minimum:maximum***" ("0:1" pour au plus une
     occurrence; "1:\*" au moins une occurrence et sans limites de nombre
     maximal; "1:1" une et une seule occurrence; etc.).
 
-<!-- -->
+
 
 -   Description : texte de description de l'élément ou attribut XSD
     (seul les attributs retenus par le profil ont un texte en français;
     les textes surlignés en jaune indiquent une spécificité du profil
     par rapport à NeTEx).
 
-Les textes surlignés en <span class="hl">Gris</span> sont ceux
+Les textes surlignés en <span class="hl">Jaune</span> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx: une
 codification particulière, une restriction d'usage, etc.
 
@@ -1877,13 +1877,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>ACCESSIBILITY du PATH LINK.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td>PublicUse</td>
@@ -1926,13 +1920,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>Indique si le cheminement est pratiquable en fauteuil roulant.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td>facilities</td>
@@ -2136,13 +2124,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>Indique s’il y a des bandes de guidage podotactyles.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td>TransferDuration</td>
@@ -2200,13 +2182,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>1:1</td>
 <td>Identifiant du PATH JUNCTION.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td>PublicUse</td>
@@ -2248,13 +2224,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>Indique si le cheminement est pratiquable en fauteuil roulant.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td>facilities</td>
@@ -2341,90 +2311,18 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>Destination du NAVIGATION PATH. Obligatoire si le détail des PATH LINKs n’est pas fourni.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
+
+
+
+
+
+
+
+
 <tr class="even">
 <td></td>
 <td>NavigationType</td>
@@ -2468,13 +2366,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>spaceToSpace</em> (<em>esplanade vers esplanade)</em></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td>pathLinksIn­Sequence</td>
@@ -2553,20 +2445,8 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 <td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
 <p><span class="hl">L'Id est imposé à </span><span class="hl">NETEX_</span><span class="hl"> </span><span class="hl">ACCESSIBILITE</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>classes</strong></em></td>
@@ -2591,20 +2471,8 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 </ul>
 <p><span class="hl">Note that EQUIPMENTs are under the STOP PLACE hierarchy</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -2755,20 +2623,8 @@ passagers)* *–* Element
 <td>1:1</td>
 <td>Identifiant du PASSENGER SAFETY EQUIPMENT.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td></td>
 <td><em><strong>PanicButton</strong></em></td>
@@ -2899,48 +2755,12 @@ passagers)* *–* Element
 <li><p><em>wheelchairBabyChange</em> (espace bébé accessibles en fauteil roulant)</p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
+
+
 <tr class="odd">
 <td></td>
 <td>Wheelchair­TurningCircle</td>
@@ -3281,13 +3101,7 @@ passagers)* *–* Element
 <td>0:1</td>
 <td>Signale la présence de bateaux (abaissement du trottoir) des deux côtés.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>TactileWarningStrip</strong></em></td>
@@ -3393,13 +3207,7 @@ passagers)* *–* Element
 <td>0:1</td>
 <td>Signale que le passage requiert un ticket</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>AcousticSensor</strong></em></td>
@@ -3456,13 +3264,7 @@ passagers)* *–* Element
 <li><p><em>other</em> (autre)</p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>AudioOrVideoIntercom</strong></em></td>
@@ -3595,13 +3397,7 @@ passagers)* *–* Element
 <td>0:1</td>
 <td>Hauteur de la main courante</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>HandrailType</strong></em></td>
@@ -3638,13 +3434,7 @@ passagers)* *–* Element
 <td>0:1</td>
 <td>Signale que la rampe est temporaire</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -3769,13 +3559,7 @@ passagers)* *–* Element
 <li><p><em>other</em> (autre)</p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -4062,13 +3846,7 @@ passagers)* *–* Element
 <td><p>Signale si les boutons sont marqué en brailles</p>
 <p><span class="hl">A utiliser aussi pour les marques tactiles (non braille)</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td>MirrorOnOppositeSide</td>
@@ -4118,13 +3896,7 @@ passagers)* *–* Element
 <td>0:1</td>
 <td>Signale si l’accès à l'ascenseur est fléché/signalé</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>MagneticInductionLoop</strong></em></td>
