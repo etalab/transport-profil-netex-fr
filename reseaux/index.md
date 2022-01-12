@@ -51,33 +51,7 @@ travaux *NeTEx, Transmodel et IFOPT)* qui aujourd’hui fait consensus
 dans les groupes de normalisation (CN03/GT7 – Transport public /
 information voyageur).
 
-Sommaire Page
-
-Avant-propos 2Introduction 41 Domaine d'application 62 Références
-normatives 63 Termes et définitions 64 Symboles et abréviations 115
-Exigences minimum liées à la LOM et la règlementation Européenne 116
-Description du profil d’échange 136.1 Conventions de représentation
-136.1.1 Tableaux d’attributs 136.1.2 Valeurs de code de profil 136.1.3
-Indication des classes abstraites 146.1.4 Classes de sous-composants
-146.2 Structure du réseau 146.3 Les lignes 156.3.1 Directions 176.4 Les
-groupes de Ligne 176.4.1 Les réseaux 186.5 Zone tarifaire 186.6 Les
-itinéraires 196.6.1 Les Point d'itinéraire 196.6.2 Les points sur
-itinéraire 196.6.3 Les tronçons d'itinéraire 206.7 Les affichages de
-destination 206.7.1 Les variantes d'affichages de destination 226.8 La
-flexibilité des lignes (TAD) 226.8.1 Ligne flexible 236.8.2 Itinéraire
-flexible 246.8.3 Point flexible 256.8.4 Tronçon flexible 266.9 Parcours
-276.9.1 Mission commerciale 276.9.2 Haut le pied 286.9.3 Point sur
-parcours 286.9.4 Point d'arrêt sur parcours 296.9.5 Point d'arrêt
-panifié 306.9.6 Parcours horaire 316.10 Correspondances 326.11
-Contraintes et restrictions (ITL, etc.) 396.11.1 Contraintes de zone.
-396.11.2 Restriction de correspondance 406.12 Affectation d'arrêt
-406.12.1 Affectation de train à quai 426.12.2 Affectation dynamique
-(pour affectation « tardive », mais toujours planifiée) 436.13 Plan
-schématique 437 Entêtes NeTEx 447.1 TypeOfFrame : type spécifique
-*NETEX_LIGNE* 447.2 TypeOfFrame : type spécifique *NETEX\_ RESEAU*
-45Bibliographie 47
-
-Introduction
+**Introduction**
 
 Le présent format d’échange est un profil de NeTEx.
 
@@ -258,24 +232,21 @@ normatif.
 NOTE Les définitions ci-dessus sont des traductions littérales du
 document CEN.
 
-3.1
 
-**ACCESS MODE** (MODE D’ACCÉS)
+## **ACCESS MODE** (MODE D’ACCÉS)
 
 Caractérisation de déplacement d’un passager relatif à son mode de
 transport en dehors des transports public (piéton, vélo, etc.).
 
-3.2
 
-**AUTHORITY** (AUTORITÉ ORGANISATRICE)
+## **AUTHORITY** (AUTORITÉ ORGANISATRICE)
 
 INSTITUTION sous la responsabilité de laquelle l’organisation des
 transports est placée pour une zone géographique ou administrative
 donnée.
 
-3.3
 
-**BOARDING POSITION** (POSITION D’EMBARQUEMENT)
+## **BOARDING POSITION** (POSITION D’EMBARQUEMENT)
 
 Position d’une ZONE D’EMBARQUEMENT à partir de laquelle un passager
 pourra embarquer, ou vers laquelle il débarquera d’un VÉHICULE
@@ -284,57 +255,49 @@ Note: cet objet n’a pas été retenu dans le Modèle d’Arrêt Partagé, mais
 il s’y raccroche directement et est donc à considérer comme une
 extension du Modèle d’Arrêt Partagé)
 
-3.4
 
-**BOOKING ARRANGEMENT** (CONDITIONS DE RESERVATION)
+## **BOOKING ARRANGEMENT** (CONDITIONS DE RESERVATION)
 
 CONDITIONS DE RÉSERVATION pour une LIGNE FLEXIBLE.
 
-3.5
 
-**COMPOUND TRAIN** (TRAIN COMPOSÉ)
+## **COMPOUND TRAIN** (TRAIN COMPOSÉ)
 
 TYPE DE VEHICULE composé d’une séquence d’un ou plusieurs TRAIN.
 
-3.6
 
-**CONNECTION** (CORRESPONDANCE)
+## **CONNECTION** (CORRESPONDANCE)
 
 Possibilité physique (spatiale) d'un passager de passer d'un véhicule de
 transport public vers un autre dans le but de continuer son voyage. Des
 temps de parcours différents peuvent être nécessaires en fonction du
 type de passager.
 
-3.7
 
-**CONNECTION END** (EXTRÉMITÉ DE CORRESPONDANCE)
+## **CONNECTION END** (EXTRÉMITÉ DE CORRESPONDANCE)
 
 Début ou fin d'une CORRESPONDANCE. Il s’agit forcément d’une relation
 avec un POINT D’ARRÊT PLANIFIÉ.
 
-3.8
 
-**CONTACT DETAILS** (INFORMATIONS DE CONTACT)
+## **CONTACT DETAILS** (INFORMATIONS DE CONTACT)
 
 Informations permettant au public de contacter une INSTITUTION.
 
-3.9
 
-**CONTROL CENTRE** (CENTRE DE CONTROL)
+## **CONTROL CENTRE** (CENTRE DE CONTROL)
 
 UNITÉ ORGANISATIONNELLE composée d’une équipe opérationnelle en charge
 des commandes et du contrôle des services d’exploitation.
 
-3.10
 
-**DEAD RUN** (HAUT LE PIED)
+## **DEAD RUN** (HAUT LE PIED)
 
 PARCOURS associé à un HAUT LE PIED (sans transport des passagers :
 retour dépôt, jonction entre ligne, etc.).
 
-3.11
 
-**DEFAULT CONNECTION** (CORRESPONDACE PAR DEFAUT)
+## **DEFAULT CONNECTION** (CORRESPONDACE PAR DEFAUT)
 
 Possibilité physique (spatiale) d'un passager de passer d'un véhicule de
 transport public vers un autre dans le but de continuer son voyage. Elle
@@ -344,9 +307,8 @@ D'ARRÊT). Elle peut être restreinte à des OPERATEURS ou des MODES des
 transports particuliers, ou ne s'applique que dans un sens donné (une
 correspondance bus vers train peut être différente de train vers bus).
 
-3.12
 
-**DESTINATION DISPLAY** (DESTINATION AFFICHÉE)
+## **DESTINATION DISPLAY** (DESTINATION AFFICHÉE)
 
 Une destination d'un PARCOURS (ou ITINÉRAIRE) particulier, affichée au
 public en général sur une girouette ou sur tout autre afficheur
@@ -354,22 +316,19 @@ embarqué. Cette information peut évoluer au fur et à mesure de
 l'évolution de la course et, en particulier, être mise à jour lors du
 franchissement des points VIA.
 
-3.13
 
-**DESTINATION DISPLAY VARIANT** (VARIANTE DE DESTINATION AFFICHÉE)
+## **DESTINATION DISPLAY VARIANT** (VARIANTE DE DESTINATION AFFICHÉE)
 
 alternative à la DESTINATION AFFICHÉE, généralement destiné à des média
 spécifiques (SMS, type d’afficheur particulier, etc.)
 
-3.14
 
-**DIRECTION** (SENS)
+## **DIRECTION** (SENS)
 
 Classification de l'orientation générale des ITINÉRAIREs.
 
-3.15
 
-**FLEXIBLE LINE** (LIGNE FLEXIBLE)
+## **FLEXIBLE LINE** (LIGNE FLEXIBLE)
 
 Spécialisation de la LIGNE pour décrire les services flexibles. Tous les
 services d'une LIGNE peuvent ne pas être flexibles, la flexibilité
@@ -377,9 +336,8 @@ elle-même étant alors décrite au niveau du PARCOURS (cela signifie aussi
 qu'il faudra définir des parcours spécifiques pour chaque type de
 flexibilité de la LIGNE).
 
-3.16
 
-**FLEXIBLE LINK PROPERTIES** (PROPRIÉTÉ DE TRONÇON FLEXIBLE)
+## **FLEXIBLE LINK PROPERTIES** (PROPRIÉTÉ DE TRONÇON FLEXIBLE)
 
 Ensemble de caractéristiques décrivant les éventuelles flexibilités
 associées à un lien
@@ -387,9 +345,8 @@ associées à un lien
 Note: la relation est établie par composition pour limiter le recours à
 l'héritage multiple.
 
-3.17
 
-**FLEXIBLE POINT PROPERTIES** (PROPRIÉTÉ DE POINT FLEXIBLE)
+## **FLEXIBLE POINT PROPERTIES** (PROPRIÉTÉ DE POINT FLEXIBLE)
 
 Ensemble de caractéristiques décrivant les éventuelles flexibilités
 associées à un point
@@ -397,17 +354,15 @@ associées à un point
 Note: la relation est établie par composition pour limiter le recours à
 l'héritage multiple.
 
-3.18
 
-**FLEXIBLE ROUTE** (ITINERAIRE FLEXIBLE)
+## **FLEXIBLE ROUTE** (ITINERAIRE FLEXIBLE)
 
 Spécialisation de l'ITINÉRAIRE pour décrire les services flexibles. Il
 peut inclure des POINTs et des ZONEs, et des sections parcourues dans un
 ordre prédéfini ou non.
 
-3.19
 
-**FLEXIBLE STOP PLACE** (LIEU D’ARRÊT FLEXIBLE)
+## **FLEXIBLE STOP PLACE** (LIEU D’ARRÊT FLEXIBLE)
 
 Spécialisation du LIEU D’ARRÊT décrivant un arrêt d'un service flexible.
 Il peut être composé de zones flexibles ou de zones de type « hail and
@@ -418,23 +373,20 @@ pour leurs arrêts. Quand il est assigné à un POINT D'ARRÊT PLANIFIÉ, ce
 POINT D'ARRÊT PLANIFIÉ est alors censé être une zone (le centroïd de la
 ZONE étant alors considéré comme le POINT D'ARRÊT PLANIFIÉ).
 
-3.20
 
-**GROUP OF LINES** (GROUPE DE LIGNES)
+## **GROUP OF LINES** (GROUPE DE LIGNES)
 
 Regroupement de lignes référencées de manière commune relative à un
 objectif donné.
 
-3.21
 
-**GROUP OF OPERATOR** (GROUPE D’EXPLOITANTS)
+## **GROUP OF OPERATOR** (GROUPE D’EXPLOITANTS)
 
 Groupe d’EXPLOITANTs ayant en commun, par exemple, un ensemble de règles
 tarifaires et d’information voyageur.
 
-3.22
 
-**JOURNEY PATTERN** (PARCOURS)
+## **JOURNEY PATTERN** (PARCOURS)
 
 Liste ordonnée de POINTs D'ARRÊT PLANIFIÉs et de POINTs HORAIREs sur un
 unique ITINÉRAIRE, décrivant le plan de déplacement pour les véhicules
@@ -442,93 +394,80 @@ de transport public. Un PARCOURS peut passer par le même POINT plus
 d'une fois. Le premier point d'un PARCOURS est l'origine. Le dernier
 point est la destination.
 
-3.23
 
-**LINE** (LIGNE)
+## **LINE** (LIGNE)
 
 Groupe d'ITINÉRAIREs (voir plus bas) qui est en général connu du public
 par une appellation commune (nom ou numéro, extrémités de ligne, etc.).
 
-3.24
 
-**NETWORK** (RÉSEAU)
+## **NETWORK** (RÉSEAU)
 
 Un GROUPE DE LIGNES disposant d'un nom sous lequel un réseau de
 transport est connu.
 
-3.25
 
-**OPERATOR** (EXPLOITANT)
+## **OPERATOR** (EXPLOITANT)
 
 Entreprise offrant des services de transport public.
 
-3.26
 
-**PASSENGER STOP ASSIGNMENT** (AFFECTATION D’ARRÊT POUR PASSAGER)
+## **PASSENGER STOP ASSIGNMENT** (AFFECTATION D’ARRÊT POUR PASSAGER)
 
 Affection d’un POINT D’ARRÊT PLANIFIÉ à un LIEU D’ARRÊT (ou un de ses
 composant de type ZONE D’EMBARQUEMENT ou POSITION D’EMBARQUEMENT) pour
 un service passager.
 
-3.27
 
-**POINT IN JOURNEY PATTERN** (POINT SUR PARCOURS)
+## **POINT IN JOURNEY PATTERN** (POINT SUR PARCOURS)
 
 Un POINT D'ARRÊT PLANIFIÉ ou un POINT HORAIRE dans un PARCOURS indiquant
 son rang dans ce PARCOURS.
 
-3.28
 
-**POINT IN TIMING PATTERN** (POINT SUR PARCOURS HORAIRE)
+## **POINT IN TIMING PATTERN** (POINT SUR PARCOURS HORAIRE)
 
 POINT sur PARCOURS qui est un POINT HORAIRE.
 
-3.29
 
-**POINT ON ROUTE** (POINT SUR ITINÉRAIRE)
+## **POINT ON ROUTE** (POINT SUR ITINÉRAIRE)
 
 POINT D'ITINÉRAIRE (accompagné de son rang) qui sert à définir un
 ITINÉRAIRE.
 
-3.30
 
-**ROUTE LINK** (TRONÇON D'ITINÉRAIRE)
+## **ROUTE LINK** (TRONÇON D'ITINÉRAIRE)
 
 Tronçon orienté entre deux POINTs D'ITINÉRAIRE permettant une définition
 univoque d'un chemin à travers le réseau.
 
-3.31
 
-**ROUTE POINT** (POINT D'ITINÉRAIRE)
+## **ROUTE POINT** (POINT D'ITINÉRAIRE)
 
 POINT permettant de définir la géométrie d'un ITINÉRAIRE à travers le
 réseau.
 
-3.32
 
-**ROUTE** (ITINÉRAIRE)
+## **ROUTE** (ITINÉRAIRE)
 
 Liste ordonnée de POINTs définissant un seul chemin à travers le réseau
 routier (ou ferré). Un ITINÉRAIRE peut passer deux fois par un même
 POINT.
 
-3.33
 
-**ROUTING CONSTRAINT ZONE** (ZONE DE CONTRAINTE)
+## **ROUTING CONSTRAINT ZONE** (ZONE DE CONTRAINTE)
 
 ZONE au sein de laquelle une contrainte d'acheminement s'applique. La
 ZONE peut être définie soit par un périmètre géographique, soit par la
 liste des POINTs D'ARRÊT PLANIFIÉS qu'elle contient.
 
-3.34
 
-**SCHEDULED STOP POINT** (POINT D'ARRÊT PLANIFIÉ)
+## **SCHEDULED STOP POINT** (POINT D'ARRÊT PLANIFIÉ)
 
 POINT où les passagers peuvent monter à bord ou descendre des véhicules.
 
-3.35
 
-**SCHEMATIC MAP** (PLAN SCHÉMATIQUE)
+## **SCHEMATIC MAP** (PLAN SCHÉMATIQUE)
 
 Carte représentant schématiquement la disposition de la structure
 topographique des lieux (par exemple, un ensemble de sites) ou le réseau
@@ -537,116 +476,100 @@ projection de pixel ou objet de dessin vectoriel vers un ensemble
 d'objet transport pour permettre les interactions, services et
 hyperliens.
 
-3.36
 
-**SCHEMATIC MAP MEMBER** (COMPOSANT DE PLAN SCHÉMATIQUE)
+## **SCHEMATIC MAP MEMBER** (COMPOSANT DE PLAN SCHÉMATIQUE)
 
 Projection d’un objet transport sur un PLAN SCHÉMATIQUE.
 
-3.37
 
-**SERVICE JOURNEY PATTERN** (PARCOURS COMMERCIAL)
+## **SERVICE JOURNEY PATTERN** (PARCOURS COMMERCIAL)
 
 PARCOURS associé à une COURSE COMMERCIALE (transportant des passagers).
 
-3.38
 
-**SERVICE LINK** (TRONÇON COMMERCIAL)
+## **SERVICE LINK** (TRONÇON COMMERCIAL)
 
 TRONÇON entre une paire ordonnée de POINTs D'ARRÊT PLANIFIÉS.
 
-3.39
 
-**SERVICE PATTERN** (MISSION COMMERCIALE)
+## **SERVICE PATTERN** (MISSION COMMERCIALE)
 
 Vue d'un PARCOURS définie uniquement par des POINTs D'ARRÊT SUR
 PARCOURS. La MISSION COMMERCIALE se distingue du PARCOURS COMMERCIAL par
 le fait qu'elle n'est définie que par une séquence d'arrêts, sans point
 intermédiaire.
 
-3.40
 
-**SITE CONNECTION** (CORRESPONDANCE ENTRE SITES)
+## **SITE CONNECTION** (CORRESPONDANCE ENTRE SITES)
 
 La possibilité physique (spatiale) d'un passager de continuer son
 déplacement déterminé par deux localisations comme des SITEs ou leurs
 ENTRÉEs. Des temps de parcours différents peuvent être nécessaires en
 fonction du type de passager.
 
-3.41
 
-**STOP ASSIGNMENT** (AFFECTATION D’ARRÊT)
+## **STOP ASSIGNMENT** (AFFECTATION D’ARRÊT)
 
 Affection d’un POINT D’ARRÊT PLANIFIÉ à un LIEU D’ARRÊT.
 
-3.42
 
-**STOP POINT IN JOURNEY PATTERN** (POINT D'ARRÊT SUR PARCOURS)
+## **STOP POINT IN JOURNEY PATTERN** (POINT D'ARRÊT SUR PARCOURS)
 
 POINT d'un PARCOURS qui est un POINT D'ARRÊT
 
-3.43
 
-**SUBMODE** (SOUS-MODE)
+## **SUBMODE** (SOUS-MODE)
 
 Précision sur le MODE, comme "international" ou "longue distance" (pour
 un MODE Rail par exemple). Le SOUS-MODE caractérise très souvent un type
 d'exploitation qui vient donc compléter le MODE.
 
-3.44
 
-**TIMING LINK** (TRONÇON HORAIRE)
+## **TIMING LINK** (TRONÇON HORAIRE)
 
 Paire ordonnée de POINTs HORAIREs qui peut être utilisée pour
 l'enregistrement des temps de parcours.
 
-3.45
 
-**TIMING PATTERN** (PARCOURS HORAIRE)
+## **TIMING PATTERN** (PARCOURS HORAIRE)
 
 Vue d'un PARCOURS définie uniquement par des POINTs HORAIRE SUR
 PARCOURS.
 
-3.46
 
-**TIMING POINT** (POINT HORAIRE)
+## **TIMING POINT** (POINT HORAIRE)
 
 POINT servant de référence aux données nécessaires à la conception des
 horaires. Un POINT HORAIRE peut aussi être un POINT D’ARRÊT PLANIFIÉ
 mais cela n’a rien d’obligatoire ou de systématique.
 
-3.47
 
-**TRAIN STOP ASSIGNMENT** (AFFECTATION D’ARRÊT DE TRAIN)
+## **TRAIN STOP ASSIGNMENT** (AFFECTATION D’ARRÊT DE TRAIN)
 
 Affection d’un COMPOSANT DE TRAIN à un LIEU D’ARRÊT (ou un de ses
 composant de type ZONE D’EMBARQUEMENT ou POSITION D’EMBARQUEMENT) pour
 un POINT D’ARRÊT PLANIFIÉ donné.
 
-3.48
 
-**TRANSFER RESTRICTION** (RESTRICTION DE CORRESPONDANCE)
+## **TRANSFER RESTRICTION** (RESTRICTION DE CORRESPONDANCE)
 
 Contrainte qui s’applique aux CORRESPONDANCES (ou CORRESPONDANCES ENTRE
 COURSES) entre deux POINTs D’ARRÊT PLANIFIÉs, en limitant voir
 interdisant l’usage pour les passagers.
 
-3.49
 
-**TYPE OF LINES** (TYPE DE LIGNES)
+## **TYPE OF LINES** (TYPE DE LIGNES)
 
 Classification pour les lignes
 
-3.50
 
-**VEHICLE MODE** (MODE DE VÉHICULE)
+## **VEHICLE MODE** (MODE DE VÉHICULE)
 
 Typologie de l'exploitation suivant le moyen de transport (bus, tramway,
 métro, train, ferry, bateau).
 
-3.51
 
-**VIA** (VIA)
+## **VIA** (VIA)
 
 POINT utilisé comme POINT D'ITINÉRAIRE et permettant de distinguer deux
 cheminements (ITINÉRAIREs) entre une origine et une destination. Il est

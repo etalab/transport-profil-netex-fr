@@ -49,23 +49,7 @@ des réseaux de transport en commun" (issu des travaux *NeTEx* et
 *Transmodel)* qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
-Sommaire Page
-
-Avant-propos 2Introduction 41 Domaine d'application 62 Références
-normatives 63 Termes et définitions 64 Symboles et abréviations 155
-Exigences minimum liées à la LOM et la règlementation Européenne 156
-Description du profil d’échange 176.1 Conventions de représentation
-176.2 Rappel du modèle de base des autres profils 186.3 Adéquation aux
-besoins 206.4 Les services disponibles 206.5 Les Équipements 276.5.1
-Équipements localisés 276.5.2 Équipements non localisés 366.6 Les
-Cheminements 377 Entêtes NeTEx 467.1 TypeOfFrame : type spécifique
-*NETEX\_ ACCESSIBILITE* 46Annexe A (normative) Détail des équipements
-49A.1 Passenger Service Equipment 49A.2 Waiting Equipment 51A.3 Access
-Equipment 54A.4 Sign Equipment 62A.5 Ticketing Equipment 64A.6 Local
-Service 65A.7 Commercial Service 68A.8 Parking Equipment 69Annexe B
-(informative) Structure des Parkings 70Bibliographie 75
-
-Introduction
+**Introduction**
 
 Le présent format d’échange est un profil de NeTEx.
 
@@ -251,18 +235,14 @@ concepts.</span>
 Pour une information complète, il conviendra toutefois de se référer au
 document normatif.
 
-3.1
-
-**ACCESSIBILITY ASSESSMENT (ÉVALUATION D'ACCESSIBILITÉ)**
+## **ACCESSIBILITY ASSESSMENT (ÉVALUATION D'ACCESSIBILITÉ)**
 
 Caractéristiques d'accessibilité d'une entité utilisée par les
 passagers, telles qu'un LIEU D’ARRET ou un COMPOSANT DE LIEU D’ARRET.
 Décrites par LIMITES D'ACCESSIBILITÉ et / ou un ensemble de d’APTITUDEs
 (pour l’accessibilité).
 
-3.2
-
-**ACCESSIBILITY LIMITATION (LIMITE D'ACCESSIBILITÉ)**
+## **ACCESSIBILITY LIMITATION (LIMITE D'ACCESSIBILITÉ)**
 
 Catégorisation des caractéristiques d'accessibilité d'un SITE (p. ex. :
 LIEU D'ARRÊT ou COMPOSANT DE LIEU D'ARRÊT) pour indiquer son
@@ -273,9 +253,7 @@ Quelques catégories bien définies sont utilisées, choisies pour
 permettre la saisie efficace des données et le calcul efficace
 d'itinéraires pour les différentes classes d'usager.
 
-3.3
-
-**ACCESS (ACCÈS)**
+## **ACCESS (ACCÈS)**
 
 Possibilité matérielle (spatiale) pour un usager d'accéder à un système
 de transports publics ou de le quitter. Ce tronçon peut être utilisé
@@ -285,131 +263,95 @@ PLANIFIÉ (origine du DÉPLACEMENT SUR RÉSEAU), ou - le trajet à pied
 depuis un POINT D'ARRÊT PLANIFIÉ (destination du DÉPLACEMENT SUR RÉSEAU)
 vers un LIEU (destination du déplacement).
 
-3.4
-
-**ACCESS END (FIN D'ACCÈS)**
+## **ACCESS END (FIN D'ACCÈS)**
 
 Origine ou destination d'un tronçon d'ACCÈS. Peut indiquer un POINT
 et/ou un LIEU.
 
-3.5
-
-**ACCESS MODE (MODE D'ACCÈS)**
+## **ACCESS MODE (MODE D'ACCÈS)**
 
 Caractérisation du trajet d'un passager lorsqu'il emprunte un moyen de
 transport autre que les transports
 
 publics (p. ex : à pied, à vélo, etc.).
 
-3.6
-
-**ACCOMODATION (HÉBERGEMENT)**
+## **ACCOMODATION (HÉBERGEMENT)**
 
 Combinaison de caractéristiques d'hébergement disponibles sur un service
 (p. ex : "Couchette première
 
 classe douche/2 lits").
 
-3.7
-
-**ACTUAL VEHICLE EQUIPMENT (ÉQUIPEMENT VÉHICULE RÉEL)**
+## **ACTUAL VEHICLE EQUIPMENT (ÉQUIPEMENT VÉHICULE RÉEL)**
 
 Équipement d'un type particulier sur un VÉHICULE donné.
 
-3.8
-
-**ASSISTANCE SERVICE (SERVICE D'ASSISTANCE)**
+## **ASSISTANCE SERVICE (SERVICE D'ASSISTANCE)**
 
 SERVICE LOCAL spécialisé dans l'ASSISTANCE, fournissant des informations
 telles que la langue, le personnel formé à l'accessibilité, etc.
 
-3.9
-
-**CATERING SERVICE (SERVICE DE RESTAURATION)**
+## **CATERING SERVICE (SERVICE DE RESTAURATION)**
 
 Spécialisation de SERVICE LOCAL dédiée aux services de restauration.
 
-3.10
-
-**COMMUNICATION SERVICE (SERVICE DE COMMUNICATIONS)**
+## **COMMUNICATION SERVICE (SERVICE DE COMMUNICATIONS)**
 
 Spécialisation de SERVICE LOCAL dédiée aux services de communications.
 
-3.11
-
-**COMPLAINTS SERVICE (SERVICE DE RÉCLAMATIONS)**
+## **COMPLAINTS SERVICE (SERVICE DE RÉCLAMATIONS)**
 
 Spécialisation du SERVICE CLIENT pour les RÉCLAMATIONS.
 
-3.12
-
-**CROSSING EQUIPMENT (ÉQUIPEMENT DE CROISEMENT)**
+## **CROSSING EQUIPMENT (ÉQUIPEMENT DE CROISEMENT)**
 
 ÉQUIPEMENT D'ACCÈS À LA PLACE spécialisé pour ÉQUIPEMENTS DE
 FRANCHISSEMENT (passages piétons, éclairage piétons, dispositif
 acoustique, capteurs, bandes de guidage tactiles, etc.).
 
-3.13
-
-**CUSTOMER SERVICE (SERVICE CLIENT)**
+## **CUSTOMER SERVICE (SERVICE CLIENT)**
 
 SERVICE LOCAL générique spécial pour SERVICE CLIENT (objets perdus,
 point de rencontre, réclamations, etc.).
 
-3.14
-
-**CYCLE STORAGE EQUIPMENT (ÉQUIPEMENT DE STOCKAGE DE CYCLE)**
+## **CYCLE STORAGE EQUIPMENT (ÉQUIPEMENT DE STOCKAGE DE CYCLE)**
 
 Spécialisation de l'ÉQUIPEMENT DE PLACE décrivant les équipements de
 parc pour deux-roues.
 
-3.15
-
-**ENCUMBRANCE NEED (BESOIN DE TRANSPORT DE BAGAGES)**
+## **ENCUMBRANCE NEED (BESOIN DE TRANSPORT DE BAGAGES)**
 
 BESOIN D'USAGER spécifique, à savoir une exigence d'un passager
 voyageant avec des bagages, un animal ou tout autre objet, et qui
 nécessite donc des dispositions particulières pour accéder aux
 transports publics.
 
-3.16
-
-**ENTRANCE EQUIPMENT (ÉQUIPEMENT D'ENTRÉE)**
+## **ENTRANCE EQUIPMENT (ÉQUIPEMENT D'ENTRÉE)**
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS À LA PLACE pour ENTRÉES (portes,
 barrières, portes tournantes, etc.)
 
-3.17
-
-**EQUIPMENT (ÉQUIPEMENT)**
+## **EQUIPMENT (ÉQUIPEMENT)**
 
 Équipement installé de manière fixe (ÉQUIPEMENT DE LIEU) ou à bord des
 véhicules (ÉQUIPEMENT VÉHICULE). Un service (SERVICE LOCAL de type
 CONSIGNE, SERVICE DE BILLETTERIE) est considéré comme un équipement
 immatériel.
 
-3.18
-
-**EQUIPMENT PLACE (LIEU DES EQUIPEMENTS)**
+## **EQUIPMENT PLACE (LIEU DES EQUIPEMENTS)**
 
 COMPOSANT DE SITE comprenant un ÉQUIPEMENT
 
-3.19
-
-**EQUIPMENT POSITION (POSITION DES EQUIPEMENTS)**
+## **EQUIPMENT POSITION (POSITION DES EQUIPEMENTS)**
 
 La place précise au sein d'un LIEU DES ÉQUIPEMENTS d'équipements
 particuliers.
 
-3.20
-
-**ESCALATOR EQUIPMENT (ÉQUIPEMENT D'ESCALIER ROULANT)**
+## **ESCALATOR EQUIPMENT (ÉQUIPEMENT D'ESCALIER ROULANT)**
 
 Spécialisation de l'ÉQUIPEMENT D'ESCALIER pour des ESCALIERS ROULANTS.
 
-3.21
-
-**FACILITY (INSTALLATION** *,note : la traduction SERVICE aurait
+## **FACILITY (INSTALLATION** *,note : la traduction SERVICE aurait
 probablement été plus appropriée***)**
 
 Commodité nommée mise à la disposition du public sur un SITE ou un
@@ -417,63 +359,47 @@ SERVICE. Une prestation ne possède pas d'autres propriétés qu'un nom. Un
 ÉQUIPEMENT ou SERVICE LOCAL est utilisé pour décrire les autres
 propriétés fournies dans le cadre d'une prestation particulière.
 
-3.22
-
-**FACILITY SET (ENSEMBLE D'INSTALLATIONS)**
+## **FACILITY SET (ENSEMBLE D'INSTALLATIONS)**
 
 Ensemble d'INSTALLATIONS disponibles pour une COURSE COMMERCIALE ou un
 MORCEAU DE COURSE. L'ensemble peut être disponible uniquement pour un
 TYPE DE VÉHICULE spécifique du SERVICE (p. ex : voiture équipée d'un
 plancher surbaissé).
 
-3.23
-
-**GENERAL SIGN (SIGNALISATION GÉNÉRALE)**
+## **GENERAL SIGN (SIGNALISATION GÉNÉRALE)**
 
 Spécialisation d'ÉQUIPEMENT DE SIGNALISATION différent des INDICATIONS
 DE DIRECTION et de LIEU.
 
-3.24
-
-**HEADING SIGN (SIGNALISATION DE TITRE** *note : GIROUETTE aurait été
+## **HEADING SIGN (SIGNALISATION DE TITRE** *note : GIROUETTE aurait été
 une traduction plus appropriée)*
 
 Spécialisation d'ÉQUIPEMENT DE SIGNALISATION indiquant le nom d'une
 direction, d'une ligne, etc.
 
-3.25
-
-**HIRE SERVICE (SERVICE DE LOCATION)**
+## **HIRE SERVICE (SERVICE DE LOCATION)**
 
 Spécialisation de SERVICE LOCAL dédiée aux services de location (cycles,
 voitures).
 
-3.26
-
-**INSTALLED EQUIPMENT (ÉQUIPEMENT INSTALLÉ)**
+## **INSTALLED EQUIPMENT (ÉQUIPEMENT INSTALLÉ)**
 
 Équipement installé de manière fixe (ÉQUIPEMENT DE LIEU) ou embarqué
 (associé à des véhicules). Cet équipement est matérialisé par opposition
 à un service (SERVICE LOCAL), considéré comme un équipement immatériel.
 
-3.27
-
-**LEFT LUGGAGE SERVICE (SERVICE DE CONSIGNE)**
+## **LEFT LUGGAGE SERVICE (SERVICE DE CONSIGNE)**
 
 Spécialisation du SERVICE CLIENTÈLE pour les consignes à bagages
 (casiers en libre-service, gratuits, etc.).
 
-3.28
-
-**LIFT EQUIPMENT (ÉQUIPEMENT D'ASCENSEUR)**
+## **LIFT EQUIPMENT (ÉQUIPEMENT D'ASCENSEUR)**
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS À LA PLACE pour ASCENSEURS (indique
 des caractéristiques telles que la profondeur, la charge maximale,
 etc.).
 
-3.29
-
-**LOCAL SERVICE (SERVICE LOCAL)**
+## **LOCAL SERVICE (SERVICE LOCAL)**
 
 Service identifié en fonction de l'utilisation du SITE ou des services
 de transport à un lieu particulier (p. ex :porteur, assistance aux
@@ -481,89 +407,65 @@ usagers handicapés, bureaux de réservation). Le service peut posséder
 une CONDITION DE VALIDITÉ qui lui est associée. Un SERVICE LOCAL est
 traité comme une forme d'ÉQUIPEMENT immatériel.
 
-3.30
-
-**LOST PROPERTY SERVICE (SERVICE DES OBJETS TROUVÉS)**
+## **LOST PROPERTY SERVICE (SERVICE DES OBJETS TROUVÉS)**
 
 Spécialisation du SERVICE CLIENTÈLE pour les objets trouvés.
 
-3.31
-
-**LUGGAGE SERVICE (SERVICE BAGAGES)**
+## **LUGGAGE SERVICE (SERVICE BAGAGES)**
 
 Spécialisation du SERVICE CLIENTÈLE pour les bagages
 (installations/équipements et caractéristiques telles que les chariots à
 bagages, l'utilisation gratuite, etc.).
 
-3.32
-
-**LUGGAGE LOCKER EQUIPMENT (ÉQUIPEMENT DE CONSIGNE À BAGAGES)**
+## **LUGGAGE LOCKER EQUIPMENT (ÉQUIPEMENT DE CONSIGNE À BAGAGES)**
 
 Spécialisation de l'ÉQUIPEMENT DE POINT D'ARRÊT pour les consignes à
 bagages.
 
-3.33
-
-**MEDICAL NEED (BESOIN MÉDICAL)**
+## **MEDICAL NEED (BESOIN MÉDICAL)**
 
 BESOIN D'USAGER spécifique, à savoir une exigence d'un passager en ce
 qui concerne une contrainte médicale (p. ex : allergie) pour accéder aux
 transports publics.
 
-3.34
-
-**MEETING POINT SERVICE (SERVICE DE POINT DE RENCONTRE)**
+## **MEETING POINT SERVICE (SERVICE DE POINT DE RENCONTRE)**
 
 Spécialisation du SERVICE CLIENT pour les points de rencontre
 (caractéristiques telles que la description, le libellé, etc.).
 
-3.35
-
-**MOBILITY NEED (BESOIN DE MOBILITÉ)**
+## **MOBILITY NEED (BESOIN DE MOBILITÉ)**
 
 BESOIN D'USAGER spécifique, à savoir une contrainte d'un passager en ce
 qui concerne sa mobilité (p. ex : fauteuil roulant, fauteuil roulant
 motorisé).
 
-3.36
-
-**MONEY SERVICE (SERVICE DE CHANGE)**
+## **MONEY SERVICE (SERVICE DE CHANGE)**
 
 Spécialisation de SERVICE LOCAL dédiée aux services d'argent.
 
-3.37
-
-**NAVIGATION PATH (CHEMINEMENT USAGER)**
+## **NAVIGATION PATH (CHEMINEMENT USAGER)**
 
 Un tronçon désigné entre deux endroits. Peut inclure une séquence triée
 de TRONÇONS DE CHEMINEMENT.
 
-3.38
-
-**NAVIGATION PATH ASSIGNMENT (AFFECTATION DE CHEMINEMENT DE
+## **NAVIGATION PATH ASSIGNMENT (AFFECTATION DE CHEMINEMENT DE
 NAVIGATION)**
 
 Affectation d'un CHEMINEMENT USAGER à une AFFECTATION DE POINT D'ARRÊT
 spécifique, par exemple, pour indiquer le chemin à prendre pour établir
 une CONNEXION.
 
-3.39
-
-**ONBOARD STAY (SÉJOUR À BORD)**
+## **ONBOARD STAY (SÉJOUR À BORD)**
 
 Permission d'embarquer avant la course ou de rester à bord après la
 course.
 
-3.40
-
-**PASSENGER EQUIPMENT (ÉQUIPEMENT USAGER)**
+## **PASSENGER EQUIPMENT (ÉQUIPEMENT USAGER)**
 
 Équipement d'un type particulier réellement disponible au niveau d'un
 LIEU ou d'un VÉHICULE.
 
-3.41
-
-**PASSENGER INFORMATION EQUIPMENT (ÉQUIPEMENT D'INFORMATIONS AUX
+## **PASSENGER INFORMATION EQUIPMENT (ÉQUIPEMENT D'INFORMATIONS AUX
 PASSAGERS)**
 
 Un équipement destiné à fournir des informations sur les transports en
@@ -571,23 +473,17 @@ commun, tels que des terminaux (dans la rue, aux guichets ou reliés à un
 central, etc.) ou des supports papier (affichettes aux points d'arrêt,
 fascicules, etc.).
 
-3.42
-
-**PASSENGER SAFETY EQUIPMENT (ÉQUIPEMENT DE SÉCURITÉ DES PASSAGERS)**
+## **PASSENGER SAFETY EQUIPMENT (ÉQUIPEMENT DE SÉCURITÉ DES PASSAGERS)**
 
 Spécialisation ÉQUIPEMENT PASSAGER pour la sécurité des passagers.
 
-3.43
-
-**PATH JUNCTION (NŒUD DE CHEMINEMENT)**
+## **PATH JUNCTION (NŒUD DE CHEMINEMENT)**
 
 Un point précis, à l'intérieur ou à l'extérieur d'un LIEU D'ARRÊT ou
 d'un POINT D'INTERÊT, au niveau duquel deux TRONÇONS DE CHEMINEMENTS
 peuvent se connecter
 
-3.44
-
-**PATH LINK (TRONÇON DE CHEMINEMENT)**
+## **PATH LINK (TRONÇON DE CHEMINEMENT)**
 
 Un tronçon dans un LIEU ou entre plusieurs LIEUX (par exemple, LIEUX
 D'ARRÊT, ESPACES D'ACCÈS ou QUAIS, POINTS D'EMBARQUEMENT, POINTS
@@ -600,278 +496,200 @@ projette sur un ensemble d'infrastructures ou de tronçons de mapping
 plus détaillés qui tracent l'itinéraire dans l'espace, ce qui permet de
 le représenter sur des plans et des systèmes de suivi.
 
-3.45
-
-**PATH LINK END (FIN DE TRONÇON DE CHEMINEMENT)**
+## **PATH LINK END (FIN DE TRONÇON DE CHEMINEMENT)**
 
 SITE de départ ou d'arrivée d'un TRONÇON DE CHEMINEMENT. Il peut être
 lié à un NIVEAU spécifique du SITE.
 
-3.46
-
-**PATH LINK IN SEQUENCE (TRONÇON DE CHEMINEMENT EN SÉQUENCE)**
+## **PATH LINK IN SEQUENCE (TRONÇON DE CHEMINEMENT EN SÉQUENCE)**
 
 Étape d'un CHEMINEMENT USAGER indiquant la traversée d'un TRONÇON DE
 CHEMINEMENT particulier au sein d'un itinéraire recommandé.
 
-3.47
-
-**PLACE ACCESS EQUIPMENT (ÉQUIPEMENT D'ACCÈS À LA PLACE)**
+## **PLACE ACCESS EQUIPMENT (ÉQUIPEMENT D'ACCÈS À LA PLACE)**
 
 Spécialisation d'ÉQUIPEMENT DE LIEU dédiée à l'accès (ascenseurs,
 entrées, escaliers, rampes, etc.).
 
-3.48
-
-**PLACE EQUIPMENT (ÉQUIPEMENT DE LIEU)**
+## **PLACE EQUIPMENT (ÉQUIPEMENT DE LIEU)**
 
 Équipement d'un type particulier réellement disponible au niveau d'un
 LIEU.
 
-3.49
-
-**PLACE IN SEQUENCE (LIEUX ACCESSIBLES EN SEQUENCE)**
+## **PLACE IN SEQUENCE (LIEUX ACCESSIBLES EN SEQUENCE)**
 
 Point traversé par un CHEMINEMENT USAGER en séquence, connecté par un
 TRONÇON DE CHEMINEMENT jusqu'au point suivant. Il peut s'agir d'un lieu,
 d'un NŒUD ou d'un POINT.
 
-3.50
-
-**PLACE LIGHTING (ÉCLAIRAGE DE LA PLACE)**
+## **PLACE LIGHTING (ÉCLAIRAGE DE LA PLACE)**
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU pour ÉQUIPEMENT D'ÉCLAIRAGE (par
 ex., réverbère).
 
-3.51
-
-**PLACE SIGN (SIGNALISATION DE PLACE)**
+## **PLACE SIGN (SIGNALISATION DE PLACE)**
 
 Panneau portant le nom d'un LIEU.
 
-3.52
-
-**POINT OF INTEREST (POINTS D'INTÉRÊT)**
+## **POINT OF INTEREST (POINTS D'INTÉRÊT)**
 
 Type de LIEU vers ou à travers lequel les passagers peuvent souhaiter
 circuler au cours de leur course et qui est modélisé en détail par les
 calculateurs d'itinéraire.
 
-3.53
-
-**PSYCHOSENSORY NEED (BESOIN PSYCHOSENSORIEL)**
+## **PSYCHOSENSORY NEED (BESOIN PSYCHOSENSORIEL)**
 
 BESOIN D'USAGER spécifique, à savoir une contrainte d'un passager
 relative à un handicap psychosensoriel (p. ex : troubles visuels ou
 auditifs, aversion pour les espaces confinés).
 
-3.54
-
-**QUEUING EQUIPMENT (ÉQUIPEMENT DE FILE D'ATTENTE)**
+## **QUEUING EQUIPMENT (ÉQUIPEMENT DE FILE D'ATTENTE)**
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU dédiée aux files d'attente.
 
-3.55
-
-**RAMP EQUIPMENT (ÉQUIPEMENT DE RAMPE)**
+## **RAMP EQUIPMENT (ÉQUIPEMENT DE RAMPE)**
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU pour rampes (indique des
 caractéristiques telles que la profondeur, la pente, etc.).
 
-3.56
-
-**RETAIL SERVICE (SERVICE DE DÉTAIL)**
+## **RETAIL SERVICE (SERVICE DE DÉTAIL)**
 
 Spécialisation de SERVICE LOCAL dédiée aux services de distribution.
 
-3.57
-
-**ROUGH SURFACE (SURFACE RUGUEUSE)**
+## **ROUGH SURFACE (SURFACE RUGUEUSE)**
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU pour surfaces rugueuses, qui
 indique la texture des surfaces, principalement pour informer les
 personnes handicapées.
 
-3.58
-
-**RUBBISH DISPOSAL (ÉLIMINATION DES DÉCHETS)**
+## **RUBBISH DISPOSAL (ÉLIMINATION DES DÉCHETS)**
 
 Spécialisation des ÉQUIPEMENTS pour évacuation des déchets, indiquant
 les types de déchets, etc.
 
-3.59
-
-**SANITARY EQUIPMENT (ÉQUIPEMENT SANITAIRE)**
+## **SANITARY EQUIPMENT (ÉQUIPEMENT SANITAIRE)**
 
 Spécialisation ÉQUIPEMENT PASSAGER pour les installations sanitaires.
 
-3.60
-
-**SEATING EQUIPMENT (ÉQUIPEMENT DE SIÈGES)**
+## **SEATING EQUIPMENT (ÉQUIPEMENT DE SIÈGES)**
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU décrivant les propriétés des
 sièges
 
-3.61
-
-**SERVICE FACILITY SET (ENSEMBLE D'INSTALLATIONS DE SERVICE)**
+## **SERVICE FACILITY SET (ENSEMBLE D'INSTALLATIONS DE SERVICE)**
 
 Ensemble d'INSTALLATIONS disponibles pour un TYPE DE VÉHICULE spécifique
 (p. ex : voiture équipée d'un plancher surbaissé), éventuellement pour
 un service uniquement (ou pour une COURSE ou une COURSE COMMERCIALE).
 
-3.62
-
-**SHELTER EQUIPMENT (ÉQUIPEMENT D'ABRIS)**
+## **SHELTER EQUIPMENT (ÉQUIPEMENT D'ABRIS)**
 
 Spécialisation de l'ÉQUIPEMENT D'ATTENTE pour un abri.
 
-3.63
-
-**SIGN EQUIPMENT (ÉQUIPEMENT DE SIGNALISATION)**
+## **SIGN EQUIPMENT (ÉQUIPEMENT DE SIGNALISATION)**
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU pour la signalisation
 (directions, etc.).
 
-3.64
-
-**SITE EQUIPMENT (ÉQUIPEMENT DE SITE)**
+## **SITE EQUIPMENT (ÉQUIPEMENT DE SITE)**
 
 Spécialisation d'ÉQUIPEMENT DE LIEU pour SITES (CASIER À BAGAGES,
 ÉQUIPEMENT D'ATTENTE, STAND DE CHARIOTS, etc.)
 
-3.65
-
-**SITE FACILITY SET (ENSEMBLE D'INSTALLATIONS SUR SITE)**
+## **SITE FACILITY SET (ENSEMBLE D'INSTALLATIONS SUR SITE)**
 
 Ensemble d'INSTALLATIONS disponibles pour un ÉLÉMENT DE SITE.
 
-3.66
-
-**STAIR EQUIPMENT (ÉQUIPEMENT D'ESCALIER)**
+## **STAIR EQUIPMENT (ÉQUIPEMENT D'ESCALIER)**
 
 Specialisation of ACCESS EQUIPMENT for stairs (stair, escalator,
 staircase, etc.).
 
-3.67
-
-**STAIRCASE EQUIPMENT (****ÉQUIPEMENT D'ESCALIER)**
+## **STAIRCASE EQUIPMENT (****ÉQUIPEMENT D'ESCALIER)**
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU pour escaliers (escalier,
 escalier mécanique, cage d'escalier, etc.).
 
-3.68
-
-**SUITABILITY (APPROPRIATION)**
+## **SUITABILITY (APPROPRIATION)**
 
 Déclaration stipulant si un BESOIN D'USAGER particulier peut être
 satisfait. Elle peut être utilisée pour indiquer si un SITE est
 accessible par un passager ayant un BESOIN particulier.
 
-3.69
-
-**TICKET VALIDATOR EQUIPMENT (ÉQUIPEMENT DE VALIDATION DE TITRES DE
+## **TICKET VALIDATOR EQUIPMENT (ÉQUIPEMENT DE VALIDATION DE TITRES DE
 TRANSPORT)**
 
 Spécialisation de l'ÉQUIPEMENT PASSAGER (ÉQUIPEMENT DE LIEU) décrivant
 les contrôleurs de billets.
 
-3.70
-
-**TICKETING EQUIPMENT (ÉQUIPEMENT DE DISTRIBUTION DE TITRES DE
+## **TICKETING EQUIPMENT (ÉQUIPEMENT DE DISTRIBUTION DE TITRES DE
 TRANSPORT)**
 
 Spécialisation de l'ÉQUIPEMENT PASSAGER pour la billetterie.
 
-3.71
-
-**TICKETING SERVICE (SERVICE DE DISTRIBUTION DE TITRES DE TRANSPORT)**
+## **TICKETING SERVICE (SERVICE DE DISTRIBUTION DE TITRES DE TRANSPORT)**
 
 Spécialisation de SERVICE LOCAL pour billetterie, fournissant des
 informations sur les guichets de billetterie et les achats en ligne,
 également associée à la méthode de paiement et au TYPE DE BILLET.
 
-3.72
-
-**TRAVELATOR EQUIPMENT (ÉQUIPEMENT DE TAPIS ROULANT)**
+## **TRAVELATOR EQUIPMENT (ÉQUIPEMENT DE TAPIS ROULANT)**
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU pour tapis roulants
 (propriétés telles que la vitesse, etc.).
 
-3.73
-
-**TROLLEY STAND EQUIPMENT (ÉQUIPEMENT DE STANDS DE CHARIOTS)**
+## **TROLLEY STAND EQUIPMENT (ÉQUIPEMENT DE STANDS DE CHARIOTS)**
 
 Spécialisation de l'ÉQUIPEMENT DE POINT D'ARRÊT pour les stands de
 chariots.
 
-3.74
-
-**TYPE OF ACCESSIBILITY TOOLS (TYPE D'OUTILS D'ACCESSIBILITÉ)**
+## **TYPE OF ACCESSIBILITY TOOLS (TYPE D'OUTILS D'ACCESSIBILITÉ)**
 
 Classification des OUTILS D'ACCESSIBILITÉ utilisés ou mis à disposition
 par le SERVICE D'ASSISTANCE (fauteuils roulants, cannes, navigateurs
 audio, navigateurs visuels, etc.).
 
-3.75
-
-**TYPE OF ASSISTANCE SERVICE (SERVICE DE TYPE D'ASSISTANCE)**
+## **TYPE OF ASSISTANCE SERVICE (SERVICE DE TYPE D'ASSISTANCE)**
 
 Classification de SERVICE D'ASSISTANCE (assistance à l'embarquement, à
 bord, portage, langues étrangères, traduction en langage des signes,
 etc.).
 
-3.76
-
-**TYPE OF EMERGENCY SERVICE (SERVICE DE TYPE D'URGENCE)**
+## **TYPE OF EMERGENCY SERVICE (SERVICE DE TYPE D'URGENCE)**
 
 Typologie des services d'urgence (police, premiers secours, borne
 d'appel, vidéosurveillance).
 
-3.77
-
-**TYPE OF GENDER LIMITATION (SERVICE DE LIMITATION DE SEXE** *Note le
+## **TYPE OF GENDER LIMITATION (SERVICE DE LIMITATION DE SEXE** *Note le
 traducteur officiel aurait peut-être pu se relire ici !!* **)**
 
 Classification des LIMITATIONS SELON LE GENRE (principalement pour
 ÉQUIPEMENTS SANITAIRES, par ex., réservé aux hommes/femmes, ou les
 deux).
 
-3.78
-
-**TYPE OF HANDRAIL (TYPE DE MAIN COURANTE)**
+## **TYPE OF HANDRAIL (TYPE DE MAIN COURANTE)**
 
 Classification de MAIN COURANTE (un côté, deux côtés).
 
-3.79
-
-**TYPE OF SANITARY FACILITY (SERVICE D'INSTALLATION SANITAIRE)**
+## **TYPE OF SANITARY FACILITY (SERVICE D'INSTALLATION SANITAIRE)**
 
 Classification d'ÉQUIPEMENT SANITAIRE (toilettes, toilettes pour
 handicapés, douches, table à langer, table à langer pour handicapés)
 
-3.80
-
-**TYPE OF STAFFING (TYPE DE PERSONNEL)**
+## **TYPE OF STAFFING (TYPE DE PERSONNEL)**
 
 Classification de disponibilité du PERSONNEL associé à un SERVICE
 D'ASSISTANCE (plein temps, temps partiel)
 
-3.81
-
-**TYPE OF USER NEED (TYPE DE BESOIN D'USAGER)**
+## **TYPE OF USER NEED (TYPE DE BESOIN D'USAGER)**
 
 Classification des BESOINS D'USAGERS.
 
-3.82
-
-**USER NEED (BESOIN D'USAGER)**
+## **USER NEED (BESOIN D'USAGER)**
 
 Besoin d'un usager exigeant une APPROPRIATION particulière.
 
-3.83
-
-**VEHICLE ACCESS EQUIPMENT (ÉQUIPEMENT D'ACCÈS AU VÉHICULE)**
+## **VEHICLE ACCESS EQUIPMENT (ÉQUIPEMENT D'ACCÈS AU VÉHICULE)**
 
 Spécialisation de l'ÉQUIPEMENT VÉHICULE permettant l'accès aux
 véhicules, qui fournit différentes
@@ -879,30 +697,21 @@ véhicules, qui fournit différentes
 informations (p. ex : plancher surbaissé, rampe, dimensions de la zone
 d'accès).
 
-3.84
-
-**VEHICLE CHARGING EQUIPMENT (ÉQUIPEMENT DE RECHARGE DE VÉHICULE)**
+## **VEHICLE CHARGING EQUIPMENT (ÉQUIPEMENT DE RECHARGE DE VÉHICULE)**
 
 Spécialisation de l'ÉQUIPEMENT DE PLACE pour la recharge de véhicule.
 
-3.85
-
-**WAITING EQUIPMENT (ÉQUIPEMENT D'ATTENTE)**
+## **WAITING EQUIPMENT (ÉQUIPEMENT D'ATTENTE)**
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU D'ARRÊT pour ÉQUIPEMENTS
 D'ATTENTE (abri, salle d'attente, etc.).
 
-3.86
-
-**WAITING ROOM EQUIPMENT (ÉQUIPEMENT DE SALLE D'ATTENTE)**
+## **WAITING ROOM EQUIPMENT (ÉQUIPEMENT DE SALLE D'ATTENTE)**
 
 Spécialisation de l'ÉQUIPEMENT D'ATTENTE pour salle d'attente, classée
 par TYPE DE SALLE D'ATTENTE.
 
-3.87
-
-**WHEELCHAIR VEHICLE EQUIPMENT (ÉQUIPEMENT VÉHICULE POUR FAUTEUILS
-ROULANTS)**
+## **WHEELCHAIR VEHICLE EQUIPMENT (ÉQUIPEMENT VÉHICULE POUR FAUTEUILS ROULANTS)**
 
 Spécialisation de l'ÉQUIPEMENT VÉHICULE permettant l'accès des fauteuils
 roulants à bord d'un VÉHICULE, qui fournit différentes informations (p.
@@ -1227,32 +1036,31 @@ l'implémentation et les échanges.
 
 ## Rappel du modèle de base des autres profils
 
-![image](media/image2.jpeg)
-
-Les
-profils précédents (Éléments Communs, Arrêts, Réseau et Horaires)
+Les profils précédents (Éléments Communs, Arrêts, Réseau et Horaires)
 proposent déjà une information de base sur l'accessibilité (le principe
 en est rappelé par le schéma ci-dessous). Il s'agit d'une information
 générique permettant d'indiquer si un LIEU D'ARRÊT (STOP PLACE), une
 ZONE D'EMBARQUEMENT (QUAY), une LIGNE (LINE) ou une COURSE COMMERCIALE
 (SERVICE JOURNEY) permet une accessibilité de type:
 
-- ![image](media/image3.png)
+![image](media/image2.jpeg)
 *WheelchairAccess: accessible en fauteuil roulant*
 
-- ![image](media/image4.png)
+![image](media/image3.png)
 *StepFreeAccess: l'accès est possible sans franchissement de marche ou d'escalier*
 
-- ![image](media/image5.png)
-*EscalatorFreeAccess*: l'accès est possible sans utiliser d'escalator
+![image](media/image4.png)
+*EscalatorFreeAccess: l'accès est possible sans utiliser d'escalator*
 
-- ![image](media/image6.jpeg)
+![image](media/image5.png)
 *LiftFreeAccess: l'accès est possible sans utiliser d'ascenseur*
 
-- ![image](media/image7.jpeg)
+![image](media/image6.jpeg)
 *AudibleSignalsAvailable: une signalétique auditive est disponible*
 
-- *VisualSignsAvailable*: une signalétique visuelle est disponible
+![image](media/image7.jpeg)
+*VisualSignsAvailable: une signalétique visuelle est disponible*
+
 
 Cela correspond, dans les grandes lignes aux principaux pictog rammes
 d'accessibilité classiquement rencontrés. Les valeurs potentiellement
@@ -1261,15 +1069,15 @@ portées par chacun de ces indicateurs sont: ***Oui***, ***Non***,
 
 "***Partiel***" peut vouloir dire plusieurs choses :
 
-> \- partiel au niveau temporel (par exemple : pas toujours accessible
-> UFR si le service d'accompagnement est limité aux jours de semaine)
->
-> -partiel au niveau de l'objet/géographique (par exemple: pour une
-> gare, accès possibles pour les UFR uniquement sur certains quais)
->
-> \- partiel par rapport à l'étendu du service (par exemple:
-> signalétique auditive en cas de perturbations mais pas d'annonces pour
-> les prochains passages)
+\- partiel au niveau temporel (par exemple : pas toujours accessible
+UFR si le service d'accompagnement est limité aux jours de semaine)
+
+-partiel au niveau de l'objet/géographique (par exemple: pour une
+gare, accès possibles pour les UFR uniquement sur certains quais)
+
+\- partiel par rapport à l'étendu du service (par exemple:
+signalétique auditive en cas de perturbations mais pas d'annonces pour
+les prochains passages)
 
 <span class="hl">Dans le cadre du profil il est convenu, lorsque
 "</span>***<span class="hl">Partiel</span>***<span class="hl">" est
@@ -1281,7 +1089,7 @@ comment l'information doit être interprétée. Le champ contiendra un
 texte libre susceptible d'être présenté au public en complément des
 indicateurs ci-dessus.</span>
 
-Note: les pictogrammes ne sont présen tés ici qu'à titre d'illustration
+Note: les pictogrammes ne sont présentés ici qu'à titre d'illustration
 et ne correspondent en aucun cas à une représentation portée par NeTEX
 qui se limite à fournir des attributs techniques (leur traduction
 visuelle, sonore ou tactile reste à la discrétion et à la charge des
