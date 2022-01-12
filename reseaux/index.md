@@ -654,7 +654,7 @@ objets ci-dessous, toute information disponible est supposée être
 fournie (mais on ne crée pas d’information si elle n’est pas
 disponible).
 
-Table 1 – *Concepts relatifs à la LOM et à la Règlementation Européenne*
+<div class="table-title">*Concepts relatifs à la LOM et à la Règlementation Européenne*</div>
 
 <table>
 <colgroup>
@@ -913,7 +913,7 @@ de nuit, etc.).
 
 ## Les lignes
 
-Table 2 – *Line –* Element
+<div class="table-title">*Line –* Element</div>
 
 <table>
 <colgroup>
@@ -1128,7 +1128,7 @@ Table 2 – *Line –* Element
 
 ### Directions
 
-Table 3 – *Direction –* Element *(objet inclus)*
+<div class="table-title">*Direction –* Element *(objet inclus)*</div>
 
 |                     |                             |                     |                  |                                                                                                                                                                                                  |
 |---------------------|-----------------------------|---------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1140,7 +1140,7 @@ Table 3 – *Direction –* Element *(objet inclus)*
 
 ## Les groupes de Ligne
 
-Table 4 – *GroupOfLines –* Element
+<div class="table-title">*GroupOfLines –* Element</div>
 
 <table>
 <colgroup>
@@ -1192,7 +1192,7 @@ Table 4 – *GroupOfLines –* Element
 
 ### Les réseaux
 
-Table 5 – *Network –* Element
+<div class="table-title">*Network –* Element</div>
 
 |                     |                                |                            |                  |                                                                          |
 |---------------------|--------------------------------|----------------------------|------------------|--------------------------------------------------------------------------|
@@ -1204,7 +1204,7 @@ Table 5 – *Network –* Element
 
 ## Zone tarifaire
 
-Table 6 — *TariffZone – Element*
+<div class="table-title">*TariffZone – Element*</div>
 
 |                     |          |          |                  |                                                                                                                                                                                                                                   |
 |---------------------|----------|----------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1213,7 +1213,7 @@ Table 6 — *TariffZone – Element*
 
 ## Les itinéraires
 
-Table 7 – *Route –* Element
+<div class="table-title">*Route –* Element</div>
 
 |                     |                        |                       |                  |                                                                                                                                                                                               |
 |---------------------|------------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1227,7 +1227,7 @@ Table 7 – *Route –* Element
 
 ### Les Point d'itinéraire
 
-Table 8 – *RoutePoint –* Element
+<div class="table-title">*RoutePoint –* Element</div>
 
 |                     |                      |               |                  |                                                                                                                                                                                             |
 |---------------------|----------------------|---------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1238,7 +1238,7 @@ Table 8 – *RoutePoint –* Element
 
 ### Les points sur itinéraire
 
-Table 9 – *PointOnRoute –* Element
+<div class="table-title">*PointOnRoute –* Element</div>
 
 |                               |                     |                    |                       |                  |                                                                                                                                                                                                                 |
 |-------------------------------|---------------------|--------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1252,7 +1252,7 @@ Table 9 – *PointOnRoute –* Element
 
 #### Point sur séquence de tronçon
 
-Table 10 – *PointInLinkSequence –* Element *(objet inclus)*
+<div class="table-title">*PointInLinkSequence –* Element *(objet inclus)*</div>
 
 |                     |                       |                       |                  |                                                                                                                                                                                                                        |
 |---------------------|-----------------------|-----------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1264,7 +1264,7 @@ Table 10 – *PointInLinkSequence –* Element *(objet inclus)*
 
 ### Les tronçons d'itinéraire
 
-Table 11 – *RouteLink –* Element
+<div class="table-title">*RouteLink –* Element</div>
 
 |                     |                    |                 |                  |                                                                                                                                                                                           |
 |---------------------|--------------------|-----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1280,7 +1280,7 @@ Table 11 – *RouteLink –* Element
 ![image](media/image2.svg)
 *DESTINATION DISPLAY – Modèle conceptuel*
 
-Table 12 – *DestinationDisplay –* Element
+<div class="table-title">*DestinationDisplay –* Element</div>
 
 <table>
 <colgroup>
@@ -1383,7 +1383,7 @@ Table 12 – *DestinationDisplay –* Element
 
 ### Les variantes d'affichages de destination
 
-Table 13 – *DestinationDisplayVariant –* Element *(objet inclus)*
+<div class="table-title">*DestinationDisplayVariant –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -1498,7 +1498,7 @@ flexibilité.
 
 ### Ligne flexible
 
-Table 14 – *FlexibleLine –* Element
+<div class="table-title">*FlexibleLine –* Element</div>
 
 <table>
 <colgroup>
@@ -1552,7 +1552,7 @@ Table 14 – *FlexibleLine –* Element
 </tbody>
 </table>
 
-Table 15 – *BookingArrangements –* Element *(objet inclus)*
+<div class="table-title">*BookingArrangements –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -1667,7 +1667,7 @@ Table 15 – *BookingArrangements –* Element *(objet inclus)*
 
 ### Itinéraire flexible
 
-Table 16 – *FlexibleRoute –* Element
+<div class="table-title">*FlexibleRoute –* Element</div>
 
 <table>
 <colgroup>
@@ -1714,7 +1714,7 @@ Table 16 – *FlexibleRoute –* Element
 ***FlexiblePointProperties*** doit toujours être intégré au
 ***StopPointInPattern*** qu’il précise.
 
-Table 17 – *FlexiblePointProperties –* Element *(objet inclus)*
+<div class="table-title">*FlexiblePointProperties –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -1790,7 +1790,7 @@ Table 17 – *FlexiblePointProperties –* Element *(objet inclus)*
 
 ### Tronçon flexible
 
-Table 18 – *FlexibleLinkProperties –* Element *(objet inclus)*
+<div class="table-title">*FlexibleLinkProperties –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -1866,7 +1866,7 @@ Table 18 – *FlexibleLinkProperties –* Element *(objet inclus)*
 
 ### Mission commerciale
 
-Table 19 – *ServiceJourneyPattern –* Element
+<div class="table-title">*ServiceJourneyPattern –* Element</div>
 
 <table>
 <colgroup>
@@ -2012,7 +2012,7 @@ manœuvre de retournement).
 
 ### Point sur parcours
 
-Table 20 – *PointInJourneyPattern –* Element
+<div class="table-title">*PointInJourneyPattern –* Element</div>
 
 <table>
 <colgroup>
@@ -2093,7 +2093,7 @@ Table 20 – *PointInJourneyPattern –* Element
 
 ### Point d'arrêt sur parcours
 
-Table 21 – *StopPointInJourneyPattern –* Element *(objet inclus)*
+<div class="table-title">*StopPointInJourneyPattern –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -2274,7 +2274,7 @@ Table 21 – *StopPointInJourneyPattern –* Element *(objet inclus)*
 
 ### Point d'arrêt panifié
 
-Table 22 – *ScheduledStopPoint –* Element
+<div class="table-title">*ScheduledStopPoint –* Element</div>
 
 <table>
 <colgroup>
@@ -2466,7 +2466,7 @@ retenues).
 
 #### Point horaire sur parcours 
 
-Table 23 – *TimingPointInJourneyPattern –* Element *(objet inclus)*
+<div class="table-title">*TimingPointInJourneyPattern –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -2545,7 +2545,7 @@ Table 23 – *TimingPointInJourneyPattern –* Element *(objet inclus)*
 
 #### Point horaire
 
-Table 24 – *TimingPoint –* Element
+<div class="table-title">*TimingPoint –* Element</div>
 
 <table>
 <colgroup>
@@ -2611,7 +2611,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 
 #### Correspondance entre POINT D'ARRÊT PLANIFIÉs
 
-Table 25 – *Connection –* Element
+<div class="table-title">*Connection –* Element</div>
 
 |                     |            |                 |                  |                                      |
 |---------------------|------------|-----------------|------------------|--------------------------------------|
@@ -2622,7 +2622,7 @@ Table 25 – *Connection –* Element
 | «cntd»              | ***To***   | *ConnectionEnd* | 1:1              | Point de fin de la CORRESPONDANCE    |
 |                     |            |                 |                  |                                      |
 
-Table 26 – *ConnectionEnd –* Element *(objet inclus)*
+<div class="table-title">*ConnectionEnd –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -2660,7 +2660,7 @@ Table 26 – *ConnectionEnd –* Element *(objet inclus)*
 
 #### Transferts
 
-Table 27 — *Transfer – Element (abstrait)*
+<div class="table-title">*Transfer – Element (abstrait)*</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -2753,7 +2753,7 @@ Table 27 — *Transfer – Element (abstrait)*
 </tbody>
 </table>
 
-Table 28 — *TransferDuration – Element (objet inclus)*
+<div class="table-title">*TransferDuration – Element (objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -2821,7 +2821,7 @@ général, et on le particularisera par des versions spécifiques par MODE
 ou par EXPLOITANT qui viendront alors "surcharger" la version sans
 contrainte (la priorité est aux versions particularisées).</span>
 
-Table 29 – *DefaultConnection –* Element
+<div class="table-title">*DefaultConnection –* Element</div>
 
 |                     |                             |                        |                  |                                                                                                                            |
 |---------------------|-----------------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------------------------------|
@@ -2833,7 +2833,7 @@ Table 29 – *DefaultConnection –* Element
 |                     |                             |                        |                  |                                                                                                                            |
 | «FK»                | ***SiteElementRef***        | *SiteElementRef*       | 0:\*             | Elément de SITE dans lesquels ces valeurs par défaut s’appliquent.                                                         |
 
-Table 30 – *DefaultConnectionEnd –* Element *(objet inclus)*
+<div class="table-title">*DefaultConnectionEnd –* Element *(objet inclus)*</div>
 
 |                     |                   |                     |                  |                                                                                                   |
 |---------------------|-------------------|---------------------|------------------|---------------------------------------------------------------------------------------------------|
@@ -2856,7 +2856,7 @@ Cette structure permet aussi de caractériser de façon un peu plus
 détaillée les cheminements accès (STOP PLACE ENTRANCE) vers ZONE
 D'EMBARQUEMENT (QUAY).
 
-Table 31 – *SiteConnection –* Element
+<div class="table-title">*SiteConnection –* Element</div>
 
 <table>
 <colgroup>
@@ -2906,7 +2906,7 @@ Table 31 – *SiteConnection –* Element
 </tbody>
 </table>
 
-Table 32 – *SiteConnectionEnd –* Element *(objet inclus)*
+<div class="table-title">*SiteConnectionEnd –* Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -3138,7 +3138,7 @@ principales (en particulier pour l'accessibilité).
 <span class="hl">Note : le profil NeTEx pour l’accessibilité fournit
 une vue beaucoup plus détaillée du NavigationPath.</span>
 
-Table 33 – *NavigationPath –* Element
+<div class="table-title">*NavigationPath –* Element</div>
 
 <table>
 <colgroup>
@@ -3343,7 +3343,7 @@ Table 33 – *NavigationPath –* Element
 Les contraintes de zone sont particulièrement bien adaptées à la
 description des ITL (Interdiction de trafic local).
 
-Table 34 – *RoutingConstraintZone –* Element
+<div class="table-title">*RoutingConstraintZone –* Element</div>
 
 <table>
 <colgroup>
@@ -3408,7 +3408,7 @@ Table 34 – *RoutingConstraintZone –* Element
 
 ### Restriction de correspondance
 
-Table 35 – *TransferRestriction –* Element
+<div class="table-title">*TransferRestriction –* Element</div>
 
 <table>
 <colgroup>
@@ -3502,7 +3502,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 ![image](media/image7.svg)
 *Passenger Stop Assignment – Modèle conceptuel*
 
-Table 36 — *StopAssignment – Element (abstrait)*
+<div class="table-title">*StopAssignment – Element (abstrait)*</div>
 
 |                     |                              |                         |                  |                                                                                                                                                                                                                                |
 |---------------------|------------------------------|-------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -3515,7 +3515,7 @@ Table 36 — *StopAssignment – Element (abstrait)*
 |                     |                              |                         |                  |                                                                                                                                                                                                                                |
 | «FK»                | ***ScheduledStop­PointRef*** | *ScheduledStopPointRef* | 0:1              | Référence au POINT D'ARRÊT PLANIFIÉ.                                                                                                                                                                                           |
 
-Table 37 — *PassengerStopAssignment – Element*
+<div class="table-title">*PassengerStopAssignment – Element*</div>
 
 <table>
 <colgroup>
@@ -3574,7 +3574,7 @@ Table 37 — *PassengerStopAssignment – Element*
 
 ### Affectation de train à quai
 
-Table 38 – *TrainStopAssignment –* Element
+<div class="table-title">*TrainStopAssignment –* Element</div>
 
 <table>
 <colgroup>
@@ -3668,7 +3668,7 @@ Table 38 – *TrainStopAssignment –* Element
 
 ### Affectation dynamique (pour affectation « tardive », mais toujours planifiée)
 
-Table 39 – *DynamicStopAssignment –* Element
+<div class="table-title">*DynamicStopAssignment –* Element</div>
 
 |                    |                             |                                |                 |                                                                    |
 |--------------------|-----------------------------|--------------------------------|-----------------|--------------------------------------------------------------------|
@@ -3680,7 +3680,7 @@ Table 39 – *DynamicStopAssignment –* Element
 
 ## Plan schématique
 
-Table 40 — *SchematicMap – Element*
+<div class="table-title">*SchematicMap – Element*</div>
 
 <table>
 <colgroup>
@@ -3744,7 +3744,7 @@ Table 40 — *SchematicMap – Element*
 </tbody>
 </table>
 
-Table 285 — *SchematicMapMember – Element (objet inclus)*
+<div class="table-title">*SchematicMapMember – Element (objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -3846,7 +3846,7 @@ naturellement contenir le FRAME **NETEX_LIGNE**.
 Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 ***NETEX_LIGNE***
 
-Table 41 — *TypeOfFrame* – Element *(objet inclus)*
+<div class="table-title">*TypeOfFrame* – Element *(objet inclus)*</div>
 
 <table>
 <colgroup>
@@ -3946,7 +3946,7 @@ Table 41 — *TypeOfFrame* – Element *(objet inclus)*
 </tbody>
 </table>
 
-Table 42 — *TypeOfValue (pour le TypeOfFrame NETEX\_ LIGNE)* – Element
+<div class="table-title">*TypeOfValue (pour le TypeOfFrame NETEX\_ LIGNE)* – Element</div>
 
 <table>
 <colgroup>
@@ -4036,7 +4036,7 @@ Table 42 — *TypeOfValue (pour le TypeOfFrame NETEX\_ LIGNE)* – Element
 Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 ***NETEX_RESEAU***.
 
-Table 43 — *TypeOfFrame* – Element
+<div class="table-title">*TypeOfFrame* – Element</div>
 
 <table>
 <colgroup>
@@ -4154,7 +4154,7 @@ Table 43 — *TypeOfFrame* – Element
 </tbody>
 </table>
 
-Table 44 — *TypeOfValue (pour le TypeOfFrame NETEX\_ RESEAU)* – Element
+<div class="table-title">*TypeOfValue (pour le TypeOfFrame NETEX\_ RESEAU)* – Element</div>
 
 <table>
 <colgroup>
