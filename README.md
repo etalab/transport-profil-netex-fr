@@ -53,4 +53,12 @@ LibreOffice présente l'avantage de pouvoir sélectionner un texte qui est surli
 - supprimer les mises en italiques (les `*`) des légendes des tables
 - changer `gris` en `jaune` dans le texte qui explique ce que signifie le texte surligné.
 - supprimer tous les `<!-- -->`
-
+- supprimer les lignes vides des tableaux dus au texte masqué : les
+```<tr class="(.*)">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>```
+sont supprimés (regex).
