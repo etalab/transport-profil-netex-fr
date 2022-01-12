@@ -7,4 +7,4 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/6195302672f589386ea62c91
+      - run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK }}
