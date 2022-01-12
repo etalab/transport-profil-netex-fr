@@ -1020,79 +1020,99 @@ de droite du tableau).
 <tr class="odd">
 <td>Quai de gare (ferré)</td>
 <td><em>aucun</em></td>
-<td><blockquote>
-<p>Ferré</p>
-<p><em>(inclus sous mode Tram-Train (inclus sous mode Tram-Train à interpréter Train-Tram dans ce cas-là))</em></p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Ferré</li>
+    <li><em>(inclus sous mode Tram-Train (inclus sous mode Tram-Train à interpréter Train-Tram dans ce cas-là))</em></li>
+</ul>
+</td>
 </tr>
 <tr class="even">
 <td>Quai de métro</td>
 <td><em>aucun</em></td>
-<td><blockquote>
-<p>Métro</p>
-<p>Funiculaire</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Métro</li>
+    <li>Funiculaire</li>
+</ul>
+</td>
 </tr>
 <tr class="odd">
 <td>Quai de tram</td>
 <td>Arrêt de tram</td>
-<td><blockquote>
-<p>Tram</p>
-<p><em>(inclus sous mode Tram-Train)</em></p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Tram</li>
+    <li><em>(inclus sous mode Tram-Train)</em></li>
+</ul>
+</td>
 </tr>
 <tr class="even">
 <td>Arrêt de tram (poteau)</td>
 <td>Quai de tram</td>
-<td><blockquote>
-<p>Tram</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Tram</li>
+</ul>
+</td>
 </tr>
 <tr class="odd">
 <td>Arrêt de bus, autocar ou trolley (généralement poteau, sans matérialisation de quai)</td>
 <td>Quai de bus, autocar ou trolley</td>
-<td><blockquote>
-<p>Bus</p>
-<p>Car</p>
-<p>Trolley</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Bus</li>
+    <li>Car</li>
+    <li>Trolley</li>
+</ul>
+</td>
 </tr>
 <tr class="even">
 <td>Quai de bus, autocar ou trolley</td>
 <td>Arrêt de bus, autocar ou trolley</td>
-<td><blockquote>
-<p>Bus</p>
-<p>Car</p>
-<p>Trolley</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Bus</li>
+    <li>Car</li>
+    <li>Trolley</li>
+</ul>
+</td>
 </tr>
 <tr class="odd">
 <td>Quai de bateau</td>
 <td>Accostage de ferry</td>
-<td><blockquote>
-<p>Maritime ou Fluvial</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Maritime ou Fluvial</li>
+</ul>
+</td>
 </tr>
 <tr class="even">
 <td>Accostage de ferry</td>
 <td>Quai de bateau</td>
-<td><blockquote>
-<p>Maritime ou Fluvial</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Maritime ou Fluvial</li>
+</ul>
+</td>
 </tr>
 <tr class="odd">
 <td>Quai de téléphérique</td>
 <td><em>aucun</em></td>
-<td><blockquote>
-<p>Transport par câble (télécabine, etc.)</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Transport par câble (télécabine, etc.)</li>
+</ul>
+</td>
 </tr>
 <tr class="even">
 <td>Porte d'aéroport</td>
 <td><em>aucun</em></td>
-<td><blockquote>
-<p>Aérien</p>
-</blockquote></td>
+<td>
+<ul>
+    <li>Aérien</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1468,41 +1488,41 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT et les zones administratives (TOPOGRAPHIC PLACE), et il est alors obligatoire, et sa cardinalité est alors 1:1.</span></p>
 <p><span class="hl">Pour le LIEU D'ARRET Codification permettant de distinguer les:</span></p>
 <ul>
-<li><blockquote>
+<li>
 <p><span class="hl">LIEU D'ARRÊT MONOMODAL </span><br />
 <span class="hl">valeur: monomodalStopPlace</span></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><span class="hl">PÔLE MONOMODAL</span><br />
 <span class="hl">valeur: monomodalHub</span></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><span class="hl">LIEU D'ARRÊT MULTIMODAL</span><br />
 <span class="hl">valeur: multimodalStopPlace</span></p>
-</blockquote></li>
+</li>
 </ul>
 <p><span class="hl">Type de zones administratives françaises (TOPOGRAPHIC PLACE), qui doit être cohérent avec les Topographic-PlaceType (voir ):</span></p>
 <ul>
-<li><blockquote>
+<li>
 <p><span class="hl">RÉGION </span><br />
 <span class="hl">valeur: region</span></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><span class="hl">DÉPARTEMENT </span><br />
 <span class="hl">valeur: department</span></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><span class="hl">GROUPEMENT DE COMMUNES </span><br />
 <span class="hl">valeur: urbanCommunity</span></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><span class="hl">VILLE </span><br />
 <span class="hl">valeur: town</span></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><span class="hl">ARRONDISSEMENT </span><br />
 <span class="hl">valeur: </span><em><strong><span class="hl">district</span></strong></em></p>
-</blockquote></li>
+</li>
 </ul></td>
 </tr>
 </tbody>
@@ -1568,24 +1588,24 @@ la façon suivante:
 <td>0:*</td>
 <td><p>Liste des modes utilisables (il peut donc y en avoir plusieurs) pour accéder à ce <span class="hl">LIEU D'ARRÊT (renseigné uniquement pour les LIEUx D'ARRÊT</span>):</p>
 <ul>
-<li><blockquote>
+<li>
 <p><em><strong>foot</strong></em>: À pied</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>bicycle</strong></em> : En vélo (il y a un garage à vélo ou une station de vélos partagés)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>boat</strong></em> : Bateau</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>car</strong></em> : Voiture (il y a un parking, ou une station d'auto partagée)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>taxi</strong></em> : Taxi (il y a une borne taxi)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>shuttle</strong></em> : Navette (une navette dessert le lieu)</p>
-</blockquote></li>
+</li>
 </ul>
 <p>Note: ne pas confondre avec le mode principal du LIEU D'ARRÊT (on qualifie ici les façons possibles de se rendre au LIEU D'ARRÊT, par exemple "<em>je peux me rendre à la gare en vélo…</em>" sous-entendu, "<em>il y a bien un parking à vélo</em>"…)</p></td>
 </tr>
@@ -1652,21 +1672,21 @@ la façon suivante:
 <td>0:1</td>
 <td><p>Indique par quel public le lieu est utilisable:</p>
 <ul>
-<li><blockquote>
+<li>
 <p><em><strong>disabledPubicOnly</strong></em>: Personnes handicapées uniquement</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>authorisedPublicOnly</strong></em>: Personnes autorisées uniquement</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>staffOnly</strong></em>: Réservé au personnel</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>publicOnly</strong></em>: Réservé au public</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>all</strong></em>: Tout public</p>
-</blockquote></li>
+</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -1909,37 +1929,37 @@ correspondants.
 <td><p>Quai de gare (ferré)</p>
 <p>ou</p>
 <p>zone d'embarquement de véhicules</p></td>
-<td><blockquote>
+<td>
 <p>Ferré</p>
 <p><em>(inclus sous mode Tram-Train à interpréter Train-Tram dans ce cas-là)</em></p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>Station de métro</td>
 <td>Quai de métro</td>
-<td><blockquote>
+<td>
 <p>Métro</p>
 <p>Funiculaire</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td><p>Arrêt de TRAM sur la voirie</p>
 <p><em>ou</em></p>
 <p>Station de TRAM</p></td>
 <td>Quai de tram</td>
-<td><blockquote>
+<td>
 <p>Tram</p>
 <p><em>(inclus sous mode Tram-Train)</em></p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td><p>Arrêt de TRAM sur la voirie</p>
 <p><em>ou</em></p>
 <p>Station de TRAM</p></td>
 <td>Arrêt de tram (poteau)</td>
-<td><blockquote>
+<td>
 <p>Tram</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td><p>Arrêt de bus sur la voirie</p>
@@ -1948,50 +1968,50 @@ correspondants.
 <td><p>Arrêt de bus, autocar ou trolley (généralement poteau, sans matérialisation de quai)</p>
 <p><em>ou</em></p>
 <p>Quai de bus, autocar ou trolley</p></td>
-<td><blockquote>
+<td>
 <p>Bus</p>
 <p>Car</p>
 <p>Trolley</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>Station d'autocars</td>
 <td><p>Arrêt d'autocar</p>
 <p><em>ou</em></p>
 <p>Quai d'autocar</p></td>
-<td><blockquote>
+<td>
 <p>Car</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>Port</td>
 <td>Quai de bateau</td>
-<td><blockquote>
+<td>
 <p>Maritime ou Fluvial</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td><p>Port Ferry</p>
 <p><em>ou</em></p>
 <p>Arrêt simple de Ferry</p></td>
 <td>Accostage de ferry</td>
-<td><blockquote>
+<td>
 <p>Maritime ou Fluvial</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td>Station de téléphérique</td>
 <td>Quai de téléphérique</td>
-<td><blockquote>
+<td>
 <p>Transport par câble (télécabine, etc.)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>Aéroport</td>
 <td>Porte d'aéroport</td>
-<td><blockquote>
+<td>
 <p>Aérien</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2507,48 +2527,48 @@ Aucun champ spécifique utilisé
 <td>0:1</td>
 <td><p>Classification de la zone administrative:</p>
 <ul>
-<li><blockquote>
+<li>
 <p><em><strong>region</strong></em> (RÉGION)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>area</strong></em> (utilisé pour DÉPARTEMENT en France)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>conurbation</strong></em> (utilisé pour GROUPEMENT DE COMMUNE)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>city</strong></em> (VILLE)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>quarter</strong></em> (niveau ARRONDISSEMENT)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>suburb</strong></em> (niveau VILLE)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>town</strong></em> (niveau VILLE)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>district</strong></em> (niveau ARRONDISSEMENT)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>village</strong></em> (niveau VILLE)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>hamlet</strong></em> (niveau VILLE)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>urbanCenter</strong></em> (niveau ARRONDISSEMENT)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>placeOfInterest</strong></em> (niveau ARRONDISSEMENT)</p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>other</strong></em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em><strong>unrecorded</strong></em></p>
-</blockquote></li>
+</li>
 </ul></td>
 </tr>
 <tr class="odd">
