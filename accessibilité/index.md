@@ -1043,22 +1043,29 @@ générique permettant d'indiquer si un LIEU D'ARRÊT (STOP PLACE), une
 ZONE D'EMBARQUEMENT (QUAY), une LIGNE (LINE) ou une COURSE COMMERCIALE
 (SERVICE JOURNEY) permet une accessibilité de type:
 
-![image](media/image2.jpeg)
+
+<img src="media/image2.jpeg" style="width: 100px">
+
 *WheelchairAccess: accessible en fauteuil roulant*
 
-![image](media/image3.png)
+<img src="media/image3.png" style="width: 100px">
+
 *StepFreeAccess: l'accès est possible sans franchissement de marche ou d'escalier*
 
-![image](media/image4.png)
+<img src="media/image4.png" style="width: 100px">
+
 *EscalatorFreeAccess: l'accès est possible sans utiliser d'escalator*
 
-![image](media/image5.png)
+<img src="media/image5.png" style="width: 100px">
+
 *LiftFreeAccess: l'accès est possible sans utiliser d'ascenseur*
 
-![image](media/image6.jpeg)
+<img src="media/image6.jpeg" style="width: 100px">
+
 *AudibleSignalsAvailable: une signalétique auditive est disponible*
 
-![image](media/image7.jpeg)
+<img src="media/image7.jpeg" style="width: 100px">
+
 *VisualSignsAvailable: une signalétique visuelle est disponible*
 
 
