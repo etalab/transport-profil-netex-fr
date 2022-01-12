@@ -964,9 +964,8 @@ La topologie du réseau décrit les lignes et itinéraires permanent du
 réseau de transport, ainsi que les éléments organisationnels qui y sont
 rattachés.
 
-<img src="./md/norme_reseaux//media/image1.wmf" style="width:6.99028in;height:4.90972in" />
-
-Figure 1 – Structure du Réseau *– Modèle conceptuel*
+![image](media/image1.svg)
+*Structure du Réseau – Modèle conceptuel*
 
 Transmodel définit une LIGNE comme un groupe d’ITINERAIREs (ROUTE) qui
 est généralement connu du public sous un nom ou un numéro similaire. Ces
@@ -1355,9 +1354,8 @@ Table 11 – *RouteLink –* Element
 
 ## Les affichages de destination
 
-<img src="./md/norme_reseaux//media/image2.wmf" style="width:6.82431in;height:4.66389in" />
-
-Figure 2 –DESTINATION DISPLAY *– Modèle conceptuel*
+![image](media/image2.svg)
+*DESTINATION DISPLAY – Modèle conceptuel*
 
 Table 12 – *DestinationDisplay –* Element
 
@@ -1557,9 +1555,8 @@ Table 13 – *DestinationDisplayVariant –* Element *(objet inclus)*
 
 ## La flexibilité des lignes (TAD)
 
-<img src="./md/norme_reseaux//media/image3.wmf" style="width:7.60486in;height:3.31111in" />
-
-Figure 3 –Flexible Line *– Modèle conceptuel*
+![image](media/image3.svg)
+*Flexible Line – Modèle conceptuel*
 
 La plupart des objets de bases utilisés pour la description des lignes
 disposent d'une déclinaison dite "flexible" que l'on utilisera en
@@ -1941,9 +1938,8 @@ Table 18 – *FlexibleLinkProperties –* Element *(objet inclus)*
 
 ## Parcours
 
-<img src="./md/norme_reseaux//media/image4.wmf" style="width:7.40694in;height:6.40208in" />
-
-Figure 4 –Service Pattern *– Modèle Conceptuel*
+![image](media/image4.svg)
+*Service Pattern – Modèle Conceptuel*
 
 ### Mission commerciale
 
@@ -2687,9 +2683,8 @@ planification de voyage avec des niveaux de précision dépendant du
 contexte (par défaut, pour une station spécifique, pour un couple
 d'arrêts spécifique), héritant tous du concept TRANSFER.
 
-<img src="./md/norme_reseaux//media/image5.wmf" style="width:7.41806in;height:5.33194in" />
-
-Figure 5 – Correspondances *– Modèle conceptuel*
+![image](media/image5.svg)
+*Correspondances – Modèle conceptuel*
 
 #### Correspondance entre POINT D'ARRÊT PLANIFIÉs
 
@@ -3417,9 +3412,8 @@ Table 33 – *NavigationPath –* Element
 
 ## Contraintes et restrictions (ITL, etc.)
 
-<img src="./md/norme_reseaux//media/image6.wmf" style="width:5.64236in;height:4.96875in" />
-
-Figure 6 – Contraintes et restrictions *– Modèle Conceptuel*
+![image](media/image6.svg)
+*Contraintes et restrictions – Modèle Conceptuel*
 
 ### Contraintes de zone.
 
@@ -3582,9 +3576,8 @@ Cette affection permet de mettre en relation des LIEUx D'ARRÊT ou des
 ZONE D'EMBARQUEMENT (voir profil NeTEx Arrêt et modèle d'arrêt partagé
 de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 
-<img src="./md/norme_reseaux//media/image7.wmf" style="width:6.01667in;height:5.27361in" />
-
-Figure 7 – Passenger Stop Assignment *– Modèle conceptuel*
+![image](media/image7.svg)
+*Passenger Stop Assignment – Modèle conceptuel*
 
 Table 36 — *StopAssignment – Element (abstrait)*
 

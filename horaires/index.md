@@ -781,9 +781,8 @@ signalées dans les en-têtes par le suffixe « *(objet inclus)* ».
 
 ## Les Courses
 
-<img src="./md/norme_horaires//media/image1.wmf" style="width:6.03819in;height:5.34306in" />
-
-Figure 1 – Service Journey *– Modèle conceptuel*
+![image](media/image1.svg)
+*Service Journey – Modèle conceptuel*
 
 Une COURSE (SERVICE JOURNEY) est le mouvement défini d'un véhicule
 utilisant un PARCOURS (JOURNEY PATTERN) spécifiée. Elle défini pour un
@@ -1248,10 +1247,8 @@ Table 3 – *Journey* – Element *(abstrait)*
 
 ### Les heures de passage
 
-<img src="./md/norme_horaires//media/image2.wmf" style="width:7.05972in;height:5.34306in" />
-
-Figure 2 – Vehicle Journey, Passing Times et Interchanges *– Modèle
-conceptuel*
+![image](media/image2.svg)
+*Vehicle Journey, Passing Times et Interchanges – Modèle conceptuel*
 
 Table 4 – *PassingTime* – Element *(objet inclus)*
 
@@ -1455,9 +1452,8 @@ Par exemple : <em><strong>ScheduledStopPointRef, Name, StopType, etc</strong></
 
 ## Les parties de course
 
-<img src="./md/norme_horaires//media/image3.wmf" style="width:6.70139in;height:4.66389in" />
-
-Figure 3 – Journey Parts et Trains *– Modèle conceptuel*
+![image](media/image3.svg)
+*Journey Parts et Trains – Modèle conceptuel*
 
 Les PARTIEs DE COURSE seront généralement spécifiques au mode ferré.
 
@@ -1560,9 +1556,8 @@ les services en fréquence (on ne décrit alors qu'une course qui sera
 répétée à intervalle régulier) ou en cadences (on décrit alors toutes
 les courses passant dans un créneau d'une heure).
 
-<img src="./md/norme_horaires//media/image4.wmf" style="width:6.73333in;height:4.15069in" />
-
-Figure 4 – Template Service Journey *– Modèle conceptuel*
+![image](media/image4.svg)
+*Template Service Journey – Modèle conceptuel*
 
 <span class="hl">Pour les courses en fréquence le calcul du temps de
 parcours sera réalisé par simple différence des heures de départs
@@ -1723,9 +1718,8 @@ Table 13 – *RhythmicalJourneyGroup* – Element
 
 ## Les Courses couplées
 
-<img src="./md/norme_horaires//media/image5.wmf" style="width:5.63194in;height:3.88819in" />
-
-Figure 5 – Courses coupléed *– Modèle conceptuel*
+![image](media/image5.svg)
+*Courses coupléed – Modèle conceptuel*
 
 Table 14 – *CoupledJourney* – Element
 
@@ -2083,9 +2077,8 @@ Table 19 – TrainComponentLabelAssignment – Element
 
 ## Type de véhicule
 
-<img src="./md/norme_horaires//media/image6.wmf" style="width:3.47153in;height:3.44444in" />
-
-Figure 6 – Type de Vehicule et Trains *– Modèle Conceptuel*
+![image](media/image6.svg)
+*Type de Vehicule et Trains – Modèle Conceptuel*
 
 Table 20 — *VehicleType – Element*
 

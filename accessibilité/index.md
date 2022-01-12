@@ -1217,9 +1217,8 @@ soit qu'ils ne sont juste pas retenus par le profil). Ils restent
 toutefois présents dans les schémas car ils sont indispensables à la
 bonne compréhension des schémas.
 
-<img src="./md/norme_accessibilité//media/image1.wmf" style="width:1.375in;height:1.89375in" />
-
-Figure 1 — *Exemple de classe abstraite ou non retenue*
+![image](media/image1.svg)
+*Exemple de classe abstraite ou non retenue*
 
 De plus les schémas UML conserve les noms des classes en anglais (non
 traduit) car c'est sous cette domination que les objets présentés se
@@ -1228,7 +1227,9 @@ l'implémentation et les échanges.
 
 ## Rappel du modèle de base des autres profils
 
-<img src="./md/norme_accessibilité//media/image2.jpeg" style="width:0.42569in;height:0.42569in" />Les
+![image](media/image2.jpeg)
+
+Les
 profils précédents (Éléments Communs, Arrêts, Réseau et Horaires)
 proposent déjà une information de base sur l'accessibilité (le principe
 en est rappelé par le schéma ci-dessous). Il s'agit d'une information
@@ -1236,22 +1237,22 @@ générique permettant d'indiquer si un LIEU D'ARRÊT (STOP PLACE), une
 ZONE D'EMBARQUEMENT (QUAY), une LIGNE (LINE) ou une COURSE COMMERCIALE
 (SERVICE JOURNEY) permet une accessibilité de type:
 
--   <img src="./md/norme_accessibilité//media/image3.png" style="width:0.48681in;height:0.48681in" />*WheelchairAccess*:
-    accessible en fauteuil roulant
+- ![image](media/image3.png)
+*WheelchairAccess: accessible en fauteuil roulant*
 
--   <img src="./md/norme_accessibilité//media/image4.png" style="width:0.5in;height:0.375in" />*StepFreeAccess*:
-    l'accès est possible sans franchissement de marche ou d'escalier
+- ![image](media/image4.png)
+*StepFreeAccess: l'accès est possible sans franchissement de marche ou d'escalier*
 
--   <img src="./md/norme_accessibilité//media/image5.png" style="width:0.27847in;height:0.44236in" />*EscalatorFreeAccess*:
-    l'accès est possible sans utiliser d'escalator
+- ![image](media/image5.png)
+*EscalatorFreeAccess*: l'accès est possible sans utiliser d'escalator
 
--   <img src="./md/norme_accessibilité//media/image6.jpeg" style="width:0.47778in;height:0.47778in" />*LiftFreeAccess*:
-    l'accès est possible sans utiliser d'ascenseur
+- ![image](media/image6.jpeg)
+*LiftFreeAccess: l'accès est possible sans utiliser d'ascenseur*
 
--   <img src="./md/norme_accessibilité//media/image7.jpeg" style="width:0.50208in;height:0.50208in" />*AudibleSignalsAvailable*:
-    une signalétique auditive est disponible
+- ![image](media/image7.jpeg)
+*AudibleSignalsAvailable: une signalétique auditive est disponible*
 
--   *VisualSignsAvailable*: une signalétique visuelle est disponible
+- *VisualSignsAvailable*: une signalétique visuelle est disponible
 
 Cela correspond, dans les grandes lignes aux principaux pictog rammes
 d'accessibilité classiquement rencontrés. Les valeurs potentiellement
@@ -1286,9 +1287,8 @@ qui se limite à fournir des attributs techniques (leur traduction
 visuelle, sonore ou tactile reste à la discrétion et à la charge des
 médias de présentation en final).
 
-<img src="./md/norme_accessibilité//media/image8.wmf" style="width:5.38056in;height:4.90972in" />
-
-Figure 2 — *Accessibilité des profils précédents*
+![image](media/image8.svg)
+*Accessibilité des profils précédents*
 
 Toutefois, cela correspond à une information globale et synthétique,
 mais qui dans de nombreuses situations manquera des précisions, d'une
@@ -1333,9 +1333,8 @@ profil pour l'accessibilité, mais uniquement avec un sous ensemble des
 codes disponibles, et ne devra être utilisée que par les acteurs ne
 disposant pas de la possibilité de décrire les équipements disponibles.
 
-<img src="./md/norme_accessibilité//media/image9.wmf" style="width:6.13472in;height:3.92014in" />
-
-Figure 3 — SERVICES DISPONIBLES
+![image](media/image9.svg)
+*SERVICES DISPONIBLES*
 
 SERVICES DISPONIBLES (FACILITY SET) contient une liste de services et
 peut se spécialiser en SERVICES SUR SITE (SITE FACILITY SET) et SERVICES
@@ -1343,9 +1342,8 @@ A BORD (SERVICE FACILITY) qui lui-même se spécialise en SERVICE
 D'INSTALLATION (ACCOMODATION, qui décrit le type de siège, couchette,
 etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 
-<img src="./md/norme_accessibilité//media/image10.wmf" style="width:6.24167in;height:9.59931in" />
-
-Figure 4 — SERVICES DISPONIBLES – détail des énumérations
+![image](media/image10.svg)
+*SERVICES DISPONIBLES – détail des énumérations*
 
 Table 2 — *FacilitySet – Element*
 
@@ -1612,9 +1610,8 @@ Le schéma UML ci-dessous présente la structure des ÉQUIPEMENTs. Il
 propose deux spécialisations: SERVICE LOCAL (LOCAL SERVICE) et
 ÉQUIPEMENT INSTALLÉ (INSTALLED EQUIPMENT).
 
-<img src="./md/norme_accessibilité//media/image11.wmf" style="width:7.08611in;height:3.03819in" />
-
-Figure 5 — Structure générique des ÉQUIPEMENT
+![image](media/image11.svg)
+*Structure générique des ÉQUIPEMENT*
 
 L'ÉQUIPEMENT INSTALLÉ (INSTALLED EQUIPMENT) peut luis même être
 spécialisé en ÉQUIPEMENT DE LIEN (PLACE EQUIPMENT), ÉQUIPEMENT POUR
@@ -1787,9 +1784,8 @@ donc pas tous les besoins du profil.*
 Toutefois les tableaux d'attributs des équipements ne sont fournis qu'en
 annexe pour ne pas trop alourdir le document.
 
-<img src="./md/norme_accessibilité//media/image12.wmf" style="width:7.08611in;height:6.84583in" />
-
-Figure 6 — Liste détaillée des ÉQUIPEMENTs
+![image](media/image12.svg)
+*Liste détaillée des ÉQUIPEMENTs*
 
 Parmi tous ces équipements, certains sont plus particulièrement dédiés à
 l'accessibilité. Dans le cadre du présent profil pour l'accessibilité,
@@ -1827,9 +1823,8 @@ Table 11 – Résumé des principaux équipements dédiés à l'accessibilité
 | **Local Service** | Customer            | ***AssistanceService** (service d’assistance)*                             | Aide à l’abarquement et autres aides disponibles.                                                          |
 |                   |                     | ***MeetingpointService** (point de rendez-vous)*                           |                                                                                                            |
 
-<img src="./md/norme_accessibilité//media/image12.wmf" style="width:4.17153in;height:2.98472in" />
-
-Figure 7 — ÉQUIPEMENTs de lieux
+![image](media/image12-1.png)
+*ÉQUIPEMENTs de lieux*
 
 Les ÉQUIPEMENTs DE LIEU sont les suivants (voir en annexe pour la
 sélection du profil):
@@ -1857,9 +1852,8 @@ sélection du profil):
 Quand nécessaire, la description d'une rampe (escalier, etc.) peut être
 associée à l'équipement.
 
-<img src="./md/norme_accessibilité//media/image12.wmf" style="width:6.28403in;height:6.06458in" />
-
-Figure 8 — ÉQUIPEMENTs pour les passagers, de site et de signalisation
+![image](media/image12-2.png)
+*ÉQUIPEMENTs pour les passagers, de site et de signalisation*
 
 Les ÉQUIPEMENTs proposés par NeTEx pour les passagers sont les suivants
 (voir en annexe pour la sélection du profil):
@@ -1901,9 +1895,8 @@ la sélection du profil):
 
 -   Affichage et indicateurs (GENERAL SIGN)
 
-<img src="./md/norme_accessibilité//media/image12.wmf" style="width:4.61042in;height:4.61597in" />
-
-Figure 9 — SERVICE LOCAL
+![image](media/image12-3.png)
+*SERVICE LOCAL*
 
 Les SERVICE LOCAUX sont les suivants (voir en annexe pour la sélection
 du profil):
@@ -1964,16 +1957,14 @@ partager des SEQUENCES DE TRONÇONS entre plusieurs CHEMINEMENTs).
 
 La figure ci-dessous en donne une illustration.
 
-<img src="./md/norme_accessibilité//media/image13.png" style="width:7.09375in;height:3.41319in" />
-
-Figure 10 — vue schématiques des CHEMINEMENTs
+![image](media/image13.png)
+*vue schématiques des CHEMINEMENTs*
 
 Le schéma UML ci-dessous décrit la structure des cheminements dans NeTEx
 (et Transmodel).
 
-<img src="./md/norme_accessibilité//media/image14.wmf" style="width:7.05972in;height:5.04861in" />
-
-Figure 11 — Structure générique des CHEMINEMENTs
+![image](media/image14.svg)
+*Structure générique des CHEMINEMENTs*
 
 On notera, en plus des concepts introduits plus haut, la notion de
 JONCTION DE TRONÇON (PATH JUNCTION) qui permet de créer de "carrefours"
@@ -1983,9 +1974,8 @@ TRONÇON, en plus de pouvoir être associés à un ÉLÉMENT DE SITE peuvent
 exemple) est aussi plus explicitement à une entrée du SITE ou du LIEU
 D'ARRÊT.
 
-<img src="./md/norme_accessibilité//media/image15.wmf" style="width:7.02222in;height:6.04375in" />
-
-Figure 12 — Liens entre CHEMINEMENTs et ÉQUIPEMENTs
+![image](media/image15.svg)
+*Liens entre CHEMINEMENTs et ÉQUIPEMENTs*
 
 Le schéma ci-dessus reprend le précédent et se concentre sur la relation
 entre les CHEMINEMENTs et les ÉQUIPEMENTs: cette relation est en effet
@@ -1993,9 +1983,8 @@ cruciale dans le contexte de l'accessibilité et permet de bien situer
 les différents ÉQUIPEMENTs sur le parcours du voyageur. Cette relation
 passe là aussi par l'ÉLÉMÉNT DE SITE.
 
-<img src="./md/norme_accessibilité//media/image16.wmf" style="width:7.08125in;height:7.87778in" />
-
-Figure 13 — CHEMINEMENTs pour les correspondances
+![image](media/image16.svg)
+*CHEMINEMENTs pour les correspondances*
 
 Enfin, le schéma ci-dessus montre comment les CHEMINEMENTs sont affecté
 aux correspondances: deux solution sont possible dans NeTEx, mais le
@@ -2897,7 +2886,8 @@ Element
 </tbody>
 </table>
 
-Figure 14 – TypeOfFrame *– XSD*
+![image](media/image17.svg)
+*TypeOfFrame – XSD*
 
 1.  (normative)  
     11915  
