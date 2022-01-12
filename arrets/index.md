@@ -1365,32 +1365,6 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 </tr>
 <tr class="odd">
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
 <td>Weighting</td>
 <td>InterchangeUseEnum</td>
 <td>0:1</td>
@@ -1420,33 +1394,6 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><em>Quay</em></td>
 <td>0:*</td>
 <td>Liste des identifiants <span class="hl">(le profil fait le choix de définir les ZONEs D’EMBARQUEMENT indépendaemment et de les référencer)</span> des ZONEs D'EMBARQUEMENT contenues dans le LIEU <span class="hl">(exclusivement pour les LIEUx D'ARRÊT de type LIEUX D'ARRÊT MONOMODAL).</span></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -1537,9 +1484,8 @@ la façon suivante:
 
 <div class="table-title">AddressablePlace – Element (abstrait)</div>
 
-|                     |                     |                       |       |                                    |
-|---------------------|---------------------|-----------------------|-------|------------------------------------|
 | **Classifi­cation** | **Nom**             | **Type**              |       | **Description**                    |
+|---------------------|---------------------|-----------------------|-------|------------------------------------|
 | *::>*               | *::>*               | *ADDRESSABLE* *PLACE* | *::>* | ADDRESSABLE PLACE hérite de PLACE. |
 |                     | ***Url***           | *xsd:anyURI*          | 0:1   | Url d'information associée au lieu |
 |                     | ***Image***         | *xsd:anyURI*          | 0:1   | Image et photo du lieu (en ligne)  |
@@ -1609,13 +1555,7 @@ la façon suivante:
 </ul>
 <p>Note: ne pas confondre avec le mode principal du LIEU D'ARRÊT (on qualifie ici les façons possibles de se rendre au LIEU D'ARRÊT, par exemple "<em>je peux me rendre à la gare en vélo…</em>" sous-entendu, "<em>il y a bien un parking à vélo</em>"…)</p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>alternativeNames</strong></em></td>
@@ -1728,27 +1668,9 @@ la façon suivante:
 <li><p><em><strong>unknown</strong></em>: Information non connue</p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 </tbody>
 </table>
 
@@ -1779,13 +1701,7 @@ la façon suivante:
 <td><em>::></em></td>
 <td>SITE hérite de SITE ÉLÉMENT.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>TopographicPlaceRef</strong></em></td>
@@ -1801,13 +1717,7 @@ la façon suivante:
 <td><p>Un <span class="hl">LIEU D'ARRÊT</span> peut avoir des composants dans plusieurs communes d’où la cardinalité : ce champ permet de référencer toutes ces zones administratives (la précédente étant la principale).</p>
 <p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>Locale</strong></em></td>
@@ -1836,20 +1746,8 @@ la façon suivante:
 <p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</span></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>levels</strong></em></td>
@@ -1871,13 +1769,7 @@ la façon suivante:
 <td><p>Lien vers les entrées du LIEU (référence des ACCÈS)</p>
 <p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -2020,9 +1912,8 @@ correspondants.
 
 <div class="table-title">GroupOfStopPlaces - Element</div>
 
-|                     |                        |                           |                  |                                                                              |
-|---------------------|------------------------|---------------------------|------------------|------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**               | **Type**                  | **Cardin­alité** | **Description**                                                              |
+|---------------------|------------------------|---------------------------|------------------|------------------------------------------------------------------------------|
 | ::>                 | ::>                    | *<u>GroupOfEntities</u>*  | ::>              | ***GroupOfStopPlaces*** hérite de ***GroupOfEntities***                      |
 | «PK»                | ***id***               | *GroupOfStopPlacesIdType* | 1:1              | Identifiant du GROUP of STOP PLACEs.                                         |
 | «cntd»              | ***members***          | *StopPlaceRef*            | 0:\*             | STOP PLACEs composant le GROUP of STOP PLACEs.                               |
@@ -2102,20 +1993,8 @@ Element
 <td>0:1</td>
 <td>Code inscrit sur la plaquette ou le sticker de l'arrêt</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td>QUAY DESCRIPTOR GROUP</td>
 <td><em><strong>CompassBearing</strong></em></td>
@@ -2123,13 +2002,7 @@ Element
 <td>0:1</td>
 <td>Orientation de la voie, en degrés (au niveau de la ZONE D'EMBARQUEMENT).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>QuayType</strong></em></td>
@@ -2159,26 +2032,16 @@ Element
 <td>0:1</td>
 <td>Référence au parent de QUAY qui le contient entièrement. (permet de subdiviser les quais et de gérer les relations quai-voies à quai par exemple).</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
 <div class="table-title">Espace de Lieu d’Arrêt – Element (abstrait)</div>
 
-|                    |          |                        |                 |                                            |
-|--------------------|----------|------------------------|-----------------|--------------------------------------------|
 | **Classification** | **Name** | **Type**               | **Cardinality** | **Description**                            |
+|--------------------|----------|------------------------|-----------------|--------------------------------------------|
 | *::>*              | *::>*    | *<u>SiteComponent</u>* | *::>*           | STOP PLACE SPACE hérite de SITE COMPONENT. |
-|                    |          |                        |                 |                                            |
-|                    |          |                        |                 |                                            |
 |                    | Label    | xsd:normalizedString   | 0:1             | Label associé à l’espace                   |
-|                    |          |                        |                 |                                            |
 
 ### Attributs SiteComponent
 
@@ -2225,41 +2088,11 @@ Element
 <td>0:1</td>
 <td>Niveau (étages) du lieu d'arrêt auquel se situe la ZONE D'EMBARQUEMENT ou l'ACCÈS. Il est identifié par son nom : cela peut être "<strong>1</strong>", "<strong>A</strong>", "<strong>Banlieue</strong>", etc.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
+
 </tbody>
 </table>
 
@@ -2308,13 +2141,7 @@ Element
 <td><p>Sous mode associé au mode (caractérise le type d’exploitation). Les sous modes sont des énumérés dont les valeurs sont présentées en 7.2.10.</p>
 <p><span class="hl">Il faut noter le cas particulier du Tram-Train qui, bien qu'étant classé en sous-mode du TRAM, peut aussi être utilisé en sous-mode du Ferré.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>tariffZones</strong></em></td>
@@ -2455,13 +2282,7 @@ Element
 <td>0:1</td>
 <td>Marche abaissée à l’entrée (à mettre à false pour indiquer une marche)</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -2513,13 +2334,7 @@ Aucun champ spécifique utilisé
 <p>Le nom de la Zone Administrative est un des attributs de cette structure, ce qui explique son caractère obligatoire.</p>
 <p><em><span class="hl">Note: le nom peut aussi apparaître dans l'attribut </span><strong><span class="hl">name</span></strong><span class="hl"> hérité de </span><strong><span class="hl">GroupOfEntities</span></strong><span class="hl"> où il n'est pas obligatoire. Si les deux noms sont renseignés, ils doivent naturellement être identiques (si ce n'était pas le cas, celui obligatoire du </span><strong><span class="hl">Descriptor</span></strong><span class="hl"> prévaut)</span></em></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>Topographic­PlaceType</strong></em></td>
@@ -2571,13 +2386,7 @@ Aucun champ spécifique utilisé
 </li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>PostCode</strong></em></td>
@@ -2612,13 +2421,7 @@ Aucun champ spécifique utilisé
 <p><span class="hl">• une VILLE est contenue dans un DÉPARTEMENT (et PAS dans GROUPEMENT DE COMMUNES: voir containedIn plus bas)</span></p>
 <p><span class="hl">• un ARRONDISSEMENT est contenu dans VILLE</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>containedIn</strong></em></td>
@@ -2626,13 +2429,7 @@ Aucun champ spécifique utilisé
 <td>0:*</td>
 <td><span class="hl">Ce champs est utilisé pour les VILLEs uniquement et permet d'indiquer que la VILLE fait aussi partie d'un GROUPEMENT DE COMMUNES).</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -2672,13 +2469,7 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 <td>::></td>
 <td>TOPOGRAPHIC PLACE DESCRIPTOR hérite de VERSIONED CHILD.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td>Name</td>
@@ -2686,13 +2477,7 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 <td>1:1</td>
 <td>Nom du descripteur</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>QualifierName</strong></em></td>
@@ -2701,13 +2486,7 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 <td><p>Nom utilisé pour distinguer le TOPOGRAPHIC PLACE d’autres lieux similaires portant le même nom. Ce texte ne doit pas être inclus dans le nom mais peut être ajouté par les applications en fonction du contexte.</p>
 <p>Le qualificatif doit être dans la même langue que le nom <span class="hl">(Français pour le profil)</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -2715,13 +2494,11 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 
 <div class="table-title">TariffZone– Element</div>
 
-|                    |                    |                       |                 |                                                         |
-|--------------------|--------------------|-----------------------|-----------------|---------------------------------------------------------|
 | **Classification** | **Name**           | **Type**              | **Cardinality** | **Description**                                         |
+|--------------------|--------------------|-----------------------|-----------------|---------------------------------------------------------|
 | ::>                | ::>                | *<u>Zone</u>*         | ::>             | ZONE TARIFAIRE.hérite de ZONE.                          |
 |                    | id                 | TariffZoneIdType      | 1:1             | Identifiand de la ZONE TARIFAIRE.                       |
 | «cntd»             | ***Presentation*** | *<u>Presentation</u>* | 0:1             | Informations de présentation associées (couleurs, etc.) |
-|                    |                    |                       |                 |                                                         |
 
 # Entêtes NeTEx
 
@@ -2763,20 +2540,8 @@ les éléments ***members*** du ***GeneralFrame***.
 <td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
 <p><span class="hl">L'Id est imposé à NETEX_ARRET</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>classes</strong></em></td>
@@ -2800,20 +2565,8 @@ les éléments ***members*** du ***GeneralFrame***.
 <li><p><span class="hl">GENERAL GROUP OF ENTITIES</span></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -2858,14 +2611,6 @@ les éléments ***members*** du ***GeneralFrame***.
 <p><span class="hl">Imposé à « NETEX ARRET</span> <span class="hl">»</span>.</p></td>
 <td></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="even">
 <td></td>
 <td><em><strong>Description</strong></em></td>
@@ -2873,30 +2618,6 @@ les éléments ***members*** du ***GeneralFrame***.
 <td>1:1</td>
 <td><p>Description du TYPE OF VALUE.</p>
 <p><span class="hl">Imposé à « Profil d’échange français NETEX ARRET»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 </tbody>
