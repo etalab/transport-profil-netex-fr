@@ -1079,13 +1079,13 @@ portées par chacun de ces indicateurs sont: ***Oui***, ***Non***,
 
 "***Partiel***" peut vouloir dire plusieurs choses :
 
-\- partiel au niveau temporel (par exemple : pas toujours accessible
+* partiel au niveau temporel (par exemple : pas toujours accessible
 UFR si le service d'accompagnement est limité aux jours de semaine)
 
--partiel au niveau de l'objet/géographique (par exemple: pour une
+* partiel au niveau de l'objet/géographique (par exemple: pour une
 gare, accès possibles pour les UFR uniquement sur certains quais)
 
-\- partiel par rapport à l'étendu du service (par exemple:
+* partiel par rapport à l'étendu du service (par exemple:
 signalétique auditive en cas de perturbations mais pas d'annonces pour
 les prochains passages)
 
@@ -1099,7 +1099,7 @@ comment l'information doit être interprétée. Le champ contiendra un
 texte libre susceptible d'être présenté au public en complément des
 indicateurs ci-dessus.</span>
 
-Note: les pictogrammes ne sont présentés ici qu'à titre d'illustration
+**Note** : les pictogrammes ne sont présentés ici qu'à titre d'illustration
 et ne correspondent en aucun cas à une représentation portée par NeTEX
 qui se limite à fournir des attributs techniques (leur traduction
 visuelle, sonore ou tactile reste à la discrétion et à la charge des
@@ -1153,183 +1153,166 @@ etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 
 <div class="table-title">FacilitySet – Element</div>
 
-|                     |                       |                     |                  |                                                                                                                                                                                                                    |
-|---------------------|-----------------------|---------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**              | **Type**            | **Cardin­ality** | **Description**                                                                                                                                                                                                    |
-| ::>                 | ::>                   | *DataManagedObject* | ::>              | FACILITY SET hérite de DATA MANAGED OBJECT.                                                                                                                                                                        |
-| «PK»                | id                    | FacilitySetIdType   | 1:1              | Identifiant du FACILITY SET.                                                                                                                                                                                       |
-|                     | ***ProvidedByRef***   | OrganisationRef     | 1:0              | ORGANISATIOMN en charge de proposer le FACILITY SET.                                                                                                                                                               |
-|                     | Description           | MultilingualString  | 0:1              | Description du FACILITY SET.                                                                                                                                                                                       |
-|                     |                       |                     |                  |                                                                                                                                                                                                                    |
-|                     |                       |                     |                  |                                                                                                                                                                                                                    |
-| «cntd»              | (CommonFacilityGroup) | xxxFacilitList      | 0:\*             | FACILITIEs sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les FACILITY SETs. Il existe d'autres FACILITIEs spécifiques aux SERVICE FACILITY SET et SITE FACILITY SET. |
+
+| **Classifi­cation** | **Name** | **Type** | **Cardin­ality** | **Description** |
+|--|--|--|--|--|
+| ::> | ::> | *DataManagedObject* | ::> | FACILITY SET hérite de DATA MANAGED OBJECT. |
+| «PK» | id | FacilitySetIdType | 1:1 | Identifiant du FACILITY SET. |
+| | ***ProvidedByRef*** | OrganisationRef | 1:0 | ORGANISATIOMN en charge de proposer le FACILITY SET. |
+| | Description | MultilingualString | 0:1 | Description du FACILITY SET. |
+| «cntd» | (CommonFacilityGroup) | xxxFacilitList | 0:\* | FACILITIEs sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les FACILITY SETs. Il existe d'autres FACILITIEs spécifiques aux SERVICE FACILITY SET et SITE FACILITY SET. |
 
 <div class="table-title">ServiceFacilitySet – Element</div>
 
-|                     |                             |                            |                  |                                                                                                                                                               |
-|---------------------|-----------------------------|----------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**                    | **Type**                   | **Cardin­ality** | **Description**                                                                                                                                               |
-| ::>                 | ::>                         | *FacilitySet*              | ::>              | SERVICE FACILITY SET inherite de FACILITY SET.                                                                                                                |
-| «PK»                | id                          | *ServiceFacilitySetIdType* | 1:1              | Identifiant du SERVICE FACILITY SET.                                                                                                                          |
-| «cntd»              | ***ServiceFacility­Group*** | xxx*FacilityList*          | 0:\*             | SERVICE FACILITies au sein d’n SERVICE FACILITY SET définit en tant que listes de valeurs énumérées. Il existe des spécificités pour le SERVICE FACILITY SET. |
-| «cntd»              | ***accommodations***        | *accommodations*           | 0:1              | Accommodations (couchette, etc.) disponibles.                                                                                                                 |
-| «cntd»              | ***onboardStays***          | *onboardStays*             | 0:1              | Autorisations de rester à bord.                                                                                                                               |
+| **Classifi­cation** | **Name** | **Type** | **Cardin­ality** | **Description** |
+|-|-|-|-|-|
+| ::> | ::> | *FacilitySet* | ::> | SERVICE FACILITY SET inherite de FACILITY SET. |
+| «PK» | id | *ServiceFacilitySetIdType* | 1:1 | Identifiant du SERVICE FACILITY SET. |
+| «cntd» | ***ServiceFacility­Group*** | xxx*FacilityList* | 0:\* | SERVICE FACILITies au sein d’n SERVICE FACILITY SET définit en tant que listes de valeurs énumérées. Il existe des spécificités pour le SERVICE FACILITY SET. |
+| «cntd» | ***accommodations*** | *accommodations* | 0:1 | Accommodations (couchette, etc.) disponibles. |
+| «cntd» | ***onboardStays*** | *onboardStays* | 0:1 | Autorisations de rester à bord. |
 
 <div class="table-title">SiteFacilitySet – Element</div>
 
-|                     |                      |                       |               |                  |                                                                                                                                              |
-|---------------------|----------------------|-----------------------|---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**             |                       | **Type**      | **Cardin­ality** | **Description**                                                                                                                              |
-| ::>                 | ::>                  |                       | *FacilitySet* | ::>              | SITE FACILITY SET hérite de FACILITY SET.                                                                                                    |
-| «PK»                | id                   | SiteFacilitySetIdType |               | 1:1              | Identifiant du SITE FACILITY SET.                                                                                                            |
-| «cntd»              | *SiteFacility­Group* | xxxFacilityList       |               | 0:\*             | SITE FACILITies dans SITE FACILITY SET défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le SITE FACILITY SET. |
+| **Classifi­cation** | **Name** | | **Type**  | **Cardin­ality** | **Description**  |
+|-|-|-|-|-|-|
+| ::> | ::>  | | *FacilitySet* | ::>  | SITE FACILITY SET hérite de FACILITY SET.  |
+| «PK»  | id | SiteFacilitySetIdType | | 1:1  | Identifiant du SITE FACILITY SET.  |
+| «cntd»  | *SiteFacility­Group* | xxxFacilityList | | 0:\* | SITE FACILITies dans SITE FACILITY SET défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le SITE FACILITY SET. |
 
 <div class="table-title">Accommodation – Element</div>
 
-|                     |                                  |                                            |                  |                                         |
-|---------------------|----------------------------------|--------------------------------------------|------------------|-----------------------------------------|
-| **Classifi­cation** | **Name**                         | **Type**                                   | **Cardin­ality** | **Description**                         |
-|                     | ***Name***                       | *MultilingualString*                       | 0:1              | Nom de l’accomodation                   |
-|                     |                                  |                                            |                  |                                         |
-|                     |                                  |                                            |                  |                                         |
-|                     | Accommodation­Facility           | AccommodationFacility­Enum                 | 0:1              | Type d'accommodation                    |
-|                     |                                  |                                            |                  |                                         |
-|                     |                                  |                                            |                  |                                         |
-|                     |                                  |                                            |                  |                                         |
-|                     |                                  |                                            |                  |                                         |
-|                     | ToiletFacility                   | SanitaryFacilityEnum                       | 0:1              | Type de tyoilette pour l’ACCOMMODATION. |
-|                     |                                  |                                            |                  |                                         |
-|                     |                                  |                                            |                  |                                         |
-|                     | ***PassengerCommsFacilityList*** | *PassengerCommsFacilityListOfEnumerations* | 0:1              | Listes des services de communication.   |
+| **Classifi­cation** | **Name** | **Type** | **Cardin­ality** | **Description** |
+|-|-|-|-|-|
+| | ***Name*** | *MultilingualString* | 0:1  | Nom de l’accomodation |
+| | Accommodation­Facility | AccommodationFacility­Enum | 0:1  | Type d'accommodation  |
+| | ToiletFacility | SanitaryFacilityEnum | 0:1  | Type de tyoilette pour l’ACCOMMODATION. |
+| | ***PassengerCommsFacilityList*** | *PassengerCommsFacilityListOfEnumerations* | 0:1  | Listes des services de communication. |
 
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
 
 Les SERVICES DISPONIBLES communs à toutes ses spécialisations et <span
 class="hl">retenu dans le cadre du profil sont les suivants</span>:
 
 ***<u>-Information d'accessibilité</u>***
 
-*audioInformation (information audio)*
+* *audioInformation (information audio)*
 
-*audioForHearingImpaired (information audio adaptée pour le
+* *audioForHearingImpaired (information audio adaptée pour le
 malentendants)*
 
-*visualDisplays (écran d’affichage)*
+* *visualDisplays (écran d’affichage)*
 
-*displaysForVisuallyImpaired (écran d’affichage adapté pour les mal
+* *displaysForVisuallyImpaired (écran d’affichage adapté pour les mal
 voyants)*
 
-*largePrintTimetables (grand panneau d’affichage)*
+* *largePrintTimetables (grand panneau d’affichage)*
 
 ***<u>-Assistance</u>***
 
-*personalAssistance (assistance personalisé)*
+* *personalAssistance (assistance personalisé)*
 
-*boardingAssistance (assistance à l’embarquement)*
+* *boardingAssistance (assistance à l’embarquement)*
 
-*wheechairAssistance (assistance pour les fauteils roulants)*
+* *wheechairAssistance (assistance pour les fauteils roulants)*
 
-*unaccompaniedMinorAssistance (assistance pour les mineurs non
+* *unaccompaniedMinorAssistance (assistance pour les mineurs non
 accompagnés)*
 
-*conductor (chef de train ou de station disponible)*
+* *conductor (chef de train ou de station disponible)*
 
-*information (information disponible)*
+* *information (information disponible)*
 
 ***<u>-A disposition pour l'accessibilité</u>***
 
-*wheelchair (fauteils roulants disponibles)*
+* *wheelchair (fauteils roulants disponibles)*
 
-*walkingstick (cannes disponibles)*
+* *walkingstick (cannes disponibles)*
 
-*audioNavigator (navigateurs audios disponibles)*
+* *audioNavigator (navigateurs audios disponibles)*
 
-*visualNavigator (navigateurs visuels disponibles)*
+* *visualNavigator (navigateurs visuels disponibles)*
 
-*passengerCart (caddies disponibles)*
+* *passengerCart (caddies disponibles)*
 
-*pushchair (poussettes disponibles)*
+* *pushchair (poussettes disponibles)*
 
-*umbrella (parapluies disponibles)*
+* *umbrella (parapluies disponibles)*
 
 ***<u>-Famille</u>***
 
-*servicesForChildren (services et activités pour les enfants)*
+* *servicesForChildren (services et activités pour les enfants)*
 
-*nurseryService (service de garderie)*
+* *nurseryService (service de garderie)*
 
-***<u>-Mobilité/Accessibilité</u>**lowFloor (plancher bas)*
+***<u>-Mobilité/Accessibilité</u>***
 
-*stepFreeAccess (accès sans marches)*
+* *lowFloor (plancher bas)*
 
-*suitableForWheelchairs (adapté aux fauteuils roulants)*
+* *stepFreeAccess (accès sans marches)*
 
-*(adapté aux handicaps lourds <span class="hl">note : prendre contact
+* *suitableForWheelchairs (adapté aux fauteuils roulants)*
+
+* *(adapté aux handicaps lourds <span class="hl">note : prendre contact
 avec le gestionnaire pour plus de précisions</span>)boardingAssistance
 (assistance à l’embarquement)*
 
-*onboardAssistance (assistance à bord)*
+* *onboardAssistance (assistance à bord)*
 
-*tactilePlatformEdges (marquace podotactile sur le bord des quais)*
+* *tactilePlatformEdges (marquace podotactile sur le bord des quais)*
 
-*tactileGuidingStrips (bandes de guidage podotactiles)*
+* *tactileGuidingStrips (bandes de guidage podotactiles)*
 
 ***<u>-Loisir</u>***
 
-*freeWifi (Wifi gratuit)*
+* *freeWifi (Wifi gratuit)*
 
-*publicWifi (Wifi public)*
+* *publicWifi (Wifi public)*
 
-*internet (accès Internet disponible)*
+* *internet (accès Internet disponible)*
 
 ***<u>-Information Voyageur</u>***
 
-*informationDesk (comptoir d’information voyageur)*
+* *informationDesk (comptoir d’information voyageur)*
 
-*realTimeDepartures (horaires de départ temps-réel)*
+* *realTimeDepartures (horaires de départ temps-réel)*
 
-***<u>-Dispositif d'information voyageur</u>***
+**<u>-Dispositif d'information voyageur</u>***
 
-*nextStopIndicator (indicateur de prochain arrêt)*
+* *nextStopIndicator (indicateur de prochain arrêt)*
 
-*stopAnnouncements (annonce des arrêts)*
+* stopAnnouncements (annonce des arrêts)*
 
-*passengerInformationDisplay (affichage pour l’inforamtion voyageur)*
+* *passengerInformationDisplay (affichage pour l’inforamtion voyageur)*
 
-*realTimeConnections (information temps-réel sur les correspondances)*
+* *realTimeConnections (information temps-réel sur les correspondances)*
 
 ***<u>-Sanitaire</u>***
 
-*None* *(pas de sanitaires)*
+* *None* *(pas de sanitaires)*
 
-*toilet (toilettes)*
+* *toilet (toilettes)*
 
-*wheelChairAccessToilet (toilettes accessible pour les fauteuils
+* *wheelChairAccessToilet (toilettes accessible pour les fauteuils
 roulants)*
 
-*shower (douches)*
+* *shower (douches)*
 
-*washingAndChangeFacilities (espace pour se laver et se changer)*
+* *washingAndChangeFacilities (espace pour se laver et se changer)*
 
-*babyChange (espace bébé)*
+* *babyChange (espace bébé)*
 
-*wheelchairBabyChange (espace bébé accessible en fauteuil roulant)*
+* *wheelchairBabyChange (espace bébé accessible en fauteuil roulant)*
 
 ***<u>-Billet et Billettique</u>***
 
-*ticketMachines (machine de vente de billet)*
+* *ticketMachines (machine de vente de billet)*
 
-*ticketOffice (guichet de vente de billet)*
+* *ticketOffice (guichet de vente de billet)*
 
-*ticketOnDemandMachines (machine d’impression de billet acheté en
+* *ticketOnDemandMachines (machine d’impression de billet acheté en
 ligne)*
 
-*mobileTicketing (billettique mobile – sur smartphone)*
+* *mobileTicketing (billettique mobile – sur smartphone)*
 
 Les SERVICES DISPONIBLES de type Service (sans redondance des catégories
 précédentes) <span class="hl">retenu dans le cadre du profil sont les
@@ -1337,19 +1320,19 @@ suivants</span>:
 
 ***<u>-Services Réservés</u>***
 
-*wheelchairOnlyReservations (service réservé pour fauteil roulant, sur
+* *wheelchairOnlyReservations (service réservé pour fauteil roulant, sur
 réservation)*
 
 ***<u>-Accès à la place</u>***
 
-*standing (debout)*
+* *standing (debout)*
 
 ***<u>-Bagages</u>***
 
-*extraLargeLuggageRacks (espace pour les bagage très larges – incluant
+* *extraLargeLuggageRacks (espace pour les bagage très larges – incluant
 les fauteuil roulants notamment)*
 
-*cyclesAllowed (vélos autorisés en bagage)*
+* *cyclesAllowed (vélos autorisés en bagage)*
 
 Les SERVICES DISPONIBLES spécifiques aux lieux (sans redondance des
 catégories précédentes) <span class="hl">retenu dans le cadre du profil
@@ -1357,34 +1340,34 @@ sont les suivants</span>:
 
 ***<u>-Urgence</u>***
 
-*police (police)*
+* *police (police)*
 
-*fire (incendie)*
+* *fire (incendie)*
 
-*firstAid (premiers secours)*
+* *firstAid (premiers secours)*
 
-*sosPoint (point SOS, appel d’urgence)*
+* *sosPoint (point SOS, appel d’urgence)*
 
 ***<u>-Service Bagage</u>***
 
-*porterage (porteur)*
+* *porterage (porteur)*
 
-*collectAndDeliverToStation (service de collecte et livraison en
+* *collectAndDeliverToStation (service de collecte et livraison en
 station)*
 
 ***<u>-Parking</u>***
 
-*carPark (parking auto)*
+* *carPark (parking auto)*
 
-*cyclePark (parking vélo)*
+* *cyclePark (parking vélo)*
 
 ***<u>-Personnel</u>***
 
-*fullTime (personne present en permanence)*
+* *fullTime (personne present en permanence)*
 
-*partTime (personne present à temps partiel)*
+* *partTime (personne present à temps partiel)*
 
-*unmanned (sans personnel )*
+* *unmanned (sans personnel )*
 
 Les SERVICES DISPONIBLES disponible au niveau de la place, lors du
 voyage (sans redondance des catégories précédentes) <span
@@ -1392,9 +1375,9 @@ class="hl">retenu dans le cadre du profil sont les suivants:</span>
 
 ***<u>Installation</u>***
 
-*specialSleeper (couhettes spéciales/adaptées)*
+* *specialSleeper (couhettes spéciales/adaptées)*
 
-*specialSeating (siéges spéciausx/adaptés)*
+* *specialSeating (siéges spéciausx/adaptés)*
 
 ## Les Équipements
 
