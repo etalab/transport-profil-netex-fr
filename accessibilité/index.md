@@ -167,7 +167,7 @@ description des horaires de transport public de façon :
 Les éléments présentés ci-dessous couvrent donc l’ensemble des concepts
 propres à la description des horaires.
 
-NOTE **IMPORTANTE** Ce document étant un profil d'échange de NeTEx, il
+**NOTE IMPORTANTE** Ce document étant un profil d'échange de NeTEx, il
 ne se substitue en aucun cas à NeTEx, et un minimum de connaissance de
 NeTEx sera nécessaire à sa bonne compréhension.
 
@@ -821,7 +821,7 @@ fournie (notez aussi que, pour l’accessibilité, la LOM impose qu’un
 certain nombre d’informations soient collectées si elle n’était pas
 disponible- voir le texte lui-même pour plus de détails).
 
-<div class="table-title">*Concepts relatifs à la LOM et à la Règlementation Européenne*</div>
+<div class="table-title">Concepts relatifs à la LOM et à la Règlementation Européenne</div>
 
 <table>
 <colgroup>
@@ -1115,18 +1115,6 @@ précision sur les équipements et cheminements rencontrés.
 <span class="hl">L'adéquation aux besoins n'est pas retenue dans le
 cadre du profill accessibilité.</span>
 
-|     |     |     |     |     |     |
-|-----|-----|-----|-----|-----|-----|
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
-|     |     |     |     |     |     |
 
 ## Les services disponibles
 
@@ -1160,7 +1148,7 @@ etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 ![image](media/image10.svg)
 *SERVICES DISPONIBLES – détail des énumérations*
 
-<div class="table-title">*FacilitySet – Element*</div>
+<div class="table-title">FacilitySet – Element</div>
 
 |                     |                       |                     |                  |                                                                                                                                                                                                                    |
 |---------------------|-----------------------|---------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1173,7 +1161,7 @@ etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 |                     |                       |                     |                  |                                                                                                                                                                                                                    |
 | «cntd»              | (CommonFacilityGroup) | xxxFacilitList      | 0:\*             | FACILITIEs sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les FACILITY SETs. Il existe d'autres FACILITIEs spécifiques aux SERVICE FACILITY SET et SITE FACILITY SET. |
 
-<div class="table-title">*ServiceFacilitySet – Element*</div>
+<div class="table-title">ServiceFacilitySet – Element</div>
 
 |                     |                             |                            |                  |                                                                                                                                                               |
 |---------------------|-----------------------------|----------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1184,7 +1172,7 @@ etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 | «cntd»              | ***accommodations***        | *accommodations*           | 0:1              | Accommodations (couchette, etc.) disponibles.                                                                                                                 |
 | «cntd»              | ***onboardStays***          | *onboardStays*             | 0:1              | Autorisations de rester à bord.                                                                                                                               |
 
-<div class="table-title">*SiteFacilitySet – Element*</div>
+<div class="table-title">SiteFacilitySet – Element</div>
 
 |                     |                      |                       |               |                  |                                                                                                                                              |
 |---------------------|----------------------|-----------------------|---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1193,7 +1181,7 @@ etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 | «PK»                | id                   | SiteFacilitySetIdType |               | 1:1              | Identifiant du SITE FACILITY SET.                                                                                                            |
 | «cntd»              | *SiteFacility­Group* | xxxFacilityList       |               | 0:\*             | SITE FACILITies dans SITE FACILITY SET défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le SITE FACILITY SET. |
 
-<div class="table-title">*Accommodation – Element*</div>
+<div class="table-title">Accommodation – Element</div>
 
 |                     |                                  |                                            |                  |                                         |
 |---------------------|----------------------------------|--------------------------------------------|------------------|-----------------------------------------|
@@ -1436,7 +1424,7 @@ il peut soit être localisé dans un lieu (LIEU D'ARRÊT) soit dans un
 VEHICULE (par exemple pour des équipement sanitaire comme les toilette
 que le trouvera aussi bien en station que dans une rame de TGV).
 
-<div class="table-title">*Equipment – Element*</div>
+<div class="table-title">Equipment – Element</div>
 
 <table>
 <colgroup>
@@ -1533,7 +1521,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 </tbody>
 </table>
 
-<div class="table-title">*TypeOfEquipment – Element*</div>
+<div class="table-title">TypeOfEquipment – Element</div>
 
 |                     |                    |                       |                  |                                               |
 |---------------------|--------------------|-----------------------|------------------|-----------------------------------------------|
@@ -1542,7 +1530,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 | «PK»                | id                 | TypeOfEquipmentIdType | 1:1              | Identifiant duTYPE OF EQUIPMENT.              |
 |                     | Functional­Purpose | MultilingualString    | 1:1              | Objectif fonctionnel du TYPE OF EQUIPMENT.    |
 
-<div class="table-title">*PlaceEquipment – Element*</div>
+<div class="table-title">PlaceEquipment – Element</div>
 
 |                     |          |                     |                  |                                                  |
 |---------------------|----------|---------------------|------------------|--------------------------------------------------|
@@ -1560,7 +1548,7 @@ On aura donc, par exemple, dans une gare, un espace où l'on trouvera des
 titre banlieue et un distributeur de boisson. Chaque ÉQUIPEMENT aura sa
 position et ses caractéristiques propres.
 
-<div class="table-title">EquipmentPlace – Element*</div>
+<div class="table-title">EquipmentPlace – Element</div>
 
 |                     |                           |                   |                  |                                                                                                                                 |
 |---------------------|---------------------------|-------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------|
@@ -1820,7 +1808,7 @@ recommandé de ne pas trop les subdiviser (et donc de ne pas les faire
 trop petits) pour éviter de surcharger l'utilisateur en information et
 aussi pour limiter le volume d'information à gérer par les systèmes.
 
-<div class="table-title">*PathLink –* Element</div>
+<div class="table-title">PathLink – Element</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -2148,7 +2136,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tbody>
 </table>
 
-<div class="table-title">*PathLinkEnd –* Element</div>
+<div class="table-title">PathLinkEnd – Element</div>
 
 |                     |             |                    |                  |                                                          |
 |---------------------|-------------|--------------------|------------------|----------------------------------------------------------|
@@ -2157,7 +2145,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 | «FK»                | LevelRef    | LevelRef           | 0:1              | Niveau auquele le PATH LINKse connecte.                  |
 | «FK»                | EntranceRef | EntranceRef        | 0:1              | Entrée (ou sortie) associée à l’extrèmitée du PATH LINK. |
 
-<div class="table-title">*PathJunction (croisement/jonction de cheminement) –* Element</div>
+<div class="table-title">PathJunction (croisement/jonction de cheminement) – Element</div>
 
 <table>
 <colgroup>
@@ -2256,7 +2244,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tbody>
 </table>
 
-<div class="table-title">*PathLinkInSequence –* Element</div>
+<div class="table-title">PathLinkInSequence – Element</div>
 
 |                     |                   |                      |                  |                                                                                                                                                             |
 |---------------------|-------------------|----------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2272,7 +2260,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 |                     | Label             | MultilingualString   | 0:1              | Label associé au PATH LINK IN SEQUENCE.                                                                                                                     |
 |                     |                   |                      |                  |                                                                                                                                                             |
 
-<div class="table-title">*NavigationPath –* Element</div>
+<div class="table-title">NavigationPath – Element</div>
 
 <table>
 <colgroup>
@@ -2424,7 +2412,7 @@ l'accessibilité: la FRAME **NETEX_ACCESSIBILITY**.
 Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 ***NETEX\_* *ACCESSIBILITE***.
 
-<div class="table-title">*TypeOfFrame* – Element</div>
+<div class="table-title">TypeOfFrame – Element</div>
 
 <table>
 <colgroup>
@@ -2483,7 +2471,7 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 </tbody>
 </table>
 
-<div class="table-title">*TypeOfValue (pour le TypeOfFrame NETEX\_ ACCESSIBILITE)* –</div>
+<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ ACCESSIBILITE) –</div>
 Element
 
 <table>
@@ -2588,7 +2576,7 @@ descriptions des objets qu'ils complètent.
 
 ## Passenger Service Equipment
 
-<div class="table-title">PassengerEquipment *(équipement pour les passagers)* –</div>
+<div class="table-title">PassengerEquipment (équipement pour les passagers) –</div>
 Element
 
 |                    |          |               |                 |                                                                                                    |
@@ -2597,7 +2585,7 @@ Element
 | ::>                | ::>      | *Equipment*   | ::>             | PASSENGER EQUIPMENT hérite de EQUIPMENT.                                                           |
 |                    | Fixed    | *xsd:*boolean | 0:1             | Indique si l’EQUIPMENT est fixe au sein d’une PLACE ou s’il est à bord d’un VEHICLE (donc mobile). |
 
-<div class="table-title">*PassengerSafetyEquipment (équipement pour la sécurité des</div>
+<div class="table-title">PassengerSafetyEquipment (équipement pour la sécurité des</div>
 passagers)* *–* Element
 
 <table>
@@ -2701,7 +2689,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*SanitaryEquipment (sanitaires)* *–* Element</div>
+<div class="table-title">SanitaryEquipment (sanitaires) – Element</div>
 
 <table>
 <colgroup>
@@ -2821,7 +2809,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*RubbishDisposalEquipment (poubelles)* *–* Element</div>
+<div class="table-title">RubbishDisposalEquipment (poubelles) – Element</div>
 
 |                     |                      |                                 |                  |                                                              |
 |---------------------|----------------------|---------------------------------|------------------|--------------------------------------------------------------|
@@ -2833,7 +2821,7 @@ passagers)* *–* Element
 
 ## Waiting Equipment
 
-<div class="table-title">*LuggageLockerEquipment (casiers à bagages)* *–* Element</div>
+<div class="table-title">LuggageLockerEquipment (casiers à bagages) – Element</div>
 
 <table>
 <colgroup>
@@ -2938,7 +2926,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*TrolleyStandEquipment (stand de charriots)* *–* Element</div>
+<div class="table-title">TrolleyStandEquipment (stand de charriots) – Element</div>
 
 |                     |           |                        |                  |                                                   |
 |---------------------|-----------|------------------------|------------------|---------------------------------------------------|
@@ -2950,7 +2938,7 @@ passagers)* *–* Element
 |                     |           |                        |                  |                                                   |
 |                     |           |                        |                  |                                                   |
 
-<div class="table-title">*WaitingEquipment (espace d’attente)* *–* Element</div>
+<div class="table-title">WaitingEquipment (espace d’attente) – Element</div>
 
 |                     |                       |                 |                  |                                                           |
 |---------------------|-----------------------|-----------------|------------------|-----------------------------------------------------------|
@@ -2966,7 +2954,7 @@ passagers)* *–* Element
 |                     | ***Heated***          | xsd:boolean     | 0:1              | Signale s’il l’espace est chauffé                         |
 |                     | ***AirConditioned***  | xsd:boolean     | 0:1              | Signale s’il l’espace est climatisé                       |
 
-<div class="table-title">*SeatingEquipment (sièges)* *–* Element</div>
+<div class="table-title">SeatingEquipment (sièges) – Element</div>
 
 |                     |                     |                        |                  |                                               |
 |---------------------|---------------------|------------------------|------------------|-----------------------------------------------|
@@ -2976,7 +2964,7 @@ passagers)* *–* Element
 |                     | ***Armrest***       | *xsd:boolean*          | 0:1              | Signale s’il le siège dispose d’un acoudoir   |
 |                     | ***SeatingHeight*** | *xsd:decimal*          | 0:1              | Hauteur de l’assise en cm                     |
 
-<div class="table-title">*ShelterEquipment (abris)* *–* Element</div>
+<div class="table-title">ShelterEquipment (abris) – Element</div>
 
 |                     |                                |                        |                  |                                                              |
 |---------------------|--------------------------------|------------------------|------------------|--------------------------------------------------------------|
@@ -2986,7 +2974,7 @@ passagers)* *–* Element
 |                     | Enclosed                       | xsd:boolean            | 0:1              | Whether shelter is enclosed for protection from weather etc. |
 |                     | ***DistanceFrom­NearestKerb*** | LengthType             | 0:1              | Distance of shelter from kerb.                               |
 
-<div class="table-title">*WaitingRoomEquipment (salles d’attente)* *–* Element</div>
+<div class="table-title">WaitingRoomEquipment (salles d’attente) – Element</div>
 
 |                     |                 |                             |                  |                                                               |
 |---------------------|-----------------|-----------------------------|------------------|---------------------------------------------------------------|
@@ -3000,7 +2988,7 @@ passagers)* *–* Element
 
 ## Access Equipment
 
-<div class="table-title">*AccessEquipment (équipement d’accès)* *–* Element</div>
+<div class="table-title">AccessEquipment (équipement d’accès) – Element</div>
 
 |                     |                       |                            |                  |                                                                         |
 |---------------------|-----------------------|----------------------------|------------------|-------------------------------------------------------------------------|
@@ -3013,7 +3001,7 @@ passagers)* *–* Element
 |                     |                       |                            |                  |                                                                         |
 |                     | ***SafeForGuideDog*** | *xsd:boolean*              | 0:1              | Signale si l’accès est sans risqué pour un chien guide.                 |
 
-<div class="table-title">*CrossingEquipment (croisements et traversées)* *–* Element</div>
+<div class="table-title">CrossingEquipment (croisements et traversées) – Element</div>
 
 <table>
 <colgroup>
@@ -3126,7 +3114,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*EntranceEquipment (entrèes)* *–* Element</div>
+<div class="table-title">EntranceEquipment (entrèes) – Element</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -3317,7 +3305,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">QueueingEquipment (gestion de queue)* *–* Element</div>
+<div class="table-title">QueueingEquipment (gestion de queue) – Element</div>
 
 |                     |                             |                        |                  |                                                                                            |
 |---------------------|-----------------------------|------------------------|------------------|--------------------------------------------------------------------------------------------|
@@ -3330,7 +3318,7 @@ passagers)* *–* Element
 |                     | ***DisabledPriority***      | xsd:boolean            | 0:1              | Indique une priorité d’accès aux personnes handicapées (et généralement femmes enceintes). |
 |                     | ***QueuingSeatedPossible*** | xsd:boolean            | 0:1              | Indique la possibilité d’être assis en faisant la queue                                    |
 
-<div class="table-title">*RampEquipment (rampes)* *–* Element</div>
+<div class="table-title">RampEquipment (rampes) – Element</div>
 
 <table>
 <colgroup>
@@ -3445,7 +3433,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*PlaceLighting (éclairage)* *–* Element</div>
+<div class="table-title">PlaceLighting (éclairage) – Element</div>
 
 <table>
 <colgroup>
@@ -3515,7 +3503,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*RoughSurface (surface irrégulière)* *–* Element</div>
+<div class="table-title">RoughSurface (surface irrégulière) – Element</div>
 
 <table>
 <colgroup>
@@ -3570,7 +3558,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*StairEquipment (escaliers)* *–* Element</div>
+<div class="table-title">StairEquipment (escaliers) – Element</div>
 
 |                     |            |                        |                  |                                    |
 |---------------------|------------|------------------------|------------------|------------------------------------|
@@ -3579,7 +3567,7 @@ passagers)* *–* Element
 | «PK»                | id         | StairIdType            | 1:1              | Identifiant du STAIR.              |
 |                     | StairGroup | StairGroup             | 1:1              | Prorpiétés auommunes aux escaliers |
 
-<div class="table-title">*StairGroup (série de marches d’escaliers)* *–* Group</div>
+<div class="table-title">StairGroup (série de marches d’escaliers) – Group</div>
 
 <table>
 <colgroup>
@@ -3675,7 +3663,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*StairEnd (extrèmités d’escaliers) –* Element</div>
+<div class="table-title">StairEnd (extrèmités d’escaliers) – Element</div>
 
 |                     |                           |             |                  |                                                                                                      |
 |---------------------|---------------------------|-------------|------------------|------------------------------------------------------------------------------------------------------|
@@ -3684,7 +3672,7 @@ passagers)* *–* Element
 |                     | ***TexturedSurface***     | xsd:boolean | 0:1              | Signale une surface au sol texturée                                                                  |
 |                     | VisualContrast            | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur |
 
-<div class="table-title">*StaircaseEquipment (escaliers composé de plusieurs volées)*</div>
+<div class="table-title">StaircaseEquipment (escaliers composé de plusieurs volées)</div>
 *–* Element
 
 |                     |                     |                  |                  |                                                                     |
@@ -3697,7 +3685,7 @@ passagers)* *–* Element
 |                     | NumberOfFlights     | xsd:integer      | 0:1              | Nombre de volées de marches                                         |
 | «cntd»              | flights             | StairFlight      | 0:\*             | Description des volées de marche constituant l’escalier             |
 
-<div class="table-title">*StairFlight (volées de marche d’excalier) –* Element</div>
+<div class="table-title">StairFlight (volées de marche d’excalier) – Element</div>
 
 |                     |                     |                   |                  |                                                                         |
 |---------------------|---------------------|-------------------|------------------|-------------------------------------------------------------------------|
@@ -3705,7 +3693,7 @@ passagers)* *–* Element
 | «PK»                | id                  | StairFlightIdType | 1:1              | Identifiant du STAIR FLIGHT.                                            |
 |                     | Continuing­Handrail | xsd:boolean       | 0:1              | Signale une main courante continue avec la volées de marches précédente |
 
-<div class="table-title">*EscalatorEquipment (escalator) –* Element</div>
+<div class="table-title">EscalatorEquipment (escalator) – Element</div>
 
 |                     |                            |                  |                  |                                                                                                                             |
 |---------------------|----------------------------|------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -3717,7 +3705,7 @@ passagers)* *–* Element
 |                     | ***DogsMustBeCarried***    | xsd:boolean      | 0:1              | Signale si les chiens doivent être pris dans les bras (ou transporté d’une autre manière) pour pouvoir franchir l’escalator |
 |                     | ***EscalatorWithLanding*** | xsd:boolean      | 0:1              | Signale un escalator avec une zone plate au début ou à la fin                                                               |
 
-<div class="table-title">*TravelatorEquipment(tapis roulant)* *–* Element</div>
+<div class="table-title">TravelatorEquipment(tapis roulant) – Element</div>
 
 |                     |                                |                        |                  |                                                                                                    |
 |---------------------|--------------------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------|
@@ -3731,7 +3719,7 @@ passagers)* *–* Element
 |                     | ***Slope***                    | xsd:Integer            | 0:1              | Pente (en degrés entiers) du tapis roulant                                                         |
 |                     | ***IntegrateAnEscalatorPart*** | xsd:boolean            | 0:1              | Signale la présente d’une partie en escalator                                                      |
 
-<div class="table-title">*LiftEquipment (ascenseur)* *–* Element</div>
+<div class="table-title">LiftEquipment (ascenseur) – Element</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -3944,7 +3932,7 @@ passagers)* *–* Element
 
 ## Sign Equipment
 
-<div class="table-title">*SignEquipment (signalétique)* *–* Element</div>
+<div class="table-title">SignEquipment (signalétique) – Element</div>
 
 <table>
 <colgroup>
@@ -4070,7 +4058,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*HeadingSign (panneau de direction)* *–* Element</div>
+<div class="table-title">HeadingSign (panneau de direction) – Element</div>
 
 |                     |                       |                    |                  |                                                                          |
 |---------------------|-----------------------|--------------------|------------------|--------------------------------------------------------------------------|
@@ -4088,7 +4076,7 @@ passagers)* *–* Element
 |                     | DirectionName         | MultilingualString | 0:1              | Direction que le paneau indique (texte)                                  |
 | «FK»                | DestinationDisplayRef | LineRef            | 0:1              | DESTINATION DISPLAY referencée par le HEADING SIGN (référence technique) |
 
-<div class="table-title">*GeneralSign (affichage générique) –* Element</div>
+<div class="table-title">GeneralSign (affichage générique) – Element</div>
 
 <table>
 <colgroup>
@@ -4151,7 +4139,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*PlaceSign (panneau d’indication de lieu) –* Element</div>
+<div class="table-title">PlaceSign (panneau d’indication de lieu) – Element</div>
 
 |                     |           |                    |                  |                                      |
 |---------------------|-----------|--------------------|------------------|--------------------------------------|
@@ -4163,7 +4151,7 @@ passagers)* *–* Element
 
 ## Ticketing Equipment
 
-<div class="table-title">*TicketValidatorEquipment (validateur) –* Element</div>
+<div class="table-title">TicketValidatorEquipment (validateur) – Element</div>
 
 |                     |                                 |                       |                  |                                                                                                                  |
 |---------------------|---------------------------------|-----------------------|------------------|------------------------------------------------------------------------------------------------------------------|
@@ -4176,7 +4164,7 @@ passagers)* *–* Element
 |                     | ***TactileValidationFeedback*** | xsd:boolean           | 0:1              | Indique s’il y a une confirmation tactile de la validation du titre                                              |
 |                     | ***ValidationGuidance***        | MultilingualString    | 0:1              | Texte libre décrivant les modalités de validation (comment valider le titre, comment trouver le valideur, etc.). |
 
-<div class="table-title">*TicketingEquipment (équipement billettique) –* Element</div>
+<div class="table-title">TicketingEquipment (équipement billettique) – Element</div>
 
 |                     |                                 |                          |                  |                                                                                 |
 |---------------------|---------------------------------|--------------------------|------------------|---------------------------------------------------------------------------------|
@@ -4207,7 +4195,7 @@ passagers)* *–* Element
 
 ## Local Service
 
-<div class="table-title">*AssistanceService (service d’assistance) –* Element</div>
+<div class="table-title">AssistanceService (service d’assistance) – Element</div>
 
 <table>
 <colgroup>
@@ -4343,7 +4331,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*LuggageService (service de bagages) –* Element</div>
+<div class="table-title">LuggageService (service de bagages) – Element</div>
 
 |                     |                            |                      |                  |                                                                                                 |
 |---------------------|----------------------------|----------------------|------------------|-------------------------------------------------------------------------------------------------|
@@ -4372,7 +4360,7 @@ passagers)* *–* Element
 |     |     |     |     |     |
 |     |     |     |     |     |
 
-<div class="table-title">*CustomerService (service clientèle) –* Element</div>
+<div class="table-title">CustomerService (service clientèle) – Element</div>
 
 |                     |          |                  |                  |                                          |
 |---------------------|----------|------------------|------------------|------------------------------------------|
@@ -4389,7 +4377,7 @@ passagers)* *–* Element
 |     |     |     |     |     |
 |     |     |     |     |     |
 
-<div class="table-title">*LostPropertyService (objets trouvés) –* Element</div>
+<div class="table-title">LostPropertyService (objets trouvés) – Element</div>
 
 |                     |          |                           |                  |                                                   |
 |---------------------|----------|---------------------------|------------------|---------------------------------------------------|
@@ -4397,7 +4385,7 @@ passagers)* *–* Element
 | *::>*               | *::>*    | *LocalService*            | *::>*            | LOST PROPERTY SERVICE hérite de CUSTOMER SERVICE. |
 |                     | id       | LostPropertyServiceIdType | 1:1              | Identifiant du LOST PROPERTY SERVICE.             |
 
-<div class="table-title">*MeetingPoint (point rencontre et rendez-vous) –* Element</div>
+<div class="table-title">MeetingPoint (point rencontre et rendez-vous) – Element</div>
 
 <table>
 <colgroup>
@@ -4452,7 +4440,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">*TicketingService (service de vente de billets) –* Element</div>
+<div class="table-title">TicketingService (service de vente de billets) – Element</div>
 
 |                     |                       |                        |                  |                                                                  |
 |---------------------|-----------------------|------------------------|------------------|------------------------------------------------------------------|
@@ -4485,7 +4473,7 @@ passagers)* *–* Element
 |     |     |     |     |     |
 |     |     |     |     |     |
 
-<div class="table-title">*HireService (service de location) –* Element</div>
+<div class="table-title">HireService (service de location) – Element</div>
 
 <table>
 <colgroup>
@@ -4545,7 +4533,7 @@ passagers)* *–* Element
 Notez que les parkings automobiles sont décrits en tant que tel et
 indépendament des équipements.
 
-<div class="table-title">*CycleParkingEquipment (parcs à vélos) –* Element</div>
+<div class="table-title">CycleParkingEquipment (parcs à vélos) – Element</div>
 
 |                     |                |                    |                  |                                                    |
 |---------------------|----------------|--------------------|------------------|----------------------------------------------------|
@@ -4577,7 +4565,7 @@ bicycles.
 NOTE: en tant que SiteComponent les parking et leur composants disposent
 d'information d**'AccessibilityAssessment**.
 
-<div class="table-title">*Parking –* Element</div>
+<div class="table-title">Parking – Element</div>
 
 <table>
 <colgroup>
@@ -4840,7 +4828,7 @@ d'information d**'AccessibilityAssessment**.
 </tbody>
 </table>
 
-<div class="table-title">*ParkingArea –* Element</div>
+<div class="table-title">ParkingArea – Element</div>
 
 |                    |                                      |                      |                 |                                                                     |
 |--------------------|--------------------------------------|----------------------|-----------------|---------------------------------------------------------------------|
@@ -4855,7 +4843,7 @@ d'information d**'AccessibilityAssessment**.
 
 A place to park an individual vehicle.
 
-<div class="table-title">*ParkingBay –* Element</div>
+<div class="table-title">ParkingBay – Element</div>
 
 |                    |                    |                    |                 |                                                 |
 |--------------------|--------------------|--------------------|-----------------|-------------------------------------------------|
@@ -4867,7 +4855,7 @@ A place to park an individual vehicle.
 
 An entrance for vehicles to the PARKING from the road.
 
-<div class="table-title">*ParkingEntranceForVehicle –* Element</div>
+<div class="table-title">ParkingEntranceForVehicle – Element</div>
 
 |                    |                |                         |                 |                                                           |
 |--------------------|----------------|-------------------------|-----------------|-----------------------------------------------------------|
@@ -4879,7 +4867,7 @@ An entrance for vehicles to the PARKING from the road.
 An entrance to the PARKING for passengers on foot or other
 out-of-vehicle mode, such as wheelchair.
 
-<div class="table-title">*ParkingPassengerEntrance –* Element</div>
+<div class="table-title">ParkingPassengerEntrance – Element</div>
 
 |                    |                |                           |                 |                                                             |
 |--------------------|----------------|---------------------------|-----------------|-------------------------------------------------------------|
@@ -4890,7 +4878,7 @@ out-of-vehicle mode, such as wheelchair.
 
 PARKING specific properties other than its CAPACITY.
 
-<div class="table-title">*ParkingProperties –* Element</div>
+<div class="table-title">ParkingProperties – Element</div>
 
 <table>
 <colgroup>
