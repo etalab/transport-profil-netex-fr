@@ -951,9 +951,8 @@ selon un double formalisme: une description sous forme de diagrammes XSD
 Schema Definition) et une description sous forme tabulaire. Les tableaux
 proposent ces colonnes:
 
-|                     |         |          |                  |                 |
-|---------------------|---------|----------|------------------|-----------------|
 | **Classifi­cation** | **Nom** | **Type** | **Cardin­alité** | **Description** |
+|---------------------|---------|----------|------------------|-----------------|
 
 -   **Classification** : permet de catégoriser l'attribut. Les
     principales catégories sont:
@@ -1026,7 +1025,11 @@ soit qu'ils ne sont juste pas retenus par le profil). Ils restent
 toutefois présents dans les schémas car ils sont indispensables à la
 bonne compréhension des schémas.
 
-![image](media/image1.svg)
+<!--- if you need to explicitely choose image size, you can do it this way
+the empty <span></span> makes the figure autonumbering work.
+--->
+<span></span>
+<img src="media/image1.svg" style="width:300px; margin: 0 auto;">
 *Exemple de classe abstraite ou non retenue*
 
 De plus les schémas UML conserve les noms des classes en anglais (non
