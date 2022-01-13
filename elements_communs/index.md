@@ -184,7 +184,7 @@ multiples descriptions.
 Ce document sera donc naturellement référencé par tous les autres
 profils.
 
-NOTE Ce document étant un profil d'échange de NeTEx, il ne se substitue
+**NOTE** : Ce document étant un profil d'échange de NeTEx, il ne se substitue
 en aucun cas à NeTEx, et un minumm de connaissance de NeTEx sera
 nécessaire à sa bonne compréhension.
 
@@ -559,21 +559,9 @@ d'accès, etc.).
 
 # Symboles et abréviations
 
-AO
+* **AO** : Autorité Organisatrice de Transports
 
-<div class="Definition">
-
-Autorité Organisatrice de Transports
-
-</div>
-
-PMR
-
-<div class="Definition">
-
-Personne à Mobilité Réduite
-
-</div>
+* **PMR** : Personne à Mobilité Réduite
 
 # Exigences minimum liées à la LOM et la réglementation Européenne
 
@@ -718,9 +706,8 @@ selon un double formalisme: une description sous forme de diagrammes XSD
 Schema Definition) et une description sous forme tabulaire. Les tableaux
 proposent ces colonnes:
 
-|                     |         |          |                  |                 |
-|---------------------|---------|----------|------------------|-----------------|
 | **Classifi­cation** | **Nom** | **Type** | **Cardin­alité** | **Description** |
+|---------------------|---------|----------|------------------|-----------------|
 
 -   **Classification** : permet de catégoriser l'attribut. Les
     principales catégories sont:
@@ -936,13 +923,7 @@ informations de responsabilité (et rôles associés) à une
 <p><span class="hl">Voir aussi </span><em><strong><span class="hl">PrivateCode</span></strong></em><span class="hl"> du </span><strong><span class="hl">GroupOfEntities</span></strong><span class="hl"> pour les identifiants alternatifs: les KeyList ne sont à utiliser que s'il y a plusieurs identifiants alternatifs, et si elles sont utilisées, le </span><em><strong><span class="hl">PrivateCode</span></strong></em><span class="hl"> doit impérativement être aussi renseigné.</span></p>
 <p><span class="hl">Il est interdit, dans le profil, d’utiliser le système de clé/valeur pour décrire des informations qui pourraient être fournies avec des attributs NeTEx existants (même s’ils ne sont pas retenus par le profil).</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>BrandingRef</strong></em></td>
@@ -1085,13 +1066,7 @@ informations de responsabilité (et rôles associés) à une
 <td><p><span class="hl">Cet attribut est utilisé uniquement pour les CADREs DE VERSION (VERSION FRAME).</span></p>
 <p>Indique alors la version de l'instance de CADRE DE VERSION avec laquelle cette version d'objet est compatible. Ce CADRE DE VERSION porte le même identifiant que celui du cadre impliqué dans l'échange courant, mais avec un numero de version différent.</p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td rowspan="2">(choice)</td>
 <td><em><strong>validityConditions</strong></em></td>
@@ -1242,7 +1217,7 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <p><span class="hl">Arrondissement : code INSEE</span></p>
 </blockquote></li>
 </ul>
-<p><span class="hl">Note: les codes NUTS peuvent être trouvés ici: </span><a href="https://eur-lex.europa.eu/eli/reg/2003/1059/2018-01-18">https://eur-lex.europa.eu/eli/reg/2003/1059/2018-01-18</a></p></td>
+<p><span class="hl">Note: les codes NUTS peuvent être trouvés <a href="https://eur-lex.europa.eu/eli/reg/2003/1059/2018-01-18">ici</a>.</span></p></td>
 </tr>
 <tr class="even">
 <td>«ctd»</td>
@@ -1293,13 +1268,6 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td>0:*</td>
 <td>Liste des POINT contenus dans la ZONE.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>Centroid</strong></em></td>
@@ -1324,13 +1292,7 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td><p>Liste des PROJECTIONs de la ZONE.</p>
 <p><span class="hl">La PROJECTION n’est utilisée que pour permettre de mettre en lien l’offre de transport en commun et une description de l’infrastructure (route, rail, etc.). On référencera donc typiquement un jeu de données OSM, NavTeQ Here, etc.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -1388,13 +1350,7 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <li><p><span class="hl">Si ce n’était pas le cas le classement sera réalisé de façon alphanumérique (et non alphabétique), aussi appelé classement naturel, en intégrant donc une reconnaissance de l’éventuelle partie numérique. (voir </span><a href="http://rosettacode.org/wiki/Natural_sorting"><span class="hl">http://rosettacode.org/wiki/Natural_sorting</span></a><span class="hl"> par exemple)</span></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>projections</strong></em></td>
@@ -1403,13 +1359,7 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td><p>Projections du POINT.</p>
 <p><span class="hl">La PROJECTION n’est utilisée que pour permettre de mettre en lien l’offre de transport en commun et une description de l’infrastructure (route, rail, etc.). On référencera donc typiquement un jeu de données OSM, NavTeQ Here, etc.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -1463,13 +1413,7 @@ spécialisés et adaptés : par exemple des ***RoutePoints*** pour les
 <td><p>Longueur du TRONÇON (unité en cohérence avec l’unité par défaut des frames, en mètre pour la France naturellement).</p>
 <p><span class="hl">Il ne s'agit pas de la simple distance "à vol d'oiseau" entre les deux extrémités, mais de la distance opérationnelle que l'on souhaite faire porter au TRONÇON, comme la distance qui sera parcourue par un véhicule sur ce TRONÇON par exemple.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td colspan="2"><em><strong>LineString</strong></em></td>
@@ -1515,14 +1459,11 @@ d'objets plus complexes comme les ITINÉRAIREs (voir Profil Réseau).
 
 <div class="table-title">LinkSequence – Element (Abstrait)</div>
 
-|                     |                |                      |                  |                                                       |
-|---------------------|----------------|----------------------|------------------|-------------------------------------------------------|
 | **Classifi­cation** | **Name**       | **Type**             | **Cardin­ality** | **Description**                                       |
+|---------------------|----------------|----------------------|------------------|-------------------------------------------------------|
 | ::>                 | ::>            | *DataManagedObject*  | ::>              | LINK SEQUENCE hérite de ***DataManagedObject***.      |
 |                     | ***Name***     | *MultilingualString* | 0:1              | Nom de la SÉQUENCE DE TRONÇON.                        |
-|                     |                |                      |                  |                                                       |
 |                     | ***Distance*** | *DistanceType*       | 1:1              | Longueur totale (en mètre) de la SÉQUENCE DE TRONÇON. |
-|                     |                |                      |                  |                                                       |
 
 ## Attributs des Points d’une Séquence de Tronçons
 
@@ -1532,14 +1473,11 @@ SÉQUENCE DE TRONÇONS.
 
 <div class="table-title">PointInLinkSequence – Element (Abstrait)</div>
 
-|                    |                   |                         |                 |                                                                                                                                   |
-|--------------------|-------------------|-------------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | **Classification** | **Name**          | **Type**                | **Cardinality** | **Description**                                                                                                                   |
+|--------------------|-------------------|-------------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | ::>                | ::>               | *<u>VersionedChild</u>* | ::>             | POINT IN LINK SEQUENCE hérite de VERSIONED CHILD.                                                                                 |
-|                    |                   |                         |                 |                                                                                                                                   |
 | «atr»              | order             | *xsd:*positiveInteger   | 1:1             | Ordre du POINT au sein de la séquence (la valeur de début est sans importance seules comptent les valeurs relatives entre elles). |
 | «FK»               | LinkSequenceRef   | LinkSequenceRef         | 1:1             | Référence de la LINK SEQUENCE contenant le POINT IN LINK SEQUENCE.                                                                |
-|                    |                   |                         |                 |                                                                                                                                   |
 |                    | ***Description*** | MultilingualString      | 0:1             | Description du POINT in LINK SEQUENCE. +v1.1                                                                                      |
 
 ## Conditions de validité
@@ -1624,20 +1562,8 @@ façon détaillée : c’est, autant que possible, la version simplifiée du
 <td><p>Inherits from DATA MANAGED OBJECT.</p>
 <p><span class="hl">L’héritage reste naturellement valable, mais aucun des attributs qu’il apporte ne sera utilisé.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>ConditionedObjectRef</strong></em></td>
@@ -1721,13 +1647,7 @@ etc.)
 <td><p>TYPE DE JOUR pendant lesquels la CONDITIONs DE VALIDITÉ s’applique.</p>
 <p><span class="hl">On n’utilisera pas simultanément et </span><em><strong><span class="hl">operatingDays</span></strong></em><span class="hl"> dans une même CONDITION DE VALIDITÉ.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«cntd»</td>
 <td>timeBands</td>
@@ -1780,13 +1700,7 @@ etc.)
 <td><p>Référence (identifiant) de l’objet déclencheur de la validité.</p>
 <p><span class="hl">De façon pratique, plutôt que de réel identifiant d’objet, on utilisera ici des valeurs codifiées dont les valeurs possibles seront précisées dans les spécifications d’interface du système producteur. Par convention on utilisera autant que possible les codes </span><em><strong><span class="hl">reason</span></strong></em><span class="hl">, </span><em><strong><span class="hl">subreason</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">PublicEvent</span></strong></em><span class="hl"> proposés par le service SIRI Situation Exchange.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -1839,13 +1753,7 @@ détaillée de cette information (incluant les cheminements, les
 <td>0:1</td>
 <td>Limitations d'accessibilité</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>Comment</strong></em></td>
@@ -1921,13 +1829,7 @@ modification.</span>
 <td></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>NamedObjectRef</strong></em></td>
@@ -2055,20 +1957,8 @@ utilisé comme balise incluse (et non comme élément racine).</span>
 <td><p>Langage utilisé pour cette variante</p>
 <p><span class="hl">« fr » n’est pas accepté dans le profil, </span><strong><span class="hl">AlternativeText</span></strong><span class="hl"> étant réservé aux traductions.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td></td>
 <td>Text</td>
@@ -2163,40 +2053,28 @@ dans le cadre du présent profil.
 EXEMPLE un polygone de contour de LIEU D'ARRÊT pourra donc, par exemple,
 prendre la forme ci-dessous
 
-> \<gml:Polygon gml:id="12323">
->
-> \<gml:exterior>
->
-> \<gml:LinearRing>
->
-> \<gml:pos>-120.000000 65.588264\</gml:pos>
->
-> \<gml:pos>-120.003571 65.590782\</gml:pos>
->
-> \<gml:pos>-120.011292 65.590965\</gml:pos>
->
-> \<gml:pos>-120.022491 65.595215\</gml:pos>
->
-> \<gml:pos>-120.031212 65.592880\</gml:pos>
->
-> \<gml:pos>-120.019363 65.586121\</gml:pos>
->
-> \<gml:pos>-120.030350 65.585365\</gml:pos>
->
-> \</gml:LinearRing>
->
-> \</gml:exterior>
->
-> \</gml:Polygon>
+```
+<gml:Polygon gml:id="12323">
+<gml:exterior>
+<gml:LinearRing>
+<gml:pos>-120.000000 65.588264\</gml:pos>
+<gml:pos>-120.003571 65.590782\</gml:pos>
+<gml:pos>-120.011292 65.590965\</gml:pos>
+<gml:pos>-120.022491 65.595215\</gml:pos>
+<gml:pos>-120.031212 65.592880\</gml:pos>
+<gml:pos>-120.019363 65.586121\</gml:pos>
+<gml:pos>-120.030350 65.585365\</gml:pos>
+</gml:LinearRing>
+</gml:exterior>
+</gml:Polygon>
+```
 
 ## Attributs d'Addresse
 
 <div class="table-title">Address – Element (objet inclus)</div>
 
-|                     |                   |                      |     |                                         |
-|---------------------|-------------------|----------------------|-----|-----------------------------------------|
 | **Classifi­cation** | **Nom**           | **Type**             |     | **Description**                         |
-|                     |                   |                      |     |                                         |
+|---------------------|-------------------|----------------------|-----|-----------------------------------------|
 | «FK»                | ***CountryRef***  | *CountryEnum*        | 0:1 | Code ISO 3166 du pays (deux caractères) |
 |                     | ***CountryName*** | *MultilingualString* | 0:1 | Nom du pays                             |
 
@@ -2247,13 +2125,7 @@ prendre la forme ci-dessous
 <td>0:1</td>
 <td>Complément d'adresse hors numéro, type et nom de voie.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>Street</strong></em></td>
@@ -2268,13 +2140,7 @@ prendre la forme ci-dessous
 <td>0:1</td>
 <td>Nom de la ville.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>PostCode</strong></em></td>
@@ -2298,20 +2164,8 @@ prendre la forme ci-dessous
 <p>NOTE <span class="hl">le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span></p>
 <p>NOTE <span class="hl">si l'on souhaite mieux formaliser la relation à la commune, l'Adresse Postale, la ZONE NeTEx dispose du "ParentZoneRef" que l'on peut utiliser à cet effet.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -2362,13 +2216,7 @@ prendre la forme ci-dessous
 <td>0:1</td>
 <td>Nom de la voie.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>BearingDegrees</strong></em></td>
@@ -2405,13 +2253,11 @@ pour celui-ci.
 
 <div class="table-title">Locale – Type (objet inclus)</div>
 
-|                     |                            |                  |      |                                                                                     |
-|---------------------|----------------------------|------------------|------|-------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Nom**                    | **Type**         |      | **Description**                                                                     |
+|---------------------|----------------------------|------------------|------|-------------------------------------------------------------------------------------|
 |                     | ***TimeZoneOffset***       | *TimeZoneOffset* | 0:1  | Décalage horaire (positif ou négatif) par rapport à l'heure GMT                     |
 |                     | ***TimeZone***             | *TimeZoneOffset* | 0:1  | Nom de la zone horaire                                                              |
 |                     | ***SummerTimeZoneOffset*** | *TimeZoneOffset* | 0:1  | Décalage horaire (positif ou négatif) par rapport à l'heure GMT, pour l'heure d'été |
-|                     |                            |                  |      |                                                                                     |
 |                     | ***DefaultLanguage***      | *xsd:language*   | 1:1  | Langue principale (codification RFC 1766)                                           |
 |                     | ***languages***            | *LanguageUsage*  | 0:\* | Autres langues utilisées (codification RFC 1766)                                    |
 
@@ -2448,18 +2294,15 @@ références.
 Le CODESPACE permettra de référencer le jeu de données, par exemple en
 décrivant un jeu de données OSM comme ci-dessous
 
-\<Codespace id="*osm*">
+```
+<Codespace id="*osm*">
+<Xmlns>*osm*\</Xmlns>
+<XmlnsUrl> *http://planet.openstreetmap.org/planet/2014/*\</XmlnsUrl>
+<Description>Open Street Map through Planet OSM\</Description>
+</Codespace>
+```
 
-\<Xmlns>*osm*\</Xmlns>
-
-\<XmlnsUrl> *http://planet.openstreetmap.org/planet/2014/*\</XmlnsUrl>
-
-\<Description>Open Street Map through Planet OSM\</Description>
-
-\</Codespace>
-
-Une référence à un objet OSM pourra alors avoir la forme:
-*ref=osm:4701234567*
+Une référence à un objet OSM pourra alors avoir la forme `ref=osm:4701234567`
 
 Mais cela ne sera souvent pas suffisant et il faudra compléter cette
 référence par d'éventuelles informations de classe, de version et de
@@ -2497,13 +2340,7 @@ date proposé par le mécanisme de référence de NeTEx.
 <td>0:1</td>
 <td><span class="hl">Date à laquelle la référence a été créée: ATTENTION il ne s'agit pas ici de la date de création de l'objet, mais bien de la </span><strong><span class="hl">date à laquelle la référence a été créée</span></strong><span class="hl">. Cela permettra, en cas d'absence de mécanisme de version, de retrouver la version de l'objet considérée (dernière version à la date du…).</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«FK»</td>
 <td>version</td>
@@ -2542,13 +2379,7 @@ date proposé par le mécanisme de référence de NeTEx.
 <td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«FK»</td>
 <td>ProjectedPointRef</td>
@@ -2601,13 +2432,7 @@ date proposé par le mécanisme de référence de NeTEx.
 <td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«FK»</td>
 <td>ProjectedZoneRef</td>
@@ -2632,13 +2457,7 @@ date proposé par le mécanisme de référence de NeTEx.
 <td>0:1</td>
 <td>POINT sur lequel on se projette (une ZONE peut être projeté sur un POINT: centroïde de ZONE, pictogramme, etc.).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -2649,7 +2468,9 @@ date proposé par le mécanisme de référence de NeTEx.
 La liste des modes utilisés est la suivante (version anglaise d'origine
 et traduction):
 
-*Figure 3 – Modes*## 
+![image](media/image3-1.png)
+*Modes*
+
 ### Les sous modes
 
 Le mode peut de plus être complété d'une caractéristique appelée "sous
@@ -2667,17 +2488,14 @@ faut l'interprété "trainTram").
 
 <div class="table-title">BusSubmodeEnum</div>
 
-|                                 |                                  |
-|---------------------------------|----------------------------------|
 | **Nom**                         | **Description**                  |
+|---------------------------------|----------------------------------|
 | ***localBus***                  | Bus local                        |
 | ***regionalBus***               | Bus régional                     |
 | ***expressBus***                | Bus express                      |
 | ***nightBus***                  | Bus de nuit                      |
-|                                 |                                  |
 | ***specialNeedsBus***           | Bus pour besoins spéciaux        |
 | ***mobilityBus***               | Bus pour handicapé               |
-|                                 |                                  |
 | ***sightseeingBus***            | Bus panoramique                  |
 | ***shuttleBus***                | Bus navette                      |
 | ***highFrequencyBus***          | Bus à haute fréquence            |
@@ -2690,26 +2508,19 @@ faut l'interprété "trainTram").
 
 <div class="table-title">CoachSubmodeEnum</div>
 
-|                          |                   |
-|--------------------------|-------------------|
 | **Nom**                  | **Description**   |
+|--------------------------|-------------------|
 | ***internationalCoach*** | Car international |
 | ***nationalCoach***      | Car national      |
 | ***shuttleCoach***       | Navette           |
 | ***regionalCoach***      | Car régional      |
-|                          |                   |
-|                          |                   |
 | ***touristCoach***       | Car touristique   |
-|                          |                   |
 
 <div class="table-title">MetroSubmodeEnum</div>
 
-|             |                 |
-|-------------|-----------------|
 | **Nom**     | **Description** |
+|-------------|-----------------|
 | ***metro*** | Métro           |
-|             |                 |
-|             |                 |
 
 <div class="table-title">RailSubmodeEnum</div>
 
@@ -2779,18 +2590,6 @@ faut l'interprété "trainTram").
 <td><em><strong>railShuttle</strong></em></td>
 <td>Train navette</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td><em><strong>rackAndPinionRailway</strong></em></td>
 <td><p>Train à crémallière</p>
@@ -2801,61 +2600,39 @@ faut l'interprété "trainTram").
 
 <div class="table-title">TramSubmodeEnum</div>
 
-|                       |                                                                                                                                          |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | **Nom**               | **Description**                                                                                                                          |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | ***cityTram***        | Tram urbain                                                                                                                              |
 | ***localTram***       | Tram local                                                                                                                               |
-|                       |                                                                                                                                          |
 | ***sightseeingTram*** | Tram panoramique                                                                                                                         |
 | ***shuttleTram***     | Tram navette                                                                                                                             |
 | ***tramTrain***       | TramTrain: Tram pouvant circuler d'un réseau de tramway urbain vers des voies de chemin de fer partagées avec des trains conventionnels. |
 
 <div class="table-title">TelecabinSubmodeEnum</div>
 
-|                 |                 |
-|-----------------|-----------------|
 | **Nom**         | **Description** |
+|-----------------|-----------------|
 | ***telecabin*** | Télécabine      |
 | ***cableCar***  | Téléphérique    |
-|                 |                 |
-|                 |                 |
-|                 |                 |
-|                 |                 |
 
 <div class="table-title">FunicularSubmodeEnum</div>
 
-|                 |                 |
-|-----------------|-----------------|
 | **Nom**         | **Description** |
+|-----------------|-----------------|
 | ***funicular*** | Funiculaire     |
-|                 |                 |
 
 <div class="table-title">AirSubmodeEnum</div>
 
-|                              |                      |
-|------------------------------|----------------------|
 | **Nom**                      | **Description**      |
+|------------------------------|----------------------|
 | ***internationalFlight***    | Vol international    |
 | ***domesticFlight***         | Vol national         |
 | ***intercontinentalFlight*** | Vol intercontinental |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
-|                              |                      |
 
 <div class="table-title">WaterSubmodeEnum</div>
 
-|                                   |                                                                   |
-|-----------------------------------|-------------------------------------------------------------------|
 | **Nom**                           | **Description**                                                   |
+|-----------------------------------|-------------------------------------------------------------------|
 | ***internationalCarFerry***       | Ferry international                                               |
 | ***nationalCarFerry***            | Ferry national                                                    |
 | ***regionalCarFerry***            | Ferry régional                                                    |
@@ -2864,38 +2641,7 @@ faut l'interprété "trainTram").
 | ***nationalPassengerFerry***      | Ferry de transport de passager national *(pas de véhicules)*      |
 | ***regionalPassengerFerry***      | Ferry de transport de passagers régional *(pas de véhicules)*     |
 | ***localPassengerFerry***         | Ferry de transport de passagers local                             |
-|                                   |                                                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
 | ***riverBus***                    | Bateaubus sur fleuve ou rivière                                   |
-|                                   |                                                                   |
-|                                   |                                                                   |
-
-|     |     |
-|-----|-----|
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-
-|     |     |
-|-----|-----|
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
 
 ## Institutions
 
@@ -2944,13 +2690,7 @@ d'OPÉRATEUR et d'AUTORITÉ.
 <td>0:1</td>
 <td>Identifiant (code) public de l'INSTITUTION (exemples: STIF, SNCF, etc.)</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«AK»</td>
 <td colspan="2"><em><strong>CompanyNumber</strong></em></td>
@@ -2958,13 +2698,7 @@ d'OPÉRATEUR et d'AUTORITÉ.
 <td>0:1</td>
 <td>Numéro d'enregistrement de l'institution <span class="hl">(type code transporteur affecté par l'AO, NAO de la norme 99-502 pour les AOT, etc.)</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>Name</strong></em></td>
@@ -2986,13 +2720,7 @@ d'OPÉRATEUR et d'AUTORITÉ.
 <td>0:1</td>
 <td>Nom légal de l'ORGANISATION</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td colspan="2"><em><strong>alternativeNames</strong></em></td>
@@ -3008,20 +2736,8 @@ d'OPÉRATEUR et d'AUTORITÉ.
 <td>0:1</td>
 <td>Texte descriptif associé à l'INSTITUTION.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>ContactDetails</strong></em></td>
@@ -3029,13 +2745,7 @@ d'OPÉRATEUR et d'AUTORITÉ.
 <td>0:1</td>
 <td>Contact details for ORGANISATION for public use.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«FK»</td>
 <td colspan="2"><em><strong>OrganisationType</strong></em></td>
@@ -3055,43 +2765,11 @@ d'OPÉRATEUR et d'AUTORITÉ.
 <li><p><em><strong>other</strong></em> : Autre</p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
+
 <tr class="odd">
 <td>«cntd»</td>
 <td colspan="2"><em><strong>parts</strong></em></td>
@@ -3105,9 +2783,8 @@ d'OPÉRATEUR et d'AUTORITÉ.
 
 <div class="table-title">ContactDetails – Element (objet inclus)</div>
 
-|                     |                      |                        |     |                                      |
-|---------------------|----------------------|------------------------|-----|--------------------------------------|
 | **Classifi­cation** | **Nom**              | **Type**               |     | **Description**                      |
+|---------------------|----------------------|------------------------|-----|--------------------------------------|
 |                     | ***ContactPerson***  | *xsd:normalizedString* | 0:1 | Nom de la personne de contact.       |
 |                     | ***Email***          | *EmailAddressType*     | 0:1 | Email de contact au format ISO.      |
 |                     | ***Phone***          | *PhoneNumberType*      | 0:1 | Numéro de téléphone de contact       |
@@ -3123,11 +2800,9 @@ de contrôle.
 
 <div class="table-title">OrganisationalUnit – Element</div>
 
-|                     |          |                    |                  |                                                  |
-|---------------------|----------|--------------------|------------------|--------------------------------------------------|
 | **Classifi­cation** | **Name** | **Type**           | **Cardin­ality** | **Description**                                  |
+|---------------------|----------|--------------------|------------------|--------------------------------------------------|
 | ::>                 | ::>      | *OrganisationPart* | ::>              | ORGANISATIONAL UNIT hérite de ORGANISATION PART. |
-|                     |          |                    |                  |                                                  |
 
 <div class="table-title">OrganisationPart – Element (abstrait pour le profil)</div>
 
@@ -3161,13 +2836,7 @@ de contrôle.
 <td>0:1</td>
 <td>Nom du SOUS ENSEMBLE ORGANISATIONEL</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>Description</strong></em></td>
@@ -3175,20 +2844,8 @@ de contrôle.
 <td>0:1</td>
 <td>Description du SOUS ENSEMBLE ORGANISATIONEL.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td></td>
 <td><em><strong>ContactDetails</strong></em></td>
@@ -3236,14 +2893,12 @@ L'OPÉRATEUR hérite de l'INSTITUTION, on utilisera un champ
 
 <div class="table-title">Operator – Element</div>
 
-|                     |                                                 |                 |                  |                                                                |
-|---------------------|-------------------------------------------------|-----------------|------------------|----------------------------------------------------------------|
 | **Classifi­cation** | **Name**                                        | **Type**        | **Cardin­ality** | **Description**                                                |
+|---------------------|-------------------------------------------------|-----------------|------------------|----------------------------------------------------------------|
 | ::>                 | ::>                                             | *Organisation*  | ::>              | OPERATOR hérite ORGANISATION.                                  |
 |                     | ***CountryRef***                                | CountryRef      | 0:1              | Code ISO 3166-1 correspondant à la nationalité de l’exploitant |
 |                     | Address                                         | PostalAddress   | 0:1              | Postal ADDRESS of ORGANISATION.                                |
 |                     | PrimaryMode                                     | VehicleModeEnum | 0:1              | Mode de tranport principal de l'opérateur (s'il en a un)       |
-|                     |                                                 |                 |                  |                                                                |
 |                     | CustomerService­ContactDetails                  |                 |                  | <span class="hl">Voir ContactDetails d'ORGANISATION.</span>  |
 |                     | ***~~<span class="hl">departments</span>~~*** |                 |                  | <span class="hl">Voir Parts d'ORGANISATION.</span>           |
 
@@ -3282,12 +2937,9 @@ jour, etc.).
 
 <div class="table-title">ResponsibilitySet – Element</div>
 
-|                     |             |                                |                  |                                                                |
-|---------------------|-------------|--------------------------------|------------------|----------------------------------------------------------------|
 | **Classifi­cation** | **Name**    | **Type**                       | **Cardin­ality** | **Description**                                                |
+|---------------------|-------------|--------------------------------|------------------|----------------------------------------------------------------|
 | ::>                 | ::>         | *DataManagedObject*            | ::>              | RESPONSIBILITY SET hérite de DATA MANAGED OBJECT.              |
-|                     |             |                                |                  |                                                                |
-|                     |             |                                |                  |                                                                |
 | «cntd»              | ***roles*** | *ResponsibilityRoleAssignment* | 1:\*             | AFFECTATIONs de ROLE constituant l'ENSEMBLE DE RESPONSABILITÉ. |
 
 <div class="table-title">ResponsibilityRoleAssignment – Element (objet inclus)</div>
@@ -3316,13 +2968,7 @@ jour, etc.).
 <td><p>RESPONSIBILITY ROLE hérite de VERSIONED CHILD.</p>
 <p><span class="hl">Non utilisé quand inclus comme roles de </span><em><strong><span class="hl">ResponsabilitySet</span></strong><span class="hl"> (l’inclusion est la solution retenue par le profil)</span></em></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>Description</strong></em></td>
@@ -3374,13 +3020,7 @@ jour, etc.).
 <td>0:1</td>
 <td>Référence l'institution concernée</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>ResponsibleAreaRef</strong></em></td>
@@ -3439,20 +3079,8 @@ jour, etc.).
 <td>1:1</td>
 <td>Code publique de la NOTE <span class="hl">(numéro de renvoi sur la fiche horaire par exemple)</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>TypeOfNoticeRef</strong></em></td>
@@ -3474,13 +3102,7 @@ jour, etc.).
 <td></td>
 <td><span class="hl">Dans le cadre des profils NeTEx, toutes les notes sont à vocation d'information voyageur et donc publiques. </span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>variants</strong></em></td>
@@ -3537,13 +3159,7 @@ jour, etc.).
 <li><p><em><strong>other</strong></em></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td>VariantText</td>
@@ -3620,14 +3236,7 @@ class="hl">.</span>
 <td>0:1</td>
 <td>Reference à une NOTE</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td><em><strong>c</strong></em></td>
@@ -3644,20 +3253,8 @@ class="hl">.</span>
 <td>0:1</td>
 <td>Objet auquel la NOTE est associée. Si donné par le contexte peut être omis.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td>«FK»</td>
 <td colspan="2"><em><strong>StartPointInPatternRef</strong></em></td>
@@ -3672,34 +3269,10 @@ class="hl">.</span>
 <td>0:1</td>
 <td>POINT à partir duquel la NOTE n’est plus applicatble (dans un PARCOURS).</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
+
 </tbody>
 </table>
 
@@ -3756,27 +3329,9 @@ class="hl">.</span>
 <td>0:1</td>
 <td>Nom de la JOURNÉE D'EXPLOITATION</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 <tr class="odd">
 <td></td>
 <td>EarliestTime</td>
@@ -3834,13 +3389,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>0:1</td>
 <td>Nom du TYPE DE JOUR.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td>Description</td>
@@ -3848,13 +3397,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>0:1</td>
 <td>Description du TYPE DE JOUR.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td>EarliestTime</td>
@@ -4022,9 +3565,8 @@ valeurs par défaut quand le champ est absent).
 
 <div class="table-title">DayOfWeekEnum – valeurs autorisée</div>
 
-|           |                 |
-|-----------|-----------------|
 | **Nom**   | **Description** |
+|-----------|-----------------|
 | Monday    | Lundi           |
 | Tuesday   | Mardi           |
 | Wednesday | Mercredi        |
@@ -4032,31 +3574,23 @@ valeurs par défaut quand le champ est absent).
 | Friday    | Vendredi        |
 | Saturday  | Samedi          |
 | Sunday    | Dimanche        |
-|           |                 |
 
 <div class="table-title">WeekOfMonthEnum – valeurs autorisée</div>
 
-|         |                           |
-|---------|---------------------------|
 | **Nom** | **Description**           |
+|---------|---------------------------|
 | 1       | Première semaine du mois  |
 | 2       | Seconde semaine du mois   |
 | 3       | Troisième semaine du mois |
 | 4       | Quatrième semaine du mois |
 | 5       | Cinquième semaine du mois |
-|         |                           |
 
 <div class="table-title">HolidayTypeEnum – valeurs autorisée</div>
 
-|                              |                                           |
-|------------------------------|-------------------------------------------|
 | **Nom**                      | **Description**                           |
-|                              |                                           |
-|                              |                                           |
+|------------------------------|-------------------------------------------|
 | ***SchoolDay***              | Jour d'école                              |
 | NotHoliday                   | Jour hors vacances                        |
-|                              |                                           |
-|                              |                                           |
 | AnyHoliday                   | N'importe quel type de jour de vancances. |
 | LocalHoliday                 | Jour de vancance local                    |
 | NationalHoliday              | Jour de vancance national                 |
@@ -4066,32 +3600,25 @@ valeurs par défaut quand le champ est absent).
 
 <div class="table-title">SeasonEnum – valeurs autorisée</div>
 
-|         |                 |
-|---------|-----------------|
 | **Nom** | **Description** |
+|---------|-----------------|
 | Spring  | Printemps       |
 | Summer  | Été             |
 | Autumn  | Automne.        |
 | Winter  | Hiver.          |
-|         |                 |
 
 <div class="table-title">TideEnum – AllowedValues</div>
 
-|          |                 |
-|----------|-----------------|
 | **Nom**  | **Description** |
+|----------|-----------------|
 | HighTide | Marée haute     |
 | LowTide  | Marée basse     |
 | NeapTide | Grande marée    |
-|          |                 |
 
 <div class="table-title">DayEventEnumeration – valeurs autorisée</div>
 
-|                 |                                                                 |
-|-----------------|-----------------------------------------------------------------|
 | **Nom**         | **Description**                                                 |
-|                 |                                                                 |
-|                 |                                                                 |
+|-----------------|-----------------------------------------------------------------|
 | ***marketDay*** | Jour de marché                                                  |
 | ***matchDay***  | Jour de match (ou évènement sportif)                            |
 | ***eventDay***  | Jour d'évènement (préciser dans la description du type de jour) |
@@ -4128,20 +3655,8 @@ correspondants.
 <td>::></td>
 <td>DAY TYPE ASSIGNMENT hérite de VERSIONED CHILD.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td>«FK»</td>
 <td colspan="2">ServiceCalendarRef</td>
@@ -4179,13 +3694,7 @@ correspondants.
 <td>1:1</td>
 <td>Référence le TYPE DE JOUR concerné</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>isAvailable</strong></em></td>
@@ -4204,36 +3713,25 @@ nouveau CALENDRIER DE SERVICE).
 
 <div class="table-title">ServiceCalendar – Element</div>
 
-|                     |                    |                     |                 |                                                                    |
-|---------------------|--------------------|---------------------|-----------------|--------------------------------------------------------------------|
 | **Classifi­cation** | **Nom**            | **Type**            | **Cardinalité** | **Description**                                                    |
+|---------------------|--------------------|---------------------|-----------------|--------------------------------------------------------------------|
 | ::>                 | ::>                | *DataManagedObject* | ::>             | SERVICE CALENDAR hérite de DATA MANAGED OBJECT.                    |
 |                     | Name               | MultilingualString  | 0:1             | Nom du CALENDRIER DE SERVICE.                                      |
-|                     |                    |                     |                 |                                                                    |
 |                     | ***FromDate***     | xsd:date            | 0:1             | Date (inclusive) du début du CALENDRIER DE SERVICE.                |
 |                     | ***ToDate***       | xsd:date            | 0:1             | Date (inclusive) de fin du CALENDRIER DE SERVICE.                  |
-|                     |                    |                     |                 |                                                                    |
-|                     |                    |                     |                 |                                                                    |
 | «cntd»              | dayTypes           | DayType             | 0:\*            | TYPEs DE JOURs du CALENDRIER DE SERVICE.                           |
-|                     |                    |                     |                 |                                                                    |
 | «cntd»              | operatingDays      | *OperatingDay*      | 0:\*            | TYPEs DE JOUR. du CALENDRIER DE SERVICE.                           |
 | «cntd»              | operatingPeriods   | *OperatingPeriod*   | 0:\*            | AFFECTATIONs des PÉRIODEs D'EXPLOITATION du CALENDRIER DE SERVICE. |
 | «cntd»              | dayTypeAssignments | DayTypeAssignment   | 0:\*            | AFFECTATIONs DE JOUR du CALENDRIER DE SERVICE.                     |
 
 <div class="table-title">OperatingPeriod – Element</div>
 
-|                     |                     |                |                     |                 |                                                     |
-|---------------------|---------------------|----------------|---------------------|-----------------|-----------------------------------------------------|
 | **Classifi­cation** | **Nom**             |                | **Type**            | **Cardinalité** | **Description**                                     |
+|---------------------|---------------------|----------------|---------------------|-----------------|-----------------------------------------------------|
 | ::>                 | ::>                 |                | *DataManagedObject* | ::>             | OPERATING PERIOD hérite de DATA MANAGED OBJECT.     |
-|                     |                     |                |                     |                 |                                                     |
 | «FK»                | ServiceCalendar­Ref |                | CalendarRef         | 0:1             | CALENDRIER DE SERVICE auquel la période appartient. |
-|                     |                     |                |                     |                 |                                                     |
 |                     | b                   | ***FromDate*** | dateTime            | 1:1             | Date calendaire de début                            |
-|                     |                     |                |                     |                 |                                                     |
 |                     | b                   | ***ToDate***   | dateTime            | 1:1             | Date calendaire de fin                              |
-|                     |                     |                |                     |                 |                                                     |
-|                     |                     |                |                     |                 |                                                     |
 
 <span class="hl">Note : </span>***<span class="hl">U</span><span
 class="hl">icOperatingPeriod</span>***<span class="hl"> sera toujours
@@ -4276,13 +3774,7 @@ soit valide ou non le jour).</span>
 <td>::></td>
 <td>TIME BAND hérite de DATA MANAGED OBJECT.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td>StartTime</td>
@@ -4305,13 +3797,7 @@ soit valide ou non le jour).</span>
 <td><p>Décalage de jour si l'heure de fin n'est pas le même jour que l'heure de début (1=le lendemain, 2=le surlendemain, etc.)</p>
 <p>Valeur par défaut: 0.</p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
 
@@ -4327,11 +3813,9 @@ par exemple).
 |---------------------|-------------------|----------------------|-----|----------------------------------------------|
 | ::>                 | ::>               | *DataManagedObject*  | ::> | TYPE OF VALUE hérite de DATA MANAGED OBJECT. |
 |                     | ***Name***        | *MultilingualString* | 0:1 | Nom du TYPE DE VALEUR.                       |
-|                     |                   |                      |     |                                              |
 |                     | ***Description*** | *MultilingualString* | 0:1 | Description du TYPE OF VALUE.                |
 |                     | ***Image***       | *anyURI*             | 0:1 | Image associée au TYPE OF VALUE.             |
 |                     | ***Url***         | *anyURI*             | 0:1 | URL associée au TYPE OF VALUE.               |
-|                     |                   |                      |     |                                              |
 
 ## Presentation
 
@@ -4341,9 +3825,8 @@ etc.).
 
 <div class="table-title">Presentation – Type (objet inclus)</div>
 
-|                     |                             |                        |                  |                                                                                                                                                                                                                                                                       |
-|---------------------|-----------------------------|------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**                    | **Type**               | **Cardin­ality** | **Description**                                                                                                                                                                                                                                                       |
+|---------------------|-----------------------------|------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                     | ***Colour***                | *ColourValue*          | 0:1              | Couleur <span class="hl">(format RVB)</span>                                                                                                                                                                                                                        |
 |                     | ***ColourName***            | *xsd:normalizedString* | 0:1              | Nom de la couleur                                                                                                                                                                                                                                                     |
 |                     | ***BackGroundColour***      | *ColourValueType*      | 0:1              | Valeur RVB de la couleur de fond (par exemple la couleur de la ligne de transport)                                                                                                                                                                                    |
@@ -4352,7 +3835,6 @@ etc.).
 |                     | ***TextColourName***        | *xsd:normalizedString* | 0:1              | Nom de la couleur du texte                                                                                                                                                                                                                                            |
 |                     | TextFont                    | *xsd:normalizedString* | 0:1              | Identifiant de la police de caractère                                                                                                                                                                                                                                 |
 |                     | ***TextFontName***          | *xsd:normalizedString* | 0:1              | Nom de la police de caractère                                                                                                                                                                                                                                         |
-|                     |                             |                        |                  |                                                                                                                                                                                                                                                                       |
 |                     | ***InfoLink***              | *InfoLink*             | 0:1              | URL d'un élément graphique de représentation (généralement une icône).                                                                                                                                                                                                |
 ## ## Branding
 
@@ -4583,13 +4065,7 @@ CALENDRIER** et **NeTEx TARIF***.
 <td>0:1</td>
 <td>Ensemble de valeurs par défaut qu’il sera inutile de répéter pour chaque élément (un élément particulier garde toutefois la possibilité de définir ses propres valeurs, qui sont alors prioritaires sur celles du FrameDefaults).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td>prerequisites</td>
@@ -4597,13 +4073,7 @@ CALENDRIER** et **NeTEx TARIF***.
 <td>0:*</td>
 <td>References à d’autre VERSION FRAME dont dépend celle-ci (typiquement contenant des objets référencès par cette FRAME).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>content­ValidityConditions</strong></em></td>
@@ -4630,8 +4100,6 @@ CALENDRIER** et **NeTEx TARIF***.
 | «FK»                | ***Default­ResponsibilitySetRef*** | *ResponsibilitySetRef* | 0:1 | RESPONSIBILITY SET par défaut (pour tous les éléments qui ne le précisent pas)                   |
 |                     | ***DefaultLocale***                | *Locale*               | 0:1 | Valeur de LOCALE par défaut (pour tous les éléments qui ne le précisent pas)                     |
 |                     | ***Default­LocationSystem***       | *xsd:normalizedString* | 0:1 | Système de localisation par défaut (pour tous les éléments qui ne le précisent pas)              |
-|                     |                                    |                        |     |                                                                                                  |
-|                     |                                    |                        |     |                                                                                                  |
 
 <span class="hl">Dans le cadre du profil les distance sont par défaut
 exprimées en système métrique et les sommes d’argent en Euros.</span>
@@ -4656,31 +4124,24 @@ VERSION.
 
 EXEMPLE de définition de CODESPACE
 
-\<CompositeFrame version="any" id="mybus:CompositeFrame:CF1">
+```
+<CompositeFrame version="any" id="mybus:CompositeFrame:CF1">
+<!--- ======= CODESPACEs======== -->
+<codespaces>
+<Codespace id=" *era* ">
+<Xmlns>*era*\</Xmlns>
+<XmlnsUrl>*http://era.org.eu/*\</XmlnsUrl>
+<Description>European Rail AUthority\</Description>
+</Codespace>
+</codespaces>
+```
 
-\<!--- ======= CODESPACEs======== -->
+EXEMPLEd’utilisation de CODESPACE pour les identifiants `id=napt:4701234567`
 
-\<codespaces>
-
-\<Codespace id=" *era* ">
-
-\<Xmlns>*era*\</Xmlns>
-
-\<XmlnsUrl>*http://era.org.eu/*\</XmlnsUrl>
-
-\<Description>European Rail AUthority\</Description>
-
-\</Codespace>
-
-\</codespaces>
-
-EXEMPLEd’utilisation de CODESPACE pour les identifiants
-
-*id=napt:4701234567*
-
-> *ref=napt:4701234567*
->
-> *id=era:4501234345*
+```
+ref=napt:4701234567
+id=era:4501234345
+```
 
 <div class="table-title">Codespace – Element (objet inclus)</div>
 
@@ -4764,54 +4225,40 @@ d’information, etc.) de l’identifiant est à proscrire** !
 Pour mémoire, le profil **SIRI Ile-de-France** propose la codification
 suivante pour tous les identifiants:
 
-***\[Fournisseur\]:\[type
-d'objet\]:\[typeObjetDétaillé\]:\[identifiantTechnique\]:LOC***
+`[Fournisseur]:[type d'objet]:\[typeObjetDétaillé]:[identifiantTechnique]:LOC`
 
-<span class="hl">Si un objet a déjà été identifié dans le cadre d’un
-échange SIRI, on censervera naturellement son identifiant.</span>
+<span class="hl">
+Si un objet a déjà été identifié dans le cadre d’un
+échange SIRI, on censervera naturellement son identifiant.
+</span>
 
 <span class="hl">Si l’objet n’a encore jamais été échangé, dans le
 contexte des profils NeTEx, en dehors des arrêt (présenté ci-dessous) la
 codification suivante est proposée :</span>
 
--   ***<span class="hl">\[Fournisseur\] : </span>***<span
-    > class="hl">est remplacé par le CODESPACE (et peut être complété
-    > par le </span>***<span class="hl">DataSourceRef</span>***<span
-    > class="hl"> de </span>**<span
-    > class="hl">EntityInVersion</span>**<span class="hl">)</span>
+-   <span class="hl">`[Fournisseur]`</span> : <span class="hl"> est remplacé par le CODESPACE (et peut être complété
+    par le </span><span class="hl">`DataSourceRef`</span><span class="hl"> de </span><span class="hl">`EntityInVersion`</span><span class="hl">)</span>
 
--   ***<span class="hl">\[type d'objet\]:</span>**<span class="hl">
-    > </span>*<span class="hl">classe de l'objet sous la forme du nom
-    > du tag XML qui le porte</span>
+-   <span class="hl">`[type d'objet]`</span> : <span class="hl">
+    classe de l'objet sous la forme du nom du tag XML qui le porte</span>
 
--   <span class="hl"> </span>***<span
-    > class="hl">\[identifiantTechnique\]</span>***<span class="hl">:
-    > est naturellement conservé</span>
+-   <span class="hl">`[identifiantTechnique]`</span><span class="hl">: est naturellement conservé</span>
 
--   ***<span class="hl">LOC</span>***<span class="hl">: est conservé
-    > pour permettre de préciser que l'identifiant a été défini de façon
-    > locale entre les parties engagées dans l'échange, et qu'il ne fait
-    > donc pas partie du référentiel partagé (régional, national, etc.)
-    > L'utilisation de ce qualificatif est obligatoire quand
-    > l'identifiant est local. Pour les objets faisant partie de
-    > référentiels partagés on peut le remplacer par un
-    > </span>***<span class="hl">\[NomAttributaire\]</span>***<span
-    > class="hl"> qui le nom (ou code) du système référentiel utilisé
-    > pour attribuer l’identifiant.</span>
+-   <span class="hl">`LOC` : est conservé
+    pour permettre de préciser que l'identifiant a été défini de façon
+    locale entre les parties engagées dans l'échange, et qu'il ne fait
+    donc pas partie du référentiel partagé (régional, national, etc.)
+    L'utilisation de ce qualificatif est obligatoire quand
+    l'identifiant est local. Pour les objets faisant partie de
+    référentiels partagés on peut le remplacer par un
+    `[NomAttributaire]` qui le nom (ou code) du système référentiel utilisé
+    pour attribuer l’identifiant.</span>
 
 <span class="hl">La codification retenue est donc: </span>
 
-***<span class="hl">\[CODESPACE\]:\[type
-d'objet\]:\[identifiantTechnique\]:</span>\[LOC ou Nom
-attributaire\]***
+<span class="hl">`[CODESPACE]:[type d'objet]:[identifiantTechnique]:[LOC ou Nom attributaire]`</span>
 
-<span class="hl">Exemple "</span>**<span
-class="hl">RATP-I2V:JourneyPattern:2354345:LOC"</span>**<span
-class="hl"> ou </span><span class="hl">"</span>**<span
-class="hl">IDFM:Line:345:CODIFLIGNE" </span>**<u><span
-class="hl">ou</span></u>**<span class="hl"> "</span>*<span
-class="hl">STIF-CODIFLIGNE:Line:C00001:</span>*<span
-class="hl">"</span>**
+<span class="hl">Exemple `RATP-I2V:JourneyPattern:2354345:LOC` ou `IDFM:Line:345:CODIFLIGNE` ou `STIF-CODIFLIGNE:Line:C00001:`</span>
 
 <span class="hl">Note : par convention, on conserve les
 "</span>**<span class="hl">:</span>**<span class="hl">" de fin même
@@ -4902,21 +4349,14 @@ LOC\]</span>**<span class="hl">, on aura donc :</span>
         c’était le cas, le code serait </span>**<span
         class="hl">UIC</span>**<span class="hl">).</span>
 
-<span class="hl">Examples : Gare ferré "PARIS MONTPARNASSE 1 2"
-</span>
+<span class="hl">Examples : 
 
-> **<span class="hl">FR:75114:LMO:39100:ERA</span>**
->
-> <span class="hl">Arrêt de bus sur la commune de Guyancourt, attribué
-> par un système transporteur</span>
->
-> **<span
-> class="hl">FR:78297:ZE:110E8400-E29B-11D4-A716-446655440000:LOC</span>**
->
-> <span class="hl">Station de métro parisienne, avec identifiant STIF
-> (REFLEX)</span>
->
-> **<span class="hl">FR:75105:LMO:43289:NUTS10 </span>**
+* Gare ferré "PARIS MONTPARNASSE 1 2" : `FR:75114:LMO:39100:ERA`
+* Arrêt de bus sur la commune de Guyancourt, attribué
+par un système transporteur : `FR:78297:ZE:110E8400-E29B-11D4-A716-446655440000:LOC`
+* Station de métro parisienne, avec identifiant STIF
+(REFLEX) : `FR:75105:LMO:43289:NUTS10`
+</span>
 
 <span class="hl">Encore une fois si l’arrêt a déjà été identifié dans
 le cadre d’un échange et que l’identifiant utilisé et unique au niveau
@@ -4968,9 +4408,7 @@ Trois types spécifiques sont attribués à ces ***CompositeFrame**:*
     class="hl">NETEX_N\_LIGNE</span>*** contient le nom des lignes
     concernées, séparés par des virgules.
 
-<div class="table-title">TypeOfFrame pour <span class="hl">NETEX_COMMUN</span></div>
-et *<span class="hl">NETEX_CALENDRIER</span>* – Element *(objet
-inclus)*
+<div class="table-title">TypeOfFrame pour NETEX_COMMUN et NETEX_CALENDRIER – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -4998,20 +4436,8 @@ inclus)*
 <td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
 <p><span class="hl">L'Id est imposé à </span><em><span class="hl">NETEX_COMMUN</span></em><span class="hl"> </span><span class="hl">ou </span><em><span class="hl">NETEX_CALENDRIER</span></em></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>classes</strong></em></td>
@@ -5063,25 +4489,10 @@ inclus)*
 <li><p><span class="hl">DAY TYPE ASSIGNMENT</span></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-<div class="table-title">TypeOfFrame pour <span class="hl">NETEX_FRANCE,</div>
-NETEX_LIGNE et NETEX_N\_LIGNES</span>* – Element *(objet inclus)*
+<div class="table-title">TypeOfFrame pour NETEX_FRANCE, NETEX_LIGNE et NETEX_N_LIGNES – Element (objet inclus) </div>
 
 <table>
 <colgroup>
@@ -5109,27 +4520,6 @@ NETEX_LIGNE et NETEX_N\_LIGNES</span>* – Element *(objet inclus)*
 <td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
 <p><span class="hl">L'Id est imposé à </span><em><span class="hl">NETEX_FRANCE, NETEX_LIGNE ou NETEX_N_LIGNES</span></em></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td>FK</td>
 <td><em><strong>typesOfFrame</strong></em></td>
@@ -5156,18 +4546,10 @@ NETEX_LIGNE et NETEX_N\_LIGNES</span>* – Element *(objet inclus)*
 <li><p><span class="hl">NETEX_TARIF</span></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-<div class="table-title">TypeOfValue (pour le TypeOfFrame) – Element (objet</div>
-inclus)*
+<div class="table-title">TypeOfValue (pour le TypeOfFrame) – Element (objet inclus) </div>
 
 <table>
 <colgroup>
@@ -5204,13 +4586,7 @@ inclus)*
 <td><p>Nom du TYPE OF VALUE.</p>
 <p><span class="hl">Imposé à « NETEX_COMMUN», « NETEX_CALENDRIER» ou « NETEX_FRANCE», «NETEX_LIGNE» ou «NETEX_N_LIGNES»</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr class="even">
 <td></td>
 <td><em><strong>Description</strong></em></td>
@@ -5219,27 +4595,9 @@ inclus)*
 <td><p>Description du TYPE OF VALUE.</p>
 <p><span class="hl">Imposé à « Profil d’échange français NETEX_COMMUN», « Profil d’échange français NETEX_CALENDRIER». Ou « Profil d’échange français «NETEX_FRANCE», «NETEX_LIGNE» ou «NETEX_N_LIGNES».</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
+
 </tbody>
 </table>
 
@@ -5286,9 +4644,9 @@ class="hl">versionRef</span>**<span class="hl"> (et non plus
 </span>**<span class="hl">version</span>**<span class="hl">) comme
 indiqué dans l'exemple ci-dessous:</span>
 
-\<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN"
-**versionREf="1.01:FR-NETEX_COMMUN-1.0"/**\>
-
+```
+<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN" versionREf="1.01:FR-NETEX_COMMUN-1.0"/>
+```
 <span class="hl">Toutefois, contrairement aux références internes, la
 précision du numéro de </span>***<span
 class="hl">versionRef</span>***<span class="hl"> n'est pas obligatoire
@@ -5304,8 +4662,9 @@ faire figurer le nom (l’information portée par sa balise
 </span>**<span class="hl">name</span>**<span class="hl"> quand il y
 en a une) en tant que contenu de la balise référence.</span>
 
-\<StopPlaceRef ref="FR:78297:LMO:110E8400:LOC" versionRef="8.3">**Le
-Corbusier**\</StopPlaceRef>
+```
+<StopPlaceRef ref="FR:78297:LMO:110E8400:LOC" versionRef="8.3">Le Corbusier</StopPlaceRef>
+```
 
 <span class="hl">Note : l’une des conclusions des point ci-dessus est
 que toute référence ne portant pas l’attribut </span>**<span
@@ -5337,20 +4696,8 @@ une référence vers un objet externe.</span>
 <td>0:1</td>
 <td>Nom de la classe d’objet référencée.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>ref</strong></em></td>
@@ -5424,19 +4771,19 @@ identifiants de version du CADRE DE VERSION spécifique utilisé par le
 profil.
 
 La codification de la version de profil se fait de la façon suivante :
-**x.y:FR-NETEX_nnnn-a.b-c** (par exemple "1.0:FR-NETEX_ARRET-1.0" ou
-"1.1:FR-NETEX_ARRET-1.2-4").
+`.x.y:FR-NETEX_nnnn-a.b-c`. Par exemple :
+
+* `1.0:FR-NETEX_ARRET-1.0`
+* `1.1:FR-NETEX_ARRET-1.2-4`
 
 1.  **x.y** étant la version de NeTEx (obligatoire): il s'agit ici du
     numero de version XSD (et WSDL) NeTEx
 
+2.  **:** est un délimiteur obligatoire
 
+3.  **FR** le digramme de la France (ISO 3166-1 alpha-2) (obligatoire)
 
-1.  **:** est un délimiteur obligatoire
-
-2.  **FR** le digramme de la France (ISO 3166-1 alpha-2) (obligatoire)
-
-## 4.  **NETEX\_*nnnnn*** permet d'identifier le profil (obligatoire), nnnn
+4.  **NETEX\_*nnnnn*** permet d'identifier le profil (obligatoire), nnnn
     valant "**FRANCE**", "**COMMUN**", "**ARRET**", "**LIGNE**",
     "**RESEAU**", "**HORAIRE**", "**CALENDRIER**" ou "**TARIF**".
 
@@ -5602,19 +4949,6 @@ profil.
 <td>Datation de la requête</td>
 </tr>
 <tr class="odd">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
 <td rowspan="3"><em>End­point Prop­erties</em></td>
 <td><em><strong>Address</strong></em></td>
 <td>0:1</td>
@@ -5634,19 +4968,6 @@ profil.
 <td><em>Message­Qualifier</em></td>
 <td><p>Identifiant unique de la requête de souscription (utilisé dans la réponse).</p>
 <p><span class="hl">Comme pour le profil SIRI, ce champ est obligatoire dans le cadre du profil NeTEx </span></p></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><em>Payl­oad</em></td>
@@ -5692,27 +5013,6 @@ n'est pas pris en charge).
 <td><em>Endpoint­Address</em></td>
 <td>Adresse (URL) de destination du <em><strong>CheckStatus.</strong></em></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="even">
 <td><em>Client End­point Address</em></td>
 <td colspan="2"><em><strong>StatusResponseAddress</strong></em></td>
@@ -5722,38 +5022,10 @@ n'est pas pris en charge).
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
 <td colspan="2"><em><strong>ConsumerAddress</strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td>Adresse (URL) de destination des données.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><em>Location</em></td>
@@ -5771,19 +5043,6 @@ n'est pas pris en charge).
 <td><em>srsNameType</em></td>
 <td><p>Nom du référentiel (GML) de localisation utilisé</p>
 <p><span class="hl">Les deux formats (WGS 84 systèmatique et générique GML) sont autorisés. (</span><em><u><span class="hl">note</span></u></em><span class="hl"> : il existe de nombreux outils libres permettant de convertir les coordonnées d’un référentiel à l’autre).</span></p></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td rowspan="2"><em>Temporal Span</em></td>
@@ -5818,27 +5077,6 @@ n'est pas pris en charge).
 <td><em>xsd:boolean</em></td>
 <td><span class="hl">Confirmation des réceptions: </span><strong><span class="hl">Non</span></strong> <span class="hl">dans le profil</span>.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
@@ -5869,33 +5107,12 @@ réponse).
 <td></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td colspan="2"><em>TopicGroup</em></td>
 <td><em><strong>sources</strong></em></td>
 <td><em>DataSource</em></td>
 <td>0:*</td>
 <td>Ce filtre permet de limiter la réponse à des données produites par une ou plusieurs sources de données spécifiées.</td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><em>Object Request Topic</em></td>
@@ -5920,22 +5137,6 @@ réponse).
 <td><em>dateTime</em></td>
 <td>1:1 (inside a choice)</td>
 <td>Ce filtre permet de ne demander que la version des données dans l’état où elles étaient à une date donnée.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -5965,26 +5166,18 @@ réponse).
 
 <div class="table-title">NetworkFilterByValue – Element</div>
 
-|                           |                         |                        |      |                                                                                                                                                         |
-|---------------------------|-------------------------|------------------------|------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation**       | **Nom**                 | **Type**               |      | **Description**                                                                                                                                         |
-|                           |                         |                        |      |                                                                                                                                                         |
+|---------------------------|-------------------------|------------------------|------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Object By Value           | ***BoundingBox***       | *BoundingBoxStructure* | 0:\* | Ce filtre permet de ne demander que les données à l’intérieur d’un périmètre géographique spécifié.                                                     |
 |                           | ***object­References*** | *VersionOfObjectRef*   | 0:\* | Permet de spécifier l’identifiant de l’objet recherché. Si l’identifiant n’est pas précisé, tous les objets de la classe correspondante sont retournés. |
 | *Network Filter By Value* | ***NetworkRef***        | *NetworkRefStructure*  | 0:1  | Permets de n’obtenir que les objets d’un réseau (NETWORK) <span class="hl">ou d’un groupe de lignes (GROUP OF LINE)</span> spécifique.                |
-|                           |                         |                        |      |                                                                                                                                                         |
 
 <div class="table-title">FrameRequestPolicy – Element</div>
 
-|                              |                               |               |     |                                                                                                                               |
-|------------------------------|-------------------------------|---------------|-----|-------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation**          | **Nom**                       | **Type**      |     | **Description**                                                                                                               |
+|------------------------------|-------------------------------|---------------|-----|-------------------------------------------------------------------------------------------------------------------------------|
 | *AbstractRequestPolicyGroup* | ***MaximumNumberOfElements*** | *xsd:integer* | 0:1 | Nombre maximal d’objets à retourner dans la réponse.                                                                          |
 |                              | ***IncludeDeleted***          | *xsd:boolean* | 0:1 | Indique qu’il faut aussi transmettre les indications d’objets supprimés (arrêt qui n’est plus utilisé, etc.) dans la réponse. |
-|                              |                               |               |     |                                                                                                                               |
-|                              |                               |               |     |                                                                                                                               |
-|                              |                               |               |     |                                                                                                                               |
-|                              |                               |               |     |                                                                                                                               |
 
 ### Réponse
 
@@ -5996,7 +5189,7 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 
 <div class="table-title">ServiceDelivery (issu du profil SIRI) — Attributes</div>
 
-<tab2le>
+<table>
 <colgroup>
 <col style="width: 11%" />
 <col style="width: 3%" />
@@ -6022,20 +5215,6 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 <td>Date et heure de production de la réponse.</td>
 </tr>
 <tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
 <td><em>End­­poi­nt prop­ert­ies</em></td>
 <td colspan="2"><em><strong>ResponseMessage­Identifier</strong></em></td>
 <td>0:1</td>
@@ -6047,23 +5226,9 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 <td colspan="2"><em><strong>RequestMessageRef</strong></em></td>
 <td><p>0:1</p>
 <p><strong><span class="hl">1:1</span></strong></p></td>
-<td><em>Message­Qualifier</em></td>
+<td><em>->Message­Qualifier</em></td>
 <td><p>Référence de la requête.</p>
 <p><span class="hl">Obligatoire, en cohérence avec le profil SIRI</span></p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td rowspan="2"><em>Stat­us</em></td>
@@ -6079,13 +5244,6 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 <td><em>See below</em></td>
 <td><p>Signalement d’erreur (voir le paragraphe sur la gestion des erreurs).</p>
 <p><span class="hl">Voir le profil SIRI pour le détail de la gestion des erreurs. Le détail des erreurs est porté par le DataObjectDelivery décrit plus bas (voir profil SIRI chapitre </span><em><strong><span class="hl">Gestion des Erreurs</span></strong></em><span class="hl">)</span>.</p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td><em>Payload</em></td>
@@ -6103,12 +5261,14 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 <td>Corps de la réponse (voir DataObjectDelivery ci-dessous).</td>
 </tr>
 </tbody>
-</tab2le>
-*ure 13 – ServiceDelivery - XSD*
+</table>
+
+![image](media/image13.svg)
+*ServiceDelivery - XSD*
 
 <div class="table-title">DataObjectDelivery (issu du profil SIRI) — Attributes</div>
 
-<tab2le>
+<table>
 <colgroup>
 <col style="width: 11%" />
 <col style="width: 11%" />
@@ -6137,41 +5297,6 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 <p><strong><span class="hl">1:1</span></strong></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Référence de la requête.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td rowspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td><em>Pay­load</em></td>
@@ -6204,32 +5329,14 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
 <td colspan="2"><em><strong>dataObjects</strong></em></td>
 <td>0:*</td>
 <td><em>VersionFrame</em></td>
 <td>Données échangées dans un contexte de CADRE DE VERSION (voir 7.1).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 </tbody>
-</tab2le>
-*ure 14 – GetNeTexServiceResponse - XSD*
+</table>
+
+![image](media/image14.svg)
+*GetNeTexServiceResponse - XSD*
