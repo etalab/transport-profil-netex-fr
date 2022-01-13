@@ -182,7 +182,7 @@ description des réseaux de transport public de façon :
 Les éléments présentés ci-dessous couvrent donc l’ensemble des concepts
 propres à la description des réseaux.
 
-NOTE **IMPORTANTE** Ce document étant un profil d'échange de NeTEx, il
+**NOTE IMPORTANTE** Ce document étant un profil d'échange de NeTEx, il
 ne se substitue en aucun cas à NeTEx, et un minimum de connaissance de
 NeTEx sera nécessaire à sa bonne compréhension.
 
@@ -654,7 +654,7 @@ objets ci-dessous, toute information disponible est supposée être
 fournie (mais on ne crée pas d’information si elle n’est pas
 disponible).
 
-<div class="table-title">*Concepts relatifs à la LOM et à la Règlementation Européenne*</div>
+<div class="table-title">Concepts relatifs à la LOM et à la Règlementation Européenne</div>
 
 <table>
 <colgroup>
@@ -913,7 +913,7 @@ de nuit, etc.).
 
 ## Les lignes
 
-<div class="table-title">*Line –* Element</div>
+<div class="table-title">Line – Element</div>
 
 <table>
 <colgroup>
@@ -998,13 +998,6 @@ de nuit, etc.).
 <td><p>Identifiant secondaire de la LIGNE.</p>
 <p><span class="hl">Il s'agit généralement d'un identifiant propre au fournisseur (transporteur) de l'information.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="even">
 <td>«FK»</td>
 <td rowspan="2">Choice</td>
@@ -1034,13 +1027,6 @@ de nuit, etc.).
 <td></td>
 <td>Réference un MODE de transport additionnel pour la LIGNE <span class="hl">(certaine ligne SNCF sont parfois ponctuellement remplacées par des lignes de car par exemple).</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>TypeOfLineRef</strong></em></td>
@@ -1051,13 +1037,6 @@ de nuit, etc.).
 <p><span class="hl">Deux types prédéfinis sont proposé par le profil: SEASONAL_LINE_TYPE et REPLACEMENT_LINE_TYPE Pour ce second type on utilisera, par convention, le derivedFromObjectRef (voir le document Profil NeTEx éléments communs) pour effectuer le lien avec la ligne à remplacer, et on renseignera le ValidityTrigger permettant de décrire dans quelle condition le remplacement est activé.</span></p>
 <p><span class="hl">À ne pas confondre avec une marque commerciale, pour lequel l'attribut Branding est disponible dans le DataManagedObject (voir le document Profil NeTEx éléments communs).</span></p>
 <p><span class="hl">A définir par un TYPE DE VALEUR spécifique (</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1086,13 +1065,6 @@ de nuit, etc.).
 <td><em>Presentation</em></td>
 <td>0:1</td>
 <td>Information concernant la représentation graphique de la ligne (couleur, etc.).</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1128,19 +1100,17 @@ de nuit, etc.).
 
 ### Directions
 
-<div class="table-title">*Direction –* Element *(objet inclus)*</div>
+<div class="table-title">Direction – Element (objet inclus)</div>
 
-|                     |                             |                     |                  |                                                                                                                                                                                                  |
-|---------------------|-----------------------------|---------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**                    | **Type**            | **Cardin­ality** | **Description**                                                                                                                                                                                  |
+|---------------------|-----------------------------|---------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                       | *TypeOfValue*       | *::>*            | DIRECTION hérite de TYPE OF VALUE <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span> |
-|                     |                             |                     |                  |                                                                                                                                                                                                  |
 |                     | ***DirectionType***         | *DirectionTypeEnum* | 0:1              | Valeur fixe parmi : ‘*outbound’, ‘inbound’, ‘clockwise’, ‘anticlockwise’* (sortant, entrant, horaire, antihoraire) associée à cette DIRECTION.                                                   |
 | «FK»                | ***Opposite­DirectionRef*** | *DirectionRef*      | 0:1              | Référence à la DIRECTION correspondant au sens opposé.                                                                                                                                           |
 
 ## Les groupes de Ligne
 
-<div class="table-title">*GroupOfLines –* Element</div>
+<div class="table-title">GroupOfLines – Element</div>
 
 <table>
 <colgroup>
@@ -1192,11 +1162,10 @@ de nuit, etc.).
 
 ### Les réseaux
 
-<div class="table-title">*Network –* Element</div>
+<div class="table-title">Network – Element</div>
 
-|                     |                                |                            |                  |                                                                          |
-|---------------------|--------------------------------|----------------------------|------------------|--------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**                       | **Type**                   | **Cardin­ality** | **Description**                                                          |
+|---------------------|--------------------------------|----------------------------|------------------|--------------------------------------------------------------------------|
 | *::>*               | *::>*                          | *GroupOfLines*             | *::>*            | NETWORK hérite de GROUP OF LINEs                                         |
 |                     | ***TransportOrganisationRef*** | *OrganisationRefStructure* | 0:1              | INSTITUTION (autorité organisatrice ou transporteur) en charge du RÉSEAU |
 |                     | ***groupsOfLines***            | *groupsOfLinesInFrame*     | 0:\*             | GROUPE DE LIGNES faisant partie du RÉSEAU                                |
@@ -1204,20 +1173,18 @@ de nuit, etc.).
 
 ## Zone tarifaire
 
-<div class="table-title">*TariffZone – Element*</div>
+<div class="table-title">TariffZone – Element</div>
 
-|                     |          |          |                  |                                                                                                                                                                                                                                   |
-|---------------------|----------|----------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name** | **Type** | **Cardin­ality** | **Description**                                                                                                                                                                                                                   |
+|---------------------|----------|----------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ::>                 | ::>      | *Zone*   | ::>              | TARIFF ZONE hérite de ZONE.<span class="hl"> (</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span> sans y apporter de nouveaux attributs. |
 
 ## Les itinéraires
 
-<div class="table-title">*Route –* Element</div>
+<div class="table-title">Route – Element</div>
 
-|                     |                        |                       |                  |                                                                                                                                                                                               |
-|---------------------|------------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**               | **Type**              | **Cardin­ality** | **Description**                                                                                                                                                                               |
+|---------------------|------------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                  | *LinkSequence*        | *::>*            | ROUTE hérite de LINK SEQUENCE <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 | «FK»                | ***LineRef***          | *LineRef*             | 0:1              | LIGNE à laquelle l'ITINÉRAIRE appartient.                                                                                                                                                     |
 |                     | ***DirectionType***    | *TypeOfDirectionEnum* | 0:1              | Type de direction de la ROUTE (***outbound***, ***inbound***, pour aller Retrour et éventuellement ***clockwise*** ou ***anticlockwise*** pour les boucles)                                   |
@@ -1227,36 +1194,30 @@ de nuit, etc.).
 
 ### Les Point d'itinéraire
 
-<div class="table-title">*RoutePoint –* Element</div>
+<div class="table-title">RoutePoint – Element</div>
 
-|                     |                      |               |                  |                                                                                                                                                                                             |
-|---------------------|----------------------|---------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**             | **Type**      | **Cardin­ality** | **Description**                                                                                                                                                                             |
+|---------------------|----------------------|---------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                | *Point*       | *::>*            | ROUTE POINT hérite de POINT <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
-|                     |                      |               |                  |                                                                                                                                                                                             |
 |                     | ***BorderCrossing*** | *xsd:boolean* | 0:1              | Indique que le point est un point situé à la frontière entre deux pays.                                                                                                                     |
 
 ### Les points sur itinéraire
 
-<div class="table-title">*PointOnRoute –* Element</div>
+<div class="table-title">PointOnRoute – Element</div>
 
-|                               |                     |                    |                       |                  |                                                                                                                                                                                                                 |
-|-------------------------------|---------------------|--------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation**           | **Name**            |                    | **Type**              | **Cardin­ality** | **Description**                                                                                                                                                                                                 |
+|-------------------------------|---------------------|--------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*                         | *::>*               |                    | *PointInLinkSequence* | *::>*            | POINT ON ROUTE hérite de POINT IN LINK SEQUENCE <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 | *Hérité de POINT IN SEQUENCE* |                     | ***~~RouteRef~~*** |                       |                  | <span class="hl">Les PointOnRoute seront systématiquement inclus dans les ROUTEs</span>                                                                                                                       |
 |                               |                     | ***projections***  | *projections*         | 0:1              | Projection sur la voirie ou les rails <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>.           |
-|                               |                     |                    |                       |                  |                                                                                                                                                                                                                 |
 | «FK»                          | ***RoutePointRef*** |                    | *RoutePointRef*       | 1:1              | Référence au POINT D'ITINÉRAIRE correspondant                                                                                                                                                                   |
-|                               |                     |                    |                       |                  |                                                                                                                                                                                                                 |
 
 #### Point sur séquence de tronçon
 
-<div class="table-title">*PointInLinkSequence –* Element *(objet inclus)*</div>
+<div class="table-title">PointInLinkSequence – Element (objet inclus)</div>
 
-|                     |                       |                       |                  |                                                                                                                                                                                                                        |
-|---------------------|-----------------------|-----------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**              | **Type**              | **Cardin­ality** | **Description**                                                                                                                                                                                                        |
+|---------------------|-----------------------|-----------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                 | *PointInSequence*     | *::>*            | POINT IN LINK SEQUENCE hérite de ***PointInSequence*** <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 |                     | ***order***           | *xsd:positiveInteger* | 0:1              | Numéro d'ordre du point dans la séquence.                                                                                                                                                                              |
 |                     | ***LinkSequenceRef*** | *LinkSequenceRef*     | 0:1              | Référence la SÉQUENCE DE TRONÇONs à laquelle appartient le POINT <span class="hl">(une spécialisation pourra intervenir via un groupe de substitution).</span>                                                       |
@@ -1264,11 +1225,10 @@ de nuit, etc.).
 
 ### Les tronçons d'itinéraire
 
-<div class="table-title">*RouteLink –* Element</div>
+<div class="table-title">RouteLink – Element</div>
 
-|                     |                    |                 |                  |                                                                                                                                                                                           |
-|---------------------|--------------------|-----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**           | **Type**        | **Cardin­ality** | **Description**                                                                                                                                                                           |
+|---------------------|--------------------|-----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*              | *Link*          | *::>*            | ROUTE LINK hérite de LINK <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 |                     | Distance           | DistanceType    | 1:1              | Longueur du ROUTE LINK. Les unités sont telles que spécifiées pour la FRAME (la valeur par défaut est SI mètres).                                                                         |
 | «FK»                | ***FromPointRef*** | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de début de <span class="hl">TRONÇON</span>.                                                                                                                         |
@@ -1280,7 +1240,7 @@ de nuit, etc.).
 ![image](media/image2.svg)
 *DESTINATION DISPLAY – Modèle conceptuel*
 
-<div class="table-title">*DestinationDisplay –* Element</div>
+<div class="table-title">DestinationDisplay – Element</div>
 
 <table>
 <colgroup>
@@ -1353,7 +1313,7 @@ de nuit, etc.).
 
 ### Les variantes d'affichages de destination
 
-<div class="table-title">*DestinationDisplayVariant –* Element *(objet inclus)*</div>
+<div class="table-title">DestinationDisplayVariant – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -1432,7 +1392,7 @@ flexibilité.
 
 ### Ligne flexible
 
-<div class="table-title">*FlexibleLine –* Element</div>
+<div class="table-title">FlexibleLine – Element</div>
 
 <table>
 <colgroup>
@@ -1486,7 +1446,7 @@ flexibilité.
 </tbody>
 </table>
 
-<div class="table-title">*BookingArrangements –* Element *(objet inclus)*</div>
+<div class="table-title">BookingArrangements – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -1601,7 +1561,7 @@ flexibilité.
 
 ### Itinéraire flexible
 
-<div class="table-title">*FlexibleRoute –* Element</div>
+<div class="table-title">FlexibleRoute – Element</div>
 
 <table>
 <colgroup>
@@ -1648,7 +1608,7 @@ flexibilité.
 ***FlexiblePointProperties*** doit toujours être intégré au
 ***StopPointInPattern*** qu’il précise.
 
-<div class="table-title">*FlexiblePointProperties –* Element *(objet inclus)*</div>
+<div class="table-title">FlexiblePointProperties – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -1724,7 +1684,7 @@ flexibilité.
 
 ### Tronçon flexible
 
-<div class="table-title">*FlexibleLinkProperties –* Element *(objet inclus)*</div>
+<div class="table-title">FlexibleLinkProperties – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -1800,7 +1760,7 @@ flexibilité.
 
 ### Mission commerciale
 
-<div class="table-title">*ServiceJourneyPattern –* Element</div>
+<div class="table-title">ServiceJourneyPattern – Element</div>
 
 <table>
 <colgroup>
@@ -1898,7 +1858,7 @@ manœuvre de retournement).
 
 ### Point sur parcours
 
-<div class="table-title">*PointInJourneyPattern –* Element</div>
+<div class="table-title">PointInJourneyPattern – Element</div>
 
 <table>
 <colgroup>
@@ -1961,7 +1921,7 @@ manœuvre de retournement).
 
 ### Point d'arrêt sur parcours
 
-<div class="table-title">*StopPointInJourneyPattern –* Element *(objet inclus)*</div>
+<div class="table-title">StopPointInJourneyPattern – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2094,7 +2054,7 @@ manœuvre de retournement).
 
 ### Point d'arrêt panifié
 
-<div class="table-title">*ScheduledStopPoint –* Element</div>
+<div class="table-title">ScheduledStopPoint – Element</div>
 
 <table>
 <colgroup>
@@ -2238,7 +2198,7 @@ retenues).
 
 #### Point horaire sur parcours 
 
-<div class="table-title">*TimingPointInJourneyPattern –* Element *(objet inclus)*</div>
+<div class="table-title">TimingPointInJourneyPattern – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2293,7 +2253,7 @@ retenues).
 
 #### Point horaire
 
-<div class="table-title">*TimingPoint –* Element</div>
+<div class="table-title">TimingPoint – Element</div>
 
 <table>
 <colgroup>
@@ -2359,18 +2319,17 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 
 #### Correspondance entre POINT D'ARRÊT PLANIFIÉs
 
-<div class="table-title">*Connection –* Element</div>
+<div class="table-title">Connection – Element</div>
 
-|                     |            |                 |                  |                                      |
-|---------------------|------------|-----------------|------------------|--------------------------------------|
 | **Classifi­cation** | **Name**   | **Type**        | **Cardin­ality** | **Description**                      |
+|---------------------|------------|-----------------|------------------|--------------------------------------|
 | *::>*               | *::>*      | *Transfer*      | *::>*            | CONNECTION hérite de TRANSFER.       |
 |                     |            |                 |                  |                                      |
 | «cntd»              | ***From*** | *ConnectionEnd* | 1:1              | Point de départ de la CORRESPONDANCE |
 | «cntd»              | ***To***   | *ConnectionEnd* | 1:1              | Point de fin de la CORRESPONDANCE    |
 |                     |            |                 |                  |                                      |
 
-<div class="table-title">*ConnectionEnd –* Element *(objet inclus)*</div>
+<div class="table-title">ConnectionEnd – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2408,7 +2367,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 
 #### Transferts
 
-<div class="table-title">*Transfer – Element (abstrait)*</div>
+<div class="table-title">Transfer – Element (abstrait)</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -2501,7 +2460,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 </tbody>
 </table>
 
-<div class="table-title">*TransferDuration – Element (objet inclus)*</div>
+<div class="table-title">TransferDuration – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2569,23 +2528,20 @@ général, et on le particularisera par des versions spécifiques par MODE
 ou par EXPLOITANT qui viendront alors "surcharger" la version sans
 contrainte (la priorité est aux versions particularisées).</span>
 
-<div class="table-title">*DefaultConnection –* Element</div>
+<div class="table-title">DefaultConnection – Element</div>
 
-|                     |                             |                        |                  |                                                                                                                            |
-|---------------------|-----------------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**                    | **Type**               | **Cardin­ality** | **Description**                                                                                                            |
+|---------------------|-----------------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                       | *Transfer*             | *::>*            | DEFAULT TRANSFER hérite de TRANSFER.                                                                                       |
 | «cntd»              | ***From***                  | *DefaultConnectionEnd* | 0:1              | Origine du transfert (MODE / EXPLOITANT).                                                                                  |
 | «cntd»              | ***To***                    | *DefaultConnectionEnd* | 0:1              | Fin du transfert (MODE / EXPLOITANT).                                                                                      |
 | «FK»                | ***Topographic­PlaceView*** | *TopographicPlaceRef*  | 0:\*             | Zone administrative (typiquement une ville ou un groupement de commune) dans laquelle ces valeurs par défaut s’appliquent. |
-|                     |                             |                        |                  |                                                                                                                            |
 | «FK»                | ***SiteElementRef***        | *SiteElementRef*       | 0:\*             | Elément de SITE dans lesquels ces valeurs par défaut s’appliquent.                                                         |
 
-<div class="table-title">*DefaultConnectionEnd –* Element *(objet inclus)*</div>
+<div class="table-title">DefaultConnectionEnd – Element (objet inclus)</div>
 
-|                     |                   |                     |                  |                                                                                                   |
-|---------------------|-------------------|---------------------|------------------|---------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**          | **Type**            | **Cardin­ality** | **Description**                                                                                   |
+|---------------------|-------------------|---------------------|------------------|---------------------------------------------------------------------------------------------------|
 | «FK»                | ***Mode***        | *TransportModeEnum* | 0:1              | MODE associé à l'extrémité du transfert. L’énumération se trouve dans la partie Eléments communs. |
 | «FK»                | ***OperatorRef*** | *OperatorRef*       | 0:1              | EXPLOITANT associé à l'extrémité du transfert.                                                    |
 
@@ -2604,7 +2560,7 @@ Cette structure permet aussi de caractériser de façon un peu plus
 détaillée les cheminements accès (STOP PLACE ENTRANCE) vers ZONE
 D'EMBARQUEMENT (QUAY).
 
-<div class="table-title">*SiteConnection –* Element</div>
+<div class="table-title">SiteConnection – Element</div>
 
 <table>
 <colgroup>
@@ -2654,7 +2610,7 @@ D'EMBARQUEMENT (QUAY).
 </tbody>
 </table>
 
-<div class="table-title">*SiteConnectionEnd –* Element *(objet inclus)*</div>
+<div class="table-title">SiteConnectionEnd – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2874,7 +2830,7 @@ principales (en particulier pour l'accessibilité).
 <span class="hl">Note : le profil NeTEx pour l’accessibilité fournit
 une vue beaucoup plus détaillée du NavigationPath.</span>
 
-<div class="table-title">*NavigationPath –* Element</div>
+<div class="table-title">NavigationPath – Element</div>
 
 <table>
 <colgroup>
@@ -2983,7 +2939,7 @@ une vue beaucoup plus détaillée du NavigationPath.</span>
 Les contraintes de zone sont particulièrement bien adaptées à la
 description des ITL (Interdiction de trafic local).
 
-<div class="table-title">*RoutingConstraintZone –* Element</div>
+<div class="table-title">RoutingConstraintZone – Element</div>
 
 <table>
 <colgroup>
@@ -3042,7 +2998,7 @@ description des ITL (Interdiction de trafic local).
 
 ### Restriction de correspondance
 
-<div class="table-title">*TransferRestriction –* Element</div>
+<div class="table-title">TransferRestriction – Element</div>
 
 <table>
 <colgroup>
@@ -3124,20 +3080,14 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 ![image](media/image7.svg)
 *Passenger Stop Assignment – Modèle conceptuel*
 
-<div class="table-title">*StopAssignment – Element (abstrait)*</div>
+<div class="table-title">StopAssignment – Element (abstrait)</div>
 
-|                     |                              |                         |                  |                                                                                                                                                                                                                                |
-|---------------------|------------------------------|-------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**                     | **Type**                | **Cardin­ality** | **Description**                                                                                                                                                                                                                |
+|---------------------|------------------------------|-------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                        | *DataManagedObject*     | *::>*            | STOP ASSIGNMENT hérite de DATA MANAGED OBJECT (via ASSIGNMENT) <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">).</span> |
-|                     |                              |                         |                  |                                                                                                                                                                                                                                |
-|                     |                              |                         |                  |                                                                                                                                                                                                                                |
-|                     |                              |                         |                  |                                                                                                                                                                                                                                |
-|                     |                              |                         |                  |                                                                                                                                                                                                                                |
-|                     |                              |                         |                  |                                                                                                                                                                                                                                |
 | «FK»                | ***ScheduledStop­PointRef*** | *ScheduledStopPointRef* | 0:1              | Référence au POINT D'ARRÊT PLANIFIÉ.                                                                                                                                                                                           |
 
-<div class="table-title">*PassengerStopAssignment – Element*</div>
+<div class="table-title">PassengerStopAssignment – Element</div>
 
 <table>
 <colgroup>
@@ -3190,7 +3140,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 
 ### Affectation de train à quai
 
-<div class="table-title">*TrainStopAssignment –* Element</div>
+<div class="table-title">TrainStopAssignment – Element</div>
 
 <table>
 <colgroup>
@@ -3266,11 +3216,10 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 
 ### Affectation dynamique (pour affectation « tardive », mais toujours planifiée)
 
-<div class="table-title">*DynamicStopAssignment –* Element</div>
+<div class="table-title">DynamicStopAssignment – Element</div>
 
-|                    |                             |                                |                 |                                                                    |
-|--------------------|-----------------------------|--------------------------------|-----------------|--------------------------------------------------------------------|
 | **Classification** | **Name**                    | **Type**                       | **Cardinality** | **Description**                                                    |
+|--------------------|-----------------------------|--------------------------------|-----------------|--------------------------------------------------------------------|
 | *::>*              | *::>*                       | *<u>DynamicStopAssignment</u>* | *::>*           | DYNAMIC STOP ASSIGNMENT hérite de PASSENGER STOP ASSIGNMENT.       |
 | «PK»               | Id                          | DynamicAssignmentIdType        | 1:1             | Identifiant du DYNAMIC STOP ASSIGNMENT.                            |
 | «FK»               | JourneyPatternRef           | *JourneyPatternRef*            | 0:1             | JOURNEY PATTERN à laquelle la DYNAMIC STOP ASSIGNMENT s’applique.  |
@@ -3278,7 +3227,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 
 ## Plan schématique
 
-<div class="table-title">*SchematicMap – Element*</div>
+<div class="table-title">SchematicMap – Element</div>
 
 <table>
 <colgroup>
@@ -3336,7 +3285,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 </tbody>
 </table>
 
-<div class="table-title">*SchematicMapMember – Element (objet inclus)*</div>
+<div class="table-title">SchematicMapMember – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -3414,7 +3363,7 @@ naturellement contenir le FRAME **NETEX_LIGNE**.
 Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 ***NETEX_LIGNE***
 
-<div class="table-title">*TypeOfFrame* – Element *(objet inclus)*</div>
+<div class="table-title">TypeOfFrame – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -3490,7 +3439,7 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 </tbody>
 </table>
 
-<div class="table-title">*TypeOfValue (pour le TypeOfFrame NETEX\_ LIGNE)* – Element</div>
+<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ LIGNE) – Element</div>
 
 <table>
 <colgroup>
@@ -3580,7 +3529,7 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 ***NETEX_RESEAU***.
 
-<div class="table-title">*TypeOfFrame* – Element</div>
+<div class="table-title">TypeOfFrame – Element</div>
 
 <table>
 <colgroup>
@@ -3674,7 +3623,7 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 </tbody>
 </table>
 
-<div class="table-title">*TypeOfValue (pour le TypeOfFrame NETEX\_ RESEAU)* – Element</div>
+<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ RESEAU) – Element</div>
 
 <table>
 <colgroup>
