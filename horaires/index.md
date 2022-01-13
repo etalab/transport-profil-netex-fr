@@ -410,21 +410,9 @@ de transport et de la capacité requise (par exemple bus standard, bus à
 
 # Symboles et abréviations
 
-AO
+* **AO** : Autorité Organisatrice de Transports
 
-<div class="Definition">
-
-Autorité Organisatrice de Transports
-
-</div>
-
-PMR
-
-<div class="Definition">
-
-Personne à Mobilité Réduite
-
-</div>
+* **PMR** : Personne à Mobilité Réduite
 
 # Exigences minimum liées à la LOM et la règlementation Européenne
 
@@ -485,7 +473,7 @@ objets ci-dessous, toute information disponible est supposée être
 fournie (mais on ne crée pas d’information si elle n’est pas
 disponible).
 
-<div class="table-title">*Concepts relatifs à la LOM et à la Règlementation Européenne*</div>
+<div class="table-title">Concepts relatifs à la LOM et à la Règlementation Européenne</div>
 
 <table>
 <colgroup>
@@ -575,9 +563,8 @@ selon un double formalisme: une description sous forme de diagrammes XSD
 Schema Definition) et une description sous forme tabulaire. Les tableaux
 proposent ces colonnes:
 
-|                     |         |          |                  |                 |
-|---------------------|---------|----------|------------------|-----------------|
 | **Classifi­cation** | **Nom** | **Type** | **Cardin­alité** | **Description** |
+|---------------------|---------|----------|------------------|-----------------|
 
 -   **Classification** : permet de catégoriser l'attribut. Les
     principales catégories sont:
@@ -601,9 +588,7 @@ proposent ces colonnes:
     
 
     -   GROUP est un groupe XML nommé (ensemble d'attributs utilisables
-        dans différents contextes) (cf:
-        <http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/#AttrGroups>
-        )
+        dans différents contextes) Voir [ici](http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/#AttrGroups).
 
 
 
@@ -794,61 +779,12 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td>0:1</td>
 <td>PARCOURS suivi par la COURSE</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="even">
 <td>«FK»</td>
 <td colspan="2"><em><strong>VehicleTypeRef</strong></em></td>
 <td><em>VehicleTypeRef</em></td>
 <td>0:1</td>
 <td>TYPE DE VEHICULE utilisé pour la course.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -859,14 +795,6 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td><p>Référence l'EXPLOITANT opérant cette course.</p>
 <p><span class="hl">Il n'est indiqué que s’il est différent de celui de la ligne.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td>«EV»</td>
 <td><em>choice</em></td>
@@ -875,14 +803,6 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td>0:1</td>
 <td>Référence la LIGNE à laquelle appartient la COURSE <span class="hl">(pour simplifier la navigation COURSE->PARCOURS->ITINERAIRE->LIGNE). Il peut naturellement s'agir d'une LIGNE FLEXIBLE.</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td></td>
 <td></td>
@@ -890,34 +810,6 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td>FlexibleLineView</td>
 <td>0:1</td>
 <td>Permet de décrire les éléments de flexibilité (typiquement TAD - Transport à la Demande) spécifiques à cette course</td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -941,41 +833,6 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td></td>
 <td><span class="hl">Voir le PARCOURS.</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="even">
 <td>«cntd»</td>
 <td colspan="2"><em><strong>passingTimes</strong></em></td>
@@ -992,34 +849,12 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <p><span class="hl">Utilisé pour un certain nombre de situations du mode ferré (changement de parité ou de numéro de train) ainsi que pour des situations comme le changement d'exploitant en cours de course sur les RER A et B.</span></p>
 <p><span class="hl">Contrairement à la règle générale dans les profils NeTEx, et afin de pouvoir être réutilisées, les JOURNEY PARTs seront systématiquement définies indépendamment (à la racine de l'élément </span><em><strong><span class="hl">members</span></strong></em><span class="hl"> du FRAME) et simplement référencées ici (et non incluse, même si le modèle l'autorise).</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>facilities</strong></em></td>
 <td><em>serviceFacilitySets_RelStructure</em></td>
 <td>0:*</td>
 <td>Services disponibles pour cette course (voir le profil accessibilité pour plus de détails).</td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 
 <tr class="odd">
@@ -1028,13 +863,6 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td>TrainSizeStructure</td>
 <td>0:1</td>
 <td>Information sur la taille du train (long/court). <span class="hl">Peut aussi servir pour identifier les bus articulés ou couplés.</span></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1049,7 +877,7 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 
 Pour ***TrainSize*** voir *6.10.1-Train.*
 
-<div class="table-title">*Journey* – Element *(abstrait)*</div>
+<div class="table-title">Journey – Element (abstrait)</div>
 
 <table>
 <colgroup>
@@ -1098,43 +926,6 @@ Pour ***TrainSize*** voir *6.10.1-Train.*
 <td><p>SOUS MODE de transport de JOURNEY.</p>
 <p><span class="hl">Le sous-mode n'est précisé que s'il est différent de celui de la ligne.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong><del>Monitored</del></strong></em></td>
@@ -1164,7 +955,7 @@ Pour ***TrainSize*** voir *6.10.1-Train.*
 ![image](media/image2.svg)
 *Vehicle Journey, Passing Times et Interchanges – Modèle conceptuel*
 
-<div class="table-title">*PassingTime* – Element *(objet inclus)*</div>
+<div class="table-title">PassingTime – Element (objet inclus)</div>
 
 |                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
 |---------------------|---------------------------|------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1193,7 +984,7 @@ arrêts.</span>*
 
 ### Propriétés de course flexible
 
-<div class="table-title">FlexibleServiceProperties – Element *(objet inclus)*</div>
+<div class="table-title">FlexibleServiceProperties – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -1347,38 +1138,33 @@ Par exemple : <em><strong>ScheduledStopPointRef, Name, StopType, etc</strong></
 
 Les PARTIEs DE COURSE seront généralement spécifiques au mode ferré.
 
-<div class="table-title">*JourneyPart* – Element *(objet inclus)*</div>
+<div class="table-title">JourneyPart – Element (objet inclus)</div>
 
-|                    |                             |                              |                 |                                                                                                                                                                                                            |
-|--------------------|-----------------------------|------------------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classification** | **Name**                    | **Type**                     | **cardinality** | **Description**                                                                                                                                                                                            |
-| *::>*              | *::>*                       | *DataManagedObject*          | *::>*           | JOURNEY PART hérite de DATA MANAGED OBJECT <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
-|                    | ***Description***           | *MultilingualString*         | 0:1             | Description de la PARTIE DE COURSE.                                                                                                                                                                        |
-| «FK»               | ***ParentJourneyRef***      | *VehicleJourneyRef*          | 0:1             | COURSE à laquelle appartient cette PARTIE DE COURSE.                                                                                                                                                       |
-| «FK»               | ***MainPartRef***           | *JourneyPartCoupleRef*       | 1:1             | Référence à la PARTIE DE COURSE principale (l'une des différentes PARTIE DE COURSE doit être déclarée comme principale).                                                                                   |
-| «FK»               | ***JourneyPart­CoupleRef*** | *JourneyPartCoupleRef*       | 0:1             | Référence à l'éventuelle COURSE COUPLÉE à laquelle la PARTIE DE COURSE appartient.                                                                                                                         |
-| «FK»               | ***TrainNumberRef***        | *TrainNumberRef*             | 0:1             | Référence au NUMÉRO DE TRAIN de la PARTIE DE COURSE.                                                                                                                                                       |
-|                    |                             |                              |                 |                                                                                                                                                                                                            |
-| «FK»               | ***FromStopPointRef***      | *ScheduledStopPointRef*      | 0:1             | Arrêt de départ de la PARTIE DE COURSE.                                                                                                                                                                    |
-| «FK»               | ***ToStopPointRef***        | *ScheduledStopPointRef*      | 0:1             | Arrêt de fin de la PARTIE DE COURSE.                                                                                                                                                                       |
-|                    | ***StartTime***             | *xsd:time*                   | 1:1             | Arrêt de départ de la PARTIE DE COURSE (à l'arrêt de départ).                                                                                                                                              |
-|                    | ***StartTimeDayOffset***    | *DayOffsetType*              | 0:1             | Nombre de jours de décalage par rapport au jour de départ de la COURSE.                                                                                                                                    |
-|                    | ***EndTime***               | *xsd:time*                   | 1:1             | Arrêt de fin de la PARTIE DE COURSE (à l'arrêt de fin).                                                                                                                                                    |
-|                    | ***EndTimeDayOffset***      | *DayOffsetType*              | 0:1             | Nombre de jours de décalage par rapport au jour de départ de la COURSE.                                                                                                                                    |
-|                    |                             |                              |                 |                                                                                                                                                                                                            |
-|                    |                             |                              |                 |                                                                                                                                                                                                            |
-| «cntd»             | ***facilities***            | *ServiceFacilitySet*         | 0:\*            | Service spécifique à cette PARTIE DE COURSE.                                                                                                                                                               |
-| «cntd»             | ***journeyPartPositions***  | *<u>JourneyPartPosition</u>* | 0:\*            | Positions dans la séquence de PARTIE DE COURSE.                                                                                                                                                            |
+| **Classification** | **Name** | **Type** | **cardinality** | **Description** |
+|-|-|-|-|-|
+| *::>* | *::>* | *DataManagedObject* | *::>* | JOURNEY PART hérite de DATA MANAGED OBJECT <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
+| | ***Description*** | *MultilingualString* | 0:1 | Description de la PARTIE DE COURSE. |
+| «FK» | ***ParentJourneyRef*** | *VehicleJourneyRef* | 0:1 | COURSE à laquelle appartient cette PARTIE DE COURSE. |
+| «FK» | ***MainPartRef*** | *JourneyPartCoupleRef* | 1:1 | Référence à la PARTIE DE COURSE principale (l'une des différentes PARTIE DE COURSE doit être déclarée comme principale). |
+| «FK» | ***JourneyPart­CoupleRef*** | *JourneyPartCoupleRef* | 0:1 | Référence à l'éventuelle COURSE COUPLÉE à laquelle la PARTIE DE COURSE appartient. |
+| «FK» | ***TrainNumberRef*** | *TrainNumberRef* | 0:1 | Référence au NUMÉRO DE TRAIN de la PARTIE DE COURSE. |
+| «FK» | ***FromStopPointRef*** | *ScheduledStopPointRef* | 0:1 | Arrêt de départ de la PARTIE DE COURSE. |
+| «FK» | ***ToStopPointRef*** | *ScheduledStopPointRef* | 0:1 | Arrêt de fin de la PARTIE DE COURSE. |
+| | ***StartTime*** | *xsd:time* | 1:1 | Arrêt de départ de la PARTIE DE COURSE (à l'arrêt de départ). |
+| | ***StartTimeDayOffset*** | *DayOffsetType* | 0:1 | Nombre de jours de décalage par rapport au jour de départ de la COURSE. |
+| | ***EndTime*** | *xsd:time* | 1:1 | Arrêt de fin de la PARTIE DE COURSE (à l'arrêt de fin). |
+| | ***EndTimeDayOffset*** | *DayOffsetType* | 0:1 | Nombre de jours de décalage par rapport au jour de départ de la COURSE. |
+| «cntd» | ***facilities*** | *ServiceFacilitySet* | 0:\* | Service spécifique à cette PARTIE DE COURSE. |
+| «cntd» | ***journeyPartPositions*** | *<u>JourneyPartPosition</u>* | 0:\* | Positions dans la séquence de PARTIE DE COURSE. |
 
 JOURNEY PART POSITION décrit la position relative dans le train d'un
 JOURNEY PART à partir d'un arrêt donné. Cela peut changer en cours de
 route car les composants du train sont couplés et découplés.
 
-<div class="table-title">*JourneyPartPosition* – Element *(objet inclus)*</div>
+<div class="table-title">JourneyPartPosition – Element (objet inclus)</div>
 
-|                    |                              |                            |                 |                                                             |
-|--------------------|------------------------------|----------------------------|-----------------|-------------------------------------------------------------|
 | **Classification** | **Name**                     | **Type**                   | **Cardinality** | **Description**                                             |
+|--------------------|------------------------------|----------------------------|-----------------|-------------------------------------------------------------|
 | *::>*              | *::>*                        | *VersionedChild*           | *::>*           | JOURNEY PART POSITION hérite de VERSIONED CHILD.            |
 | «PK»               | id                           | JourneyPartPosition­IdType | 1:1             | Identifiant de JOURNEY PART POSITION.                       |
 |                    |                              |                            |                 |                                                             |
@@ -1387,7 +1173,7 @@ route car les composants du train sont couplés et découplés.
 
 ## Numéro de train
 
-<div class="table-title">*TrainNumber* – Element *(objet inclus)*</div>
+<div class="table-title">TrainNumber – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -1459,7 +1245,7 @@ ne s'agit là que d'une convention, dans tous les cas, la partie heure de
 l'horaire de passage peut être ignorée dans le cadre des
 cadences.</span>
 
-<div class="table-title">*TemplateVehicleJourney* – Element</div>
+<div class="table-title">TemplateVehicleJourney – Element</div>
 
 <table>
 <colgroup>
@@ -1510,19 +1296,16 @@ cadences.</span>
 
 ### Course en fréquence
 
-<div class="table-title">*HeadwayJourneyGroup* – Element</div>
+<div class="table-title">HeadwayJourneyGroup – Element</div>
 
-|                     |                                 |                         |                  |                                                                             |
-|---------------------|---------------------------------|-------------------------|------------------|-----------------------------------------------------------------------------|
+
 | **Classifi­cation** | **Name**                        | **Type**                | **Cardin­ality** | **Description**                                                             |
+|---------------------|---------------------------------|-------------------------|------------------|-----------------------------------------------------------------------------|
 | *::>*               | *::>*                           | *JourneyFrequencyGroup* | *::>*            | HEADWAY JOURNEY GROUP hérite de JOURNEY FREQUENCY GROUP.                    |
 |                     | ***Scheduled­HeadwayInterval*** | *xsd:duration*          | 0:1              | INTERVAL DE PASSAGE planifié (temps prévu entre deux passages de véhicule). |
-|                     |                                 |                         |                  |                                                                             |
-|                     |                                 |                         |                  |                                                                             |
-|                     |                                 |                         |                  |                                                                             |
 |                     | ***Description***               | *MultilingualString*    | 0:1              | Description du service en fréquence                                         |
 
-<div class="table-title">*JourneyFrequencyGroup* – Element *(abstrait)*</div>
+<div class="table-title">JourneyFrequencyGroup – Element (abstrait)</div>
 
 <table>
 <colgroup>
@@ -1586,11 +1369,10 @@ cadences.</span>
 
 ### Course en cadence
 
-<div class="table-title">*RhythmicalJourneyGroup* – Element</div>
+<div class="table-title">RhythmicalJourneyGroup – Element</div>
 
-|                     |           |                         |                  |                                                                                                                 |
-|---------------------|-----------|-------------------------|------------------|-----------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**  | **Type**                | **Cardin­ality** | **Description**                                                                                                 |
+|---------------------|-----------|-------------------------|------------------|-----------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*     | *JourneyFrequencyGroup* | *::>*            | RHYTHMICAL JOURNEY GROUP hérite de JOURNEY FREQUENCY GROUP.                                                     |
 | «cntd»              | timebands |                         |                  | <span class="hl">On utilisera uniquement les COURSEs MODÈLEs pour décrire les services en cadencement.</span> |
 
@@ -1599,20 +1381,17 @@ cadences.</span>
 ![image](media/image5.svg)
 *Courses coupléed – Modèle conceptuel*
 
-<div class="table-title">*CoupledJourney* – Element</div>
+<div class="table-title">CoupledJourney – Element</div>
 
-|                     |                   |                      |                  |                                                                                                                                                                                                               |
-|---------------------|-------------------|----------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**          | **Type**             | **Cardin­ality** | **Description**                                                                                                                                                                                               |
+|---------------------|-------------------|----------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*             | *DataManagedObject*  | *::>*            | COUPLED JOURNEY hérite de DATA MANAGED OBJECT <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
-|                     |                   |                      |                  |                                                                                                                                                                                                               |
 |                     | ***Description*** | *MultilingualString* | 0:1              | Description de la COURSE COUPLÉE <span class="hl">(texte utilisable pour l'information voyageur)</span>.                                                                                                    |
-|                     |                   |                      |                  |                                                                                                                                                                                                               |
 | «cntd»              | ***journeys***    | *VehicleJourney*     | 0:\*             | Référence vers les COURSEs qui sont associées ensemble.                                                                                                                                                       |
 
 ### Parties de courses couplées
 
-<div class="table-title">*JourneyPartCouple* – Element</div>
+<div class="table-title">JourneyPartCouple – Element</div>
 
 <table>
 <colgroup>
@@ -1713,11 +1492,10 @@ cadences.</span>
 
 ## Les correspondances entre course
 
-<div class="table-title">*ServiceJourneyInterchange* – Element</div>
+<div class="table-title">ServiceJourneyInterchange – Element</div>
 
-|                     |                           |                         |                  |                                                                                                                                                         |
-|---------------------|---------------------------|-------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**                  | **Type**                | **Cardin­ality** | **Description**                                                                                                                                         |
+|---------------------|---------------------------|-------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                     | *Interchange*           | *::>*            | SERVICE JOURNEY INTERCHANGE hérite de INTERCHANGE.                                                                                                      |
 | «FK»                | ***FromPointRef***        | *ScheduledStopPointRef* | 1:1              | POINT D'ARRÊT planifié au départ de la correspondance.                                                                                                  |
 |                     | ***~~FromVisitNumber~~*** |                         |                  | <span class="hl">On utilisera les horaires de passage et de correspondance pour distinguer deux passages au même point d'arrêt, si nécessaire.</span> |
@@ -1725,9 +1503,8 @@ cadences.</span>
 |                     | ***~~ToVisitNumber~~***   |                         |                  | <span class="hl">On utilisera les horaires de passage et de correspondance pour distinguer deux passages au même point d'arrêt, si nécessaire.</span> |
 | «FK»                | ***FromJourneyRef***      | *ServiceJourneyRef*     | 1:1              | COURSE de départ.                                                                                                                                       |
 | «FK»                | ***ToJourneyRef***        | *ServiceJourneyRef*     | 1:1              | COURSE à laquelle donne accès la correspondance.                                                                                                        |
-|                     |                           |                         |                  |                                                                                                                                                         |
 
-<div class="table-title">*Interchange* – Element *(abstrait)*</div>
+<div class="table-title">Interchange – Element (abstrait)</div>
 
 <table>
 <colgroup>
@@ -1801,7 +1578,7 @@ cadences.</span>
 </tbody>
 </table>
 
-<div class="table-title">*InterchangeTimesGroup* – Element *(objet inclus)*</div>
+<div class="table-title">InterchangeTimesGroup – Element (objet inclus)</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -1848,12 +1625,10 @@ l'identification des voitures est variable d'une course à l'autre.
 
 <div class="table-title">TrainComponentLabelAssignment – Element</div>
 
-|                     |                         |                      |                  |                                                                                                                                                                                                                                |
-|---------------------|-------------------------|----------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**                | **Type**             | **Cardin­ality** | **Description**                                                                                                                                                                                                                |
+|---------------------|-------------------------|----------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*                   | *DataManagedObject*  | *::>*            | TRAIN COMPONENT LABEL ASSIGNMENT hérite de DATA MANAGED OBJECT <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 |                     | ***Name***              | *MultilingualString* | 0:1              | Nom associé au COMPOSANT DE TRAIN (voiture) pour la course <span class="hl">(il s'agit du nom de la voiture tel qu'il figurera sur le billet du voyageur).</span>                                                            |
-|                     |                         |                      |                  |                                                                                                                                                                                                                                |
 | «AK»                | ***VehicleJourneyRef*** | *VehicleJourneyRef*  | 0:1              | Référence de la course concernée.                                                                                                                                                                                              |
 | «FK»                | ***TrainComponentRef*** | *TrainComponentRef*  | 0:1              | Référence du COMPOSANT DE TRAIN (voiture) concernée.                                                                                                                                                                           |
 
@@ -1862,7 +1637,7 @@ l'identification des voitures est variable d'une course à l'autre.
 ![image](media/image6.svg)
 *Type de Vehicule et Trains – Modèle Conceptuel*
 
-<div class="table-title">*VehicleType – Element*</div>
+<div class="table-title">VehicleType – Element</div>
 
 <table>
 <colgroup>
@@ -2007,7 +1782,7 @@ l'identification des voitures est variable d'une course à l'autre.
 </tbody>
 </table>
 
-<div class="table-title">*PassengerCapacity – Element (objet inclus)*</div>
+<div class="table-title">PassengerCapacity – Element (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2084,7 +1859,7 @@ l'identification des voitures est variable d'une course à l'autre.
 
 ### Train
 
-<div class="table-title">*Train – Element*</div>
+<div class="table-title">Train – Element</div>
 
 <table>
 <colgroup>
@@ -2127,7 +1902,7 @@ l'identification des voitures est variable d'une course à l'autre.
 </tbody>
 </table>
 
-<div class="table-title">*TrainSize* – Structure *(objet inclus)*</div>
+<div class="table-title">TrainSize – Structure (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2167,7 +1942,7 @@ l'identification des voitures est variable d'une course à l'autre.
 </tbody>
 </table>
 
-<div class="table-title">*TrainComponent – Element*</div>
+<div class="table-title">TrainComponent – Element</div>
 
 <table>
 <colgroup>
@@ -2214,14 +1989,6 @@ l'identification des voitures est variable d'une course à l'autre.
 <td></td>
 <td><span class="hl">Non utilisé car implicite du fait de l'imbrication XML, dans le contexte du profil.</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="odd">
 <td></td>
 <td>b</td>
@@ -2234,7 +2001,7 @@ l'identification des voitures est variable d'une course à l'autre.
 </tbody>
 </table>
 
-<div class="table-title">*TrainElement – Element*</div>
+<div class="table-title">TrainElement – Element</div>
 
 <table>
 <colgroup>
@@ -2317,11 +2084,10 @@ l'identification des voitures est variable d'une course à l'autre.
 
 ### Train composé
 
-<div class="table-title">CompoundTrain *– Element*</div>
+<div class="table-title">CompoundTrain – Element</div>
 
-|                     |                  |                        |                  |                                                                                                                                              |
-|---------------------|------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | **Classifi­cation** | **Name**         | **Type**               | **Cardin­ality** | **Description**                                                                                                                              |
+|---------------------|------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | ::>                 | ::>              | *VehicleType*          | ::>              | COMPOUND TRAIN hérite de VEHICLE TYPE                                                                                                        |
 |                     | ***components*** | *TRainInCompoundTrain* | 1:\*             | Références aux TRAINs constituant le TRAIN composé. C'est une liste ordonnée (en commençant par la tête de train dans le sens de la marche). |
 
@@ -2337,7 +2103,7 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 ***NETEX_HORAIRE***. Il apparaitra systématiquement et explicitement
 dans les éléments ***members*** du ***GeneralFrame***.
 
-<div class="table-title">*TypeOfFrame* – Element</div>
+<div class="table-title">TypeOfFrame – Element</div>
 
 <table>
 <colgroup>
@@ -2450,7 +2216,7 @@ dans les éléments ***members*** du ***GeneralFrame***.
 </tbody>
 </table>
 
-<div class="table-title">*TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE)* – Element</div>
+<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE) – Element</div>
 
 <table>
 <colgroup>
@@ -2491,14 +2257,6 @@ dans les éléments ***members*** du ***GeneralFrame***.
 <p><span class="hl">Imposé à « NETEX HORAIRE»</span>.</p></td>
 <td></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="even">
 <td></td>
 <td><em><strong>Description</strong></em></td>
@@ -2506,30 +2264,6 @@ dans les éléments ***members*** du ***GeneralFrame***.
 <td>1:1</td>
 <td><p>Description du TYPE OF VALUE.</p>
 <p><span class="hl">Imposé à « Profil d’échange français NETEX HORAIRE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 </tbody>
