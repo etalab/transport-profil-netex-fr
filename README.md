@@ -5,7 +5,7 @@ Le contenu des normes présentes sur le site https://normes.transport.data.gouv.
 Chaque dossier correspond à une norme et contient un fichier `index.md` ainsi qu'un dossier `media` contenant les images présentes dans la page.
 
 ## Déploiement
-La mise en ligne de ces fichiers se fait via un site statique, généré par [Hugo](https://gohugo.io/) et dont le code est [ici](https://github.com/etalab/transport-normes-site).
+La mise en ligne de ces fichiers se fait via un site statique, généré par [Hugo](https://gohugo.io/) et dont le code est [ici](https://github.com/etalab/transport-normes-site). Pour qu'un changement de contenu sur ce repo déclenche un redéploiement du site, une [github action](https://github.com/etalab/transport-normes/blob/main/.github/workflows/github-actions.yml) est utilisée, donc la tâche consiste à faire une requête POST pour déclencher le déploiement. Pour des raisons de sécurité, le token de l'url de déploiement est gardé secret dans les [secrets](https://github.com/etalab/transport-normes/settings/secrets/actions) du projet. Pour y accéder, il faut être admin sur le repo. Y accéder n'est utile que pour changer le token, si par hasard celui-ci devait être changé.
 
 ## Historique
 La rédaction de ces normes a eu lieu pendant plusieurs années sur des documents word, le suivi des modifications étant fait en utilisant l'outil du même nom sur Word. Ces documents Word étaient mis à disposition sur la page http://www.normes-donnees-tc.org/profils/. Afin de garder une tracabilité maximale sur le contenu des fichiers, le dossier `originaux` contient les documents Word (.doc) qui ont servi à la conversion vers le format Markdown (.md) dorénant utilisé.
