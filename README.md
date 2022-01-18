@@ -1,5 +1,5 @@
 # Normes pour les données d'offres de transport
-Le contenu des normes présentes sur le site https://normes.transport.data.gouv.fr (en ligne d'ici fin janvier 2022).
+Le contenu des normes présentes sur le site https://normes.transport.data.gouv.fr.
 
 ## Structure
 Chaque dossier correspond à une norme et contient un fichier `index.md` ainsi qu'un dossier `media` contenant les images présentes dans la page.
