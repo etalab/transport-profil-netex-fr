@@ -304,12 +304,12 @@ par les attributs suivants
 | xxxDelivery  |  |  |  |  | +Structure  |  | Delivery for xxx Service  |  |  |  |
 |--|--|--|--|--|--|--|--|--|--|--|
 | Log  | Response­Timestamp  |  | 1:1  |  | xsd:dateTime  |  | Heure de creation de la response.  |  |  |  |
-| End­point prop­erties  | RequestMessageRef  |  | 0:1  |  | Message­Qualifier  |  |  | For direct requests, Identifier of request that this Delivery satisfies.  |  |  |
-|  | SubscriberRef  |  | 0:1  |  | Participant­Code  |  |  | Required if Delivery is for a Subscription, Participant Reference of Subscriber.  |  |  |
-|  | Subscription­FilterRef  |  | 0:1  |  | SubcriptionFilterCode  |  |  | Unique identifier of Subscription filter to which this subscription is assigned. If there is only a single filter, then can be omitted.  |  |  |
-|  | Subscription­Ref  |  | 1:1  |  | Subscript­ion­Qualifier  |  |  | Required if Delivery is for a Subscription, Identifier of Subscription issued by Requestor. Unique within Subscriber (i.e. within ***ParticipantRef*** of Subscriber), and SIRI Functional Service type.  |  |  |
+| End­point prop­erties  | RequestMessageRef  |  | 0:1  |  | ➜Message­Qualifier  |  |  | For direct requests, Identifier of request that this Delivery satisfies.  |  |  |
+|  | SubscriberRef  |  | 0:1  |  | ➜Participant­Code  |  |  | Required if Delivery is for a Subscription, Participant Reference of Subscriber.  |  |  |
+|  | Subscription­FilterRef  |  | 0:1  |  | ➜SubcriptionFilterCode  |  |  | Unique identifier of Subscription filter to which this subscription is assigned. If there is only a single filter, then can be omitted.  |  |  |
+|  | Subscription­Ref  |  | 1:1  |  | ➜Subscript­ion­Qualifier  |  |  | Required if Delivery is for a Subscription, Identifier of Subscription issued by Requestor. Unique within Subscriber (i.e. within ***ParticipantRef*** of Subscriber), and SIRI Functional Service type.  |  |  |
 | Deleg­ation  | DelegatorAddress  |  | 0:1  |  | Xsd:anyURI  |  | Address of original Consumer, i.e. requesting system to which delegating response is to be returned.  |  |  |  |
-|  | DelegatorRef  |  | 0:1  |  | Participant­Code  |  |  | Identifier of delegating system that originated message.  |  |  |
+|  | DelegatorRef  |  | 0:1  |  | ➜Participant­Code  |  |  | Identifier of delegating system that originated message.  |  |  |
 | Stat­us  | Status  |  | 0:1  |  | xsd:boolean  |  |  | Whether the complete request could be processed successfully or not. Default is true. If any of the individual requests within the delivery failed, should be set to *false*.  |  |  |
 |  | ErrorCondition  |  | 0:1  |  | +Structure  |  |  | Description of any error or warning conditions that apply to the specific functional request or response.  |  |  |
 |  |  |  |  |  | choice  |  |  | One of the following Error codes.  |  |  |
@@ -318,7 +318,7 @@ par les attributs suivants
 |  | c  |  |  | NoInfoFor­TopicError  |  | +Error  |  |  | Error: Valid request was made but service does not hold any data for the requested topic expression.  |  |
 |  | d  |  |  | Allowed­Resource­Usage­Exceeded­Error  |  | +Error  |  |  | Error: Valid request was made but request would exceed the permitted resource usage of the client.  |  |
 |  | e  |  |  | OtherError  |  | +Error  |  |  | Error other than a well-defined category.  |  |
-|  |  | Description  |  | 0:1  |  | ErrorDescription  |  |  | Description of Error.  |  |
+|  |  | Description  |  | 0:1  |  | ➜ErrorDescription  |  |  | Description of Error.  |  |
 |  | ValidUntil  |  | 0:1  |  | xsd:dateTime  |  |  | End of data horizon of the data producer.  |  |  |
 |  | Shortest­Possible­Cycle  |  | 0:1  |  | Positive­Duration­Type  |  |  | Minimum interval at which updates can be sent.  |  |  |
 |  | DefaultLanguage  |  |  |  | Xsd:language  |  |  | Default language for text elements.  |  |  |
@@ -3054,7 +3054,7 @@ des protocoles d’accord en tre AOT et OTP.
 <tr>
 <td colspan="2"><em><strong><span class="hl">Operator</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>Operator­Code</em></td>
+<td><em>➜Operator­Code</em></td>
 <td>Identifie l’exploitant pour lequel on souhaite obtenir des informations<em>.</em></td>
 </tr>
 <tr>
@@ -3067,7 +3067,7 @@ des protocoles d’accord en tre AOT et OTP.
 <td rowspan="2"></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>Line­Code</em></td>
+<td><em>➜Line­Code</em></td>
 <td>Identifie la ligne pour laquelle on souhaite obtenir des informations.</td>
 </tr>
 <tr>
@@ -3144,7 +3144,7 @@ EstimatedTimetable.
 <td><em><strong><span class="hl">Subscriber­Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
-<td><em>Participant­Code</em></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur (voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
 <tr>
@@ -3218,7 +3218,7 @@ EstimatedTimetable.
 <td><em>Identity</em></td>
 <td><strong><span class="hl">VersionRef</span></strong></td>
 <td>0:1</td>
-<td><em>VersionCode</em></td>
+<td><em>➜VersionCode</em></td>
 <td><p>Contexte d'identification de la course (SAE pour le jour d'exploitation, version du référentiel de données, etc.).</p>
 <p>Ce champ permet de qualifier la version des données de référence ie version du référentiel théorique (voir 2.4).</p></td>
 </tr>
@@ -3278,13 +3278,13 @@ EstimatedTimetable.
 <td rowspan="9"><em>Vehicle Journey Identity</em></td>
 <td colspan="6"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="2"><em>LineCode</em></td>
+<td colspan="2"><em>➜LineCode</em></td>
 <td colspan="3">Identifiant de la ligne.</td>
 </tr>
 <tr>
 <td colspan="6"><em><strong><span class="hl">DirectionRef</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="2"><em>Direction­Code</em></td>
+<td colspan="2"><em>➜Direction­Code</em></td>
 <td colspan="3"><p>Identifie la direction (typiquement Aller/Retour).</p>
 <p><span class="hl">La sélection de ce champ n’est pas dans la logique du reste du profil (plutôt porté sur Destination, voir plus bas) mais est maintenu du fait de la cardinalité imposée par SIRI</span> (le champ est obligatoire dans la description XSD de SIRI et doit donc être maintenu, il pourra toutefois être laissé vide, sans que cela ne pose problème…)</p></td>
 </tr>
@@ -3298,7 +3298,7 @@ EstimatedTimetable.
 <td colspan="2"><em><strong>a</strong></em></td>
 <td colspan="4"><em><strong><span class="hl">Dated­Vehicle­Journey­Ref</span></strong></em></td>
 <td colspan="2" rowspan="2">–1:1</td>
-<td colspan="3"><em>DatedVehicle­Journey­Code</em></td>
+<td colspan="3"><em>➜DatedVehicle­Journey­Code</em></td>
 <td colspan="2"><p>Identifie la course.</p>
 <p><span class="hl_france">Cette information est obligatoire dans le cadre des échanges avec un concentrateur.</span></p></td>
 </tr>
@@ -3312,7 +3312,7 @@ EstimatedTimetable.
 <td colspan="3" rowspan="4"></td>
 <td><em><strong><span class="hl">Origin­Ref</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="3"><em>StopPoint­Code</em></td>
+<td colspan="3"><em>➜StopPoint­Code</em></td>
 <td colspan="2"><span class="hl">Identifiant du premier point d’arrêt de la course.</span></td>
 </tr>
 <tr>
@@ -3324,7 +3324,7 @@ EstimatedTimetable.
 <tr>
 <td><em><strong><span class="hl">Destination­Ref</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="3"><em>StopPoint­Code</em></td>
+<td colspan="3"><em>➜StopPoint­Code</em></td>
 <td colspan="2"><span class="hl">Identifiant du dernier point d’arrêt de la course.</span></td>
 </tr>
 <tr>
@@ -3522,7 +3522,7 @@ EstimatedTimetable.
 <td></td>
 <td colspan="5"><em><strong><span class="hl">TrainNumberRef</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="2"><em>TrainNumber</em></td>
+<td colspan="2"><em>➜TrainNumber</em></td>
 <td colspan="3"><p><span class="hl">Numéro de train</span></p>
 <p><span class="hl">On utilisera en priorité la codification de code primaire UE 454/2011 ou le numéro de train UIC </span></p></td>
 </tr>
@@ -3544,14 +3544,14 @@ EstimatedTimetable.
 <td colspan="3" rowspan="2"></td>
 <td colspan="2"><em><strong><span class="hl">Journey­PartRef</span></strong></em></td>
 <td colspan="2">0:1</td>
-<td colspan="2"><em>JourneyPart­Code</em></td>
+<td colspan="2"><em>➜JourneyPart­Code</em></td>
 <td colspan="3"><p><span class="hl">Dans le cadre du profil France ce champ permettra d'identifier les portions de courses exploitées par des opérateurs différents : les valeurs d'identification des JourneyPart sont des données de référence qui devront être fixées en amont de l'échange.</span></p>
 <p><span class="hl">Exemple de Ile de France : cas du RER, les portions de courses exploitées par la RATP et celles exploitées par la SNCF</span></p></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Train­NumberRef</span></strong></em></td>
 <td colspan="2">0:1</td>
-<td colspan="2"><em>TrainNumbere</em></td>
+<td colspan="2"><em>➜TrainNumbere</em></td>
 <td colspan="3"><p><span class="hl">Dans le cadre du profil France ce champ sera suffixé, pour la SNCF, des code suivants:</span></p>
 <ul>
 <li><p><span class="hl">:2 pour les trains de parité paire</span></p></li>
@@ -3632,7 +3632,7 @@ EstimatedTimetable.
 <td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
-<td><em>StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><span class="hl">Identifiant du Point d'arrêt (cet identifiant est à rapprocher de l’attribut </span><em><span class="hl">MonitoringRef</span></em><span class="hl"> de la structure </span><em><span class="hl">MonitoredStopVisit</span></em><span class="hl">, mais restreint à ce cas de point d’arrêt là ou le </span><em><span class="hl">MonitoringRef</span></em><span class="hl"> peut aussi, dans le contexte général de SIRI, </span><del><span class="hl">,</span></del><span class="hl"> référencer un afficheur, par exemple).</span></td>
 </tr>
 <tr>
@@ -4905,7 +4905,7 @@ dès que :
 <td></td>
 <td colspan="2"><em><strong><span class="hl">TrainNumberRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>TrainNumber</em></td>
+<td><em>➜TrainNumber</em></td>
 <td><p>Numéro de train</p>
 <p>On utilisera en priorité la codification de code primaire UE 454/2011 ou le numéro de train UIC</p></td>
 </tr>
@@ -4927,13 +4927,13 @@ dès que :
 <td rowspan="3"></td>
 <td><em><strong><span class="hl">Journey­PartRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>JourneyPart­Code</em></td>
+<td><em>➜JourneyPart­Code</em></td>
 <td><span class="hl">Dans le cadre du profil France ce champ permettra d'identifier, en particulier dans le contexte du RER, les portions de courses exploitées par la RATP et celles exploitées par la SNCF (les valeurs d'identification des JourneyPart sont des données de référence qui devront être fixes en amont de l'échange).</span></td>
 </tr>
 <tr>
 <td><em><strong><span class="hl">Train­NumberRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>TrainNumbere</em></td>
+<td><em>➜TrainNumbere</em></td>
 <td><p>Dans le cadre du profil France ce champ sera suffixé, pour la SNCF, des code suivants:</p>
 <ul>
 <li><p>:2 pour les trains de parité paire</p></li>
@@ -6278,7 +6278,7 @@ class="hl"> ». </span>
 <tr>
 <td colspan="2"><em><strong><span class="hl">ConnectionLink­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>Connec­tion­Link­Code</em></td>
+<td><em>➜Connec­tion­Link­Code</em></td>
 <td><p><span class="hl">Identifiant de la correspondance interrogée (à déterminer entre les participants, ou à terme au niveau du référentiel francilien pour les correspondances structurantes et/ou garanties).</span></p>
 <p><span class="hl">Pour mémoire, le « ConnectionLink » référence le cheminement physique, alors que l’objet « Interchange » référence une correspondance entre deux courses identifiées (généralement, un «Interchange » se réalise donc en empruntant un « ConnectionLink »).  </span></p></td>
 </tr>
@@ -6335,8 +6335,8 @@ class="hl"> ». </span>
 
 | *Filter*  | <span class="hl">Connecting­TimeFilter </span>  |  |  | *+Structure*  | Filtre temporel pour les requêtes  |
 |--|--|--|--|--|--|
-|  |  | ***<span class="hl">LineRef</span>***  | 1:1  | *LineCode*  | Identifiant de la ligne amenante.  |
-|  |  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *Direction­Code*  | Indication de direction (aller/retour).  |
+|  |  | ***<span class="hl">LineRef</span>***  | 1:1  | *➜LineCode*  | Identifiant de la ligne amenante.  |
+|  |  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *➜Direction­Code*  | Indication de direction (aller/retour).  |
 |  |  | ***<span class="hl">Earliest­ArrivalTime</span>***  | 1:1  | *xsd:dateTime*  | <span class="hl">Début de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).</span>  |
 |  |  | ***<span class="hl">Latest­ArrivalTime</span>***  | 1:1  | *xsd:dateTime*  | <span class="hl">Fin de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).</span>  |
 
@@ -6344,7 +6344,7 @@ class="hl"> ». </span>
 
 | *Filter*  | ***<span class="hl">Connecting­JourneyFilter </span>***  |  |  | *+Structure*  | Filtre sur les courses  |
 |--|--|--|--|--|--|
-|  |  | ***<span class="hl">Dated</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 1:1  | *Dated­Vehicle­Journey­Code*  | Identifiant de la course.  |
+|  |  | ***<span class="hl">Dated</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 1:1  | *➜Dated­Vehicle­Journey­Code*  | Identifiant de la course.  |
 |  |  |  |  |  |  |
 |  |  | ***<span class="hl">Aimed</span>­<span class="hl">Arrival­Time</span>***  | 0:1  | *xsd:dateTime*  | Date et heure d’arrivée prévue au point d’arrêt (départ de correspondance).  |
 
@@ -6371,7 +6371,7 @@ class="hl"> ». </span>
 <td><em><strong><span class="hl">Subscriber</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
-<td><em>Participant­Code</em></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur ( voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
 <tr>
@@ -6521,21 +6521,21 @@ class="hl"> ». </span>
 <td rowspan="2"><em>Feeder Inter­change Identity</em></td>
 <td><em><strong><span class="hl">Interchange</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>Interchange­Code</em></td>
+<td><em>➜Interchange­Code</em></td>
 <td><p>Identifiant de la correspondance entre course</p>
 <p><span class="hl">Dans le cadre du profil France, si ce paramètre est présent, il sera constitué de la concaténation de l’identifiant de la course arrivant et de celui de la course au départ (séparés par le caractère ‘</span><strong><span class="hl">:</span></strong><span class="hl">’).</span></p></td>
 </tr>
 <tr>
 <td><em><strong><span class="hl">Connection</span>­<span class="hl">Link­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>Connection­Link­Code</em></td>
+<td><em>➜Connection­Link­Code</em></td>
 <td>Identifiant de la correspondance physique.</td>
 </tr>
 <tr>
 <td rowspan="5"></td>
 <td><em><strong><span class="hl">Stop</span>­<span class="hl">Point­Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifiant du point d’arrêt de l’amenant (généralement porté par le ConnectionLink).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence : zone d'embarquement ou zone de lieu : granularité la plus fine possible dans tous les cas.</span></p></td>
 </tr>
@@ -6560,7 +6560,7 @@ class="hl"> ». </span>
 <tr>
 <td><em><strong><span class="hl">Clear</span>­<span class="hl">Down</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>Cleardown­Code</em></td>
+<td><em>➜Cleardown­Code</em></td>
 <td><em>Cleardown</em> : indicateur « véhicule à l’arrêt » ou « à l’approche ».</td>
 </tr>
 <tr>
@@ -6625,8 +6625,8 @@ class="hl"> ». </span>
 
 | ***<span class="hl">FeederJourney</span>***  |  |  | *+Structure*  | Description de la course de l’amenant  |
 |--|--|--|--|--|
-| *VehicleJourney­Identity*  | ***<span class="hl">LineRef</span>***  | 1:1  | *LineCode*  | Identifiant de la ligne.  |
-|  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *Direction­Code*  | Indication de direction (aller/retour).  |
+| *VehicleJourney­Identity*  | ***<span class="hl">LineRef</span>***  | 1:1  | *➜LineCode*  | Identifiant de la ligne.  |
+|  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *➜Direction­Code*  | Indication de direction (aller/retour).  |
 |  | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 0:1  | *+Structure*  | Identification de la course.  |
 | *JourneyPattern­Info*  | ***<span class="hl">:::</span>***  | 0:1  | *Journey­Pattern­Info­Group*  | Voir Journey­Pattern­Info­Group.  |
 | *VehicleJourney­Info*  | ***<span class="hl">:::</span>***  | 0:1  | *Vehicle­JourneyInfo­Group*  | Voir Vehicle­JourneyInfo­Group.  |
@@ -6674,20 +6674,20 @@ Inter­change<br />
 Identity</em></td>
 <td><em><strong><span class="hl">Interchange­Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>Interchange<strong>­</strong>Code</em></td>
+<td><em>➜Interchange<strong>­</strong>Code</em></td>
 <td><p>Identifiant de la correspondance entre courses.</p>
 <p><span class="hl">Dans le cadre du profil France, si ce paramètre est présent, il sera constitué de la concaténation de l’identifiant de la course arrivant et de celui de la course au départ (séparés par le caractère ‘</span><strong><span class="hl">:</span></strong><span class="hl">’).</span></p></td>
 </tr>
 <tr>
 <td><em><strong><span class="hl">ConnectionLink­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>Connection­Link­Code</em></td>
+<td><em>➜Connection­Link­Code</em></td>
 <td>Identifiant de la correspondance physique.</td>
 </tr>
 <tr>
 <td><em><strong><span class="hl">StopPoint­Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifiant du point d’arrêt de l’amenant (généralement porté par le <em>ConnectionLink</em>).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence :zone d'embarquement ou zone de lieu : granularité la plus fine possible dans tous les cas.</span></p></td>
 </tr>
@@ -6713,13 +6713,13 @@ Identity</em></td>
 <td rowspan="11"><em>Journey Info</em></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
 <tr>
 <td><em><strong><span class="hl">DirectionRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>Destination­Code</em></td>
+<td><em>➜Destination­Code</em></td>
 <td>Identifiant de la direction (aller/retour).</td>
 </tr>
 <tr>
@@ -6731,7 +6731,7 @@ Identity</em></td>
 <tr>
 <td><em><strong><span class="hl">JourneyPatternRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>Journey­PatternCode</em></td>
+<td><em>➜Journey­PatternCode</em></td>
 <td>Identifiant de la mission.</td>
 </tr>
 <tr>
@@ -6751,7 +6751,7 @@ Identity</em></td>
 <tr>
 <td><em><strong><span class="hl">RouteRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>RouteCode</em></td>
+<td><em>➜RouteCode</em></td>
 <td><span class="hl">Identifiant de l'itinéraire suivi.</span></td>
 </tr>
 <tr>
@@ -6763,7 +6763,7 @@ Identity</em></td>
 <tr>
 <td><em><strong><span class="hl">GroupOfLinesRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>GroupOfLinesCode</em></td>
+<td><em>➜GroupOfLinesCode</em></td>
 <td><span class="hl">Identifiant du Goupe de Lignes (réseau ou tout autre groupe de ligne auquel la course est rattachée</span><del><span class="hl">)</span></del></td>
 </tr>
 <tr>
@@ -6823,7 +6823,7 @@ Identity</em></td>
 | *Log*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Date et heure auxquelles ces données ont été produites.  |
 | *Distributor­Info*  | ***<span class="hl">:::</span>***  | 1:1  | *Distributor­Info­Group*  | Voir DistributorInfoGroup (6.3.3.2.4)**.**  |
 | *Change*  | ***<span class="hl">ChangeNote</span>***  | 1:1  | *NLString*  | Description de la nouvelle position (textuelle).  |
-|  | ***<span class="hl">NewLocation</span>***  | 0:1  | *Location*  | Nouvelle position de l’arrêt.  |
+|  | ***<span class="hl">NewLocation</span>***  | 0:1  | *➜Location*  | Nouvelle position de l’arrêt.  |
 |  |  |  |  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ###### Structure Location
@@ -6991,7 +6991,7 @@ Identity</em></td>
 <td rowspan="3"><em>Vehicle­Journey­Identity</em></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
 <tr>
@@ -7072,8 +7072,8 @@ PreviousCall est précisée en 5.8.
 |  | ***<span class="hl">Message­Identifier</span>***  |  | 0:1  | *Message­Qualifier*  | Numéro d'identification du message.  |
 | *Topic*  |  |  |  |  |  |
 |  |  |  |  | *choice*  |  |
-|  | ***a***  | ***<span class="hl">Vehicle</span>­<span class="hl">Ref</span>***  | 0:1  | *VehicleCode*  | Identifiant du véhicule.  |
-|  | ***b***  |  | ***<span class="hl">LineRef</span>***  | *LineCode*  | Identifiant de la ligne (tous les véhicules de la ligne seront remontés).  |
+|  | ***a***  | ***<span class="hl">Vehicle</span>­<span class="hl">Ref</span>***  | 0:1  | *➜VehicleCode*  | Identifiant du véhicule.  |
+|  | ***b***  |  | ***<span class="hl">LineRef</span>***  | *➜LineCode*  | Identifiant de la ligne (tous les véhicules de la ligne seront remontés).  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
@@ -7109,7 +7109,7 @@ PreviousCall est précisée en 5.8.
 <td rowspan="2"><em>Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>Participant­Code</em></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur ( voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
 <tr>
@@ -7280,9 +7280,9 @@ PreviousCall est précisée en 5.8.
 |--|--|--|--|--|
 | *End­point*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Heure à laquelle l'annulation a été signalée/publiée.  |
 | *Event­Identity*  | ***<span class="hl">ItemRef</span>***  | 0:1  | *ItemIdentifier*  | Identifiant de l’objet annulé (voir ***ItemRef*** plus haut).  |
-|  | ***<span class="hl">Vehicle­Monitoring­Ref</span>***  | 0:1  | *Vehicle­Monitoring­Code*  | Identifiant du véhicule.  |
+|  | ***<span class="hl">Vehicle­Monitoring­Ref</span>***  | 0:1  | *➜Vehicle­Monitoring­Code*  | Identifiant du véhicule.  |
 |  | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Ref</span>***  | 0:1  | *+Structure*  | Description de la course annulée.  |
-|  | ***<span class="hl">LineRef</span>***  | 0:1  | *LineCode*  | Identifiant de la ligne.  |
+|  | ***<span class="hl">LineRef</span>***  | 0:1  | *➜LineCode*  | Identifiant de la ligne.  |
 |  |  |  |  |  |
 | *Journey­Pattern­Info*  | ***:::***  | 0:1  | *JourneyPattern­InfoGroup*  | See SIRI Part 2 JourneyPatternInfoGroup.  |
 | *Message*  | ***<span class="hl">Reason</span>***  | 0:\*  | *NLString*  | Description textuelle de la cause de l’annulation.  |
@@ -8114,7 +8114,7 @@ Properties</td>
 <td rowspan="2"><em>Identity</em></td>
 <td><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>Participant­Code</em></td>
+<td><em>➜Participant­Code</em></td>
 <td><span class="hl">Identification du système demandeur (See SIRI Part 2 Common SubscriptionRequest parameters).</span></td>
 </tr>
 <tr>
@@ -8200,7 +8200,7 @@ et de localisation.
 <tr>
 <td><em><strong><span class="hl">FacilityRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>FacilityCode</em></td>
+<td><em>➜FacilityCode</em></td>
 <td><p>identifiant d’une Facility.</p>
 <p><span class="hl">L’utilisation de references aux facility sera privilégiée</span> <span class="hl">Voir FM-1</span></p></td>
 </tr>
@@ -8229,7 +8229,7 @@ et de localisation.
 <td><em>Situation</em></td>
 <td><em><strong><span class="hl">SituationRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>SituationCode</em></td>
+<td><em>➜SituationCode</em></td>
 <td>Identifiant d’une SITUATION associée à l'état de l'installation.</td>
 </tr>
 <tr>
@@ -8410,7 +8410,7 @@ information</em></td>
 <td></td>
 <td><em><strong><span class="hl">StopPlaceComponentId</span></strong></em></td>
 <td>0:1</td>
-<td><em>ComponentId</em></td>
+<td><em>➜ComponentId</em></td>
 <td><span class="hl">Identifiant d’un composant de lieu d’arrêt (au sens Transmodel) sur lequel le service est localisé</span></td>
 </tr>
 <tr>
@@ -13571,14 +13571,14 @@ pour véhicules de transport en commun</td>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Operator</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:*</td>
-<td><em>Operator­Code</em></td>
+<td><em>➜Operator­Code</em></td>
 <td>Identifie le ou les exploitants pour lesquel on souhaite obtenir des informations<em>.</em></td>
 </tr>
 <tr>
 <td></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifie la ligne pour laquelle on souhaite obtenir des informations.</td>
 </tr>
 <tr>
@@ -13647,7 +13647,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
-<td><em>Participant­Code</em></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur (voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
 <tr>
@@ -13718,13 +13718,13 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td rowspan="2"><em>Line</em></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
 <tr>
 <td><em><strong><span class="hl">DirectionRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>Direction­Code</em></td>
+<td><em>➜Direction­Code</em></td>
 <td><p>Identifie la direction (typiquement Aller/Retour).</p>
 <p><span class="hl">La sélection de ce champ n’est pas dans la logique du reste du profil (plutôt porté sur Destination, voir plus bas) mais est maintenue du fait de la cardinalité imposée par SIRI.</span></p></td>
 </tr>
@@ -13818,7 +13818,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td rowspan="2">choice</td>
 <td colspan="3"><em><strong><span class="hl">Dated</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Code</span></strong></em></td>
 <td>1:1</td>
-<td><em>Vehicle­Journey­Code</em></td>
+<td><em>➜Vehicle­Journey­Code</em></td>
 <td>Identifie la course datée.</td>
 </tr>
 <tr>
@@ -14014,7 +14014,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td rowspan="4"><em>Stop Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">StopPoint</span>­<span class="hl">Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifiant du Point d'arrêt (cet identifiant est à rapprocher de l’attribut <em>MonitoringRef</em> de la structure <em>MonitoredStopVisit</em>, mais restreint à ce cas de point d’arrêt là, ou le <em>MonitoringRef</em> peut aussi, dans le contexte général de SIRI, mais pas celui du profil francilien, référencer un afficheur, par exemple).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet issu du profil NeTex Fr (Lieu d’arrêt mono ou multimodaux, zone d'embarquement): granularité la plus fine possible dans tous les cas.</span></p></td>
 </tr>
@@ -14215,14 +14215,14 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td rowspan="2"><em>Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">Interchange</span>­<span class="hl">Code</span></strong></em></td>
 <td>0:1</td>
-<td><em>Inter­change­Code</em></td>
+<td><em>➜Inter­change­Code</em></td>
 <td><p>Identification de la correspondance.</p>
 <p><span class="hl">Dans le cadre du profil France, si ce paramètre est présent, il sera constitué de la concaténation de l’identifiant de la course de l’arrivant et de celui de la course au départ (séparés par le caractère ‘</span><strong><span class="hl">:</span></strong><span class="hl">’)</span></p></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Distributor­Vehicle­Journey­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>Dated­Vehicle­Journey­Code</em></td>
+<td><em>➜Dated­Vehicle­Journey­Code</em></td>
 <td>Identifie la course de l’arrivant</td>
 </tr>
 <tr>
@@ -14243,7 +14243,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <tr>
 <td><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifant du point d’arrêt de départ de la correspondance.</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence partagé entre les systèmes communiquants (cf ) </span></p></td>
 </tr>
