@@ -2447,7 +2447,6 @@ d'arrêt pour obtenir une information proprement structurée.</span>
 <u>Note</u>: Voir 3.2 pour les explications détaillées de lecture des
 tableaux qui suivent (codes couleurs, etc.).
 
-|  |  |  |  |  |  |
 |--|--|--|--|--|--|
 | ***<span class="hl">StopPointsDiscoveryRequest</span>***  |  |  |  | *+Structure*  | Requête d'accès à la liste des arrêts  |
 | *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | Date d’émission de la requête.  |
@@ -2460,11 +2459,8 @@ tableaux qui suivent (codes couleurs, etc.).
 |  |  | ***<span class="hl">UpperLeft</span>***  | 0:1  | *LocationStructure*  | Coin supérieur gauche du rectangle englobant  |
 |  |  | ***<span class="hl">LowerRight</span>***  | 0:1  | *LocationStructure*  | Coin inférieur droit du rectangle englobant  |
 |  | ***<span class="hl_delete">Circle</span>***  |  |  |  |  |
-|  |  |  |  |  |  |
 |  | ***<span class="hl">OperatorRef</span>***  |  | 0:1  | *Operator­Code*  | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par un opérateur donné</span><span class="hl">.</span>  |
 |  | ***<span class="hl">LineRef</span>***  |  | 0:1  | *LineCode*  | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par une ligne donné</span><span class="hl">e.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 
 #### Réponses aux StopPointsRequest
 
@@ -2565,33 +2561,22 @@ SIRI).
 
 #### <span class="hl">Requête LinesRequest</span>
 
-|  |  |  |  |  |  |
 |--|--|--|--|--|--|
 | ***<span class="hl">LinesDiscoveryRequest</span>***  |  |  |  | *+Structure*  | Requête d'accès à la liste des lignes  |
 | *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | <span class="hl">Date d’émission de la requête.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 | *Endpoint Properties*  | ***<span class="hl">Address</span>***  |  | 0:1  | *Endpoint­Address*  | <span class="hl">Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).</span>  |
 |  | ***<span class="hl">Requestor</span>­<span class="hl">Ref</span>***  |  | 1:1  | *Participant­Code*  | <span class="hl">Identifiant du demandeur (reprendre la structure \[</span>*<span class="hl">fournisseur</span>*<span class="hl">\] des identifiants).</span>  |
 |  | ***<span class="hl">Message</span>­<span class="hl">Identifier</span>***  |  | 0:1  | *Message­Qualifier*  | <span class="hl">Identifiant unique de ce message.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 |  | ***<span class="hl">OperatorRef</span>***  |  | 0:1  | *Operator­Code*  | <span class="hl">Filtre permettant de n'obtenir que les lignes exploitées par un opérateur donné</span><span class="hl">.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 
 #### <span class="hl">Réponses aux LinesRequest</span>
 
-|  |  |  |  |  |
 |--|--|--|--|--|
 | ***<span class="hl">AnnotatedLineStructure</span>***  |  |  | *+Structure*  | <span class="hl">Description simplifiée d'une ligne</span>  |
 | *Line Identity*  | ***<span class="hl">LineRef</span>***  | 1:1  | *LineCode*  | <span class="hl">Identifiant de la ligne (issu du référentientiel des lignes) </span>  |
 |  | ***<span class="hl">LineName</span>***  | 1:1  | *NaturalLanguageStringStructure*  | <span class="hl">Nom de la ligne (issu du référentientiel des lignes) </span>  |
 |  | ***<span class="hl">Monitored</span>***  | 0:1  | *xsd:boolean*  | <span class="hl">le champ obligatoire « Monitored » sera toujours égal à « true » indiquant ainsi que l’on dispose bien d’information temps réel à ce point (inutile de traiter les arrêts et lignes pour lesquels on n’a pas d'information temps réel)</span>  |
 |  | ***<span class="hl">Destinations</span>***  | 0:\*  | *AnnotatedDestinationStructure*  | <span class="hl">Le champ facultatif « Destinations » reste facultatif et permettra d’indiquer, en plus des extrémités de la ligne, si elle est composée de plus de deux itinéraires (aller et retour)</span>  |
-|  |  |  |  |  |
-|  |  |  |  |  |
 
 ### <span class="hl">Discovery InfoChannel & Facility</span>
 
@@ -4131,41 +4116,23 @@ principales fonctions retenues pour le service (les explications ne sont
 pas traduites dans ce tableau, mais on retrouve les traductions dans les
 tableaux qui suivent).</span>
 
-|  |  |  |
 |--|--|--|
 | ***TopicFiltering***  |  |  |
 |  | ***<span class="hl">DefaultPreview­Interval</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">FilterByMonitoring­Ref</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">FilterByLineRef</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 |  | ***<span class="hl">FilterByDestination</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 
-|  |  |  |
 |--|--|--|
 | ***RequestPolicy***  |  |  |
-|  |  |  |
 | <span class="hl">a</span>  | ***<span class="hl">GmlCoordinateFormat</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 |  | ***<span class="hl">UseReferences</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">UseNames</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
 |  | ***<span class="hl">HasMinimum­StopVisits­PerLine</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">HasNumberOf­OnwardsCalls</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 | ***SubscriptionPolicy***  |  |  |
 |  | ***<span class="hl">HasIncremental­Updates</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">HasChangeSensitivity</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
 
 ### Requête d'information temps réel au point d'arrêt
 
@@ -4241,9 +4208,6 @@ ci-dessous précise l'usage des différentes valeurs de statuts.</span>
 | *<span class="hl">Early</span>*  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
 | *<span class="hl">Delayed</span>*  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
 | *<span class="hl">Cancelled</span>*  | <span class="hl">Passage annulé</span>  |  | <span class="hl">Passage annulé (note: ce passage annulé reste comptabilisé dans le nombre de passages utilisé dans les filtres de requêtes).</span>  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
 | *<span class="hl">noReport</span>*  | <span class="hl">Pas d’information « ExpectedArrivalTime » disponible (par contre le « AimededArrivalTime » peut être fourni)</span>  |  | <span class="hl">Pas d’information disponible</span>  |
 
 Note concernant les derniers arrêts de course:
@@ -4593,7 +4557,6 @@ dès que :
 
 ### Résultat de la requête d'information temps réel au point d'arrêt
 
-|  |  |  |  |  |
 |--|--|--|--|--|
 | ***ServiceDelivery***  |  |  | *+Structure*  | voir SIRI Part 7.2***ServiceDelivery***  |
 | *<span class="hl">HEADER</span>*  | :::  | 1:1  | *Voir ServiceDelivery*  |  |
@@ -6096,24 +6059,8 @@ class="hl"> ». </span>
 | SM-14  | <span class="hl">Seule la référence à un événement sera retenue, les informations complémentaires pour l'état des équipements et les perturbations seront déterminées dans le cadre du service « </span>*<span class="hl">Situation Exchange</span>*<span class="hl"> ».</span>  |
 |--|--|
 
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | *Situation*  | ***<span class="hl">SituationRef</span>***  |  |  |  |  |  | 0:\*  |  |  | *SituationCode*  |  | Identifiant (externe) de l'événement qui est la cause des modifications horaires indiquées  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 
 #### JourneyProgressInfoGroup
 
@@ -6345,7 +6292,6 @@ class="hl"> ». </span>
 | *Filter*  | ***<span class="hl">Connecting­JourneyFilter </span>***  |  |  | *+Structure*  | Filtre sur les courses  |
 |--|--|--|--|--|--|
 |  |  | ***<span class="hl">Dated</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 1:1  | *Dated­Vehicle­Journey­Code*  | Identifiant de la course.  |
-|  |  |  |  |  |  |
 |  |  | ***<span class="hl">Aimed</span>­<span class="hl">Arrival­Time</span>***  | 0:1  | *xsd:dateTime*  | Date et heure d’arrivée prévue au point d’arrêt (départ de correspondance).  |
 
 ### Abonnement aux informations sur les correspondances
@@ -6630,7 +6576,6 @@ class="hl"> ». </span>
 |  | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 0:1  | *+Structure*  | Identification de la course.  |
 | *JourneyPattern­Info*  | ***<span class="hl">:::</span>***  | 0:1  | *Journey­Pattern­Info­Group*  | Voir Journey­Pattern­Info­Group.  |
 | *VehicleJourney­Info*  | ***<span class="hl">:::</span>***  | 0:1  | *Vehicle­JourneyInfo­Group*  | Voir Vehicle­JourneyInfo­Group.  |
-|  |  |  |  |  |
 | *DisruptionGroup*  | ***:::***  | 0:1  | *Disruption­Group*  | Voir DisruptiomInfo­Group  |
 | *Progress*  | ***<span class="hl">Monitored</span>***  | 0:1  | *xsd:boolean*  | Signale si l’information temps réel est disponible (oui par défaut).  |
 | *Call Times*  | ***<span class="hl">Aimed</span>­<span class="hl">Arrival</span>­<span class="hl">Time</span>***  | 0:1  | *xsd:dateTime*  | Heure d’arrivée prévue à l’arrêt.  |
@@ -7074,16 +7019,6 @@ PreviousCall est précisée en 5.8.
 |  |  |  |  | *choice*  |  |
 |  | ***a***  | ***<span class="hl">Vehicle</span>­<span class="hl">Ref</span>***  | 0:1  | *VehicleCode*  | Identifiant du véhicule.  |
 |  | ***b***  |  | ***<span class="hl">LineRef</span>***  | *LineCode*  | Identifiant de la ligne (tous les véhicules de la ligne seront remontés).  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 | *any*  | ***<span class="hl">Extensions</span>***  |  | *0:1*  | *+Structure*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ### Abonnement aux informations sur les véhicules
@@ -7172,7 +7107,6 @@ PreviousCall est précisée en 5.8.
 | *LEADER*  | ***<span class="hl">:::</span>***  | 1:1  | *xxx­Delivery*  | Voir xxx***Delivery**.*  |
 | *Payload*  | ***<span class="hl">VehicleActivity</span>***  | 0:\*  | *+Structure*  | Fournit les informations concernant le véhicule.  |
 |  | ***<span class="hl">VehicleActivity­Cancellation</span>***  | 0:\*  | *+Structure*  | Signale l’annulation du service du véhicule.  |
-|  |  |  |  |  |
 | *any*  | ***<span class="hl">Extensions</span>***  | *0:1*  | *+Structure*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 #### Structure VehicleActivity
@@ -7283,7 +7217,6 @@ PreviousCall est précisée en 5.8.
 |  | ***<span class="hl">Vehicle­Monitoring­Ref</span>***  | 0:1  | *Vehicle­Monitoring­Code*  | Identifiant du véhicule.  |
 |  | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Ref</span>***  | 0:1  | *+Structure*  | Description de la course annulée.  |
 |  | ***<span class="hl">LineRef</span>***  | 0:1  | *LineCode*  | Identifiant de la ligne.  |
-|  |  |  |  |  |
 | *Journey­Pattern­Info*  | ***:::***  | 0:1  | *JourneyPattern­InfoGroup*  | See SIRI Part 2 JourneyPatternInfoGroup.  |
 | *Message*  | ***<span class="hl">Reason</span>***  | 0:\*  | *NLString*  | Description textuelle de la cause de l’annulation.  |
 | *any*  | ***<span class="hl">Extensions</span>***  | 0:1  | *Any*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
@@ -7508,7 +7441,6 @@ retrouve les traductions dans les tableaux qui suivent).</span>
 
 ### Réponse du service « General Message » (structure générale)
 
-|  |  |  |  |  |
 |--|--|--|--|--|
 | ***ServiceDelivery***  |  |  | *+Structure*  | See SIRI Part 2-7.2.1 ***ServiceDelivery***  |
 | HEADER  | ***<span class="hl">::</span>***  | 1:1  | *See ServiceDelivery*  | En-tête générique des réponses.  |
@@ -7516,7 +7448,6 @@ retrouve les traductions dans les tableaux qui suivent).</span>
 
 ### Réponse du service « General Message » (structure détaillée)
 
-|  |  |  |  |  |
 |--|--|--|--|--|
 | ***GeneralMessageDelivery***  |  |  | *+Structure*  | Contenu et modification des messages.  |
 | *Attributes*  | ***<span class="hl">version</span>***  | *1:1*  | *Version­String*  | Version du service, intégrant le numéro de version de profil (voir 5.7) (valeur fixe)  |
@@ -8153,7 +8084,6 @@ Properties</td>
 La réponse à la requête contient les informations d’état d’un ou
 plusieurs équipements/services
 
-|  |  |  |  |  |
 |--|--|--|--|--|
 | ***FacilityMonitoringDelivery***  |  |  | *+Structure*  | Description de l’état des services  |
 | *Attributes*  | ***<span class="hl">version</span>***  | **1:1**  | *VersionString*  | Numéro de version du service Facility Monitoring  |
@@ -8522,13 +8452,11 @@ Se reporter au profil NeTex France Accessibilité \[R1\]
 
 #### Description de l’état d’une facility
 
-|  |  |  |  |  |
 |--|--|--|--|--|
 | ***FacilityStatus***  |  |  | *+Structure*  | Describes the status of a Facility  |
 | *Status*  | ***<span class="hl">Status</span>***  | **1:1**  | *unknown \| available \| notAvailable \| partiallyAvailable \| added \| removed*  | Etat du Facility (cf 6.6.3.2.1)  |
 | *Description*  | ***<span class="hl">Description</span>***  | 0:1  | *nlString*  | Description associée à l’état du Facility  |
 | *Special Needs*  | ***<span class="hl">Accessibility­Assessment</span>***  | 0:n  | *+Structure*  | Décrit l'état de l'accessibilité pour différents types de besoins spéciaux.  |
-|  |  |  |  |  |
 
 ##### Description de l’enum ‘Status’
 
@@ -8713,20 +8641,9 @@ description</em></td>
 |--|--|
 | *<span class="hl">bays </span>*  | Emplacement pour garer un véhicule  |
 | *<span class="hl"> </span><span class="hl">seats </span>*  | Place assise  |
-|  |  |
 | *<span class="hl"> devices </span>*  | Les appareils divers (comme les casiers, les guides audio, etc.)  |
 | *<span class="hl"> </span><span class="hl">vehicles </span>*  | Tout type de véhicule  |
 | *<span class="hl"> persons </span>*  | Personne physique  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
 
 ##### Description de l’enum ‘Trend'
 
@@ -8736,10 +8653,6 @@ description</em></td>
 | *<span class="hl"> </span><span class="hl">increasing </span>*  | La valeur est actuellement en hausse  |
 | *<span class="hl"> </span><span class="hl">stable </span>*  | La valeur est actuellement stable  |
 | *<span class="hl"> </span><span class="hl">unstable </span>*  | La valeur est actuellement instable sans tendance claire  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
 | *<span class="hl">unknown</span>*  | Unknown trend  |
 
 #### <span class="hl_delete">Remedy</span>
@@ -8749,24 +8662,11 @@ disponibilité d’une ‘facility’.
 
 Non retenu dans le profil SIRI FRANCE
 
-|  |  |  |  |  |
 |--|--|--|--|--|
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
 
 ##### 
 
-|  |  |
 |--|--|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
 
 ## Situation Exchange
 
@@ -9902,13 +9802,11 @@ implémenté dans un échange.
 | *directReport*  | Rapport remis en direct  |
 | *email*  | Rapport reçu via email  |
 | *phone*  | Rapport reçu via téléphone  |
-|  |  |
 | *post*  | Rapport reçu via courrier postal  |
 | *feed*  | Rapport reçu via alimentation automatique  |
 | *radio*  | Rapport reçu via radio  |
 | *tv*  | Rapport reçu via TV  |
 | *web*  | Rapport reçu via website  |
-|  |  |
 | *text*  | Rapport reçu via message  |
 | *other*  | Rapport reçu via autres moyens  |
 
@@ -9916,12 +9814,8 @@ implémenté dans un échange.
 
 | ***SIRI SX***  | **Description**  |
 |--|--|
-|  |  |
-|  |  |
-|  |  |
 | *open*  | Situation en cours  |
 | *published*  | Situation en cours et publiée  |
-|  |  |
 | *closed*  | Situation terminée  |
 
 | <span class="hl">SX-2</span>  | Une situation ‘open’ n’est pas communiquée à l’extérieur du système. Dès lors que la situation est échangée avec l’extérieur le status doit passer à ‘published’.  |
@@ -10086,11 +9980,9 @@ implémenté dans un échange.
 | ***SIRI-SX***  | **Description**  |
 |--|--|
 | *unknown*  | unknown  |
-|  |  |
 | *slight*  | slight  |
 | *normal*  | normal  |
 | *severe*  | severe  |
-|  |  |
 | *noImpact*  | no impact  |
 | *undefined*  | *undefined*  |
 
@@ -10105,14 +9997,8 @@ implémenté dans un échange.
 | *<span class="hl">line</span>*  | Situation scope is a specific LINE.  |
 | *<span class="hl">place</span>*  | Situation scope is a specific PLACE.  |
 | *<span class="hl">StopPlace</span>*  | Situation scope is a specific STOP PLACE.  |
-|  |  |
 | *<span class="hl">stopPoint</span>*  | Situation scope is a specific STOP POINT.  |
 | *<span class="hl">vehicleJourney</span>*  | Situation scope is a specific VEHICLE JOURNEY.  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
 
 ##### Description de la structure ‘Consequences’
 
@@ -13680,7 +13566,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 | *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Numéro de version du service *Production Timetable*, intégrant le numéro de version de profil (voir Error: Reference source not found) (valeur fixe).  |
 | *LEADER*  | ***<span class="hl">::</span>***  | 1:1  | *xxx­Delivery*  | voir paragraphe 2.3  |
 | *Payload*  | ***<span class="hl">Dated</span>­<span class="hl">Timetable­Version</span>­<span class="hl">Frame</span>***  | 0:\*  | *+Structure*  | Voir DatedTimetableVersionFrame element.  |
-|  |  |  |  |  |
 
 ## Structure DatedTimetableVersionFrame
 
