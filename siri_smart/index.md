@@ -4991,7 +4991,7 @@ dès que :
 </tbody>
 </table>
 
-####### L'arrêt 
+<h7> L'arrêt </h7>
 
 <table>
 <colgroup>
@@ -5368,7 +5368,7 @@ dès que :
 </tbody>
 </table>
 
-####### Arrêts suivants
+<h7> Arrêts suivants</h7>
 
 <table>
 <colgroup>
@@ -10896,7 +10896,7 @@ implémenté dans un échange.
 </tbody>
 </table>
 
-####### Description de la structure AffectedNetwork
+<h7> Description de la structure AffectedNetwork</h7>
 
 <table>
 <colgroup>
@@ -10989,7 +10989,7 @@ implémenté dans un échange.
 </tbody>
 </table>
 
-####### Description de la structure AffectedStopPoint
+<h7> Description de la structure AffectedStopPoint</h7>
 
 <table>
 <colgroup>
@@ -11116,7 +11116,7 @@ implémenté dans un échange.
 </tbody>
 </table>
 
-####### Description de la structure AffectedVehicleJourney
+<h7> Description de la structure AffectedVehicleJourney</h7>
 
 <table>
 <colgroup>
@@ -11347,7 +11347,7 @@ implémenté dans un échange.
 </tbody>
 </table>
 
-####### Description de la structure AffectedLine
+<h7> Description de la structure AffectedLine</h7>
 
 <table>
 <colgroup>
@@ -11458,7 +11458,7 @@ implémenté dans un échange.
 </tbody>
 </table>
 
-####### Description de la structure AffectedOperator
+<h7> Description de la structure AffectedOperator</h7>
 
 <table>
 <colgroup>
@@ -11598,7 +11598,7 @@ implémenté dans un échange.
 </tbody>
 </table>
 
-####### Description de l’enum ‘ActionStatus’
+<h7> Description de l’enum ‘ActionStatus’</h7>
 
 | **Value**  | **Description**  |
 |--|--|
