@@ -282,7 +282,7 @@ référence aux concepts Transmodel \[R1\] suivants :
 -   Pole Monomodal (STOP PLACE)
 
 | DEF.1  | Chacun de ces points d’arrêt doit disposer d’un identifiant spécifique indépendamment de son type  |
-|-------|---------------------------------------------------------------------------------------------------|
+|--|--|
 
 Le point d’arrêt physique peut être ou non rattaché à un point d’arrêt
 logique, selon les implémentations, par l’intermédiaire d’une
@@ -296,13 +296,13 @@ affectation (STOP ASSIGNMENT). La figure ci-après illustre ces relations
 La description des services SIRI fait référence à une structure LEADER.
 
 | LEADER  | <span class="hl">:::</span>  | 1:1  | xxx­Delivery  | voir xxx**Delivery**.  |
-|--------|-------------------------------|-----|--------------|-----------------------|
+|--|--|--|--|--|
 
 Le Leader est (indirectement) défini dans la spécification SIRI \[R6\]
 par les attributs suivants
 
 | xxxDelivery  |  |  |  |  | +Structure  |  | Delivery for xxx Service  |  |  |  |
-|-----------------------|-------------------------|--------------------------------|-----|---------------------------------------|--------------------------|-------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|-----|
+|--|--|--|--|--|--|--|--|--|--|--|
 | Log  | Response­Timestamp  |  | 1:1  |  | xsd:dateTime  |  | Heure de creation de la response.  |  |  |  |
 | End­point prop­erties  | RequestMessageRef  |  | 0:1  |  | Message­Qualifier  |  |  | For direct requests, Identifier of request that this Delivery satisfies.  |  |  |
 |  | SubscriberRef  |  | 0:1  |  | Participant­Code  |  |  | Required if Delivery is for a Subscription, Participant Reference of Subscriber.  |  |  |
@@ -342,7 +342,7 @@ Ces règles de gestion sont présentées sous forme tabulaire et
 numérotées.
 
 | Numéro  | <span class="hl">Intitulé de la règle</span>  |
-|--------|------------------------------------------------|
+|--|--|
 
 <span class="hl">Des textes explicatifs viennent compléter les règles
 d’application du profil FR</span>
@@ -1642,13 +1642,13 @@ fournisseur. Voir aussi PrivateCode du GroupOfEntities pour les
 identifiants alternatifs:
 
 | KL-1  | Les KeyList ne sont à utiliser que s'il y a plusieurs identifiants alternatifs, et si elles sont utilisées, le PrivateCode doit impérativement être aussi renseigné.  |
-|------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | KL-2  | Il est interdit, dans le profil, d’utiliser le système de clé/valeur pour décrire des informations qui pourraient être fournies avec des attributs SIRI existants (même s’ils ne sont pas retenus par le profil).  |
 
 #### Structure Extension
 
 | Extensions  |  |  | +Structure  | Placeholder for user extensions.  |
-|------------|---------|------|------------|----------------------------------|
+|--|--|--|--|--|
 |  | KeyList  | 0:1  | +Structure  | Set of KEY VALUE pairs.  |
 |  | …  | 0:\*  | xsd:any\*  | Any user defined content.  |
 
@@ -1888,7 +1888,7 @@ Ainsi, la norme SIRI propose deux méthodes pour accéder à l'information
     à jour.
 
 | R1  | <span class="hl">Dans le cadre du profil SIRI France, tout système implémentant SIRI devra impérativement implémenter l</span><span class="hl">e </span><u><span class="hl">mécanisme de requête directe</span></u><span class="hl">.</span>  |
-|-----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | R2  | <span class="hl">De même, tout nouveau système (en particulier les concentrateurs) devra proposer un service d’abonnement </span>  |
 | R3  | <span class="hl">Ce mécanisme d'abonnement sera mis en oeuvre en implémentant impérativement le mécanisme de notification à une phase (moins consommateur en bande passante réseau, et plus simple à mettre en oeuvre que le mécanisme à deux phases).</span>  |
 | R4  | <span class="hl">De plus, dans le cadre des abonnements, SIRI propose une gestion des confirmations de réception (lorsque l'on reçoit une notification, on répond avec un acquittement pour confirmer au serveur que les données ont bien été reçues) : cette </span>**<span class="hl">possibilité n'est pas retenue</span>**<span class="hl"> dans le cadre du profil France</span>  |
@@ -1905,7 +1905,7 @@ segmenter les messages (découper un grand message en un ensemble de
 messages plus petits, qu'il faudra ré-assembler). </span>
 
 | R5  | <span class="hl">La segmentation des messages peut être intéressante si les échanges sont réalisés sur des réseaux de communication fortement contraints, mais ne présente pas d'intérêt dans le cadre du profil France, et n'est donc </span>**<span class="hl">pas retenue</span>**<span class="hl">.</span>  |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Vérification de la disponibilité des partenaires
 
@@ -1952,7 +1952,7 @@ d’assurer cette surveillance :
 <span class="hl">Dans le cadre du profil SIRI France :</span>
 
 | R9  | <span class="hl">Le champ facultatif au niveau SIRI «Status» sera toujours présent, dans le profil France, et égal à « true » si le système est parfaitement opérationnel, et à « false » s’il est en mesure de recevoir les requêtes, mais dans l'impossibilité d'y apporter une réponse (contact avec le gestionnaire de données perdu, etc.)</span>  |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | R10  | <span class="hl">Le champ facultatif au niveau «ErrorCondition» reste facultatif, au niveau du profil France, si aucune erreur n’est détectée, mais devra obligatoirement être présent et instancié à chaque fois qu'une erreur sera détectée.</span>  |
 | R11  | <span class="hl">Les champs facultatifs de «SuccessInfoGroup» restent facultatifs</span>  |
 | R12  | <span class="hl">Le champ facultatif au niveau SIRI «ServiceStartedTime» sera toujours présent dans le profil France, et instancié avec l'heure du dernier démarrage du système</span>  |
@@ -1964,7 +1964,7 @@ l'interface des services SIRI dans le contexte de Web Service de type
 SOAP.
 
 | R15  | <span class="hl">Dans le cadre du profil France, seuls les encodages </span>*<span class="hl">RPC-Literal</span>*<span class="hl"> et </span>*<span class="hl">Document-Literal-Wrapped</span>*<span class="hl"> sont supportés.</span>  |
-|-----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Gestion des filtres multiples
 
@@ -1993,7 +1993,7 @@ dans une unique notification, les informations issues de l'ensemble des
 abonnements : c'est le mécanisme de filtres multiples sur un abonnement.
 
 | R16  | <span class="hl">En cohérence avec le choix des notifications à une phase, le profil SIRI France retient </span><span class="hl">ce </span><u><span class="hl">mécanisme de filtres multiples</span></u><span class="hl"> qui d</span><span class="hl">evra donc être mis en œuvre à chaque fois que les services d'abonnement seront retenus (cela permettra de recevoir plusieurs informations dans une même réponse ou notification, et donc limiter le nombre de messages).</span>  |
-|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Structuration XML
 
@@ -2002,12 +2002,12 @@ l'arborescence XML pour la rendre « plate » (« flat XML »), et ce, afin
 de simplifier la compatibilité avec certains systèmes existants.
 
 | R17  | <span class="hl">Cette option de XML à plat (« flat XML ») n'est pas retenue dans le cadre du profil SIRI France.</span>  |
-|-----|----------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Identification de la version de SIRI
 
 | R18  | <span class="hl">La version de SIRI utilisée dans le cadre du profil SIRI France est la version 2.1. </span>  |
-|-----|----------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Réseau et sécurité
 
@@ -2019,7 +2019,7 @@ transport réseau retenue.</span>
 est plus facile à maîtriser. </span>
 
 | R19  | <span class="hl">A minima, la mise en place de filtres sur les adresses IP (ou des plages d'adresses IP), complétés par l'utilisation d'un canal crypté HTTPS, est recommandée.</span>  |
-|-----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 <span class="hl">Cette solution est peu coûteuse et simple à mettre en
 oeuvre, car elle ne repose que sur une configuration du serveur
@@ -2032,7 +2032,7 @@ avec DMZ, etc. Cependant ces éléments n'ont pas d’impact sur les
 sur lesquels ils auront une parfaite autonomie).</span>
 
 | R20  | <span class="hl">Par contre, dans tous les cas, les services SIRI France seront accessibles à partir d'une liaison Web classique et ne nécessiteront donc pas la mise en place de liaisons spécialisées, d'abonnement à un gestionnaire de réseau spécifique, ni d'utilisation de réseaux point à point (RTC, etc.).</span>  |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 Ces recommandations valent de façon générale pour tous les accès SIRI
 indépendamment des cas d'utilisation : il est souhaitable que le mode
@@ -2079,7 +2079,7 @@ n'accéder qu'à certaines lignes ou certains arrêts.</span>
 l'exploitation du système client concerné. </span>
 
 | R22  | <span class="hl">Toutefois, cet échange sera réalisé par courrier ou par mail, mais sans utiliser les structures d'autorisation (« </span>***<span class="hl">permission structures »</span>***<span class="hl">) proposées par SIRI et dont l'implémentation ne correspond pas à un besoin exprimé en France (pour mémoire les « </span>***<span class="hl">permission struc</span><span class="hl">tures »</span>**<span class="hl"> </span>*<span class="hl">perm</span><span class="hl">ettent à un client de demander </span>**<span class="hl">dynamiquement</span>**<span class="hl"> « quelles sont les informations auxquelles j'ai droit » -.).</span>  |
-|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Gestion des erreurs
 
@@ -2233,12 +2233,12 @@ l'entête signifie qu'il y a une des réponses portant une erreur, et non
 qu'il n'y a pas de réponse.</span>
 
 | R25  | <span class="hl">Le champ facultatif « </span>**<span class="hl">ErrorCondition </span>**<span class="hl">» reste facultatif, mais devra être présent et instancié à chaque fois qu'une erreur sera détectée</span>  |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | R26  | <span class="hl">La liste des codes erreur à supporter dans le cadre du profil France est détaillée dans le tableau ci-dessous </span>  |
 | R27  | <span class="hl">s'il ne s'agit pas d'un service optionnel non implémenté, le champ « </span>**<span class="hl">OtherError </span>**<span class="hl">» précisera sous forme textuelle la nature de l'erreur rencontrée</span>  |
 
 | R28  | <span class="hl">Le champ facultatif « Description » reste facultatif et permettra juste de préciser l'erreur (les éléments fondamentaux étant précisés dans l'un des deux champs précédents). Il devra contenir une description de l’erreur ainsi que le champ incriminé, par exemple : "Erreur \[nom du champ\] : \[Raison de l’erreur avec valorisation reçue\]"</span>  |
-|-----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | R29  | <span class="hl">De façon à systématiser les messages d'erreur, le champ « </span>**<span class="hl">OtherError </span>**<span class="hl">» sera structuré en débutant par un code prédéfini entre crochets, suivi d'un texte explicatif. </span>  |
 
 <span class="hl">La liste des codes prédéfinis est la suivante
@@ -2257,10 +2257,10 @@ qu'il n'y a pas de réponse.</span>
     non identifiée, mais empêchant la fourniture d'un résultat.</span>
 
 | R30  | <span class="hl">De façon à assurer une homogénéité de comportement dans le traitement des erreurs, il est convenu des comportements suivants :</span>  |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 | **<span class="hl">Erreur</span>**  | **<span class="hl">Comportement</span>**  |
-|-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | *<span class="hl">\[BAD_REQUEST\]</span>*  | <span class="hl">rejet complet de la requête, réponse erreur uniquement</span>  |
 | ***<span class="hl">InvalidDataReferencesError</span>***  | <span class="hl">rejet de la requête ; en cas de multiples requêtes, rejet de la seule requête en erreur</span>  |
 | *<span class="hl">\[BAD_PARAMETER\]</span>*  | <span class="hl">rejet complet de la requête, réponse erreur uniquement</span>  |
@@ -2277,7 +2277,7 @@ qu'il n'y a pas de réponse.</span>
 mesure de remonter chacune de ces erreurs. </span>
 
 | R31  | <span class="hl">Toutefois, en cas d'anomalie, les systèmes devront s'astreindre à utiliser le code correspondant au problème rencontré pour le signaler (et ce en rapport avec leurs capacités et limitations de détection d'anomalie, ce qui signifie qu'ils ne sont pas tenus de remonter une erreur qu'ils ne savent pas identifier).</span>  |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | R32  | <span class="hl">Les erreurs rencontrées devront de plus être conservées dans des fichiers (fichier type « log ») tant au niveau des systèmes serveurs que des systèmes clients, de façon à permettre une analyse « post-mortem » et d’envisager d'éventuels correctifs ultérieurs. </span>  |
 | R33  | <span class="hl">La durée minimale de conservation des fichiers « log » sera définie dans le cadre des projets ; on peut toutefois considérer que </span>**<span class="hl">3</span>**<span class="hl"> mois est une valeur acceptable et </span>**<span class="hl">1</span>**<span class="hl"> an une valeur maximale.</span>  |
 
@@ -2289,7 +2289,7 @@ partenaires, les industriels ou tout intervenant susceptible d’y
 apporter un remède.</span>
 
 | R34  | <span class="hl">Dans le cas ou une requête ne reçoit pas de réponse, une erreur pourra être déclarée. Cette anomalie sera mentionnée dans le « log » d'erreur du client. Le délai d'attente (« timeout » avant identification d'une panne) est fixé par défaut à une minute (cette valeur « par défaut » pourra être ajustée localement, notamment au regard du délai « normal » de rafraîchissement des données). </span>  |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | R35  | *<span class="hl">ATTENTION</span>*<span class="hl"> : il est tout à fait possible que la réponse arrive finalement, mais après le délai imparti, le système client pourra alors décider de la prendre en compte ou de l'ignorer (à définir localement dans l'implémentation du système).</span>  |
 
 ### Identification des services disponibles
@@ -2313,7 +2313,7 @@ contacter (il suffit alors, pour chaque serveur, de préciser la liste
 des services disponibles). </span>
 
 | R36  | <span class="hl">De façon à ne pas alourdir le développement des systèmes la possibilité de « </span>**<span class="hl">Capability Checking</span>**<span class="hl"> » proposée par SIRI n'est pas retenue, au profit d'un système non dynamique basé sur des fichiers de configuration (l'aspect dynamique et automatique ne présente pas d'intérêt particulier dans le cadre France).</span>  |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Compression
 
@@ -2336,7 +2336,7 @@ des services disponibles). </span>
 ### Encodage des caractères
 
 | R38  | <span class="hl">Les différentes chaines de caractères présentent dans les données XML seront encodées exclusivement en UTF-8 (abréviation de l’anglais Universal Character Set Transformation Format - 8 bits sans Bit-Order-Mark (BOM)). </span>  |
-|-----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 <span class="hl">Tehchniquement cela se traduira, si l'on souhaite être
 explicite, par un " </span>**<span class="hl">\<</span><span
@@ -2448,7 +2448,7 @@ d'arrêt pour obtenir une information proprement structurée.</span>
 tableaux qui suivent (codes couleurs, etc.).
 
 |  |  |  |  |  |  |
-|------------------------------------------------------------|----------------------------------------------------|--------------------------------------------|-----|---------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|--|
 | ***<span class="hl">StopPointsDiscoveryRequest</span>***  |  |  |  | *+Structure*  | Requête d'accès à la liste des arrêts  |
 | *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | Date d’émission de la requête.  |
 |  | ***<span class="hl_delete">AccountId</span>***  |  |  |  |  |
@@ -2566,7 +2566,7 @@ SIRI).
 #### <span class="hl">Requête LinesRequest</span>
 
 |  |  |  |  |  |  |
-|-------------------------------------------------------|------------------------------------------------------------------------------|-----|-----|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|--|
 | ***<span class="hl">LinesDiscoveryRequest</span>***  |  |  |  | *+Structure*  | Requête d'accès à la liste des lignes  |
 | *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | <span class="hl">Date d’émission de la requête.</span>  |
 |  |  |  |  |  |  |
@@ -2584,7 +2584,7 @@ SIRI).
 #### <span class="hl">Réponses aux LinesRequest</span>
 
 |  |  |  |  |  |
-|--------------------------------------------------------|----------------------------------------------|------|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|
 | ***<span class="hl">AnnotatedLineStructure</span>***  |  |  | *+Structure*  | <span class="hl">Description simplifiée d'une ligne</span>  |
 | *Line Identity*  | ***<span class="hl">LineRef</span>***  | 1:1  | *LineCode*  | <span class="hl">Identifiant de la ligne (issu du référentientiel des lignes) </span>  |
 |  | ***<span class="hl">LineName</span>***  | 1:1  | *NaturalLanguageStringStructure*  | <span class="hl">Nom de la ligne (issu du référentientiel des lignes) </span>  |
@@ -2942,7 +2942,7 @@ les utilise dans le service StopMonitoring ou le service
 VehicleMonitoring.</span>
 
 | SM-11  | <span class="hl">Le « PreviousCall » n'a pas été retenu par le profil France et ne doit donc pas être utilisé.</span>  |
-|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | SM-12  | <span class="hl">Le « MonitoredCall» correspond à l'arrêt pour lequel on a fait l'interrogation (et n'est donc en aucun cas lié à la position du véhicule). Les « OnwardCall » correspondent alors à tous les arrêts suivant ce « MonitoredCall» dans le cadre des courses concernées.</span>  |
 
 <span class="hl">Dans le cas du service VehicleMonitoring le
@@ -3117,7 +3117,7 @@ Le tableau ci-dessous précise les conditions de notification pour
 EstimatedTimetable.
 
 | **N**  | **Commentaire**  |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | Changement (incluant une première inscription dans le champ) d'une des heures de passage d'une valeur supérieure ou égale à ***ChangeBeforeUpdate*** par rapport à la précédente notification.  | Notification différentielle (uniquement des ***Call*** concernés par ces changements) similaire à celle de StopMonitoring.  |
 | Lorsque le véhicule quitte l'arrêt (sauf pour le dernier arrêt)  | Notification en positionnant le champ ***DepartureStatus*** à "*departed"*.  |
 | A minima pour le dernier arrêt (et si possible pour tous les arrêts), lorsque le véhicule arrive à l'arrêt  | Notification en positionnant le champ ***VehicleAtStop*** à *VRAI*  |
@@ -3183,7 +3183,7 @@ EstimatedTimetable.
 ### Réponse aux requêtes d’horaires calculés sur la ligne
 
 | **<span class="hl">EstimatedTimetableDelivery</span>**  |  |  | *+Structure*  | Décrit une *Dated Timetables*. (horaire pour un jour d’application donné)  |
-|----------------------------------------------------------|--------------------------------------------------------------|------|------------------|------------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *Version­String*  | Numéro de version du service *Estimated Timetable*, intégrant le numéro de version de profil (voir 5.7) (valeur fixe).  |
 | *LEADER*  | ***::***  | 1:1  | *xxx­Delivery*  | voir xxx**Delivery**.  |
 | *Payload*  | ***<span class="hl">EstimatedJourneyVersionFrame</span>***  | 0:\*  | *+Structure*  | voir EstimatedJourneyVersionFrame element.  |
@@ -4103,7 +4103,7 @@ of Predictions in the Estimated Timetable Service »
 #### Structure ExpectedDepartureCapacity
 
 | ***Expected-Departure-Capacities***  |  | 0:\*  | *+Structure*  | Capacités en temps réel (nombre de places disponibles) d'un VEHICULE après le départ d'un arrêt donné. Autre moyen de communiquer les mesures d'occupation.  |
-|-------------------------------------|--------------------------------------------------------------|--------------------------------------|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|
 |  | ***:::***  | 0:1  | *TrainFormation-ReferenceGroup*  | See SIRI Part 2 ***TrainFormationReferenceGroup.***  |
 |  | ***<span class="hl_delete">FareClass</span>***  | <span class="hl_delete">0:1</span>  | *<span class="hl_delete">FareClass-Enumeration</span>*  | <span class="hl_delete">Fare class in VEHICLE for which occupancy or capacities are specified.</span>  |
 |  | ***Passenger-Category***  | 0:1  | *NLString*  | Adulte, enfant, fauteuil roulant etc.  |
@@ -4119,12 +4119,12 @@ of Predictions in the Estimated Timetable Service »
 ## Stop Monitoring
 
 | SM-1  | <span class="hl">La notion de «niveau de détail » (Detail Level) proposée pour ce service par SIRI n'est pas retenue pour le profil SIRI France.</span>  |
-|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ### Matrice de capacité
 
 | SM-2  | <span class="hl">Cette matrice n'est pas échangée dans le cadre du profil France :</span>  |
-|------|---------------------------------------------------------------------------------------------|
+|--|--|
 
 <span class="hl">Cette,matrice est présentée ici pour indiquer les
 principales fonctions retenues pour le service (les explications ne sont
@@ -4132,7 +4132,7 @@ pas traduites dans ce tableau, mais on retrouve les traductions dans les
 tableaux qui suivent).</span>
 
 |  |  |  |
-|----------------------|---------------------------------------------------------|-------------------------------|
+|--|--|--|
 | ***TopicFiltering***  |  |  |
 |  | ***<span class="hl">DefaultPreview­Interval</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">FilterByMonitoring­Ref</span>***  | <span class="hl">Oui</span>  |
@@ -4142,7 +4142,7 @@ tableaux qui suivent).</span>
 |  |  |  |
 
 |  |  |  |
-|-----------------------------|---------------------------------------------------------------|-------------------------------|
+|--|--|--|
 | ***RequestPolicy***  |  |  |
 |  |  |  |
 | <span class="hl">a</span>  | ***<span class="hl">GmlCoordinateFormat</span>***  | <span class="hl">Oui</span>  |
@@ -4200,7 +4200,7 @@ Note concernant la granularité des objets interrogés :
 -   <span class="hl">une Zone d'Embarquement</span>
 
 | SM-3  | <span class="hl">Toutefois il n'y a pas d'obligation pour un serveur de supporter tous ces niveaux </span><span class="hl_france">(sauf pour les concentrateurs pour lesquels le Lieu d’arrêt est obligatoire)</span><span class="hl">: il conviendra donc de s'assurer que le serveur sollicité reconnait bien le niveau requis </span>  |
-|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 Note concernant les heures de passage :
 
@@ -4224,7 +4224,7 @@ heures de passage:</span>
     cours d'exploitation).</span>
 
 | SM-4  | <span class="hl">Par contre il n'est pas obligatoire de diffuser avant le départ du véhicule l'horaire théorique modifié du jour même ou modifié en cours d'exploitation suite à une régulation. Cette information peut par contre être renseignée dans l' «Expected(Departure/Arrival)Time», le champ étant par la suite mis à jour en fonction de l'avancement du véhicule.</span>  |
-|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | SM-4  | <span class="hl">En mode requête classique, les heures de passage à l'arrêt ne sont fournies que tant que le véhicule est en amont de l’arrêt ou à l’arrêt ; dès lors qu’il a quitté l’arrêt, aucune information concernant ce véhicule à cet arrêt n'est plus fournie (dans la limite ci-dessous).</span>  |
 | SM-5  | <span class="hl">En mode abonnement, une notification est envoyée lorsque le véhicule a quitté l’arrêt, en utilisant la structure « MonitoredStopVisitCancellation ». Ceci permet de signaler aux diffuseurs que le prochain passage en question doit être retiré des medias de diffusion (on utilisera donc pas le champ "ActualDepartureTime" à cet effet). En complément, une notification est aussi réalisée lors de l'arrivée au dernier arrêt (il n'y aura en effet pas de notification de départ dans ce cas: on notifiera alors un « MonitoredStopVisitCancellation » au moment de l'arrivée du véhicule à l'arrêt).</span>  |
 | SM-6  | <span class="hl">En situation perturbée il peut arriver qu'une information «Expected(Departure/Arrival)Time» soit antérieure à l’heure courante. Toutefois il est précisé qu'en tout état de cause, un temps d’attente inférieur ou égal à 0, induit par une telle information, doit être diffusé comme un temps d’attente égal à 0 (et probablement accompagné d'une indication de retard).</span>  |
@@ -4236,7 +4236,7 @@ qualifier l'horaire calculé par rapport à l'horaire planifié. Le tableau
 ci-dessous précise l'usage des différentes valeurs de statuts.</span>
 
 | ***<span class="hl">Statuts</span>***  | ***<span class="hl">ArrivalStatus</span>***  | ***<span class="hl">DepartureStatus</span>***  |  |
-|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|
 | *<span class="hl">onTime</span>*  | <span class="hl">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
 | *<span class="hl">Early</span>*  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
 | *<span class="hl">Delayed</span>*  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
@@ -4265,7 +4265,7 @@ arrêt d'une course :</span>
 Note concernant les cas ou il n'y a pas ou plus d'information:
 
 | SM-7  | <span class="hl">S'il n'y a de réponse à une requête « Stop monitoring » car elle intervient après le dernier passage de la journée, le producteur doit dans la mesure du possible fournir une information via le service « General message ». Il est donc recommandé que le client, s'il n'obtient pas de réponse au « Stop monitoring », fasse dans la foulée une requête au « General message ».</span>  |
-|------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | SM-8  | <span class="hl">Dans le cas des déviations : pour les arrêts non desservis, il conviendra aussi de fournir une information via le service « Situation Exchange » (SX) (la réponse à « Stop monitoring n'est toutefois pas forcément vide si la déviation est temporaire ») ou le service « General Message » si le SX n’est pas implémenté.</span>  |
 
 Note concernant les annulations de passage :
@@ -4505,7 +4505,7 @@ l'annulation d'un passage il est précisé que:</span>
 ### Requête multiple d'information temps réel au point d'arrêt en utilisant SOAP
 
 | SM-13  | <span class="hl">Il existe plusieurs façons de réaliser des requêtes d'information temps réel pour plusieurs points d'arrêt. Toutefois seule la solution </span>***<span class="hl">GetSiri</span>***<span class="hl"> (voir ci-dessous) est recommandée par le profil FR, les autres solutions ne pouvant être maintenues que pour compatibilité ascendante.</span>  |
-|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 Le service SOAP ***GetSiri*** *(introduit par SIRI 2)* est celui qui
 doit être utilisé pour les requêtes multiples d'information temps réel
@@ -4594,7 +4594,7 @@ dès que :
 ### Résultat de la requête d'information temps réel au point d'arrêt
 
 |  |  |  |  |  |
-|------------------------------------|----------------------------------------------------------|------|------------------------|------------------------------------------|
+|--|--|--|--|--|
 | ***ServiceDelivery***  |  |  | *+Structure*  | voir SIRI Part 7.2***ServiceDelivery***  |
 | *<span class="hl">HEADER</span>*  | :::  | 1:1  | *Voir ServiceDelivery*  |  |
 | *Payload*  | ***<span class="hl">Stop­Monitoring­Delivery</span>***  | 0:\*  | *+Structure*  | Voir StopMonitoringDelivery ci- dessous.  |
@@ -6094,10 +6094,10 @@ class="hl">Facility Monitoring</span>*<span class="hl"> » et
 class="hl"> ». </span>
 
 | SM-14  | <span class="hl">Seule la référence à un événement sera retenue, les informations complémentaires pour l'état des équipements et les perturbations seront déterminées dans le cadre du service « </span>*<span class="hl">Situation Exchange</span>*<span class="hl"> ».</span>  |
-|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|-------------|----------------------------------------------|-----|-----|-----|-----|-----|------|-----|-----|-----------------|-----|--------------------------------------------------------------------------------------------|-----|-----|
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | *Situation*  | ***<span class="hl">SituationRef</span>***  |  |  |  |  |  | 0:\*  |  |  | *SituationCode*  |  | Identifiant (externe) de l'événement qui est la cause des modifications horaires indiquées  |  |  |
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -6334,7 +6334,7 @@ class="hl"> ». </span>
 #### Structure ConnectingTimeFilter
 
 | *Filter*  | <span class="hl">Connecting­TimeFilter </span>  |  |  | *+Structure*  | Filtre temporel pour les requêtes  |
-|----------|--------------------------------------------------|------------------------------------------------------|-----|-------------------|--------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|--|
 |  |  | ***<span class="hl">LineRef</span>***  | 1:1  | *LineCode*  | Identifiant de la ligne amenante.  |
 |  |  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *Direction­Code*  | Indication de direction (aller/retour).  |
 |  |  | ***<span class="hl">Earliest­ArrivalTime</span>***  | 1:1  | *xsd:dateTime*  | <span class="hl">Début de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).</span>  |
@@ -6343,7 +6343,7 @@ class="hl"> ». </span>
 #### Structure ConnectingJourneyFilter
 
 | *Filter*  | ***<span class="hl">Connecting­JourneyFilter </span>***  |  |  | *+Structure*  | Filtre sur les courses  |
-|----------|-----------------------------------------------------------|------------------------------------------------------------------------------------|-----|-------------------------------|-----------------------------------------------------------------------------|
+|--|--|--|--|--|--|
 |  |  | ***<span class="hl">Dated</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 1:1  | *Dated­Vehicle­Journey­Code*  | Identifiant de la course.  |
 |  |  |  |  |  |  |
 |  |  | ***<span class="hl">Aimed</span>­<span class="hl">Arrival­Time</span>***  | 0:1  | *xsd:dateTime*  | Date et heure d’arrivée prévue au point d’arrêt (départ de correspondance).  |
@@ -6416,7 +6416,7 @@ class="hl"> ». </span>
 ### Réponse aux requêts d’information sur les correspondances
 
 | ***ServiceDelivery***  |  |  | *+Structure*  | Réponse aux requêtes d’information sur les correspondances  |
-|-----------------------|--------------------------------------------------------------------------|------|-----------------------|------------------------------------------------------------|
+|--|--|--|--|--|
 | HEADER  | :::  | 1:1  | *See ServiceDelivery*  |  |
 | *Payload*  | ***<span class="hl">ConnectionMonitoring­FeederDelivery</span>***  | 1:\*  | *+Structure*  | voir ConnectionMonitoring­Feeder­Delivery.  |
 |  | ***<span class="hl">ConnectionMonitoring­DistributorDelivery</span>***  |  | *+Structure*  | voir ConnectionMonitoringDistributor­Delivery.  |
@@ -6624,7 +6624,7 @@ class="hl"> ». </span>
 ##### Structure FeederJourney
 
 | ***<span class="hl">FeederJourney</span>***  |  |  | *+Structure*  | Description de la course de l’amenant  |
-|-----------------------------------------------|--------------------------------------------------------------------------------------------------------|-------|------------------------------|-------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *VehicleJourney­Identity*  | ***<span class="hl">LineRef</span>***  | 1:1  | *LineCode*  | Identifiant de la ligne.  |
 |  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *Direction­Code*  | Indication de direction (aller/retour).  |
 |  | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 0:1  | *+Structure*  | Identification de la course.  |
@@ -6799,7 +6799,7 @@ Identity</em></td>
 #### Structure ConnectionMonitoringDistributorDelivery
 
 | ***<span class="hl">ConnectionMonitoringDistributor­Delivery</span>***  |  |  | *+Structure*  | Information concernant le “partant”.  |
-|--------------------------------------------------------------------------|---------------------------------------------------------------------|-------|-----------------|-------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Version du service intégrant le numéro de version de profil (voir 5.7) par exemple. ‘2.1:FR-IDF-2.4’.  |
 | LEADER  | ***<span class="hl">:::</span>***  | 1:1  | *xxx­Delivery*  | See SIRI Part 2-7.2.1.1 xxx***Delivery**.*  |
 | *Payload*  | ***<span class="hl">WaitProlonged­Departure</span>***  | 0:\*  | *+Structure*  | Description d’une prolongation d’attente*.*  |
@@ -6810,7 +6810,7 @@ Identity</em></td>
 ##### Structure WaitProlongedDeparture
 
 | ***<span class="hl">WaitProlongedDeparture</span>***  |  |  | *+Structure*  | Description d’une prologation d’arrêt pour attente de l’amenant  |
-|--------------------------------------------------------|-----------------------------------------------------------------------------------|-------|--------------------------|-------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *Log*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Date et heure auxquelles ces données ont été produites.  |
 | *DistributorInfo*  | ***<span class="hl">:::</span>***  | 1:1  | *Distributor­Info­Group*  | Voir DistributorInfoGroup (6.3.3.2.4.  |
 | *Change*  | ***<span class="hl">Expected­Departure</span>­<span class="hl">Time</span>***  | 1:1  | *xsd:dateTime*  | Nouvelle heure de départ prévue.  |
@@ -6819,7 +6819,7 @@ Identity</em></td>
 ##### Structure StoppingPositionChangedDeparture
 
 | ***<span class="hl">StoppingPosition­ChangedDeparture</span>***  |  |  | *+Structure*  | Description d’un déplacement (temporaire) de point d’arrêt  |
-|-------------------------------------------------------------------|-------------------------------------------------|-----|--------------------------|-------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *Log*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Date et heure auxquelles ces données ont été produites.  |
 | *Distributor­Info*  | ***<span class="hl">:::</span>***  | 1:1  | *Distributor­Info­Group*  | Voir DistributorInfoGroup (6.3.3.2.4)**.**  |
 | *Change*  | ***<span class="hl">ChangeNote</span>***  | 1:1  | *NLString*  | Description de la nouvelle position (textuelle).  |
@@ -6899,7 +6899,7 @@ Identity</em></td>
 ##### Structure DistributorDepartureCancellation
 
 | ***DistributorDeparture­­Cancellation***  |  |  | *+Structure*  | Indication d’annulation de départ  |
-|------------------------------------------|-------------------------------------------------|-------|--------------------------|-------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *Log*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Date et heure auxquelles ces données ont été produites.  |
 | *DistributorInfo*  | ***:::***  | 1:1  | *Distributor­Info­Group*  | Voir DistributorInfoGroup. Voir 6.3.3.2.4  |
 | *Call time*  | ***<span class="hl">Reason</span>***  | 1:1  | *NLString*  | Raison de l’annulation.  |
@@ -7066,7 +7066,7 @@ PreviousCall est précisée en 5.8.
 ### Requête d’information sur les véhicules
 
 | ***VehicleMonitoringRequest***  |  |  |  | *+Structure*  | Requête d’information sur les véhicules  |
-|--------------------------------|----------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|--|
 | *Attrib­utes*  | ***<span class="hl">version</span>***  |  | 1:1  | *VersionString*  | Version du service “Vehicle Monitoring”, intégrant le numéro de version de profil par exemple. ‘2.1:FR-1.0’.  |
 | *End­point Properties*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | Date d'émission de la requête.  |
 |  | ***<span class="hl">Message­Identifier</span>***  |  | 0:1  | *Message­Qualifier*  | Numéro d'identification du message.  |
@@ -7167,7 +7167,7 @@ PreviousCall est précisée en 5.8.
 ### Réponse aux requêtes d’information sur les véhicules
 
 | ***<span class="hl">VehicleMonitoringDelivery</span>***  |  |  | *+Structure*  | Réponse aux requêtes d’information sur les véhicules  |
-|-----------------------------------------------------------|--------------------------------------------------------------|-------|-----------------|-----------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Numéro de version du service *Vehicle Monitoring*, intégrant le numéro de version de profil (voir 5.7) (valeur fixe).  |
 | *LEADER*  | ***<span class="hl">:::</span>***  | 1:1  | *xxx­Delivery*  | Voir xxx***Delivery**.*  |
 | *Payload*  | ***<span class="hl">VehicleActivity</span>***  | 0:\*  | *+Structure*  | Fournit les informations concernant le véhicule.  |
@@ -7277,7 +7277,7 @@ PreviousCall est précisée en 5.8.
 #### Structure VehicleActivityCancellation
 
 | ***<span class="hl">VehicleActivityCancellation</span>***  |  |  | *+Structure*  | Annulation de l’affectation d’un véhicule à une course  |
-|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|------|----------------------------|-------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *End­point*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Heure à laquelle l'annulation a été signalée/publiée.  |
 | *Event­Identity*  | ***<span class="hl">ItemRef</span>***  | 0:1  | *ItemIdentifier*  | Identifiant de l’objet annulé (voir ***ItemRef*** plus haut).  |
 |  | ***<span class="hl">Vehicle­Monitoring­Ref</span>***  | 0:1  | *Vehicle­Monitoring­Code*  | Identifiant du véhicule.  |
@@ -7509,7 +7509,7 @@ retrouve les traductions dans les tableaux qui suivent).</span>
 ### Réponse du service « General Message » (structure générale)
 
 |  |  |  |  |  |
-|-----------------------|--------------------------------------------------------------------------------------------------------------|------|-----------------------|---------------------------------------------|
+|--|--|--|--|--|
 | ***ServiceDelivery***  |  |  | *+Structure*  | See SIRI Part 2-7.2.1 ***ServiceDelivery***  |
 | HEADER  | ***<span class="hl">::</span>***  | 1:1  | *See ServiceDelivery*  | En-tête générique des réponses.  |
 | *Payload*  | ***<span class="hl">General</span>­<span class="hl">Message</span>­<span class="hl">Delivery</span>***  | 1:\*  | *+Structure*  | Voir GeneralMessageDelivery.  |
@@ -7517,7 +7517,7 @@ retrouve les traductions dans les tableaux qui suivent).</span>
 ### Réponse du service « General Message » (structure détaillée)
 
 |  |  |  |  |  |
-|------------------------------|------------------------------------------------------------------------|-------|------------------|---------------------------------------------------------------------------------------|
+|--|--|--|--|--|
 | ***GeneralMessageDelivery***  |  |  | *+Structure*  | Contenu et modification des messages.  |
 | *Attributes*  | ***<span class="hl">version</span>***  | *1:1*  | *Version­String*  | Version du service, intégrant le numéro de version de profil (voir 5.7) (valeur fixe)  |
 | LEADER  | ***<span class="hl">:::</span>***  | 1:1  | *xxx­Delivery*  | En-tête (voir paragraphe 2.3*.)*  |
@@ -7835,7 +7835,7 @@ prendre le format le plus adapté à son usage et ses contraintes.</span>
 perturbation, est gérée de la façon suivante :</span>
 
 | <span class="hl">GM-4</span>  | <span class="hl">En mode requête, le diffuseur doit considérer une information reçue précédemment comme obsolète quand la réponse qu'il reçoit est vide (ou tout du moins quand elle ne retourne plus l'information précédemment reçue) ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time) ; le producteur n’envoie en effet que les messages actifs au moment de la requête.</span>  |
-|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 | <span class="hl">GM-5</span>  | <span class="hl">En mode abonnement, le diffuseur doit considérer une information reçue précédemment comme obsolète quand il reçoit une information de type "InfoMessageCancellation" ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time).</span>  |
 
 ### Précision sur l'encodage de la structure spécifique France et exemple de message
@@ -8154,7 +8154,7 @@ La réponse à la requête contient les informations d’état d’un ou
 plusieurs équipements/services
 
 |  |  |  |  |  |
-|----------------------------------|---------------------------------------------------|---------|-----------------------|--------------------------------------------------------------|
+|--|--|--|--|--|
 | ***FacilityMonitoringDelivery***  |  |  | *+Structure*  | Description de l’état des services  |
 | *Attributes*  | ***<span class="hl">version</span>***  | **1:1**  | *VersionString*  | Numéro de version du service Facility Monitoring  |
 | LEADER  | ***:::***  | **1:1**  | xxx*Service­Delivery*  |  |
@@ -8265,12 +8265,12 @@ information</em></td>
 </table>
 
 | <span class="hl">FM-1</span>  | La définition de la facility sera récupérée via un flux NeTEx. Le service SIRI FM privilégiera l’utilisation du champ FacilityRef.  |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ##### Description de la structure ‘Facility’
 
 | <span class="hl">FM-2</span>  | A renseigner uniquement si non inclue dans les exchanges NeTEx  |
-|--------------------------------|----------------------------------------------------------------|
+|--|--|
 
 <table>
 <colgroup>
@@ -8523,7 +8523,7 @@ Se reporter au profil NeTex France Accessibilité \[R1\]
 #### Description de l’état d’une facility
 
 |  |  |  |  |  |
-|----------------------|----------------------------------------------------------|---------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+|--|--|--|--|--|
 | ***FacilityStatus***  |  |  | *+Structure*  | Describes the status of a Facility  |
 | *Status*  | ***<span class="hl">Status</span>***  | **1:1**  | *unknown \| available \| notAvailable \| partiallyAvailable \| added \| removed*  | Etat du Facility (cf 6.6.3.2.1)  |
 | *Description*  | ***<span class="hl">Description</span>***  | 0:1  | *nlString*  | Description associée à l’état du Facility  |
@@ -8705,12 +8705,12 @@ description</em></td>
 </table>
 
 | FM-1  | L’utilisation de la valeur ‘currentStateCount’ nécessite que le champ ‘TypeOfCountedFeature’ soit présent  |
-|------|-----------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ##### Description de l’enum ‘CountedFeatureUnit’
 
 | **Value**  | **Description**  |
-|------------------------------------------------------------------|------------------------------------------------------------------|
+|--|--|
 | *<span class="hl">bays </span>*  | Emplacement pour garer un véhicule  |
 | *<span class="hl"> </span><span class="hl">seats </span>*  | Place assise  |
 |  |  |
@@ -8731,7 +8731,7 @@ description</em></td>
 ##### Description de l’enum ‘Trend'
 
 | **Value**  | **Description**  |
-|--------------------------------------------------------------------|----------------------------------------------------------|
+|--|--|
 | *<span class="hl">decreasing </span>*  | La valeur est actuellement en baisse  |
 | *<span class="hl"> </span><span class="hl">increasing </span>*  | La valeur est actuellement en hausse  |
 | *<span class="hl"> </span><span class="hl">stable </span>*  | La valeur est actuellement stable  |
@@ -8750,7 +8750,7 @@ disponibilité d’une ‘facility’.
 Non retenu dans le profil SIRI FRANCE
 
 |  |  |  |  |  |
-|-----|-----|-----|-----|-----|
+|--|--|--|--|--|
 |  |  |  |  |  |
 |  |  |  |  |  |
 |  |  |  |  |  |
@@ -8760,7 +8760,7 @@ Non retenu dans le profil SIRI FRANCE
 ##### 
 
 |  |  |
-|-----|-----|
+|--|--|
 |  |  |
 |  |  |
 |  |  |
@@ -8776,7 +8776,7 @@ définir une perturbation, ses zones de conséquence et les messages
 associés à diffuser.
 
 | <span class="hl">SX-1</span>  | Si ce service est implémenté, le service GM ne doit plus etre utilisé pour la diffusion de message de perturbation.  |
-|--------------------------------|---------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 Pour la mise à jour des systèmes utilisant le service GM pour le
 transfert de message de perturbation les règles de traduction sont
@@ -9898,7 +9898,7 @@ implémenté dans un échange.
 ###### Description de l’enum SourceType
 
 | ***SIRI-SX***  | Description  |
-|----------------|-------------------------------------------|
+|--|--|
 | *directReport*  | Rapport remis en direct  |
 | *email*  | Rapport reçu via email  |
 | *phone*  | Rapport reçu via téléphone  |
@@ -9915,7 +9915,7 @@ implémenté dans un échange.
 ##### Decription de l’enum ‘Progress’
 
 | ***SIRI SX***  | **Description**  |
-|---------------|-------------------------------|
+|--|--|
 |  |  |
 |  |  |
 |  |  |
@@ -9925,14 +9925,14 @@ implémenté dans un échange.
 | *closed*  | Situation terminée  |
 
 | <span class="hl">SX-2</span>  | Une situation ‘open’ n’est pas communiquée à l’extérieur du système. Dès lors que la situation est échangée avec l’extérieur le status doit passer à ‘published’.  |
-|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|
 
 ##### Description de l’enum ‘Reason’
 
 ###### Miscellaneous reasons
 
 | ***Group***  | ***SIRI-SX***  |
-|----------------|---------------------------|
+|--|--|
 | Miscell­aneous  | *unknown*  |
 |  | *incident*  |
 |  | *bombExplosion*  |
@@ -9965,7 +9965,7 @@ implémenté dans un échange.
 ###### Personnel reasons
 
 | ***Group***  | ***SIRI-SX***  |
-|------------------------|-----------------------------|
+|--|--|
 | ***Personnel Reason***  | *unknown*  |
 |  | *staffSickness*  |
 |  | *staffAbsence*  |
@@ -9976,14 +9976,14 @@ implémenté dans un échange.
 |  | *undefinedPersonnelProblem*  |
 
 | ***Personne sub lReason***  | *staffInjury*  | staff sickness  |
-|----------------------------|------------------------------|-------------------|
+|--|--|--|
 |  | *contractorStaffInjury*  | staff sickness  |
 |  | *unofficialIndustrialAction*  | industrial action  |
 
 ###### Equipment reasons
 
 |  | ***SIRI-SX***  |
-|------------------------|-----------------------------|
+|--|--|
 | ***Equipment Reason***  | *unknown*  |
 |  | *pointsProblem*  |
 |  | *pointsFailure*  |
@@ -10010,7 +10010,7 @@ implémenté dans un échange.
 |  | *undefinedEquipmentProblem*  |
 
 |  | ***SIRI-SX***  |
-|---------------------------|-------------------------------------|
+|--|--|
 | ***Equipment Subreason***  | *tractionFailure*  |
 |  | *defectiveTrain*  |
 |  | *slipperyTrack*  |
@@ -10035,7 +10035,7 @@ implémenté dans un échange.
 ###### Environment reason
 
 | ***Group***  | ***SIRI-SX***  |
-|--------------------------|---------------------------------|
+|--|--|
 | ***Environment Reason***  | *unknown*  |
 |  | *fog*  |
 |  | *roughSea*  |
@@ -10059,7 +10059,7 @@ implémenté dans un échange.
 |  | *undefinedEnvironmentalProblem*  |
 
 | ***Group***  | ***SIRI-SX***  |
-|-------------------------------------|----------------------|
+|--|--|
 | ***Environment Weather Subreason***  | *driftingSnow*  |
 |  | *blizzardConditions*  |
 |  | *stormDamage*  |
@@ -10084,7 +10084,7 @@ implémenté dans un échange.
 ##### Desription de l’enum ‘Severity’
 
 | ***SIRI-SX***  | **Description**  |
-|---------------|-----------------|
+|--|--|
 | *unknown*  | unknown  |
 |  |  |
 | *slight*  | slight  |
@@ -10097,7 +10097,7 @@ implémenté dans un échange.
 ##### Description de l’enum ‘ScopeType’
 
 | **SIRI-SX**  | **Description**  |
-|--------------------------------------------|------------------------------------------------|
+|--|--|
 | *<span class="hl">general</span>*  | Situation has a general scope.  |
 | *<span class="hl">operator</span>*  | Situation scope is a specific OPERATOR.  |
 | *<span class="hl">network</span>*  | Situation scope is whole NETWORK.  |
@@ -10338,12 +10338,12 @@ implémenté dans un échange.
 </table>
 
 | SX-3  | Les délais sont exprimés uniquement sous la forme d’une durée  |
-|------|---------------------------------------------------------------|
+|--|--|
 
 ###### Description de l’enum ‘Conditions’
 
 | **SIRI-SX**  | **Description**  |
-|---------------------------------------------------------|-------------------------------|
+|--|--|
 | *<span class="hl">unknown</span>*  | unknown  |
 | *<span class="hl">altered</span>*  | altered  |
 | *<span class="hl">cancelled</span>*  | cancelled  |
@@ -11601,7 +11601,7 @@ implémenté dans un échange.
 ####### Description de l’enum ‘ActionStatus’
 
 | **Value**  | **Description**  |
-|---------------------------------------|---------------------------------------|
+|--|--|
 | *<span class="hl">open</span>*  | Action is open but not yet published.  |
 | *<span class="hl">published</span>*  | Action is already published.  |
 | *<span class="hl">closed</span>*  | Action is closed.  |
@@ -13676,7 +13676,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 ## Réponse aux requêtes d’informations sur les horaires commandés/théoriques
 
 | ***<span class="hl">Production­Timetable­Delivery</span>***  |  |  | *+Structure*  | Description des horaires sur la période  |
-|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--|--|--|--|--|
 | *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Numéro de version du service *Production Timetable*, intégrant le numéro de version de profil (voir Error: Reference source not found) (valeur fixe).  |
 | *LEADER*  | ***<span class="hl">::</span>***  | 1:1  | *xxx­Delivery*  | voir paragraphe 2.3  |
 | *Payload*  | ***<span class="hl">Dated</span>­<span class="hl">Timetable­Version</span>­<span class="hl">Frame</span>***  | 0:\*  | *+Structure*  | Voir DatedTimetableVersionFrame element.  |
