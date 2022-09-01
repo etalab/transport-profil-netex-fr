@@ -4232,7 +4232,7 @@ dès que :
 <td>Voir paragraphe 2.3</td>
 </tr>
 <tr>
-<td rowspan="10"><em>Pay­load</em></td>
+<td rowspan="3"><em>Pay­load</em></td>
 <td><em><strong><span class="hl_france">MonitoringRef</span></strong></em></td>
 <td><p>0:*</p>
 <p><span class="hl">1:1</span></p></td>
@@ -4240,12 +4240,7 @@ dès que :
 <td><p>Identifiant du point d'arrêt concerné par la requête.</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objets (arrêt) de référence (Zone d'Embarquement, , Lieu d'Arrêt ou Groupe de Lieux, Point d’), et non d'objet particulier.</span></p></td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td><em><strong><span class="hl">Monitored­Stop</span>­<span class="hl">Visit</span></strong></em></td>
 <td>0:*</td>
@@ -4258,42 +4253,7 @@ dès que :
 <td><em>+Structure</em></td>
 <td><span class="hl">Indication qu'un passage précédemment signalé ne doit plus être affiché (indique généralement que le véhicule a franchi l'arrêt).</span></td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td><em>any</em></td>
 <td><em><span class="hl">Extensions</span></em></td>
@@ -4337,31 +4297,13 @@ dès que :
 <td><p><span class="hl">Identifie cette information : cela correspond en fait à une identification du couple arrêt-course, et permettra par la suite une éventuelle annulation (cas où l’arrêt n’est plus desservi).</span></p>
 <p><span class="hl">Il doit être unique et pérenne et bien identifier le passage à l'arrêt.</span></p></td>
 </tr>
+
 <tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"><em>Stop­Visit­Reference</em></td>
+<td><em>Stop­Visit­Reference</em></td>
 <td colspan="2"><em><strong><span class="hl">Monitoring­Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Monitoring­Code</em></td>
 <td>Référence du point d'arrêt</td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>Journey­Info</em></td>
@@ -4370,20 +4312,6 @@ dès que :
 <td>-1:1</td>
 <td><em>Monitored­Vehicle­Journey­Structure</em></td>
 <td>Description de la course</td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>any</em></td>
@@ -4414,18 +4342,12 @@ dès que :
 <td>Description de la course</td>
 </tr>
 <tr>
-<td rowspan="3"><em>Vehicle Journey Identity</em></td>
+<td rowspan="2"><em>Vehicle Journey Identity</em></td>
 <td colspan="3"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>LineCode</em></td>
 <td>Identifiant de la ligne</td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="3"><em><strong><span class="hl">Framed</span>­<span class="hl">Vehicle­JourneyRef</span></strong></em></td>
@@ -4465,39 +4387,7 @@ dès que :
 <p>DetailLevel: normal.</p></td>
 </tr>
 <tr>
-<td rowspan="4"></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="8"><em>Opera­tional­Info</em></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
+<td rowspan="6"><em>Opera­tional­Info</em></td>
 <td colspan="3"><em><strong><span class="hl">TrainNumber</span></strong></em></td>
 <td>0:*</td>
 <td><em>sequence</em></td>
@@ -4519,14 +4409,14 @@ dès que :
 <p><span class="hl">Dans le cadre du profil France on utilisera ces sous-ensembles de course exclusivement pour porter la parité des trains (avec possibilité de changer de parité en cours de course).</span></p></td>
 </tr>
 <tr>
-<td rowspan="4"></td>
+<td rowspan="3"></td>
 <td colspan="2"><em><strong><span class="hl">JourneyPart­Info</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>Information sur les parties de course</td>
 </tr>
 <tr>
-<td rowspan="3"></td>
+<td rowspan="2"></td>
 <td><em><strong><span class="hl">Journey­PartRef</span></strong></em></td>
 <td>1:1</td>
 <td><em>➜JourneyPart­Code</em></td>
@@ -4546,26 +4436,7 @@ dès que :
 <p><span class="hl">Si les identifiants de JourneyPart n'ont pas été échangés mais que la parité doit tout de même être échangée, le champ précédent (JourneyPartRef, qui est obligatoire) prendra la valeur arbitraire de "</span><em><strong><span class="hl">unknown</span></strong></em><span class="hl">".</span></p></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="6"><em>Calling Pattern</em></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
+<td rowspan="3"><em>Calling Pattern</em></td>
 <td colspan="3"><em><strong><span class="hl">Monitored</span>­<span class="hl">Call</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
@@ -4583,12 +4454,6 @@ dès que :
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Informations horaires pour l'un des arrêts suivants</td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -4611,7 +4476,7 @@ dès que :
 <td>Informations horaires pour l'arrêt.</td>
 </tr>
 <tr>
-<td rowspan="4"><em>Stop Identity</em></td>
+<td rowspan="3"><em>Stop Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl_france">1:1</span></p></td>
@@ -4621,12 +4486,6 @@ dès que :
 <p><span class="hl">- Si MonitoringRef est un lieu d’arrêt, ou un groupe de lieux, StopPointRef est une zone d'embarquement, si l'émetteur est capable de la fournir.</span></p>
 <p><span class="hl">- Sinon, StopPointRef estun lieu d’arrêt (granularité la plus fine possible dans tous les cas)</span></p>
 <p><span class="hl_france">Champ obligatoire pour les échanges avec les concentrateurs</span></p></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Order</span></strong></em></td>
@@ -4651,63 +4510,18 @@ dès que :
 <p>Valeur par défaut : « false »</p></td>
 </tr>
 <tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"><em>Call Rail</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
+<td><em>Call Rail</em></td>
 <td colspan="2"><em><strong><span class="hl">Platform­Traversal</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p>La valeur « true » permet de signaler le passage d'un train sans arrêt (et de demander au voyageur de s'écarter des voies)</p>
 <p>Valeur par défaut : « false »</p></td>
-</tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="4"><em>Call Property</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
+<td><em>Call Property</em></td>
 <td colspan="2"><em><strong><span class="hl">Destination­Display</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>Disruption­Group</em></td>
@@ -4717,7 +4531,7 @@ dès que :
 <td>Voir Disruption­Group.</td>
 </tr>
 <tr>
-<td rowspan="4"><em><span class="hl">Arrival</span></em></td>
+<td rowspan="3"><em><span class="hl">Arrival</span></em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed­Arrival­Time</span></strong></em></td>
 <td><span class="hl">0:1</span></td>
 <td><em><span class="hl">xsd:date­Time</span></em></td>
@@ -4736,13 +4550,7 @@ dès que :
 <td>Heure d'arrivée estimée par le SAE.</td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="9"><em>Arrival Status</em></td>
+<td rowspan="4"><em>Arrival Status</em></td>
 <td colspan="2"><em><strong><span class="hl">Arrival­Status</span></strong></em></td>
 <td>0:1</td>
 <td><p><em>onTime  | early  | delayed  | cancelled  |</em></p>
@@ -4768,44 +4576,13 @@ dès que :
 <td><span class="hl">Identification ou nom du quai d'arrivée</span></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em><strong><span class="hl">Aimed­­QuayName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Indication de la voie d'arrivée (en complément de Platform)</span><em><span class="hl">. </span></em></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="6"><em>Departure</em></td>
+<td rowspan="3"><em>Departure</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
@@ -4824,24 +4601,6 @@ dès que :
 <td><span class="hl">Heure de départ estimée par le SAE.</span></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td rowspan="2"><em><span class="hl_delete">Passenger­Times</span></em></td>
 <td colspan="2"></td>
 <td></td>
@@ -4855,18 +4614,12 @@ dès que :
 <td></td>
 </tr>
 <tr>
-<td rowspan="4"><em>Departure Status</em></td>
+<td rowspan="3"><em>Departure Status</em></td>
 <td colspan="2"><em><strong><span class="hl">Departure­Status</span></strong></em></td>
 <td>0:1</td>
 <td><em>onTime  | early  | delayed  | cancelled  | arrived  |departed  | notExpected  | noReport</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Departure­Platform</span>­<span class="hl">Name</span></strong></em></td>
@@ -4881,38 +4634,7 @@ dès que :
 <td><p><span class="hl">Indique si l'on peut monter dans le véhicule ou si c'est un passage sans arrêt ou avec montée interdite.</span></p>
 <p><span class="hl">Valeur par défaut : « boarding»</span></p></td>
 </tr>
-<tr>
-<td rowspan="5"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td><em>Occupancy</em></td>
 <td colspan="2"><em><strong><span class="hl">ExpectedDepartureOccupancy</span></strong></em></td>
