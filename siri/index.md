@@ -1080,8 +1080,7 @@ suivantes:
 
 -   Identifiants des Correspondances,
 
--   Préciser les listes de valeurs supportées (*ServiceCategory*,
-    > *ProductCategory*, *VehicleFeature*)
+-   Préciser les listes de valeurs supportées (*ServiceCategory*, *ProductCategory*, *VehicleFeature*)
 
 2.  Définir le profil technique lui-même :
 
@@ -2135,14 +2134,6 @@ SIRI :
 <p><span class="hl">Le champ « CapabilityNotSupportedError » signalera une erreur si un service optionnel non implémenté est sollicité.</span></p></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em><strong><span class="hl">InvalidDataReferencesError</span></strong></em></td>
 <td>La requête contient des identifiants qui sont inconnus.</td>
 </tr>
@@ -2163,10 +2154,6 @@ SIRI :
 <td>Le service est indisponible (mais toutefois capable de fournir cette réponse …).</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em><strong><span class="hl">UnknownExtensionsError</span></strong></em></td>
 <td>La requête contient des extensions qui ne sont pas supportées par le serveur : une réponse a bien été fournie mais sans tenir compte de ces extensions.</td>
 </tr>
@@ -2174,18 +2161,6 @@ SIRI :
 <td><em><strong><span class="hl">UnknownParticipantError</span></strong></em></td>
 <td><p>Le destinataire du message (requête) est inconnu.</p>
 <p><em><u>Note</u></em>: cette erreur fait echo à la capacité de relais de requête introduite par SIRI 2.</p></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -2383,18 +2358,6 @@ profil SIRI France :
 <p><span class="hl">Cette requête permet d'obtenir la liste de toutes les lignes connues du système (voir la structure retournée, ci-dessous)</span></p></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><span class="hl">InfoChannelRequest</span></td>
 <td><p><span class="hl">Requête retenue pour le profil France</span></p>
 <p><span class="hl">Cette requête permet d'obtenir la liste de tous les canaux de messagerie proposés (voir la structure retournée, ci-dessous)</span></p>
@@ -2460,11 +2423,11 @@ tableaux qui suivent (codes couleurs, etc.).
 |  |  | ***<span class="hl">UpperLeft</span>***  | 0:1  | *LocationStructure*  | Coin supérieur gauche du rectangle englobant  |
 |  |  | ***<span class="hl">LowerRight</span>***  | 0:1  | *LocationStructure*  | Coin inférieur droit du rectangle englobant  |
 |  | ***<span class="hl_delete">Circle</span>***  |  |  |  |  |
-|  |  |  |  |  |  |
 |  | ***<span class="hl">OperatorRef</span>***  |  | 0:1  | *Operator­Code*  | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par un opérateur donné</span><span class="hl">.</span>  |
 |  | ***<span class="hl">LineRef</span>***  |  | 0:1  | *LineCode*  | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par une ligne donné</span><span class="hl">e.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
+
+
+
 
 #### Réponses aux StopPointsRequest
 
@@ -2488,7 +2451,7 @@ SIRI).
 <td><span class="hl">Description simplifiée d'un arrêt</span></td>
 </tr>
 <tr>
-<td rowspan="11"><em>Stop Identity</em></td>
+<td rowspan="5"><em>Stop Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td><em>1:1</em></td>
 <td><em>StopPoint­Code</em></td>
@@ -2496,35 +2459,11 @@ SIRI).
 <p>Il convient d'utiliser ici un identifiant d'objet de référence</p></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2"><em><strong><span class="hl">StopName</span></strong></em></td>
 <td><p><em>0:1</em></p>
 <p><em><strong><span class="hl">1:1</span></strong></em></p></td>
 <td><em>NaturalLanguageStringStructure</em></td>
 <td><span class="hl">le champ«StopName» sera toujours présent et renseigné conformément au paragraphe </span><span class="hl">.</span></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Lines</span></strong></em></td>
@@ -2540,23 +2479,10 @@ SIRI).
 <td>Identifiant d'une ligne (issu du référentiel des lignes)</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2"><em><strong><span class="hl">Location</span></strong></em></td>
 <td><em>0:1</em></td>
 <td><em>LocationStructure</em></td>
 <td>Localisation géographique de l'arrêt</td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -2568,18 +2494,10 @@ SIRI).
 |  |  |  |  |  |  |
 |--|--|--|--|--|--|
 | ***<span class="hl">LinesDiscoveryRequest</span>***  |  |  |  | *+Structure*  | Requête d'accès à la liste des lignes  |
-| *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | <span class="hl">Date d’émission de la requête.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-| *Endpoint Properties*  | ***<span class="hl">Address</span>***  |  | 0:1  | *Endpoint­Address*  | <span class="hl">Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).</span>  |
+| *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | <span class="hl">Date d’émission de la requête.</span>  || *Endpoint Properties*  | ***<span class="hl">Address</span>***  |  | 0:1  | *Endpoint­Address*  | <span class="hl">Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).</span>  |
 |  | ***<span class="hl">Requestor</span>­<span class="hl">Ref</span>***  |  | 1:1  | *Participant­Code*  | <span class="hl">Identifiant du demandeur (reprendre la structure \[</span>*<span class="hl">fournisseur</span>*<span class="hl">\] des identifiants).</span>  |
 |  | ***<span class="hl">Message</span>­<span class="hl">Identifier</span>***  |  | 0:1  | *Message­Qualifier*  | <span class="hl">Identifiant unique de ce message.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 |  | ***<span class="hl">OperatorRef</span>***  |  | 0:1  | *Operator­Code*  | <span class="hl">Filtre permettant de n'obtenir que les lignes exploitées par un opérateur donné</span><span class="hl">.</span>  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 
 #### <span class="hl">Réponses aux LinesRequest</span>
 
@@ -2590,8 +2508,6 @@ SIRI).
 |  | ***<span class="hl">LineName</span>***  | 1:1  | *NaturalLanguageStringStructure*  | <span class="hl">Nom de la ligne (issu du référentientiel des lignes) </span>  |
 |  | ***<span class="hl">Monitored</span>***  | 0:1  | *xsd:boolean*  | <span class="hl">le champ obligatoire « Monitored » sera toujours égal à « true » indiquant ainsi que l’on dispose bien d’information temps réel à ce point (inutile de traiter les arrêts et lignes pour lesquels on n’a pas d'information temps réel)</span>  |
 |  | ***<span class="hl">Destinations</span>***  | 0:\*  | *AnnotatedDestinationStructure*  | <span class="hl">Le champ facultatif « Destinations » reste facultatif et permettra d’indiquer, en plus des extrémités de la ligne, si elle est composée de plus de deux itinéraires (aller et retour)</span>  |
-|  |  |  |  |  |
-|  |  |  |  |  |
 
 ### <span class="hl">Discovery InfoChannel & Facility</span>
 
@@ -3039,7 +2955,7 @@ des protocoles d’accord en tre AOT et OTP.
 <td>Numéro d'identification du message</td>
 </tr>
 <tr>
-<td rowspan="6"><em>Topic</em></td>
+<td rowspan="5"><em>Topic</em></td>
 <td colspan="2"><em><strong><span class="hl">Preview­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
@@ -3064,38 +2980,11 @@ des protocoles d’accord en tre AOT et OTP.
 <td>Liste des lignes contenant les courses pour lesquelles on souhaite des informations.</td>
 </tr>
 <tr>
-<td rowspan="2"></td>
+<td rowspan="1"></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>➜Line­Code</em></td>
 <td>Identifie la ligne pour laquelle on souhaite obtenir des informations.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>any</td>
@@ -3229,13 +3118,6 @@ EstimatedTimetable.
 <td><em>+Structure</em></td>
 <td><p>Description des courses sur l’itinéraire.</p>
 <p>Voir EstimatedVehicleJourney element.</p></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>any</td>
@@ -3387,7 +3269,7 @@ EstimatedTimetable.
 <td colspan="3">Voir Service­Info­Group.</td>
 </tr>
 <tr>
-<td rowspan="8"><em>Journey Info</em></td>
+<td rowspan="2"><em>Journey Info</em></td>
 <td colspan="6"><em><strong><span class="hl">Vehicle­Journey­Name</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>NLString</em></td>
@@ -3398,44 +3280,6 @@ EstimatedTimetable.
 <td colspan="2">0:*</td>
 <td colspan="2"><em>NLString</em></td>
 <td colspan="3"><span class="hl">Texte complémentaire décrivant la course.</span></td>
-</tr>
-<tr>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
 </tr>
 <tr>
 <td rowspan="4"><em>Estimated­Info</em></td>
@@ -3480,37 +3324,7 @@ EstimatedTimetable.
 <p>DetailLevel: normal.</p></td>
 </tr>
 <tr>
-<td rowspan="4"></td>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td rowspan="3"></td>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr>
 <td rowspan="8"><em>Opera­tional­Info</em></td>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
 </tr>
 <tr>
 <td colspan="6"><em><strong><span class="hl">TrainNumber</span></strong></em></td>
@@ -3559,21 +3373,13 @@ EstimatedTimetable.
 </ul>
 <p><span class="hl">L'association à une JourneyPart permet de gérer les changements de parité en cours de course. Si la parité est invariable, une seule JourneyPart sera définie.</span></p>
 <p><span class="hl">Si le numéro de train n'est pas connu mais que la parité doit tout de même être échangée, ce champ contiendra "</span><em><strong><span class="hl">unknown:1</span></strong></em><span class="hl">" ou "</span><em><strong><span class="hl">unknown:2</span></strong></em><span class="hl">".</span></p>
-<p><span class="hl">Si les identifiants de JourneyPart n'ont pas été échangés mais que la parité doit tout de même être échangée, le champ précédent (JourneyPartRef, qui est obligatoire) prendra la valeur arbitraire de "</span><em><strong><span class="hl">unknown</span></strong></em><span class="hl">".</span></p></td>
+<p><span class="hl">Si les identifiants de JourneyPart n'ont pas été échangés mais que la parité doit tout de même être échangée, le champ précédent (JourneyPartRef, qui est obligatoire) prendra la valeur arbitraire de "</span><em><strong><span class="hl">unknownss</span></strong></em><span class="hl">".</span></p></td>
 </tr>
 <tr>
-<td colspan="3"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
+
 </tr>
 <tr>
 <td rowspan="4"><em>Calls</em></td>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
 </tr>
 <tr>
 <td rowspan="2"><em><strong>a</strong></em></td>
@@ -3628,19 +3434,14 @@ EstimatedTimetable.
 </thead>
 <tbody>
 <tr>
-<td rowspan="4"><em>Stop Identity</em></td>
+<td rowspan="3"><em>Stop Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>➜StopPoint­Code</em></td>
 <td><span class="hl">Identifiant du Point d'arrêt (cet identifiant est à rapprocher de l’attribut </span><em><span class="hl">MonitoringRef</span></em><span class="hl"> de la structure </span><em><span class="hl">MonitoredStopVisit</span></em><span class="hl">, mais restreint à ce cas de point d’arrêt là ou le </span><em><span class="hl">MonitoringRef</span></em><span class="hl"> peut aussi, dans le contexte général de SIRI, </span><del><span class="hl">,</span></del><span class="hl"> référencer un afficheur, par exemple).</span></td>
 </tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td colspan="2"><em><strong><span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
@@ -3678,7 +3479,7 @@ EstimatedTimetable.
 <p><span class="hl">Valeurs issues du CR17.</span></p></td>
 </tr>
 <tr>
-<td rowspan="2"><em>Call Realtime Group</em></td>
+<td rowspan="1"><em>Call Realtime Group</em></td>
 <td colspan="2"><em><strong><span class="hl">VehicleAt</span>­<span class="hl">Stop</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
@@ -3686,17 +3487,7 @@ EstimatedTimetable.
 <p><span class="hl">Valeur par défaut : « false»</span></p></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"><em>Call Rail Group</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
+<td rowspan="2"><em>Call Rail Group</em></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Platform­Traversal</span></strong></em></td>
@@ -3706,42 +3497,11 @@ EstimatedTimetable.
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="4"><em>Call Property</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
+<td><em>Call Property</em></td>
 <td colspan="2"><em><strong><span class="hl">Destination­Display</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</span></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>Disruption­Group</em></td>
@@ -3751,7 +3511,7 @@ EstimatedTimetable.
 <td><span class="hl">Voir Disruption­Group.</span></td>
 </tr>
 <tr>
-<td rowspan="12"><em>Arrival</em></td>
+<td rowspan="7"><em>Arrival</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed</span>­<span class="hl">Arrival­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
@@ -3783,50 +3543,21 @@ EstimatedTimetable.
 <td><span class="hl">Identification ou nom du quai d'arrivée.</span></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2"><em><strong><span class="hl">ArrivalStopAssignment</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Affectation du point d'arrêt planifié à un quay</span></td>
 </tr>
 <tr>
-<td rowspan="4"></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em><strong><span class="hl">Aimed­­QuayName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Indication de la voie d'arrivée (en complément de Platform)</span><em><span class="hl">. </span></em></td>
+
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="7"><em>Departure</em></td>
+<td rowspan="2"><em>Departure</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed</span>­<span class="hl">Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
@@ -3839,49 +3570,14 @@ EstimatedTimetable.
 <td><span class="hl">Heure de départ estimée par le SAE.</span></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="14"><em>Departure Status</em></td>
+<td rowspan="7"><em>Departure Status</em></td>
 <td colspan="2"><em><strong><span class="hl">Departure</span>­<span class="hl">Status</span></strong></em></td>
 <td>0:1</td>
 <td><em>onTime  | early  | delayed  | cancelled  | arrived  |departed  | notExpected  | noReport</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p></td>
 </tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td colspan="2"><em><strong><span class="hl">Departure­Platform</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
@@ -3895,37 +3591,7 @@ EstimatedTimetable.
 <td><p><span class="hl">Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</span></p>
 <p><span class="hl">Valeur par défaut : « boarding »</span></p></td>
 </tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td colspan="2"><em><strong><span class="hl">ExpectedDepartureOccupancy</span></strong></em></td>
 <td><span class="hl">0:1</span></td>
@@ -3938,12 +3604,7 @@ EstimatedTimetable.
 <td><em><span class="hl">+structure</span></em></td>
 <td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf § </span></td>
 </tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td colspan="2"><em><strong><span class="hl">Aimed­Headway­Interval</span></strong></em></td>
 <td>0:1</td>
@@ -4137,35 +3798,20 @@ tableaux qui suivent).</span>
 |  | ***<span class="hl">DefaultPreview­Interval</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">FilterByMonitoring­Ref</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">FilterByLineRef</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 |  | ***<span class="hl">FilterByDestination</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 
 |  |  |  |
 |--|--|--|
 | ***RequestPolicy***  |  |  |
-|  |  |  |
 | <span class="hl">a</span>  | ***<span class="hl">GmlCoordinateFormat</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 |  | ***<span class="hl">UseReferences</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">UseNames</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
 |  | ***<span class="hl">HasMinimum­StopVisits­PerLine</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">HasNumberOf­OnwardsCalls</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
 | ***SubscriptionPolicy***  |  |  |
 |  | ***<span class="hl">HasIncremental­Updates</span>***  | <span class="hl">Oui</span>  |
 |  | ***<span class="hl">HasChangeSensitivity</span>***  | <span class="hl">Oui</span>  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+
 
 ### Requête d'information temps réel au point d'arrêt
 
@@ -4241,9 +3887,6 @@ ci-dessous précise l'usage des différentes valeurs de statuts.</span>
 | *<span class="hl">Early</span>*  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
 | *<span class="hl">Delayed</span>*  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
 | *<span class="hl">Cancelled</span>*  | <span class="hl">Passage annulé</span>  |  | <span class="hl">Passage annulé (note: ce passage annulé reste comptabilisé dans le nombre de passages utilisé dans les filtres de requêtes).</span>  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
 | *<span class="hl">noReport</span>*  | <span class="hl">Pas d’information « ExpectedArrivalTime » disponible (par contre le « AimededArrivalTime » peut être fourni)</span>  |  | <span class="hl">Pas d’information disponible</span>  |
 
 Note concernant les derniers arrêts de course:
@@ -4337,7 +3980,7 @@ l'annulation d'un passage il est précisé que:</span>
 <td>Numéro d'identification du message</td>
 </tr>
 <tr>
-<td rowspan="8"><em>Topic</em></td>
+<td rowspan="7"><em>Topic</em></td>
 <td colspan="3"><em><strong><span class="hl">Preview­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
@@ -4363,12 +4006,6 @@ l'annulation d'un passage il est précisé que:</span>
 <td><em>LineCode</em></td>
 <td><p>Filtre permettant de n'obtenir que les départs et arrivées pour une ligne donnée (dont on fournit l'identifiant)</p>
 <p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants (le relai s'informe sur toutes les lignes sans distinction).</span></p></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="3"><em><strong><span class="hl">Destination­Ref</span></strong></em></td>
@@ -4405,19 +4042,7 @@ l'annulation d'un passage il est précisé que:</span>
 <p><span class="hl_france">Dans le cas des échanges avec les concentrateurs, ce filtre ne sera jamais présent et c'est donc avec la valeur par défaut </span><em><strong><span class="hl_france">all</span></strong></em><span class="hl_france"> qu'il faudra l'interpréter.</span></p></td>
 </tr>
 <tr>
-<td rowspan="11"><em>Request Policy</em></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
+<td rowspan="5"><em>Request Policy</em></td>
 <td colspan="3"><em><strong><span class="hl">Maximum­StopVisits</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl_france">0:0</span></p></td>
@@ -4426,6 +4051,7 @@ l'annulation d'un passage il est précisé que:</span>
 <p>De plus « 0 » est une valeur interdite pour ce champ (erreur).</p>
 <p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants : pas de limitation du nombre d'informations remontées.</span></p></td>
 </tr>
+
 <tr>
 <td colspan="2" rowspan="2"><em><span class="hl">choix</span></em></td>
 <td><em><strong><span class="hl">Minimum­StopVisits­PerLine</span></strong></em></td>
@@ -4447,24 +4073,7 @@ l'annulation d'un passage il est précisé que:</span>
 <p><u><span class="hl">Note</span></u><span class="hl">: ce filtre étant à comprendre comme "nombre de passage pour tous les VIA possibles", les VIA ne sont naturellement pas à préciser. </span></p>
 <p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants</span></p></td>
 </tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
 <tr>
 <td colspan="3"><em><strong><span class="hl">Maximum­Number­Of­Calls</span></strong></em></td>
 <td><p>0:1</p>
@@ -4474,14 +4083,7 @@ l'annulation d'un passage il est précisé que:</span>
 <p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants : aucune information de type OnwardCall n'est remontée par les concentrateurs.</span></p></td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"><em><strong><span class="hl">Onwards</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">Onwards</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl_france">0:0</span></p></td>
 <td><em>xsd:nonNegativeInteger</em></td>
