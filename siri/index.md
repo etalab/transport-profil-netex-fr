@@ -301,27 +301,353 @@ La description des services SIRI fait référence à une structure LEADER.
 Le Leader est (indirectement) défini dans la spécification SIRI \[R6\]
 par les attributs suivants
 
-| xxxDelivery  |  |  |  |  | +Structure  |  | Delivery for xxx Service  |  |  |  |
-|--|--|--|--|--|--|--|--|--|--|--|
-| Log  | Response­Timestamp  |  | 1:1  |  | xsd:dateTime  |  | Heure de creation de la response.  |  |  |  |
-| End­point prop­erties  | RequestMessageRef  |  | 0:1  |  | ➜Message­Qualifier  |  |  | For direct requests, Identifier of request that this Delivery satisfies.  |  |  |
-|  | SubscriberRef  |  | 0:1  |  | ➜Participant­Code  |  |  | Required if Delivery is for a Subscription, Participant Reference of Subscriber.  |  |  |
-|  | Subscription­FilterRef  |  | 0:1  |  | ➜SubcriptionFilterCode  |  |  | Unique identifier of Subscription filter to which this subscription is assigned. If there is only a single filter, then can be omitted.  |  |  |
-|  | Subscription­Ref  |  | 1:1  |  | ➜Subscript­ion­Qualifier  |  |  | Required if Delivery is for a Subscription, Identifier of Subscription issued by Requestor. Unique within Subscriber (i.e. within ***ParticipantRef*** of Subscriber), and SIRI Functional Service type.  |  |  |
-| Deleg­ation  | DelegatorAddress  |  | 0:1  |  | Xsd:anyURI  |  | Address of original Consumer, i.e. requesting system to which delegating response is to be returned.  |  |  |  |
-|  | DelegatorRef  |  | 0:1  |  | ➜Participant­Code  |  |  | Identifier of delegating system that originated message.  |  |  |
-| Stat­us  | Status  |  | 0:1  |  | xsd:boolean  |  |  | Whether the complete request could be processed successfully or not. Default is true. If any of the individual requests within the delivery failed, should be set to *false*.  |  |  |
-|  | ErrorCondition  |  | 0:1  |  | +Structure  |  |  | Description of any error or warning conditions that apply to the specific functional request or response.  |  |  |
-|  |  |  |  |  | choice  |  |  | One of the following Error codes.  |  |  |
-|  | a  | Capability­Not­Supported­Error  |  | -1:1  |  | \+ Error  |  |  | Error: Capability not supported.  |  |
-|  | b  |  |  | AccessNot­Allowed­Error  |  | +Error  |  |  | Error: Requestor is not authorised to the service or data requested.  |  |
-|  | c  |  |  | NoInfoFor­TopicError  |  | +Error  |  |  | Error: Valid request was made but service does not hold any data for the requested topic expression.  |  |
-|  | d  |  |  | Allowed­Resource­Usage­Exceeded­Error  |  | +Error  |  |  | Error: Valid request was made but request would exceed the permitted resource usage of the client.  |  |
-|  | e  |  |  | OtherError  |  | +Error  |  |  | Error other than a well-defined category.  |  |
-|  |  | Description  |  | 0:1  |  | ➜ErrorDescription  |  |  | Description of Error.  |  |
-|  | ValidUntil  |  | 0:1  |  | xsd:dateTime  |  |  | End of data horizon of the data producer.  |  |  |
-|  | Shortest­Possible­Cycle  |  | 0:1  |  | Positive­Duration­Type  |  |  | Minimum interval at which updates can be sent.  |  |  |
-|  | DefaultLanguage  |  |  |  | Xsd:language  |  |  | Default language for text elements.  |  |  |
+<table cellpadding="7" cellspacing="0" >
+    <tbody>
+        <tr>
+            <td colspan="3" >
+                <p>xxxDelivery</p>
+            </td>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="2" >
+                <p>+Structure</p>
+            </td>
+            <td colspan="3" >
+                <p>Delivery for xxx Service</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>Log</p>
+            </td>
+            <td colspan="2" >
+                <p>ResponseTimestamp</p>
+            </td>
+            <td colspan="2" >
+                <p>1:1</p>
+            </td>
+            <td colspan="2" >
+                <p>xsd:dateTime</p>
+            </td>
+            <td colspan="3" >
+                <p>Heure de creation de la response.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="4" >
+                <p>Endpoint properties</p>
+            </td>
+            <td colspan="2" >
+                <p>RequestMessageRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜MessageQualifier</p>
+            </td>
+            <td colspan="2" >
+                <p>For direct requests, Identifier of request that this Delivery satisfies.&nbsp;</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>SubscriberRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜ParticipantCode</p>
+            </td>
+            <td colspan="2" >
+                <p>Required if Delivery is for a Subscription, Participant Reference of Subscriber.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>SubscriptionFilterRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜SubcriptionFilterCode</p>
+            </td>
+            <td colspan="2" >
+                <p>Unique identifier of Subscription filter to which this subscription is assigned. If there is only a single filter, then can be omitted.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>SubscriptionRef</p>
+            </td>
+            <td colspan="2" >
+                <p>1:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜SubscriptionQualifier</p>
+            </td>
+            <td colspan="2" >
+                <p><span size="2">Required if Delivery is for a Subscription, Identifier of Subscription issued by Requestor. Unique within Subscriber (i.e. within&nbsp;</span><span size="2"><em><strong>ParticipantRef</strong></em></span> of Subscriber), and SIRI Functional Service type.&nbsp;</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" >
+                <p>Delegation</p>
+            </td>
+            <td colspan="2" >
+                <p>DelegatorAddress</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="2" >
+                <p>Xsd:anyURI</p>
+            </td>
+            <td colspan="3" >
+                <p>Address of original Consumer, i.e. requesting system to which delegating response is to be returned.&nbsp;</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>DelegatorRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜ParticipantCode</p>
+            </td>
+            <td colspan="2" >
+                <p>Identifier of delegating system that originated message.&nbsp;</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="11" >
+                <p>Status</p>
+            </td>
+            <td colspan="2" >
+                <p>Status</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>xsd:boolean</p>
+            </td>
+            <td colspan="2" >
+                <p><span size="2">Whether the complete request could be processed successfully or not. Default is true. If any of the individual requests within the delivery failed, should be set to&nbsp;</span><span size="2"><em>false</em></span>.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>ErrorCondition</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>+Structure</p>
+            </td>
+            <td colspan="2" >
+                <p>Description of any error or warning conditions that apply to the specific functional request or response.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="3" >
+                <p>choice</p>
+            </td>
+            <td colspan="2" >
+                <p>One of the following Error codes.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>a</p>
+            </td>
+            <td colspan="2" >
+                <p>CapabilityNotSupportedError</p>
+            </td>
+            <td colspan="2" rowspan="5" >
+                <p>-1:1</p>
+            </td>
+            <td colspan="3" >
+                <p>+ Error</p>
+            </td>
+            <td colspan="2" >
+                <p>Error: Capability not supported.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>b</p>
+            </td>
+            <td colspan="2" >
+                <p>AccessNotAllowedError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="2" >
+                <p>Error: Requestor is not authorised to the service or data requested.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>c</p>
+            </td>
+            <td colspan="2" >
+                <p>NoInfoForTopicError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="2" >
+                <p>Error: Valid request was made but service does not hold any data for the requested topic expression.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>d</p>
+            </td>
+            <td colspan="2" >
+                <p>AllowedResourceUsageExceededError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="2" >
+                <p>Error: Valid request was made but request would exceed the permitted resource usage of the client.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>e</p>
+            </td>
+            <td colspan="2" >
+                <p>OtherError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="2" >
+                <p>Error other than a well-defined category.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p><br></p>
+            </td>
+            <td colspan="2" >
+                <p>Description</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜ErrorDescription</p>
+            </td>
+            <td colspan="2" >
+                <p>Description of Error.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>ValidUntil</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>xsd:dateTime</p>
+            </td>
+            <td colspan="2" >
+                <p>End of data horizon of the data producer.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>ShortestPossibleCycle</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>PositiveDurationType</p>
+            </td>
+            <td colspan="2" >
+                <p>Minimum interval at which updates can be sent.</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p><br></p>
+            </td>
+            <td colspan="2" >
+                <p>DefaultLanguage</p>
+            </td>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="3" >
+                <p>Xsd:language</p>
+            </td>
+            <td colspan="2" >
+                <p>Default language for text elements.&nbsp;</p>
+            </td>
+            <td >
+                <p><br></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## Référentiel théorique
 
