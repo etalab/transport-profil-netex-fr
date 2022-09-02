@@ -7981,7 +7981,7 @@ implémenté dans un échange.
 <td>Voir SIRI Part 2 xxx<em><strong>ServiceDelivery</strong></em>.</td>
 </tr>
 <tr>
-<td rowspan="4"><em>SituationExchangePayloadGroup</em></td>
+<td rowspan="3"><em>SituationExchangePayloadGroup</em></td>
 <td colspan="2"><em><strong><span class="hl">PtSituationContext</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
@@ -7999,20 +7999,6 @@ implémenté dans un échange.
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Définition des pertrubations et messages IV associés (cf )</span></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -8047,7 +8033,7 @@ implémenté dans un échange.
 <td>Heure de creation de SITUATION</td>
 </tr>
 <tr>
-<td rowspan="8"><em>SituationSharedIdentityGroup</em></td>
+<td rowspan="6"><em>SituationSharedIdentityGroup</em></td>
 <td colspan="5"></td>
 <td></td>
 <td colspan="3"><em>→Group</em></td>
@@ -8075,23 +8061,11 @@ implémenté dans un échange.
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, correspond au </span><em><strong><span class="hl">InfoMessageIdentifier.</span></strong></em></p></td>
 </tr>
 <tr>
-<td colspan="2" rowspan="4"><em>SituationUpdateIdentityGroup</em></td>
+<td colspan="2" rowspan="2"><em>SituationUpdateIdentityGroup</em></td>
 <td colspan="3"></td>
 <td></td>
 <td colspan="3"><em>→Group</em></td>
 <td>Type de référence pour une mise à jour d’une SITUATION. ParticipantRef est facultatif et peut être fourni à partir du contexte.</td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="3"><em><strong><span class="hl">Version</span></strong></em></td>
@@ -8101,24 +8075,11 @@ implémenté dans un échange.
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, correspond au </span><em><strong><span class="hl">InfoMessageVersion.</span></strong></em></p></td>
 </tr>
 <tr>
-<td rowspan="5"><em>SituationInfoGroup</em></td>
+<td rowspan="3"><em>SituationInfoGroup</em></td>
 <td colspan="5"></td>
 <td></td>
 <td colspan="3"></td>
 <td>SITUATION information.</td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="5"><em><strong><span class="hl">Source</span></strong></em></td>
@@ -8149,7 +8110,7 @@ implémenté dans un échange.
 <td>Corps de SITUATION</td>
 </tr>
 <tr>
-<td rowspan="6"><em>PtSituationBodyGroup\StatusGroup</em></td>
+<td rowspan="4"><em>PtSituationBodyGroup\StatusGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">Verification</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>Enum {unknown|unverified|verified}</em></td>
@@ -8170,18 +8131,6 @@ implémenté dans un échange.
 <td colspan="3"><em>Enum {certain|veryReliable|reliable|unreliable|unconfirmed}</em></td>
 <td><p>Évaluation de l'exactitude probable des données. Valeurs d'énumération</p>
 <p>Valeur par défaut : unconfirmed</p></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="5"><em><strong><span class="hl">Publication</span></strong></em></td>
@@ -8255,29 +8204,17 @@ implémenté dans un échange.
 <p><span class="hl">La valeur par défaut est undefined </span></p></td>
 </tr>
 <tr>
-<td rowspan="16"><em>ClassifierGroup</em></td>
+<td rowspan="10"><em>ClassifierGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">ReasonGroup</span></strong></em></td>
 <td></td>
 <td colspan="3"></td>
 <td>Éléments de classification structurés. Correspond à la raison de l'événement TPEG.</td>
 </tr>
 <tr>
-<td colspan="2" rowspan="4"></td>
+<td colspan="2" rowspan="2"></td>
 <td colspan="3"><em><strong>ReasonGroup</strong></em></td>
 <td><strong>1:1</strong></td>
 <td colspan="3"><em>enum</em></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
 <td></td>
 </tr>
 <tr>
@@ -8326,12 +8263,6 @@ implémenté dans un échange.
 <p>Définition de l’enum : 6.7.4.1.5</p></td>
 </tr>
 <tr>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="5"><em><strong><span class="hl">Planned</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>boolean</em></td>
@@ -8347,25 +8278,6 @@ implémenté dans un échange.
 <p><span class="hl">«</span><strong><span class="hl">Perturbation</span></strong><span class="hl">»</span></p>
 <p><span class="hl">“Information”</span></p>
 <p><span class="hl">“Commercial”</span></p></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="10"><em>DescriptionGroup</em></td>
@@ -8433,7 +8345,7 @@ implémenté dans un échange.
 <td>Identification des parties du réseau de transport affectées par la SITUATION. Autres liens internet.</td>
 </tr>
 <tr>
-<td rowspan="4"><em>PtBodyGroup</em></td>
+<td rowspan="3"><em>PtBodyGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">Consequences</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>many</em></td>
@@ -8454,19 +8366,6 @@ implémenté dans un échange.
 <td colspan="3">Distribution actions to disseminate SITUATION.</td>
 <td><p>Consequence of the SITUATION.</p>
 <p><span class="hl">Description d’une consequence de l’évènement cf §</span></p></td>
-</tr>
-<tr>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -8504,7 +8403,7 @@ implémenté dans un échange.
 <p>Définition Enum : 6.7.4.1.1.1</p></td>
 </tr>
 <tr>
-<td rowspan="13"><em>SituationSourceDetailsGroup</em></td>
+<td rowspan="4"><em>SituationSourceDetailsGroup</em></td>
 <td><em><strong><span class="hl">Email</span></strong></em></td>
 <td>0:1</td>
 <td><em>string</em></td>
@@ -8528,60 +8427,6 @@ implémenté dans un échange.
 <td><em>anyURL</em></td>
 <td>URL du fournisseur.</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
@@ -8592,13 +8437,11 @@ implémenté dans un échange.
 | *directReport*  | Rapport remis en direct  |
 | *email*  | Rapport reçu via email  |
 | *phone*  | Rapport reçu via téléphone  |
-|  |  |
 | *post*  | Rapport reçu via courrier postal  |
 | *feed*  | Rapport reçu via alimentation automatique  |
 | *radio*  | Rapport reçu via radio  |
 | *tv*  | Rapport reçu via TV  |
 | *web*  | Rapport reçu via website  |
-|  |  |
 | *text*  | Rapport reçu via message  |
 | *other*  | Rapport reçu via autres moyens  |
 
@@ -8606,12 +8449,8 @@ implémenté dans un échange.
 
 | ***SIRI SX***  | **Description**  |
 |--|--|
-|  |  |
-|  |  |
-|  |  |
 | *open*  | Situation en cours  |
 | *published*  | Situation en cours et publiée  |
-|  |  |
 | *closed*  | Situation terminée  |
 
 | <span class="hl">SX-2</span>  | Une situation ‘open’ n’est pas communiquée à l’extérieur du système. Dès lors que la situation est échangée avec l’extérieur le status doit passer à ‘published’.  |
@@ -8798,11 +8637,6 @@ implémenté dans un échange.
 |  |  |
 | *<span class="hl">stopPoint</span>*  | Situation scope is a specific STOP POINT.  |
 | *<span class="hl">vehicleJourney</span>*  | Situation scope is a specific VEHICLE JOURNEY.  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
 
 ##### Description de la structure ‘Consequences’
 
@@ -8822,32 +8656,6 @@ implémenté dans un échange.
 <td>Effet d’une SITUATION sur le service</td>
 </tr>
 <tr>
-<td rowspan="4"><em>Time</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td rowspan="2"><p><em>Classifiers</em></p>
 <p><span class="hl"> </span></p></td>
 <td colspan="2"><em><strong><span class="hl">Condition</span></strong></em></td>
@@ -8862,26 +8670,6 @@ implémenté dans un échange.
 <td><strong>1:1</strong></td>
 <td><em>enum</em></td>
 <td>Gravité de la SITUATION. La valeur par défaut est normale.<span class="hl">cf </span><span class="hl"></span><span class="hl">.</span></td>
-</tr>
-<tr>
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="3"><em>Advice</em></td>
@@ -8905,25 +8693,19 @@ implémenté dans un échange.
 <td>Conseils textuels supplémentaires aux passagers.</td>
 </tr>
 <tr>
-<td rowspan="3"><em>Blocking</em></td>
+<td rowspan="2"><em>Blocking</em></td>
 <td colspan="2"><em><strong><span class="hl">Blocking</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Comment la perturbation doit être gérée dans les systèmes d'information. Cf ci-après</td>
 </tr>
 <tr>
-<td rowspan="2"></td>
+<td></td>
 <td><em><strong><span class="hl">JourneyPlanner</span></strong></em></td>
 <td>0:1</td>
 <td><em>boolean</em></td>
 <td><p>Indique si les informations sur les parties du NETWORK identifiées par AffectsScope doivent être bloquées de la recherche d’itinéraire. La valeur par défaut est false ; ne pas supprimer.</p>
 <p><span class="hl">Indique si les données de l’évènement doivent être ou non prises en compte par un calculateur d’itinéraire</span></p></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="3"><em>Activity</em></td>
@@ -8946,83 +8728,18 @@ implémenté dans un échange.
 <td>Type d'embarquement et de débarquement autorisé à l'arrêt au départ. La valeur par défaut est Embarquement.</td>
 </tr>
 <tr>
-<td rowspan="4"><em>Delay</em></td>
+<td rowspan="2"><em>Delay</em></td>
 <td colspan="2"><em><strong><span class="hl">Delays</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Retards prévus .</td>
 </tr>
 <tr>
-<td rowspan="3"></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em><strong><span class="hl">Delay</span></strong></em></td>
 <td>0:1</td>
 <td><em>dPositiveDuration</em></td>
 <td>Temps de trajet supplémentaire nécessaire pour surmonter les perturbations.</td>
-</tr>
-<tr>
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -9076,7 +8793,7 @@ implémenté dans un échange.
 <p>Indication par type de canal de communication d’actions à realiser. Permet la diffusion des messages IV complémentaires sur des localisations particulières.</p></td>
 </tr>
 <tr>
-<td rowspan="10"><em>ActionsGroup</em></td>
+<td rowspan="6"><em>ActionsGroup</em></td>
 <td colspan="3"><em><strong><span class="hl">PublishToWebAction</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
@@ -9087,18 +8804,6 @@ implémenté dans un échange.
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Publish to mobile device. <span class="hl">Cf </span></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="3"><em><strong><span class="hl">PublishToDisplayAction</span></strong></em></td>
@@ -9123,58 +8828,6 @@ implémenté dans un échange.
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Publish to SMS channel.<span class="hl">Cf </span></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="5"></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -9569,20 +9222,6 @@ implémenté dans un échange.
 <td><em>+Structure</em></td>
 <td>Annotation pour les VEHICLE impactés</td>
 </tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
@@ -9669,13 +9308,6 @@ implémenté dans un échange.
 <td><em>+Structure</em></td>
 <td><span class="hl">Lignes du réseau impactées (cf )</span></td>
 </tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
@@ -9699,38 +9331,13 @@ implémenté dans un échange.
 <p><span class="hl">Points d’arrêt concernés par la publication</span></p></td>
 </tr>
 <tr>
-<td rowspan="4"><em>Stop</em></td>
+<td><em>Stop</em></td>
 <td colspan="3"><em><strong><span class="hl">StopPointRef</span></strong></em></td>
 <td>0:1</td>
 <td><p><em>→StopPointCode</em></p>
 <p><em>(xsd:NMTOKEN)</em></p></td>
 <td><p>Identifiant de SCHEDULED STOP POINT (Point d’arrêt planifié).</p>
 <p><span class="hl">Identifiant de Point d’arrêt</span></p></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td> </td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="3"><em>Modes</em></td>
@@ -9796,13 +9403,6 @@ implémenté dans un échange.
 <td><em>+Structure</em></td>
 <td>Annotation au CONNECTION link impactée SITUATION.</td>
 </tr>
-<tr>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
@@ -9827,20 +9427,7 @@ implémenté dans un échange.
 <p><span class="hl">Courses cibles de l’action de publication.</span></p></td>
 </tr>
 <tr>
-<td rowspan="17"></td>
-<td colspan="4"></td>
 <td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2"><em><strong>b</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">VehicleJourneyRef</span></strong></em></td>
 <td>1:*</td>
@@ -9848,191 +9435,6 @@ implémenté dans un échange.
 (xsd:NMTOKEN)</em></td>
 <td><p>Simple identifier of VEHICLE JOURNEY. Deprecated. See \siri_model\siri_journey_support-v2.1.xsd.</p>
 <p><span class="hl">Identifiant de course (au sens transmodel)</span></p></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="5"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -10055,25 +9457,12 @@ implémenté dans un échange.
 <td>Annotation à la LINE impactée par la SITUATION</td>
 </tr>
 <tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"><em>Line</em></td>
+<td><em>Line</em></td>
 <td colspan="2"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>1:1</td>
 <td><p><em>→LineCode</em></p>
 <p><em>(xsd:NMTOKEN)</em></p></td>
 <td>Identifiant de LINE.</td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="2"><em>Destination</em></td>
@@ -10110,41 +9499,6 @@ implémenté dans un échange.
 <td><em>nlString</em></td>
 <td>Nom de DIRECTION.</td>
 </tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
@@ -10166,37 +9520,11 @@ implémenté dans un échange.
 <p><span class="hl">Identification du/des opérateurs sur lesquels publier l’action</span>.</p></td>
 </tr>
 <tr>
-<td rowspan="3"><em>Operator</em></td>
+<td><em>Operator</em></td>
 <td><em><strong><span class="hl">OperatorRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>→OperatorCode</em></td>
 <td><span class="hl">Identifiant de l’operateur (au sens transmodel)</span></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -10240,23 +9568,11 @@ implémenté dans un échange.
 <td>Information associée à l’action, cf lignes ci-dessous</td>
 </tr>
 <tr>
-<td rowspan="7"></td>
+<td rowspan="5"></td>
 <td colspan="2"><em><strong><span class="hl">Name</span></strong></em></td>
 <td>1:1</td>
 <td colspan="2"><em>xsd:NMTOKEN</em></td>
 <td>Nom de l’action</td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Prompt</span></strong></em></td>
@@ -10318,31 +9634,11 @@ implémenté dans un échange.
 <td>Structure générale des requêtes</td>
 </tr>
 <tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em>log</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date d’émission de la requête.</td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="3"><em>Endpoint Properties</em></td>
@@ -10365,19 +9661,6 @@ implémenté dans un échange.
 <td>Identifiant unique de ce message.</td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Concrete service subscription</span></strong></em></td>
 <td></td>
@@ -10385,7 +9668,7 @@ implémenté dans un échange.
 <td><span class="hl">Si la suite contient plusieurs réponses, elles doivent toutes être du même type.</span></td>
 </tr>
 <tr>
-<td rowspan="11"><em>Payload</em></td>
+<td rowspan="8"><em>Payload</em></td>
 <td><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">Production</span>­<span class="hl">Timetable­Request</span></strong></em></td>
 <td rowspan="11">-1:*</td>
@@ -10399,34 +9682,16 @@ implémenté dans un échange.
 <td>See SIRI Part 3 – Estimated Timetable.</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em><strong>d</strong></em></td>
 <td><em><strong><span class="hl">StopMonitoring­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – Stop Monitoring.</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em><strong>f</strong></em></td>
 <td><em><strong><span class="hl">Vehicle</span>­<span class="hl">Monitoring­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – Vehicle Monitoring.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em><strong>h</strong></em></td>
@@ -10529,56 +9794,7 @@ façon très simplifiée.
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination des données.</td>
 </tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td rowspan="5"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
+
 <tr>
 <td rowspan="2"><em>Location</em></td>
 <td><em><strong>a</strong></em></td>
@@ -10594,20 +9810,6 @@ façon très simplifiée.
 <td><em>srsName­Type</em></td>
 <td colspan="2"><p>Name of GML Coordinate format used for Geospatial points in responses.</p>
 <p><span class="hl">Les deux formats sont autorisés en France (</span><em><u><span class="hl">note</span></u></em><span class="hl"> : il existe de nombreux outils libres permettant de convertir les coordonnées d’un référentiel à l’autre).</span></p></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="2"><em>Temporal Span</em></td>
@@ -10651,20 +9853,6 @@ façon très simplifiée.
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td colspan="2"><span class="hl">Nombre maximal d’abonnements pour un unique abonné (par défaut non limité).</span></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>any</em></td>
@@ -10716,17 +9904,11 @@ façon très simplifiée.
 <td>Heure de production de la réponse.</td>
 </tr>
 <tr>
-<td rowspan="4"><em>End­­poi­nt proper­ties</em></td>
+<td rowspan="3"><em>End­­poi­nt proper­ties</em></td>
 <td colspan="3"><em><strong><span class="hl">ProducerRef</span></strong></em></td>
 <td>0:1</td>
 <td colspan="2"><em>Participant­Code</em></td>
 <td>Identifiant du producteur de la réponse (reprendre le code [<em>fournisseur</em>] des identifiants du profil FR)</td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="3"><em><strong><span class="hl">Response</span>­<span class="hl">Message­Identifier</span></strong></em></td>
@@ -10743,19 +9925,6 @@ façon très simplifiée.
 <td>Identifiant de la requête à laquelle on répond.</td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr>
 <td><em>Status</em></td>
 <td colspan="3"><em><strong><span class="hl">Status</span></strong></em></td>
 <td><p>0:1</p>
@@ -10764,7 +9933,7 @@ façon très simplifiée.
 <td>Indique si la requête a pu être traitée avec succès ou non.</td>
 </tr>
 <tr>
-<td rowspan="5"></td>
+<td rowspan="4"></td>
 <td colspan="3"><em><strong><span class="hl">Error­Condition</span></strong></em></td>
 <td>0:1</td>
 <td colspan="2"><em>See below</em></td>
@@ -10792,13 +9961,7 @@ façon très simplifiée.
 <td>Description de l’erreur .</td>
 </tr>
 <tr>
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="12"><em>Payload</em></td>
+<td rowspan="10"><em>Payload</em></td>
 <td colspan="3"><em><strong>Concrete SIRI Service:</strong></em></td>
 <td></td>
 <td colspan="2"></td>
@@ -10819,13 +9982,6 @@ façon très simplifiée.
 <td>See SIRI Part 3 – Estimated Timetable.</td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2"><em><strong>d</strong></em></td>
 <td><em><strong><span class="hl">Stop</span>­<span class="hl">Monitoring­Delivery</span></strong></em></td>
 <td></td>
@@ -10838,13 +9994,6 @@ façon très simplifiée.
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – Vehicle Monitoring.</td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong>g</strong></em></td>
@@ -10935,19 +10084,6 @@ façon très simplifiée.
 <td><em>Subscription­Qualifier</em></td>
 <td colspan="2"><p>Identification de la souscription.</p>
 <p><span class="hl">Obligatoire en cas d’abonnement.</span></p></td>
-</tr>
-<tr>
-<td colspan="2" rowspan="2"></td>
-<td colspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
 </tr>
 <tr>
 <td colspan="2"><em>Status</em></td>
@@ -11065,13 +10201,6 @@ façon très simplifiée.
 <td colspan="2">Intervalle minimal de mise à jour de la donnée.</td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td colspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
 <td colspan="2"><em>Pay­load</em></td>
 <td colspan="9"><em><strong>{Content Specific to SIRI Functional Service type. See Part 3.}</strong></em></td>
 </tr>
@@ -11112,20 +10241,7 @@ façon très simplifiée.
 <td><span class="hl">Date de la requête d’abonnement.</span></td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="7"><em>End­point properties</em></td>
+<td rowspan="5"><em>End­point properties</em></td>
 <td colspan="2"><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
@@ -11145,18 +10261,6 @@ façon très simplifiée.
 <td><span class="hl">Identifiant unique de la requête de souscription (utilisé dans la réponse).</span></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2"><em><strong><span class="hl">Consumer</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
@@ -11167,13 +10271,6 @@ façon très simplifiée.
 <td>0:1</td>
 <td><em>xsd:NMTOKEN</em></td>
 <td><span class="hl">Identification d’un canal d’abonnement qui permettra de grouper plusieurs requêtes d’abonnement (canal par défaut, non nommé si le champ n’est pas présent).</span></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="11"><em>Pay­load</em></td>
@@ -11298,19 +10395,6 @@ façon très simplifiée.
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant unique du message (de cette réponse).</td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="3"><em>Pay­load</em></td>
@@ -11492,19 +10576,6 @@ façon très simplifiée.
 <td>Date de la demande.</td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td rowspan="3"><em>End­point prop­erties</em></td>
 <td colspan="2"><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
@@ -11523,19 +10594,6 @@ façon très simplifiée.
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant unique du message.</td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="3"><em>Topic</em></td>
@@ -11606,19 +10664,6 @@ façon très simplifiée.
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td><span class="hl">Identification de la requête.</span></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="12"><em>Payload</em></td>
@@ -11744,17 +10789,11 @@ façon très simplifiée.
 <td>Heure de production de la réponse.</td>
 </tr>
 <tr>
-<td rowspan="4"><em>End­point</em></td>
+<td rowspan="3"><em>End­point</em></td>
 <td colspan="2"><em><strong><span class="hl">ProducerRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Participant­Code</em></td>
 <td><span class="hl">Identifiant du producteur de la réponse (reprendre le code [</span><em><span class="hl">fournisseur</span></em><span class="hl">] des identifiants du profil).</span></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Response</span>­<span class="hl">Message­Identifier</span></strong></em></td>
@@ -11769,19 +10808,6 @@ façon très simplifiée.
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant de la requête à laquelle on répond.</td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td rowspan="6"><em>Sub­scription</em></td>
@@ -11858,19 +10884,6 @@ façon très simplifiée.
 <td><span class="hl">Datation de la requête.</span></td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td rowspan="2"><em>Endpoint</em></td>
 <td><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
@@ -11890,19 +10903,6 @@ façon très simplifiée.
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td><span class="hl">Identifiant de la requête.</span></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>any</em></td>
@@ -11942,19 +10942,12 @@ façon très simplifiée.
 <td></td>
 </tr>
 <tr>
-<td rowspan="4"><em>End­point</em></td>
+<td rowspan="3"><em>End­point</em></td>
 <td colspan="2"><em><strong><span class="hl">ProducerRef</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Participant­Code</em></td>
 <td><span class="hl">Identification du répondant.</span></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 <tr>
@@ -11974,34 +10967,12 @@ façon très simplifiée.
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="10"><em>Payload</em></td>
+<td rowspan="7"><em>Payload</em></td>
 <td colspan="2"><em><strong><span class="hl">Status</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>xsd boolean</em></td>
 <td>Signale si le système est bien disponible.</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 <tr>
@@ -12039,18 +11010,6 @@ façon très simplifiée.
 <td colspan="2">Description de l’erreur.</td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr>
 <td colspan="2"><em><strong><span class="hl">ServiceStarted­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time:</em></td>
@@ -12066,9 +11025,8 @@ façon très simplifiée.
 </tbody>
 </table>
 
-1.  121  
-      
-    Termes et définitions
+# Annexes      
+## Termes et définitions
 
 <table>
 <colgroup>
@@ -12187,9 +11145,9 @@ pour véhicules de transport en commun</td>
 </tbody>
 </table>
 
-2.  (informative) Production TimeTable
+##  (informative) Production TimeTable
 
-    1.  ##  Requête d’information sur les horaires commandés/théoriques
+###  Requête d’information sur les horaires commandés/théoriques
 
 <table>
 <colgroup>
@@ -12231,7 +11189,7 @@ pour véhicules de transport en commun</td>
 <td>Numéro d'identification du message.</td>
 </tr>
 <tr>
-<td rowspan="7"><em>Line Topic</em></td>
+<td rowspan="6"><em>Line Topic</em></td>
 <td colspan="2"><em><strong><span class="hl">Validity</span>­<span class="hl">Period</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
@@ -12270,13 +11228,6 @@ pour véhicules de transport en commun</td>
 <td>0:1</td>
 <td><em>➜LineCode</em></td>
 <td>Identifie la ligne pour laquelle on souhaite obtenir des informations.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>Policy</em></td>
@@ -12370,7 +11321,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 | *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Numéro de version du service *Production Timetable*, intégrant le numéro de version de profil (voir Error: Reference source not found) (valeur fixe).  |
 | *LEADER*  | ***<span class="hl">::</span>***  | 1:1  | *xxx­Delivery*  | voir paragraphe 2.3  |
 | *Payload*  | ***<span class="hl">Dated</span>­<span class="hl">Timetable­Version</span>­<span class="hl">Frame</span>***  | 0:\*  | *+Structure*  | Voir DatedTimetableVersionFrame element.  |
-|  |  |  |  |  |
 
 ## Structure DatedTimetableVersionFrame
 
@@ -12398,13 +11348,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>Date et heure auxquelles ces données ont été produites.</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td rowspan="2"><em>Line</em></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>1:1</td>
@@ -12419,65 +11362,11 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <p><span class="hl">La sélection de ce champ n’est pas dans la logique du reste du profil (plutôt porté sur Destination, voir plus bas) mais est maintenue du fait de la cardinalité imposée par SIRI.</span></p></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em>Journ­eys</em></td>
 <td><em><strong><span class="hl">Dated</span>­<span class="hl">Vehicle</span>­<span class="hl">Journey</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Description des horaires de la course.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -12504,7 +11393,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 </thead>
 <tbody>
 <tr>
-<td rowspan="3"><em>Vehicle Journey Identity</em></td>
+<td rowspan="2"><em>Vehicle Journey Identity</em></td>
 <td rowspan="2">choice</td>
 <td colspan="3"><em><strong><span class="hl">Dated</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Code</span></strong></em></td>
 <td>1:1</td>
@@ -12517,12 +11406,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><em>+Structure</em></td>
 <td><p>Identifie la course datée.</p>
 <p>Cette version permet de préciser la version de jeu de données associé et est recommandée à partir de SIRI 2 (et doc du profil 2.4). Le mécanisme de choix placé ici permet d'assurer la compatibilité ascendante.</p></td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td></td>
@@ -12555,76 +11438,18 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>Voir ServiceInfo­Group.</td>
 </tr>
 <tr>
-<td rowspan="2"><em>Journey Info</em></td>
+<td><em>Journey Info</em></td>
 <td colspan="4"><em><strong><span class="hl">Vehicle</span>­<span class="hl">Journey­Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Nom commercial de la course.</td>
 </tr>
 <tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="2"><em>Notes</em></td>
+<td><em>Notes</em></td>
 <td colspan="4"><em><strong><span class="hl">Destination­Display</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</td>
-</tr>
-<tr>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td><em>Timetable­info</em></td>
@@ -12643,14 +11468,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <p>Valeur par défaut : « true»</p></td>
 </tr>
 <tr>
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"><em>Children</em></td>
+<td rowspan="2"><em>Children</em></td>
 <td rowspan="2"><em><strong>a</strong></em></td>
 <td colspan="3"><em><strong><span class="hl">Dated</span>­<span class="hl">Calls</span></strong></em></td>
 <td>1:1</td>
@@ -12663,20 +11481,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>2:*</td>
 <td><em>+Structure</em></td>
 <td>Voir DatedCall</td>
-</tr>
-<tr>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -12701,18 +11505,12 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 </thead>
 <tbody>
 <tr>
-<td rowspan="4"><em>Stop Identity</em></td>
+<td rowspan="3"><em>Stop Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">StopPoint</span>­<span class="hl">Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>➜StopPoint­Code</em></td>
 <td><p>Identifiant du Point d'arrêt (cet identifiant est à rapprocher de l’attribut <em>MonitoringRef</em> de la structure <em>MonitoredStopVisit</em>, mais restreint à ce cas de point d’arrêt là, ou le <em>MonitoringRef</em> peut aussi, dans le contexte général de SIRI, mais pas celui du profil francilien, référencer un afficheur, par exemple).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet issu du profil NeTex Fr (Lieu d’arrêt mono ou multimodaux, zone d'embarquement): granularité la plus fine possible dans tous les cas.</span></p></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Order</span></strong></em></td>
@@ -12728,25 +11526,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <p><span class="hl">Si plusieurs noms sont disponibles chez le producteur, le nom le plus détaillé sera utilisé en priorité.</span></p></td>
 </tr>
 <tr>
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em>Service Info</em></td>
 <td colspan="2"><em><strong><span class="hl">Destination</span>­<span class="hl">Display</span></strong></em></td>
 <td>0:1</td>
@@ -12754,14 +11533,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</td>
 </tr>
 <tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="6"><em>Arrival</em></td>
+<td rowspan="3"><em>Arrival</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed­Arrival</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
@@ -12774,25 +11546,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>Identification ou nom du quai d'arrivée.</td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td></td>
 <td><em><strong><span class="hl">Aimed­­QuayName</span></strong></em></td>
 <td>0:1</td>
@@ -12800,7 +11553,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><span class="hl">Indication de la voie d'arrivée (en complément de Platform)</span><em><span class="hl">. </span></em></td>
 </tr>
 <tr>
-<td rowspan="6"><em>Departure</em></td>
+<td rowspan="3"><em>Departure</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed­Departure</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
@@ -12819,33 +11572,6 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><em>Headway</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed</span>­<span class="hl">Headway­Interval</span></strong></em></td>
 <td>0:1</td>
@@ -12853,32 +11579,15 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>Fréquence de passage théorique (ou commandée).</td>
 </tr>
 <tr>
-<td rowspan="3"><em>Interchange</em></td>
+<td ><em>Interchange</em></td>
 <td colspan="2"><em><strong><span class="hl">Targeted­Interchange</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td><p>Permet de signaler une correspondance programmée à ce point arrêt (possibilité d’attendre une course arrivant).</p>
 <p>voir. Targeted­Interchange.</p></td>
 </tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -12963,20 +11672,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td>Durée de la correspondance pour une personne à mobilité réduite.</td>
 </tr>
 <tr>
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="3"><em>Interchange Properties</em></td>
+<td rowspan="2"><em>Interchange Properties</em></td>
 <td colspan="2"><em><strong><span class="hl">StaySeated</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
@@ -12991,54 +11687,11 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <p>Valeur par défaut : « false»</p></td>
 </tr>
 <tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="6"><em>Interchange Times</em></td>
+<td><em>Interchange Times</em></td>
 <td colspan="2"><em><strong><span class="hl">Maximum</span>­<span class="hl">Wait</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td>Temps maximum qu’attendra le véhicule au depart si l’amenant est en retard.</td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
