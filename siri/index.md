@@ -3596,13 +3596,13 @@ EstimatedTimetable.
 <td colspan="2"><em><strong><span class="hl">ExpectedDepartureOccupancy</span></strong></em></td>
 <td><span class="hl">0:1</span></td>
 <td><em><span class="hl">+structure</span></em></td>
-<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf § </span><span class="hl"></span></td>
+<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf <a href="#expecteddepartureoccupancy">&</a> </span><span class="hl"></span></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">ExpectedDepartureCapacity</span></strong></em></td>
 <td>0:1</td>
 <td><em><span class="hl">+structure</span></em></td>
-<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf § </span></td>
+<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf <a href="#structure-expecteddeparturecapacity">&</a> </span></td>
 </tr>
 
 <tr>
@@ -4640,14 +4640,14 @@ dès que :
 <td colspan="2"><em><strong><span class="hl">ExpectedDepartureOccupancy</span></strong></em></td>
 <td>0:*</td>
 <td><em>+structure</em></td>
-<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf § </span><span class="hl"></span></td>
+<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf <a href="#expecteddepartureoccupancy">&</a> </span><span class="hl"></span></td>
 </tr>
 <tr>
 <td><em>Capacity</em></td>
-<td colspan="2"><em><strong><span class="hl">ExpectedDpeartureCapacity</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">ExpectedDepartureCapacity</span></strong></em></td>
 <td>0:*</td>
 <td><em>+structure</em></td>
-<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf § </span></td>
+<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf <a href="#structure-expecteddeparturecapacity">&</a></span></td>
 </tr>
 <tr>
 <td><em>Operator</em></td>
@@ -6404,7 +6404,7 @@ retrouve les traductions dans les tableaux qui suivent).</span>
 <li><p><span class="hl">«Commercial»</span></p></li>
 </ul>
 <p><u><span class="hl">Note</span></u><span class="hl">: ce sont bien ces libellés texte précis, qui sont utilisés pour instancier l'attribut </span><strong><span class="hl">InfoChannelRef</span></strong><span class="hl"> (et non une codification équivalente).</span></p>
-<p><span class="hl">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ». Si le service SX est présent, seuls les canaux ‘Information ‘et ‘Commencial ‘sont valides. Les messages de type ‘perturbation sont véhiculés par le service SX (cf § ).</span></p></td>
+<p><span class="hl">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ». Si le service SX est présent, seuls les canaux ‘Information ‘et ‘Commencial ‘sont valides. Les messages de type ‘perturbation sont véhiculés par le service SX (cf <a href="#messages-iv-associés-aux-évènements">&</a>).</span></p></td>
 </tr>
 <tr>
 <td><em>Request Policy</em></td>
@@ -7109,21 +7109,21 @@ et de localisation.
 <td><em><strong><span class="hl">FacilityStatus</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
-<td><span class="hl">Description de l’état d’un Facility (cf §)</span></td>
+<td><span class="hl">Description de l’état d’un Facility (cf <a href="#description-de-létat-dune-facility">&</a>)</span></td>
 </tr>
 <tr>
 <td><em>Counting</em></td>
 <td><em><strong><span class="hl">MonitoredCounting</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
-<td><span class="hl">Mise à jour du compteur associé au Facility (cf §)</span></td>
+<td><span class="hl">Mise à jour du compteur associé au Facility (cf <a href="#description-de-comptage-associé-à-une-facility">&</a>)</span></td>
 </tr>
 <tr>
 <td><em>Position</em></td>
 <td><em><strong><span class="hl">FacilityUpdatedPosition</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
-<td><span class="hl">Mise à jour de la position du Facility (cf §)</span></td>
+<td><span class="hl">Mise à jour de la position du Facility (cf <a href="#description-de-la-structure-facility">&</a>)</span></td>
 </tr>
 <tr>
 <td><em>Situation</em></td>
@@ -7779,7 +7779,7 @@ FilterGroup</td>
 <td>0:1</td>
 <td><em>enum</em></td>
 <td><p><span class="hl">Valeur du filtre de gravité à appliquer : seules les SITUATIONS dont la gravité est supérieure ou égale à la valeur spécifiée seront renvoyées. . Par Defaut « undefined ».</span></p>
-<p><span class="hl">Filtre à appliquer sur la sévérité d’une Situation (cf §)</span></p></td>
+<p><span class="hl">Filtre à appliquer sur la sévérité d’une Situation (cf <a href="#desription-de-lenum-severity">&</a>)</span></p></td>
 </tr>
 <tr>
 <td><em>SituationClassifierFilterGroup</em></td>
@@ -8365,7 +8365,7 @@ implémenté dans un échange.
 <td><em>→ActionsStructure</em></td>
 <td colspan="3">Distribution actions to disseminate SITUATION.</td>
 <td><p>Consequence of the SITUATION.</p>
-<p><span class="hl">Description d’une consequence de l’évènement cf §</span></p></td>
+<p><span class="hl">Description d’une consequence de l’évènement cf <a href="#description-de-la-structure-consequences">&</a></span></p></td>
 </tr>
 </tbody>
 </table>
@@ -8663,7 +8663,7 @@ implémenté dans un échange.
 <td><em>enum</em></td>
 <td><p>Classification de l'effet sur le service.</p>
 <p>Il peut être remplacé par JourneyCondition dans AffectedVehicleJourney</p>
-<p><em><span class="hl">Qualification de l’évènement sur l’offre de transport (cf §)</span></em></p></td>
+<p><em><span class="hl">Qualification de l’évènement sur l’offre de transport (cf <a href="#description-de-lenum-conditions">&</a>)</span></em></p></td>
 </tr>
 <tr>
 <td colspan="2"><em><strong><span class="hl">Severity</span></strong></em></td>
