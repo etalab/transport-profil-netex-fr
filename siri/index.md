@@ -1464,7 +1464,7 @@ le cadre des protocoles locaux établis entre les différents acteurs des
 
 -   Identification/gestion des anomalies.
 
-    1.  ## Référentiels de données
+## Référentiels de données
 
 ### Présentation du besoin
 
