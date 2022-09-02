@@ -5211,9 +5211,9 @@ class="hl"> ». </span>
 | SM-14  | <span class="hl">Seule la référence à un événement sera retenue, les informations complémentaires pour l'état des équipements et les perturbations seront déterminées dans le cadre du service « </span>*<span class="hl">Situation Exchange</span>*<span class="hl"> ».</span>  |
 |--|--|
 
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| *Situation*  | ***<span class="hl">SituationRef</span>***  |  |  |  |  |  | 0:\*  |  |  | *SituationCode*  |  | Identifiant (externe) de l'événement qui est la cause des modifications horaires indiquées  |  |  |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| *Situation*  | ***<span class="hl">SituationRef</span>***  | 0:\*  | *SituationCode*  | Identifiant (externe) de l'événement qui est la cause des modifications horaires indiquées  |
 
 
 #### JourneyProgressInfoGroup
@@ -8113,7 +8113,7 @@ implémenté dans un échange.
 <td rowspan="4"><em>PtSituationBodyGroup\StatusGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">Verification</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum {unknown|unverified|verified}</em></td>
+<td colspan="3"><em>Enum {unknown | unverified | verified}</em></td>
 <td><p>Si la SITUATION a été vérifiée. Valeurs d'énumération</p>
 <p>Valeur par défaut : unknown</p></td>
 </tr>
@@ -8128,7 +8128,7 @@ implémenté dans un échange.
 <tr>
 <td colspan="5"><em><strong><span class="hl">QualityIndex</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum {certain|veryReliable|reliable|unreliable|unconfirmed}</em></td>
+<td colspan="3"><em>Enum {certain | veryReliable | reliable | unreliable | unconfirmed}</em></td>
 <td><p>Évaluation de l'exactitude probable des données. Valeurs d'énumération</p>
 <p>Valeur par défaut : unconfirmed</p></td>
 </tr>
@@ -8252,7 +8252,7 @@ implémenté dans un échange.
 <tr>
 <td colspan="5"><em><strong><span class="hl">Audience</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum {public|emergencyService|authorities|transportOperators}</em></td>
+<td colspan="3"><em>Enum {public | emergencyService | authorities | transportOperators}</em></td>
 <td>Audience de SITUATION.</td>
 </tr>
 <tr>
