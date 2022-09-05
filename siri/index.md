@@ -53,6 +53,7 @@ par l’ensemble de documents normatifs suivants :
 Dans le document, les règles propres au profil sont présentées sur
 <span class="hl">fond jaune</span>. Les autres règles ont plus un rôle
 d'explication, d'accompagnement ou de recommandation.
+
 **Structuration du document**
 
 Ce document est structuré en trois parties :
