@@ -1,7 +1,7 @@
 ---
 title: "SIRI - Profil Français"
 date: 2022-08-30T00:00:00+00:00
-draft: true
+draft: false
 tags: ["SIRI"]
 autonumbering: true
 ---
@@ -51,9 +51,10 @@ par l’ensemble de documents normatifs suivants :
 -   NEPTUNE : Norme AFNOR - PR NF P99-506 Décembre 2009
 
 Dans le document, les règles propres au profil sont présentées sur
-<span class="hl"><span class="hl">fond jaune</span></span>. Les
-autres règles ont plus un rôle d'explication, d'accompagnement ou de
-recommandation.
+<span class="hl">fond jaune</span>. Les autres règles ont plus un rôle
+d'explication, d'accompagnement ou de recommandation.
+
+**Structuration du document**
 
 Ce document est structuré en trois parties :
 
@@ -281,47 +282,331 @@ référence aux concepts Transmodel \[R1\] suivants :
 
 -   Pole Monomodal (STOP PLACE)
 
-| DEF.1 | Chacun de ces points d’arrêt doit disposer d’un identifiant spécifique indépendamment de son type |
-|-------|---------------------------------------------------------------------------------------------------|
+| DEF.1  | Chacun de ces points d’arrêt doit disposer d’un identifiant spécifique indépendamment de son type  |
+|--|--|
 
 Le point d’arrêt physique peut être ou non rattaché à un point d’arrêt
 logique, selon les implémentations, par l’intermédiaire d’une
 affectation (STOP ASSIGNMENT). La figure ci-après illustre ces relations
 (Profil NeTEx France \[R11.4\]).
 
-[image](media/image1.png)
+![image](media/image1.png)
 
 ## Définition de la structure LEADER
 
 La description des services SIRI fait référence à une structure LEADER.
 
-| LEADER | <span class="hl"><span class="hl">:::</span></span> | 1:1 | xxx­Delivery | voir xxx**Delivery**. |
-|--------|---------------------------------------------------------|-----|--------------|-----------------------|
+| LEADER  | <span class="hl">:::</span>  | 1:1  | xxx­Delivery  | voir xxx**Delivery**.  |
+|--|--|--|--|--|
 
 Le Leader est (indirectement) défini dans la spécification SIRI \[R6\]
 par les attributs suivants
 
-| xxxDelivery           |                         |                                |     |                                       | +Structure               |                   | Delivery for xxx Service                                                                             |                                                                                                                                                                                                          |                                                                                                      |     |
-|-----------------------|-------------------------|--------------------------------|-----|---------------------------------------|--------------------------|-------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|-----|
-| Log                   | Response­Timestamp      |                                | 1:1 |                                       | xsd:dateTime             |                   | Heure de creation de la response.                                                                    |                                                                                                                                                                                                          |                                                                                                      |     |
-| End­point prop­erties | RequestMessageRef       |                                | 0:1 |                                       | →Message­Qualifier       |                   |                                                                                                      | For direct requests, Identifier of request that this Delivery satisfies.                                                                                                                                 |                                                                                                      |     |
-|                       | SubscriberRef           |                                | 0:1 |                                       | →Participant­Code        |                   |                                                                                                      | Required if Delivery is for a Subscription, Participant Reference of Subscriber.                                                                                                                         |                                                                                                      |     |
-|                       | Subscription­FilterRef  |                                | 0:1 |                                       | →SubcriptionFilterCode   |                   |                                                                                                      | Unique identifier of Subscription filter to which this subscription is assigned. If there is only a single filter, then can be omitted.                                                                  |                                                                                                      |     |
-|                       | Subscription­Ref        |                                | 1:1 |                                       | →Subscript­ion­Qualifier |                   |                                                                                                      | Required if Delivery is for a Subscription, Identifier of Subscription issued by Requestor. Unique within Subscriber (i.e. within ***ParticipantRef*** of Subscriber), and SIRI Functional Service type. |                                                                                                      |     |
-| Deleg­ation           | DelegatorAddress        |                                | 0:1 |                                       | Xsd:anyURI               |                   | Address of original Consumer, i.e. requesting system to which delegating response is to be returned. |                                                                                                                                                                                                          |                                                                                                      |     |
-|                       | DelegatorRef            |                                | 0:1 |                                       | →Participant­Code        |                   |                                                                                                      | Identifier of delegating system that originated message.                                                                                                                                                 |                                                                                                      |     |
-| Stat­us               | Status                  |                                | 0:1 |                                       | xsd:boolean              |                   |                                                                                                      | Whether the complete request could be processed successfully or not. Default is true. If any of the individual requests within the delivery failed, should be set to *false*.                            |                                                                                                      |     |
-|                       | ErrorCondition          |                                | 0:1 |                                       | +Structure               |                   |                                                                                                      | Description of any error or warning conditions that apply to the specific functional request or response.                                                                                                |                                                                                                      |     |
-|                       |                         |                                |     |                                       | choice                   |                   |                                                                                                      | One of the following Error codes.                                                                                                                                                                        |                                                                                                      |     |
-|                       | a                       | Capability­Not­Supported­Error |     | -1:1                                  |                          | \+ Error          |                                                                                                      |                                                                                                                                                                                                          | Error: Capability not supported.                                                                     |     |
-|                       | b                       |                                |     | AccessNot­Allowed­Error               |                          | +Error            |                                                                                                      |                                                                                                                                                                                                          | Error: Requestor is not authorised to the service or data requested.                                 |     |
-|                       | c                       |                                |     | NoInfoFor­TopicError                  |                          | +Error            |                                                                                                      |                                                                                                                                                                                                          | Error: Valid request was made but service does not hold any data for the requested topic expression. |     |
-|                       | d                       |                                |     | Allowed­Resource­Usage­Exceeded­Error |                          | +Error            |                                                                                                      |                                                                                                                                                                                                          | Error: Valid request was made but request would exceed the permitted resource usage of the client.   |     |
-|                       | e                       |                                |     | OtherError                            |                          | +Error            |                                                                                                      |                                                                                                                                                                                                          | Error other than a well-defined category.                                                            |     |
-|                       |                         | Description                    |     | 0:1                                   |                          | →ErrorDescription |                                                                                                      |                                                                                                                                                                                                          | Description of Error.                                                                                |     |
-|                       | ValidUntil              |                                | 0:1 |                                       | xsd:dateTime             |                   |                                                                                                      | End of data horizon of the data producer.                                                                                                                                                                |                                                                                                      |     |
-|                       | Shortest­Possible­Cycle |                                | 0:1 |                                       | Positive­Duration­Type   |                   |                                                                                                      | Minimum interval at which updates can be sent.                                                                                                                                                           |                                                                                                      |     |
-|                       | DefaultLanguage         |                                |     |                                       | Xsd:language             |                   |                                                                                                      | Default language for text elements.                                                                                                                                                                      |                                                                                                      |     |
+<table cellpadding="7" cellspacing="0" >
+    <tbody>
+        <tr>
+            <td colspan="3" >
+                <p>xxxDelivery</p>
+            </td>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="2" >
+                <p>+Structure</p>
+            </td>
+            <td colspan="4" >
+                <p>Delivery for xxx Service</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>Log</p>
+            </td>
+            <td colspan="2" >
+                <p>ResponseTimestamp</p>
+            </td>
+            <td colspan="2" >
+                <p>1:1</p>
+            </td>
+            <td colspan="2" >
+                <p>xsd:dateTime</p>
+            </td>
+            <td colspan="4" >
+                <p>Heure de creation de la response.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="4" >
+                <p>Endpoint properties</p>
+            </td>
+            <td colspan="2" >
+                <p>RequestMessageRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜MessageQualifier</p>
+            </td>
+            <td colspan="3" >
+                <p>For direct requests, Identifier of request that this Delivery satisfies.&nbsp;</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>SubscriberRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜ParticipantCode</p>
+            </td>
+            <td colspan="3" >
+                <p>Required if Delivery is for a Subscription, Participant Reference of Subscriber.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>SubscriptionFilterRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜SubcriptionFilterCode</p>
+            </td>
+            <td colspan="3" >
+                <p>Unique identifier of Subscription filter to which this subscription is assigned. If there is only a single filter, then can be omitted.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>SubscriptionRef</p>
+            </td>
+            <td colspan="2" >
+                <p>1:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜SubscriptionQualifier</p>
+            </td>
+            <td colspan="3" >
+                <p><span size="2">Required if Delivery is for a Subscription, Identifier of Subscription issued by Requestor. Unique within Subscriber (i.e. within&nbsp;</span><span size="2"><em><strong>ParticipantRef</strong></em></span> of Subscriber), and SIRI Functional Service type.&nbsp;</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" >
+                <p>Delegation</p>
+            </td>
+            <td colspan="2" >
+                <p>DelegatorAddress</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="2" >
+                <p>Xsd:anyURI</p>
+            </td>
+            <td colspan="4" >
+                <p>Address of original Consumer, i.e. requesting system to which delegating response is to be returned.&nbsp;</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>DelegatorRef</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜ParticipantCode</p>
+            </td>
+            <td colspan="3" >
+                <p>Identifier of delegating system that originated message.&nbsp;</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="11" >
+                <p>Status</p>
+            </td>
+            <td colspan="2" >
+                <p>Status</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>xsd:boolean</p>
+            </td>
+            <td colspan="3" >
+                <p><span size="2">Whether the complete request could be processed successfully or not. Default is true. If any of the individual requests within the delivery failed, should be set to&nbsp;</span><span size="2"><em>false</em></span>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>ErrorCondition</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>+Structure</p>
+            </td>
+            <td colspan="3" >
+                <p>Description of any error or warning conditions that apply to the specific functional request or response.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="3" >
+                <p>choice</p>
+            </td>
+            <td colspan="3" >
+                <p>One of the following Error codes.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>a</p>
+            </td>
+            <td >
+                <p>CapabilityNotSupportedError</p>
+            </td>
+            <td colspan="2" rowspan="5" >
+                <p>-1:1</p>
+            </td>
+            <td colspan="3" >
+                <p>+ Error</p>
+            </td>
+            <td colspan="3" >
+                <p>Error: Capability not supported.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>b</p>
+            </td>
+            <td >
+                <p>AccessNotAllowedError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="3" >
+                <p>Error: Requestor is not authorised to the service or data requested.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>c</p>
+            </td>
+            <td >
+                <p>NoInfoForTopicError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="3" >
+                <p>Error: Valid request was made but service does not hold any data for the requested topic expression.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>d</p>
+            </td>
+            <td >
+                <p>AllowedResourceUsageExceededError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="3" >
+                <p>Error: Valid request was made but request would exceed the permitted resource usage of the client.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p>e</p>
+            </td>
+            <td >
+                <p>OtherError</p>
+            </td>
+            <td colspan="3" >
+                <p>+Error</p>
+            </td>
+            <td colspan="3" >
+                <p>Error other than a well-defined category.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p><br></p>
+            </td>
+            <td >
+                <p>Description</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>➜ErrorDescription</p>
+            </td>
+            <td colspan="3" >
+                <p>Description of Error.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>ValidUntil</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>xsd:dateTime</p>
+            </td>
+            <td colspan="3" >
+                <p>End of data horizon of the data producer.</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <p>ShortestPossibleCycle</p>
+            </td>
+            <td colspan="2" >
+                <p>0:1</p>
+            </td>
+            <td colspan="3" >
+                <p>PositiveDurationType</p>
+            </td>
+            <td colspan="3" >
+                <p>Minimum interval at which updates can be sent.</p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p><br></p>
+            </td>
+            <td colspan="2" >
+                <p>DefaultLanguage</p>
+            </td>
+            <td colspan="2" >
+                <p><br></p>
+            </td>
+            <td colspan="3" >
+                <p>Xsd:language</p>
+            </td>
+            <td colspan=3" >
+                <p>Default language for text elements.&nbsp;</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## Référentiel théorique
 
@@ -341,11 +626,11 @@ Le present profil contient un ensemble de règles de gestion applicables.
 Ces règles de gestion sont présentées sous forme tabulaire et
 numérotées.
 
-| Numéro | <span class="hl"><span class="hl">Intitulé de la règle</span></span> |
-|--------|--------------------------------------------------------------------------|
+| Numéro  | <span class="hl">Intitulé de la règle</span>  |
+|--|--|
 
-<span class="hl"><span class="hl">Des textes explicatifs viennent
-compléter les règles d’application du profil FR</span></span>
+<span class="hl">Des textes explicatifs viennent compléter les règles
+d’application du profil FR</span>
 
 ## Conventions & Représention des messages
 
@@ -361,7 +646,7 @@ formalisme tabulaire. Les tableaux proposent ces colonnes:
 <col style="width: 39%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Organisational Group</td>
 <td>Name of Element</td>
 <td>Min :<br />
@@ -442,7 +727,7 @@ indiquée (***choice*** au niveau XSD).
 
 Si la cardinalité SIRI est précisée pour le profil SIRI France, cela
 sera aussi noté, en complément dans cette colonne et <span
-class="hl_france">surligné en gris</span><span class="hl">.</span>
+class="hl">surligné en jaune.</span>
 
 Les différentes possibilités d'exprimer la cardinalité sont donc les
 suivantes :
@@ -452,10 +737,10 @@ suivantes :
     « 1:1 » ou « 1:\* » signifient que le champ est obligatoire). Ces
     champs font partie du profil SIRI France.
 
--   En noir <span class="hl">surligné en gris</span>: la cardinalité
+-   En noir <span class="hl">surligné en jaune</span>: la cardinalité
     du document normatif SIRI est précisée par le profil SIRI France
     (pour rendre un champ facultatif obligatoire par exemple). C'est
-    alors la version <span class="hl">surlignée en gris</span> qui
+    alors la version <span class="hl">surlignée en jaune</span> qui
     s'applique.
 
 -   En noir <span class="hl_france">surligné en vert</span> : la
@@ -786,7 +1071,7 @@ disponible).
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td><em><strong>Passing times, trip plans and auxiliary information</strong></em></td>
 <td>Disruptions (all modes)</td>
@@ -794,7 +1079,7 @@ disponible).
 <td>Situation Exchange</td>
 <td>Note : tout ce qui peut être échangé avec General Message peut aussi l’être avec Situation Exchange: pour anticiper les évolutions à venir il peut donc être préférable de tout de suite porter son choix sur Situation Exchange.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>1</strong></td>
 <td><em><strong>Passing times, trip plans and auxiliary information</strong></em></td>
 <td>Real-time status information — delays, cancellations, guaranteed connections monitoring (all modes)</td>
@@ -802,7 +1087,7 @@ disponible).
 <td>Situation Exchange</td>
 <td>Note : tout ce qui peut être échangé avec General Message peut aussi l’être avec Situation Exchange: pour anticiper les évolutions à venir il peut donc être préférable de tout de suite porter son choix sur Situation Exchange.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td><em><strong>Passing times, trip plans and auxiliary information</strong></em></td>
 <td>Status of access node features (including dynamic platform information, operational lifts/escalators, closed entrances and exit locations — all scheduled modes)</td>
@@ -811,7 +1096,7 @@ disponible).
 Facility Monitoring</td>
 <td>Note : tout ce qui peut être échangé avec General Message peut aussi l’être avec Situation Exchange: pour anticiper les évolutions à venir il peut donc être préférable de tout de suite porter son choix sur Situation Exchange.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>2</strong></td>
 <td><em><strong>Passing times, trip plans and auxiliary information (all modes)</strong></em></td>
 <td>Estimated departure and arrival times of services</td>
@@ -821,7 +1106,7 @@ Facility Monitoring</td>
 <p>Estimated Timetable pour une vue complète départ/arrivée<br />
 ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>2</strong></td>
 <td><em><strong>Information service</strong></em></td>
 <td>Availability of publicly accessible charging stations for electric vehicles and refuelling points for CNG/LNG, hydrogen, petrol and diesel powered vehicles</td>
@@ -829,7 +1114,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td><em><strong>Availability check</strong></em></td>
 <td>Car-sharing availability, bike sharing availability</td>
@@ -837,7 +1122,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2</td>
 <td><em><strong>Availability check</strong></em></td>
 <td>Car parking spaces available (on and off-street), parking tariffs, road toll tariffs</td>
@@ -876,7 +1161,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><p>Horaires planifiés</p>
 <p>Production Timetable</p></td>
 <td></td>
@@ -888,7 +1173,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Horaires calculés</p>
 <p>Estimated Timetable</p></td>
 <td>Indispensable</td>
@@ -900,7 +1185,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td>Indispensable</td>
 <td>Indispensable <sup>1</sup></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Horaires planifiés à l’arrêt</p>
 <p>Stop Timetable</p></td>
 <td></td>
@@ -912,7 +1197,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Discovery Line</td>
 <td></td>
 <td></td>
@@ -923,7 +1208,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td>Facultatif<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Horaires calculés à l’arrêt</p>
 <p>Stop Monitoring</p></td>
 <td></td>
@@ -935,7 +1220,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td>Facultatif</td>
 <td>Facultatif</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Discovery Stop</td>
 <td></td>
 <td></td>
@@ -946,7 +1231,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td>Facultatif<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Supervision des véhicules</p>
 <p>Vehicle Monitoring</p></td>
 <td></td>
@@ -958,7 +1243,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td>facultatif</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Correspondances planifiées</p>
 <p>Connection Timetable</p></td>
 <td></td>
@@ -970,7 +1255,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Correspondances calculées</p>
 <p>Connection Monitoring</p></td>
 <td></td>
@@ -982,7 +1267,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Messagerie</p>
 <p>General Messaging</p></td>
 <td>Facultatif</td>
@@ -994,7 +1279,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td>Indispensable</td>
 <td>Indispensable (uniquement si SX n’est par retenu)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Gestion des événements</p>
 <p>Situation Exchange</p></td>
 <td></td>
@@ -1006,7 +1291,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 <td>facultatif</td>
 <td>Facultatif</td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Etat des équipements</p>
 <p>Facility Monitoring</p></td>
 <td></td>
@@ -1042,7 +1327,7 @@ ATTENTION: la notion d'heure de départ/arrivée peut donner lieu à débat</p><
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>CU-2</td>
 <td><p>Si le service SIRI SX est implémenté, GM ne devient qu'un service pour compatibilité avec les systèmes ne sachant pas recevoir du SX.</p>
 <p>SX devient la référence pour les informations circonstancielles et doit donc contenir toutes les informations.</p></td>
@@ -1080,8 +1365,7 @@ suivantes:
 
 -   Identifiants des Correspondances,
 
--   Préciser les listes de valeurs supportées (*ServiceCategory*,
-    > *ProductCategory*, *VehicleFeature*)
+-   Préciser les listes de valeurs supportées (*ServiceCategory*, *ProductCategory*, *VehicleFeature*)
 
 2.  Définir le profil technique lui-même :
 
@@ -1139,7 +1423,7 @@ le cadre des protocoles locaux établis entre les différents acteurs des
 
 -   Identification/gestion des anomalies.
 
-    1.  ## Référentiels de données
+## Référentiels de données
 
 ### Présentation du besoin
 
@@ -1180,109 +1464,109 @@ documents normatifs.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><p>Date et Heure</p>
 <p>(Date &amp; Time)</p></td>
-<td><span class="hl_france">ISO 8601</span></td>
+<td><span class="hl">ISO 8601</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Langue</p>
 <p>(Language)</p></td>
-<td><span class="hl_france">ISO 639-1</span></td>
+<td><span class="hl">ISO 639-1</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Localisation géographique</p>
 <p>(Location)</p></td>
-<td><span class="hl_france">WGS84 / gml (GML permettra d'échanger les localisations géographiques dans des référentiels projetés comme Lambert 2 étendu -.)</span></td>
+<td><span class="hl">WGS84 / gml (GML permettra d'échanger les localisations géographiques dans des référentiels projetés comme Lambert 2 étendu -.)</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Fournisseur d'information</p>
 <p>(Information Provider)</p></td>
 <td><p>Voir le paragraphe correspondant (5.4.4)</p>
 <p>Notion à mettre en relation avec le groupement ou le transporteur qui délivre l’information.</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Point d'arrêt</p>
 <p>(Stop Point)</p></td>
 <td><p>Voir le paragraphe correspondant (Error: Reference source not found)</p>
-<p><span class="hl_france">Dans l'état actuel des choses, il n'existe aucun référentiel global des points d’arrêt en France.</span></p></td>
+<p><span class="hl">Dans l'état actuel des choses, il n'existe aucun référentiel global des points d’arrêt en France.</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Correspondance</p>
 <p>(Connection)</p></td>
-<td><p><span class="hl_france">Dans l'état actuel des choses, il n'existe aucun référentiel global des correspondances en France.</span></p>
-<p><span class="hl_france">Dans un premier temps, l'identification des correspondances devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></p>
-<p><span class="hl_france">Cela concernera uniquement les cas où l'on souhaite gérer une correspondance et où l'on souhaitera être informé du fait qu'elle n'est plus possible (le Bus signale qu'il décide de ne pas attendre le Train, par exemple).</span></p></td>
+<td><p><span class="hl">Dans l'état actuel des choses, il n'existe aucun référentiel global des correspondances en France.</span></p>
+<p><span class="hl">Dans un premier temps, l'identification des correspondances devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></p>
+<p><span class="hl">Cela concernera uniquement les cas où l'on souhaite gérer une correspondance et où l'on souhaitera être informé du fait qu'elle n'est plus possible (le Bus signale qu'il décide de ne pas attendre le Train, par exemple).</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Véhicule supervisé</p>
 <p>(VehicleActivity)</p></td>
-<td><p><span class="hl_france">Dans le cadre du profil SIRI France, cette donnée ne peut être utile que pour permettre d'identifier la position d’un véhicule.</span></p>
-<p><span class="hl_france">Si l’on souhaite connaître l'état des services dans le véhicule (état de fonctionnement de la palette par exemple), il sera alors plus simple de passer par l'identification de la course que par celle du véhicule.</span></p></td>
+<td><p><span class="hl">Dans le cadre du profil SIRI France, cette donnée ne peut être utile que pour permettre d'identifier la position d’un véhicule.</span></p>
+<p><span class="hl">Si l’on souhaite connaître l'état des services dans le véhicule (état de fonctionnement de la palette par exemple), il sera alors plus simple de passer par l'identification de la course que par celle du véhicule.</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Course</p>
 <p>(Vehicle Journey )</p></td>
-<td><span class="hl_france">L'identification des courses devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
+<td><span class="hl">L'identification des courses devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Numéro de passage à un Point d'arrêt sur une mission</p>
 <p>(Stop Visit In Pattern)</p></td>
-<td><span class="hl_france">Parmi les solutions proposées par SIRI, le profil SIRI France retient celle qui consiste à attribuer un numéro d'ordre dans la mission à chacun des arrêts.</span></td>
+<td><span class="hl">Parmi les solutions proposées par SIRI, le profil SIRI France retient celle qui consiste à attribuer un numéro d'ordre dans la mission à chacun des arrêts.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Ligne</p>
 <p>(Line )</p></td>
-<td><span class="hl_france">L'identification des lignes devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
+<td><span class="hl">L'identification des lignes devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Itinéraire</p>
 <p>(Route)</p></td>
-<td><span class="hl_france">L'identification des itinéraires devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
+<td><span class="hl">L'identification des itinéraires devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Mission</p>
 <p>(Journey pattern)</p></td>
-<td><span class="hl_france">L'identification des Missions devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
+<td><span class="hl">L'identification des Missions devra donc être réalisée au cas par cas, et définie entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Direction</p>
 <p>(Direction)</p></td>
-<td><span class="hl_france">Cette notion a été introduite par SIRI pour pallier les cas où la notion d’itinéraire n'est pas formalisée.</span></td>
+<td><span class="hl">Cette notion a été introduite par SIRI pour pallier les cas où la notion d’itinéraire n'est pas formalisée.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Destination</p>
 <p>(Destination)</p></td>
-<td><p><span class="hl_france">Cette notion a été introduite par SIRI pour pallier les cas ou la notion de mission n'est pas formalisée.</span></p>
-<p><span class="hl_france">Dans le cadre du profil SIRI France, les Destinations seront systématiquement les extrémités des missions, et donc leur dernier point d'arrêt (dont on utilisera l'identifiant).</span></p></td>
+<td><p><span class="hl">Cette notion a été introduite par SIRI pour pallier les cas ou la notion de mission n'est pas formalisée.</span></p>
+<p><span class="hl">Dans le cadre du profil SIRI France, les Destinations seront systématiquement les extrémités des missions, et donc leur dernier point d'arrêt (dont on utilisera l'identifiant).</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Version des horaires théoriques</p>
 <p>(Schedule Version)</p></td>
-<td><p><span class="hl_france">Cette notion permet de référencer la version des données horaires théoriques sous-jacente.</span></p>
-<p><span class="hl_france">L'identification de version du référentiel devra donc être réalisée au cas par cas, et défini entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></p>
-<p><span class="hl_france">Pour mémoire, son principal usage est de permettre d'identifier une éventuelle désynchronisation entre les référentiels (horaires et réseaux) qui pourrait amener à ce que, par exemple, un point d'arrêt connu par l'une des parties de l'échange ne le soit pas de l'autre.</span></p></td>
+<td><p><span class="hl">Cette notion permet de référencer la version des données horaires théoriques sous-jacente.</span></p>
+<p><span class="hl">L'identification de version du référentiel devra donc être réalisée au cas par cas, et défini entre les acteurs avant de débuter un échange. L'identification devra dans ce cas porter une indication signalant qu'elle est spécifique à un échange local.</span></p>
+<p><span class="hl">Pour mémoire, son principal usage est de permettre d'identifier une éventuelle désynchronisation entre les référentiels (horaires et réseaux) qui pourrait amener à ce que, par exemple, un point d'arrêt connu par l'une des parties de l'échange ne le soit pas de l'autre.</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Mode et sous-mode de transport</p>
 <p>(Product Category)</p></td>
-<td><p><span class="hl_france">L'ensemble des valeurs proposées par SIRI est retenu pour le profil SIRI France.</span></p>
-<p><span class="hl_france">Voir 3.3.11.3 dans le document SIRI-Part 1</span></p>
-<p><span class="hl_france">Cette liste est très détaillée (issue de la norme TPEG) mais permet d'être certain de ne pas avoir à la compléter à l'avenir.</span></p></td>
+<td><p><span class="hl">L'ensemble des valeurs proposées par SIRI est retenu pour le profil SIRI France.</span></p>
+<p><span class="hl">Voir 3.3.11.3 dans le document SIRI-Part 1</span></p>
+<p><span class="hl">Cette liste est très détaillée (issue de la norme TPEG) mais permet d'être certain de ne pas avoir à la compléter à l'avenir.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><p>Identification du véhicule, type de véhicule</p>
 <p>(Vehicle Feature)</p></td>
-<td><p><span class="hl_france">L'ensemble des valeurs proposées par SIRI est retenu pour le profil SIRI France.</span></p>
-<p><span class="hl_france">Voir 3.3.13 dans le document SIRI-Part 1 et sa mise à jour pour le service </span><em><span class="hl_france">Facility Monitoring</span></em></p>
-<p><span class="hl_france">Cette liste est très détaillée (issue de la norme TPEG, entre autres) mais permet d'être certain de ne pas avoir à la compléter à l'avenir.</span></p></td>
+<td><p><span class="hl">L'ensemble des valeurs proposées par SIRI est retenu pour le profil SIRI France.</span></p>
+<p><span class="hl">Voir 3.3.13 dans le document SIRI-Part 1 et sa mise à jour pour le service </span><em><span class="hl">Facility Monitoring</span></em></p>
+<p><span class="hl">Cette liste est très détaillée (issue de la norme TPEG, entre autres) mais permet d'être certain de ne pas avoir à la compléter à l'avenir.</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>Type de service</p>
 <p>(Service Feature)</p></td>
-<td><p><span class="hl_france">L'ensemble des valeurs proposées par SIRI est retenu pour le profil SIRI France.</span></p>
-<p><span class="hl_france">Voir 3.3.13 dans le document « SIRI-Part 1 » et sa mise à jour pour le service </span><em><span class="hl_france">Facility Monitoring</span></em></p>
-<p><span class="hl_france">Cette liste est très détaillée (issue de la norme TPEG, entre autres) mais permet d'être certain de ne pas avoir à la compléter à l'avenir.</span></p></td>
+<td><p><span class="hl">L'ensemble des valeurs proposées par SIRI est retenu pour le profil SIRI France.</span></p>
+<p><span class="hl">Voir 3.3.13 dans le document « SIRI-Part 1 » et sa mise à jour pour le service </span><em><span class="hl">Facility Monitoring</span></em></p>
+<p><span class="hl">Cette liste est très détaillée (issue de la norme TPEG, entre autres) mais permet d'être certain de ne pas avoir à la compléter à l'avenir.</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -1373,7 +1657,7 @@ codification suivante est proposée :</span>
 <tr class="header">
 <th><span class="hl">RG_IDT-1</span></th>
 <th><p><span class="hl">La codification retenue est donc: </span></p>
-<p><em><strong><span class="hl">[CODESPACE]:[type d'objet]:[identifiantTechnique]:</span><span class="hl_france">[LOC ou Nom attributaire]</span></strong></em></p></th>
+<p><em><strong><span class="hl">[CODESPACE]:[type d'objet]:[identifiantTechnique]:[LOC ou Nom attributaire]</span></strong></em></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1407,76 +1691,76 @@ est la suivante :</span>
 <col style="width: 53%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>Champ</strong></td>
 <td><strong>Obligatoire</strong></td>
 <td><strong>Type</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr class="even">
-<td><span class="hl_france">[Fournisseur]</span></td>
-<td><span class="hl_france">oui</span></td>
-<td><p><span class="hl_france">Alpha-</span></p>
-<p><span class="hl_france">numérique</span></p></td>
-<td><p><span class="hl_france">Identifie le système fournisseur de la donnée : en l'occurrence, il s'agira soit :</span></p>
+<tr>
+<td><span class="hl">[Fournisseur]</span></td>
+<td><span class="hl">oui</span></td>
+<td><p><span class="hl">Alpha-</span></p>
+<p><span class="hl">numérique</span></p></td>
+<td><p><span class="hl">Identifie le système fournisseur de la donnée : en l'occurrence, il s'agira soit :</span></p>
 <ol type="1">
-<li><p><span class="hl_france">Dans les leaders : le nom du système qui transmet la donnée, qui est soit le nom du relais, soit le nom du concentrateur, soit le nom du SAEIV</span></p></li>
-<li><p><span class="hl_france">Dans les deliveries : le nom du système qui produit la donnée</span></p></li>
+<li><p><span class="hl">Dans les leaders : le nom du système qui transmet la donnée, qui est soit le nom du relais, soit le nom du concentrateur, soit le nom du SAEIV</span></p></li>
+<li><p><span class="hl">Dans les deliveries : le nom du système qui produit la donnée</span></p></li>
 </ol></td>
 </tr>
-<tr class="odd">
-<td><span class="hl_france">[type d'objet]</span></td>
-<td><span class="hl_france">oui</span></td>
-<td><p><span class="hl_france">Caractères</span></p>
-<p><span class="hl_france">codés</span></p></td>
-<td><p><span class="hl_france">Contient le nom du type d'objet identifié. Les valeurs possibles pour SIRI sont:</span></p>
+<tr>
+<td><span class="hl">[type d'objet]</span></td>
+<td><span class="hl">oui</span></td>
+<td><p><span class="hl">Caractères</span></p>
+<p><span class="hl">codés</span></p></td>
+<td><p><span class="hl">Contient le nom du type d'objet identifié. Les valeurs possibles pour SIRI sont:</span></p>
 <ul>
-<li><p><span class="hl_france">StopPoint</span></p></li>
-<li><p><span class="hl_france">StopArea</span></p></li>
-<li><p><span class="hl_france">Line</span></p></li>
-<li><p><span class="hl_france">Route</span></p></li>
-<li><p><span class="hl_france">JourneyPattern</span></p></li>
-<li><p><span class="hl_france">VehicleJourney</span></p></li>
-<li><p><span class="hl_france">Stop Place</span></p></li>
+<li><p><span class="hl">StopPoint</span></p></li>
+<li><p><span class="hl">StopArea</span></p></li>
+<li><p><span class="hl">Line</span></p></li>
+<li><p><span class="hl">Route</span></p></li>
+<li><p><span class="hl">JourneyPattern</span></p></li>
+<li><p><span class="hl">VehicleJourney</span></p></li>
+<li><p><span class="hl">Stop Place</span></p></li>
 </ul></td>
 </tr>
-<tr class="even">
-<td><span class="hl_france">[typeObjetDétaillé]</span></td>
-<td><span class="hl_france">non</span></td>
-<td><span class="hl_france">Caractères codés</span></td>
-<td><p><span class="hl_france">Ce champ est facultatif et ne sert que pour les points d'arrêt. On pourra toutefois envisager de l'utiliser à terme aussi pour les lignes notamment pour gérer la notion de sous-lignes.</span></p>
-<p><span class="hl_france">Le « typeObjetDétaillé » pourra être omis, mais un type détaillé par défaut sera alors associé (lieu d'arrêt pour les points d'arrêt).</span></p>
-<p><span class="hl_france">Les valeurs possibles pour les arrêts sont les suivantes:</span></p>
+<tr>
+<td><span class="hl">[typeObjetDétaillé]</span></td>
+<td><span class="hl">non</span></td>
+<td><span class="hl">Caractères codés</span></td>
+<td><p><span class="hl">Ce champ est facultatif et ne sert que pour les points d'arrêt. On pourra toutefois envisager de l'utiliser à terme aussi pour les lignes notamment pour gérer la notion de sous-lignes.</span></p>
+<p><span class="hl">Le « typeObjetDétaillé » pourra être omis, mais un type détaillé par défaut sera alors associé (lieu d'arrêt pour les points d'arrêt).</span></p>
+<p><span class="hl">Les valeurs possibles pour les arrêts sont les suivantes:</span></p>
 <ul>
-<li><p><span class="hl_france">SP (Stop Place) : correspond à une Zone de Lieu (ZDL), à un Lieu d'Arrêt (LDA) ou à un Groupe de Lieux (GDL) </span></p></li>
-<li><p><span class="hl_france">BP (Boarding Point) : correspond à une Zone d'Embarquement (ZDE) </span></p></li>
-<li><p><span class="hl_france">Q (Quay) : correspond à une Zone d'Embarquement (ZDE) </span></p></li>
+<li><p><span class="hl">SP (Stop Place) : correspond à une Zone de Lieu (ZDL), à un Lieu d'Arrêt (LDA) ou à un Groupe de Lieux (GDL) </span></p></li>
+<li><p><span class="hl">BP (Boarding Point) : correspond à une Zone d'Embarquement (ZDE) </span></p></li>
+<li><p><span class="hl">Q (Quay) : correspond à une Zone d'Embarquement (ZDE) </span></p></li>
 </ul>
-<p><span class="hl_france">Pour les autres objets il pourra être possibile depréciser le contexte d’utilisation par les valeurs suivantes :</span></p>
+<p><span class="hl">Pour les autres objets il pourra être possibile depréciser le contexte d’utilisation par les valeurs suivantes :</span></p>
 <ul>
-<li><p><span class="hl_france">Monomodal </span></p></li>
-<li><p><span class="hl_france">Multimodal</span></p></li>
+<li><p><span class="hl">Monomodal </span></p></li>
+<li><p><span class="hl">Multimodal</span></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td><span class="hl_france">[identifiantTechnique]</span></td>
-<td><span class="hl_france">oui</span></td>
-<td><p><span class="hl_france">Alpha-</span></p>
-<p><span class="hl_france">numérique</span></p></td>
-<td><p><span class="hl_france">C'est l'identifiant technique de l'objet. Il peut être constitué de lettres et de chiffres. L'objectif est que cet identifiant devienne pérenne dans le temps.</span></p>
-<p><span class="hl_france">Pour les identifiants non pérennes, chaque producteur en précisera le format dans sa spécification technique.</span></p></td>
+<tr>
+<td><span class="hl">[identifiantTechnique]</span></td>
+<td><span class="hl">oui</span></td>
+<td><p><span class="hl">Alpha-</span></p>
+<p><span class="hl">numérique</span></p></td>
+<td><p><span class="hl">C'est l'identifiant technique de l'objet. Il peut être constitué de lettres et de chiffres. L'objectif est que cet identifiant devienne pérenne dans le temps.</span></p>
+<p><span class="hl">Pour les identifiants non pérennes, chaque producteur en précisera le format dans sa spécification technique.</span></p></td>
 </tr>
-<tr class="even">
-<td><span class="hl_france">LOC</span></td>
-<td><span class="hl_france">oui si applicable</span></td>
-<td><span class="hl_france">Fixe</span></td>
-<td><span class="hl_france">Ce champ permet de préciser que l'identifiant a été défini de façon locale entre les parties engagées dans l'échange, et qu'il ne fait donc pas partie du référentiel régional. L'utilisation de ce champ est obligatoire quand l'identifiant est local.</span></td>
+<tr>
+<td><span class="hl">LOC</span></td>
+<td><span class="hl">oui si applicable</span></td>
+<td><span class="hl">Fixe</span></td>
+<td><span class="hl">Ce champ permet de préciser que l'identifiant a été défini de façon locale entre les parties engagées dans l'échange, et qu'il ne fait donc pas partie du référentiel régional. L'utilisation de ce champ est obligatoire quand l'identifiant est local.</span></td>
 </tr>
-<tr class="odd">
-<td><span class="hl_france">Identifiant Attributaire</span></td>
-<td><span class="hl_france">Non</span></td>
-<td><span class="hl_france">Alpha numérique</span></td>
-<td><span class="hl_france">Ce champ permet d’indiquer que l’identifiant est défini par « l’attributaire ».</span></td>
+<tr>
+<td><span class="hl">Identifiant Attributaire</span></td>
+<td><span class="hl">Non</span></td>
+<td><span class="hl">Alpha numérique</span></td>
+<td><span class="hl">Ce champ permet d’indiquer que l’identifiant est défini par « l’attributaire ».</span></td>
 </tr>
 </tbody>
 </table>
@@ -1501,114 +1785,114 @@ d'interface de chancun des systèmes.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>DataFrameRef</td>
 <td>[CODESPACE]:DataFrame::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DatedVehicleJourneyRef</td>
 <td><p>[CODESPACE]:VehicleJourney::<em>[identifiantTechnique]</em>:[LOC]</p>
 <p>Note: <strong>DatedVehicleJourneyRef</strong> est le champ de la structure <strong>FramedVehicleJourneyRef</strong> contenant la référence à la course datée elle-même.</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>DestinationRef</td>
 <td>Comme un identifiant d'arrêt</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DirectionRef</td>
 <td><em><strong>DirectionRef</strong></em> est un code (code ouvert, limité à "<em>aller</em>" ou "<em>retour</em>" ou vide, sans format particulier donc). Normalement non retenu par le profil SIRI France, mais parfois obligatoire dans SIRI</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>formatRef</td>
 <td>Utilisé pour General Message ; le format est spécifique au contexte France et doit contenir la valeur fixe « <span class="hl">France</span> » (valeur sans format particulier)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>FramedVehicleJourneyRef</td>
 <td><strong>FramedVehicleJourneyRef</strong> est une structure, la référence elle-même est portée par contenant la référence à la course datée elle-même <strong>DatedVehicleJourneyRef</strong> décrit plus haut. La course étant spécifique d'un SAE, on complétera autant que possible le code Opérateur de [Fournisseur] par un code permettant d'identifier le SAE producteur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>InfoChannelRef</td>
 <td>C'est un code technique seul qui est utilisé pour l'<em><strong>InfoChannelRef</strong>.</em> Il peut valoir "<em>Perturbation</em>", "<em>Information</em>" ou "<em>Commercial</em>" (valeur sans format particulier).</td>
 </tr>
-<tr class="even">
+<tr>
 <td>InfoMessageIdentifier</td>
 <td>[CODESPACE]:InfoMessage::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ItemIdentifier</td>
 <td><p>[CODESPACE]:Item::[identifiant Unique de l'Information]:[LOC]</p>
 <p>La partie [identifiant Unique de l'Information] pourra etre construite en s'appuyant sur l'identifiant de véhicule pour Vehicle Monitoring, et sur le InfoMessageIdentifier pour General Message.</p>
 <p>Pour les passages à l'arrêt (StopMonitoring en particulier), la forme est la suivante:</p>
 <p>[CODESPACE]:Item::[identifiantTechnique du couple Arrêt – Course]:[LOC]</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td>ItemRef</td>
 <td>[CODESPACE]:Item::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>JourneyPatternRef</td>
 <td>[CODESPACE]:JourneyPattern::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="even">
+<tr>
 <td>LineRef</td>
 <td>[CODESPACE]:Line::[identifiantTechnique]:</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MessageIdentifier</td>
 <td>[CODESPACE]:Message::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MonitoringRef</td>
 <td>Comme pour les arrêts</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>OperatorRef</td>
 <td>[CODESPACE]:Operator::<em>[identifiantTechnique]</em>:</td>
 </tr>
-<tr class="even">
+<tr>
 <td>OriginRef</td>
 <td>Comme pour les arrêts</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>PlaceRef</td>
 <td><p>Cet identifiant a la particularité de pouvoir identifier un lieu quelconque, pouvant en particulier être un arrêt (pour mémoire, dans Transmodel, le STOP PLACE hérite bien de PLACE).</p>
 <p>La forme générale de l'identifiant de place est [CODESPACE]:Place::<em>[identifiantTechnique]</em>:LOC</p>
 <p>Mais s'il s'agit d'un arrêt on utilisera la forme spécifique des identifiant d'arrêt (voir Error: Reference source not found)</p>
 <p>Note: Si un référentiel national est mis en place, le LOC devrait être supprimé.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td>ProducerRef</td>
 <td>[CODESPACE]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>RequestMessageRef</td>
 <td>[CODESPACE]:Message::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="even">
+<tr>
 <td>RequestorRef</td>
 <td>[CODESPACE]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ResponseMessageIdentifier</td>
 <td>[CODESPACE]:ResponseMessage::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="even">
+<tr>
 <td>RouteRef</td>
 <td>[CODESPACE]:Route::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SituationSimpleRef</td>
 <td>[CODESPACE]:Situation::<em>[identifiantTechnique]</em>:[LOC]</td>
 </tr>
-<tr class="even">
+<tr>
 <td>StopPointRef</td>
 <td>Comme pour les arrêts</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SubscriberRef</td>
 <td>[CODESPACE]</td>
 </tr>
-<tr class="even">
+<tr>
 <td><p>SubscriptionRef</p>
 <p>et</p>
 <p>SubscriptionIdentifier </p></td>
@@ -1641,16 +1925,16 @@ La liste des identifiants secondaires est spécifique à chaque
 fournisseur. Voir aussi PrivateCode du GroupOfEntities pour les
 identifiants alternatifs:
 
-| KL-1 | Les KeyList ne sont à utiliser que s'il y a plusieurs identifiants alternatifs, et si elles sont utilisées, le PrivateCode doit impérativement être aussi renseigné.                                              |
-|------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| KL-2 | Il est interdit, dans le profil, d’utiliser le système de clé/valeur pour décrire des informations qui pourraient être fournies avec des attributs SIRI existants (même s’ils ne sont pas retenus par le profil). |
+| KL-1  | Les KeyList ne sont à utiliser que s'il y a plusieurs identifiants alternatifs, et si elles sont utilisées, le PrivateCode doit impérativement être aussi renseigné.  |
+|--|--|
+| KL-2  | Il est interdit, dans le profil, d’utiliser le système de clé/valeur pour décrire des informations qui pourraient être fournies avec des attributs SIRI existants (même s’ils ne sont pas retenus par le profil).  |
 
 #### Structure Extension
 
-| Extensions |         |      | +Structure | Placeholder for user extensions. |
-|------------|---------|------|------------|----------------------------------|
-|            | KeyList | 0:1  | +Structure | Set of KEY VALUE pairs.          |
-|            | …       | 0:\* | xsd:any\*  | Any user defined content.        |
+| Extensions  |  |  | +Structure  | Placeholder for user extensions.  |
+|--|--|--|--|--|
+|  | KeyList  | 0:1  | +Structure  | Set of KEY VALUE pairs.  |
+|  | …  | 0:\*  | xsd:any\*  | Any user defined content.  |
 
 #### Structure KeyList
 
@@ -1671,14 +1955,14 @@ identifiants alternatifs:
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="4"></td>
 <td colspan="2">KeyValue</td>
 <td>1:*</td>
 <td>+Structure</td>
 <td>An arbitrary key value pair.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="3"></td>
 <td>TypeOfKey</td>
 <td>0:1</td>
@@ -1687,13 +1971,13 @@ identifiants alternatifs:
 <p><span class="hl">Type de clé</span></p>
 <p><span class="hl">Seule la valeur "ALTERNATE_IDENTIFIER" est reconnue dans le cadre du profil. Tout autre type de type de clé devra être ignoré (sans toutefois générer d'erreur</span>).</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Key</td>
 <td>1:1</td>
 <td>xsd:normalizedString</td>
 <td>Key of KEY VALUE.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Value</td>
 <td>1:1</td>
 <td>xsd:normalizedString</td>
@@ -1711,18 +1995,17 @@ contenir que des lettres, des chiffres, des points \[ . \] , des tirets
 \[ - \], des soulignés \[ \_ \] et des deux-points \[ : \] (pas
 d'espace).
 
-L'utlisation d’identifiants locaux est toutefois interdite dans les
-échanges entre les concentrateurs et le relais (sauf dans le cas
-ci-dessous).
+<span class="hl_france">L'utlisation d’identifiants locaux est
+toutefois interdite dans les échanges entre les concentrateurs et le
+relais (sauf dans le cas ci-dessous).</span>
 
 Le tableau ci-dessous présente la mise en correspondance des différents
 types d'arrêt définis dans le profil NeTEx France des arrêts et la
 formation des identifiants correspondants. Pour rappel les arrêts
 respectent la structure suivante :
 
-[image](media/image2.png)
-
-1.  Structure des arrêts
+![image](media/image2.png)
+*Structure des arrêts*
 
 #### Codification des identifiants d'arrêt
 
@@ -1776,46 +2059,48 @@ LOC\]</span>**<span class="hl">, on aura donc :</span>
     a un et LOC sinon. </span><span class="hl">Ci-dessous quelques
     pistes pour identifier l’attributaire</span>
 
-    -   **<span class="hl">Si c’est une région : code NUTS
-        > (</span>**[<span
-        > class="hl">https://eur-lex.europa.eu/eli/reg/2003/1059/2018-01-18</span>](https://eur-lex.europa.eu/eli/reg/2003/1059/2018-01-18)<span
-        > class="hl">) sans le FR, précédé de NUTS (NUTS714 pour Isère
-        > par exemple)</span>
+    -   **<span class="hl">Si c’est une région : code NUTS</span>** 
+    [<span
+        class="hl">https://eur-lex.europa.eu/eli/reg/2003/1059/2018-01-18</span>](https://eur-lex.europa.eu/eli/reg/2003/1059/2018-01-18)<span
+        class="hl">) sans le FR, précédé de NUTS (NUTS714 pour Isère
+        par exemple)</span>
 
     -   <span class="hl">Si c’est une AOT : code NAO de la norme
-        > NF-9950 précédé de NAO (NAO17 pour Blefort par
-        > exemple)</span>
+        NF-9950 précédé de NAO (NAO17 pour Blefort par exemple)</span>
 
-    -   <span class="hl">Si un attributeur national est créé, il
-        > prendra le code FR</span>
+    -   <span class="hl">Si un attributeur national est créé, il prendra le code FR</span>
 
-    -   <span class="hl">si le code technique est attribué par le
-        > système local : code LOC (comme pour le profil SIRI) .</span>
+    -   <span class="hl">si le code technique est attribué par le système local : code LOC (comme pour le profil SIRI) .</span>
 
         -   <span class="hl">Note : un code LOC est à considérer comme
-            > à priori temporaire, en attente de la mise en place d’un
-            > système centralisé d’attribution des identifiants </span>
+            à priori temporaire, en attente de la mise en place d’un
+            système centralisé d’attribution des identifiants </span>
 
     -   <span class="hl">pour le mode ferré, le code sera ERA (pour
-        > European Rail Agency) pour les identifiants issus de la
-        > STI-TAP (à priori les codes UIC ne seront pas utilisés, mais
-        > si c’était le cas, le code serait UIC).</span>
+        European Rail Agency) pour les identifiants issus de la
+        STI-TAP (à priori les codes UIC ne seront pas utilisés, mais
+        si c’était le cas, le code serait UIC).</span>
 
 <span class="hl">Examples : Gare ferré "PARIS MONTPARNASSE 1 2"
 </span>
 
-> **<span class="hl">FR:75114:LMO:39100:ERA</span>**
->
-> <span class="hl">Arrêt de bus sur la commune de Guyancourt, attribué
-> par un système transporteur</span>
->
-> **<span
-> class="hl">FR:78297:ZE:110E8400-E29B-11D4-A716-446655440000:LOC</span>**
->
-> <span class="hl">Station de métro parisienne, avec identifiant
-> IdFM</span>
->
-> **<span class="hl">FR:75105:LMO:43289:NUTS10 </span>**
+```
+FR:75114:LMO:39100:ERA
+```
+
+<span class="hl">Arrêt de bus sur la commune de Guyancourt, attribué
+par un système transporteur</span>
+
+```
+FR:78297:ZE:110E8400-E29B-11D4-A716-446655440000:LOC
+```
+
+<span class="hl">Station de métro parisienne, avec identifiant
+IdFM</span>
+
+```
+FR:75105:LMO:43289:NUTS10 
+```
 
 <span class="hl">Rappel : si l’arrêt a déjà été identifié dans le cadre
 d’un échange et que l’identifiant utilisé et unique au niveau national
@@ -1832,30 +2117,29 @@ Cela permet de mettre en place des mécanismes de contrôle d'accès, mais
 aussi de bien gérer les mécanismes d'abonnement ou encore d'identifier
 la provenance d'une information.
 
-<span class="hl_france">Dans le cadre du profil SIRI France, les
-systèmes s'identifieront de la façon suivante:</span>
+<span class="hl">Dans le cadre du profil SIRI France, les systèmes
+s'identifieront de la façon suivante:</span>
 
--   <span class="hl_france">\[Code Transporteur\]:\[Nom
-    Transporteur\]</span>
+-   <span class="hl">\[Code Transporteur\]:\[Nom Transporteur\]</span>
 
--   <span class="hl_france">Où \[Code Transporteur\] </span>
+-   <span class="hl">Où \[Code Transporteur\] </span>
 
-<span class="hl_france">Dans le cas general, le code transporteur, est
-fourni par l’AOT si ce n’est pas le cas le numéro SIRET peut être
+<span class="hl">Dans le cas general, le code transporteur, est fourni
+par l’AOT si ce n’est pas le cas le numéro SIRET peut être
 envisagé.</span>
 
-<span class="hl_france">Dans le cas où l’objet identifié est rattaché à
+<span class="hl">Dans le cas où l’objet identifié est rattaché à
 plusieurs transporteurs (un groupement), le code transporteur sera
 remplacé par XXX, et le code du système portera l’ensemble de la
 qualification du fournisseur. Le code complémentaire du code
 transporteur sera précisé dans les protocoles d’accord engageant les
 participants de l’échange.</span>
 
-<span class="hl_france">Le nom du transporteur \[</span>*<span
-class="hl_france">Nom Transporteur</span>*<span class="hl_france">\]
-se présente sous la forme d'une chaîne de caractères (bien que cela ne
-soit pas une contrainte - il est recommandé d'utiliser un nom court, 20
-caractères maximum et sans espace).</span>
+<span class="hl">Le nom du transporteur \[</span>*<span
+class="hl">Nom Transporteur</span>*<span class="hl">\] se présente
+sous la forme d'une chaîne de caractères (bien que cela ne soit pas une
+contrainte - il est recommandé d'utiliser un nom court, 20 caractères
+maximum et sans espace).</span>
 
 ## Gestion des abonnements
 
@@ -1887,26 +2171,25 @@ Ainsi, la norme SIRI propose deux méthodes pour accéder à l'information
     d'une évolution des données on reçoit directement les données mises
     à jour.
 
-| R1  | <span class="hl_france">Dans le cadre du profil SIRI France, tout système implémentant SIRI devra impérativement implémenter le </span><u><span class="hl_france">mécanisme de requête directe</span></u><span class="hl_france">.</span>                                                                                                                                                                  |
-|-----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| R2  | <span class="hl_france">De même, tout nouveau système (en particulier les concentrateurs) devra proposer un service d’abonnement </span>                                                                                                                                                                                                                                                                       |
-| R3  | <span class="hl_france">Ce mécanisme d'abonnement sera mis en oeuvre en implémentant impérativement le mécanisme de notification à une phase (moins consommateur en bande passante réseau, et plus simple à mettre en oeuvre que le mécanisme à deux phases).</span>                                                                                                                                           |
-| R4  | <span class="hl_france">De plus, dans le cadre des abonnements, SIRI propose une gestion des confirmations de réception (lorsque l'on reçoit une notification, on répond avec un acquittement pour confirmer au serveur que les données ont bien été reçues) : cette </span>**<span class="hl_france">possibilité n'est pas retenue</span>**<span class="hl_france"> dans le cadre du profil France</span> |
+| R1  | <span class="hl">Dans le cadre du profil SIRI France, tout système implémentant SIRI devra impérativement implémenter l</span><span class="hl">e </span><u><span class="hl">mécanisme de requête directe</span></u><span class="hl">.</span>  |
+|--|--|
+| R2  | <span class="hl">De même, tout nouveau système (en particulier les concentrateurs) devra proposer un service d’abonnement </span>  |
+| R3  | <span class="hl">Ce mécanisme d'abonnement sera mis en oeuvre en implémentant impérativement le mécanisme de notification à une phase (moins consommateur en bande passante réseau, et plus simple à mettre en oeuvre que le mécanisme à deux phases).</span>  |
+| R4  | <span class="hl">De plus, dans le cadre des abonnements, SIRI propose une gestion des confirmations de réception (lorsque l'on reçoit une notification, on répond avec un acquittement pour confirmer au serveur que les données ont bien été reçues) : cette </span>**<span class="hl">possibilité n'est pas retenue</span>**<span class="hl"> dans le cadre du profil France</span>  |
 
-<span class="hl_france">En effet les protocoles de transport permettent
+<span class="hl">En effet les protocoles de transport permettent
 aujourd’hui de s’assurer qu’une requête a bien été transmise, ce qui
 supprime tout besoin d’acquittement (il suffit donc de tester le code
 retour de l’appel fonctionnel SOAP).</span>
 
 ### Gestion de la segmentation des messages
 
-<span class="hl_france">La </span><span class="hl">spécification
-</span><span class="hl_france">SIRI offre la possibilité de segmenter
-les messages (découper un grand message en un ensemble de messages plus
-petits, qu'il faudra ré-assembler). </span>
+<span class="hl">La spécification SIRI offre la possibilité de
+segmenter les messages (découper un grand message en un ensemble de
+messages plus petits, qu'il faudra ré-assembler). </span>
 
-| R5  | <span class="hl_france">La segmentation des messages peut être intéressante si les échanges sont réalisés sur des réseaux de communication fortement contraints, mais ne présente pas d'intérêt dans le cadre du profil France, et n'est donc </span>**<span class="hl_france">pas retenue</span>**<span class="hl_france">.</span> |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R5  | <span class="hl">La segmentation des messages peut être intéressante si les échanges sont réalisés sur des réseaux de communication fortement contraints, mais ne présente pas d'intérêt dans le cadre du profil France, et n'est donc </span>**<span class="hl">pas retenue</span>**<span class="hl">.</span>  |
+|--|--|
 
 ### Vérification de la disponibilité des partenaires
 
@@ -1936,27 +2219,27 @@ d’assurer cette surveillance :
 <thead>
 <tr class="header">
 <th>R6</th>
-<th><p><span class="hl_france">Dans le cadre du profil SIRI France, le </span><u><span class="hl_france">mécanisme de requête de vérification d'état</span></u><span class="hl_france"> (service CheckStatus) est retenu. Tout serveur SIRI devra donc implémenter ce mécanisme.</span></p>
-<p><span class="hl_france">Par contre cela n’est pas une obligation pour les clients : cela pourra toutefois être envisagé dans la cadre de la gestion d’abonnement pour vérifier la disponibilité d’un abonné.</span></p></th>
+<th><p><span class="hl">Dans le cadre du profil SIRI Franc</span><span class="hl">e, le </span><u><span class="hl">mécanisme de requête de vérification d'état</span></u><span class="hl"> (service</span><span class="hl"> CheckStatus) est retenu. Tout serveur SIRI devra donc implémenter ce mécanisme.</span></p>
+<p><span class="hl">Par contre cela n’est pas une obligation pour les clients : cela pourra toutefois être envisagé dans la cadre de la gestion d’abonnement pour vérifier la disponibilité d’un abonné.</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>R8</td>
-<td><span class="hl_france">Les implémentations devront toutefois s'engager à appeler régulièrement la requête de vérification d'état, au moins dès qu'elles n'ont plus eu d’échange avec le système distant depuis un certain temps (fixé par défaut à cinq minutes).</span></td>
+<td><span class="hl">Les implémentations devront toutefois s'engager à appeler régulièrement la requête de vérification d'état, au moins dès qu'elles n'ont plus eu d’échange avec le système distant depuis un certain temps (fixé par défaut à cinq minutes).</span></td>
 </tr>
 </tbody>
 </table>
 
-### <span class="hl_france">Structure du CheckStatus</span>
+### <span class="hl">Structure du CheckStatus</span>
 
-<span class="hl_france">Dans le cadre du profil SIRI France :</span>
+<span class="hl">Dans le cadre du profil SIRI France :</span>
 
-| R9  | <span class="hl_france">Le champ facultatif au niveau SIRI «Status» sera toujours présent, dans le profil France, et égal à « true » si le système est parfaitement opérationnel, et à « false » s’il est en mesure de recevoir les requêtes, mais dans l'impossibilité d'y apporter une réponse (contact avec le gestionnaire de données perdu, etc.)</span> |
-|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| R10 | <span class="hl_france">Le champ facultatif au niveau «ErrorCondition» reste facultatif, au niveau du profil France, si aucune erreur n’est détectée, mais devra obligatoirement être présent et instancié à chaque fois qu'une erreur sera détectée.</span>                                                                                                  |
-| R11 | <span class="hl_france">Les champs facultatifs de «SuccessInfoGroup» restent facultatifs</span>                                                                                                                                                                                                                                                               |
-| R12 | <span class="hl_france">Le champ facultatif au niveau SIRI «ServiceStartedTime» sera toujours présent dans le profil France, et instancié avec l'heure du dernier démarrage du système</span>                                                                                                                                                                 |
+| R9  | <span class="hl">Le champ facultatif au niveau SIRI «Status» sera toujours présent, dans le profil France, et égal à « true » si le système est parfaitement opérationnel, et à « false » s’il est en mesure de recevoir les requêtes, mais dans l'impossibilité d'y apporter une réponse (contact avec le gestionnaire de données perdu, etc.)</span>  |
+|--|--|
+| R10  | <span class="hl">Le champ facultatif au niveau «ErrorCondition» reste facultatif, au niveau du profil France, si aucune erreur n’est détectée, mais devra obligatoirement être présent et instancié à chaque fois qu'une erreur sera détectée.</span>  |
+| R11  | <span class="hl">Les champs facultatifs de «SuccessInfoGroup» restent facultatifs</span>  |
+| R12  | <span class="hl">Le champ facultatif au niveau SIRI «ServiceStartedTime» sera toujours présent dans le profil France, et instancié avec l'heure du dernier démarrage du système</span>  |
 
 ### Utilisation des WSDL
 
@@ -1964,8 +2247,8 @@ Les WSDL introduites ci-dessus, permettent de décrire complètement
 l'interface des services SIRI dans le contexte de Web Service de type
 SOAP.
 
-| R15 | <span class="hl">Dans le cadre du profil France, seuls les encodages </span>*<span class="hl">RPC-Literal</span>*<span class="hl"> et </span>*<span class="hl">Document-Literal-Wrapped</span>*<span class="hl"> sont supportés.</span> |
-|-----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R15  | <span class="hl">Dans le cadre du profil France, seuls les encodages </span>*<span class="hl">RPC-Literal</span>*<span class="hl"> et </span>*<span class="hl">Document-Literal-Wrapped</span>*<span class="hl"> sont supportés.</span>  |
+|--|--|
 
 ### Gestion des filtres multiples
 
@@ -1993,8 +2276,8 @@ un mécanisme de filtres multiples permettant aux clients de recevoir,
 dans une unique notification, les informations issues de l'ensemble des
 abonnements : c'est le mécanisme de filtres multiples sur un abonnement.
 
-| R16 | <span class="hl_france">En cohérence avec le choix des notifications à une phase, le profil SIRI France retient ce </span><u><span class="hl_france">mécanisme de filtres multiples</span></u><span class="hl_france"> qui devra donc être mis en œuvre à chaque fois que les services d'abonnement seront retenus (cela permettra de recevoir plusieurs informations dans une même réponse ou notification, et donc limiter le nombre de messages).</span> |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R16  | <span class="hl">En cohérence avec le choix des notifications à une phase, le profil SIRI France retient </span><span class="hl">ce </span><u><span class="hl">mécanisme de filtres multiples</span></u><span class="hl"> qui d</span><span class="hl">evra donc être mis en œuvre à chaque fois que les services d'abonnement seront retenus (cela permettra de recevoir plusieurs informations dans une même réponse ou notification, et donc limiter le nombre de messages).</span>  |
+|--|--|
 
 ### Structuration XML
 
@@ -2002,38 +2285,38 @@ La spécification SIRI propose, la possibilité de « déstructurer »
 l'arborescence XML pour la rendre « plate » (« flat XML »), et ce, afin
 de simplifier la compatibilité avec certains systèmes existants.
 
-| R17 | <span class="hl_france">Cette option de XML à plat (« flat XML ») n'est pas retenue dans le cadre du profil SIRI France.</span> |
-|-----|-----------------------------------------------------------------------------------------------------------------------------------|
+| R17  | <span class="hl">Cette option de XML à plat (« flat XML ») n'est pas retenue dans le cadre du profil SIRI France.</span>  |
+|--|--|
 
 ### Identification de la version de SIRI
 
-| R18 | <span class="hl_france">La version de SIRI utilisée dans le cadre du profil SIRI France est la version 2.1. </span> |
-|-----|-----------------------------------------------------------------------------------------------------------------------|
+| R18  | <span class="hl">La version de SIRI utilisée dans le cadre du profil SIRI France est la version 2.1. </span>  |
+|--|--|
 
 ### Réseau et sécurité
 
-<span class="hl_france">La gestion de la sécurité et du contrôle
-d'accès n'est pas à proprement parler du ressort de SIRI, mais repose
-sur la couche de transport réseau retenue.</span>
+<span class="hl">La gestion de la sécurité et du contrôle d'accès n'est
+pas à proprement parler du ressort de SIRI, mais repose sur la couche de
+transport réseau retenue.</span>
 
-<span class="hl_france">SIRI étant un protocole inter-systèmes, la
-sécurité est plus facile à maîtriser. </span>
+<span class="hl">SIRI étant un protocole inter-systèmes, la sécurité
+est plus facile à maîtriser. </span>
 
-| R19 | <span class="hl_france">A minima, la mise en place de filtres sur les adresses IP (ou des plages d'adresses IP), complétés par l'utilisation d'un canal crypté HTTPS, est recommandée.</span> |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R19  | <span class="hl">A minima, la mise en place de filtres sur les adresses IP (ou des plages d'adresses IP), complétés par l'utilisation d'un canal crypté HTTPS, est recommandée.</span>  |
+|--|--|
 
-<span class="hl_france">Cette solution est peu coûteuse et simple à
-mettre en oeuvre, car elle ne repose que sur une configuration du
-serveur HTTP.</span>
+<span class="hl">Cette solution est peu coûteuse et simple à mettre en
+oeuvre, car elle ne repose que sur une configuration du serveur
+HTTP.</span>
 
-<span class="hl_france">En complément de ces éléments, on retrouve tous
-les éléments de sécurité classique du monde du Web : firewall,
-architecture avec DMZ, etc. Cependant ces éléments n'ont pas d’impact
-sur les échanges SIRI eux-mêmes et sont du ressort de chaque intervenant
-(points sur lesquels ils auront une parfaite autonomie).</span>
+<span class="hl">En complément de ces éléments, on retrouve tous les
+éléments de sécurité classique du monde du Web : firewall, architecture
+avec DMZ, etc. Cependant ces éléments n'ont pas d’impact sur les
+échanges SIRI eux-mêmes et sont du ressort de chaque intervenant (points
+sur lesquels ils auront une parfaite autonomie).</span>
 
-| R20 | <span class="hl_france">Par contre, dans tous les cas, les services SIRI France seront accessibles à partir d'une liaison Web classique et ne nécessiteront donc pas la mise en place de liaisons spécialisées, d'abonnement à un gestionnaire de réseau spécifique, ni d'utilisation de réseaux point à point (RTC, etc.)</span><span class="hl">.</span> |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R20  | <span class="hl">Par contre, dans tous les cas, les services SIRI France seront accessibles à partir d'une liaison Web classique et ne nécessiteront donc pas la mise en place de liaisons spécialisées, d'abonnement à un gestionnaire de réseau spécifique, ni d'utilisation de réseaux point à point (RTC, etc.).</span>  |
+|--|--|
 
 Ces recommandations valent de façon générale pour tous les accès SIRI
 indépendamment des cas d'utilisation : il est souhaitable que le mode
@@ -2048,12 +2331,12 @@ pas d’impact fonctionnel).
 
 ### Contrôle d'accès (niveau applicatif)
 
-<span class="hl_france">La norme SIRI impose que tous les messages
-échangés contiennent l'identifiant de celui qui l'a émis </span>
+<span class="hl">La norme SIRI impose que tous les messages échangés
+contiennent l'identifiant de celui qui l'a émis </span>
 
-<span class="hl_france">Cet identifiant peut être utilisé pour réaliser
-un contrôle d'accès pour, par exemple, ne permettre à un système distant
-de n'accéder qu'à certaines lignes ou certains arrêts.</span>
+<span class="hl">Cet identifiant peut être utilisé pour réaliser un
+contrôle d'accès pour, par exemple, ne permettre à un système distant de
+n'accéder qu'à certaines lignes ou certains arrêts.</span>
 
 <table>
 <colgroup>
@@ -2063,11 +2346,11 @@ de n'accéder qu'à certaines lignes ou certains arrêts.</span>
 <thead>
 <tr class="header">
 <th>R21</th>
-<th><p><span class="hl_france">Dans le cadre du profil France, un tel contrôle sera possible, mais ne pourra porter que : </span></p>
+<th><p><span class="hl">Dans le cadre du profil France, un tel contrôle sera possible, mais ne pourra porter que : </span></p>
 <ul>
-<li><p><span class="hl_france">sur des </span><strong><span class="hl_france">arrêts</span></strong><span class="hl_france"> identifiés, </span></p></li>
-<li><p><span class="hl_france">des </span><strong><span class="hl_france">lignes</span></strong><span class="hl_france"> identifiées,</span></p></li>
-<li><p><span class="hl_france">des </span><strong><span class="hl_france">exploitants</span></strong><span class="hl_france"> identifiés (accès à toutes les informations fournies par un exploitant donné pour les cas où le système SIRI propose des informations issues de plusieurs exploitants). </span></p></li>
+<li><p><span class="hl">sur des </span><strong><span class="hl">arrêts</span></strong><span class="hl"> identifiés, </span></p></li>
+<li><p><span class="hl">des </span><strong><span class="hl">lignes</span></strong><span class="hl"> identifiées,</span></p></li>
+<li><p><span class="hl">des </span><strong><span class="hl">exploitants</span></strong><span class="hl"> identifiés (accès à toutes les informations fournies par un exploitant donné pour les cas où le système SIRI propose des informations issues de plusieurs exploitants). </span></p></li>
 </ul></th>
 </tr>
 </thead>
@@ -2075,12 +2358,12 @@ de n'accéder qu'à certaines lignes ou certains arrêts.</span>
 </tbody>
 </table>
 
-<span class="hl_france">Les éventuelles informations de restrictions
-devront être communiquées aux personnes en charge de la gestion et de
+<span class="hl">Les éventuelles informations de restrictions devront
+être communiquées aux personnes en charge de la gestion et de
 l'exploitation du système client concerné. </span>
 
-| R22 | <span class="hl_france">Toutefois, cet échange sera réalisé par courrier ou par mail, mais sans utiliser les structures d'autorisation (« </span>***<span class="hl_france">permission structures »</span>***<span class="hl_france">) proposées par SIRI et dont l'implémentation ne correspond pas à un besoin exprimé en France (pour mémoire les « </span>***<span class="hl_france">permission structures </span>»*** <span class="hl">permettent</span><span class="hl_france"> à un client de demander </span>**<span class="hl_france">dynamiquement</span>**<span class="hl_france"> « quelles sont les informations auxquelles j'ai droit » -.).</span> |
-|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R22  | <span class="hl">Toutefois, cet échange sera réalisé par courrier ou par mail, mais sans utiliser les structures d'autorisation (« </span>***<span class="hl">permission structures »</span>***<span class="hl">) proposées par SIRI et dont l'implémentation ne correspond pas à un besoin exprimé en France (pour mémoire les « </span>***<span class="hl">permission struc</span><span class="hl">tures »</span>**<span class="hl"> </span>*<span class="hl">perm</span><span class="hl">ettent à un client de demander </span>**<span class="hl">dynamiquement</span>**<span class="hl"> « quelles sont les informations auxquelles j'ai droit » -.).</span>  |
+|--|--|
 
 ### Gestion des erreurs
 
@@ -2118,75 +2401,51 @@ SIRI :
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">AccessNotAllowedError</span></strong></em></td>
 <td>Le demandeur n'a pas les droits lui permettant d'accéder à ce service ou à ces données.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">AllowedResourceUsage­ExceededError</span></strong></em></td>
 <td>La requête est valide mais nécessite une charge trop importante pour pouvoir être traitée.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">BeyondDataHorizon</span></strong></em></td>
 <td>Les données ne sont pas disponibles pour la période demandée.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">CapabilityNotSupportedError</span></strong></em></td>
 <td><p>Le serveur ne supporte pas la fonctionnalité demandée.</p>
 <p><span class="hl">Le champ « CapabilityNotSupportedError » signalera une erreur si un service optionnel non implémenté est sollicité.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">InvalidDataReferencesError</span></strong></em></td>
 <td>La requête contient des identifiants qui sont inconnus.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">NoInfoForTopicError</span></strong></em></td>
 <td>La requête est valide, mais aucune donnée correspondante n'est disponible sur le serveur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">OtherError</span></strong></em></td>
 <td>Erreur autre que celles qui sont prédéfinies.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">ParametersIgnoredError</span></strong></em></td>
 <td>La requête contient des paramètres qui ne sont pas supportés par le serveur : une réponse a été fournie, mais les paramètres non supportés n'ont pas été pris en compte.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">ServiceNotAvailableError</span></strong></em></td>
 <td>Le service est indisponible (mais toutefois capable de fournir cette réponse …).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">UnknownExtensionsError</span></strong></em></td>
 <td>La requête contient des extensions qui ne sont pas supportées par le serveur : une réponse a bien été fournie mais sans tenir compte de ces extensions.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">UnknownParticipantError</span></strong></em></td>
 <td><p>Le destinataire du message (requête) est inconnu.</p>
 <p><em><u>Note</u></em>: cette erreur fait echo à la capacité de relais de requête introduite par SIRI 2.</p></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -2194,7 +2453,7 @@ SIRI :
 <u>Note</u>: la liste des erreurs proposées par SIRI a été fortement
 étendue lors du passage à la version SIRI 2.
 
-<span class="hl_france">Dans le cadre du profil SIRI France :</span>
+<span class="hl">Dans le cadre du profil SIRI France :</span>
 
 <table>
 <colgroup>
@@ -2204,10 +2463,10 @@ SIRI :
 <thead>
 <tr class="header">
 <th>R24</th>
-<th><p><span class="hl_france">Pour les services fonctionnels, le champ facultatif « </span><strong><span class="hl_france">Status </span></strong><span class="hl_france">» (dans le </span><em><strong><span class="hl_france">DeliveryStatusGroup </span></strong></em><span class="hl_france">défini par la structure </span><em><strong><span class="hl_france">AbstractServiceDeliveryStructure</span></strong></em><span class="hl_france"> utilisée pour les réponses de chacun des services) sera :</span></p>
+<th><p><span class="hl">Pour les services fonctionnels, le champ facultatif « </span><strong><span class="hl">Status </span></strong><span class="hl">» (dans le </span><em><strong><span class="hl">DeliveryStatusGroup </span></strong></em><span class="hl">défini par la structure </span><em><strong><span class="hl">AbstractServiceDeliveryStructure</span></strong></em><span class="hl"> utilisée pour les réponses de chacun des services) sera :</span></p>
 <ul>
-<li><p><span class="hl_france">toujours présent et égal à « </span><strong><span class="hl_france">true » </span></strong><span class="hl_france">(valeur par défaut)</span><strong><span class="hl_france"> </span></strong><span class="hl_france">si la requête a été traitée normalement </span></p></li>
-<li><p><span class="hl_france">et à « </span><strong><span class="hl_france">false »</span></strong><span class="hl_france"> sinon (dans le cas des abonnements, un éventuel problème détecté, comme une indisponibilité temporaire, donnera lieu à l'émission d'une notification sans données, mais signalant le problème).</span><span class="hl"> </span></p></li>
+<li><p><span class="hl">toujours présent et égal à « </span><strong><span class="hl">true » </span></strong><span class="hl">(valeur par défaut)</span><strong><span class="hl"> </span></strong><span class="hl">si la requête a été traitée normalement </span></p></li>
+<li><p><span class="hl">et à « </span><strong><span class="hl">false »</span></strong><span class="hl"> sinon (dans le cas des abonnements, un éventuel problème détecté, comme une indisponibilité temporaire, donnera lieu à l'émission d'une notification sans données, mais signalant le problème). </span></p></li>
 </ul></th>
 </tr>
 </thead>
@@ -2215,76 +2474,72 @@ SIRI :
 </tbody>
 </table>
 
-<span class="hl_france">Ce champ signale qu'un problème a été
-rencontré, et non qu'il n'y a pas de réponse : il peut donc être
-positionné à « </span>**<span class="hl_france">false »
-</span>**<span class="hl_france">alors qu'une information est bien
-retournée.</span>
+<span class="hl">Ce champ signale qu'un problème a été rencontré, et
+non qu'il n'y a pas de réponse : il peut donc être positionné à
+« </span>**<span class="hl">false » </span>**<span class="hl">alors
+qu'une information est bien retournée.</span>
 
-<span class="hl_france">Plus particulièrement dans le cas de la réponse
-à un GetSiri, on obtient un « </span>**<span class="hl_france">Status
-</span>**<span class="hl_france">» au niveau de l'entête global de la
-réponse (dans le </span>***<span
-class="hl_france">ServiceDeliveryRequestStatusGroup</span>***<span
-class="hl_france">) et un autre pour chacune des réponses aux requêtes
+<span class="hl">Plus particulièrement dans le cas de la réponse à un
+GetSiri, on obtient un « </span>**<span class="hl">Status
+</span>**<span class="hl">» au niveau de l'entête global de la réponse
+(dans le </span>***<span
+class="hl">ServiceDeliveryRequestStatusGroup</span>***<span
+class="hl">) et un autre pour chacune des réponses aux requêtes
 élémentaires (typiquement quand on a utilisé GetSiri pour effectuer une
 interrogation sur toute une liste d'arrêts. Dans ce cas aussi, un «
-</span>**<span class="hl_france">Status </span>**<span
-class="hl_france">» à « </span>**<span class="hl_france">false »
-</span>**<span class="hl_france">dans l'entête signifie qu'il y a une
-des réponses portant une erreur, et non qu'il n'y a pas de
-réponse.</span>
+</span>**<span class="hl">Status </span>**<span class="hl">» à
+« </span>**<span class="hl">false » </span>**<span class="hl">dans
+l'entête signifie qu'il y a une des réponses portant une erreur, et non
+qu'il n'y a pas de réponse.</span>
 
-| R25 | <span class="hl_france">Le champ facultatif « </span>**<span class="hl_france">ErrorCondition </span>**<span class="hl_france">» reste facultatif, mais devra être présent et instancié à chaque fois qu'une erreur sera détectée</span>           |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| R26 | <span class="hl_france">La liste des codes erreur à supporter dans le cadre du profil France est détaillée dans le tableau ci-dessous </span>                                                                                                          |
-| R27 | <span class="hl_france">s'il ne s'agit pas d'un service optionnel non implémenté, le champ « </span>**<span class="hl_france">OtherError </span>**<span class="hl_france">» précisera sous forme textuelle la nature de l'erreur rencontrée</span> |
+| R25  | <span class="hl">Le champ facultatif « </span>**<span class="hl">ErrorCondition </span>**<span class="hl">» reste facultatif, mais devra être présent et instancié à chaque fois qu'une erreur sera détectée</span>  |
+|--|--|
+| R26  | <span class="hl">La liste des codes erreur à supporter dans le cadre du profil France est détaillée dans le tableau ci-dessous </span>  |
+| R27  | <span class="hl">s'il ne s'agit pas d'un service optionnel non implémenté, le champ « </span>**<span class="hl">OtherError </span>**<span class="hl">» précisera sous forme textuelle la nature de l'erreur rencontrée</span>  |
 
-| R28 | <span class="hl_france">Le champ facultatif « Description » reste facultatif et permettra juste de préciser l'erreur (les éléments fondamentaux étant précisés dans l'un des deux champs précédents). Il devra contenir une description de l’erreur ainsi que le champ incriminé, par exemple : "Erreur \[nom du champ\] : \[Raison de l’erreur avec valorisation reçue\]"</span> |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| R29 | <span class="hl_france">De façon à systématiser les messages d'erreur, le champ « </span>**<span class="hl_france">OtherError </span>**<span class="hl_france">» sera structuré en débutant par un code prédéfini entre crochets, suivi d'un texte explicatif. </span>                                                                                                        |
+| R28  | <span class="hl">Le champ facultatif « Description » reste facultatif et permettra juste de préciser l'erreur (les éléments fondamentaux étant précisés dans l'un des deux champs précédents). Il devra contenir une description de l’erreur ainsi que le champ incriminé, par exemple : "Erreur \[nom du champ\] : \[Raison de l’erreur avec valorisation reçue\]"</span>  |
+|--|--|
+| R29  | <span class="hl">De façon à systématiser les messages d'erreur, le champ « </span>**<span class="hl">OtherError </span>**<span class="hl">» sera structuré en débutant par un code prédéfini entre crochets, suivi d'un texte explicatif. </span>  |
 
-<span class="hl_france">La liste des codes prédéfinis est la suivante
+<span class="hl">La liste des codes prédéfinis est la suivante
 :</span>
 
--   **<span class="hl_france">\[BAD_REQUEST\]</span>**<span
-    class="hl_france"> : impossible de décoder la requête.</span>
+-   **<span class="hl">\[BAD_REQUEST\]</span>**<span class="hl"> :
+    impossible de décoder la requête.</span>
 
--   **~~<span class="hl_france"> </span>~~****<span
-    class="hl_france">\[BAD_PARAMETER\]</span>**<span
-    class="hl_france"> : la requête contient un paramètre inutilisable
-    (le texte devra alors préciser le paramètre posant
-    problème).</span>
+-   **~~<span class="hl"> </span>~~****<span
+    class="hl">\[BAD_PARAMETER\]</span>**<span class="hl"> : la
+    requête contient un paramètre inutilisable (le texte devra alors
+    préciser le paramètre posant problème).</span>
 
--   **~~<span class="hl_france"> </span>~~****<span
-    class="hl_france">\[INTERNAL_ERROR\] : </span>**<span
-    class="hl_france">erreur non identifiée, mais empêchant la
-    fourniture d'un résultat.</span>
+-   **~~<span class="hl"> </span>~~****<span
+    class="hl">\[INTERNAL_ERROR\] : </span>**<span class="hl">erreur
+    non identifiée, mais empêchant la fourniture d'un résultat.</span>
 
-| R30 | <span class="hl_france">De façon à assurer une homogénéité de comportement dans le traitement des erreurs, il est convenu des comportements suivants :</span> |
-|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R30  | <span class="hl">De façon à assurer une homogénéité de comportement dans le traitement des erreurs, il est convenu des comportements suivants :</span>  |
+|--|--|
 
-| **<span class="hl_france">Erreur</span>**                              | **<span class="hl_france">Comportement</span>**                                                                                                                                |
-|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *<span class="hl_france">\[BAD_REQUEST\]</span>*                       | <span class="hl_france">rejet complet de la requête, réponse erreur uniquement</span>                                                                                          |
-| ***<span class="hl_france">InvalidDataReferencesError</span>***        | <span class="hl_france">rejet de la requête ; en cas de multiples requêtes, rejet de la seule requête en erreur</span>                                                         |
-| *<span class="hl_france">\[BAD_PARAMETER\]</span>*                     | <span class="hl_france">rejet complet de la requête, réponse erreur uniquement</span>                                                                                          |
-| ***<span class="hl_france">ParametersIgnoredError</span>***            | <span class="hl_france">Réponse en ignorant le paramètre incriminé</span>                                                                                                      |
-| ***<span class="hl_france">NoInfoForTopicError</span>***               | <span class="hl_france">Réponse uniquement sur la base des informations effectivement disponibles (pas de réponse autre que l'erreur si aucune donnée n'est disponible)</span> |
-| ***<span class="hl_france">ServiceNotAvailableError</span>***          | <span class="hl_france">rejet complet de la requête, réponse erreur uniquement</span>                                                                                          |
-| ***<span class="hl">AccessNotAllowedError</span>***                    | <span class="hl_france">rejet complet de la requête, réponse erreur uniquement</span>                                                                                          |
-| *<span class="hl_france">\[INTERNAL_ERROR\]</span>*                    | <span class="hl_france">réponse erreur uniquement</span>                                                                                                                       |
-| ***<span class="hl_france">AllowedResourceUsageExceededError</span>*** | <span class="hl_france">réponse erreur uniquement</span>                                                                                                                       |
-| ***<span class="hl_france">BeyondDataHorizon</span>***                 | <span class="hl_france">réponse erreur uniquement</span>                                                                                                                       |
-| ***<span class="hl_france">UnknownExtensionsError</span>***            | <span class="hl_france">Réponse uniquement sur la base des paramètres effectivement reconnus</span>                                                                            |
+| **<span class="hl">Erreur</span>**  | **<span class="hl">Comportement</span>**  |
+|--|--|
+| *<span class="hl">\[BAD_REQUEST\]</span>*  | <span class="hl">rejet complet de la requête, réponse erreur uniquement</span>  |
+| ***<span class="hl">InvalidDataReferencesError</span>***  | <span class="hl">rejet de la requête ; en cas de multiples requêtes, rejet de la seule requête en erreur</span>  |
+| *<span class="hl">\[BAD_PARAMETER\]</span>*  | <span class="hl">rejet complet de la requête, réponse erreur uniquement</span>  |
+| ***<span class="hl">ParametersIgnoredError</span>***  | <span class="hl">Réponse en ignorant le paramètre incriminé</span>  |
+| ***<span class="hl">NoInfoForTopicError</span>***  | <span class="hl">Réponse uniquement sur la base des informations effectivement disponibles (pas de réponse autre que l'erreur si aucune donnée n'est disponible)</span>  |
+| ***<span class="hl">ServiceNotAvailableError</span>***  | <span class="hl">rejet complet de la requête, réponse erreur uniquement</span>  |
+| ***<span class="hl">AccessNotAllowedError</span>***  | <span class="hl">rejet complet de la requête, réponse erreur uniquement</span>  |
+| *<span class="hl">\[INTERNAL_ERROR\]</span>*  | <span class="hl">réponse erreur uniquement</span>  |
+| ***<span class="hl">AllowedResourceUsageExceededError</span>***  | <span class="hl">réponse erreur uniquement</span>  |
+| ***<span class="hl">BeyondDataHorizon</span>***  | <span class="hl">réponse erreur uniquement</span>  |
+| ***<span class="hl">UnknownExtensionsError</span>***  | <span class="hl">Réponse uniquement sur la base des paramètres effectivement reconnus</span>  |
 
 <span class="hl">Il n'y a pas d'obligation pour un système d'être en
 mesure de remonter chacune de ces erreurs. </span>
 
-| R31 | <span class="hl_france">Toutefois, en cas d'anomalie, les systèmes devront s'astreindre à utiliser le code correspondant au problème rencontré pour le signaler (et ce en rapport avec leurs capacités et limitations de détection d'anomalie, ce qui signifie qu'ils ne sont pas tenus de remonter une erreur qu'ils ne savent pas identifier).</span>                   |
-|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| R32 | <span class="hl_france">Les erreurs rencontrées devront de plus être conservées dans des fichiers (fichier type « log ») tant au niveau des systèmes serveurs que des systèmes clients, de façon à permettre une analyse « post-mortem » et d’envisager d'éventuels correctifs ultérieurs. </span>                                                                        |
-| R33 | <span class="hl_france">La durée minimale de conservation des fichiers « log » sera définie dans le cadre des projets ; on peut toutefois considérer que </span>**<span class="hl_france">3</span>**<span class="hl_france"> mois est une valeur acceptable et </span>**<span class="hl_france">1</span>**<span class="hl_france"> an une valeur maximale.</span> |
+| R31  | <span class="hl">Toutefois, en cas d'anomalie, les systèmes devront s'astreindre à utiliser le code correspondant au problème rencontré pour le signaler (et ce en rapport avec leurs capacités et limitations de détection d'anomalie, ce qui signifie qu'ils ne sont pas tenus de remonter une erreur qu'ils ne savent pas identifier).</span>  |
+|--|--|
+| R32  | <span class="hl">Les erreurs rencontrées devront de plus être conservées dans des fichiers (fichier type « log ») tant au niveau des systèmes serveurs que des systèmes clients, de façon à permettre une analyse « post-mortem » et d’envisager d'éventuels correctifs ultérieurs. </span>  |
+| R33  | <span class="hl">La durée minimale de conservation des fichiers « log » sera définie dans le cadre des projets ; on peut toutefois considérer que </span>**<span class="hl">3</span>**<span class="hl"> mois est une valeur acceptable et </span>**<span class="hl">1</span>**<span class="hl"> an une valeur maximale.</span>  |
 
 <span class="hl">La remontée d'erreur n'a en effet d'intérêt que si on
 l’utilise pour comprendre et corriger les causes des anomalies. Cela
@@ -2293,32 +2548,32 @@ d’exploitation puis dispatchées, après une première analyse, vers les
 partenaires, les industriels ou tout intervenant susceptible d’y
 apporter un remède.</span>
 
-| R34 | <span class="hl_france">Dans le cas ou une requête ne reçoit pas de réponse, une erreur pourra être déclarée. Cette anomalie sera mentionnée dans le « log » d'erreur du client. Le délai d'attente (« timeout » avant identification d'une panne) est fixé par défaut à une minute (cette valeur « par défaut » pourra être ajustée localement, notamment au regard du délai « normal » de rafraîchissement des données). </span> |
-|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| R35 | *<span class="hl_france">ATTENTION</span>*<span class="hl_france"> : il est tout à fait possible que la réponse arrive finalement, mais après le délai imparti, le système client pourra alors décider de la prendre en compte ou de l'ignorer (à définir localement dans l'implémentation du système).</span>                                                                                                                   |
+| R34  | <span class="hl">Dans le cas ou une requête ne reçoit pas de réponse, une erreur pourra être déclarée. Cette anomalie sera mentionnée dans le « log » d'erreur du client. Le délai d'attente (« timeout » avant identification d'une panne) est fixé par défaut à une minute (cette valeur « par défaut » pourra être ajustée localement, notamment au regard du délai « normal » de rafraîchissement des données). </span>  |
+|--|--|
+| R35  | *<span class="hl">ATTENTION</span>*<span class="hl"> : il est tout à fait possible que la réponse arrive finalement, mais après le délai imparti, le système client pourra alors décider de la prendre en compte ou de l'ignorer (à définir localement dans l'implémentation du système).</span>  |
 
 ### Identification des services disponibles
 
-<span class="hl_france">La norme SIRI offre la possibilité de demander
-à un système la liste des services qu'il implémente (ceux qu’ils doivent
+<span class="hl">La norme SIRI offre la possibilité de demander à un
+système la liste des services qu'il implémente (ceux qu’ils doivent
 normalement implémenter, indépendamment des éventuelles pannes), ce qui
 peut s'avérer utile du fait du caractère facultif d'implémentation de
 certains services (se référer à la partie 1 pour la liste des services à
 caractère obligatoire ou facultatif).</span>
 
-<span class="hl_france">Il peut être utile pour des systèmes
-concentrateurs de pouvoir demander à un système distant les services
-qu'il implémente et ainsi se configurer automatiquement pour la gestion
-de l'échange. </span>
+<span class="hl">Il peut être utile pour des systèmes concentrateurs de
+pouvoir demander à un système distant les services qu'il implémente et
+ainsi se configurer automatiquement pour la gestion de l'échange.
+</span>
 
-<span class="hl_france">Toutefois, cela peut aussi être réalisé au
-travers d'un simple mécanisme de configuration du serveur, qui sera de
-toute façon indispensable pour identifier la liste des serveurs SIRI à
+<span class="hl">Toutefois, cela peut aussi être réalisé au travers
+d'un simple mécanisme de configuration du serveur, qui sera de toute
+façon indispensable pour identifier la liste des serveurs SIRI à
 contacter (il suffit alors, pour chaque serveur, de préciser la liste
 des services disponibles). </span>
 
-| R36 | <span class="hl_france">De façon à ne pas alourdir le développement des systèmes la possibilité de « </span>**<span class="hl_france">Capability Checking</span>**<span class="hl_france"> » proposée par SIRI n'est pas retenue, au profit d'un système non dynamique basé sur des fichiers de configuration (l'aspect dynamique et automatique ne présente pas d'intérêt particulier dans le cadre France).</span> |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R36  | <span class="hl">De façon à ne pas alourdir le développement des systèmes la possibilité de « </span>**<span class="hl">Capability Checking</span>**<span class="hl"> » proposée par SIRI n'est pas retenue, au profit d'un système non dynamique basé sur des fichiers de configuration (l'aspect dynamique et automatique ne présente pas d'intérêt particulier dans le cadre France).</span>  |
+|--|--|
 
 ### Compression
 
@@ -2330,8 +2585,8 @@ des services disponibles). </span>
 <thead>
 <tr class="header">
 <th>R37</th>
-<th><p><span class="hl_france">De façon à limiter la taille des messages, une compression de type Gzip (proposée par SIRI) sera utilisée. </span></p>
-<p><span class="hl_france">Dans le contexte de l'utilisation de SOAP sur le protocole HTTP, elle sera mise en œuvre par les serveurs HTTP généralement par simple configuration.</span></p></th>
+<th><p><span class="hl">De façon à limiter la taille des messages, une compression de type Gzip (proposée par SIRI) sera utilisée. </span></p>
+<p><span class="hl">Dans le contexte de l'utilisation de SOAP sur le protocole HTTP, elle sera mise en œuvre par les serveurs HTTP généralement par simple configuration.</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -2340,24 +2595,23 @@ des services disponibles). </span>
 
 ### Encodage des caractères
 
-| R38 | <span class="hl_france">Les différentes chaines de caractères présentent dans les données XML seront encodées exclusivement en UTF-8 (abréviation de l’anglais Universal Character Set Transformation Format - 8 bits sans Bit-Order-Mark (BOM)). </span> |
-|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R38  | <span class="hl">Les différentes chaines de caractères présentent dans les données XML seront encodées exclusivement en UTF-8 (abréviation de l’anglais Universal Character Set Transformation Format - 8 bits sans Bit-Order-Mark (BOM)). </span>  |
+|--|--|
 
-<span class="hl_france">Tehchniquement cela se traduira, si l'on
-souhaite être explicite, par un "</span><span class="hl">
-</span>**<span class="hl">\<</span><span
+<span class="hl">Tehchniquement cela se traduira, si l'on souhaite être
+explicite, par un " </span>**<span class="hl">\<</span><span
 class="hl">?xml</span><span class="hl"> </span><span
 class="hl">version=</span><span class="hl">"1.0"</span><span
 class="hl"> </span><span class="hl">encoding=</span><span
 class="hl">"UTF-8</span>**<span class="hl">"</span>**<span
 class="hl">?</span><span class="hl">\></span>**<span class="hl">
-</span><span class="hl_france">" en entête du document. Mais cela
-n'est pas indispensable car l'UTF-8 est la valeur par défaut quand
-l'encodage n'est pas précisé.</span>
+</span><span class="hl">" en entête du document. Mais cela n'est pas
+indispensable car l'UTF-8 est la valeur par défaut quand l'encodage
+n'est pas précisé.</span>
 
-<span class="hl_france">Voir </span>[<span
-class="hl_france">https://fr.wikipedia.org/wiki/UTF-8</span>](https://fr.wikipedia.org/wiki/UTF-8)<span
-class="hl_france"> pour plus de détail sur UTF-8.</span>
+<span class="hl">Voir </span>[<span
+class="hl">https://fr.wikipedia.org/wiki/UTF-8</span>](https://fr.wikipedia.org/wiki/UTF-8)<span
+class="hl"> pour plus de détail sur UTF-8.</span>
 
 ## Service SIRI Discovery
 
@@ -2378,29 +2632,17 @@ profil SIRI France :
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><span class="hl_france">StopPointsRequest</span></td>
-<td><p><span class="hl_france">Requête retenue pour le profil France. L'utilisation de ce service devra donc reposer sur des informations cohérentes d’identifiant des arrêts.</span></p>
-<p><span class="hl_france">Cette requête permet d'obtenir la liste de tous les points d'arrêts connus du système (voir la structure retournée, ci-dessous)</span></p></td>
+<tr>
+<td><span class="hl">StopPointsRequest</span></td>
+<td><p><span class="hl">Requête retenue pour le profil France. L'utilisation de ce service devra donc reposer sur des informations cohérentes d’identifiant des arrêts.</span></p>
+<p><span class="hl">Cette requête permet d'obtenir la liste de tous les points d'arrêts connus du système (voir la structure retournée, ci-dessous)</span></p></td>
 </tr>
-<tr class="even">
-<td><span class="hl_france">LinesRequest</span></td>
-<td><p><span class="hl_france">Requête retenue pour le profil France</span></p>
-<p><span class="hl_france">Cette requête permet d'obtenir la liste de toutes les lignes connues du système (voir la structure retournée, ci-dessous)</span></p></td>
+<tr>
+<td><span class="hl">LinesRequest</span></td>
+<td><p><span class="hl">Requête retenue pour le profil France</span></p>
+<p><span class="hl">Cette requête permet d'obtenir la liste de toutes les lignes connues du système (voir la structure retournée, ci-dessous)</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><span class="hl">InfoChannelRequest</span></td>
 <td><p><span class="hl">Requête retenue pour le profil France</span></p>
 <p><span class="hl">Cette requête permet d'obtenir la liste de tous les canaux de messagerie proposés (voir la structure retournée, ci-dessous)</span></p>
@@ -2410,7 +2652,7 @@ profil SIRI France :
 <p><span class="hl">3. « Commercial »</span></p>
 <p><span class="hl">NB : même il ne s'agit pas ici d'une donnée du référentiel cette information est traitée ici, car elle fait partie du « Discovery Service » proposé par SIRI.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><span class="hl">FacilityRequest</span></td>
 <td><p><span class="hl">Requête retenue pour le profil France</span></p>
 <p><span class="hl">Cette requête permet d'obtenir la liste de tous les équipements et services connus du système (voir la structure retournée, ci-dessous)</span></p>
@@ -2419,61 +2661,58 @@ profil SIRI France :
 </tbody>
 </table>
 
-<span class="hl_france">Ces requêtes ne seront déployées que dans les
-cas où un référentiel théorique n’aura pas pu être identifié : leur
+<span class="hl">Ces requêtes ne seront déployées que dans les cas où
+un référentiel théorique n’aura pas pu être identifié : leur
 implémentation est donc facultative et devra, autant que faire se peut,
 être temporaire.</span>
 
-<span class="hl_france">Les services retenus sont donc :
-</span>*<span class="hl_france">StopPointsRequest</span>*<span
-class="hl_france">, </span>*<span
-class="hl_france">LinesRequest</span>*<span class="hl_france">,
-</span>*<span class="hl_france">InfoChannelRequest</span>*<span
-class="hl_france"> et </span>*<span
-class="hl_france">FacilityRequest</span>*<span class="hl_france">. Les
-identifiants ainsi obtenus pourront être utilisés avec tous les Services
-SIRI disponibles sur le système les ayant fournis. On utilisera, par
-exemple, un même identifiant d’arrêt pour consulter les horaires à
-l’arrêt (avec le service « Stop Monitoring »), ou les informations de
-perturbation (service « Situation Exchange » et/ou « General
-Message »).</span>
+<span class="hl">Les services retenus sont donc : </span>*<span
+class="hl">StopPointsRequest</span>*<span class="hl">, </span>*<span
+class="hl">LinesRequest</span>*<span class="hl">, </span>*<span
+class="hl">InfoChannelRequest</span>*<span class="hl"> et
+</span>*<span class="hl">FacilityRequest</span>*<span class="hl">.
+Les identifiants ainsi obtenus pourront être utilisés avec tous les
+Services SIRI disponibles sur le système les ayant fournis. On
+utilisera, par exemple, un même identifiant d’arrêt pour consulter les
+horaires à l’arrêt (avec le service « Stop Monitoring »), ou les
+informations de perturbation (service « Situation Exchange » et/ou
+« General Message »).</span>
 
-<span class="hl_france">Les informations qu'ils procurent sont
-présentées ci-dessous :</span>
+<span class="hl">Les informations qu'ils procurent sont présentées
+ci-dessous :</span>
 
-<span class="hl_france">Note: les services de découvertes SIRI
-permettent de connaître les noms des arrêts et lignes et l'appartenance
-des arrêts aux lignes mais en aucun cas la structure (itinéraire-Route,
-mission-Journey pattern et à fortiori course-vehicle Journey). Il
-conviendra donc de se tourner vers les données de référence de l'offre
-et un référentiel d'arrêt pour obtenir une information proprement
-structurée.</span>
+<span class="hl">Note: les services de découvertes SIRI permettent de
+connaître les noms des arrêts et lignes et l'appartenance des arrêts aux
+lignes mais en aucun cas la structure (itinéraire-Route, mission-Journey
+pattern et à fortiori course-vehicle Journey). Il conviendra donc de se
+tourner vers les données de référence de l'offre et un référentiel
+d'arrêt pour obtenir une information proprement structurée.</span>
 
-### <span class="hl_france">Discovery StopPoint</span>
+### <span class="hl">Discovery StopPoint</span>
 
 #### Requête StopPointsRequest
 
 <u>Note</u>: Voir 3.2 pour les explications détaillées de lecture des
 tableaux qui suivent (codes couleurs, etc.).
 
-|                                                                   |                                                           |                                                   |     |                     |                                                                                                                                    |
-|-------------------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------|-----|---------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| ***<span class="hl_france">StopPointsDiscoveryRequest</span>*** |                                                           |                                                   |     | *+Structure*        | Requête d'accès à la liste des arrêts                                                                                              |
-| *log*                                                             | ***<span class="hl_france">Request­Timestamp</span>***  |                                                   | 1:1 | *xsd:dateTime*      | Date d’émission de la requête.                                                                                                     |
-|                                                                   | ***<span class="hl_france">AccountId</span>***          |                                                   |     |                     |                                                                                                                                    |
-|                                                                   | ***<span class="hl_france">AccountKey</span>***         |                                                   |     |                     |                                                                                                                                    |
-| *Endpoint Properties*                                             | ***<span class="hl_france">Address</span>***            |                                                   | 0:1 | *Endpoint­Address*  | Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).                              |
-|                                                                   | ***<span class="hl_france">RequestorRef</span>***       |                                                   | 1:1 | *Participant­Code*  | Identifiant du demandeur (reprendre la structure \[*fournisseur*\] des identifiants).                                              |
-|                                                                   | ***<span class="hl_france">Message­Identifier</span>*** |                                                   | 0:1 | *Message­Qualifier* | Identifiant unique de ce message.                                                                                                  |
-| *Topic*                                                           | ***<span class="hl_france">BoundingBox</span>***        |                                                   | 0:1 |                     | Filtre permettant de n'obtenir que les arrêts situés à l'intérieur d'un rectangle englobant                                        |
-|                                                                   |                                                           | ***<span class="hl_france">UpperLeft</span>***  | 0:1 | *LocationStructure* | Coin supérieur gauche du rectangle englobant                                                                                       |
-|                                                                   |                                                           | ***<span class="hl_france">LowerRight</span>*** | 0:1 | *LocationStructure* | Coin inférieur droit du rectangle englobant                                                                                        |
-|                                                                   | ***<span class="hl_france">Circle</span>***             |                                                   |     |                     |                                                                                                                                    |
-|                                                                   |                                                           |                                                   |     |                     |                                                                                                                                    |
-|                                                                   | ***<span class="hl">OperatorRef</span>***               |                                                   | 0:1 | *Operator­Code*     | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par un opérateur donné</span><span class="hl">.</span> |
-|                                                                   | ***<span class="hl">LineRef</span>***                   |                                                   | 0:1 | *LineCode*          | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par une ligne donné</span><span class="hl">e.</span>   |
-|                                                                   |                                                           |                                                   |     |                     |                                                                                                                                    |
-|                                                                   |                                                           |                                                   |     |                     |                                                                                                                                    |
+|  |  |  |  |  |  |
+|--|--|--|--|--|--|
+| ***<span class="hl">StopPointsDiscoveryRequest</span>***  |  |  |  | *+Structure*  | Requête d'accès à la liste des arrêts  |
+| *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | Date d’émission de la requête.  |
+|  | ***<span class="hl_delete">AccountId</span>***  |  |  |  |  |
+|  | ***<span class="hl_delete">AccountKey</span>***  |  |  |  |  |
+| *Endpoint Properties*  | ***<span class="hl">Address</span>***  |  | 0:1  | *Endpoint­Address*  | Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).  |
+|  | ***<span class="hl">RequestorRef</span>***  |  | 1:1  | *Participant­Code*  | Identifiant du demandeur (reprendre la structure \[*fournisseur*\] des identifiants).  |
+|  | ***<span class="hl">Message­Identifier</span>***  |  | 0:1  | *Message­Qualifier*  | Identifiant unique de ce message.  |
+| *Topic*  | ***<span class="hl">BoundingBox</span>***  |  | 0:1  |  | Filtre permettant de n'obtenir que les arrêts situés à l'intérieur d'un rectangle englobant  |
+|  |  | ***<span class="hl">UpperLeft</span>***  | 0:1  | *LocationStructure*  | Coin supérieur gauche du rectangle englobant  |
+|  |  | ***<span class="hl">LowerRight</span>***  | 0:1  | *LocationStructure*  | Coin inférieur droit du rectangle englobant  |
+|  | ***<span class="hl_delete">Circle</span>***  |  |  |  |  |
+|  | ***<span class="hl">OperatorRef</span>***  |  | 0:1  | *Operator­Code*  | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par un opérateur donné</span><span class="hl">.</span>  |
+|  | ***<span class="hl">LineRef</span>***  |  | 0:1  | *LineCode*  | <span class="hl">Filtre permettant de n'obtenir que les arrêts utilisés par une ligne donné</span><span class="hl">e.</span>  |
+
+
+
 
 #### Réponses aux StopPointsRequest
 
@@ -2491,217 +2730,166 @@ SIRI).
 <col style="width: 48%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="4"><em><strong><span class="hl_france">AnnotatedStopPointStructure</span></strong></em></td>
+<tr>
+<td colspan="4"><em><strong><span class="hl">AnnotatedStopPointStructure</span></strong></em></td>
 <td><em><span class="hl">+Structure</span></em></td>
 <td><span class="hl">Description simplifiée d'un arrêt</span></td>
 </tr>
-<tr class="even">
-<td rowspan="11"><em>Stop Identity</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Stop</span>­<span class="hl_france">Point</span>­<span class="hl_france">Ref</span></strong></em></td>
+<tr>
+<td rowspan="5"><em>Stop Identity</em></td>
+<td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td><em>1:1</em></td>
 <td><em>StopPoint­Code</em></td>
 <td><p>Identifiant du Point d'arrêt. Cf 5.4</p>
 <p>Il convient d'utiliser ici un identifiant d'objet de référence</p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">StopName</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">StopName</span></strong></em></td>
 <td><p><em>0:1</em></p>
 <p><em><strong><span class="hl">1:1</span></strong></em></p></td>
 <td><em>NaturalLanguageStringStructure</em></td>
 <td><span class="hl">le champ«StopName» sera toujours présent et renseigné conformément au paragraphe </span><span class="hl">.</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Lines</span></strong></em></td>
 <td><em>0:*</em></td>
 <td></td>
 <td>Liste des lignes passant à l'arrêt</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td><em>0:1</em></td>
 <td><em>LineCode</em></td>
 <td>Identifiant d'une ligne (issu du référentiel des lignes)</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Location</span></strong></em></td>
 <td><em>0:1</em></td>
 <td><em>LocationStructure</em></td>
 <td>Localisation géographique de l'arrêt</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-### <span class="hl_france">Discovery Line</span>
+### <span class="hl">Discovery Line</span>
 
 #### <span class="hl">Requête LinesRequest</span>
 
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
-|--------------------------------------------------------------|------------------------------------------------------------------------------|-----|-----|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ***<span class="hl_france">LinesDiscoveryRequest</span>*** |                                                                              |     |     | *+Structure*        | Requête d'accès à la liste des lignes                                                                                                                               |
-| *log*                                                        | ***<span class="hl">Request­Timestamp</span>***                            |     | 1:1 | *xsd:dateTime*      | <span class="hl">Date d’émission de la requête.</span>                                                                                                            |
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
-| *Endpoint Properties*                                        | ***<span class="hl">Address</span>***                                      |     | 0:1 | *Endpoint­Address*  | <span class="hl">Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).</span>                                     |
-|                                                              | ***<span class="hl">Requestor</span>­<span class="hl">Ref</span>***      |     | 1:1 | *Participant­Code*  | <span class="hl">Identifiant du demandeur (reprendre la structure \[</span>*<span class="hl">fournisseur</span>*<span class="hl">\] des identifiants).</span> |
-|                                                              | ***<span class="hl">Message</span>­<span class="hl">Identifier</span>*** |     | 0:1 | *Message­Qualifier* | <span class="hl">Identifiant unique de ce message.</span>                                                                                                         |
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
-|                                                              | ***<span class="hl">OperatorRef</span>***                                  |     | 0:1 | *Operator­Code*     | <span class="hl">Filtre permettant de n'obtenir que les lignes exploitées par un opérateur donné</span><span class="hl">.</span>                                |
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
-|                                                              |                                                                              |     |     |                     |                                                                                                                                                                     |
+|  |  |  |  |  |  |
+|--|--|--|--|--|--|
+| ***<span class="hl">LinesDiscoveryRequest</span>***  |  |  |  | *+Structure*  | Requête d'accès à la liste des lignes  |
+| *log*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | <span class="hl">Date d’émission de la requête.</span>  || *Endpoint Properties*  | ***<span class="hl">Address</span>***  |  | 0:1  | *Endpoint­Address*  | <span class="hl">Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).</span>  |
+|  | ***<span class="hl">Requestor</span>­<span class="hl">Ref</span>***  |  | 1:1  | *Participant­Code*  | <span class="hl">Identifiant du demandeur (reprendre la structure \[</span>*<span class="hl">fournisseur</span>*<span class="hl">\] des identifiants).</span>  |
+|  | ***<span class="hl">Message</span>­<span class="hl">Identifier</span>***  |  | 0:1  | *Message­Qualifier*  | <span class="hl">Identifiant unique de ce message.</span>  |
+|  | ***<span class="hl">OperatorRef</span>***  |  | 0:1  | *Operator­Code*  | <span class="hl">Filtre permettant de n'obtenir que les lignes exploitées par un opérateur donné</span><span class="hl">.</span>  |
 
 #### <span class="hl">Réponses aux LinesRequest</span>
 
-|                                                               |                                                     |      |                                  |                                                                                                                                                                                                                                                                  |
-|---------------------------------------------------------------|-----------------------------------------------------|------|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ***<span class="hl_france">AnnotatedLineStructure</span>*** |                                                     |      | *+Structure*                     | <span class="hl">Description simplifiée d'une ligne</span>                                                                                                                                                                                                     |
-| *Line Identity*                                               | ***<span class="hl_france">LineRef</span>***      | 1:1  | *LineCode*                       | <span class="hl">Identifiant de la ligne (issu du référentientiel des lignes) </span>                                                                                                                                                                          |
-|                                                               | ***<span class="hl_france">LineName</span>***     | 1:1  | *NaturalLanguageStringStructure* | <span class="hl">Nom de la ligne (issu du référentientiel des lignes) </span>                                                                                                                                                                                  |
-|                                                               | ***<span class="hl_france">Monitored</span>***    | 0:1  | *xsd:boolean*                    | <span class="hl">le champ obligatoire « Monitored » sera toujours égal à « true » indiquant ainsi que l’on dispose bien d’information temps réel à ce point (inutile de traiter les arrêts et lignes pour lesquels on n’a pas d'information temps réel)</span> |
-|                                                               | ***<span class="hl_france">Destinations</span>*** | 0:\* | *AnnotatedDestinationStructure*  | <span class="hl">Le champ facultatif « Destinations » reste facultatif et permettra d’indiquer, en plus des extrémités de la ligne, si elle est composée de plus de deux itinéraires (aller et retour)</span>                                                  |
-|                                                               |                                                     |      |                                  |                                                                                                                                                                                                                                                                  |
-|                                                               |                                                     |      |                                  |                                                                                                                                                                                                                                                                  |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| ***<span class="hl">AnnotatedLineStructure</span>***  |  |  | *+Structure*  | <span class="hl">Description simplifiée d'une ligne</span>  |
+| *Line Identity*  | ***<span class="hl">LineRef</span>***  | 1:1  | *LineCode*  | <span class="hl">Identifiant de la ligne (issu du référentientiel des lignes) </span>  |
+|  | ***<span class="hl">LineName</span>***  | 1:1  | *NaturalLanguageStringStructure*  | <span class="hl">Nom de la ligne (issu du référentientiel des lignes) </span>  |
+|  | ***<span class="hl">Monitored</span>***  | 0:1  | *xsd:boolean*  | <span class="hl">le champ obligatoire « Monitored » sera toujours égal à « true » indiquant ainsi que l’on dispose bien d’information temps réel à ce point (inutile de traiter les arrêts et lignes pour lesquels on n’a pas d'information temps réel)</span>  |
+|  | ***<span class="hl">Destinations</span>***  | 0:\*  | *AnnotatedDestinationStructure*  | <span class="hl">Le champ facultatif « Destinations » reste facultatif et permettra d’indiquer, en plus des extrémités de la ligne, si elle est composée de plus de deux itinéraires (aller et retour)</span>  |
 
-### <span class="hl_france">Discovery InfoChannel & Facility</span>
+### <span class="hl">Discovery InfoChannel & Facility</span>
 
 #### <span class="hl">Requêtes</span>
 
-<span class="hl_france">Les requêtes ont toutes la même forme
-(l'exemple de la </span>*<span
-class="hl_france">StopPointsRequest</span>*<span class="hl_france">
+<span class="hl">Les requêtes ont toutes la même forme (l'exemple de la
+</span>*<span class="hl">StopPointsRequest</span>*<span class="hl">
 est fourni ci-dessous).</span>
 
-<span class="hl_france">Dans le cadre du profil France :</span>
+<span class="hl">Dans le cadre du profil France :</span>
 
--   <span class="hl_france">Le champ facultatif «</span>**<span
-    class="hl_france">address</span>**<span class="hl_france">» ne
-    sera jamais présent </span>
+-   <span class="hl">Le champ facultatif «</span>**<span
+    class="hl">address</span>**<span class="hl">» ne sera jamais
+    présent </span>
 
--   <span class="hl_france">Le champ facultatif «</span>**<span
-    class="hl_france">MessageIdentifier</span>**<span
-    class="hl_france">» sera toujours présent et instancié (utilisé en
-    particulier pour la gestion des cas d'erreur).</span>
+-   <span class="hl">Le champ facultatif «</span>**<span
+    class="hl">MessageIdentifier</span>**<span class="hl">» sera
+    toujours présent et instancié (utilisé en particulier pour la
+    gestion des cas d'erreur).</span>
 
-<u><span class="hl_france">Note</span></u><span class="hl_france">:
-l'attribut « version » référence la version de SIRI utilisée (afin de
-permettre une gestion « sereine » des futures versions, voir
-</span><span class="hl_france"></span><span
-class="hl_france">).</span>
+<u><span class="hl">Note</span></u><span class="hl">: l'attribut
+« version » référence la version de SIRI utilisée (afin de permettre une
+gestion « sereine » des futures versions, voir </span><span
+class="hl"></span><span class="hl">).</span>
 
-<span class="hl_france">La mise à jour des données de référence devra
-être réalisée périodiquement de façon à garantir la synchronisation des
+<span class="hl">La mise à jour des données de référence devra être
+réalisée périodiquement de façon à garantir la synchronisation des
 référentiels des différents systèmes. On pourra envisager différents
 modes de synchronisation :</span>
 
--   <span class="hl_france">Des synchronisations à heures fixes
+-   <span class="hl">Des synchronisations à heures fixes
     (quotidiennement la nuit ou en milieu de journée pour les réseaux
     nocturnes),</span>
 
--   <span class="hl_france">Des synchronisations à dates fixes
-    (hebdomadaires, mensuelles, etc.),</span>
+-   <span class="hl">Des synchronisations à dates fixes (hebdomadaires,
+    mensuelles, etc.),</span>
 
--   <span class="hl_france">Des synchronisations manuelles.</span>
+-   <span class="hl">Des synchronisations manuelles.</span>
 
-<span class="hl_france">Il est difficile d’envisager ici tous les cas
-et modes de synchronisation, car l’objectif traité dans ces paragraphes
-n’est pas de préconiser « comment faire » mais de s’adapter aux systèmes
+<span class="hl">Il est difficile d’envisager ici tous les cas et modes
+de synchronisation, car l’objectif traité dans ces paragraphes n’est pas
+de préconiser « comment faire » mais de s’adapter aux systèmes
 existants. </span>
 
-<span class="hl_france">Il faudra donc envisager des adaptations au cas
-par cas, à formaliser dans le cadre de la contractualisation entre les
+<span class="hl">Il faudra donc envisager des adaptations au cas par
+cas, à formaliser dans le cadre de la contractualisation entre les
 intervenants. Il est important de rappeler que ces accords particuliers
 devront traiter de façon explicite et détaillée les différents cas
 d’erreur qui pourront intervenir :</span>
 
--   <span class="hl_france">Impossibilité de consulter les référentiels
-    à la date et/ou l’heure prévue</span>
+-   <span class="hl">Impossibilité de consulter les référentiels à la
+    date et/ou l’heure prévue</span>
 
--   <span class="hl_france">Identification d’une incohérence de
-    référentiel en exploitation, alors que le système est
-    utilisé,</span>
+-   <span class="hl">Identification d’une incohérence de référentiel en
+    exploitation, alors que le système est utilisé,</span>
 
--   <span class="hl_france">Modification tardive du référentiel par
+-   <span class="hl">Modification tardive du référentiel par
     l’exploitant,</span>
 
--   <span class="hl_france">Etc.</span>
+-   <span class="hl">Etc.</span>
 
-<span class="hl_france">Un tel mécanisme peut sembler attrayant, et il
-peut être tentant de le pérenniser. Il faut toutefois bien garder à
-l'esprit que s'il est pertinent pour deux systèmes en communication, il
-est beaucoup plus délicat à mettre en place pour un grand nombre de
-systèmes du fait de la problématique de mise à jour et de
-synchronisation qu'il implique: on a en effet un nombre d'échanges à
-prévoir égal à N\*(N-1) où N est le nombre de systèmes (donc 20
-synchronisations quotidiennes pour 5 systèmes -.). </span>
+<span class="hl">Un tel mécanisme peut sembler attrayant, et il peut
+être tentant de le pérenniser. Il faut toutefois bien garder à l'esprit
+que s'il est pertinent pour deux systèmes en communication, il est
+beaucoup plus délicat à mettre en place pour un grand nombre de systèmes
+du fait de la problématique de mise à jour et de synchronisation qu'il
+implique: on a en effet un nombre d'échanges à prévoir égal à N\*(N-1)
+où N est le nombre de systèmes (donc 20 synchronisations quotidiennes
+pour 5 systèmes -.). </span>
 
-<span class="hl_france">Et, même si l’on a qu’un fournisseur et N
-clients, il est clair que la mise en place d’un référentiel spécifique à
+<span class="hl">Et, même si l’on a qu’un fournisseur et N clients, il
+est clair que la mise en place d’un référentiel spécifique à
 l’information temps réel ne permettra pas la mise en place de systèmes
 d’information complets permettant à l’utilisateur de passer sans
 difficulté de l’information théorique à l’information temps
 réel.</span>
 
-<span class="hl_france">La convergence vers un référentiel commun reste
-donc importante.</span>
+<span class="hl">La convergence vers un référentiel commun reste donc
+importante.</span>
 
 #### <span class="hl">Réponses aux InfoChannelRequest</span>
 
-<span class="hl_france">Tous les champs étant obligatoires, il n'y a
-pas d'adaptation au cadre du profil France (on définit tout de même les
+<span class="hl">Tous les champs étant obligatoires, il n'y a pas
+d'adaptation au cadre du profil France (on définit tout de même les
 codes possibles : « Perturbation », « Information » ou « Commercial »).
 </span>
 
-<span class="hl_france">On peut toutefois noter que le champ
-«</span>**<span class="hl_france"> icon </span>**<span
-class="hl_france">» pourra souvent rester vide.</span>
+<span class="hl">On peut toutefois noter que le champ «</span>**<span
+class="hl"> icon </span>**<span class="hl">» pourra souvent rester
+vide.</span>
 
-*<u><span class="hl_france">Note</span></u>*<span class="hl_france">:
-voir la description du service de messagerie pour plus de
-précisions.</span>
+*<u><span class="hl">Note</span></u>*<span class="hl">: voir la
+description du service de messagerie pour plus de précisions.</span>
 
 #### <span class="hl">Réponses aux FacilityRequest</span>
 
-<span class="hl_france">Dans le cadre du profil France :</span>
+<span class="hl">Dans le cadre du profil France :</span>
 
 -   <span class="hl">le champ facultatif « Monitored » sera toujours
     présent et égal à « true » (inutile de traiter les équipements pour
@@ -2711,251 +2899,234 @@ précisions.</span>
 -   <span class="hl">Le champ facultatif «Facility» sera toujours
     présent</span>
 
-    -   <span class="hl_france">Le champ facultatif «</span>**<span
-        class="hl_france">FacilityRef</span>**<span
-        class="hl_france">» ne sera jamais présent (déjà disponible au
-        niveau supérieur)</span>
+    -   <span class="hl">Le champ facultatif «</span>**<span
+        class="hl">FacilityRef</span>**<span class="hl">» ne sera
+        jamais présent (déjà disponible au niveau supérieur)</span>
 
-    -   <span class="hl_france">Le champ facultatif «</span>**<span
-        class="hl_france">Description</span>**<span
-        class="hl_france">» reste facultatif</span>
+    -   <span class="hl">Le champ facultatif «</span>**<span
+        class="hl">Description</span>**<span class="hl">» reste
+        facultatif</span>
 
-    -   <span class="hl_france">Le champ facultatif «</span>**<span
-        class="hl_france">FacilityClass</span>**<span
-        class="hl_france">» reste facultatif</span>
+    -   <span class="hl">Le champ facultatif «</span>**<span
+        class="hl">FacilityClass</span>**<span class="hl">» reste
+        facultatif</span>
 
-    -   <span class="hl_france">Le champ facultatif «</span>**<span
-        class="hl_france">Feature</span>**<span class="hl_france">»
-        sera toujours présent et instancié</span>
+    -   <span class="hl">Le champ facultatif «</span>**<span
+        class="hl">Feature</span>**<span class="hl">» sera toujours
+        présent et instancié</span>
 
-    -   <span class="hl_france">Le champ facultatif «</span>**<span
-        class="hl_france">FacilityLocation</span>**<span
-        class="hl_france">» sera toujours présent et instancié</span>
+    -   <span class="hl">Le champ facultatif «</span>**<span
+        class="hl">FacilityLocation</span>**<span class="hl">» sera
+        toujours présent et instancié</span>
 
-    -   <span class="hl_france">Les champs facultatifs
-        «</span>**<span class="hl_france">SuitableFor</span>**<span
-        class="hl_france">» et «</span>**<span
-        class="hl_france">NotSuitableFor</span>**<span
-        class="hl_france">» restent facultatifs</span>
+    -   <span class="hl">Les champs facultatifs «</span>**<span
+        class="hl">SuitableFor</span>**<span class="hl">» et
+        «</span>**<span class="hl">NotSuitableFor</span>**<span
+        class="hl">» restent facultatifs</span>
 
-    -   <span class="hl_france">Le champ facultatif «</span>**<span
-        class="hl_france">Extension</span>**<span class="hl_france">»
-        ne sera jamais présent </span>
+    -   <span class="hl">Le champ facultatif «</span>**<span
+        class="hl">Extension</span>**<span class="hl">» ne sera jamais
+        présent </span>
 
 <span class="hl">Les valeurs possibles pour ces différents champs
 seront celles proposées par SIRI, mais pourront être réduites aux
 valeurs jugées pertinentes dans le contexte France lors de
-l’implémentation du service </span><span class="hl_france">, par
-exemple pour «</span>**<span
-class="hl_france">SuitableFor</span>**<span class="hl_france">» et
-«</span>**<span class="hl_france">NotSuitableFor</span>**<span
-class="hl_france">» on trouvera des possibilités comme :</span>
+l’implémentation du service , par exemple pour «</span>**<span
+class="hl">SuitableFor</span>**<span class="hl">» et «</span>**<span
+class="hl">NotSuitableFor</span>**<span class="hl">» on trouvera des
+possibilités comme :</span>
 
--   <span class="hl_france">auditory,</span>
+-   <span class="hl">auditory,</span>
 
--   <span class="hl_france">wheelChair</span>
+-   <span class="hl">wheelChair</span>
 
--   <span class="hl_france">motorizedWheelChair</span>
+-   <span class="hl">motorizedWheelChair</span>
 
--   <span class="hl_france">mobility</span>
+-   <span class="hl">mobility</span>
 
--   <span class="hl_france">visual</span>
+-   <span class="hl">visual</span>
 
--   <span class="hl_france">cognitive</span>
+-   <span class="hl">cognitive</span>
 
--   <span class="hl_france">psychiatric</span>
+-   <span class="hl">psychiatric</span>
 
--   <span class="hl_france">incapacitingdisease</span>
+-   <span class="hl">incapacitingdisease</span>
 
--   <span class="hl_france">youngPassenger</span>
+-   <span class="hl">youngPassenger</span>
 
--   <span class="hl_france">luggageEncumbered</span>
+-   <span class="hl">luggageEncumbered</span>
 
--   <span class="hl_france">stroller</span>
+-   <span class="hl">stroller</span>
 
--   <span class="hl_france">elderly</span>
+-   <span class="hl">elderly</span>
 
--   <span class="hl_france">otherSpecificNeed</span>
+-   <span class="hl">otherSpecificNeed</span>
 
 ## Gestion des versions du profil SIRI FR
 
-<span class="hl_france">L’évolution des normes et du profil SIRI France
-dans le temps necessite de définir les règles permettant d’identifier la
+<span class="hl">L’évolution des normes et du profil SIRI France dans
+le temps necessite de définir les règles permettant d’identifier la
 version d’un profil France SIRI. </span>
 
-<span class="hl_france">A un instant t, il existera plusieurs versions
-du profil qui s'appuieront sur différentes versions de SIRI.</span>
+<span class="hl">A un instant t, il existera plusieurs versions du
+profil qui s'appuieront sur différentes versions de SIRI.</span>
 
-<span class="hl_france">Une compatibilité ascendante devra être assurée
-entre les versions du profil. Il n'y a par contre aucune garantie de
+<span class="hl">Une compatibilité ascendante devra être assurée entre
+les versions du profil. Il n'y a par contre aucune garantie de
 compatibilité "descendante" : on peut assurer qu'un client de version
 antérieure puisse toujours s'adresser à un serveur de version
 postérieure, mais l'inverse ne peut être réalisé.</span>
 
-<span class="hl_france">Le profil SIRI France intègre un mécanisme de
-gestion de version qui a plusieurs objectifs:</span>
+<span class="hl">Le profil SIRI France intègre un mécanisme de gestion
+de version qui a plusieurs objectifs:</span>
 
--   <span class="hl_france">Permettre à un serveur de savoir suivant
-    quel profil il doit répondre à une requête client (en supportant
+-   <span class="hl">Permettre à un serveur de savoir suivant quel
+    profil il doit répondre à une requête client (en supportant
     plusieurs versions ou en redirigeant les requêtes et donc sans
     contraindre tout les clients à changer de version en même temps que
     lui) ;</span>
 
--   <span class="hl_france">Permettre à un serveur de signaler à un
-    client qu'il ne supporte pas la version demandée (plutôt que de lui
+-   <span class="hl">Permettre à un serveur de signaler à un client
+    qu'il ne supporte pas la version demandée (plutôt que de lui
     répondre avec une erreur) ;</span>
 
--   <span class="hl_france">Permettre à un client de gérer les réponses
-    d'un serveur d'une version antérieure.</span>
+-   <span class="hl">Permettre à un client de gérer les réponses d'un
+    serveur d'une version antérieure.</span>
 
-<span class="hl_france">Le principe de gestion de version est simple :
-il s'appuie sur les identifiants de version proposés par SIRI dans les
+<span class="hl">Le principe de gestion de version est simple : il
+s'appuie sur les identifiants de version proposés par SIRI dans les
 en-têtes de toutes les requêtes de service (ce champ est disponible pour
 chacune des </span>***<span
-class="hl_france">xxxxRequestStructure</span>***<span
-class="hl_france"> sous la forme d'un attribut nommé </span>***<span
-class="hl_france">Version</span>***<span class="hl_france">) ainsi que
-de chacune des réponses correspondantes (ce champs est disponible pour
-chacune des </span>***<span class="hl_france">xxxxDeliveryStructure,
-</span>***<span class="hl_france">là aussi sous la forme d'un attribut
-nommé </span>***<span class="hl_france">Version</span>***<span
-class="hl_france">). </span>
+class="hl">xxxxRequestStructure</span>***<span class="hl"> sous la
+forme d'un attribut nommé </span>***<span
+class="hl">Version</span>***<span class="hl">) ainsi que de chacune
+des réponses correspondantes (ce champs est disponible pour chacune des
+</span>***<span class="hl">xxxxDeliveryStructure, </span>***<span
+class="hl">là aussi sous la forme d'un attribut nommé </span>***<span
+class="hl">Version</span>***<span class="hl">). </span>
 
-<u><span class="hl_france">Note</span>**<span
-class="hl_france">:</span>**</u><span class="hl_france"> il s'agit
-bien ici de l'attribut </span>**<span
-class="hl_france">Version</span>**<span class="hl_france"> au niveau
-des services et non de l'attribut que l'on trouve sur la racine
-</span>**<span class="hl_france">Siri</span>**<span
-class="hl_france"> du schéma, cette dernière n'étant pas accessible dans
-le cadre des échanges SOAP.</span>
+<u><span class="hl">Not</span><span class="hl">e</span>**<span
+class="hl">:</span>**</u><span class="hl"> i</span><span
+class="hl">l s'agit bien ici de l'attribut </span>**<span
+class="hl">Version</span>**<span class="hl"> au niveau des services et
+non de l'attribut que l'on trouve sur la racine </span>**<span
+class="hl">Siri</span>**<span class="hl"> du schéma, cette dernière
+n'étant pas accessible dans le cadre des échanges SOAP.</span>
 
 La codification de version proposée par SIRI est de la forme x.y :
 
 -   x constitue le numéro de version majeure, soit en l'occurrence la
     version de la norme (TS précédemment),
 
--   y constitue le numéro de version mineure: <span
-    class="hl">il</span><span class="hl_france"> est potentiellement
-    suivi d'une lettre (la lettre est facultative précise éventuellement
-    la version de l'XSD utilisée, on aura par exemple une version
-    </span>***<span class="hl_france">2.1n</span>***<span
-    class="hl_france"> pour indiquer la version </span>***<span
-    class="hl_france">21</span>***<span class="hl_france"> de Siri et
-    la version </span>***<span class="hl_france">n</span>***<span
-    class="hl_france"> de l'XSD correspondant.</span>
+-   y constitue le numéro de version mineure: <span class="hl">il est
+    potentiellement suivi d'une lettre (la lettre est facultative
+    précise éventuellement la version de l'XSD utilisée, on aura par
+    exemple une version </span>***<span
+    class="hl">2.1n</span>***<span class="hl"> pour indiquer la
+    version </span>***<span class="hl">21</span>***<span class="hl">
+    de Siri et la version </span>***<span
+    class="hl">n</span>***<span class="hl"> de l'XSD
+    correspondant.</span>
 
 Par exemple pour SIRI 1, les versions 1.0, 1.2, 1.3 et 1.4, et pour SIRI
 2, la version 2.1 est actuellement disponible.
 
-<span class="hl_france">La codification de la version de profil se fait
-de la façon suivante : </span>***<span
-class="hl_france">x.y:FR-a.b-c-d </span>***<span
-class="hl_france">(par exemple "</span>*<span
-class="hl_france">2.1:FR-1.0</span>*<span class="hl_france">").
-</span>
+<span class="hl">La codification de la version de profil se fait de la
+façon suivante : </span>***<span class="hl">x.y:FR-a.b-c-d
+</span>***<span class="hl">(par exemple "</span>*<span
+class="hl">2.1:FR-1.0</span>*<span class="hl">"). </span>
 
--   ***<span class="hl_france">x.y</span>***<span class="hl_france">
-    étant la version de SIRI (obligatoire): le </span>**<span
-    class="hl_france">x</span>**<span class="hl_france"> est un entier
-    et les </span>**<span class="hl_france">y</span>**<span
-    class="hl_france"> est un entier potentiellement suivi d'une
-    lettre.</span>
+-   ***<span class="hl">x.y</span>***<span class="hl"> étant la
+    version de SIRI (obligatoire): le </span>**<span
+    class="hl">x</span>**<span class="hl"> est un entier et les
+    </span>**<span class="hl">y</span>**<span class="hl"> est un
+    entier potentiellement suivi d'une lettre.</span>
 
--   ***<span class="hl_france">: </span>***<span
-    class="hl_france">est un délimiteur obligatoire</span>
+-   ***<span class="hl">: </span>***<span class="hl">est un
+    délimiteur obligatoire</span>
 
--   ***<span class="hl_france">FR</span>***[<span class="hl_france">
-    le digramme de la France (ISO 3166-1 alpha-2)
+-   ***<span class="hl">FR</span>***[<span class="hl"> le digramme de
+    la France (ISO 3166-1 alpha-2)
     (obligatoire)</span>](http://fr.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 
--   ***<span class="hl_france">- </span>***<span
-    class="hl_france">est un délimiteur obligatoire</span>
+-   ***<span class="hl">- </span>***<span class="hl">est un
+    délimiteur obligatoire</span>
 
--   ***<span class="hl_france">a.b</span>***<span class="hl_france">
-    est la version du profil (obligatoire). </span>***<span
-    class="hl_france">a </span>***<span
-    class="hl_france">et</span>***<span class="hl_france">
-    b</span>***<span class="hl_france"> sont des chiffres entiers.
-    </span>
+-   ***<span class="hl">a.b</span>***<span class="hl"> est la version
+    du profil (obligatoire). </span>***<span class="hl">a
+    </span>***<span class="hl">et</span>***<span class="hl">
+    b</span>***<span class="hl"> sont des chiffres entiers. </span>
 
--   ***<span class="hl_france">- </span>***<span
-    class="hl_france">est un délimiteur facultatif (doit être omis si ni
-    </span>**<span class="hl_france">c</span>**<span
-    class="hl_france"> ni </span>**<span
-    class="hl_france">d</span>**<span class="hl_france"> ne sont
-    présents, obligatoire sinon)</span>
+-   ***<span class="hl">- </span>***<span class="hl">est un
+    délimiteur facultatif (doit être omis si ni </span>**<span
+    class="hl">c</span>**<span class="hl"> ni </span>**<span
+    class="hl">d</span>**<span class="hl"> ne sont présents,
+    obligatoire sinon)</span>
 
--   **<span class="hl_france">c </span>**<span class="hl_france">est
-    le numéro de version du service concerné (facultatif). Il est
-    constitué d'un ou deux caractères numériques. Il permettra
-    d'identifier des possibles ajustements futurs spécifiques à ce
-    service.</span>
+-   **<span class="hl">c </span>**<span class="hl">est le numéro de
+    version du service concerné (facultatif). Il est constitué d'un ou
+    deux caractères numériques. Il permettra d'identifier des possibles
+    ajustements futurs spécifiques à ce service.</span>
 
--   ***<span class="hl_france">- </span>***<span
-    class="hl_france">est un délimiteur facultatif (doit être omis si
-    </span>**<span class="hl_france">d</span>**<span
-    class="hl_france"> n'est pas présent, mais est impératif si
-    </span>**<span class="hl_france">d</span>**<span
-    class="hl_france"> est présent)</span>
+-   ***<span class="hl">- </span>***<span class="hl">est un
+    délimiteur facultatif (doit être omis si </span>**<span
+    class="hl">d</span>**<span class="hl"> n'est pas présent, mais est
+    impératif si </span>**<span class="hl">d</span>**<span
+    class="hl"> est présent)</span>
 
--   **<span class="hl_france">d </span>**<span class="hl_france">est
-    le numéro de version le l'implémentation locale (numéro de version
-    logicielle du serveur SNCF, Transdev, RATP, Keolis, du relais,
-    etc.). </span>**<span class="hl_france">d</span>**<span
-    class="hl_france"> est constitué de chiffres et de "."
-    uniquement.</span>
+-   **<span class="hl">d </span>**<span class="hl">est le numéro de
+    version le l'implémentation locale (numéro de version logicielle du
+    serveur SNCF, Transdev, RATP, Keolis, du relais, etc.).
+    </span>**<span class="hl">d</span>**<span class="hl"> est
+    constitué de chiffres et de "." uniquement.</span>
 
-<span class="hl_france">Les exemples ci-dessous sont valides au titre
-de cette codification :</span>
+<span class="hl">Les exemples ci-dessous sont valides au titre de cette
+codification :</span>
 
--   <span class="hl_france">2.1:FR-1.0</span>
+-   <span class="hl">2.1:FR-1.0</span>
 
--   <span class="hl_france">2.0:FR-1.0-1</span>
+-   <span class="hl">2.0:FR-1.0-1</span>
 
 ### Modalité d'utilisation des versions
 
-<span class="hl_france">Les principales règles d'utilisation des
-versions sont les suivantes. Soit deux versions de profil N et N+ (N+
-étant une version postérieure à N).</span>
+<span class="hl">Les principales règles d'utilisation des versions sont
+les suivantes. Soit deux versions de profil N et N+ (N+ étant une
+version postérieure à N).</span>
 
--   <span class="hl_france">Un client N peut s'adresser à un serveur
-    N+. Le serveur N+ peut alors :</span>
+-   <span class="hl">Un client N peut s'adresser à un serveur N+. Le
+    serveur N+ peut alors :</span>
 
-    -   <span class="hl_france">(</span>*<span
-        > class="hl_france">solution non recommandée</span>*<span
-        > class="hl_france">) Indiquer qu'il ne supporte pas cette
-        > version en utilisant le code d'erreur </span>***<span
-        > class="hl_france">CapabilityNotSupportedError</span>***<span
-        > class="hl_france"> en précisant dans le champ
+    -   <span class="hl">(</span>*<span class="hl">solution non
+        > recommandée</span>*<span class="hl">) Indiquer qu'il ne
+        > supporte pas cette version en utilisant le code d'erreur
         > </span>***<span
-        > class="hl_france">CapabilityRef</span>***<span
-        > class="hl_france"> le numéro de version qui a été demandé
-        > (donc N ici)</span>
+        > class="hl">CapabilityNotSupportedError</span>***<span
+        > class="hl"> en précisant dans le champ </span>***<span
+        > class="hl">CapabilityRef</span>***<span class="hl"> le
+        > numéro de version qui a été demandé (donc N ici)</span>
 
-    -   <span class="hl_france">adapter sa réponse pour la rendre
-        > conforme à la version N</span>
+    -   <span class="hl">adapter sa réponse pour la rendre conforme à
+        > la version N</span>
 
-    -   <span class="hl_france">Transférer la requête à un serveur en
-        > version N (le "transfert" peut, techniquement, être réalisé de
-        > différentes façons, comme l'</span>*<span
-        > class="hl_france">URL Forwarding</span>*<span
-        > class="hl_france">, mais ceci relève du choix d'implémentation
-        > technique).</span>
+    -   <span class="hl">Transférer la requête à un serveur en version
+        > N (le "transfert" peut, techniquement, être réalisé de
+        > différentes façons, comme l'</span>*<span class="hl">URL
+        > Forwarding</span>*<span class="hl">, mais ceci relève du
+        > choix d'implémentation technique).</span>
 
--   <span class="hl_france">Un client N+ ne peut pas s'adresser à un
-    serveur N en demandant la version N+ (le serveur ne supportant pas
-    cette version N+). Si toutefois cela se produisait et que le serveur
-    soit en mesure de décoder la requête sans générer d'erreur, il est
+-   <span class="hl">Un client N+ ne peut pas s'adresser à un serveur N
+    en demandant la version N+ (le serveur ne supportant pas cette
+    version N+). Si toutefois cela se produisait et que le serveur soit
+    en mesure de décoder la requête sans générer d'erreur, il est
     recommandé de répondre qu'il ne supporte pas cette version en
     utilisant le code d'erreur </span>***<span
-    class="hl_france">CapabilityNotSupportedError</span>***<span
-    class="hl_france"> en précisant dans le champ </span>***<span
-    class="hl_france">CapabilityRef</span>***<span class="hl_france">
-    le numéro de version qui a été demandé (donc N+ ici) </span>
+    class="hl">CapabilityNotSupportedError</span>***<span class="hl">
+    en précisant dans le champ </span>***<span
+    class="hl">CapabilityRef</span>***<span class="hl"> le numéro de
+    version qui a été demandé (donc N+ ici) </span>
 
--   <span class="hl_france">Un client N+ peut s'adresser à un serveur N
-    en demandant la version N. La réponse lui est alors retournée en
+-   <span class="hl">Un client N+ peut s'adresser à un serveur N en
+    demandant la version N. La réponse lui est alors retournée en
     version N.</span>
 
 *<u>Note</u>*: Cette gestion de version n'est en rien incompatible avec
@@ -2971,9 +3142,9 @@ mérite d'être précisée car elle est légèrement différente suivant qu'on
 les utilise dans le service StopMonitoring ou le service
 VehicleMonitoring.</span>
 
-| SM-11 | <span class="hl">Le « PreviousCall » n'a pas été retenu par le profil France et ne doit donc pas être utilisé.</span>                                                                                                                                                                         |
-|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SM-12 | <span class="hl">Le « MonitoredCall» correspond à l'arrêt pour lequel on a fait l'interrogation (et n'est donc en aucun cas lié à la position du véhicule). Les « OnwardCall » correspondent alors à tous les arrêts suivant ce « MonitoredCall» dans le cadre des courses concernées.</span> |
+| SM-11  | <span class="hl">Le « PreviousCall » n'a pas été retenu par le profil France et ne doit donc pas être utilisé.</span>  |
+|--|--|
+| SM-12  | <span class="hl">Le « MonitoredCall» correspond à l'arrêt pour lequel on a fait l'interrogation (et n'est donc en aucun cas lié à la position du véhicule). Les « OnwardCall » correspondent alors à tous les arrêts suivant ce « MonitoredCall» dans le cadre des courses concernées.</span>  |
 
 <span class="hl">Dans le cas du service VehicleMonitoring le
 « MonitoredCall» correspond au dernier arrêt marqué ou à l'arrêt où se
@@ -2995,8 +3166,8 @@ et leurs types restent en anglais, car c'est ainsi qu'on les retrouvera
 dans l'échange XML) et précisant l'utilisation des différents champs, le
 maintien ou non de leur caractère facultatif, etc.
 
--   <span class="hl_france">Les éléments retenus pour le profil sont
-    surlignés en Gris</span><span class="hl">.</span>
+-   <span class="hl">Les éléments retenus pour le profil sont surlignés
+    en jaune.</span>
 
 -   Les éléments non retenus pour le profil sont en <span
     class="hl_delete">texte masqué surligné bleu</span>
@@ -3047,87 +3218,60 @@ des protocoles d’accord en tre AOT et OTP.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Attributes</em></td>
 <td colspan="2"><em><strong><span class="hl">Version</span></strong></em></td>
 <td>1:1</td>
 <td><em>VersionString</em></td>
 <td>Version du service “ Estimated Timetable”, intégrant le numéro de version de profil (voir 5.7) par exemple - ‘2.1:FR-1.0’</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Endpoint Properties</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date d'émission de la requête.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
-<p><strong><span class="hl_france">1:1</span></strong></p></td>
+<p><strong><span class="hl">1:1</span></strong></p></td>
 <td><em>MessageQualifier</em></td>
 <td>Numéro d'identification du message</td>
 </tr>
-<tr class="even">
-<td rowspan="6"><em>Topic</em></td>
+<tr>
+<td rowspan="5"><em>Topic</em></td>
 <td colspan="2"><em><strong><span class="hl">Preview­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td>Si ce paramètre est présent, il indique que l'on souhaite recevoir des informations sur toute course proposant au moins une arrivée ou un départ intervenant dans la durée indiquée (à partir de l’heure de réception de la requête). S’il n’est pas présent, toutes les informations disponibles sur la journée d'exploitation sont remontées.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Timetable­VersionRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:string</em></td>
 <td>Version du référenciel théorique connue : seuls les écarts par rapport à ce référentiel seront transmis.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Operator</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Operator­Code</em></td>
+<td><em>➜Operator­Code</em></td>
 <td>Identifie l’exploitant pour lequel on souhaite obtenir des informations<em>.</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Lines</span></strong></em></td>
 <td>0:*</td>
 <td><em>LineDirection</em></td>
 <td>Liste des lignes contenant les courses pour lesquelles on souhaite des informations.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
+<tr>
+<td rowspan="1"></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Line­Code</em></td>
+<td><em>➜Line­Code</em></td>
 <td>Identifie la ligne pour laquelle on souhaite obtenir des informations.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td>any</td>
 <td colspan="2"><span class="hl">Extensions</span></td>
 <td>0:1</td>
@@ -3146,12 +3290,12 @@ structurelles des services).
 Le tableau ci-dessous précise les conditions de notification pour
 EstimatedTimetable.
 
-| **N**                                                                                                                                                                                          | **Commentaire**                                                                                                            |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| Changement (incluant une première inscription dans le champ) d'une des heures de passage d'une valeur supérieure ou égale à ***ChangeBeforeUpdate*** par rapport à la précédente notification. | Notification différentielle (uniquement des ***Call*** concernés par ces changements) similaire à celle de StopMonitoring. |
-| Lorsque le véhicule quitte l'arrêt (sauf pour le dernier arrêt)                                                                                                                                | Notification en positionnant le champ ***DepartureStatus*** à "*departed"*.                                                |
-| A minima pour le dernier arrêt (et si possible pour tous les arrêts), lorsque le véhicule arrive à l'arrêt                                                                                     | Notification en positionnant le champ ***VehicleAtStop*** à *VRAI*                                                         |
-| En cas de changement de quai                                                                                                                                                                   | Notification en positionnant les informations relatives au quai.                                                           |
+| **N**  | **Commentaire**  |
+|--|--|
+| Changement (incluant une première inscription dans le champ) d'une des heures de passage d'une valeur supérieure ou égale à ***ChangeBeforeUpdate*** par rapport à la précédente notification.  | Notification différentielle (uniquement des ***Call*** concernés par ces changements) similaire à celle de StopMonitoring.  |
+| Lorsque le véhicule quitte l'arrêt (sauf pour le dernier arrêt)  | Notification en positionnant le champ ***DepartureStatus*** à "*departed"*.  |
+| A minima pour le dernier arrêt (et si possible pour tous les arrêts), lorsque le véhicule arrive à l'arrêt  | Notification en positionnant le champ ***VehicleAtStop*** à *VRAI*  |
+| En cas de changement de quai  | Notification en positionnant les informations relatives au quai.  |
 
 <table>
 <colgroup>
@@ -3169,41 +3313,41 @@ EstimatedTimetable.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
 <td><em><strong><span class="hl">Subscriber­Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
-<td><em>→Participant­Code</em></td>
+<p><span class="hl">1:1</span></p></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur (voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Subscription­Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identifiant de l'abonnement pour le système demandeur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Lease</em></td>
 <td><em><strong><span class="hl">Initial­Termination­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTIme</em></td>
 <td>Date et heure de fin de l'abonnement : un abonnement a forcément une date et heure de fin (les partenaires pourront décider de limiter la durée maximale d’un abonnement).</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Request</em></td>
 <td><em><strong><span class="hl">Estimated­Timetable­Request </span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>voir EstimatedTimetable­Request.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Policy</em></td>
 <td><em><strong><span class="hl">Change­Before­Update</span></strong></em></td>
 <td>1:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td><p>Permet d'indiquer un écart de temps en dessous duquel on ne souhaite pas être notifié (si l'on demande un seuil de 5mn et qu'un horaire de départ change de 2mn, on ne sera pas notifié, évitant ainsi des flux d'information inutiles).</p>
-<p><span class="hl_france">Si ce champ n'est pas présent, une valeur de </span><strong><span class="hl_france">5mn</span></strong><span class="hl_france"> est prise par défaut.</span>C’est une valeur « par défaut », qui est volontairement haute pour ne pas surcharger les échanges : dans le cas nominal elle devra être précisée avec une valeur plus faible (mais tous les systèmes ne fonctionnent pas à la minute, surtout côté client).</p>
+<p><span class="hl">Si ce champ n'est pas présent, une valeur de </span><strong><span class="hl">5mn</span></strong><span class="hl"> est prise par défaut.</span>C’est une valeur « par défaut », qui est volontairement haute pour ne pas surcharger les échanges : dans le cas nominal elle devra être précisée avec une valeur plus faible (mais tous les systèmes ne fonctionnent pas à la minute, surtout côté client).</p>
 <p><span class="hl_france">Dans le cadre des échanges avec un concentrateur la valeur par défaut est de </span><strong><span class="hl_france">1mn</span></strong><span class="hl_france">.</span></p>
 <p><span class="hl">De plus il est important de noter que l'abonnement à Estimated Timetable fonctionne exclusivement en mode </span><strong><span class="hl">incrémental</span></strong><span class="hl"> : ce service est en effet conçu pour les échanges en volume, et ne pas utiliser le mode incrémental serait complètement contreproductif par rapport à l'objectif de limiter les volumes d'échange.</span></p></td>
 </tr>
@@ -3212,12 +3356,12 @@ EstimatedTimetable.
 
 ### Réponse aux requêtes d’horaires calculés sur la ligne
 
-| **<span class="hl">EstimatedTimetableDelivery</span>** |                                                              |      | *+Structure*     | Décrit une *Dated Timetables*. (horaire pour un jour d’application donné)                                              |
-|----------------------------------------------------------|--------------------------------------------------------------|------|------------------|------------------------------------------------------------------------------------------------------------------------|
-| *Attributes*                                             | ***<span class="hl">version</span>***                      | 1:1  | *Version­String* | Numéro de version du service *Estimated Timetable*, intégrant le numéro de version de profil (voir 5.7) (valeur fixe). |
-| *LEADER*                                                 | ***::***                                                     | 1:1  | *xxx­Delivery*   | voir xxx**Delivery**.                                                                                                  |
-| *Payload*                                                | ***<span class="hl">EstimatedJourneyVersionFrame</span>*** | 0:\* | *+Structure*     | voir EstimatedJourneyVersionFrame element.                                                                             |
-| *any*                                                    | ***Extensions***                                             | 0:1  | *+Structure*     | Emplacement pour extension utilisateur (cf 5.4.2.2)                                                                    |
+| **<span class="hl">EstimatedTimetableDelivery</span>**  |  |  | *+Structure*  | Décrit une *Dated Timetables*. (horaire pour un jour d’application donné)  |
+|--|--|--|--|--|
+| *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *Version­String*  | Numéro de version du service *Estimated Timetable*, intégrant le numéro de version de profil (voir 5.7) (valeur fixe).  |
+| *LEADER*  | ***::***  | 1:1  | *xxx­Delivery*  | voir xxx**Delivery**.  |
+| *Payload*  | ***<span class="hl">EstimatedJourneyVersionFrame</span>***  | 0:\*  | *+Structure*  | voir EstimatedJourneyVersionFrame element.  |
+| *any*  | ***Extensions***  | 0:1  | *+Structure*  | Emplacement pour extension utilisateur (cf 5.4.2.2)  |
 
 ### Structure EstimatedJourneyVersionFrame
 
@@ -3237,22 +3381,22 @@ EstimatedTimetable.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Log</em></td>
 <td><strong><span class="hl">Recorded­AtTime</span></strong></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et heure à laquelles ces données ont été produites.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Identity</em></td>
 <td><strong><span class="hl">VersionRef</span></strong></td>
 <td>0:1</td>
-<td><em>→VersionCode</em></td>
+<td><em>➜VersionCode</em></td>
 <td><p>Contexte d'identification de la course (SAE pour le jour d'exploitation, version du référentiel de données, etc.).</p>
 <p>Ce champ permet de qualifier la version des données de référence ie version du référentiel théorique (voir 2.4).</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Journeys</em></td>
 <td><em><strong><span class="hl">EstimatedVehicleJourney</span></strong></em></td>
 <td>1:*</td>
@@ -3260,14 +3404,7 @@ EstimatedTimetable.
 <td><p>Description des courses sur l’itinéraire.</p>
 <p>Voir EstimatedVehicleJourney element.</p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td>any</td>
 <td><strong><span class="hl">Extensions</span></strong></td>
 <td>0:1</td>
@@ -3304,66 +3441,66 @@ EstimatedTimetable.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="9"><em>Vehicle Journey Identity</em></td>
 <td colspan="6"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="2"><em>→LineCode</em></td>
+<td colspan="2"><em>➜LineCode</em></td>
 <td colspan="3">Identifiant de la ligne.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="6"><em><strong><span class="hl">DirectionRef</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="2"><em>→Direction­Code</em></td>
+<td colspan="2"><em>➜Direction­Code</em></td>
 <td colspan="3"><p>Identifie la direction (typiquement Aller/Retour).</p>
 <p><span class="hl">La sélection de ce champ n’est pas dans la logique du reste du profil (plutôt porté sur Destination, voir plus bas) mais est maintenu du fait de la cardinalité imposée par SIRI</span> (le champ est obligatoire dans la description XSD de SIRI et doit donc être maintenu, il pourra toutefois être laissé vide, sans que cela ne pose problème…)</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="6"></td>
 <td colspan="2"></td>
 <td colspan="2"><em>choice</em></td>
 <td colspan="3">Seul le choix <em>a, b</em> ou <em>c</em> est possible …</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong>a</strong></em></td>
 <td colspan="4"><em><strong><span class="hl">Dated­Vehicle­Journey­Ref</span></strong></em></td>
 <td colspan="2" rowspan="2">–1:1</td>
-<td colspan="3"><em>→DatedVehicle­Journey­Code</em></td>
+<td colspan="3"><em>➜DatedVehicle­Journey­Code</em></td>
 <td colspan="2"><p>Identifie la course.</p>
-<p>Cette information est obligatoire dans le cadre des échanges avec un concentrateur.</p></td>
+<p><span class="hl_france">Cette information est obligatoire dans le cadre des échanges avec un concentrateur.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2" rowspan="5"><em><strong>b</strong></em></td>
 <td colspan="4"><em><strong><span class="hl">Dated­Vehicle­Journey­Indirect­Ref</span></strong></em></td>
 <td colspan="3"><em>+Structure</em></td>
 <td colspan="2"><span class="hl">Si les systèmes en communication n’ont pas de référentiel commun pour identifier les courses, la structure ci-dessous permet de la décrire succinctement.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3" rowspan="4"></td>
 <td><em><strong><span class="hl">Origin­Ref</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="3"><em>→StopPoint­Code</em></td>
+<td colspan="3"><em>➜StopPoint­Code</em></td>
 <td colspan="2"><span class="hl">Identifiant du premier point d’arrêt de la course.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Aimed­Departure­Time</span></strong></em></td>
 <td colspan="2">1:1</td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td colspan="2"><span class="hl">Heure de depart (théorique) au premier point d’arrêt.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Destination­Ref</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="3"><em>→StopPoint­Code</em></td>
+<td colspan="3"><em>➜StopPoint­Code</em></td>
 <td colspan="2"><span class="hl">Identifiant du dernier point d’arrêt de la course.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Aimed­Arrival­Time</span></strong></em></td>
 <td colspan="2">1:1</td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td colspan="2"><span class="hl">Heure d’arrivée (théorique) au dernier point d’arrêt.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong>c</strong></em></td>
 <td colspan="4"><em><strong><span class="hl">Estimated</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Code</span></strong></em></td>
@@ -3371,9 +3508,9 @@ EstimatedTimetable.
 <td colspan="3"><em>Estimated­Vehicle­Journey­Code</em></td>
 <td colspan="2"><p><span class="hl">Permet d’identifier une nouvelle course (course ajoutée par rapport aux horaires théoriques).</span></p>
 <p><span class="hl">Si ce champ est présent,. </span><em><strong><span class="hl">ExtraJourney</span></strong></em><span class="hl"> doit être positionné à ‘true’ (et réciproquement…).</span></p>
-<p>Cette information est obligatoire (si une course a été ajoutée) dans le cadre des échanges avec un concentrateur. Dans le cas ou l'adjonction de course ne peut être détectée, la structure <em><strong>Dated­Vehicle­Journey­Ref</strong></em> sera remplie comme pour les autres courses.</p></td>
+<p><span class="hl_france">Cette information est obligatoire (si une course a été ajoutée) dans le cadre des échanges avec un concentrateur. Dans le cas ou l'adjonction de course ne peut être détectée, la structure </span><em><strong><span class="hl_france">Dated­Vehicle­Journey­Ref </span></strong></em><span class="hl_france">sera remplie comme pour les autres courses.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Change</em></td>
 <td colspan="6"><em><strong><span class="hl">ExtraJourney</span></strong></em></td>
 <td colspan="2">0:1</td>
@@ -3381,93 +3518,55 @@ EstimatedTimetable.
 <td colspan="3"><p><span class="hl">Signale qu’il s’agit d’une nouvelle course, ajoutée par rapport aux horaires théoriques.</span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="6"><em><strong><span class="hl">Cancellation</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>xsd:boolean</em></td>
 <td colspan="3"><p><span class="hl">Signale la suppression de la course identifiée.</span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Journey­Pattern Info</em></td>
 <td colspan="6"><em><strong><span class="hl">:::</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>Journey­Pattern­Info­Group</em></td>
 <td colspan="3">Voir Journey­Pattern­Info­Group.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>JourneyEndNames</em></td>
 <td colspan="6"><em><strong><span class="hl">:::</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>JourneyEndNamesGroup</em></td>
 <td colspan="3">Voir JourneyEndNamesGroup</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>VehicleJourneyInfo</em></td>
 <td colspan="6"><em><strong><span class="hl">:::</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>VehicleJourneyInfoGroup</em></td>
 <td colspan="3">Voir VehicleJourneyInfoGroup</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Service Info</em></td>
 <td colspan="6"><em><strong><span class="hl">:::</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>Service­Info­Group</em></td>
 <td colspan="3">Voir Service­Info­Group.</td>
 </tr>
-<tr class="odd">
-<td rowspan="8"><em>Journey Info</em></td>
+<tr>
+<td rowspan="2"><em>Journey Info</em></td>
 <td colspan="6"><em><strong><span class="hl">Vehicle­Journey­Name</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>NLString</em></td>
 <td colspan="3"><span class="hl">Nom commercial de la course.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="6"><em><strong><span class="hl">JourneyNote</span></strong></em></td>
 <td colspan="2">0:*</td>
 <td colspan="2"><em>NLString</em></td>
 <td colspan="3"><span class="hl">Texte complémentaire décrivant la course.</span></td>
 </tr>
-<tr class="odd">
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="odd">
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="even">
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="even">
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="4"><em>Estimated­Info</em></td>
 <td colspan="6"><em><strong><span class="hl">Headway­Service</span></strong></em></td>
 <td colspan="2">0:1</td>
@@ -3475,33 +3574,33 @@ EstimatedTimetable.
 <td colspan="3"><p><span class="hl">Indique si la course est gérée dans un contexte d’exploitation (ou d’information seulement) en fréquence.</span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="6"><em><strong><span class="hl_france">Origin­Aimed­Departure­Time</span></strong></em></td>
+<tr>
+<td colspan="6"><em><strong><span class="hl">Origin­Aimed­Departure­Time</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>xsd:date­Time</em></td>
 <td colspan="3"><span class="hl">Heure théorique de départ de la course à son point de départ.</span></td>
 </tr>
-<tr class="odd">
-<td colspan="6"><em><strong><span class="hl_france">Destination</span>­<span class="hl_france">Aimed­Arrival</span>­<span class="hl_france">Time</span></strong></em></td>
+<tr>
+<td colspan="6"><em><strong><span class="hl">Destination</span>­<span class="hl">Aimed­Arrival</span>­<span class="hl">Time</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>xsd:date­Time</em></td>
 <td colspan="3"><span class="hl">Heure théorique d'arrivée de la course à son point de d'arrivée.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="6"><em><strong><span class="hl">FirstOrLastJourney</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>FirstOrLastJourneyEnum</em></td>
 <td colspan="3"><p><span class="hl">Indique s'il s'agit de la première ou de la dernière course de la journée d'exploitation sur la ligne, et pour une destination donnée. L'interprétation comme "première ou dernière course pour une mission donnée" est acceptable, mais devra être précisée dans les spécifications d'interface du serveur (et le JourneyPatterInfoGroup devra alors être renseigné).</span></p>
-<p>(firstServiceOfDay | lastServiceOfDay | otherService | unspecified).</p></td>
+<p>(firstServiceOfDay  | lastServiceOfDay  | otherService  | unspecified).</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Disruption­Group</em></td>
 <td colspan="6"><em><strong>:::</strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>Disrupt­ion­Group</em></td>
 <td colspan="3">Voir Disruption­Group -</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Journey­Progress­Info</em></td>
 <td colspan="6"><em><strong>:::</strong></em></td>
 <td colspan="2">0:1</td>
@@ -3509,79 +3608,49 @@ EstimatedTimetable.
 <td colspan="3"><p>voir Journey­Progress­Info­Group.</p>
 <p>DetailLevel: normal.</p></td>
 </tr>
-<tr class="odd">
-<td rowspan="4"></td>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="even">
-<td rowspan="3"></td>
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="odd">
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="even">
-<td colspan="5"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="8"><em>Opera­tional­Info</em></td>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="6"><em><strong><span class="hl">TrainNumber</span></strong></em></td>
 <td colspan="2">0:*</td>
 <td colspan="2"><em>sequence</em></td>
 <td colspan="3"><span class="hl">Séquence de numéro de train (l'utilisation d'une sequence permet notament de gérer les trains couples)</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="5"><em><strong><span class="hl">TrainNumberRef</span></strong></em></td>
 <td colspan="2">1:1</td>
-<td colspan="2"><em>→TrainNumber</em></td>
+<td colspan="2"><em>➜TrainNumber</em></td>
 <td colspan="3"><p><span class="hl">Numéro de train</span></p>
 <p><span class="hl">On utilisera en priorité la codification de code primaire UE 454/2011 ou le numéro de train UIC </span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="6"><em><strong><span class="hl">JourneyParts</span></strong></em></td>
 <td colspan="2">0:*</td>
 <td colspan="2"><em>sequence</em></td>
 <td colspan="3"><p>Liste des parties de course concernée par les Call ci-dessous.</p>
 <p><span class="hl">Dans le cadre du profil France on utilisera ces sous-ensembles de courses exclusivement pour porter la parité des trains (avec possibilité de changer de parité en cours de course).</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="4"></td>
 <td colspan="5"><em><strong><span class="hl">JourneyPart­Info</span></strong></em></td>
 <td colspan="2">1:1</td>
 <td colspan="2"><em>+Structure</em></td>
 <td colspan="3">Information sur les parties de course</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3" rowspan="2"></td>
 <td colspan="2"><em><strong><span class="hl">Journey­PartRef</span></strong></em></td>
 <td colspan="2">0:1</td>
-<td colspan="2"><em>→JourneyPart­Code</em></td>
+<td colspan="2"><em>➜JourneyPart­Code</em></td>
 <td colspan="3"><p><span class="hl">Dans le cadre du profil France ce champ permettra d'identifier les portions de courses exploitées par des opérateurs différents : les valeurs d'identification des JourneyPart sont des données de référence qui devront être fixées en amont de l'échange.</span></p>
 <p><span class="hl">Exemple de Ile de France : cas du RER, les portions de courses exploitées par la RATP et celles exploitées par la SNCF</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Train­NumberRef</span></strong></em></td>
 <td colspan="2">0:1</td>
-<td colspan="2"><em>→TrainNumbere</em></td>
+<td colspan="2"><em>➜TrainNumbere</em></td>
 <td colspan="3"><p><span class="hl">Dans le cadre du profil France ce champ sera suffixé, pour la SNCF, des code suivants:</span></p>
 <ul>
 <li><p><span class="hl">:2 pour les trains de parité paire</span></p></li>
@@ -3589,37 +3658,29 @@ EstimatedTimetable.
 </ul>
 <p><span class="hl">L'association à une JourneyPart permet de gérer les changements de parité en cours de course. Si la parité est invariable, une seule JourneyPart sera définie.</span></p>
 <p><span class="hl">Si le numéro de train n'est pas connu mais que la parité doit tout de même être échangée, ce champ contiendra "</span><em><strong><span class="hl">unknown:1</span></strong></em><span class="hl">" ou "</span><em><strong><span class="hl">unknown:2</span></strong></em><span class="hl">".</span></p>
-<p><span class="hl">Si les identifiants de JourneyPart n'ont pas été échangés mais que la parité doit tout de même être échangée, le champ précédent (JourneyPartRef, qui est obligatoire) prendra la valeur arbitraire de "</span><em><strong><span class="hl">unknown</span></strong></em><span class="hl">".</span></p></td>
+<p><span class="hl">Si les identifiants de JourneyPart n'ont pas été échangés mais que la parité doit tout de même être échangée, le champ précédent (JourneyPartRef, qui est obligatoire) prendra la valeur arbitraire de "</span><em><strong><span class="hl">unknownss</span></strong></em><span class="hl">".</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
+<tr>
+
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="4"><em>Calls</em></td>
-<td colspan="6"></td>
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td colspan="3"></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em><strong>a</strong></em></td>
 <td colspan="6"><em><strong><span class="hl">Estimated­Calls</span></strong></em></td>
 <td colspan="2"><em>0:1</em></td>
 <td colspan="3"><em>+Structure</em></td>
 <td>Description ordonnée des arrêts et heures de passage.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"></td>
 <td colspan="4"><em><strong><span class="hl">Estimated­Call</span></strong></em></td>
 <td colspan="2"><em>1:*</em></td>
 <td colspan="3"><em>+Structure</em></td>
 <td>Voir EstimatedCall.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="6"><em><strong><span class="hl">IsComplete­Stop­Sequence</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td colspan="2"><em>xsd:boolean</em></td>
@@ -3628,7 +3689,7 @@ EstimatedTimetable.
 <p><span class="hl">En mode abonnement, le mode différentiel étant appliqué, la séquence d'arrêt sera régulièrement incomplète.</span></p>
 <p>Il faut noter que cette indication ne concerne que les passages à échoir et non les passages déjà échus.</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="6"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td colspan="2">0:1</td>
@@ -3657,336 +3718,191 @@ EstimatedTimetable.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td rowspan="4"><em>Stop Identity</em></td>
+<tr>
+<td rowspan="3"><em>Stop Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
-<td><em>→StopPoint­Code</em></td>
+<p><span class="hl">1:1</span></p></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><span class="hl">Identifiant du Point d'arrêt (cet identifiant est à rapprocher de l’attribut </span><em><span class="hl">MonitoringRef</span></em><span class="hl"> de la structure </span><em><span class="hl">MonitoredStopVisit</span></em><span class="hl">, mais restreint à ce cas de point d’arrêt là ou le </span><em><span class="hl">MonitoringRef</span></em><span class="hl"> peut aussi, dans le contexte général de SIRI, </span><del><span class="hl">,</span></del><span class="hl"> référencer un afficheur, par exemple).</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+
+<tr>
 <td colspan="2"><em><strong><span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td>Numéro d'ordre de l'arrêt dans la mission.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Nom du point d'arrêt.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Change</em></td>
 <td colspan="2"><em><strong><span class="hl">ExtraCall</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td>Signale si cet arrêt a été ajouté sur la course (par rapport aux horaires théoriques).</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Cancellation</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p>La valeur « true » signale que, contrairement à ce que prévoyaient les horaires théoriques, cet arrêt n’est plus desservi.</p>
 <p>Valeur par défaut : « false »</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Occupancy</span></strong></em></td>
 <td>0:1</td>
-<td><em>full | seats­Available | standing­Available | unknown | empty | manySeatAvailable | fewSeatAvailable | standingRoomOnly | crushStandingRoomOnly | notAcceptingPassengers</em></td>
+<td><em>full  | seats­Available  | standing­Available  | unknown  | empty  | manySeatAvailable  | fewSeatAvailable  | standingRoomOnly  | crushStandingRoomOnly  | notAcceptingPassengers</em></td>
 <td><p>How full the vehicle is at the stop. Enumeration. If omitted: <strong>Occupancy</strong> is as for journey. Enumeration.</p>
 <p><span class="hl">Indique le niveau d’occupation du vehicule à l’arrêt. Ne permet pas de distinguer le taux d’occupation par voiture.</span></p>
 <p><span class="hl">On utilisera les attributs au niveau de la course </span></p>
 <p><span class="hl">Valeur par défaut « Unknown »</span></p>
 <p><span class="hl">Valeurs issues du CR17.</span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="2"><em>Call Realtime Group</em></td>
+<tr>
+<td rowspan="1"><em>Call Realtime Group</em></td>
 <td colspan="2"><em><strong><span class="hl">VehicleAt</span>­<span class="hl">Stop</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p><span class="hl">Indicateur “Véhicule à l’arrêt”.</span></p>
 <p><span class="hl">Valeur par défaut : « false»</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
+<tr>
+<td rowspan="2"><em>Call Rail Group</em></td>
 </tr>
-<tr class="even">
-<td rowspan="3"><em>Call Rail Group</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Platform­Traversal</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Platform­Traversal</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p><span class="hl">La valeur « true » permet de signaler le passage d'un train sans arrêt (et de demander au voyageur de s'écarter des voies)</span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="4"><em>Call Property</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
+<td><em>Call Property</em></td>
 <td colspan="2"><em><strong><span class="hl">Destination­Display</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>Disruption­Group</em></td>
 <td colspan="2"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Disrupt­ion­Group</em></td>
 <td><span class="hl">Voir Disruption­Group.</span></td>
 </tr>
-<tr class="odd">
-<td rowspan="12"><em>Arrival</em></td>
+<tr>
+<td rowspan="7"><em>Arrival</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed</span>­<span class="hl">Arrival­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Heure d'arrivée théorique (ou commandée).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Expected</span>­<span class="hl">Arrival­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Heure d'arrivée estimée par le SAE.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Arrival</span>­<span class="hl">Status</span></strong></em></td>
 <td>0:1</td>
-<td><em>onTime | missed | arrived | notExpected | | delayed | early | cancelled | noReport</em></td>
+<td><em>onTime  | missed  | arrived  | notExpected  |  | delayed  | early  | cancelled  | noReport</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire d'arrivée attendu (ou mesuré si le véhicule est à quai).</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ArrivalProximity­Text</span></strong></em></td>
 <td>0:*</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Texte libre à présenter quand le véhicule est proche, par exemple "à l'approche". </span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Arrival­PlatformName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Identification ou nom du quai d'arrivée.</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ArrivalStopAssignment</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Affectation du point d'arrêt planifié à un quay</span></td>
 </tr>
-<tr class="even">
-<td rowspan="4"></td>
+<tr>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
 <td><em><strong><span class="hl">Aimed­­QuayName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Indication de la voie d'arrivée (en complément de Platform)</span><em><span class="hl">. </span></em></td>
+
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="7"><em>Departure</em></td>
+<tr>
+<td rowspan="2"><em>Departure</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed</span>­<span class="hl">Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Heure de départ théorique (ou commandée).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Expected­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Heure de départ estimée par le SAE.</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="14"><em>Departure Status</em></td>
+<tr>
+<td rowspan="7"><em>Departure Status</em></td>
 <td colspan="2"><em><strong><span class="hl">Departure</span>­<span class="hl">Status</span></strong></em></td>
 <td>0:1</td>
-<td><em>onTime | early | delayed | cancelled | arrived |departed | notExpected | noReport</em></td>
+<td><em>onTime  | early  | delayed  | cancelled  | arrived  |departed  | notExpected  | noReport</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+
+<tr>
 <td colspan="2"><em><strong><span class="hl">Departure­Platform</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Identification ou nom du quai de départ.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Departure­Boarding</span>­<span class="hl">Activity</span></strong></em></td>
 <td>0:1</td>
-<td><em>boarding | noBoarding | passThru</em></td>
+<td><em>boarding  | noBoarding  | passThru</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</span></p>
 <p><span class="hl">Valeur par défaut : « boarding »</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+
+<tr>
 <td colspan="2"><em><strong><span class="hl">ExpectedDepartureOccupancy</span></strong></em></td>
 <td><span class="hl">0:1</span></td>
 <td><em><span class="hl">+structure</span></em></td>
-<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf § </span><span class="hl"></span></td>
+<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf <a href="#expecteddepartureoccupancy">&</a> </span><span class="hl"></span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ExpectedDepartureCapacity</span></strong></em></td>
 <td>0:1</td>
 <td><em><span class="hl">+structure</span></em></td>
-<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf § </span></td>
+<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf <a href="#structure-expecteddeparturecapacity">&</a> </span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+
+<tr>
 <td colspan="2"><em><strong><span class="hl">Aimed­Headway­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration</em></td>
 <td><span class="hl">Fréquence de passage théorique (ou commandée).</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Estimated­Headway­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration</em></td>
 <td><span class="hl">Fréquence de passage estimée par le SAE.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -4021,107 +3937,107 @@ of Predictions in the Estimated Timetable Service »
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="17"></td>
 <td colspan="2"><em><strong><span class="hl_delete">:::</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">TrainFormation-ReferenceGroup</span></em></td>
 <td><span class="hl_delete">See SIRI Part 2 </span><em><strong><span class="hl_delete">TrainFormationReferenceGroup.</span></strong></em></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">FareClass</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">FareClass-Enumeration</span></em></td>
 <td><span class="hl_delete">Fare class in VEHICLE for which occupancy and capacities are specified.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Passenger-Category</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Adulte, enfant, fauteuil roulant etc.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Occupancy-Level</span></strong></em></td>
 <td>0:1</td>
 <td><em><span class="hl">Occupancy-Enumeration</span></em></td>
 <td><p>Un chiffre approximatif de l'occupation ou du remplissage du VÉHICULE, par ex. ‘manySeatsAvailable’ ou ‘standingRoomOnly’.</p>
 <p>Des données plus précises peuvent être fournies par les occupations ou capacités individuelles ci-dessous.<span class="hl">L’enum ‘occupancy est le suivant :</span></p>
-<p><em><span class="hl">full | seats­Available | standing­Available | unknown | empty | </span><span class="hl_delete">manySeatAvailable | fewSeatAvailable </span><span class="hl">| standingRoomOnly | crushStandingRoomOnly | notAcceptingPassengers</span></em></p></td>
+<p><em><span class="hl">full  | seats­Available  | standing­Available  | unknown  | empty  | </span><span class="hl_delete">manySeatAvailable  | fewSeatAvailable </span><span class="hl">| standingRoomOnly  | crushStandingRoomOnly  | notAcceptingPassengers</span></em></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Occupancy-Percentage</span></strong></em></td>
 <td>0:1</td>
 <td><em>PercentageType</em></td>
 <td>Pourcentage utilisé de la charge utile maximale après le départ du POINT D'ARRÊT PRÉVU.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">AlightingCount</span></strong></em></td>
 <td>0:1</td>
 <td><em>NumberOf-Passengers</em></td>
 <td>Nombre total de passagers descendants pour cette course à ce POINT D'ARRÊT PLANIFIE.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Boarding-Count</span></strong></em></td>
 <td>0:1</td>
 <td><em>NumberOf-Passengers</em></td>
 <td>Nombre total de passagers embarquant pour cette course à ce POINT D'ARRÊT PLANIFIE.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">OnboardCount</span></strong></em></td>
 <td>0:1</td>
 <td><em>NumberOf-Passengers</em></td>
 <td>Nombre total de passagers à bord après le départ du POINT D'ARRÊT planifié.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">SpecialPlaces-Occupied</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">NumberOf-Passengers</span></em></td>
 <td><span class="hl_delete">Total number of special places, e.g. seats for the disabled or lounge seats, that are occupied after departing the SCHEDULED STOP POINT.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">Pushchairs-OnboardCount</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">NumberOf-Passengers</span></em></td>
 <td><span class="hl_delete">Total number of pushchairs on-board after departing the SCHEDULED STOP POINT.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">Wheelchairs-OnboardCount</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">NumberOf-Passengers</span></em></td>
 <td><span class="hl_delete">Total number of wheelchairs on-board after departing the SCHEDULED STOP POINT.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">Prams-OnboardCount</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">xsd:non-NegativeInteger</span></em></td>
 <td><span class="hl_delete">Total number of prams on-board after departing the SCHEDULED STOP POINT.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">Bicycle-OnboardCount</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">xsd:non-NegativeInteger</span></em></td>
 <td><span class="hl_delete">Total number of bicycles on-board, i.e., number of bicycle racks that are occupied after departing the SCHEDULED STOP POINT.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">TotalNumber-OfReserved-Seats</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">NumberOf-Passengers</span></em></td>
 <td><span class="hl_delete">Total number of booked seats from individual and group reservations.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong>Group-Reservation</strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Permet de préciser qu'un groupe de voyage a réservé une section du véhicule pour une partie du trajet, et si oui sous quel nom.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"></td>
 <td><em><strong>NameOf-Group</strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>NLString</em></td>
 <td>Nom pour lequel le groupe de voyage a effectué la réservation.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>NumberOf-Seats</strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>NumberOfPassengers</em></td>
@@ -4132,70 +4048,55 @@ of Predictions in the Estimated Timetable Service »
 
 #### Structure ExpectedDepartureCapacity
 
-| ***Expected-Departure-Capacities*** |                                                              | 0:\*                                 | *+Structure*                                             | Capacités en temps réel (nombre de places disponibles) d'un VEHICULE après le départ d'un arrêt donné. Autre moyen de communiquer les mesures d'occupation. |
-|-------------------------------------|--------------------------------------------------------------|--------------------------------------|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                     | ***:::***                                                    | 0:1                                  | *TrainFormation-ReferenceGroup*                          | See SIRI Part 2 ***TrainFormationReferenceGroup.***                                                                                                         |
-|                                     | ***<span class="hl_delete">FareClass</span>***             | <span class="hl_delete">0:1</span> | *<span class="hl_delete">FareClass-Enumeration</span>* | <span class="hl_delete">Fare class in VEHICLE for which occupancy or capacities are specified.</span>                                                     |
-|                                     | ***Passenger-Category***                                     | 0:1                                  | *NLString*                                               | Adulte, enfant, fauteuil roulant etc.                                                                                                                       |
-|                                     | ***TotalCapacity***                                          | 0:1                                  | *NumberOf-Passengers*                                    | La capacité totale du véhicule en nombre de passagers.                                                                                                      |
-|                                     | ***Seating-Capacity***                                       | 0:1                                  | *NumberOf-Passengers*                                    | Le nombre de places assises du véhicule en nombre de passagers.                                                                                             |
-|                                     | ***Standing-Capacity***                                      | 0:1                                  | *NumberOf-Passengers*                                    | La capacité debout du véhicule en nombre de passagers.                                                                                                      |
-|                                     | ***<span class="hl_delete">SpecialPlace-Capacity</span>*** | <span class="hl_delete">0:1</span> | *<span class="hl_delete">NumberOf-Passengers</span>*   | <span class="hl_delete">The number of special places on the vehicle, e.g. seats for the disabled or lounge seats.</span>                                  |
-|                                     | ***Pushchair-Capacity***                                     | 0:1                                  | *NumberOf-Passengers*                                    | Le nombre de places de poussette sur le véhicule.                                                                                                           |
-|                                     | ***Wheelchair-PlaceCapacity***                               | 0:1                                  | *NumberOf-Passengers*                                    | Le nombre de places en fauteuil roulant sur le véhicule.                                                                                                    |
-|                                     | ***PramPlace-Capacity***                                     | 0:1                                  | *xsd:nonnegative-Integer*                                | Le nombre de places sur le véhicule adaptées aux poussettes.                                                                                                |
-|                                     | ***BicycleRack-Capacity***                                   | 0:1                                  | *xsd:nonnegative-Integer*                                | Le nombre de porte-vélos sur le véhicule.                                                                                                                   |
+| ***Expected-Departure-Capacities***  |  | 0:\*  | *+Structure*  | Capacités en temps réel (nombre de places disponibles) d'un VEHICULE après le départ d'un arrêt donné. Autre moyen de communiquer les mesures d'occupation.  |
+|--|--|--|--|--|
+|  | ***:::***  | 0:1  | *TrainFormation-ReferenceGroup*  | See SIRI Part 2 ***TrainFormationReferenceGroup.***  |
+|  | ***<span class="hl_delete">FareClass</span>***  | <span class="hl_delete">0:1</span>  | *<span class="hl_delete">FareClass-Enumeration</span>*  | <span class="hl_delete">Fare class in VEHICLE for which occupancy or capacities are specified.</span>  |
+|  | ***Passenger-Category***  | 0:1  | *NLString*  | Adulte, enfant, fauteuil roulant etc.  |
+|  | ***TotalCapacity***  | 0:1  | *NumberOf-Passengers*  | La capacité totale du véhicule en nombre de passagers.  |
+|  | ***Seating-Capacity***  | 0:1  | *NumberOf-Passengers*  | Le nombre de places assises du véhicule en nombre de passagers.  |
+|  | ***Standing-Capacity***  | 0:1  | *NumberOf-Passengers*  | La capacité debout du véhicule en nombre de passagers.  |
+|  | ***<span class="hl_delete">SpecialPlace-Capacity</span>***  | <span class="hl_delete">0:1</span>  | *<span class="hl_delete">NumberOf-Passengers</span>*  | <span class="hl_delete">The number of special places on the vehicle, e.g. seats for the disabled or lounge seats.</span>  |
+|  | ***Pushchair-Capacity***  | 0:1  | *NumberOf-Passengers*  | Le nombre de places de poussette sur le véhicule.  |
+|  | ***Wheelchair-PlaceCapacity***  | 0:1  | *NumberOf-Passengers*  | Le nombre de places en fauteuil roulant sur le véhicule.  |
+|  | ***PramPlace-Capacity***  | 0:1  | *xsd:nonnegative-Integer*  | Le nombre de places sur le véhicule adaptées aux poussettes.  |
+|  | ***BicycleRack-Capacity***  | 0:1  | *xsd:nonnegative-Integer*  | Le nombre de porte-vélos sur le véhicule.  |
 
 ## Stop Monitoring
 
-| SM-1 | <span class="hl_france">La notion de «niveau de détail » (Detail Level) proposée pour ce service par SIRI n'est pas retenue pour le profil SIRI France.</span> |
-|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SM-1  | <span class="hl">La notion de «niveau de détail » (Detail Level) proposée pour ce service par SIRI n'est pas retenue pour le profil SIRI France.</span>  |
+|--|--|
 
 ### Matrice de capacité
 
-| SM-2 | <span class="hl_france">Cette matrice n'est pas échangée dans le cadre du profil France :</span> |
-|------|----------------------------------------------------------------------------------------------------|
+| SM-2  | <span class="hl">Cette matrice n'est pas échangée dans le cadre du profil France :</span>  |
+|--|--|
 
-<span class="hl_france">Cette,matrice est présentée ici pour indiquer
-les principales fonctions retenues pour le service (les explications ne
-sont pas traduites dans ce tableau, mais on retrouve les traductions
-dans les tableaux qui suivent).</span>
+<span class="hl">Cette,matrice est présentée ici pour indiquer les
+principales fonctions retenues pour le service (les explications ne sont
+pas traduites dans ce tableau, mais on retrouve les traductions dans les
+tableaux qui suivent).</span>
 
-|                      |                                                                |                                      |
-|----------------------|----------------------------------------------------------------|--------------------------------------|
-| ***TopicFiltering*** |                                                                |                                      |
-|                      | ***<span class="hl_france">DefaultPreview­Interval</span>*** | <span class="hl_france">Oui</span> |
-|                      | ***<span class="hl_france">FilterByMonitoring­Ref</span>***  | <span class="hl_france">Oui</span> |
-|                      | ***<span class="hl_france">FilterByLineRef</span>***         | <span class="hl_france">Oui</span> |
-|                      |                                                                |                                      |
-|                      | ***<span class="hl_france">FilterByDestination</span>***     | <span class="hl_france">Oui</span> |
-|                      |                                                                |                                      |
+|  |  |  |
+|--|--|--|
+| ***TopicFiltering***  |  |  |
+|  | ***<span class="hl">DefaultPreview­Interval</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">FilterByMonitoring­Ref</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">FilterByLineRef</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">FilterByDestination</span>***  | <span class="hl">Oui</span>  |
 
-|                             |                                                                      |                                      |
-|-----------------------------|----------------------------------------------------------------------|--------------------------------------|
-| ***RequestPolicy***         |                                                                      |                                      |
-|                             |                                                                      |                                      |
-| <span class="hl">a</span> | ***<span class="hl_france">GmlCoordinateFormat</span>***           | <span class="hl_france">Oui</span> |
-|                             |                                                                      |                                      |
-|                             | ***<span class="hl_france">UseReferences</span>***                 | <span class="hl_france">Oui</span> |
-|                             | ***<span class="hl_france">UseNames</span>***                      | <span class="hl_france">Oui</span> |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             | ***<span class="hl_france">HasMinimum­StopVisits­PerLine</span>*** | <span class="hl_france">Oui</span> |
-|                             | ***<span class="hl_france">HasNumberOf­OnwardsCalls</span>***      | <span class="hl_france">Oui</span> |
-|                             |                                                                      |                                      |
-| ***SubscriptionPolicy***    |                                                                      |                                      |
-|                             | ***<span class="hl_france">HasIncremental­Updates</span>***        | <span class="hl_france">Oui</span> |
-|                             | ***<span class="hl_france">HasChangeSensitivity</span>***          | <span class="hl_france">Oui</span> |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
-|                             |                                                                      |                                      |
+|  |  |  |
+|--|--|--|
+| ***RequestPolicy***  |  |  |
+| <span class="hl">a</span>  | ***<span class="hl">GmlCoordinateFormat</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">UseReferences</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">UseNames</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">HasMinimum­StopVisits­PerLine</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">HasNumberOf­OnwardsCalls</span>***  | <span class="hl">Oui</span>  |
+| ***SubscriptionPolicy***  |  |  |
+|  | ***<span class="hl">HasIncremental­Updates</span>***  | <span class="hl">Oui</span>  |
+|  | ***<span class="hl">HasChangeSensitivity</span>***  | <span class="hl">Oui</span>  |
+
 
 ### Requête d'information temps réel au point d'arrêt
 
@@ -4229,8 +4130,8 @@ Note concernant la granularité des objets interrogés :
 
 -   <span class="hl">une Zone d'Embarquement</span>
 
-| SM-3 | <span class="hl">Toutefois il n'y a pas d'obligation pour un serveur de supporter tous ces niveaux </span>(sauf pour les concentrateurs pour lesquels le Lieu d’arrêt est obligatoire)<span class="hl">: il conviendra donc de s'assurer que le serveur sollicité reconnait bien le niveau requis </span> |
-|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SM-3  | <span class="hl">Toutefois il n'y a pas d'obligation pour un serveur de supporter tous ces niveaux </span><span class="hl_france">(sauf pour les concentrateurs pour lesquels le Lieu d’arrêt est obligatoire)</span><span class="hl">: il conviendra donc de s'assurer que le serveur sollicité reconnait bien le niveau requis </span>  |
+|--|--|
 
 Note concernant les heures de passage :
 
@@ -4253,11 +4154,11 @@ heures de passage:</span>
     base de la progression du véhicule et du commandé (ou modifié en
     cours d'exploitation).</span>
 
-| SM-4 | <span class="hl">Par contre il n'est pas obligatoire de diffuser avant le départ du véhicule l'horaire théorique modifié du jour même ou modifié en cours d'exploitation suite à une régulation. Cette information peut par contre être renseignée dans l' «Expected(Departure/Arrival)Time», le champ étant par la suite mis à jour en fonction de l'avancement du véhicule.</span>                                                                                                                                                                                                                                                |
-|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SM-4 | <span class="hl">En mode requête classique, les heures de passage à l'arrêt ne sont fournies que tant que le véhicule est en amont de l’arrêt ou à l’arrêt ; dès lors qu’il a quitté l’arrêt, aucune information concernant ce véhicule à cet arrêt n'est plus fournie (dans la limite ci-dessous).</span>                                                                                                                                                                                                                                                                                                                          |
-| SM-5 | <span class="hl">En mode abonnement, une notification est envoyée lorsque le véhicule a quitté l’arrêt, en utilisant la structure « MonitoredStopVisitCancellation ». Ceci permet de signaler aux diffuseurs que le prochain passage en question doit être retiré des medias de diffusion (on utilisera donc pas le champ "ActualDepartureTime" à cet effet). En complément, une notification est aussi réalisée lors de l'arrivée au dernier arrêt (il n'y aura en effet pas de notification de départ dans ce cas: on notifiera alors un « MonitoredStopVisitCancellation » au moment de l'arrivée du véhicule à l'arrêt).</span> |
-| SM-6 | <span class="hl">En situation perturbée il peut arriver qu'une information «Expected(Departure/Arrival)Time» soit antérieure à l’heure courante. Toutefois il est précisé qu'en tout état de cause, un temps d’attente inférieur ou égal à 0, induit par une telle information, doit être diffusé comme un temps d’attente égal à 0 (et probablement accompagné d'une indication de retard).</span>                                                                                                                                                                                                                                 |
+| SM-4  | <span class="hl">Par contre il n'est pas obligatoire de diffuser avant le départ du véhicule l'horaire théorique modifié du jour même ou modifié en cours d'exploitation suite à une régulation. Cette information peut par contre être renseignée dans l' «Expected(Departure/Arrival)Time», le champ étant par la suite mis à jour en fonction de l'avancement du véhicule.</span>  |
+|--|--|
+| SM-4  | <span class="hl">En mode requête classique, les heures de passage à l'arrêt ne sont fournies que tant que le véhicule est en amont de l’arrêt ou à l’arrêt ; dès lors qu’il a quitté l’arrêt, aucune information concernant ce véhicule à cet arrêt n'est plus fournie (dans la limite ci-dessous).</span>  |
+| SM-5  | <span class="hl">En mode abonnement, une notification est envoyée lorsque le véhicule a quitté l’arrêt, en utilisant la structure « MonitoredStopVisitCancellation ». Ceci permet de signaler aux diffuseurs que le prochain passage en question doit être retiré des medias de diffusion (on utilisera donc pas le champ "ActualDepartureTime" à cet effet). En complément, une notification est aussi réalisée lors de l'arrivée au dernier arrêt (il n'y aura en effet pas de notification de départ dans ce cas: on notifiera alors un « MonitoredStopVisitCancellation » au moment de l'arrivée du véhicule à l'arrêt).</span>  |
+| SM-6  | <span class="hl">En situation perturbée il peut arriver qu'une information «Expected(Departure/Arrival)Time» soit antérieure à l’heure courante. Toutefois il est précisé qu'en tout état de cause, un temps d’attente inférieur ou égal à 0, induit par une telle information, doit être diffusé comme un temps d’attente égal à 0 (et probablement accompagné d'une indication de retard).</span>  |
 
 Note concernant les statuts (avance, retard, etc.):
 
@@ -4265,16 +4166,13 @@ Note concernant les statuts (avance, retard, etc.):
 qualifier l'horaire calculé par rapport à l'horaire planifié. Le tableau
 ci-dessous précise l'usage des différentes valeurs de statuts.</span>
 
-| ***<span class="hl">Statuts</span>*** | ***<span class="hl">ArrivalStatus</span>***                                                                                                                                                                        | ***<span class="hl">DepartureStatus</span>*** |                                                                                                                                                                                                                      |
-|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *<span class="hl">onTime</span>*      | <span class="hl">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>                                   |                                                 | <span class="hl">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>                                   |
-| *<span class="hl">Early</span>*       | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |                                                 | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |
-| *<span class="hl">Delayed</span>*     | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |                                                 | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |
-| *<span class="hl">Cancelled</span>*   | <span class="hl">Passage annulé</span>                                                                                                                                                                             |                                                 | <span class="hl">Passage annulé (note: ce passage annulé reste comptabilisé dans le nombre de passages utilisé dans les filtres de requêtes).</span>                                                               |
-|                                         |                                                                                                                                                                                                                      |                                                 |                                                                                                                                                                                                                      |
-|                                         |                                                                                                                                                                                                                      |                                                 |                                                                                                                                                                                                                      |
-|                                         |                                                                                                                                                                                                                      |                                                 |                                                                                                                                                                                                                      |
-| *<span class="hl">noReport</span>*    | <span class="hl">Pas d’information « ExpectedArrivalTime » disponible (par contre le « AimededArrivalTime » peut être fourni)</span>                                                                               |                                                 | <span class="hl">Pas d’information disponible</span>                                                                                                                                                               |
+| ***<span class="hl">Statuts</span>***  | ***<span class="hl">ArrivalStatus</span>***  | ***<span class="hl">DepartureStatus</span>***  |  |
+|--|--|--|--|
+| *<span class="hl">onTime</span>*  | <span class="hl">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
+| *<span class="hl">Early</span>*  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
+| *<span class="hl">Delayed</span>*  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |  | <span class="hl">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>  |
+| *<span class="hl">Cancelled</span>*  | <span class="hl">Passage annulé</span>  |  | <span class="hl">Passage annulé (note: ce passage annulé reste comptabilisé dans le nombre de passages utilisé dans les filtres de requêtes).</span>  |
+| *<span class="hl">noReport</span>*  | <span class="hl">Pas d’information « ExpectedArrivalTime » disponible (par contre le « AimededArrivalTime » peut être fourni)</span>  |  | <span class="hl">Pas d’information disponible</span>  |
 
 Note concernant les derniers arrêts de course:
 
@@ -4294,9 +4192,9 @@ arrêt d'une course :</span>
 
 Note concernant les cas ou il n'y a pas ou plus d'information:
 
-| SM-7 | <span class="hl">S'il n'y a de réponse à une requête « Stop monitoring » car elle intervient après le dernier passage de la journée, le producteur doit dans la mesure du possible fournir une information via le service « General message ». Il est donc recommandé que le client, s'il n'obtient pas de réponse au « Stop monitoring », fasse dans la foulée une requête au « General message ».</span> |
-|------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SM-8 | <span class="hl">Dans le cas des déviations : pour les arrêts non desservis, il conviendra aussi de fournir une information via le service « Situation Exchange » (SX) (la réponse à « Stop monitoring n'est toutefois pas forcément vide si la déviation est temporaire ») ou le service « General Message » si le SX n’est pas implémenté.</span>                                                        |
+| SM-7  | <span class="hl">S'il n'y a de réponse à une requête « Stop monitoring » car elle intervient après le dernier passage de la journée, le producteur doit dans la mesure du possible fournir une information via le service « General message ». Il est donc recommandé que le client, s'il n'obtient pas de réponse au « Stop monitoring », fasse dans la foulée une requête au « General message ».</span>  |
+|--|--|
+| SM-8  | <span class="hl">Dans le cas des déviations : pour les arrêts non desservis, il conviendra aussi de fournir une information via le service « Situation Exchange » (SX) (la réponse à « Stop monitoring n'est toutefois pas forcément vide si la déviation est temporaire ») ou le service « General Message » si le SX n’est pas implémenté.</span>  |
 
 Note concernant les annulations de passage :
 
@@ -4319,7 +4217,7 @@ l'annulation d'un passage il est précisé que:</span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>SM-10</td>
 <td><p><span class="hl">Mode abonnement</span></p>
 <ul>
@@ -4340,189 +4238,148 @@ l'annulation d'un passage il est précisé que:</span>
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="5"><em><strong><span class="hl_france">StopMonitoringRequest</span></strong></em></td>
+<tr>
+<td colspan="5"><em><strong><span class="hl">StopMonitoringRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Requête pour obtenir des informations temps réel sur les heures d'arrivée et de départ à un point d'arrêt</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Attributes</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Version</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">Version</span></strong></em></td>
 <td>1:1</td>
 <td><em>Version­String</em></td>
 <td>Version du service “Stop Monitoring”, , intégrant le numéro de version de profil par exemple. ‘2.1:FR-1.0’</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Endpoint Properties</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Request­Timestamp</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date d'émission de la requête</td>
 </tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">Message­Identifier</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Numéro d'identification du message</td>
 </tr>
-<tr class="odd">
-<td rowspan="8"><em>Topic</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Preview­Interval</span></strong></em></td>
+<tr>
+<td rowspan="7"><em>Topic</em></td>
+<td colspan="3"><em><strong><span class="hl">Preview­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td>Si ce paramètre est présent, il indique que l'on souhaite recevoir des informations sur toute arrivée et tout départ intervenant dans la durée indiquée (comptée à partir de l'heure indiquée par le paramètre suivant: <em><strong>StartTime</strong></em> -. si le paramètre <em><strong>StartTime</strong></em> n'est pas présent, l'heure courante sera utilisée).</td>
 </tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">StartTime</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">StartTime</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure à partir de laquelle doit être compté le <em><strong>Preview­Interval</strong></em></td>
 </tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">Monitoring­Ref</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Monitoring­Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Monitoring­Code</em></td>
 <td><p>Identifiant du point d'arrêt concerné par la requête.</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objets (arrêt) de référence (</span>Zone d'Embarquement, Lieu d’arrêt multi ou mono modal ou Groupe de Lieux),<span class="hl"> et non d'objet particulier.</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">LineRef</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
+<p><span class="hl_france">0:0</span></p></td>
 <td><em>LineCode</em></td>
 <td><p>Filtre permettant de n'obtenir que les départs et arrivées pour une ligne donnée (dont on fournit l'identifiant)</p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentants (le relai s'informe sur toutes les lignes sans distinction).</p></td>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants (le relai s'informe sur toutes les lignes sans distinction).</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">Destination­Ref</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Destination­Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
+<p><span class="hl_france">0:0</span></p></td>
 <td><em>StopPoint­Code</em></td>
 <td><p>Filtre permettant de n'obtenir que les départs et arrivées ayant une destination donnée (dont on fournit l'identifiant de point d'arrêt)</p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentant (le relai s'informe sur toutes les directions sans distinction).</p></td>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentant (le relai s'informe sur toutes les directions sans distinction).</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">OperatorRef</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">OperatorRef</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
+<p><span class="hl_france">0:0</span></p></td>
 <td><em>Operator­Code</em></td>
 <td><p>Filtre permettant de n'obtenir que les départs et arrivées pour un exploitant donné (dont on fournit l'identifiant)</p>
 <p>Filtre particulièrement utile pour les pôles d'échange</p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentants (le concentrateur).</p></td>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants (le concentrateur).</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">StopVisit­Types</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">StopVisit­Types</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
-<td><em>all | departures | arrivals</em></td>
+<p><span class="hl_france">0:0</span></p></td>
+<td><em>all  | departures  | arrivals</em></td>
 <td><p>Indique si l'on souhaite avoir les départs, les arrivées ou les deux.</p>
-<p><span class="hl_france">Seule la valeur «</span><em><span class="hl_france"> </span><strong><span class="hl_france">departures</span></strong><span class="hl_france"> </span></em><span class="hl_france">» est obligatoire (pour tous les arrêts sauf, naturellement, le dernier de la mission) pour le profil FR, les autres sont optionnelles (à préciser pour chaque implémentation).</span></p>
-<p><span class="hl_france">Si le champ n’est pas renseigné, la valeur par défaut est « </span><em><strong><span class="hl_france">all</span></strong></em><span class="hl_france"> ».</span></p>
-<p><span class="hl_france">Quelques règles de gestion sont précisées:</span></p>
+<p><span class="hl">Seule la valeur «</span><em><span class="hl"> </span><strong><span class="hl">departures</span></strong><span class="hl"> </span></em><span class="hl">» est obligatoire (pour tous les arrêts sauf, naturellement, le dernier de la mission) pour le profil FR, les autres sont optionnelles (à préciser pour chaque implémentation).</span></p>
+<p><span class="hl">Si le champ n’est pas renseigné, la valeur par défaut est « </span><em><strong><span class="hl">all</span></strong></em><span class="hl"> ».</span></p>
+<p><span class="hl">Quelques règles de gestion sont précisées:</span></p>
 <ul>
-<li><p><span class="hl_france">dans le cas du </span><strong><span class="hl_france">StopVisitTypes</span></strong><span class="hl_france"> =</span><strong><span class="hl_france"> </span><em><span class="hl_france">all</span></em></strong><span class="hl_france"> ou </span><em><strong><span class="hl_france">departures</span></strong></em><span class="hl_france">, si l’heure de départ n'est pas connue (pour les SAEIV bus notament) alors l'heure de départ sera renseignée égale à l'heure d’arrivée et les 2 champs sont renseignés</span></p></li>
-<li><p><span class="hl_france">Inversement (pour la SNCF notament), dans le cas du </span><strong><span class="hl_france">StopVisitTypes</span></strong><span class="hl_france"> = </span><em><strong><span class="hl_france">all</span></strong></em><span class="hl_france"> ou </span><em><strong><span class="hl_france">arrivals</span></strong></em><span class="hl_france">, si l’heure d’arrivée n'est pas connue alors l'heure d’arrivée prend la valeur de l'heure de départ et les 2 champs sont renseignés</span></p></li>
+<li><p><span class="hl">dans le cas du </span><strong><span class="hl">StopVisitTypes</span></strong><span class="hl"> =</span><strong><span class="hl"> </span><em><span class="hl">all</span></em></strong><span class="hl"> ou </span><em><strong><span class="hl">departures</span></strong></em><span class="hl">, si l’heure de départ n'est pas connue (pour les SAEIV bus notament) alors l'heure de départ sera renseignée égale à l'heure d’arrivée et les 2 champs sont renseignés</span></p></li>
+<li><p><span class="hl">Inversement (pour la SNCF notament), dans le cas du </span><strong><span class="hl">StopVisitTypes</span></strong><span class="hl"> = </span><em><strong><span class="hl">all</span></strong></em><span class="hl"> ou </span><em><strong><span class="hl">arrivals</span></strong></em><span class="hl">, si l’heure d’arrivée n'est pas connue alors l'heure d’arrivée prend la valeur de l'heure de départ et les 2 champs sont renseignés</span></p></li>
 </ul>
-<p><span class="hl_france">Il faut noter que, pour la gestion des correspondances, l’heure d’arrivée sera particulièrement utile …</span></p>
-<p><span class="hl_france">Ce champ est facultatif (sauf dans le cas des échanges avec les concentrateurs: </span><em><span class="hl_france">voir ci-dessous</span></em><span class="hl_france">), toutefois l'XSD lui définit une valeur par défaut qui est "</span><em><span class="hl_france">all</span></em><span class="hl_france">". S'il n'est pas présent il faut donc le gérer comme s'il était positionné à "</span><em><span class="hl_france">all</span></em><span class="hl_france">".</span></p>
-<p>Dans le cas des échanges avec les concentrateurs, ce filtre ne sera jamais présent et c'est donc avec la valeur par défaut <em><strong>all</strong></em> qu'il faudra l'interpréter.</p></td>
+<p><span class="hl">Il faut noter que, pour la gestion des correspondances, l’heure d’arrivée sera particulièrement utile …</span></p>
+<p><span class="hl">Ce champ est facultatif (sauf dans le cas des échanges avec les concentrateurs: </span><em><span class="hl">voir ci-dessous</span></em><span class="hl">), toutefois l'XSD lui définit une valeur par défaut qui est "</span><em><span class="hl">all</span></em><span class="hl">". S'il n'est pas présent il faut donc le gérer comme s'il était positionné à "</span><em><span class="hl">all</span></em><span class="hl">".</span></p>
+<p><span class="hl_france">Dans le cas des échanges avec les concentrateurs, ce filtre ne sera jamais présent et c'est donc avec la valeur par défaut </span><em><strong><span class="hl_france">all</span></strong></em><span class="hl_france"> qu'il faudra l'interpréter.</span></p></td>
 </tr>
-<tr class="odd">
-<td rowspan="11"><em>Request Policy</em></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">Maximum­StopVisits</span></strong></em></td>
+<tr>
+<td rowspan="5"><em>Request Policy</em></td>
+<td colspan="3"><em><strong><span class="hl">Maximum­StopVisits</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
+<p><span class="hl_france">0:0</span></p></td>
 <td><em>xsd:nonNegativeInteger</em></td>
 <td><p>Nombre maximal d'informations de départ ou d'arrivée que l'on souhaite recevoir sur l’arrêt requêté. Si aucune valeur n’est fournie, toutes les informations disponibles seront remontées.</p>
 <p>De plus « 0 » est une valeur interdite pour ce champ (erreur).</p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentants : pas de limitation du nombre d'informations remontées.</p></td>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants : pas de limitation du nombre d'informations remontées.</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="2" rowspan="2"><em><span class="hl_france">choix</span></em></td>
-<td><em><strong><span class="hl_france">Minimum­StopVisits­PerLine</span></strong></em></td>
+
+<tr>
+<td colspan="2" rowspan="2"><em><span class="hl">choix</span></em></td>
+<td><em><strong><span class="hl">Minimum­StopVisits­PerLine</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
+<p><span class="hl_france">0:0</span></p></td>
 <td><em>xsd:nonNegativeInteger</em></td>
 <td><p>Ce paramètre permet de demander un nombre minimum de réponses par ligne passant à l'arrêt. Cela permet d'éviter que pour un arrêt où passent 2 lignes et pour lesquels on a demandé les quatre prochains passages, on ait bien quatre indications mais sur une seule des deux lignes (les passages sur la seconde ligne intervenant après).</p>
 <p>Dans ce cas, si ce paramètre est fixé à 2 on obtiendra les deux prochains passages sur chacune des lignes.</p>
 <p>Ces passages doivent toutefois rester dans le <em><strong>Preview­Interval</strong></em></p>
-<p><span class="hl">Il est recommandé de ne pas utiliser simultanément </span><em><strong><span class="hl_france">Maximum­StopVisits</span></strong></em><span class="hl_france"> et</span><em><strong><span class="hl_france"> Minimum­StopVisits­PerLine </span></strong></em><span class="hl_france">: si toutefois cela arrivait, le </span><em><strong><span class="hl_france">Maximum­StopVisits</span></strong></em><span class="hl_france"> serait dominé par le </span><em><strong><span class="hl_france"> Minimum­StopVisits­PerLine</span></strong></em><span class="hl_france"> et la liste des informations disponibles pourrait être plus importante que stipulé par </span><em><strong><span class="hl_france">Maximum­StopVisits</span></strong></em><span class="hl_france">.</span></p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentants</p></td>
+<p><span class="hl">Il est recommandé de ne pas utiliser simultanément </span><em><strong><span class="hl">Maximum­StopVisits</span></strong></em><span class="hl"> et</span><em><strong><span class="hl"> Minimum­StopVisits­PerLine </span></strong></em><span class="hl">: si toutefois cela arrivait, le </span><em><strong><span class="hl">Maximum­StopVisits</span></strong></em><span class="hl"> serait dominé par le </span><em><strong><span class="hl"> Minimum­StopVisits­PerLine</span></strong></em><span class="hl"> et la liste des informations disponibles pourrait être plus importante que stipulé par </span><em><strong><span class="hl">Maximum­StopVisits</span></strong></em><span class="hl">.</span></p>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentant</span>s</p></td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">MinimumStop­Visits­PerLine­Via</span></strong></em></td>
-<td><p><span class="hl_france">0:1</span></p>
-<p>0:0</p></td>
-<td><em><span class="hl_france">xsd:nonNegative­Integer</span></em></td>
-<td><p>Ce paramètre permet de demander un nombre minimum de réponses (de passage) par couple Ligne+Via (et donc pour chaque itinéraire identifiable).<span class="hl_france"> Ce paramètre est très similaire à MinimumStopVisitsPerLine mais propose une granularité plus fine (au niveau itinéraire). La notion d'itinéraire n'étant pas toujours explicitement présente dans les systèmes, on pourra interpréter ce paramètre comme une demande de nombre minimum de réponses par itinéraire possible (et par ligne).</span></p>
-<p><u><span class="hl_france">Note</span></u><span class="hl_france">: ce filtre étant à comprendre comme "nombre de passage pour tous les VIA possibles", les VIA ne sont naturellement pas à préciser. </span></p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentants</p></td>
+<tr>
+<td><em><strong><span class="hl">MinimumStop­Visits­PerLine­Via</span></strong></em></td>
+<td><p><span class="hl">0:1</span></p>
+<p><span class="hl_france">0:0</span></p></td>
+<td><em><span class="hl">xsd:nonNegative­Integer</span></em></td>
+<td><p>Ce paramètre permet de demander un nombre minimum de réponses (de passage) par couple Ligne+Via (et donc pour chaque itinéraire identifiable).<span class="hl"> Ce paramètre est très similaire à MinimumStopVisitsPerLine mais propose une granularité plus fine (au niveau itinéraire). La notion d'itinéraire n'étant pas toujours explicitement présente dans les systèmes, on pourra interpréter ce paramètre comme une demande de nombre minimum de réponses par itinéraire possible (et par ligne).</span></p>
+<p><u><span class="hl">Note</span></u><span class="hl">: ce filtre étant à comprendre comme "nombre de passage pour tous les VIA possibles", les VIA ne sont naturellement pas à préciser. </span></p>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">Maximum­Number­Of­Calls</span></strong></em></td>
+
+<tr>
+<td colspan="3"><em><strong><span class="hl">Maximum­Number­Of­Calls</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
+<p><span class="hl_france">0:0</span></p></td>
 <td><em>+Structure</em></td>
 <td><p>Structure permettant de préciser combien d’arrêts suivants ou précédents on souhaite obtenir au maximum (sous réserve de leur disponibilité). Si cette structure facultative n'est pas présente, aucun arrêt suivant ou précédent ne sera retourné.</p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentants : aucune information de type OnwardCall n'est remontée par les concentrateurs.</p></td>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants : aucune information de type OnwardCall n'est remontée par les concentrateurs.</span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Onwards</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Onwards</span></strong></em></td>
 <td><p>0:1</p>
-<p>0:0</p></td>
+<p><span class="hl_france">0:0</span></p></td>
 <td><em>xsd:nonNegativeInteger</em></td>
 <td><p>Nombre maximal d'arrêts suivants souhaités (pour une course donnée).</p>
 <p><span class="hl">Si le paramètre est présent et vaut 0, tous les arrêts seront retournés.</span></p>
 <p>S’il n’est pas fourni et que la balise <em><strong><MaximumNumberOfCalls></strong></em> est présente, tous les arrêts seront remontés.</p>
 <p>S'il n'y a pas de balise <em><strong><MaximumNumberOfCalls></strong></em> aucune information relative aux OnwardCalls n'est remontée.</p>
-<p><span class="hl">Précisions : ces informations ne sont pas comptabilisées pour le traitement des paramètres </span><em><strong><span class="hl_france">Maximum­StopVisits</span></strong></em><span class="hl_france"> et</span><em><strong><span class="hl_france"> Minimum­StopVisits­PerLine qui ne concernent que l'arrêt requêté.</span></strong></em></p>
-<p>Filtre non utilisé entre le relai et ses concentrateurs alimentants: pas de limitation du nombre d'informations remontées.</p></td>
+<p><span class="hl">Précisions : ces informations ne sont pas comptabilisées pour le traitement des paramètres </span><em><strong><span class="hl">Maximum­StopVisits</span></strong></em><span class="hl"> et</span><em><strong><span class="hl"> Minimum­StopVisits­PerLine qui ne concernent que l'arrêt requêté.</span></strong></em></p>
+<p><span class="hl_france">Filtre non utilisé entre le relai et ses concentrateurs alimentants: pas de limitation du nombre d'informations remontées.</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td colspan="3"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td><em>0:1</em></td>
@@ -4534,8 +4391,8 @@ l'annulation d'un passage il est précisé que:</span>
 
 ### Requête multiple d'information temps réel au point d'arrêt en utilisant SOAP
 
-| SM-13 | <span class="hl">Il existe plusieurs façons de réaliser des requêtes d'information temps réel pour plusieurs points d'arrêt. Toutefois seule la solution </span>***<span class="hl">GetSiri</span>***<span class="hl"> (voir ci-dessous) est recommandée par le profil FR, les autres solutions ne pouvant être maintenues que pour compatibilité ascendante.</span> |
-|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SM-13  | <span class="hl">Il existe plusieurs façons de réaliser des requêtes d'information temps réel pour plusieurs points d'arrêt. Toutefois seule la solution </span>***<span class="hl">GetSiri</span>***<span class="hl"> (voir ci-dessous) est recommandée par le profil FR, les autres solutions ne pouvant être maintenues que pour compatibilité ascendante.</span>  |
+|--|--|
 
 Le service SOAP ***GetSiri*** *(introduit par SIRI 2)* est celui qui
 doit être utilisé pour les requêtes multiples d'information temps réel
@@ -4554,55 +4411,55 @@ requête illimitée.
 <col style="width: 55%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>StopMonitoringSubscription</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Requête d'abonnement pour obtenir des informations temps réel sur les heures d'arrivée et de départ à un point d'arrêt</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
-<td><em><strong><span class="hl_france">Subscriber­Ref</span></strong></em></td>
+<td><em><strong><span class="hl">Subscriber­Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>Participant­Code</em></td>
 <td>Identification du système demandeur (voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Subscription</span>­<span class="hl_france">Identifier</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Subscription</span>­<span class="hl">Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identifiant de l'abonnement pour le système demandeur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Lease</em></td>
-<td><em><strong><span class="hl_france">Initial­Termination­Time</span></strong></em></td>
+<td><em><strong><span class="hl">Initial­Termination­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTIme</em></td>
 <td><span class="hl">Date et heure de fin de l'abonnement : un abonnement a forcément une date et heure de fin (les partenaires pourront décider de limiter la durée maximale d’un abonnement)</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Request</em></td>
-<td><em><strong><span class="hl_france">Stop­Monitoring­Request</span></strong></em></td>
+<td><em><strong><span class="hl">Stop­Monitoring­Request</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>voir StopMonitoringRequest (ci-dessus)</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Policy</em></td>
-<td><em><strong><span class="hl">I</span><span class="hl_france">ncremental­Updates</span></strong></em></td>
+<td><em><strong><span class="hl">Incremental­Updates</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p><span class="hl">Indique s’il faut notifier uniquement les changements d'information ou s’il faut systématiquement renvoyer toutes les informations si l'une d'elles change.</span></p>
 <p><span class="hl">Valeur par défaut : « true » (mise à jour incrémentale)</span></p>
-<p>Dans le cadre des échanges avec un concentrateur seul le mode incrémental est supporté.</p></td>
+<p><span class="hl_france">Dans le cadre des échanges avec un concentrateur seul le mode incrémental est supporté.</span></p></td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Change</span>­<span class="hl_france">Before­Updates</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Change</span>­<span class="hl">Before­Updates</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td><p><span class="hl">Permet d'indiquer un écart de temps en dessous duquel on ne souhaite pas être notifié (si l'on demande un seuil de 5mn et qu'un horaire de départ ou d'arrivée change de 2mn, on ne sera pas notifié, évitant ainsi des flux d'information inutiles).</span></p>
-<p><span class="hl_france">Si ce champ n'est pas présent, une valeur de </span><strong><span class="hl_france">5mn</span></strong><span class="hl_france"> est prise par défaut.</span></p>
-<p>Dans le cadre des échanges avec un concentrateur la valeur par défaut est de <strong>1mn</strong>.</p>
+<p><span class="hl">Si ce champ n'est pas présent, une valeur de </span><strong><span class="hl">5mn</span></strong><span class="hl"> est prise par défaut.</span></p>
+<p><span class="hl_france">Dans le cadre des échanges avec un concentrateur la valeur par défaut est de </span><strong><span class="hl_france">1mn</span></strong><span class="hl_france">.</span></p>
 <p><span class="hl">C’est une valeur « par défaut », qui est volontairement haute pour ne pas surcharger les échanges : dans le cas nominal elle devra être précisée avec une valeur plus faible (mais tous les systèmes ne fonctionnent pas à la minute, surtout côté client).</span></p>
 <p><span class="hl">Ce champ est facultatif car son implémentation peut s'avérer délicate pour certains systèmes : s'il n'est pas disponible, les spécifications d'interface du serveur SIRI devront préciser les valeurs et comportements implémentés.</span></p></td>
 </tr>
@@ -4623,11 +4480,11 @@ dès que :
 
 ### Résultat de la requête d'information temps réel au point d'arrêt
 
-|                                           |                                                                 |      |                        |                                          |
-|-------------------------------------------|-----------------------------------------------------------------|------|------------------------|------------------------------------------|
-| ***ServiceDelivery***                     |                                                                 |      | *+Structure*           | voir SIRI Part 7.2***ServiceDelivery***  |
-| *<span class="hl_france">HEADER</span>* | :::                                                             | 1:1  | *Voir ServiceDelivery* |                                          |
-| *Payload*                                 | ***<span class="hl_france">Stop­Monitoring­Delivery</span>*** | 0:\* | *+Structure*           | Voir StopMonitoringDelivery ci- dessous. |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| ***ServiceDelivery***  |  |  | *+Structure*  | voir SIRI Part 7.2***ServiceDelivery***  |
+| *<span class="hl">HEADER</span>*  | :::  | 1:1  | *Voir ServiceDelivery*  |  |
+| *Payload*  | ***<span class="hl">Stop­Monitoring­Delivery</span>***  | 0:\*  | *+Structure*  | Voir StopMonitoringDelivery ci- dessous.  |
 
 #### Attributs temps réel du point d'arrêt
 
@@ -4640,27 +4497,27 @@ dès que :
 <col style="width: 47%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>StopMonitoringDelivery</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Delivery for Stop Monitoring Service.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Attributes</em></td>
-<td><em><strong><span class="hl_france">version</span></strong></em></td>
+<td><em><strong><span class="hl">version</span></strong></em></td>
 <td>1:1</td>
 <td><em>Version­String</em></td>
 <td>Numéro de version du service <em>Stop Monitoring</em>, intégrant le numéro de version de profil (voir 5.7).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>LEADER</td>
-<td><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td><em><strong><span class="hl">:::</span></strong></em></td>
 <td>:::</td>
 <td><em>xxx­Delivery</em></td>
 <td>Voir paragraphe 2.3</td>
 </tr>
-<tr class="even">
-<td rowspan="10"><em>Pay­load</em></td>
+<tr>
+<td rowspan="3"><em>Pay­load</em></td>
 <td><em><strong><span class="hl_france">MonitoringRef</span></strong></em></td>
 <td><p>0:*</p>
 <p><span class="hl">1:1</span></p></td>
@@ -4668,61 +4525,21 @@ dès que :
 <td><p>Identifiant du point d'arrêt concerné par la requête.</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objets (arrêt) de référence (Zone d'Embarquement, , Lieu d'Arrêt ou Groupe de Lieux, Point d’), et non d'objet particulier.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Monitored­Stop</span>­<span class="hl_france">Visit</span></strong></em></td>
+
+<tr>
+<td><em><strong><span class="hl">Monitored­Stop</span>­<span class="hl">Visit</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Description des passages à l'arrêt</td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Monitored­Stop­Visit­Cancellation</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Monitored­Stop­Visit­Cancellation</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Indication qu'un passage précédemment signalé ne doit plus être affiché (indique généralement que le véhicule a franchi l'arrêt).</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+
+<tr>
 <td><em>any</em></td>
 <td><em><span class="hl">Extensions</span></em></td>
 <td><em>0:1</em></td>
@@ -4744,76 +4561,44 @@ dès que :
 <col style="width: 44%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="4"><em><strong><span class="hl_france">MonitoredStopVisit</span></strong></em></td>
+<tr>
+<td colspan="4"><em><strong><span class="hl">MonitoredStopVisit</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Description du passage d'un véhicule à un arrêt (dans le cadre d'une course)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Recorded­At</span>­<span class="hl_france">Time</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">Recorded­At</span>­<span class="hl">Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Heure à laquelle la donnée a été mise à jour</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Identity</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Item</span>­<span class="hl_france">Identifier</span><span class="hl"> </span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">Item</span>­<span class="hl">Identifier </span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>ItemIdentifier</em></td>
 <td><p><span class="hl">Identifie cette information : cela correspond en fait à une identification du couple arrêt-course, et permettra par la suite une éventuelle annulation (cas où l’arrêt n’est plus desservi).</span></p>
 <p><span class="hl">Il doit être unique et pérenne et bien identifier le passage à l'arrêt.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="3"><em>Stop­Visit­Reference</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Monitoring­Ref</span></strong></em></td>
+
+<tr>
+<td><em>Stop­Visit­Reference</em></td>
+<td colspan="2"><em><strong><span class="hl">Monitoring­Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Monitoring­Code</em></td>
 <td>Référence du point d'arrêt</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>Journey­Info</em></td>
 <td><em><strong>a</strong></em></td>
-<td><em><strong><span class="hl_france">Monitored­Vehicle­Journey</span></strong></em></td>
+<td><em><strong><span class="hl">Monitored­Vehicle­Journey</span></strong></em></td>
 <td>-1:1</td>
 <td><em>Monitored­Vehicle­Journey­Structure</em></td>
 <td>Description de la course</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td><em>0:1</em></td>
@@ -4836,134 +4621,96 @@ dès que :
 <col style="width: 49%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="5"><em><strong><span class="hl_france">MonitoredVehicleJourney</span></strong></em></td>
+<tr>
+<td colspan="5"><em><strong><span class="hl">MonitoredVehicleJourney</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Description de la course</td>
 </tr>
-<tr class="even">
-<td rowspan="3"><em>Vehicle Journey Identity</em></td>
-<td colspan="3"><em><strong><span class="hl_france">LineRef</span></strong></em></td>
+<tr>
+<td rowspan="2"><em>Vehicle Journey Identity</em></td>
+<td colspan="3"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>LineCode</em></td>
 <td>Identifiant de la ligne</td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">Framed</span>­<span class="hl_france">Vehicle­JourneyRef</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Framed</span>­<span class="hl">Vehicle­JourneyRef</span></strong></em></td>
 <td><p>0:1</p>
-<p>1:1</p></td>
+<p><span class="hl_france">1:1</span></p></td>
 <td><em>+Framed­Vehicle­JourneyRef­Structure</em></td>
 <td><p>Identification de la course</p>
-<p>Champ obligatoire pour les échanges avec les concentrateurs : ce champ n'est pas forcément le reflet d'une valeur d'identifiant planifié et peut être construit localement par l'émetteur, mais il sera important pour une bonne gestion des abonnements en mode différentiel (en particulier pour le service Estimated Timetable).</p></td>
+<p><span class="hl_france">Champ obligatoire pour les échanges avec les concentrateurs : ce champ n'est pas forcément le reflet d'une valeur d'identifiant planifié et peut être construit localement par l'émetteur, mais il sera important pour une bonne gestion des abonnements en mode différentiel (en particulier pour le service Estimated Timetable).</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Journey­Pattern­Info</em></td>
-<td colspan="3"><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Journey­Pattern­Info­Group</em></td>
 <td>Voir Journey­Pattern­Info­Group.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Vehicle­Journey­Info</em></td>
-<td colspan="3"><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Vehicle­JourneyInfo­Group</em></td>
 <td>Voir Vehicle­JourneyInfo­Group</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Disruption­Group</em></td>
-<td colspan="3"><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Disruption­Group</em></td>
 <td>Voir Disruption­Group.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Journey­Progress­Info</em></td>
-<td colspan="3"><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Journey­Progresss­Info­Group</em></td>
 <td><p>voir Journey­Progress­Info­Group.</p>
 <p>DetailLevel: normal.</p></td>
 </tr>
-<tr class="odd">
-<td rowspan="4"></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="8"><em>Opera­tional­Info</em></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
+<td rowspan="6"><em>Opera­tional­Info</em></td>
 <td colspan="3"><em><strong><span class="hl">TrainNumber</span></strong></em></td>
 <td>0:*</td>
 <td><em>sequence</em></td>
 <td>Séquence de numéro de train (l'utilisation d'une sequence permet notament de gérer les trains couples)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">TrainNumberRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>→TrainNumber</em></td>
+<td><em>➜TrainNumber</em></td>
 <td><p>Numéro de train</p>
 <p>On utilisera en priorité la codification de code primaire UE 454/2011 ou le numéro de train UIC</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">JourneyParts</span></strong></em></td>
 <td>0:*</td>
 <td><em>sequence</em></td>
 <td><p>Liste des parties de course concernées par les Call ci-dessous.</p>
 <p><span class="hl">Dans le cadre du profil France on utilisera ces sous-ensembles de course exclusivement pour porter la parité des trains (avec possibilité de changer de parité en cours de course).</span></p></td>
 </tr>
-<tr class="odd">
-<td rowspan="4"></td>
+<tr>
+<td rowspan="3"></td>
 <td colspan="2"><em><strong><span class="hl">JourneyPart­Info</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>Information sur les parties de course</td>
 </tr>
-<tr class="even">
-<td rowspan="3"></td>
+<tr>
+<td rowspan="2"></td>
 <td><em><strong><span class="hl">Journey­PartRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>→JourneyPart­Code</em></td>
+<td><em>➜JourneyPart­Code</em></td>
 <td><span class="hl">Dans le cadre du profil France ce champ permettra d'identifier, en particulier dans le contexte du RER, les portions de courses exploitées par la RATP et celles exploitées par la SNCF (les valeurs d'identification des JourneyPart sont des données de référence qui devront être fixes en amont de l'échange).</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Train­NumberRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→TrainNumbere</em></td>
+<td><em>➜TrainNumbere</em></td>
 <td><p>Dans le cadre du profil France ce champ sera suffixé, pour la SNCF, des code suivants:</p>
 <ul>
 <li><p>:2 pour les trains de parité paire</p></li>
@@ -4973,55 +4720,30 @@ dès que :
 <p><span class="hl">Si le numéro de train n'est pas connu mais que la parité doit tout de même être échangée, ce champ contiendra "</span><em><strong><span class="hl">unknown:1</span></strong></em><span class="hl">" ou "</span><em><strong><span class="hl">unknown:2</span></strong></em><span class="hl">".</span></p>
 <p><span class="hl">Si les identifiants de JourneyPart n'ont pas été échangés mais que la parité doit tout de même être échangée, le champ précédent (JourneyPartRef, qui est obligatoire) prendra la valeur arbitraire de "</span><em><strong><span class="hl">unknown</span></strong></em><span class="hl">".</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="6"><em>Calling Pattern</em></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">Monitored</span>­<span class="hl_france">Call</span></strong></em></td>
+<tr>
+<td rowspan="3"><em>Calling Pattern</em></td>
+<td colspan="3"><em><strong><span class="hl">Monitored</span>­<span class="hl">Call</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Informations horaires concernant l'arrêt considéré</td>
 </tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">Onward</span>­<span class="hl_france">Calls</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Onward</span>­<span class="hl">Calls</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Informations horaires concernant les arrêts suivants</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
-<td colspan="2"><em><strong><span class="hl_france">Onward</span>­<span class="hl_france">Call</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">Onward</span>­<span class="hl">Call</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Informations horaires pour l'un des arrêts suivants</td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-####### L'arrêt 
+<h7> L'arrêt </h7>
 
 <table>
 <colgroup>
@@ -5033,148 +4755,91 @@ dès que :
 <col style="width: 47%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="4"><em><strong><span class="hl_france">MonitoredCall</span></strong></em></td>
+<tr>
+<td colspan="4"><em><strong><span class="hl">MonitoredCall</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Informations horaires pour l'arrêt.</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>Stop Identity</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Stop</span>­<span class="hl_france">Point</span>­<span class="hl_france">Ref</span></strong></em></td>
+<tr>
+<td rowspan="3"><em>Stop Identity</em></td>
+<td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p>1:1</p></td>
+<p><span class="hl_france">1:1</span></p></td>
 <td><em>StopPoint­Code</em></td>
 <td><p>Identifiant du Point d'arrêt (cet identifiant est à rapprocher de l’attribut <em>MonitoringRef</em> de la structure <em>MonitoredStopVisit</em>, mais restreint à ce cas de point d’arrêt, là ou le <em>MonitoringRef</em> peut aussi, dans le contexte général de SIRI, mais pas celui du profil France, référencer un afficheur, par exemple).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet du referentiel théorique. </span></p>
 <p><span class="hl">- Si MonitoringRef est un lieu d’arrêt, ou un groupe de lieux, StopPointRef est une zone d'embarquement, si l'émetteur est capable de la fournir.</span></p>
 <p><span class="hl">- Sinon, StopPointRef estun lieu d’arrêt (granularité la plus fine possible dans tous les cas)</span></p>
-<p>Champ obligatoire pour les échanges avec les concentrateurs</p></td>
+<p><span class="hl_france">Champ obligatoire pour les échanges avec les concentrateurs</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td>Numéro d'ordre de l'arrêt dans la mission</td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Stop</span>­<span class="hl_france">Point</span>­<span class="hl_france">Name</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Name</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>NLString</em></td>
 <td><p>Nom du point d'arrêt.</p>
 <p><span class="hl">Si plusieurs noms sont disponibles chez le producteur, le nom le plus détaillé sera utilisé en priorité.</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Call Real-time</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Vehicle</span>­<span class="hl_france">At­Stop</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">Vehicle</span>­<span class="hl">At­Stop</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p>La Valeur «true » indique que le véhicule est à l'arrêt</p>
 <p>Valeur par défaut : « false »</p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="3"><em>Call Rail</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Platform­Traversal</span></strong></em></td>
+<tr>
+<td><em>Call Rail</em></td>
+<td colspan="2"><em><strong><span class="hl">Platform­Traversal</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p>La valeur « true » permet de signaler le passage d'un train sans arrêt (et de demander au voyageur de s'écarter des voies)</p>
 <p>Valeur par défaut : « false »</p></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="4"><em>Call Property</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"><em><strong><span class="hl_france">Destination­Display</span></strong></em></td>
+<tr>
+<td><em>Call Property</em></td>
+<td colspan="2"><em><strong><span class="hl">Destination­Display</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>Disruption­Group</em></td>
-<td colspan="2"><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Disruption­Group</em></td>
 <td>Voir Disruption­Group.</td>
 </tr>
-<tr class="odd">
-<td rowspan="4"><em><span class="hl">Arrival</span></em></td>
-<td colspan="2"><em><strong><span class="hl_france">Aimed­Arrival­Time</span></strong></em></td>
+<tr>
+<td rowspan="3"><em><span class="hl">Arrival</span></em></td>
+<td colspan="2"><em><strong><span class="hl">Aimed­Arrival­Time</span></strong></em></td>
 <td><span class="hl">0:1</span></td>
 <td><em><span class="hl">xsd:date­Time</span></em></td>
 <td><span class="hl">Heure d'arrivée théorique (ou commandée)</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"><em><strong><span class="hl_france">Actual­Arrival­Time</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Actual­Arrival­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td>Heure d'arrivée effectivement mesurée.</td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Expected­Arrival­Time</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Expected­Arrival­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td>Heure d'arrivée estimée par le SAE.</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="9"><em>Arrival Status</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Arrival­Status</span></strong></em></td>
+<tr>
+<td rowspan="4"><em>Arrival Status</em></td>
+<td colspan="2"><em><strong><span class="hl">Arrival­Status</span></strong></em></td>
 <td>0:1</td>
-<td><p><em>onTime | early | delayed | cancelled |</em></p>
-<p><em>missed | arrived | notExpected | noReport</em></p></td>
+<td><p><em>onTime  | early  | delayed  | cancelled  |</em></p>
+<p><em>missed  | arrived  | notExpected  | noReport</em></p></td>
 <td><p><span class="hl">Caractérisation de l'horaire d'arrivée attendu (ou mesuré si le véhicule est à quai)</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p>
 <p><span class="hl">Note: SIRI 2 ajoute les codes: </span></p>
@@ -5183,212 +4848,126 @@ dès que :
 <li><p><em><span class="hl">notExpected</span></em><span class="hl"> : départ ou arrivée non planifié(e) (cas de TAD non encore déclenché)</span></p></li>
 </ul></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ArrivalProximity­Text</span></strong></em></td>
 <td>0:*</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Texte libre à présenter quand le véhicule est proche, par exemple "à l'approche". Ce texte peut dépendre de règles propres à l'exploitant ou à l'AO, autant par son contenu que par les règles d'affichage qui le concernent (distance à partir de laquelle on l'affiche, etc.). Ces règles peuvent aussi être différentes suivant le lieu d'affichage de l'information (à quai, sur smartphone, dans un hall d'attente, etc.). Ces règles sont échangées en amont de façon contractuelle.</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Arrival­Platform</span>­<span class="hl_france">Name</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Arrival­Platform</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Identification ou nom du quai d'arrivée</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Aimed­­QuayName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Indication de la voie d'arrivée (en complément de Platform)</span><em><span class="hl">. </span></em></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="6"><em>Departure</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Aimed­Departure­Time</span></strong></em></td>
+<tr>
+<td rowspan="3"><em>Departure</em></td>
+<td colspan="2"><em><strong><span class="hl">Aimed­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td><span class="hl">Heure de départ théorique (ou commandée).</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Actual­Departure­Time</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Actual­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td><span class="hl">Heure de départ effectivement mesurée.</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"><em><strong><span class="hl_france">Expected­Departure­Time</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Expected­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td><span class="hl">Heure de départ estimée par le SAE.</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em><span class="hl_delete">Passenger­Times</span></em></td>
 <td colspan="2"></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>Departure Status</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Departure­Status</span></strong></em></td>
+<tr>
+<td rowspan="3"><em>Departure Status</em></td>
+<td colspan="2"><em><strong><span class="hl">Departure­Status</span></strong></em></td>
 <td>0:1</td>
-<td><em>onTime | early | delayed | cancelled | arrived |departed | notExpected | noReport</em></td>
+<td><em>onTime  | early  | delayed  | cancelled  | arrived  |departed  | notExpected  | noReport</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"><em><strong><span class="hl_france">Departure­Platform</span>­<span class="hl_france">Name</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Departure­Platform</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Identification ou nom du quai de départ.</td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Departure­Boarding­Activity</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Departure­Boarding­Activity</span></strong></em></td>
 <td>0:1</td>
-<td><em>boarding | noBoarding | passthru</em></td>
+<td><em>boarding  | noBoarding  | passthru</em></td>
 <td><p><span class="hl">Indique si l'on peut monter dans le véhicule ou si c'est un passage sans arrêt ou avec montée interdite.</span></p>
 <p><span class="hl">Valeur par défaut : « boarding»</span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="5"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+
+<tr>
 <td><em>Occupancy</em></td>
-<td colspan="2"><em><strong><span class="hl_france">ExpectedDepartureOccupancy</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">ExpectedDepartureOccupancy</span></strong></em></td>
 <td>0:*</td>
 <td><em>+structure</em></td>
-<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf § </span><span class="hl"></span></td>
+<td><span class="hl">Permet de décrire l’occupation d’un véhicule à un arrêt. Cf <a href="#expecteddepartureoccupancy">&</a> </span><span class="hl"></span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Capacity</em></td>
-<td colspan="2"><em><strong><span class="hl_france">ExpectedDpeartureCapacity</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">ExpectedDepartureCapacity</span></strong></em></td>
 <td>0:*</td>
 <td><em>+structure</em></td>
-<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf § </span></td>
+<td><span class="hl">Permet de décrire les capacités d‘un véhicule selon le type de place cf <a href="#structure-expecteddeparturecapacity">&</a></span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Operator</em></td>
-<td colspan="2"><em><strong><span class="hl_france">DepartureOperatorsRef</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl_delete">DepartureOperatorsRef</span></strong></em></td>
 <td><span class="hl_delete">0:*</span></td>
 <td><em><span class="hl_delete">OperatorCode</span></em></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Frequency</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Aimed­Headway­Interval</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">Aimed­Headway­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td><span class="hl">Fréquence de passage théorique (ou commandée).</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Expected­Headway­Interval</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Expected­Headway­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td><span class="hl">Fréquence de passage estimée par le SAE.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Stop Proximity Group</em></td>
 <td colspan="2"><em><strong><span class="hl">DistanceFrom­Stop</span></strong></em></td>
 <td>0:1</td>
 <td><em>DistanceType</em></td>
 <td><span class="hl">Distance qui sépare le vehicule de l'arrêt. Une valeur positive indique que le véhicule est en amont de l'arrêt.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">NumberOf­StopsAway</span></strong></em></td>
 <td>0:1</td>
 <td><em>nonNegative­Integer</em></td>
 <td><span class="hl">Indique le nombre d'arrêts à marquer entre la position courante du vehicule et l'arrêt considéré. </span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -5398,7 +4977,7 @@ dès que :
 </tbody>
 </table>
 
-####### Arrêts suivants
+<h7> Arrêts suivants</h7>
 
 <table>
 <colgroup>
@@ -5411,248 +4990,137 @@ dès que :
 <col style="width: 51%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="5"><em><strong><span class="hl_france">OnwardCall</span></strong></em></td>
+<tr>
+<td colspan="5"><em><strong><span class="hl">OnwardCall</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Information sur les arrêts suivants de la course.</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>Stop Identity</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Stop­Point­Ref</span></strong></em></td>
+<tr>
+<td rowspan="3"><em>Stop Identity</em></td>
+<td colspan="3"><em><strong><span class="hl">Stop­Point­Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>StopPoint­Code</em></td>
 <td><p>Identifiant du point d'arrêt.</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence de (zone d'embarquement ou lieu d’arrêt : granularité la plus fine possible dans tous les cas).</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"><em><strong><span class="hl_france">Order</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td><span class="hl">Numéro d'ordre de l'arrêt dans la mission.</span></td>
 </tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">Stop</span>­<span class="hl_france">Point­Name</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Stop</span>­<span class="hl">Point­Name</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>NLString</em></td>
 <td><span class="hl">Nom du point d'arrêt.</span></td>
 </tr>
-<tr class="even">
-<td rowspan="2"><em>Progress</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Vehicle­At­Stop</span></strong></em></td>
+<tr>
+<td><em>Progress</em></td>
+<td colspan="3"><em><strong><span class="hl">Vehicle­At­Stop</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p><span class="hl">La Valeur «true » indique que le véhicule est à l'arrêt.</span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="3"><em>Arrival</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Aimed­Arrival­Time</span></strong></em></td>
+<tr>
+<td rowspan="2"><em>Arrival</em></td>
+<td colspan="3"><em><strong><span class="hl">Aimed­Arrival­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure d'arrivée théorique (ou commandée).</td>
 </tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">Expected­Arrival­Time</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Expected­Arrival­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure d'arrivée estimée par le SAE.</td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"><em>Arrival Status</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Arrival­Status</span></strong></em></td>
+<tr>
+<td rowspan="3"><em>Arrival Status</em></td>
+<td colspan="3"><em><strong><span class="hl">Arrival­Status</span></strong></em></td>
 <td>0:1</td>
-<td><em>onTime | early | delayed | cancelled | missed | arrived | notExpected | | noReport</em></td>
+<td><em>onTime  | early  | delayed  | cancelled  | missed  | arrived  | notExpected  |  | noReport</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire d'arrivée attendu.</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">ArrivalProximity­Text</span></strong></em></td>
 <td>0:*</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Texte libre à présenter quand le véhicule est proche, par exemple "à l'approche". Ce texte peut dépendre de règles propres à l'exploitant ou à l'AO, autant par son contenu que par les règles d'affichage qui le concernent (distance à partir de laquelle on l'affiche, etc.). Ces règles peuvent aussi être différentes suivant le lieu d'affichage de l'information (à quai, sur smartphone, dans un hall d'attente, etc.). </span><span class="hl">Ces règles sont échangées en amont de façon contractuelle.</span></td>
 </tr>
-<tr class="odd">
-<td rowspan="7"></td>
-<td colspan="3"><em><strong><span class="hl_france">Arrival­Platform</span>­<span class="hl_france">Name</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Arrival­Platform</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Identification du quai d'arrivée.</td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><em>Depar­ture</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Aimed­Departure­Time</span></strong></em></td>
+
+
+<tr>
+<td rowspan="2"><em>Depar­ture</em></td>
+<td colspan="3"><em><strong><span class="hl">Aimed­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure de départ théorique (ou commandée).</td>
 </tr>
-<tr class="odd">
-<td rowspan="4"></td>
-<td colspan="3"><em><strong><span class="hl_france">Expected­Departure­Time</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Expected­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure de départ estimée par le SAE.</td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="4"><em>Departure Status</em></td>
+<tr>
+<td rowspan="3"><em>Departure Status</em></td>
 <td colspan="3"><em><strong><span class="hl">Departure­Status</span></strong></em></td>
 <td>0:1</td>
-<td><em>onTime | early | delayed | cancelled | arrived |departed | notExpected | noReport</em></td>
+<td><em>onTime  | early  | delayed  | cancelled  | arrived  |departed  | notExpected  | noReport</em></td>
 <td><p><span class="hl">Caractérisation de l'horaire de départ attendu.</span></p>
 <p><span class="hl">Valeur par défaut : « onTime »</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Departure­Platform­Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Identification du quai de départ.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Departure­Boarding­Activity</span></strong></em></td>
 <td>0:1</td>
-<td><em>boarding | noBoarding | passthru</em></td>
+<td><em>boarding  | noBoarding  | passthru</em></td>
 <td><p><span class="hl">Indique si l'on peut monter dans le véhicule ou si c'est un passage sans arrêt ou avec montée interdite.</span></p>
 <p><span class="hl">Valeur par défaut : « boarding »</span></p></td>
 </tr>
-<tr class="odd">
-<td rowspan="5"></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2" rowspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Pro­gress Status</em></td>
-<td colspan="3"><em><strong><span class="hl_france">Aimed­­Head­Way­Interva</span><span class="hl">l</span></strong></em></td>
+<td colspan="3"><em><strong><span class="hl">Aimed­­Head­Way­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td>Fréquence de passage théorique (ou commandée).</td>
 </tr>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">Expected­Headway</span>­­<span class="hl_france">Interval</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">Expected­Headway</span>­­<span class="hl">Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td>Fréquence de passage estimée par le SAE.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Stop Proximity Group</em></td>
 <td colspan="3"><em><strong><span class="hl">DistanceFrom­Stop</span></strong></em></td>
 <td>0:1</td>
 <td><em>DistanceType</em></td>
 <td><span class="hl">Distance qui sépare le vehicule de l'arrêt. Une valeur positive indique que le véhicule est en amont de l'arrêt.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">NumberOf­StopsAway</span></strong></em></td>
 <td>0:1</td>
 <td><em>nonNegative­Integer</em></td>
 <td><span class="hl">Indique le nombre d'arrêts à marquer entre la position courante du vehicule et l'arrêt considéré. </span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td colspan="3"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -5673,81 +5141,63 @@ dès que :
 <col style="width: 47%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">MonitoredStopVisit</span>­<span class="hl_france">Cancellation</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">MonitoredStopVisit</span>­<span class="hl">Cancellation</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td><p>Indication qu'un passage précédemment signalé ne doit plus être affiché (indique généralement que le véhicule a franchi l'arrêt).</p>
 <p><u>Note</u>: A ne pas confondre avec une annulation de course.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
-<td><em><strong><span class="hl_france">Recorded­At­Time</span></strong></em></td>
+<td><em><strong><span class="hl">Recorded­At­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure à laquelle l'annulation de passage a été signalée/publiée.</td>
 </tr>
-<tr class="odd">
-<td rowspan="7"><em>Event­Identity</em></td>
-<td><em><strong><span class="hl_france">ItemRef</span></strong></em></td>
+<tr>
+<td rowspan="4"><em>Event­Identity</em></td>
+<td><em><strong><span class="hl">ItemRef</span></strong></em></td>
 <td><p>0:1</p>
-<p>1:1</p></td>
+<p><span class="hl_france">1:1</span></p></td>
 <td><em>ItemIdentifier</em></td>
 <td><p>Identifiant de l'arrêt annulé (voir ItemRef plus haut).</p>
-<p>Champ obligatoire pour les échanges avec les concentrateurs (il doit être unique et pérenne, dans le cadre d'une journée d'exploitation, et bien permettre une annulation de passage à l'arrêt).</p></td>
+<p><span class="hl_france">Champ obligatoire pour les échanges avec les concentrateurs (il doit être unique et pérenne, dans le cadre d'une journée d'exploitation, et bien permettre une annulation de passage à l'arrêt).</span></p></td>
 </tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Monitoring­Ref</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Monitoring­Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Monitoring­Code</em></td>
 <td>Identifiant du point d'arrêt.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">LineRef</span><span class="hl"> </span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">LineRef </span></strong></em></td>
 <td>0:1</td>
 <td><em>LineCode</em></td>
 <td><span class="hl">Identifiant de la ligne (celle de la course pour laquelle le passage à l'arrêt est annulé, la course elle-même peut être identifiée par le paramètre </span><em><span class="hl">FramedVehicleJourneyRef</span></em><span class="hl"> ).</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Vehicle­JourneyRef</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Vehicle­JourneyRef</span></strong></em></td>
 <td><p>0:1</p>
-<p>1:1</p></td>
+<p><span class="hl_france">1:1</span></p></td>
 <td><em>+Structure (FramedVehicleJourneyRefStructure)</em></td>
 <td><p>Identification de la course concernée<em>.</em></p>
-<p>Champ obligatoire pour les échanges avec les concentrateurs</p></td>
+<p><span class="hl_france">Champ obligatoire pour les échanges avec les concentrateurs</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Journey­Pattern­Info</em></td>
-<td><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Journey­Pattern­Info­Group</em></td>
 <td>Voir Journey­Pattern­Info­Group.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Message</em></td>
-<td><em><strong><span class="hl_france">Reason</span></strong></em></td>
+<td><em><strong><span class="hl">Reason</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Message expliquant la cause de l'annulation.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td><em><strong>Extensions</strong></em></td>
 <td><em>0:1</em></td>
@@ -5768,23 +5218,23 @@ dès que :
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Framed­Vehicle­JourneyRef</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Framed­Vehicle­JourneyRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Identification d'une course.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"></td>
-<td><em><strong><span class="hl_france">Data</span>­<span class="hl_france">Frame</span>­<span class="hl_france">Ref</span></strong></em></td>
+<td><em><strong><span class="hl">Data</span>­<span class="hl">Frame</span>­<span class="hl">Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>DataFrame­Qualifier</em></td>
 <td><p><span class="hl">Contexte d'identification de la course (SAE pour le jour d'exploitation, version du référentiel de données, etc.).</span></p>
 <p><span class="hl">Ce champ permet de qualifier la version de donnée de référence, si cela est applicable </span></p>
 <p><span class="hl">Utiliser la valeur "</span><em><strong><span class="hl">any</span></strong></em><span class="hl">" si ce champ n'est pas applicable.</span></p></td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Dated­Vehicle­Journey</span>­<span class="hl_france">Ref</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Dated­Vehicle­Journey</span>­<span class="hl">Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Dated­Vehicle­Journey­Code</em></td>
 <td>Identifiant de la course elle-même.</td>
@@ -5804,78 +5254,40 @@ dès que :
 <col style="width: 45%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">VehicleJourneyInfo</span>­<span class="hl_france">Group</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">VehicleJourneyInfo</span>­<span class="hl">Group</span></strong></em></td>
 <td></td>
 <td></td>
 <td>Description de la course</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Service­Info</em></td>
-<td colspan="2"><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Service­Info­Group</em></td>
 <td>Voir Service­Info­Group.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>JourneyEndNames</em></td>
-<td colspan="2"><em><strong><span class="hl_france">:::</span></strong></em></td>
+<td colspan="2"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>JourneyEndNamesGroup</em></td>
 <td>Voir JourneyEndNamesGroup.</td>
 </tr>
-<tr class="even">
-<td rowspan="8"><em>JourneyInfo</em></td>
-<td colspan="2"><em><strong><span class="hl_france">Vehicle­Journey­Name</span></strong></em></td>
+<tr>
+<td rowspan="2"><em>JourneyInfo</em></td>
+<td colspan="2"><em><strong><span class="hl">Vehicle­Journey­Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Nom de la course.</td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Journey</span>­<span class="hl_france">Note</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Journey</span>­<span class="hl">Note</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Texte complémentaire décrivant la course.</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="4"><em>End Times</em></td>
 <td colspan="2"><em><strong>Headway­Service</strong></em></td>
 <td>0:1</td>
@@ -5883,24 +5295,24 @@ dès que :
 <td><p><span class="hl">La valeur « true » permet de signaler que la course est gérée en fréquence (interval), et que les informations horaires seront fournies en conséquence… </span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Origin­Aimed­Departure­Time</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Origin­Aimed­Departure­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td><span class="hl">Heure théorique de départ de la course à son point de départ.</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"><em><strong><span class="hl_france">Destination</span>­<span class="hl_france">Aimed­Arrival</span>­<span class="hl_france">Time</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Destination</span>­<span class="hl">Aimed­Arrival</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td><span class="hl">Heure théorique d'arrivée de la course à son point d'arrivée.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">FirstOrLastJourney</span></strong></em></td>
 <td>0:1</td>
 <td><em>FirstOrLast­Journey­Enumeration</em></td>
 <td><p><span class="hl">Indique s'il s'agit de la première ou de la dernière course de la journée d'exploitation sur la ligne, et pour une destination donnée. L'interprétation comme "première ou dernière course pour une mission donnée" est acceptable, mais devra être précisée dans les spécifications d'interface du serveur (et le JourneyPatterInfoGroup devra alors être renseigné).</span></p>
-<p>(firstServiceOfDay | lastServiceOfDay | otherService | unspecified).</p></td>
+<p>(firstServiceOfDay  | lastServiceOfDay  | otherService  | unspecified).</p></td>
 </tr>
 </tbody>
 </table>
@@ -5916,27 +5328,27 @@ dès que :
 <col style="width: 46%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="4">Service Info</td>
-<td><em><strong><span class="hl_france">OperatorRef</span></strong></em></td>
+<td><em><strong><span class="hl">OperatorRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>OperatorCode</em></td>
 <td>Identifiant de l'exploitant.</td>
 </tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Product­Category­Ref</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Product­Category­Ref</span></strong></em></td>
 <td>0:1</td>
 <td><em>Product­Category­Code</em></td>
 <td>Mode de transport détaillé (voir l’énumération complète dans le XSD SIRI [R10]).</td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Service­Feature­Ref</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Service­Feature­Ref</span></strong></em></td>
 <td>0:*</td>
 <td><em>Service­Feature­Code</em></td>
 <td>Classification du type de service (“bus scolaire”, etc.).</td>
 </tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Vehicle­Feature­Ref</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Vehicle­Feature­Ref</span></strong></em></td>
 <td>0:*</td>
 <td><em>Vehicle­Feature­Code</em></td>
 <td><p>Service spécifique disponible dans le véhicule (plancher bas, etc.).</p>
@@ -5961,89 +5373,53 @@ dès que :
 <col style="width: 45%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td rowspan="13"><em>ServiceEnd Names</em></td>
-<td colspan="2"><em><strong><span class="hl_france">OriginRef</span></strong></em></td>
+<tr>
+<td rowspan="7"><em>ServiceEnd Names</em></td>
+<td colspan="2"><em><strong><span class="hl">OriginRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Journey­PlaceCode</em></td>
 <td>Identifiant de l'arrêt de départ de la course.</td>
 </tr>
-<tr class="even">
-<td colspan="2"><em><strong><span class="hl_france">Origin­Name</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Origin­Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
-<td>Nom de l'arrêt de départ <span class="hl_france">(si l'identifiant OriginRef est fourni, le nom doit l'être aussi)</span><span class="hl">.</span></td>
+<td>Nom de l'arrêt de départ <span class="hl">(si l'identifiant OriginRef est fourni, le nom doit l'être aussi).</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Via</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Via</span></strong></em></td>
 <td><p>0:*</p>
 <p><span class="hl">0:1</span></p></td>
 <td><em>+Structure</em></td>
 <td><p>Description d'un via sur la course.</p>
 <p><span class="hl">La cardinalité est limitée à 1 dans le cadre du profil. Ceci permet notament de simplifer la gestion de compatibilité avec les versions antérieures de SIRI</span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="4"></td>
-<td><em><strong><span class="hl_france">PlaceRef</span></strong></em></td>
+<tr>
+<td rowspan="2"></td>
+<td><em><strong><span class="hl">PlaceRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Journey­PlaceCode</em></td>
 <td>Identifiant de l'arrêt via (ou d'un lieu via).</td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">PlaceName</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">PlaceName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
-<td>Nom du via <span class="hl_france">(si l'identifiant PlaceRef est fourni, le nom doit l'être aussi, si c'est un arrêt le nom doit naturellement être celui de l'arrêt</span></td>
+<td>Nom du via <span class="hl">(si l'identifiant PlaceRef est fourni, le nom doit l'être aussi, si c'est un arrêt le nom doit naturellement être celui de l'arrêt</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"><em><strong><span class="hl_france">DestinationRef</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">DestinationRef</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>Journey­PlaceCode</em></td>
 <td>Identifiant du dernier arrêt de la course.</td>
 </tr>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">Destination­Name</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">Destination­Name</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>NLString</em></td>
-<td>Nom de l'arrêt de destination <span class="hl_france">(si l'identifiant DestinationRef est fourni, le nom doit l'être aussi)</span><span class="hl">.</span></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Nom de l'arrêt de destination <span class="hl">(si l'identifiant DestinationRef est fourni, le nom doit l'être aussi).</span></td>
 </tr>
 </tbody>
 </table>
@@ -6059,91 +5435,71 @@ dès que :
 <col style="width: 40%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">JourneyPatternInfoGroup</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">JourneyPatternInfoGroup</span></strong></em></td>
 <td></td>
 <td></td>
 <td>Groupe d'attributs pour la description des missions</td>
 </tr>
-<tr class="even">
-<td rowspan="7"><em>Journey Pattern Info</em></td>
-<td><em><strong><span class="hl_france">Journey</span>­<span class="hl_france">PatternRef</span></strong></em></td>
+<tr>
+<td rowspan="6"><em>Journey Pattern Info</em></td>
+<td><em><strong><span class="hl">Journey</span>­<span class="hl">PatternRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Journey­PatternCode</em></td>
 <td>Identifiant de la mission.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">JourneyPatternName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><p>Nom ou numero de course présenté au public.</p>
 <p><span class="hl">Exemple : Dans le cas de la SNCF et du RER, cet identifiant est le code à 4 lettres qui désigne la mission (RER et Transilien).</span></p></td>
 </tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Vehicle</span>­<span class="hl_france">Mode</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Vehicle</span>­<span class="hl">Mode</span></strong></em></td>
 <td>0:1</td>
-<td><em>air | bus | coach | ferry | metro | rail | tram | under­ground</em></td>
+<td><em>air  | bus  | coach  | ferry  | metro  | rail  | tram  | under­ground</em></td>
 <td><p><span class="hl">Mode de transport pour cette mission (il s’agit ici d’un mode « générique », tous les avions par exemple seront air, et c’est le </span><em><span class="hl">ProductCategory</span></em><span class="hl">, dans </span><em><span class="hl">ServiceInfoGroup</span></em><span class="hl">, qui donnera plus de précisions, comme : </span><em><span class="hl">internationalFlight, intercontinentalFlight, domesticScheduledFlight, shuttleFlight …</span></em></p>
 <p><span class="hl">Valeur par défaut : « bus »</span></p></td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">RouteRef</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">RouteRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>RouteCode</em></td>
 <td>Identifiant de l'itinéraire suivi.</td>
 </tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Published­LineName</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Published­LineName</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>NLString</em></td>
 <td>Nom de la ligne.</td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Direction­Name</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Direction­Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><p>Nom de la direction de la mission.</p>
 <p><span class="hl">Ce nom peut par exemple contenir des informations comme "A" ou "R" (Aller ou Retour) pour les lignes qui utilisent ces informations.</span></p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
 
 #### DisruptionGroup
 
-<span class="hl_france">Ce groupe de paramètres fait partie des
-éléments qui vont être étendus dans le cadre des services
-« </span>*<span class="hl_france">Facility Monitoring</span>*<span
-class="hl_france"> » et « </span>*<span class="hl_france">Situation
-Exchange</span>*<span class="hl_france"> ». </span>
+<span class="hl">Ce groupe de paramètres fait partie des éléments qui
+vont être étendus dans le cadre des services « </span>*<span
+class="hl">Facility Monitoring</span>*<span class="hl"> » et
+« </span>*<span class="hl">Situation Exchange</span>*<span
+class="hl"> ». </span>
 
-| SM-14 | <span class="hl_france">Seule la référence à un événement sera retenue, les informations complémentaires pour l'état des équipements et les perturbations seront déterminées dans le cadre du service « </span>*<span class="hl_france">Situation Exchange</span>*<span class="hl_france"> ».</span> |
-|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SM-14  | <span class="hl">Seule la référence à un événement sera retenue, les informations complémentaires pour l'état des équipements et les perturbations seront déterminées dans le cadre du service « </span>*<span class="hl">Situation Exchange</span>*<span class="hl"> ».</span>  |
+|--|--|
 
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|-------------|-----------------------------------------------------|-----|-----|-----|-----|-----|------|-----|-----|-----------------|-----|--------------------------------------------------------------------------------------------|-----|-----|
-| *Situation* | ***<span class="hl_france">SituationRef</span>*** |     |     |     |     |     | 0:\* |     |     | *SituationCode* |     | Identifiant (externe) de l'événement qui est la cause des modifications horaires indiquées |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
-|             |                                                     |     |     |     |     |     |      |     |     |                 |     |                                                                                            |     |     |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| *Situation*  | ***<span class="hl">SituationRef</span>***  | 0:\*  | *SituationCode*  | Identifiant (externe) de l'événement qui est la cause des modifications horaires indiquées  |
+
 
 #### JourneyProgressInfoGroup
 
@@ -6156,104 +5512,68 @@ Exchange</span>*<span class="hl_france"> ». </span>
 <col style="width: 42%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="2"><em><strong><span class="hl_france">JourneyProgressInfoGroup</span></strong></em></td>
+<tr>
+<td colspan="2"><em><strong><span class="hl">JourneyProgressInfoGroup</span></strong></em></td>
 <td></td>
 <td></td>
 <td>Groupe d'attributs précisant l’avancement sur la mission</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Status</em></td>
-<td><em><strong><span class="hl_france">Monitored</span></strong></em></td>
+<td><em><strong><span class="hl">Monitored</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p><span class="hl">Indique si le véhicule est toujours localisé (la valeur </span><em><span class="hl">false</span></em><span class="hl"> indique une délocalisation du bus).</span></p>
 <p><span class="hl">Valeur par défaut : « true »</span></p></td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Monitoring­Error</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Monitoring­Error</span></strong></em></td>
 <td>0:1</td>
-<td><em>GPS | GPRS | Radio</em></td>
+<td><em>GPS  | GPRS  | Radio</em></td>
 <td><span class="hl">Si le bus est délocalisé, ce champ précise la cause de cette délocalisation.</span></td>
 </tr>
-<tr class="even">
-<td rowspan="5"><em>Progress Data Quality</em></td>
+<tr>
+<td rowspan="2"><em>Progress Data Quality</em></td>
 <td><em><strong>In­Congestion</strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p><span class="hl">Ce champ vaut « true » si le vehicule est pris dans un embouteillage (ou plus généralement un incident d’exploitation).</span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">InPanic</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">InPanic</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p><span class="hl">Indique que l'alarme du véhicule est activée.</span></p>
 <p><span class="hl">Valeur par défaut : « false »</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="7"><em>Progress Data</em></td>
+<tr>
+<td rowspan="4"><em>Progress Data</em></td>
 <td><em><strong>Vehicle­Location</strong></em></td>
 <td>0:1</td>
 <td><em>Location­Structure</em></td>
 <td><p>Indique la position du véhicule (voir <em>Location­Structure</em>).</p>
 <p><span class="hl">Ce champ est obligatoire quand cette structure fait partie d’une réponse à une requête de type « vehicle monitoring »</span> (il reste facultatif dans les autres cas).</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>Bearing</strong></em></td>
 <td>0:1</td>
 <td><em>Absolute­Bearing­Type</em></td>
 <td><span class="hl">Indique l’orientation (cap) du véhicule.</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Occupancy</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Occupancy</span></strong></em></td>
 <td>0:1</td>
-<td><em>full | seatsAvailable | standingAvailable | unknown | empty | manySeatAvailable | fewSeatAvailable | standingRoomOnly | crushStandingRoomOnly | notAcceptingPassengers</em></td>
+<td><em>full  | seatsAvailable  | standingAvailable  | unknown  | empty  | manySeatAvailable  | fewSeatAvailable  | standingRoomOnly  | crushStandingRoomOnly  | notAcceptingPassengers</em></td>
 <td><p>Indique le niveau de remplissage du véhicule.</p>
 <p><span class="hl">Dans l’état actuel des choses peu de systèmes disposent de cette information, mais le besoin d’en disposer a été remonté lors des interviews.</span></p>
 <p><span class="hl">Valeur par défaut : « </span><em><span class="hl">unknown</span></em><span class="hl">»</span></p></td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Delay</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Delay</span></strong></em></td>
 <td>0:1</td>
 <td><em>DurationType</em></td>
 <td><span class="hl">Indique le niveau de retard du véhicule (une valeur négative indique une avance).</span></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -6279,79 +5599,60 @@ Exchange</span>*<span class="hl_france"> ». </span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Attributes</em></td>
 <td colspan="2"><em><strong><span class="hl">version</span></strong></em></td>
 <td>1:1</td>
 <td><em>VersionString</em></td>
 <td>Version du service “ Connection Monitoring”, intégrant le numéro de version de profil par exemple. ‘2.1:FR-FR-1.0’.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>End­point Properties</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td rowspan="2">Date d'émission de la requête.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Message­Identifier</span></strong></em></td>
 <td>0:1</td>
 <td><em>Message­Qualifier</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="5"><em>Topic</em></td>
 <td colspan="2"><em><strong><span class="hl">PreviewInterval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td><span class="hl">Si ce paramètre est présent, il indique que l'on souhaite recevoir des informations sur toute arrivée et tout départ intervenant dans la durée indiquée.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ConnectionLink­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>→Connec­tion­Link­Code</em></td>
+<td><em>➜Connec­tion­Link­Code</em></td>
 <td><p><span class="hl">Identifiant de la correspondance interrogée (à déterminer entre les participants, ou à terme au niveau du référentiel francilien pour les correspondances structurantes et/ou garanties).</span></p>
 <p><span class="hl">Pour mémoire, le « ConnectionLink » référence le cheminement physique, alors que l’objet « Interchange » référence une correspondance entre deux courses identifiées (généralement, un «Interchange » se réalise donc en empruntant un « ConnectionLink »).  </span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"></td>
 <td></td>
 <td><em>choice</em></td>
 <td>Seul l’un des filtres peut être utilisé.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">Connecting­Time</span>­<span class="hl">Filter</span></strong></em></td>
 <td>–1:1</td>
 <td><em>+Structure</em></td>
 <td>Filtre temporel, indépendant des courses.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>b</strong></em></td>
 <td><em><strong><span class="hl">Connecting­Journey</span>­<span class="hl">Filter</span></strong></em></td>
 <td>–1:*</td>
 <td><em>+Structure</em></td>
 <td>Filtre base sur les courses.</td>
 </tr>
-<tr class="odd">
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong>Extensions</strong></em></td>
 <td><em>0:1</em></td>
@@ -6363,20 +5664,19 @@ Exchange</span>*<span class="hl_france"> ». </span>
 
 #### Structure ConnectingTimeFilter
 
-| *Filter* | <span class="hl">Connecting­TimeFilter </span> |                                                      |     | *+Structure*      | Filtre temporel pour les requêtes                                                                      |
-|----------|--------------------------------------------------|------------------------------------------------------|-----|-------------------|--------------------------------------------------------------------------------------------------------|
-|          |                                                  | ***<span class="hl">LineRef</span>***              | 1:1 | *→LineCode*       | Identifiant de la ligne amenante.                                                                      |
-|          |                                                  | ***<span class="hl">DirectionRef</span>***         | 1:1 | *→Direction­Code* | Indication de direction (aller/retour).                                                                |
-|          |                                                  | ***<span class="hl">Earliest­ArrivalTime</span>*** | 1:1 | *xsd:dateTime*    | <span class="hl">Début de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).</span> |
-|          |                                                  | ***<span class="hl">Latest­ArrivalTime</span>***   | 1:1 | *xsd:dateTime*    | <span class="hl">Fin de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).</span>   |
+| *Filter*  | <span class="hl">Connecting­TimeFilter </span>  |  |  | *+Structure*  | Filtre temporel pour les requêtes  |
+|--|--|--|--|--|--|
+|  |  | ***<span class="hl">LineRef</span>***  | 1:1  | *➜LineCode*  | Identifiant de la ligne amenante.  |
+|  |  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *➜Direction­Code*  | Indication de direction (aller/retour).  |
+|  |  | ***<span class="hl">Earliest­ArrivalTime</span>***  | 1:1  | *xsd:dateTime*  | <span class="hl">Début de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).</span>  |
+|  |  | ***<span class="hl">Latest­ArrivalTime</span>***  | 1:1  | *xsd:dateTime*  | <span class="hl">Fin de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).</span>  |
 
 #### Structure ConnectingJourneyFilter
 
-| *Filter* | ***<span class="hl">Connecting­JourneyFilter </span>*** |                                                                                    |     | *+Structure*                  | Filtre sur les courses                                                      |
-|----------|-----------------------------------------------------------|------------------------------------------------------------------------------------|-----|-------------------------------|-----------------------------------------------------------------------------|
-|          |                                                           | ***<span class="hl">Dated</span>­<span class="hl">Vehicle­JourneyRef</span>*** | 1:1 | *→Dated­Vehicle­Journey­Code* | Identifiant de la course.                                                   |
-|          |                                                           |                                                                                    |     |                               |                                                                             |
-|          |                                                           | ***<span class="hl">Aimed</span>­<span class="hl">Arrival­Time</span>***       | 0:1 | *xsd:dateTime*                | Date et heure d’arrivée prévue au point d’arrêt (départ de correspondance). |
+| *Filter*  | ***<span class="hl">Connecting­JourneyFilter </span>***  |  |  | *+Structure*  | Filtre sur les courses  |
+|--|--|--|--|--|--|
+|  |  | ***<span class="hl">Dated</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 1:1  | *➜Dated­Vehicle­Journey­Code*  | Identifiant de la course.  |
+|  |  | ***<span class="hl">Aimed</span>­<span class="hl">Arrival­Time</span>***  | 0:1  | *xsd:dateTime*  | Date et heure d’arrivée prévue au point d’arrêt (départ de correspondance).  |
 
 ### Abonnement aux informations sur les correspondances
 
@@ -6396,44 +5696,44 @@ Exchange</span>*<span class="hl_france"> ». </span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
 <td><em><strong><span class="hl">Subscriber</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
-<td><em>→Participant­Code</em></td>
+<p><span class="hl">1:1</span></p></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur ( voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Subscription­Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identifiant de l'abonnement pour le système demandeur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Lease</em></td>
 <td><em><strong><span class="hl">Initial­Termination­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTIme</em></td>
 <td><span class="hl">Date et heure de fin de l'abonnement : un abonnement a forcément une date et heure de fin (les partenaires pourront décider de limiter la durée maximale d’un abonnement).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Request</em></td>
 <td><em><strong><span class="hl">Connection­Monitoring­Request</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>Voir ConnectionMonitoringRequest.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Policy</em></td>
 <td><em><strong><span class="hl">Change</span>­<span class="hl">Before­Updates</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td><p><span class="hl">Permet d'indiquer un écart de temps en dessous duquel on ne souhaite pas être notifié (si l'on demande un seuil de 5mn et qu'un horaire de départ change de 2mn, on ne sera pas notifié, évitant ainsi des flux d'information inutiles).</span></p>
-<p><span class="hl_france">Si ce champ n'est pas présent, une valeur de </span><strong><span class="hl_france">5mn</span></strong><span class="hl_france"> est prise par défaut.</span></p>
+<p><span class="hl">Si ce champ n'est pas présent, une valeur de </span><strong><span class="hl">5mn</span></strong><span class="hl"> est prise par défaut.</span></p>
 <p><span class="hl">C’est une valeur « par défaut », qui est volontairement haute pour ne pas surcharger les échanges : dans le cas nominal, elle devra être précisée avec une valeur plus faible (mais tous les systèmes ne fonctionnent pas à la minute, surtout côté client).</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td><em><strong>Extensions</strong></em></td>
 <td><em>0:1</em></td>
@@ -6445,11 +5745,11 @@ Exchange</span>*<span class="hl_france"> ». </span>
 
 ### Réponse aux requêts d’information sur les correspondances
 
-| ***ServiceDelivery*** |                                                                          |      | *+Structure*          | Réponse aux requêtes d’information sur les correspondances |
-|-----------------------|--------------------------------------------------------------------------|------|-----------------------|------------------------------------------------------------|
-| HEADER                | :::                                                                      | 1:1  | *See ServiceDelivery* |                                                            |
-| *Payload*             | ***<span class="hl">ConnectionMonitoring­FeederDelivery</span>***      | 1:\* | *+Structure*          | voir ConnectionMonitoring­Feeder­Delivery.                 |
-|                       | ***<span class="hl">ConnectionMonitoring­DistributorDelivery</span>*** |      | *+Structure*          | voir ConnectionMonitoringDistributor­Delivery.             |
+| ***ServiceDelivery***  |  |  | *+Structure*  | Réponse aux requêtes d’information sur les correspondances  |
+|--|--|--|--|--|
+| HEADER  | :::  | 1:1  | *See ServiceDelivery*  |  |
+| *Payload*  | ***<span class="hl">ConnectionMonitoring­FeederDelivery</span>***  | 1:\*  | *+Structure*  | voir ConnectionMonitoring­Feeder­Delivery.  |
+|  | ***<span class="hl">ConnectionMonitoring­DistributorDelivery</span>***  |  | *+Structure*  | voir ConnectionMonitoringDistributor­Delivery.  |
 
 #### *Connection MonitoringFeeder Delivery*
 
@@ -6469,21 +5769,21 @@ Exchange</span>*<span class="hl_france"> ». </span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Attributes</em></td>
 <td><em><strong><span class="hl">version</span></strong></em></td>
 <td>1:1</td>
 <td><em>VersionString</em></td>
 <td>Numéro de version du service <em>Connection Monitoring</em>, intégrant le numéro de version de profil (voir 5.7) (valeur fixe).</td>
 </tr>
-<tr class="even">
+<tr>
 <td>LEADER</td>
 <td><em><strong><span class="hl">:::</span></strong></em></td>
 <td>1:1</td>
 <td><em>xxx­Delivery</em></td>
 <td>voir xxx<strong>Delivery</strong>.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Payload</em></td>
 <td><em><strong><span class="hl">Monitored­Feeder­Arrival</span></strong></em></td>
 <td>0:*</td>
@@ -6491,14 +5791,14 @@ Exchange</span>*<span class="hl_france"> ». </span>
 <td><p>Changement d’heure d’arrivée à la correspondance.</p>
 <p>Voir MonitoredFeederArrival.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Monitored­Feeder­Arrival­Cancellation</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td><p>Annulation de passage à la correspondance.</p>
 <p>Voir MonitoredFeederArrival.</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Any</em></td>
 <td><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -6526,122 +5826,95 @@ Exchange</span>*<span class="hl_france"> ». </span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Log</em></td>
 <td><em><strong><span class="hl">Recorded­AtTime</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et heure à laquelles ces données ont été produites.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Identity</em></td>
 <td><em><strong><span class="hl">Item</span>­<span class="hl">Identifier </span></strong></em></td>
 <td>0:1</td>
 <td><em>ItemIdentifier</em></td>
 <td>Référence le message d’information.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Feeder Inter­change Identity</em></td>
 <td><em><strong><span class="hl">Interchange</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Interchange­Code</em></td>
+<td><em>➜Interchange­Code</em></td>
 <td><p>Identifiant de la correspondance entre course</p>
 <p><span class="hl">Dans le cadre du profil France, si ce paramètre est présent, il sera constitué de la concaténation de l’identifiant de la course arrivant et de celui de la course au départ (séparés par le caractère ‘</span><strong><span class="hl">:</span></strong><span class="hl">’).</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Connection</span>­<span class="hl">Link­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>→Connection­Link­Code</em></td>
+<td><em>➜Connection­Link­Code</em></td>
 <td>Identifiant de la correspondance physique.</td>
 </tr>
-<tr class="even">
-<td rowspan="5"></td>
+<tr>
+<td rowspan="4"></td>
 <td><em><strong><span class="hl">Stop</span>­<span class="hl">Point­Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>→StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifiant du point d’arrêt de l’amenant (généralement porté par le ConnectionLink).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence : zone d'embarquement ou zone de lieu : granularité la plus fine possible dans tous les cas.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
 <td><em><strong><span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td>Numéro d'ordre de l'arrêt dans la mission.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Stop­Point­Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Nom du point d'arrêt.</td>
 </tr>
-<tr class="even">
-<td><em><strong><span class="hl">Clear</span>­<span class="hl">Down</span>­<span class="hl">Ref</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">ClearDownRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Cleardown­Code</em></td>
+<td><em>➜Cleardown­Code</em></td>
 <td><em>Cleardown</em> : indicateur « véhicule à l’arrêt » ou « à l’approche ».</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Journey Info</em></td>
 <td><em><strong><span class="hl">Feeder­Journey</span></strong></em></td>
 <td>1:1</td>
 <td><em>Connecting­Journey­Structure</em></td>
 <td>Description de la course de l’amenant.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"><em>Real-time call</em></td>
+<tr>
+<td><em>Real-time call</em></td>
 <td><em><strong><span class="hl">VehicleAt</span>­<span class="hl">Stop</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p>Indicateur “Véhicule à l’arrêt”.</p>
 <p>Valeur par défaut : « false»</p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">AimedArrivalTime</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure d'arrivée planifiée.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Call time</em></td>
 <td><em><strong><span class="hl">Expected­Arrival­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure d’arrivée prévue à l’arrêt.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">ArrivalPlatformName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Nom du quai d'arrivée.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td><em><strong>Extensions</strong></em></td>
 <td><em>0:1</em></td>
@@ -6653,18 +5926,17 @@ Exchange</span>*<span class="hl_france"> ». </span>
 
 ##### Structure FeederJourney
 
-| ***<span class="hl">FeederJourney</span>*** |                                                                                                        |       | *+Structure*                 | Description de la course de l’amenant                                   |
-|-----------------------------------------------|--------------------------------------------------------------------------------------------------------|-------|------------------------------|-------------------------------------------------------------------------|
-| *VehicleJourney­Identity*                     | ***<span class="hl">LineRef</span>***                                                                | 1:1   | *→LineCode*                  | Identifiant de la ligne.                                                |
-|                                               | ***<span class="hl">DirectionRef</span>***                                                           | 1:1   | *→Direction­Code*            | Indication de direction (aller/retour).                                 |
-|                                               | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­JourneyRef</span>***                    | 0:1   | *+Structure*                 | Identification de la course.                                            |
-| *JourneyPattern­Info*                         | ***<span class="hl">:::</span>***                                                                    | 0:1   | *Journey­Pattern­Info­Group* | Voir Journey­Pattern­Info­Group.                                        |
-| *VehicleJourney­Info*                         | ***<span class="hl">:::</span>***                                                                    | 0:1   | *Vehicle­JourneyInfo­Group*  | Voir Vehicle­JourneyInfo­Group.                                         |
-|                                               |                                                                                                        |       |                              |                                                                         |
-| *DisruptionGroup*                             | ***:::***                                                                                              | 0:1   | *Disruption­Group*           | Voir DisruptiomInfo­Group                                               |
-| *Progress*                                    | ***<span class="hl">Monitored</span>***                                                              | 0:1   | *xsd:boolean*                | Signale si l’information temps réel est disponible (oui par défaut).    |
-| *Call Times*                                  | ***<span class="hl">Aimed</span>­<span class="hl">Arrival</span>­<span class="hl">Time</span>*** | 0:1   | *xsd:dateTime*               | Heure d’arrivée prévue à l’arrêt.                                       |
-| *any*                                         | ***<span class="hl">Extensions</span>***                                                             | *0:1* | *any*                        | <span class="hl">Emplacement pour extension utilisateur (cf )</span> |
+| ***<span class="hl">FeederJourney</span>***  |  |  | *+Structure*  | Description de la course de l’amenant  |
+|--|--|--|--|--|
+| *VehicleJourney­Identity*  | ***<span class="hl">LineRef</span>***  | 1:1  | *➜LineCode*  | Identifiant de la ligne.  |
+|  | ***<span class="hl">DirectionRef</span>***  | 1:1  | *➜Direction­Code*  | Indication de direction (aller/retour).  |
+|  | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­JourneyRef</span>***  | 0:1  | *+Structure*  | Identification de la course.  |
+| *JourneyPattern­Info*  | ***<span class="hl">:::</span>***  | 0:1  | *Journey­Pattern­Info­Group*  | Voir Journey­Pattern­Info­Group.  |
+| *VehicleJourney­Info*  | ***<span class="hl">:::</span>***  | 0:1  | *Vehicle­JourneyInfo­Group*  | Voir Vehicle­JourneyInfo­Group.  |
+| *DisruptionGroup*  | ***:::***  | 0:1  | *Disruption­Group*  | Voir DisruptiomInfo­Group  |
+| *Progress*  | ***<span class="hl">Monitored</span>***  | 0:1  | *xsd:boolean*  | Signale si l’information temps réel est disponible (oui par défaut).  |
+| *Call Times*  | ***<span class="hl">Aimed</span>­<span class="hl">Arrival</span>­<span class="hl">Time</span>***  | 0:1  | *xsd:dateTime*  | Heure d’arrivée prévue à l’arrêt.  |
+| *any*  | ***<span class="hl">Extensions</span>***  | *0:1*  | *any*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ##### Structure MonitoredFeederArrivalCancellation
 
@@ -6684,139 +5956,127 @@ Exchange</span>*<span class="hl_france"> ». </span>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Log</em></td>
 <td><em><strong><span class="hl">Recorded­AtTime</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et heure auxquelles ces données ont été produites/enregistrées.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Identity</em></td>
 <td><em><strong><span class="hl">ItemRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>ItemIdentifier</em></td>
 <td>Identifie l’objet qui est annulé (voir le <em><strong>ItemRef</strong></em> correspondant dans les précédentes notifications d’information de correspondance).</td>
 </tr>
-<tr class="odd">
-<td rowspan="6"><em>Feeder<br />
+<tr>
+<td rowspan="5"><em>Feeder<br />
 Inter­change<br />
 Identity</em></td>
 <td><em><strong><span class="hl">Interchange­Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Interchange<strong>­</strong>Code</em></td>
+<td><em>➜Interchange<strong>­</strong>Code</em></td>
 <td><p>Identifiant de la correspondance entre courses.</p>
 <p><span class="hl">Dans le cadre du profil France, si ce paramètre est présent, il sera constitué de la concaténation de l’identifiant de la course arrivant et de celui de la course au départ (séparés par le caractère ‘</span><strong><span class="hl">:</span></strong><span class="hl">’).</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">ConnectionLink­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>→Connection­Link­Code</em></td>
+<td><em>➜Connection­Link­Code</em></td>
 <td>Identifiant de la correspondance physique.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">StopPoint­Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>→StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifiant du point d’arrêt de l’amenant (généralement porté par le <em>ConnectionLink</em>).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence :zone d'embarquement ou zone de lieu : granularité la plus fine possible dans tous les cas.</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td>Numéro d'ordre de l'arrêt dans la mission.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Stop­Point~Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Nom du point d'arrêt.</td>
 </tr>
-<tr class="odd">
-<td rowspan="11"><em>Journey Info</em></td>
+<tr>
+<td rowspan="10"><em>Journey Info</em></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>→LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">DirectionRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>→Destination­Code</em></td>
+<td><em>➜Destination­Code</em></td>
 <td>Identifiant de la direction (aller/retour).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Vehicle­JourneyRef</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Framed­Vehicle­JourneyRef­Structure</em></td>
 <td>Identification de la course.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">JourneyPatternRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Journey­PatternCode</em></td>
+<td><em>➜Journey­PatternCode</em></td>
 <td>Identifiant de la mission.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">JourneyPatternName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><p>Nom ou numero de course présenté au public.</p>
 <p><span class="hl">Dans le cas de la SNCF et du RER, cet identifiant est le code à 4 lettres qui désigne la mission (RER et Transilien).</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">VehicleMode</span></strong></em></td>
 <td>0:1</td>
-<td><em>air | bus | coach | ferry | metro | rail | tram | under­ground</em></td>
+<td><em>air  | bus  | coach  | ferry  | metro  | rail  | tram  | under­ground</em></td>
 <td><p><span class="hl">Mode de transport pour cette mission (il s’agit ici d’un mode « générique », tous les avions par exemple seront air, et c’est le </span><em><span class="hl">ProductCategory</span></em><span class="hl">, dans </span><em><span class="hl">ServiceInfoGroup</span></em><span class="hl">, qui donnera plus de précisions, comme : </span><em><span class="hl">internationalFlight, intercontinentalFlight, domesticScheduledFlight, shuttleFlight …</span></em></p>
 <p><span class="hl">Valeur par défaut : « bus »</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">RouteRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→RouteCode</em></td>
+<td><em>➜RouteCode</em></td>
 <td><span class="hl">Identifiant de l'itinéraire suivi.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Published­LineName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Nom commercial de la ligne.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">GroupOfLinesRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→GroupOfLinesCode</em></td>
+<td><em>➜GroupOfLinesCode</em></td>
 <td><span class="hl">Identifiant du Goupe de Lignes (réseau ou tout autre groupe de ligne auquel la course est rattachée</span><del><span class="hl">)</span></del></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">DirectionName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><p><span class="hl">Nom de la destination.</span></p>
 <p><span class="hl">Ce nom peut par exemple contenir des informations comme "A" ou "R" (Aller ou Retour) pour les lignes qui utilisent ces informations.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>Info</em></td>
 <td><em><strong><span class="hl">Reason</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Cause de l’annulation.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td><em><strong>Extensions</strong></em></td>
 <td><em>0:1</em></td>
@@ -6828,33 +6088,33 @@ Identity</em></td>
 
 #### Structure ConnectionMonitoringDistributorDelivery
 
-| ***<span class="hl">ConnectionMonitoringDistributor­Delivery</span>*** |                                                                     |       | *+Structure*    | Information concernant le “partant”.                                                                  |
-|--------------------------------------------------------------------------|---------------------------------------------------------------------|-------|-----------------|-------------------------------------------------------------------------------------------------------|
-| *Attributes*                                                             | ***<span class="hl">version</span>***                             | 1:1   | *VersionString* | Version du service intégrant le numéro de version de profil (voir 5.7) par exemple. ‘2.1:FR-IDF-2.4’. |
-| LEADER                                                                   | ***<span class="hl">:::</span>***                                 | 1:1   | *xxx­Delivery*  | See SIRI Part 2-7.2.1.1 xxx***Delivery**.*                                                            |
-| *Payload*                                                                | ***<span class="hl">WaitProlonged­Departure</span>***             | 0:\*  | *+Structure*    | Description d’une prolongation d’attente*.*                                                           |
-|                                                                          | ***<span class="hl">Stopping­Position­Changed­Departure</span>*** | 0:\*  | *+Structure*    | Déplacement du point de départ (et donc du trajet de correspondance).                                 |
-|                                                                          | ***<span class="hl">Distributor­Departure­Cancellation</span>***  | 0:\*  | *+Structure*    | Annulation de départ.                                                                                 |
-| *any*                                                                    | ***Extensions***                                                    | *0:1* | *+Structure*    | <span class="hl">Emplacement pour extension utilisateur (cf )</span>                               |
+| ***<span class="hl">ConnectionMonitoringDistributor­Delivery</span>***  |  |  | *+Structure*  | Information concernant le “partant”.  |
+|--|--|--|--|--|
+| *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Version du service intégrant le numéro de version de profil (voir 5.7) par exemple. ‘2.1:FR-IDF-2.4’.  |
+| LEADER  | ***<span class="hl">:::</span>***  | 1:1  | *xxx­Delivery*  | See SIRI Part 2-7.2.1.1 xxx***Delivery**.*  |
+| *Payload*  | ***<span class="hl">WaitProlonged­Departure</span>***  | 0:\*  | *+Structure*  | Description d’une prolongation d’attente*.*  |
+|  | ***<span class="hl">Stopping­Position­Changed­Departure</span>***  | 0:\*  | *+Structure*  | Déplacement du point de départ (et donc du trajet de correspondance).  |
+|  | ***<span class="hl">Distributor­Departure­Cancellation</span>***  | 0:\*  | *+Structure*  | Annulation de départ.  |
+| *any*  | ***Extensions***  | *0:1*  | *+Structure*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ##### Structure WaitProlongedDeparture
 
-| ***<span class="hl">WaitProlongedDeparture</span>*** |                                                                                   |       | *+Structure*             | Description d’une prologation d’arrêt pour attente de l’amenant         |
-|--------------------------------------------------------|-----------------------------------------------------------------------------------|-------|--------------------------|-------------------------------------------------------------------------|
-| *Log*                                                  | ***<span class="hl">Recorded­AtTime</span>***                                   | 1:1   | *xsd:dateTime*           | Date et heure auxquelles ces données ont été produites.                 |
-| *DistributorInfo*                                      | ***<span class="hl">:::</span>***                                               | 1:1   | *Distributor­Info­Group* | Voir DistributorInfoGroup (6.3.3.2.4.                                   |
-| *Change*                                               | ***<span class="hl">Expected­Departure</span>­<span class="hl">Time</span>*** | 1:1   | *xsd:dateTime*           | Nouvelle heure de départ prévue.                                        |
-| *any*                                                  | ***<span class="hl">Extensions</span>***                                        | *0:1* | *any*                    | <span class="hl">Emplacement pour extension utilisateur (cf )</span> |
+| ***<span class="hl">WaitProlongedDeparture</span>***  |  |  | *+Structure*  | Description d’une prologation d’arrêt pour attente de l’amenant  |
+|--|--|--|--|--|
+| *Log*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Date et heure auxquelles ces données ont été produites.  |
+| *DistributorInfo*  | ***<span class="hl">:::</span>***  | 1:1  | *Distributor­Info­Group*  | Voir DistributorInfoGroup (6.3.3.2.4.  |
+| *Change*  | ***<span class="hl">Expected­Departure</span>­<span class="hl">Time</span>***  | 1:1  | *xsd:dateTime*  | Nouvelle heure de départ prévue.  |
+| *any*  | ***<span class="hl">Extensions</span>***  | *0:1*  | *any*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ##### Structure StoppingPositionChangedDeparture
 
-| ***<span class="hl">StoppingPosition­ChangedDeparture</span>*** |                                                 |     | *+Structure*             | Description d’un déplacement (temporaire) de point d’arrêt              |
-|-------------------------------------------------------------------|-------------------------------------------------|-----|--------------------------|-------------------------------------------------------------------------|
-| *Log*                                                             | ***<span class="hl">Recorded­AtTime</span>*** | 1:1 | *xsd:dateTime*           | Date et heure auxquelles ces données ont été produites.                 |
-| *Distributor­Info*                                                | ***<span class="hl">:::</span>***             | 1:1 | *Distributor­Info­Group* | Voir DistributorInfoGroup (6.3.3.2.4)**.**                              |
-| *Change*                                                          | ***<span class="hl">ChangeNote</span>***      | 1:1 | *NLString*               | Description de la nouvelle position (textuelle).                        |
-|                                                                   | ***<span class="hl">NewLocation</span>***     | 0:1 | *→Location*              | Nouvelle position de l’arrêt.                                           |
-|                                                                   |                                                 |     |                          | <span class="hl">Emplacement pour extension utilisateur (cf )</span> |
+| ***<span class="hl">StoppingPosition­ChangedDeparture</span>***  |  |  | *+Structure*  | Description d’un déplacement (temporaire) de point d’arrêt  |
+|--|--|--|--|--|
+| *Log*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Date et heure auxquelles ces données ont été produites.  |
+| *Distributor­Info*  | ***<span class="hl">:::</span>***  | 1:1  | *Distributor­Info­Group*  | Voir DistributorInfoGroup (6.3.3.2.4)**.**  |
+| *Change*  | ***<span class="hl">ChangeNote</span>***  | 1:1  | *NLString*  | Description de la nouvelle position (textuelle).  |
+|  | ***<span class="hl">NewLocation</span>***  | 0:1  | *➜Location*  | Nouvelle position de l’arrêt.  |
+|  |  |  |  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ###### Structure Location
 
@@ -6876,20 +6136,20 @@ Identity</em></td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Attributes</em></td>
 <td colspan="2"><em><strong><span class="hl">id</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:NMTOKEN</em></td>
 <td>Identifiant du point (pour un éventuel lien avec une base Géospatiale ou un SIG)</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">srsName</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:string</em></td>
 <td>Idenfitiant du référentiel de projection (conforme EPSG, définit par l’OGC, et tel qu’utilisé par GML).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="5"><em>Coordinates</em></td>
 <td colspan="2"></td>
 <td></td>
@@ -6897,27 +6157,27 @@ Identity</em></td>
 <td><p>La localisation peut être fournie soit en WGS 84 soit dans un référentiel projeté (Lambert 2 étendu, par exemple).</p>
 <p><span class="hl">Ces deux possibilités sont conservées dans le profil SIRI France.</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><span class="hl">a</span></td>
 <td><em><strong><span class="hl">Longitude</span></strong></em></td>
 <td>–1:1</td>
 <td><em>Longitude­Type</em></td>
 <td><span class="hl">Longitude à partir du meridien de Greenwich :.180° (East) à +180° (West). </span><span class="hl">Degrés décimaux.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Latitude</span></strong></em></td>
 <td>–1:1</td>
 <td><em>Latitude­Type</em></td>
 <td><span class="hl">Latitude à partir de l’équateur. -90° (South) à +90° (North). </span><span class="hl">Degrés décimaux</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><span class="hl">b</span></td>
 <td><em><strong><span class="hl">Coordi</span>­<span class="hl">nates</span></strong></em></td>
 <td>–1:1</td>
 <td><em>xsd:string</em></td>
 <td>Coordonnées au format GML en cohérence avec l’attribut <em><strong>srsName</strong></em>.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Precision</span></strong></em></td>
 <td>0:1</td>
 <td><em>Distance</em></td>
@@ -6928,12 +6188,12 @@ Identity</em></td>
 
 ##### Structure DistributorDepartureCancellation
 
-| ***DistributorDeparture­­Cancellation*** |                                                 |       | *+Structure*             | Indication d’annulation de départ                                       |
-|------------------------------------------|-------------------------------------------------|-------|--------------------------|-------------------------------------------------------------------------|
-| *Log*                                    | ***<span class="hl">Recorded­AtTime</span>*** | 1:1   | *xsd:dateTime*           | Date et heure auxquelles ces données ont été produites.                 |
-| *DistributorInfo*                        | ***:::***                                       | 1:1   | *Distributor­Info­Group* | Voir DistributorInfoGroup. Voir 6.3.3.2.4                               |
-| *Call time*                              | ***<span class="hl">Reason</span>***          | 1:1   | *NLString*               | Raison de l’annulation.                                                 |
-| *any*                                    | ***<span class="hl">Extension</span>***       | *0:1* | *any*                    | <span class="hl">Emplacement pour extension utilisateur (cf )</span> |
+| ***DistributorDeparture­­Cancellation***  |  |  | *+Structure*  | Indication d’annulation de départ  |
+|--|--|--|--|--|
+| *Log*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Date et heure auxquelles ces données ont été produites.  |
+| *DistributorInfo*  | ***:::***  | 1:1  | *Distributor­Info­Group*  | Voir DistributorInfoGroup. Voir 6.3.3.2.4  |
+| *Call time*  | ***<span class="hl">Reason</span>***  | 1:1  | *NLString*  | Raison de l’annulation.  |
+| *any*  | ***<span class="hl">Extension</span>***  | *0:1*  | *any*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ##### Structure DistributorInfoGroup
 
@@ -6947,14 +6207,14 @@ Identity</em></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th rowspan="4"><em>Distributor Inter­change_ Identity</em></th>
+<th rowspan="3"><em>Distributor Inter­change_ Identity</em></th>
 <th><em><strong><span class="hl">Interchange</span>­<span class="hl">Ref</span></strong></em></th>
 <th>0:1</th>
 <th><em>àInterchangeCode</em></th>
 <th><p>Identifiant de la correspondance entre courses</p>
 <p><span class="hl">Dans le cadre du profil France, si ce paramètre est présent, il sera constitué de la concaténation de l’identifiant de la course arrivant et de celui de la course au départ (séparés par le caractère ‘</span><strong><span class="hl">:</span></strong><span class="hl">’).</span></p></th>
 </tr>
-<tr class="odd">
+<tr>
 <th><em><strong><span class="hl">Connection</span>­<span class="hl">Link­Ref</span></strong></em></th>
 <th><strong>1:1</strong></th>
 <th><em>àConnection­Link­Code</em></th>
@@ -6967,29 +6227,23 @@ Identity</em></td>
 <th><p>Identifiant du point d’arrêt du partant (généralement porté par le <em>ConnectionLink</em>).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence zone d'embarquement ou lieu d’arrêt : granularité la plus fine possible dans tous les cas.</span></p></th>
 </tr>
-<tr class="odd">
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">Distributor</span>­<span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td>Numéro d'ordre de l'arrêt dans la mission.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Journey Info</em></td>
 <td><em><strong><span class="hl">Distributor­Journey</span></strong></em></td>
 <td>1:1</td>
 <td><em>Connecting­Journey­Structure</em></td>
 <td>Description de la course du véhicule au départ.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Feeder Info</em></td>
 <td><em><strong><span class="hl">Feeder­Vehicle­JourneyRef</span></strong></em></td>
 <td>0:*</td>
@@ -7017,54 +6271,41 @@ Identity</em></td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td rowspan="3"><em>Vehicle­Journey­Identity</em></td>
+<tr>
+<td rowspan="2"><em>Vehicle­Journey­Identity</em></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Framed­Vehicle­JourneyRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Identifiant de la course.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Journey­PatternInfo</em></td>
 <td><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>JourneyPattern­InfoGroup</em></td>
 <td>Voir Journey­Pattern­Info­Group.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Vehicle­Journey­Info</em></td>
 <td><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>VehicleJourney­InfoGroup</em></td>
 <td>Voir Vehicle­JourneyInfo­Group.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Disruption­Group</em></td>
 <td><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>DisruptionGroup</em></td>
 <td>Voir Disruption­Group.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Progress</em></td>
 <td><em><strong><span class="hl">Monitored</span></strong></em></td>
 <td>0:1</td>
@@ -7072,13 +6313,13 @@ Identity</em></td>
 <td><p><span class="hl">Signale si les données temps réel sont disponibles pour cette course (« false » permet de signaler une délocalisation).</span></p>
 <p><span class="hl">Valeur par défaut : « true»</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Aimed</span>­<span class="hl">Arrival</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td>xsd:dateTime</td>
 <td>Heure d’arrivée prévue à la correspondance.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td><em>0:1</em></td>
@@ -7095,26 +6336,14 @@ PreviousCall est précisée en 5.8.
 
 ### Requête d’information sur les véhicules
 
-| ***VehicleMonitoringRequest*** |                                                    |                                                                       |                                         | *+Structure*        | Requête d’information sur les véhicules                                                                      |
-|--------------------------------|----------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------|
-| *Attrib­utes*                  | ***<span class="hl">version</span>***            |                                                                       | 1:1                                     | *VersionString*     | Version du service “Vehicle Monitoring”, intégrant le numéro de version de profil par exemple. ‘2.1:FR-1.0’. |
-| *End­point Properties*         | ***<span class="hl">Request­Timestamp</span>***  |                                                                       | 1:1                                     | *xsd:dateTime*      | Date d'émission de la requête.                                                                               |
-|                                | ***<span class="hl">Message­Identifier</span>*** |                                                                       | 0:1                                     | *Message­Qualifier* | Numéro d'identification du message.                                                                          |
-| *Topic*                        |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         | *choice*            |                                                                                                              |
-|                                | ***a***                                            | ***<span class="hl">Vehicle</span>­<span class="hl">Ref</span>*** | 0:1                                     | *→VehicleCode*      | Identifiant du véhicule.                                                                                     |
-|                                | ***b***                                            |                                                                       | ***<span class="hl">LineRef</span>*** | *→LineCode*         | Identifiant de la ligne (tous les véhicules de la ligne seront remontés).                                    |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-|                                |                                                    |                                                                       |                                         |                     |                                                                                                              |
-| *any*                          | ***<span class="hl">Extensions</span>***         |                                                                       | *0:1*                                   | *+Structure*        | <span class="hl">Emplacement pour extension utilisateur (cf )</span>                                      |
+| ***VehicleMonitoringRequest***  |  |  |  | *+Structure*  | Requête d’information sur les véhicules  |
+|--|--|--|--|--|--|
+| *Attrib­utes*  | ***<span class="hl">version</span>***  |  | 1:1  | *VersionString*  | Version du service “Vehicle Monitoring”, intégrant le numéro de version de profil par exemple. ‘2.1:FR-1.0’.  |
+| *End­point Properties*  | ***<span class="hl">Request­Timestamp</span>***  |  | 1:1  | *xsd:dateTime*  | Date d'émission de la requête.  |
+|  | ***<span class="hl">Message­Identifier</span>***  |  | 0:1  | *Message­Qualifier*  | Numéro d'identification du message.  |
+| *Topic* | ***a***  | ***<span class="hl">Vehicle</span>­<span class="hl">Ref</span>***  | 0:1  | *➜VehicleCode*  | Identifiant du véhicule.  |
+|  | ***b***  | ***<span class="hl">LineRef</span>***  | 0:1 | *➜LineCode* | Identifiant de la ligne (tous les véhicules de la ligne seront remontés).  |
+| *any*  | ***<span class="hl">Extensions</span>***  |  | *0:1*  | *+Structure*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ### Abonnement aux informations sur les véhicules
 
@@ -7135,34 +6364,34 @@ PreviousCall est précisée en 5.8.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Participant­Code</em></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur ( voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscription­Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identifiant de l'abonnement pour le système demandeur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Lease</em></td>
 <td colspan="2"><em><strong><span class="hl">Initial­Termination­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTIme</em></td>
 <td><span class="hl">Date et heure de fin de l'abonnement : un abonnement a forcément une date et heure de fin (les partenaires pourront décider de limiter la durée maximale d’un abonnement).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Request</em></td>
 <td colspan="2"><em><strong><span class="hl">Vehicle­Monitoring­Request</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>Voir VehicleMonitoringRequest.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Policy</em></td>
 <td colspan="2"><em><strong><span class="hl">Incremental­Updates</span></strong></em></td>
 <td>0:1</td>
@@ -7170,21 +6399,21 @@ PreviousCall est précisée en 5.8.
 <td><p><span class="hl">Indique s’il faut notifier uniquement les changements d'information, ou s’il faut systématiquement renvoyer toutes les informations si l'une d'elles change.</span></p>
 <p><span class="hl">Voir la documentation SIRI: </span><em><span class="hl">IncrementalUpdates.</span></em></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="3"></td>
 <td colspan="2"></td>
 <td></td>
 <td><em>choice</em></td>
 <td>Choix</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">a</span></strong></em></td>
 <td><em><strong><span class="hl">Change</span>­<span class="hl">Before­Updates</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td><span class="hl">Permet d'indiquer un écart de temps en dessous duquel on ne souhaite pas être notifié (si l'on demande un seuil de 5mn et qu'un horaire de départ change de 2mn, on ne sera pas notifié, évitant ainsi des flux d'information inutiles).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">b</span></strong></em></td>
 <td><em><strong><span class="hl">Update­Interval</span></strong></em></td>
 <td>0:1</td>
@@ -7196,14 +6425,13 @@ PreviousCall est précisée en 5.8.
 
 ### Réponse aux requêtes d’information sur les véhicules
 
-| ***<span class="hl">VehicleMonitoringDelivery</span>*** |                                                              |       | *+Structure*    | Réponse aux requêtes d’information sur les véhicules                                                                  |
-|-----------------------------------------------------------|--------------------------------------------------------------|-------|-----------------|-----------------------------------------------------------------------------------------------------------------------|
-| *Attributes*                                              | ***<span class="hl">version</span>***                      | 1:1   | *VersionString* | Numéro de version du service *Vehicle Monitoring*, intégrant le numéro de version de profil (voir 5.7) (valeur fixe). |
-| *LEADER*                                                  | ***<span class="hl">:::</span>***                          | 1:1   | *xxx­Delivery*  | Voir xxx***Delivery**.*                                                                                               |
-| *Payload*                                                 | ***<span class="hl">VehicleActivity</span>***              | 0:\*  | *+Structure*    | Fournit les informations concernant le véhicule.                                                                      |
-|                                                           | ***<span class="hl">VehicleActivity­Cancellation</span>*** | 0:\*  | *+Structure*    | Signale l’annulation du service du véhicule.                                                                          |
-|                                                           |                                                              |       |                 |                                                                                                                       |
-| *any*                                                     | ***<span class="hl">Extensions</span>***                   | *0:1* | *+Structure*    | <span class="hl">Emplacement pour extension utilisateur (cf )</span>                                               |
+| ***<span class="hl">VehicleMonitoringDelivery</span>***  |  |  | *+Structure*  | Réponse aux requêtes d’information sur les véhicules  |
+|--|--|--|--|--|
+| *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Numéro de version du service *Vehicle Monitoring*, intégrant le numéro de version de profil (voir 5.7) (valeur fixe).  |
+| *LEADER*  | ***<span class="hl">:::</span>***  | 1:1  | *xxx­Delivery*  | Voir xxx***Delivery**.*  |
+| *Payload*  | ***<span class="hl">VehicleActivity</span>***  | 0:\*  | *+Structure*  | Fournit les informations concernant le véhicule.  |
+|  | ***<span class="hl">VehicleActivity­Cancellation</span>***  | 0:\*  | *+Structure*  | Signale l’annulation du service du véhicule.  |
+| *any*  | ***<span class="hl">Extensions</span>***  | *0:1*  | *+Structure*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 #### Structure VehicleActivity
 
@@ -7224,14 +6452,14 @@ PreviousCall est précisée en 5.8.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Log</em></td>
 <td colspan="2"><em><strong><span class="hl">Recorded­At­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure à laquelle la position du véhicule a été mise à jour.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Currency</em></td>
 <td colspan="2"><em><strong><span class="hl">Valid­Until­Time</span></strong></em></td>
 <td>1:1</td>
@@ -7239,47 +6467,40 @@ PreviousCall est précisée en 5.8.
 <td><p>Heure jusqu'à laquelle l'information est réputée valide.</p>
 <p><span class="hl">Cette information obligatoire dans l'XSD SIRI n'est pas considerée indispensable par le profil. Par convention on la remplira avec la même valeur que </span><em><strong><span class="hl">Recorded­At</span></strong>­<strong><span class="hl">Time</span></strong></em><span class="hl"> pour signifier que l'information n'est pas à prendre en compte (on ne peut en efffet pas laisser le champ vide).</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">Item</span>­<span class="hl">Identifier </span></strong></em></td>
 <td>0:1</td>
 <td><em>ItemIdentifier</em></td>
 <td>Identifiant, qui permettra par la suite une annulation (par exemple, particulièrement utile si l’on ne dispose pas d’identifant de véhicule).</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Vehicle­Monitoring­Ref</span></strong></em></td>
 <td>0:1</td>
 <td><em>Vehicle­Monitoring­Identifier</em></td>
 <td>Identifiant du véhicule.</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="3"><em>StopProgressInfo</em></td>
 <td colspan="2"><em><strong><span class="hl">Progress­Between­Stops</span></strong></em></td>
 <td>0:1</td>
 <td><em>Location­Structure</em></td>
 <td>Position du véhicule entre l’arrêt précédent et l’arrêt suivant.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"></td>
 <td><em><strong><span class="hl">Link</span>­<span class="hl">Distance</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:decimal</em></td>
 <td><span class="hl">Distance totale entre les deux arrêts (distance réelle sur le réseau routier).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Percentage</span></strong></em></td>
 <td>0.1</td>
 <td><em>xsd:decimal</em></td>
 <td><span class="hl">Pourcentage de cette distance déjà couverte par le véhicule.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Journey­Info</em></td>
 <td colspan="2"><em><strong><span class="hl">Monitored­Vehicle­Journey</span></strong></em></td>
 <td>1:1</td>
@@ -7287,14 +6508,14 @@ PreviousCall est précisée en 5.8.
 <td><p><span class="hl">Décrit la course effectuée par le véhicule </span></p>
 <p><span class="hl">C’est au sein de cette structure que l’on trouvera la position du véhicule (vehicleLocation).Cf paragraphe </span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Message</em></td>
 <td colspan="2"><em><strong><span class="hl">Vehicle­Activity­Note</span></strong></em></td>
 <td>0:*</td>
 <td><em>NLString</em></td>
 <td>Information textuelle concernant le véhicule et son état courant (positionnement, etc.).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong>Extensions</strong></em></td>
 <td>0:1</td>
@@ -7306,17 +6527,16 @@ PreviousCall est précisée en 5.8.
 
 #### Structure VehicleActivityCancellation
 
-| ***<span class="hl">VehicleActivityCancellation</span>*** |                                                                                                                |      | *+Structure*               | Annulation de l’affectation d’un véhicule à une course                  |
-|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|------|----------------------------|-------------------------------------------------------------------------|
-| *End­point*                                                 | ***<span class="hl">Recorded­AtTime</span>***                                                                | 1:1  | *xsd:dateTime*             | Heure à laquelle l'annulation a été signalée/publiée.                   |
-| *Event­Identity*                                            | ***<span class="hl">ItemRef</span>***                                                                        | 0:1  | *ItemIdentifier*           | Identifiant de l’objet annulé (voir ***ItemRef*** plus haut).           |
-|                                                             | ***<span class="hl">Vehicle­Monitoring­Ref</span>***                                                         | 0:1  | *→Vehicle­Monitoring­Code* | Identifiant du véhicule.                                                |
-|                                                             | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Ref</span>*** | 0:1  | *+Structure*               | Description de la course annulée.                                       |
-|                                                             | ***<span class="hl">LineRef</span>***                                                                        | 0:1  | *→LineCode*                | Identifiant de la ligne.                                                |
-|                                                             |                                                                                                                |      |                            |                                                                         |
-| *Journey­Pattern­Info*                                      | ***:::***                                                                                                      | 0:1  | *JourneyPattern­InfoGroup* | See SIRI Part 2 JourneyPatternInfoGroup.                                |
-| *Message*                                                   | ***<span class="hl">Reason</span>***                                                                         | 0:\* | *NLString*                 | Description textuelle de la cause de l’annulation.                      |
-| *any*                                                       | ***<span class="hl">Extensions</span>***                                                                     | 0:1  | *Any*                      | <span class="hl">Emplacement pour extension utilisateur (cf )</span> |
+| ***<span class="hl">VehicleActivityCancellation</span>***  |  |  | *+Structure*  | Annulation de l’affectation d’un véhicule à une course  |
+|--|--|--|--|--|
+| *End­point*  | ***<span class="hl">Recorded­AtTime</span>***  | 1:1  | *xsd:dateTime*  | Heure à laquelle l'annulation a été signalée/publiée.  |
+| *Event­Identity*  | ***<span class="hl">ItemRef</span>***  | 0:1  | *ItemIdentifier*  | Identifiant de l’objet annulé (voir ***ItemRef*** plus haut).  |
+|  | ***<span class="hl">Vehicle­Monitoring­Ref</span>***  | 0:1  | *➜Vehicle­Monitoring­Code*  | Identifiant du véhicule.  |
+|  | ***<span class="hl">Framed</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Ref</span>***  | 0:1  | *+Structure*  | Description de la course annulée.  |
+|  | ***<span class="hl">LineRef</span>***  | 0:1  | *➜LineCode*  | Identifiant de la ligne.  |
+| *Journey­Pattern­Info*  | ***:::***  | 0:1  | *JourneyPattern­InfoGroup*  | See SIRI Part 2 JourneyPatternInfoGroup.  |
+| *Message*  | ***<span class="hl">Reason</span>***  | 0:\*  | *NLString*  | Description textuelle de la cause de l’annulation.  |
+| *any*  | ***<span class="hl">Extensions</span>***  | 0:1  | *Any*  | <span class="hl">Emplacement pour extension utilisateur (cf )</span>  |
 
 ## General Message
 
@@ -7356,10 +6576,10 @@ information ne concernant pas les réseaux (i.e.: match, concert, etc.).
 
 ### Matrice de capacité
 
-<span class="hl_france">Cette matrice n'est pas échangée dans le cadre
-du profil France: elle présente les principales fonctions retenues pour
-le service (les explications ne sont pas traduites dans ce tableau, mais
-on retrouve les traductions dans les tableaux qui suivent).</span>
+<span class="hl">Cette matrice n'est pas échangée dans le cadre du
+profil France: elle présente les principales fonctions retenues pour le
+service (les explications ne sont pas traduites dans ce tableau, mais on
+retrouve les traductions dans les tableaux qui suivent).</span>
 
 <table>
 <colgroup>
@@ -7369,49 +6589,49 @@ on retrouve les traductions dans les tableaux qui suivent).</span>
 <col style="width: 60%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Topic</em></td>
 <td colspan="2"><em><strong>TopicFiltering</strong></em></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td></td>
 <td><em><strong>DefaultPreview­Interval</strong></em></td>
 <td>Non</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 <td><em><strong><span class="hl_france">FilterByInfo­Channel</span></strong></em></td>
 <td><span class="hl_france">Oui</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Request Policy</em></td>
 <td colspan="2"><em><strong>RequestPolicy</strong></em></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong>Language</strong></em></td>
 <td><p>Non</p>
 <p>(si le message est disponible en plusieurs langues, toutes les langues sont systèmatiquement diffusées)</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="3"><em>Access Control</em></td>
 <td colspan="2"><em><strong>AccessControl</strong></em></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"></td>
 <td><em><strong>Request­Checking</strong></em></td>
 <td>Non</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>CheckInfo­Channel</strong></em></td>
 <td>Oui</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong>Extensions</strong></em></td>
 <td>Non</td>
@@ -7430,56 +6650,56 @@ on retrouve les traductions dans les tableaux qui suivent).</span>
 <col style="width: 49%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">GeneralMessageRequest</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">GeneralMessageRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Requête d'accès aux messages</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Attributes</em></td>
-<td><em><strong><span class="hl_france">version</span></strong></em></td>
+<td><em><strong><span class="hl">version</span></strong></em></td>
 <td>1:1</td>
 <td><em>VersionString</em></td>
 <td>Version du service « General Message », intégrant le numéro de version de profil (voir 4.2.9) (valeur fixe).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Endpoint Properties</em></td>
-<td><em><strong><span class="hl_france">Request­Timestamp</span></strong></em></td>
+<td><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date d'émission de la requête (voir SIRI Part 2 Common properties of SIRI Functional Service Requests).</td>
 </tr>
-<tr class="even">
-<td><em><strong><span class="hl_france">Message­Identifier</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Numéro d'identification du message</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Topic</em></td>
-<td><em><strong><span class="hl_france">Info</span>­<span class="hl_france">Channel­Ref</span></strong></em></td>
+<td><em><strong><span class="hl">Info</span>­<span class="hl">Channel­Ref</span></strong></em></td>
 <td>0:*</td>
 <td><em>InfoChannel­Code</em></td>
 <td><p>Identifie le canal pour lequel on souhaite obtenir les messages. Si ce champ n'est pas présent, la requête concerne tous les canaux.</p>
-<p><span class="hl_france">Dans le cadre du profil FR, seules les valeurs suivantes seront utilisées pour identifier les canaux:</span></p>
+<p><span class="hl">Dans le cadre du profil FR, seules les valeurs suivantes seront utilisées pour identifier les canaux:</span></p>
 <ul>
-<li><p><span class="hl_france">«Perturbation»</span></p></li>
-<li><p><span class="hl_france">«Information»</span></p></li>
-<li><p><span class="hl_france">«Commercial»</span></p></li>
+<li><p><span class="hl">«Perturbation»</span></p></li>
+<li><p><span class="hl">«Information»</span></p></li>
+<li><p><span class="hl">«Commercial»</span></p></li>
 </ul>
-<p><u><span class="hl_france">Note</span></u><span class="hl_france">: ce sont bien ces libellés texte précis, qui sont utilisés pour instancier l'attribut </span><strong><span class="hl_france">InfoChannelRef</span></strong><span class="hl_france"> (et non une codification équivalente).</span></p>
-<p><span class="hl_france">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ». Si le service SX est présent, seuls les canaux ‘Information ‘et ‘Commencial ‘sont valides. Les messages de type ‘perturbation sont véhiculés par le service SX (cf § ).</span></p></td>
+<p><u><span class="hl">Note</span></u><span class="hl">: ce sont bien ces libellés texte précis, qui sont utilisés pour instancier l'attribut </span><strong><span class="hl">InfoChannelRef</span></strong><span class="hl"> (et non une codification équivalente).</span></p>
+<p><span class="hl">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ». Si le service SX est présent, seuls les canaux ‘Information ‘et ‘Commencial ‘sont valides. Les messages de type ‘perturbation sont véhiculés par le service SX (cf <a href="#messages-iv-associés-aux-évènements">&</a>).</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Request Policy</em></td>
-<td><em><strong><span class="hl_france">Language</span></strong></em></td>
+<td><em><strong><span class="hl">Language</span></strong></em></td>
 <td>0:1</td>
 <td><em>xml:lang</em></td>
 <td><p><span class="hl">Langue dans laquelle le message est demandé.</span></p>
-<p><span class="hl_france">Dans le cadre du profil FR, seul le français est obligatoire, mais un système pourra optionnellement proposer d'autres langues.</span></p></td>
+<p><span class="hl">Dans le cadre du profil FR, seul le français est obligatoire, mais un système pourra optionnellement proposer d'autres langues.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td><em><strong>Extensions</strong></em></td>
 <td>0:1</td>
@@ -7500,35 +6720,35 @@ on retrouve les traductions dans les tableaux qui suivent).</span>
 <col style="width: 40%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">GeneralMessage­SubscriptionRequest</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">GeneralMessage­SubscriptionRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Requête d’abonnement au service SIRI <em>GeneralMessage</em>.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
-<td><em><strong><span class="hl_france">SubscriberRef</span></strong></em></td>
+<td><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>Participant­Code</em></td>
 <td>Identifiant du système demandeur (voir SIRI Part 2 Common <em>SubscriptionRequest</em> parameter.</td>
 </tr>
-<tr class="odd">
-<td><em><strong><span class="hl_france">Subscription­Identifier</span></strong></em></td>
+<tr>
+<td><em><strong><span class="hl">Subscription­Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identifiant (externe) du canal d'abonnement.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Lease</em></td>
-<td><em><strong><span class="hl_france">Initial­Termination­Time</span></strong></em></td>
+<td><em><strong><span class="hl">Initial­Termination­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTIme</em></td>
 <td>Date et heure prévues pour la fin de l'abonnement.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Request</em></td>
-<td><em><strong><span class="hl_france">General­Message­Request</span></strong></em></td>
+<td><em><strong><span class="hl">General­Message­Request</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>Voir GeneralMessageRequest.</td>
@@ -7538,21 +6758,21 @@ on retrouve les traductions dans les tableaux qui suivent).</span>
 
 ### Réponse du service « General Message » (structure générale)
 
-|                       |                                                                                                                                   |      |                       |                                             |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|------|-----------------------|---------------------------------------------|
-| ***ServiceDelivery*** |                                                                                                                                   |      | *+Structure*          | See SIRI Part 2-7.2.1 ***ServiceDelivery*** |
-| HEADER                | ***<span class="hl_france">::</span>***                                                                                         | 1:1  | *See ServiceDelivery* | En-tête générique des réponses.             |
-| *Payload*             | ***<span class="hl_france">General</span>­<span class="hl_france">Message</span>­<span class="hl_france">Delivery</span>*** | 1:\* | *+Structure*          | Voir GeneralMessageDelivery.                |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| ***ServiceDelivery***  |  |  | *+Structure*  | See SIRI Part 2-7.2.1 ***ServiceDelivery***  |
+| HEADER  | ***<span class="hl">::</span>***  | 1:1  | *See ServiceDelivery*  | En-tête générique des réponses.  |
+| *Payload*  | ***<span class="hl">General</span>­<span class="hl">Message</span>­<span class="hl">Delivery</span>***  | 1:\*  | *+Structure*  | Voir GeneralMessageDelivery.  |
 
 ### Réponse du service « General Message » (structure détaillée)
 
-|                              |                                                                                                   |       |                  |                                                                                       |
-|------------------------------|---------------------------------------------------------------------------------------------------|-------|------------------|---------------------------------------------------------------------------------------|
-| ***GeneralMessageDelivery*** |                                                                                                   |       | *+Structure*     | Contenu et modification des messages.                                                 |
-| *Attributes*                 | ***<span class="hl_france">version</span>***                                                    | *1:1* | *Version­String* | Version du service, intégrant le numéro de version de profil (voir 5.7) (valeur fixe) |
-| LEADER                       | ***<span class="hl_france">:::</span>***                                                        | 1:1   | *xxx­Delivery*   | En-tête (voir paragraphe 2.3*.)*                                                      |
-| *Payload*                    | ***<span class="hl_france">Info</span>­<span class="hl_france">Message</span>***              | 0:\*  | *+Structure*     | Le message lui-même (voir ***InfoMessage** ci dessous)*.                              |
-|                              | ***<span class="hl_france">Info</span>­<span class="hl_france">Message­Cancellation</span>*** | 0:\*  | *+Structure*     | Structure d'annulation d'un message précédent (voir ci dessous).                      |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| ***GeneralMessageDelivery***  |  |  | *+Structure*  | Contenu et modification des messages.  |
+| *Attributes*  | ***<span class="hl">version</span>***  | *1:1*  | *Version­String*  | Version du service, intégrant le numéro de version de profil (voir 5.7) (valeur fixe)  |
+| LEADER  | ***<span class="hl">:::</span>***  | 1:1  | *xxx­Delivery*  | En-tête (voir paragraphe 2.3*.)*  |
+| *Payload*  | ***<span class="hl">Info</span>­<span class="hl">Message</span>***  | 0:\*  | *+Structure*  | Le message lui-même (voir ***InfoMessage** ci dessous)*.  |
+|  | ***<span class="hl">Info­Message­Cancellation</span>***  | 0:\*  | *+Structure*  | Structure d'annulation d'un message précédent (voir ci dessous).  |
 
 <span class="hl">Note: GeneralMessageDelivery doit contenir au moins un
 InfoMessage ou un InfoMessage­Cancellation (il peut bien sur en contenir
@@ -7569,87 +6789,87 @@ plusieurs de chaque)</span>
 <col style="width: 52%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="3"><em><strong><span class="hl_france">InfoMessage</span></strong></em></td>
+<tr>
+<td colspan="3"><em><strong><span class="hl">InfoMessage</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Message d'information.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>attribute</em></td>
-<td><em><strong><span class="hl_france">format­Ref</span></strong></em></td>
+<td><em><strong><span class="hl">format­Ref</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>FormatCode</em></td>
-<td><p><span class="hl_france">Identifie le format du contenu (ouvert pour ce service).</span></p>
-<p><span class="hl_france">Dans le cadre du profil FR, ce champ sera toujours présent et aura une valeur fixe « </span><strong><span class="hl_france">France </span></strong><span class="hl_france">» et correspond au transport de la structure spécifique de message décrite plus bas.</span></p></td>
+<td><p><span class="hl">Identifie le format du contenu (ouvert pour ce service).</span></p>
+<p><span class="hl">Dans le cadre du profil FR, ce champ sera toujours présent et aura une valeur fixe « </span><strong><span class="hl">France </span></strong><span class="hl">» et correspond au transport de la structure spécifique de message décrite plus bas.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>log</em></td>
-<td><em><strong><span class="hl_france">RecordedAtTime</span></strong></em></td>
+<td><em><strong><span class="hl">RecordedAtTime</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure d'enregistrement du message.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Identity</em></td>
-<td><em><strong><span class="hl_france">ItemIdentifier</span><span class="hl"> </span></strong></em></td>
+<td><em><strong><span class="hl">ItemIdentifier </span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>ItemIdentifier</em></td>
 <td><p><span class="hl">Identifiant unique du message SIRI, fourni par son émetteur (deux réceptions différentes ne peuvent avoir le même identifiant). </span></p>
 <p><span class="hl">Il doit être unique et pérenne et bien identifier le message.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Identity</em></td>
-<td><em><strong><span class="hl_france">InfoMessage­Identifier</span></strong></em></td>
+<td><em><strong><span class="hl">InfoMessage­Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Identifier</em></td>
 <td><span class="hl">Identifiant </span><em><strong><span class="hl">InfoMessage</span></strong></em><span class="hl"> (sera utilisé pour les mises à jour et les abandons de message: toutes les mises à jour du message porteront le même </span><em><strong><span class="hl">InfoMessage­Identifier</span></strong></em><span class="hl">).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
-<td><em><strong><span class="hl_france">InfoMessage­Version</span></strong></em></td>
+<td><em><strong><span class="hl">InfoMessage­Version</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td>Version du <em><strong>InfoMessage</strong></em>.(considéré comme valant 1 si le champ n'est pas présent)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
-<td><em><strong><span class="hl_france">InfoChannelRef</span></strong></em></td>
+<td><em><strong><span class="hl">InfoChannelRef</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>InfoChannel</em></td>
 <td><p>Canal auquel appartient le message.</p>
-<p><span class="hl_france">Dans le cadre du profil FR, seules les valeurs suivantes seront utilisées pour identifier les canaux :</span></p>
+<p><span class="hl">Dans le cadre du profil FR, seules les valeurs suivantes seront utilisées pour identifier les canaux :</span></p>
 <ul>
-<li><p><span class="hl_france">« Perturbation »</span><span class="hl_france"></span></p></li>
-<li><p><span class="hl_france">« Information »</span></p></li>
-<li><p><span class="hl_france">« Commercial »</span></p></li>
+<li><p><span class="hl">« Perturbation »</span><span class="hl"></span></p></li>
+<li><p><span class="hl">« Information »</span></p></li>
+<li><p><span class="hl">« Commercial »</span></p></li>
 </ul>
-<p><u><span class="hl_france">Note</span></u><span class="hl_france">: ce sont bien ces libellés texte précis, qui sont utilisés pour instancier l'attribut </span><strong><span class="hl_france">InfoChannelRef</span></strong><span class="hl_france"> (et non une codification équivalente).</span></p>
-<p><span class="hl_france">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ».</span></p></td>
+<p><u><span class="hl">Note</span></u><span class="hl">: ce sont bien ces libellés texte précis, qui sont utilisés pour instancier l'attribut </span><strong><span class="hl">InfoChannelRef</span></strong><span class="hl"> (et non une codification équivalente).</span></p>
+<p><span class="hl">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ».</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Currency</em></td>
-<td><em><strong><span class="hl_france">ValidUntilTime</span></strong></em></td>
+<td><em><strong><span class="hl">ValidUntilTime</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>xsd:dateTime</em></td>
 <td><p>Date et heure jusqu'à laquelle le message est valide.</p>
 <p><span class="hl">Si toutefois l'heure de fin d'incident n'est pas connue, cette heure sera fixée en fin de journée d'exploitation (ou une heure fixe de fin de journée).</span></p>
-<p><span class="hl">Cette heure pourra naturellement être modifiée par une mise à jour ultérieure (pour le même </span><em><strong><span class="hl_france">Info­Message­Identifier</span></strong></em><span class="hl">).</span></p>
-<p><span class="hl">L'annulation du message est implicite lorsque que l'on atteint cette heure, mais peut aussi être anticipée en utilisant une </span><em><strong><span class="hl_france">InfoMessageCancellation </span></strong></em><span class="hl_france">(recommandé en mode abonnement)</span><em><strong><span class="hl_france">.</span></strong></em></p></td>
+<p><span class="hl">Cette heure pourra naturellement être modifiée par une mise à jour ultérieure (pour le même </span><em><strong><span class="hl">Info­Message­Identifier</span></strong></em><span class="hl">).</span></p>
+<p><span class="hl">L'annulation du message est implicite lorsque que l'on atteint cette heure, mais peut aussi être anticipée en utilisant une </span><em><strong><span class="hl">InfoMessageCancellation </span></strong></em><span class="hl">(recommandé en mode abonnement)</span><em><strong><span class="hl">.</span></strong></em></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Situation</em></td>
-<td><em><strong><span class="hl_france">Situation­Ref</span></strong></em></td>
+<td><em><strong><span class="hl">Situation­Ref</span></strong></em></td>
 <td>0:*</td>
 <td><em>SituationCode</em></td>
 <td>Référence à un événement externe auquel est rattaché le message.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Message</em></td>
-<td><em><strong><span class="hl_france">Content</span></strong></em></td>
+<td><em><strong><span class="hl">Content</span></strong></em></td>
 <td>1:1</td>
 <td><em>anyType</em></td>
 <td><p>Le message lui-même (voir ci-dessous)</p>
@@ -7657,7 +6877,7 @@ plusieurs de chaque)</span>
 <p><span class="hl"><Content xsi:type="siri:</span><del><span class="hl"> </span></del><span class="hl">FRGeneralMessageStructure"> </span></p>
 <p><span class="hl">dans le cadre du profil France.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -7678,49 +6898,49 @@ plusieurs de chaque)</span>
 <col style="width: 47%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td colspan="3"><strong><span class="hl_france">InfoMessageCancellation</span></strong></td>
+<tr>
+<td colspan="3"><strong><span class="hl">InfoMessageCancellation</span></strong></td>
 <td><em>+Structure</em></td>
 <td>Annulation d'un message émis précédemment.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>log</em></td>
-<td><em><strong><span class="hl_france">Recorded­At</span>­<span class="hl_france">Time</span></strong></em></td>
+<td><em><strong><span class="hl">Recorded­At</span>­<span class="hl">Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure à laquelle le message a été annulé.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Identity</em></td>
-<td><em><strong><span class="hl_france">ItemRef</span></strong></em></td>
+<td><em><strong><span class="hl">ItemRef</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>ItemIdentifier</em></td>
 <td><span class="hl">Identifiant unique du message SIRI (deux réceptions différentes ne peuvent avoir le même identifiant). Sa valeur doit naturellement être unique et pérenne pour un message.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Identity</em></td>
-<td><em><strong><span class="hl_france">Info­Message­Identifier</span></strong></em></td>
+<td><em><strong><span class="hl">Info­Message­Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Identifier</em></td>
 <td>Référence <em><strong>InfoMessage</strong></em> du message à annuler.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
-<td><em><strong><span class="hl_france">Info­Channel­Ref</span></strong></em></td>
+<td><em><strong><span class="hl">Info­Channel­Ref</span></strong></em></td>
 <td>0:1</td>
 <td><em>Info­ChannelCode</em></td>
 <td><p>Canal auquel appartient le message.</p>
-<p><span class="hl_france">Dans le cadre du profil IDF, seules les valeurs suivantes seront utilisées pour identifier les canaux:</span></p>
+<p><span class="hl">Dans le cadre du profil IDF, seules les valeurs suivantes seront utilisées pour identifier les canaux:</span></p>
 <ul>
-<li><p><span class="hl_france">« Perturbation »</span></p></li>
-<li><p><span class="hl_france">« Information »</span></p></li>
-<li><p><span class="hl_france">« Commercial »</span></p></li>
+<li><p><span class="hl">« Perturbation »</span></p></li>
+<li><p><span class="hl">« Information »</span></p></li>
+<li><p><span class="hl">« Commercial »</span></p></li>
 </ul>
-<p><u><span class="hl_france">Note</span></u><span class="hl_france">: ce sont bien ces libellés texte précis qui sont utilisés pour instancier l'attribut </span><strong><span class="hl_france">InfoChannelRef</span></strong><span class="hl_france"> (et non une codification équivalente).</span></p>
-<p><span class="hl_france">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ».</span></p></td>
+<p><u><span class="hl">Note</span></u><span class="hl">: ce sont bien ces libellés texte précis qui sont utilisés pour instancier l'attribut </span><strong><span class="hl">InfoChannelRef</span></strong><span class="hl"> (et non une codification équivalente).</span></p>
+<p><span class="hl">Les travaux prévus et non prévus sont transmis en messages de type « Perturbation ».</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td><em><strong>Extensions</strong></em></td>
 <td>0:1</td>
@@ -7736,7 +6956,7 @@ Cette structure spécifique constitue le mécanisme de filtrage du service
 « General Message » et s'insère au sein de l'élément **extension** de la
 requête.
 
-[image](media/image3.png)
+![image](media/image3.png)
 
 <table>
 <colgroup>
@@ -7745,39 +6965,39 @@ requête.
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="hl_france">GM-1</span></th>
-<th><p><span class="hl_france">Les champs de la structure sont les suivants:</span></p>
+<th><span class="hl">GM-1</span></th>
+<th><p><span class="hl">Les champs de la structure sont les suivants:</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ «LineRef» permet de n'obtenir que les messages relatifs à la ligne indiquée ;</span></p></li>
-<li><p><span class="hl_france">Le champ «StopPointRef» permet de n'obtenir que les messages relatifs à l'arrêt indiqué (Il convient d'utiliser ici un identifiant d'objet de référence de zone d'embarquement ou zone de lieu : granularité la plus fine possible dans tous les cas) ;</span></p></li>
-<li><p><span class="hl_france">Le champ «JourneyPatternRef» permet de n'obtenir que les messages relatifs à la mission commerciale indiquée ;</span></p></li>
-<li><p><span class="hl_france">Le champ «DestinationRef» permet de n'obtenir que les messages relatifs à la destination indiquée ;</span></p></li>
-<li><p><span class="hl_france">Le champ «RouteRef» permet de n'obtenir que les messages relatifs à l'itinéraire indiqué ;</span></p></li>
-<li><p><span class="hl_france">Le champ «GroupOfLinesRef» permet de n'obtenir que les messages relatifs au groupe de lignes indiqué (réseau ou tout groupe de lignes dont le code a été préalablement échangé comme donnée de référence : Noctilien, lignes attachées à un dépôt, etc.)</span></p></li>
+<li><p><span class="hl">Le champ «LineRef» permet de n'obtenir que les messages relatifs à la ligne indiquée ;</span></p></li>
+<li><p><span class="hl">Le champ «StopPointRef» permet de n'obtenir que les messages relatifs à l'arrêt indiqué (Il convient d'utiliser ici un identifiant d'objet de référence de zone d'embarquement ou zone de lieu : granularité la plus fine possible dans tous les cas) ;</span></p></li>
+<li><p><span class="hl">Le champ «JourneyPatternRef» permet de n'obtenir que les messages relatifs à la mission commerciale indiquée ;</span></p></li>
+<li><p><span class="hl">Le champ «DestinationRef» permet de n'obtenir que les messages relatifs à la destination indiquée ;</span></p></li>
+<li><p><span class="hl">Le champ «RouteRef» permet de n'obtenir que les messages relatifs à l'itinéraire indiqué ;</span></p></li>
+<li><p><span class="hl">Le champ «GroupOfLinesRef» permet de n'obtenir que les messages relatifs au groupe de lignes indiqué (réseau ou tout groupe de lignes dont le code a été préalablement échangé comme donnée de référence : Noctilien, lignes attachées à un dépôt, etc.)</span></p></li>
 </ul></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><span class="hl_france">GM-2</span></td>
-<td><span class="hl_france">Les champs de filtres sont insérés au sein d'une structure "choice" et ne peuvent donc être utilisés simultanément.</span></td>
+<tr>
+<td><span class="hl">GM-2</span></td>
+<td><span class="hl">Les champs de filtres sont insérés au sein d'une structure "choice" et ne peuvent donc être utilisés simultanément.</span></td>
 </tr>
 </tbody>
 </table>
 
 ### Structure spécifique des messages pour le profil FR
 
-[image](media/image4.png)
+![image](media/image4.png)
 
 <span class="hl">Cette structure correspond au champ </span>*<span
 class="hl">Content</span>*<span class="hl"> de la structure
 </span>*<span class="hl">Infomessage</span>*<span
 class="hl">.</span>
 
-<span class="hl_france">Cette structure est définie de façon spécifique
-pour le profil FR car la norme SIRI n'impose pas de structure de message
-(et n'en propose pas non plus) : il revient donc à chaque profil de
-décrire ces messages. </span>
+<span class="hl">Cette structure est définie de façon spécifique pour
+le profil FR car la norme SIRI n'impose pas de structure de message (et
+n'en propose pas non plus) : il revient donc à chaque profil de décrire
+ces messages. </span>
 
 <table>
 <colgroup>
@@ -7786,70 +7006,70 @@ décrire ces messages. </span>
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="hl_france">GM-3</span></th>
-<th><p><span class="hl_france">Les champs de la structure sont les suivants :</span></p>
+<th><span class="hl">GM-3</span></th>
+<th><p><span class="hl">Les champs de la structure sont les suivants :</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ «LineRef» identifie la ou les lignes concernées par le message. </span></p></li>
+<li><p><span class="hl">Le champ «LineRef» identifie la ou les lignes concernées par le message. </span></p></li>
 </ul>
-<p><span class="hl_france">Si une ligne est indiquée, le message porte sur toute la ligne sans restriction.</span></p>
-<p><span class="hl_france">Les choix de comportement pour générer la liste des messages concernant la ligne (messages spécifiques à la ligne, messages concernant tous les arrêts desservis par la ligne, etc.) restent à l'appréciation du producteur et seront précisés par les spécifications.</span></p>
+<p><span class="hl">Si une ligne est indiquée, le message porte sur toute la ligne sans restriction.</span></p>
+<p><span class="hl">Les choix de comportement pour générer la liste des messages concernant la ligne (messages spécifiques à la ligne, messages concernant tous les arrêts desservis par la ligne, etc.) restent à l'appréciation du producteur et seront précisés par les spécifications.</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ «StopPointRef» identifie le ou les points d'arrêt concernés par le message. </span></p></li>
+<li><p><span class="hl">Le champ «StopPointRef» identifie le ou les points d'arrêt concernés par le message. </span></p></li>
 </ul>
-<p><span class="hl_france">Il convient d'utiliser ici un identifiant d'objet de référence . Zone dembarquement, Lieu d’arrêt monomodal, Lieu d’arrêt multimodal.</span></p>
-<p><span class="hl_france">Les choix de comportement pour générer la liste des messages concernant l’arrêt (messages spécifiques à l’arrêt, messages concernant toutes les lignes de l’opérateur desservant l’arrêt, etc.) restent à l'appréciation du producteur et seront précisés par les spécifications.</span></p>
+<p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence . Zone dembarquement, Lieu d’arrêt monomodal, Lieu d’arrêt multimodal.</span></p>
+<p><span class="hl">Les choix de comportement pour générer la liste des messages concernant l’arrêt (messages spécifiques à l’arrêt, messages concernant toutes les lignes de l’opérateur desservant l’arrêt, etc.) restent à l'appréciation du producteur et seront précisés par les spécifications.</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ «JourneyPatternRef» identifie la ou les missions concernées par le message. </span></p></li>
+<li><p><span class="hl">Le champ «JourneyPatternRef» identifie la ou les missions concernées par le message. </span></p></li>
 </ul>
-<p><span class="hl_france">Si une mission est indiquée, le message porte sur toute la mission sans restriction.</span></p>
+<p><span class="hl">Si une mission est indiquée, le message porte sur toute la mission sans restriction.</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ «DestinationRef» identifie la ou les destinations concernées par le message</span></p></li>
+<li><p><span class="hl">Le champ «DestinationRef» identifie la ou les destinations concernées par le message</span></p></li>
 </ul>
-<p><span class="hl_france">Si une destination est indiquée, le message porte sur toutes les courses ayant cette destination sans restriction.</span></p>
+<p><span class="hl">Si une destination est indiquée, le message porte sur toutes les courses ayant cette destination sans restriction.</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ «RouteRef» identifie le ou les itinéraires concernés par le message. </span></p></li>
+<li><p><span class="hl">Le champ «RouteRef» identifie le ou les itinéraires concernés par le message. </span></p></li>
 </ul>
-<p><span class="hl_france">Si un itinéraire est indiqué, le message porte sur tout l'itinéraire sans restriction.</span></p>
+<p><span class="hl">Si un itinéraire est indiqué, le message porte sur tout l'itinéraire sans restriction.</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ «GroupOfLinesRef» permet d'indiquer que le message est relatifs au groupe de lignes indiqué (réseau ou tout groupe de lignes dont le code a été préalablement échangé comme donnée de référence : Noctilien, lignes attachées à un dépôt, etc.). Toutes les lignes du groupe de lignes sont alors concernées par le message.</span></p></li>
-<li><p><span class="hl_france">Le champ «LineSection» identifie la ou les sections de lignes (premier et dernier arrêt ainsi que leur ligne d'appartenance) concernée(s) par le message. </span></p></li>
+<li><p><span class="hl">Le champ «GroupOfLinesRef» permet d'indiquer que le message est relatifs au groupe de lignes indiqué (réseau ou tout groupe de lignes dont le code a été préalablement échangé comme donnée de référence : Noctilien, lignes attachées à un dépôt, etc.). Toutes les lignes du groupe de lignes sont alors concernées par le message.</span></p></li>
+<li><p><span class="hl">Le champ «LineSection» identifie la ou les sections de lignes (premier et dernier arrêt ainsi que leur ligne d'appartenance) concernée(s) par le message. </span></p></li>
 </ul>
-<p><span class="hl_france">Si une section de ligne est indiquée, le message porte sur tous les arrêts de cette section, sans restriction. </span></p>
-<p><u><span class="hl_france">Note</span></u><span class="hl_france">: pour être exact il vaudrait mieux parler de section d’itinéraires, mais beaucoup de systèmes ne disposant pas de la notion d’itinéraires, le choix a été de faire porter la section sur la ligne.</span></p>
+<p><span class="hl">Si une section de ligne est indiquée, le message porte sur tous les arrêts de cette section, sans restriction. </span></p>
+<p><u><span class="hl">Note</span></u><span class="hl">: pour être exact il vaudrait mieux parler de section d’itinéraires, mais beaucoup de systèmes ne disposant pas de la notion d’itinéraires, le choix a été de faire porter la section sur la ligne.</span></p>
 <ul>
-<li><p><span class="hl_france">Le champ « </span><strong><span class="hl_france">Message </span></strong><span class="hl_france">» contient le message lui-même :</span></p></li>
-<li><p><span class="hl_france">« NumberOfLines » est une information facultative de formatage précisant le nombre de lignes du message ;</span></p></li>
-<li><p><span class="hl_france"> « NumberOfCharPerLine » est une information facultative de formatage précisant le nombre maximum de caractères par ligne d’affichage dans le message ;</span></p></li>
-<li><p><span class="hl_france"> « </span><strong><span class="hl_france">MessageType</span></strong><span class="hl_france"> » permet de donner un type au contenu du message. </span><span class="hl_france">Les valeurs possibles pour ce type sont :</span></p>
+<li><p><span class="hl">Le champ « </span><strong><span class="hl">Message </span></strong><span class="hl">» contient le message lui-même :</span></p></li>
+<li><p><span class="hl">« NumberOfLines » est une information facultative de formatage précisant le nombre de lignes du message ;</span></p></li>
+<li><p><span class="hl"> « NumberOfCharPerLine » est une information facultative de formatage précisant le nombre maximum de caractères par ligne d’affichage dans le message ;</span></p></li>
+<li><p><span class="hl"> « </span><strong><span class="hl">MessageType</span></strong><span class="hl"> » permet de donner un type au contenu du message. </span><span class="hl">Les valeurs possibles pour ce type sont :</span></p>
 <ul>
 <li><blockquote>
-<p><em><strong><span class="hl_france">shortMessage</span></strong></em><span class="hl_france"> : Message texte court, par opposition au </span><em><strong><span class="hl_france">longMessage </span></strong></em><span class="hl_france">; l'utilisation de ce code suppose que l'on disposera aussi d'une version longue du même message.</span></p>
+<p><em><strong><span class="hl">shortMessage</span></strong></em><span class="hl"> : Message texte court, par opposition au </span><em><strong><span class="hl">longMessage </span></strong></em><span class="hl">; l'utilisation de ce code suppose que l'on disposera aussi d'une version longue du même message.</span></p>
 </blockquote></li>
 <li><blockquote>
-<p><em><strong><span class="hl_france">longMessage</span></strong></em><span class="hl_france"> : Message texte long, par opposition au </span><em><strong><span class="hl_france">shortMessage </span></strong></em><span class="hl_france">; l'utilisation de ce code suppose que l'on disposera aussi d'une version courte du même message.</span></p>
+<p><em><strong><span class="hl">longMessage</span></strong></em><span class="hl"> : Message texte long, par opposition au </span><em><strong><span class="hl">shortMessage </span></strong></em><span class="hl">; l'utilisation de ce code suppose que l'on disposera aussi d'une version courte du même message.</span></p>
 </blockquote></li>
 <li><blockquote>
-<p><em><strong><span class="hl_france">textOnly</span></strong></em><span class="hl_france"> : texte libre sans restriction ni formatage particulier, mais n'utilisant que des caractères textes imprimables sans saut de ligne. Le profil établit depuis sa vesion 2.3 que la fourniture du message sous cette version est </span><strong><span class="hl_france">obligatoire</span></strong><span class="hl_france">.</span><span class="hl"> Un </span><em><strong><span class="hl">messageText</span></strong></em><span class="hl"> est évidemment obligatoire dans quand on positionne </span><strong><span class="hl_france">MessageType</span></strong><span class="hl"> à </span><em><strong><span class="hl_france">textOnly</span></strong></em><span class="hl_france">.</span></p>
+<p><em><strong><span class="hl">textOnly</span></strong></em><span class="hl"> : texte libre sans restriction ni formatage particulier, mais n'utilisant que des caractères textes imprimables sans saut de ligne. Le profil établit depuis sa vesion 2.3 que la fourniture du message sous cette version est </span><strong><span class="hl">obligatoire</span></strong><span class="hl">. Un </span><em><strong><span class="hl">messageText</span></strong></em><span class="hl"> est évidemment obligatoire dans quand on positionne </span><strong><span class="hl">MessageType</span></strong><span class="hl"> à </span><em><strong><span class="hl">textOnly</span></strong></em><span class="hl">.</span></p>
 </blockquote></li>
 <li><blockquote>
-<p><em><strong><span class="hl_france">formattedText</span></strong></em><span class="hl_france"> : texte formaté en nombre de lignes et de caractères (voir les champs précédents). Dans ce cas le retour chariot est <LF> seul (code ascii 10 en décimal) ;</span></p>
+<p><em><strong><span class="hl">formattedText</span></strong></em><span class="hl"> : texte formaté en nombre de lignes et de caractères (voir les champs précédents). Dans ce cas le retour chariot est <LF> seul (code ascii 10 en décimal) ;</span></p>
 </blockquote></li>
 <li><blockquote>
-<p><em><strong><span class="hl_france">HTML</span></strong></em><span class="hl_france"> : format compatible HTML 4 ;</span></p>
+<p><em><strong><span class="hl">HTML</span></strong></em><span class="hl"> : format compatible HTML 4 ;</span></p>
 </blockquote></li>
 <li><blockquote>
-<p><em><strong><span class="hl_france">RTF</span></strong></em><span class="hl_france"> : Rich Text Format ;</span></p>
+<p><em><strong><span class="hl">RTF</span></strong></em><span class="hl"> : Rich Text Format ;</span></p>
 </blockquote></li>
 <li><blockquote>
-<p><em><strong><span class="hl_france">codedMessage </span></strong></em><span class="hl_france">: Ce type permettra par exemple de définir une bibliothèque de messages de n’en communiquer que le type (en laissant alors vide le champ texte). </span></p>
+<p><em><strong><span class="hl">codedMessage </span></strong></em><span class="hl">: Ce type permettra par exemple de définir une bibliothèque de messages de n’en communiquer que le type (en laissant alors vide le champ texte). </span></p>
 </blockquote></li>
 </ul></li>
 </ul>
-<p><span class="hl_france">Si une telle bibliothèque est utilisée, elle devra être définie dans le protocole d’accord établi entre les différents intervenants dans l’échange. On pourra aussi éventuellement en envisager une définition globale au niveau du SDIV. </span></p>
+<p><span class="hl">Si une telle bibliothèque est utilisée, elle devra être définie dans le protocole d’accord établi entre les différents intervenants dans l’échange. On pourra aussi éventuellement en envisager une définition globale au niveau du SDIV. </span></p>
 <ul>
-<li><p><span class="hl_france">« MessageText » est une chaîne de caractères contenant un libellé de message (la langue du message peut être précisée et plusieurs « Message » peuvent être diffusés en une seule fois ce qui permet de diffuser un message en plusieurs langues ou sous plusieurs formes).</span></p></li>
+<li><p><span class="hl">« MessageText » est une chaîne de caractères contenant un libellé de message (la langue du message peut être précisée et plusieurs « Message » peuvent être diffusés en une seule fois ce qui permet de diffuser un message en plusieurs langues ou sous plusieurs formes).</span></p></li>
 </ul>
-<p><span class="hl_france">Chaque producteur fournit une information sans mise en page (sans retour chariot) : la charge de la mise en page revient aux diffuseurs en fonction de ses capacités d’affichage.</span></p></th>
+<p><span class="hl">Chaque producteur fournit une information sans mise en page (sans retour chariot) : la charge de la mise en page revient aux diffuseurs en fonction de ses capacités d’affichage.</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -7864,9 +7084,9 @@ prendre le format le plus adapté à son usage et ses contraintes.</span>
 <span class="hl">La fin de validitié d'un message, en particulier d'une
 perturbation, est gérée de la façon suivante :</span>
 
-| <span class="hl_france">GM-4</span> | <span class="hl">En mode requête, le diffuseur doit considérer une information reçue précédemment comme obsolète quand la réponse qu'il reçoit est vide (ou tout du moins quand elle ne retourne plus l'information précédemment reçue) ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time) ; le producteur n’envoie en effet que les messages actifs au moment de la requête.</span> |
-|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <span class="hl_france">GM-5</span> | <span class="hl">En mode abonnement, le diffuseur doit considérer une information reçue précédemment comme obsolète quand il reçoit une information de type "InfoMessageCancellation" ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time).</span>                                                                                                                                     |
+| <span class="hl">GM-4</span>  | <span class="hl">En mode requête, le diffuseur doit considérer une information reçue précédemment comme obsolète quand la réponse qu'il reçoit est vide (ou tout du moins quand elle ne retourne plus l'information précédemment reçue) ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time) ; le producteur n’envoie en effet que les messages actifs au moment de la requête.</span>  |
+|--|--|
+| <span class="hl">GM-5</span>  | <span class="hl">En mode abonnement, le diffuseur doit considérer une information reçue précédemment comme obsolète quand il reçoit une information de type "InfoMessageCancellation" ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time).</span>  |
 
 ### Précision sur l'encodage de la structure spécifique France et exemple de message
 
@@ -7883,52 +7103,37 @@ En conséquence, il convient donc d'encoder (en attribut) le type de la
 structure utilisée pour décrire le message, en l'occurrence sous la
 forme :
 
-\<Content xsi:type="siri:~~IDF~~FrGeneralMessageStructure">
+```
+<Content xsi:type="siri:~~IDF~~FrGeneralMessageStructure">
+```
 
 Les lignes ci-dessous proposent un exemple de *Delivery* d'un *General
 Message* dans le cadre du profil France.
 
-\<siri:GeneralMessageDelivery version="1.3">
-
-\<siri:ResponseTimestamp>2013-12-19T11:26:59.677+01:00\</siri:ResponseTimestamp>
-
-\<siri:RequestMessageRef>SOAP-REQ-12345\</siri:RequestMessageRef>
-
-\<siri:Status>true\</siri:Status>
-
-\<siri:ValidUntil>2013-12-19T11:28:59.677+01:00\</siri:ValidUntil>
-
-\<siri:DefaultLanguage>FR\</siri:DefaultLanguage>
-
-\<siri:GeneralMessage formatRef="France">
-
-\<siri:RecordedAtTime>2013-12-19T11:26:59.767+01:00\</siri:RecordedAtTime>
-
-\<siri:ItemIdentifier>ITEM-ID-1234567\</siri:ItemIdentifier>
-
-\<siri:InfoMessageIdentifier>INFMSG-ID-12345678\</siri:InfoMessageIdentifier>
-
-\<siri:InfoChannelRef>Information\</siri:InfoChannelRef>
-
-\<siri:ValidUntilTime>2013-13-19T11:32:59.767+01:00\</siri:ValidUntilTime>
-
-\<siri:Content xsi:type="siri:<span
+```
+<siri:GeneralMessageDelivery version="1.3">
+<siri:ResponseTimestamp>2013-12-19T11:26:59.677+01:00</siri:ResponseTimestamp>
+<siri:RequestMessageRef>SOAP-REQ-12345</siri:RequestMessageRef>
+<siri:Status>true</siri:Status>
+<siri:ValidUntil>2013-12-19T11:28:59.677+01:00</siri:ValidUntil>
+<siri:DefaultLanguage>FR</siri:DefaultLanguage>
+<siri:GeneralMessage formatRef="France">
+<siri:RecordedAtTime>2013-12-19T11:26:59.767+01:00</siri:RecordedAtTime>
+<siri:ItemIdentifier>ITEM-ID-1234567</siri:ItemIdentifier>
+<siri:InfoMessageIdentifier>INFMSG-ID-12345678</siri:InfoMessageIdentifier>
+<siri:InfoChannelRef>Information</siri:InfoChannelRef>
+<siri:ValidUntilTime>2013-13-19T11:32:59.767+01:00</siri:ValidUntilTime>
+<siri:Content xsi:type="siri:<span
 class="hl">FrGeneralMessageStructure</span>">
-
-\<siri:Message>
-
-\<siri:MessageType>textOnly\</siri:MessageType>
-
-\<siri:MessageText xml:lang="FR">Trafic normal sur l'ensemble du
-réseau.\</siri:MessageText>
-
-\</siri:Message>
-
-\</siri:Content>
-
-\</siri:GeneralMessage>
-
-\</siri:GeneralMessageDelivery>
+<siri:Message>
+<siri:MessageType>textOnly</siri:MessageType>
+<siri:MessageText xml:lang="FR">Trafic normal sur l'ensemble du
+réseau.</siri:MessageText>
+</siri:Message>
+</siri:Content>
+</siri:GeneralMessage>
+</siri:GeneralMessageDelivery>
+```
 
 ## Facility Monitoring
 
@@ -7981,19 +7186,19 @@ Ce service permet d’échanger :
 <col style="width: 58%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">FacilityMonitoringRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Requête pour obtenir des informations temps reel sur un ‘Service’</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Attrib­utes</td>
 <td colspan="3"><em><strong><span class="hl">Version</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>Version­String</em></td>
 <td>Version du service ‘Facility Monitoring’ integrant le numéro de version du profil France ‘2.1:FR-1.0’</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2">End­point<br />
 Properties</td>
 <td colspan="3"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
@@ -8001,125 +7206,75 @@ Properties</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date d’émission de la requête</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Numéro d’identification du message</td>
 </tr>
-<tr class="odd">
-<td colspan="2" rowspan="15">Topic</td>
+<tr>
+<td colspan="2" rowspan="9">Topic</td>
 <td colspan="2"><em><strong><span class="hl_delete">Preview­Interval</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">Positive­Duration­Type</span></em></td>
 <td><span class="hl_delete">Forward duration for which Facility information should be included, that is,only Facilities or Facility conditions with a validity period that falls within the specified interval will be included. </span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">StartTime</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">xsd:dateTime</span></em></td>
 <td><span class="hl_delete">Initial start time for </span><em><strong><span class="hl_delete">PreviewInterval</span></strong></em><span class="hl_delete">. If absent, then current time is assumed. Must be within data Horizon. </span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">FacilityRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>FacilityCode</em></td>
 <td><span class="hl">Il convient d’utiliser ici un identifiant d’objet de type ‘Facility’ pour lequel les informations seront retournées</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>LineCode</em></td>
 <td><span class="hl">Filtre permettant d’obtenir les informations temps reel de tous les facility d’une ligne</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">StopPoint­Ref</span></strong></em></td>
 <td>0:1</td>
 <td><em>StopPoint­Code</em></td>
 <td><span class="hl">Filtre permettant d’obtenir les informations temps reel de tous les Facility d’un point d’arrêt</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">VehicleRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Vehicle­Code</em></td>
 <td><span class="hl">Filtre permettant d’obtenir les informations temps reel de tous les services d’un véhicule</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">StopPlaceRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>StopPlace­Code</em></td>
 <td><span class="hl">Filtre permettant d’obtenir les informations temps reel de tous les services d’un lieu d’arrêt</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">StopPlaceComponentRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>StopPlaceComponent­Code</em></td>
 <td><span class="hl">Filtre permettant d’obtenir les informations temps reel de tous les services d’un composant de lieu d’arrêt</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">SiteRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Site­Code</em></td>
 <td><p>Reference to a Site.</p>
 <p><span class="hl">Utilisé pour les nouveaux modes et les parkings</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2" rowspan="2">Request Policy</td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
+<td colspan="2">Request Policy</td>
 <td colspan="2"><em><strong><span class="hl">Maximum­FacilityStatus</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td><span class="hl">Nombre maximum de Facility à prendre en compte dans la réponse. Si aucune valeur n’est spécifiée, tous les services disponibles et rentrant dans les filtres spécifiés sont retournés. </span></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -8135,39 +7290,39 @@ Properties</td>
 <col style="width: 56%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>VehicleMonitoring­SubscriptionRequest</strong></em></td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Requête d’abonnement pour obtenir les informations temps réels sur l’état des services.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
 <td><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Participant­Code</em></td>
+<td><em>➜Participant­Code</em></td>
 <td><span class="hl">Identification du système demandeur (See SIRI Part 2 Common SubscriptionRequest parameters).</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Subscription­Identifier</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>Subscription­Qualifier</em></td>
 <td><span class="hl">Identifiant de l’abonnement pour le système demandeur</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Lease</em></td>
 <td><em><strong><span class="hl">Initial­Termination­Time</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>xsd:dateTIme</em></td>
 <td><span class="hl">Date et heure de fin de l'abonnement : un abonnement a forcément une date et heure de fin (les partenaires pourront décider de limiter la durée maximale d’un abonnement)</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Request</em></td>
 <td><em><strong><span class="hl">Facility­Monitoring­Request</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Cf </span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Policy</em></td>
 <td><em><strong><span class="hl">Incremental­Updates</span></strong></em></td>
 <td>0:1</td>
@@ -8183,13 +7338,13 @@ Properties</td>
 La réponse à la requête contient les informations d’état d’un ou
 plusieurs équipements/services
 
-|                                  |                                                   |         |                       |                                                              |
-|----------------------------------|---------------------------------------------------|---------|-----------------------|--------------------------------------------------------------|
-| ***FacilityMonitoringDelivery*** |                                                   |         | *+Structure*          | Description de l’état des services                           |
-| *Attributes*                     | ***<span class="hl">version</span>***           | **1:1** | *VersionString*       | Numéro de version du service Facility Monitoring             |
-| LEADER                           | ***:::***                                         | **1:1** | xxx*Service­Delivery* |                                                              |
-| *Pay­oad*                        | ***<span class="hl">FacilityCondition</span>*** | 0:\*    | *+Structure*          | <span class="hl">Description de l’état d’un service</span> |
-| any                              | ***<span class="hl">Extensions</span>***        | 0:1     | any                   | Emplacement pour extension utilisateur (cf 5.4.2.2)          |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| ***FacilityMonitoringDelivery***  |  |  | *+Structure*  | Description de l’état des services  |
+| *Attributes*  | ***<span class="hl">version</span>***  | **1:1**  | *VersionString*  | Numéro de version du service Facility Monitoring  |
+| LEADER  | ***:::***  | **1:1**  | xxx*Service­Delivery*  |  |
+| *Pay­oad*  | ***<span class="hl">FacilityCondition</span>***  | 0:\*  | *+Structure*  | <span class="hl">Description de l’état d’un service</span>  |
+| any  | ***<span class="hl">Extensions</span>***  | 0:1  | any  | Emplacement pour extension utilisateur (cf 5.4.2.2)  |
 
 La structure facilityCondition porte les informations de définition de
 la facility, son état, les eventuelles informations de comptage
@@ -8218,7 +7373,7 @@ et de localisation.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="2"><p><em>Facility</em></p>
 <p><em>(choice)</em></p></td>
 <td><em><strong><span class="hl">Facility </span></strong></em></td>
@@ -8227,56 +7382,49 @@ et de localisation.
 <td><p>Description Générale d’une facility (cf <strong>Facility</strong>).</p>
 <p><span class="hl">La definition du FACILITY sera lorsque possibie faite au travers des échanges NeTEx. L’utilisation du service SIRI à cette fin sera à limiter au maximum. </span><span class="hl">Voir FM-1</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">FacilityRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>→FacilityCode</em></td>
+<td><em>➜FacilityCode</em></td>
 <td><p>identifiant d’une Facility.</p>
 <p><span class="hl">L’utilisation de references aux facility sera privilégiée</span> <span class="hl">Voir FM-1</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Status</em></td>
 <td><em><strong><span class="hl">FacilityStatus</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
-<td><span class="hl">Description de l’état d’un Facility (cf §)</span></td>
+<td><span class="hl">Description de l’état d’un Facility (cf <a href="#description-de-létat-dune-facility">&</a>)</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Counting</em></td>
 <td><em><strong><span class="hl">MonitoredCounting</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
-<td><span class="hl">Mise à jour du compteur associé au Facility (cf §)</span></td>
+<td><span class="hl">Mise à jour du compteur associé au Facility (cf <a href="#description-de-comptage-associé-à-une-facility">&</a>)</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Position</em></td>
 <td><em><strong><span class="hl">FacilityUpdatedPosition</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
-<td><span class="hl">Mise à jour de la position du Facility (cf §)</span></td>
+<td><span class="hl">Mise à jour de la position du Facility (cf <a href="#description-de-la-structure-facility">&</a>)</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Situation</em></td>
 <td><em><strong><span class="hl">SituationRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→SituationCode</em></td>
+<td><em>➜SituationCode</em></td>
 <td>Identifiant d’une SITUATION associée à l'état de l'installation.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Remedy</em></td>
 <td><em><strong><span class="hl_delete">Remedy</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Describes the remedy associated with the facility status (see <strong>Remedy</strong>).</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em>Timing<br />
 information</em></td>
 <td><em><strong><span class="hl">ValidityPeriod</span></strong></em></td>
@@ -8284,23 +7432,16 @@ information</em></td>
 <td><em>+Structure</em></td>
 <td>Validity period (start &amp; duration) of the condition and day type on which it applies. See <em><strong>ValidityCondition</strong>.</em></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-| <span class="hl_france">FM-1</span> | La définition de la facility sera récupérée via un flux NeTEx. Le service SIRI FM privilégiera l’utilisation du champ FacilityRef. |
-|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| <span class="hl">FM-1</span>  | La définition de la facility sera récupérée via un flux NeTEx. Le service SIRI FM privilégiera l’utilisation du champ FacilityRef.  |
+|--|--|
 
 ##### Description de la structure ‘Facility’
 
-| <span class="hl_france">FM-2</span> | A renseigner uniquement si non inclue dans les exchanges NeTEx |
-|---------------------------------------|----------------------------------------------------------------|
+| <span class="hl">FM-2</span>  | A renseigner uniquement si non inclue dans les exchanges NeTEx  |
+|--|--|
 
 <table>
 <colgroup>
@@ -8312,12 +7453,12 @@ information</em></td>
 <col style="width: 44%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>Facility</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Describes the status of a facility</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Identify</em></td>
 <td colspan="2"><em><strong><span class="hl">FacilityCode</span></strong></em></td>
 <td><p><strong>0:1</strong></p>
@@ -8325,14 +7466,14 @@ information</em></td>
 <td><em>FacilityCode</em></td>
 <td>Identifiant du Facility</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Description</em></td>
 <td colspan="2"><em><strong>Description</strong></em></td>
 <td>0:1</td>
 <td><em>nLString</em></td>
 <td>Description du facility.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Class</em></td>
 <td colspan="2"><em><strong><span class="hl">FacilityClass</span></strong></em></td>
 <td>0:1</td>
@@ -8345,7 +7486,7 @@ information</em></td>
 <td><p>Définition de la catégorie du Facility</p>
 <p>(cf 6.6.3.1.1.1)</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Feature</span></strong></em></td>
 <td>0:*</td>
@@ -8353,97 +7494,69 @@ information</em></td>
 <td><p><span class="hl">Fonctionalités du service.</span></p>
 <p><span class="hl">Cf profil Accessiblité” NeTEx [R1]</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Owner</em></td>
 <td colspan="2"></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Temporal</td>
 <td colspan="2"><em><strong>ValidityCondition</strong></em></td>
 <td>0:*1</td>
 <td><em>+Structure</em></td>
 <td>Validity period (start &amp; duration) of the facility.</td>
 </tr>
-<tr class="odd">
-<td rowspan="14"><em>Location</em></td>
+<tr>
+<td rowspan="7"><em>Location</em></td>
 <td colspan="2"><em><strong><span class="hl">FacilityLocation</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Localisation du service exprimée sous la forme d’un identifiant d’objet parmi les types identifies ci-dessous.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>LineCode</em></td>
 <td><span class="hl">Identifant d’une ligne (au sens Transmodel) sur laquelle le service est localisé</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">StopPointRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>StopPoint­Code</em></td>
 <td><span class="hl">Identifiant d’un point d’arrêt (au sens Transmodel) sur lequel le service est localisé</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">VehicleRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Vehicle­Code</em></td>
 <td><span class="hl">Identifiant d’un véhicule (au sens Transmodel) sur lequel le service est localisé</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">StopPlaceRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Stop­Place­Code</em></td>
 <td><span class="hl">Identifiant d’un lieu d’arrêt (au sens Transmodel) sur lequel le service est localisé</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">StopPlaceComponentId</span></strong></em></td>
 <td>0:1</td>
-<td><em>→ComponentId</em></td>
+<td><em>➜ComponentId</em></td>
 <td><span class="hl">Identifiant d’un composant de lieu d’arrêt (au sens Transmodel) sur lequel le service est localisé</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">OperatorRef</span></strong></em></td>
 <td>0:1</td>
@@ -8451,35 +7564,14 @@ information</em></td>
 <td><p>OPERATOR of a VEHICLE JOURNEY. Note : L’opérateur peut changer au cours d'un voyage. Cela permet indiquer l'opérateur au point actuel du trajet.</p>
 <p>Journey Parts pour enregistrer tous les opérateurs de l'ensemble du trajet.</p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">AccessibilityAssessment</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Description des informations d’accessibilité liées à l’état du service. (cf )</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"></td>
 <td></td>
@@ -8503,40 +7595,25 @@ information</em></td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td rowspan="10"><p><em><span class="hl">fixedEquipment</span></em></p>
+<tr>
+<td rowspan="5"><p><em><span class="hl">fixedEquipment</span></em></p>
 <p><em><span class="hl">mobileEquipment</span></em></p>
 <p><em><span class="hl">siteComponent</span></em></p>
 <p><em><span class="hl">site</span></em></p>
 <p><em><span class="hl">parkingBay</span></em></p>
 <p><em><span class="hl">vehicle</span></em></p></td>
-<td></td>
-</tr>
-<tr class="even">
 <td>Facility est un équipement fixe</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Facility est un équipement mobile (embarqué)</td>
 </tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td>Facility est un site</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Facility est un emplacement de parking</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Facility est un véhicule</td>
 </tr>
 </tbody>
@@ -8552,13 +7629,12 @@ Se reporter au profil NeTex France Accessibilité \[R1\]
 
 #### Description de l’état d’une facility
 
-|                      |                                                          |         |                                                                                  |                                                                             |
-|----------------------|----------------------------------------------------------|---------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| ***FacilityStatus*** |                                                          |         | *+Structure*                                                                     | Describes the status of a Facility                                          |
-| *Status*             | ***<span class="hl">Status</span>***                   | **1:1** | *unknown \| available \| notAvailable \| partiallyAvailable \| added \| removed* | Etat du Facility (cf 6.6.3.2.1)                                             |
-| *Description*        | ***<span class="hl">Description</span>***              | 0:1     | *nlString*                                                                       | Description associée à l’état du Facility                                   |
-| *Special Needs*      | ***<span class="hl">Accessibility­Assessment</span>*** | 0:n     | *+Structure*                                                                     | Décrit l'état de l'accessibilité pour différents types de besoins spéciaux. |
-|                      |                                                          |         |                                                                                  |                                                                             |
+|  |  |  |  |  |
+|--|--|--|--|--|
+| ***FacilityStatus***  |  |  | *+Structure*  | Describes the status of a Facility  |
+| *Status*  | ***<span class="hl">Status</span>***  | **1:1**  | *unknown \| available \| notAvailable \| partiallyAvailable \| added \| removed*  | Etat du Facility (cf 6.6.3.2.1)  |
+| *Description*  | ***<span class="hl">Description</span>***  | 0:1  | *nlString*  | Description associée à l’état du Facility  |
+| *Special Needs*  | ***<span class="hl">Accessibility­Assessment</span>***  | 0:n  | *+Structure*  | Décrit l'état de l'accessibilité pour différents types de besoins spéciaux.  |
 
 ##### Description de l’enum ‘Status’
 
@@ -8574,28 +7650,28 @@ Se reporter au profil NeTex France Accessibilité \[R1\]
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em><span class="hl">unknown</span></em></td>
 <td><p>Facility status is unknown.</p>
 <p>Le champ description doit être renseigné si valorisé avec unknowm (RG)</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><span class="hl">available</span></em></td>
 <td>Facility disponible.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><span class="hl">notAvailable</span></em></td>
 <td>Facility non disponible.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><span class="hl">partiallyAvailable</span></em></td>
 <td>Facility partiellement disponible</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><span class="hl">added</span></em></td>
 <td>Facility ajoutée définitivement</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><span class="hl">removed</span></em></td>
 <td>Facility supprimée définitivement</td>
 </tr>
@@ -8621,7 +7697,7 @@ libres / occupées pour les aires de staionnement de vehicules partagés,
 <col style="width: 41%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Counting<br />
 Type</em></td>
 <td colspan="2"><em><strong><span class="hl">CountingType</span></strong></em></td>
@@ -8629,13 +7705,13 @@ Type</em></td>
 <td><em>CountingTypeEnumeration</em></td>
 <td>Nature de ce qui est compté (cf 6.6.3.3.1)</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">CountedFeatureUnit</span></strong></em></td>
 <td>0:1</td>
 <td><em>CountedFeatureUnitEnumeration</em></td>
 <td>Unité de comptage (cf Error: Reference source not found)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">TypeOfCountedFeature</span></strong></em></td>
 <td>0:1</td>
 <td><em>TypeOfValueStructure</em></td>
@@ -8646,7 +7722,7 @@ Type</em></td>
 <li><p><span class="hl">A prédéfinir</span></p></li>
 </ul></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Count</em></td>
 <td rowspan="2"><blockquote>
 <p><em>choice</em></p>
@@ -8656,38 +7732,25 @@ Type</em></td>
 <td><em>xsd:integer</em></td>
 <td>Valeur comptée</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Percentage</span></strong></em></td>
 <td>1:1</td>
 <td><em>PrecentageType</em></td>
 <td>Valeur exprimée en pourcentage (0.0 to 100.0) de la valeur maximum possible</td>
 </tr>
-<tr class="even">
-<td rowspan="3"><em>Counting<br />
+<tr>
+<td rowspan="2"><em>Counting<br />
 description</em></td>
 <td colspan="2"><em><strong><span class="hl">Trend</span></strong></em></td>
 <td>0:1</td>
 <td><em>CountingTrendEnumeration</em></td>
 <td><span class="hl">Tendance du comptage (cf )</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Description</span></strong></em></td>
 <td>0:1</td>
 <td><em>NaturalLanguageStringStructure</em></td>
 <td>Description de ce qui est compté</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -8706,27 +7769,27 @@ description</em></td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em><span class="hl"> availabilityCount </span></em></td>
 <td>Comptage des véhicules disponibles, des appareils, de l'espace, etc.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><span class="hl"> </span><span class="hl">reservedCount </span></em></td>
 <td>Comptage du véhicule réservé, des appareils, de l'espace, etc.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><span class="hl"> outOfOrderCount </span></em></td>
 <td>Comptage des véhicules, appareils, espaces hors service, etc.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><span class="hl"> </span><span class="hl">presentCount </span></em></td>
 <td>Comptage des personnes pésentes</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><span class="hl"> </span><span class="hl">currentStateCount </span></em></td>
 <td><p>Niveau de ressource ou statut de la mesure (carburant, etc.)</p>
 <p>Associé à un TypeofCOuntedFeature</p></td>
@@ -8734,43 +7797,28 @@ description</em></td>
 </tbody>
 </table>
 
-| FM-1 | L’utilisation de la valeur ‘currentStateCount’ nécessite que le champ ‘TypeOfCountedFeature’ soit présent |
-|------|-----------------------------------------------------------------------------------------------------------|
+| FM-1  | L’utilisation de la valeur ‘currentStateCount’ nécessite que le champ ‘TypeOfCountedFeature’ soit présent  |
+|--|--|
 
 ##### Description de l’enum ‘CountedFeatureUnit’
 
-| **Value**                                                        | **Description**                                                  |
-|------------------------------------------------------------------|------------------------------------------------------------------|
-| *<span class="hl">bays </span>*                                | Emplacement pour garer un véhicule                               |
-| *<span class="hl"> </span><span class="hl">seats </span>*    | Place assise                                                     |
-|                                                                  |                                                                  |
-| *<span class="hl"> devices </span>*                            | Les appareils divers (comme les casiers, les guides audio, etc.) |
-| *<span class="hl"> </span><span class="hl">vehicles </span>* | Tout type de véhicule                                            |
-| *<span class="hl"> persons </span>*                            | Personne physique                                                |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
-|                                                                  |                                                                  |
+| **Value**  | **Description**  |
+|--|--|
+| *<span class="hl">bays </span>*  | Emplacement pour garer un véhicule  |
+| *<span class="hl"> </span><span class="hl">seats </span>*  | Place assise  |
+| *<span class="hl"> devices </span>*  | Les appareils divers (comme les casiers, les guides audio, etc.)  |
+| *<span class="hl"> </span><span class="hl">vehicles </span>*  | Tout type de véhicule  |
+| *<span class="hl"> persons </span>*  | Personne physique  |
 
 ##### Description de l’enum ‘Trend'
 
-| **Value**                                                          | **Description**                                          |
-|--------------------------------------------------------------------|----------------------------------------------------------|
-| *<span class="hl">decreasing </span>*                            | La valeur est actuellement en baisse                     |
-| *<span class="hl"> </span><span class="hl">increasing </span>* | La valeur est actuellement en hausse                     |
-| *<span class="hl"> </span><span class="hl">stable </span>*     | La valeur est actuellement stable                        |
-| *<span class="hl"> </span><span class="hl">unstable </span>*   | La valeur est actuellement instable sans tendance claire |
-|                                                                    |                                                          |
-|                                                                    |                                                          |
-|                                                                    |                                                          |
-|                                                                    |                                                          |
-| *<span class="hl">unknown</span>*                                | Unknown trend                                            |
+| **Value**  | **Description**  |
+|--|--|
+| *<span class="hl">decreasing </span>*  | La valeur est actuellement en baisse  |
+| *<span class="hl"> </span><span class="hl">increasing </span>*  | La valeur est actuellement en hausse  |
+| *<span class="hl"> </span><span class="hl">stable </span>*  | La valeur est actuellement stable  |
+| *<span class="hl"> </span><span class="hl">unstable </span>*  | La valeur est actuellement instable sans tendance claire  |
+| *<span class="hl">unknown</span>*  | Unknown trend  |
 
 #### <span class="hl_delete">Remedy</span>
 
@@ -8779,25 +7827,6 @@ disponibilité d’une ‘facility’.
 
 Non retenu dans le profil SIRI FRANCE
 
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-
-##### 
-
-|     |     |
-|-----|-----|
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-
 ## Situation Exchange
 
 Ce service permet de définir les perturbations et leurs consequences.
@@ -8805,8 +7834,8 @@ Dans le cadre de cette version du profil il a pour objectif de pouvoir
 définir une perturbation, ses zones de conséquence et les messages
 associés à diffuser.
 
-| <span class="hl_france">SX-1</span> | Si ce service est implémenté, le service GM ne doit plus etre utilisé pour la diffusion de message de perturbation. |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| <span class="hl">SX-1</span>  | Si ce service est implémenté, le service GM ne doit plus etre utilisé pour la diffusion de message de perturbation.  |
+|--|--|
 
 Pour la mise à jour des systèmes utilisant le service GM pour le
 transfert de message de perturbation les règles de traduction sont
@@ -8816,109 +7845,96 @@ rappelées dans la suite de ce paragraphe dans le paragraphe suivant
 
 #### Cas de la compatibilité avec le service General Message du profil SIRI ‘Ile de France’
 
-*<span class="hl_france">Le service Situation Exchange peut être
-utilisé en lieu et place du service General Message tel qu'il a été
-particularisé dans le cadre du profil Île-de-France 2.4. Cela permettra
-d'éviter une utilisation combinée des deux services, tout en permettant
-aux acteurs qui le souhaitent d'utiliser le service en restant sur le
-périmètre fonctionnel retenu pour General Message.</span>*
+*<span class="hl">Le service Situation Exchange peut être utilisé en
+lieu et place du service General Message tel qu'il a été particularisé
+dans le cadre du profil Île-de-France 2.4. Cela permettra d'éviter une
+utilisation combinée des deux services, tout en permettant aux acteurs
+qui le souhaitent d'utiliser le service en restant sur le périmètre
+fonctionnel retenu pour General Message.</span>*
 
-*<span class="hl_france">Seule la compatibilité concernant les filtres
-de requête n'est pas totale. Ainsi, les filtres </span>**<span
-class="hl_france">DestinationRef</span>**<span class="hl_france">,
-</span>**<span class="hl_france">RouteRef</span>**<span
-class="hl_france"> et </span>**<span
-class="hl_france">JourneyPatternRef</span>**<span class="hl_france">
-ne sont pas disponibles au niveau de Situation Exchange. Mais
-l'information est disponible dans les réponses.</span>*
+*<span class="hl">Seule la compatibilité concernant les filtres de
+requête n'est pas totale. Ainsi, les filtres </span>**<span
+class="hl">DestinationRef</span>**<span class="hl">, </span>**<span
+class="hl">RouteRef</span>**<span class="hl"> et </span>**<span
+class="hl">JourneyPatternRef</span>**<span class="hl"> ne sont pas
+disponibles au niveau de Situation Exchange. Mais l'information est
+disponible dans les réponses.</span>*
 
-*<span class="hl_france">On notera aussi certaines différences de mode
-de fonctionnement. Ainsi le service Situation Exchange ne dispose pas
-d'</span>**<span
-class="hl_france">InfoMessageCancellation</span>**<span class="hl">,
-mais effectue cette notification en positionnant l'attribut
+*<span class="hl">On notera aussi certaines différences de mode de
+fonctionnement. Ainsi le service Situation Exchange ne dispose pas
+d'</span>**<span class="hl">InfoMessageCancellation</span>**<span
+class="hl">, mais effectue cette notification en positionnant l'attribut
 </span>**<span class="hl">Progress</span>**<span class="hl"> à
 </span>**<span class="hl">Closed</span>**<span class="hl">
 (</span>**<span class="hl">PtSituationElement</span>**<span
 class="hl">).</span>*
 
-*<span class="hl_france">Notons aussi que, par nature, le champ
-</span>**<span class="hl_france">SituationRef</span>**<span
-class="hl_france"> de General Message n'a pas de correspondance car il a
-pour vocation de permettre de faire le lien avec une Situation de
-Situation Exchange, ce qui n'a guère d'intérêt ici….</span>*
+*<span class="hl">Notons aussi que, par nature, le champ
+</span>**<span class="hl">SituationRef</span>**<span class="hl"> de
+General Message n'a pas de correspondance car il a pour vocation de
+permettre de faire le lien avec une Situation de Situation Exchange, ce
+qui n'a guère d'intérêt ici….</span>*
 
-*<span class="hl_france">On notera enfin que le champ ValidUntil
-utilisé dans Situation exchange est celui de l'entête du message
-(</span>**<span
-class="hl_france">AbstractServiceDeliveryStructure</span>**<span
-class="hl_france">).</span>*
+*<span class="hl">On notera enfin que le champ ValidUntil utilisé dans
+Situation exchange est celui de l'entête du message (</span>**<span
+class="hl">AbstractServiceDeliveryStructure</span>**<span
+class="hl">).</span>*
 
-*<span class="hl_france">Les messages textuels eux même seront traités
-de la façon suivante :</span>*
+*<span class="hl">Les messages textuels eux même seront traités de la
+façon suivante :</span>*
 
--   ***<span class="hl_france">shortMessage</span>**<span
-    class="hl_france"> : Message dans Summary (dans </span>**<span
-    class="hl_france">PtSituationElement</span>**<span
-    class="hl_france">) </span>*
+-   ***<span class="hl">shortMessage</span>**<span class="hl"> :
+    Message dans Summary (dans </span>**<span
+    class="hl">PtSituationElement</span>**<span class="hl">) </span>*
 
--   ***<span class="hl_france">longMessage</span>**<span
-    class="hl_france"> : Message dans Description (dans </span>**<span
-    class="hl_france">PtSituationElement</span>**<span
-    class="hl_france">)</span>*
+-   ***<span class="hl">longMessage</span>**<span class="hl"> :
+    Message dans Description (dans </span>**<span
+    class="hl">PtSituationElement</span>**<span class="hl">)</span>*
 
--   ***<span class="hl_france">textOnly</span>**<span
-    class="hl_france"> : Type MIME </span>**<span
-    class="hl_france">text/plain</span>**<span class="hl_france">
-    (dans Summary ou Description suivant que le message est court ou
-    long) avec un champ additionnel "</span><span class="hl">
-    </span><span class="hl_france">Content-Description: SIRI-FR-IDF no
-    line break message</span><span class="hl_france">". </span>  
-    <span class="hl_france">Note: il n'y a pas de type MIME générique
-    excluant les sauts de ligne, d’où cet usage du champ MIME
-    </span><span class="hl_france">Content-Description.</span>*
+-   ***<span class="hl">textOnly</span>**<span class="hl"> : Type
+    MIME </span>**<span class="hl">text/plain</span>**<span
+    class="hl"> (dans Summary ou Description suivant que le message est
+    court ou long) avec un champ additionnel " </span><span
+    class="hl">Content-Description: SIRI-FR-IDF no line break
+    message</span><span class="hl">". </span>  
+    <span class="hl">Note: il n'y a pas de type MIME générique excluant
+    les sauts de ligne, d’où cet usage du champ MIME </span><span
+    class="hl">Content-Description.</span>*
 
--   ***<span class="hl_france">formattedText</span>**<span
-    class="hl_france"> : Type MIME </span>**<span
-    class="hl_france">text/plain</span>**<span class="hl_france">
-    (dans Summary ou Description suivant que le message est court ou
-    long). </span>  
-    <span class="hl_france">Note: les champs </span>**<span
-    class="hl_france">NumberOfLines</span>**<span class="hl_france">
-    et </span>**<span
-    class="hl_france">NumberOfCharPerLine</span>**<span
-    class="hl_france"> n'ont pas d'équivalent dans Situation Exchange,
-    mais peuvent aisément être recalculés à partir du message lui-même.
+-   ***<span class="hl">formattedText</span>**<span class="hl"> :
+    Type MIME </span>**<span class="hl">text/plain</span>**<span
+    class="hl"> (dans Summary ou Description suivant que le message est
+    court ou long). </span>  
+    <span class="hl">Note: les champs </span>**<span
+    class="hl">NumberOfLines</span>**<span class="hl"> et
+    </span>**<span class="hl">NumberOfCharPerLine</span>**<span
+    class="hl"> n'ont pas d'équivalent dans Situation Exchange, mais
+    peuvent aisément être recalculés à partir du message lui-même.
     </span>*
 
--   ***<span class="hl_france">HTML</span>**<span class="hl_france">
-    : Type MIME </span>**<span class="hl_france">text/html
-    </span>**<span class="hl_france">(dans Summary ou Description
-    suivant que le message est court ou long)</span>*
+-   ***<span class="hl">HTML</span>**<span class="hl"> : Type MIME
+    </span>**<span class="hl">text/html </span>**<span
+    class="hl">(dans Summary ou Description suivant que le message est
+    court ou long)</span>*
 
--   ***<span class="hl_france">RTF</span>**<span class="hl_france"> :
-    Type MIME </span>**<span class="hl_france">text/rtf
-    </span>**<span class="hl_france">(dans Summary ou Description
-    suivant que le message est court ou long)</span>*
+-   ***<span class="hl">RTF</span>**<span class="hl"> : Type MIME
+    </span>**<span class="hl">text/rtf </span>**<span
+    class="hl">(dans Summary ou Description suivant que le message est
+    court ou long)</span>*
 
--   ***<span class="hl_france">codedMessage </span>**<span
-    class="hl_france">: Message dans </span>**<span
-    class="hl">ReasonName</span>**<span class="hl_france"> (dans
-    </span>**<span
-    class="hl_france">PtSituationElement</span>**<span
-    class="hl_france">)</span>*
+-   ***<span class="hl">codedMessage </span>**<span class="hl">:
+    Message dans </span>**<span class="hl">ReasonName</span>**<span
+    class="hl"> (dans </span>**<span
+    class="hl">PtSituationElement</span>**<span class="hl">)</span>*
 
 *<span class="hl">Exemple de message :</span>*
 
-> *<span class="hl">MIME-Version: 1.0</span>*
->
-> *<span class="hl">Content-Type: text/plain</span>*
->
-> *<span class="hl">Content-Description: SIRI-FR-IDF no line break
-> message</span>*
->
-> *<span class="hl">Ceci est un Message</span>*
-
+```
+MIME-Version: 1.0
+Content-Type: text/plain
+Content-Description: SIRI-FR-IDF no line break message
+Ceci est un Message
+```
 #### Messages avec Zones de diffusion
 
 Les champs ‘summary’ et ‘description’ tels que définis au paragraphe
@@ -8947,26 +7963,26 @@ l’implémentation du Service GM
 <col style="width: 57%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>SituationExchangeRequest</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Request for information about facilities status</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Attributes</td>
 <td colspan="2"><em><strong><span class="hl">version</span></strong></em></td>
 <td>0:1</td>
 <td><em>VersionString</em></td>
 <td><span class="hl">Version du service ‘Situation Exchange’ integrant le numéro de version du profil France ‘2.1:FR-1.0’</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Timestamp</td>
 <td colspan="2"><em><strong><span class="hl">RequestTimestamp</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Date d’émission de la requête</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Contextualised<br />
 Request<br />
 EndpointGroup</td>
@@ -8975,21 +7991,21 @@ EndpointGroup</td>
 <td><em>MessageQualifier</em></td>
 <td><span class="hl">Numéro d’identification du message</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2">TemporalSubscriptionGroup</td>
 <td colspan="2"><em><strong><span class="hl">PreviewInterval</span></strong></em></td>
 <td>0:1</td>
 <td><em>PositiveDurationType</em></td>
 <td>Durée avant pendant laquelle les SITUATIONS doivent être incluses, c'est-à-dire que seules les SITUATIONS qui commencent avant la fin de cette fenêtre seront incluses. Normalement utilisé pour les abonnements afin de conserver une fenêtre glissante d'intérêt.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">StartTime</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure de début initiale pour PreviewInterval. Si absente, l'heure actuelle est prise par défaut. Seules les SITUATIONS ou les mises à jour créées après cette heure seront envoyées. Cela permet un redémarrage sans tout renvoyer.</td>
 </tr>
-<tr class="odd">
-<td rowspan="5">Temporal<br />
+<tr>
+<td rowspan="4">Temporal<br />
 Content<br />
 FilterGroup</td>
 <td colspan="2"><em><strong><span class="hl">ValidityPeriod</span></strong></em></td>
@@ -8997,155 +8013,86 @@ FilterGroup</td>
 <td><em>→structure</em></td>
 <td>Plage temporelle pour les incidents à inclure tous les incidents actuels seront inclus (. .</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
-<td><blockquote>
-<p><em><strong><span class="hl">StartTime</span></strong></em></p>
-</blockquote></td>
+<td>
+<em><strong><span class="hl">StartTime</span></strong></em>
+</td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure de début des incidents. Les incidents avec une heure de début après cette heure seront inclus.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
-<td><blockquote>
+<td>
 <p><em><strong><span class="hl">EndTime</span></strong></em></p>
-</blockquote></td>
+</td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure de fin des incidents. Les incidents avec une heure de fin avant cette heure ou sans heure de fin à cette heure seront inclus</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
-<td><blockquote>
+<td>
 <p><em><strong><span class="hl">EndTimePrecision</span></strong></em></p>
-</blockquote></td>
+</td>
 <td>0:1</td>
-<td><em>Enum: day | hour| second | millisecond</em></td>
+<td><em>Enum: day  | hour| second  | millisecond</em></td>
 <td>Précision avec laquelle interpréter l'heure de fin. La valeur par défaut est à la seconde.</td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="4"><em>AffectedModeGroup</em></td>
 <td colspan="2"></td>
 <td></td>
 <td><em>→Group</em></td>
 <td>Les éléments du groupe MODE.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><span class="hl">VehicleMode</span></em></td>
 <td>0:1</td>
 <td><em>→VehicleModesOfTransportation Enum</em></td>
 <td>Mode du véhicule : voir l’énumération complète dans le XSD SIRI [R10]</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><span class="hl">AccessMode</span></em></td>
 <td>0:1</td>
 <td><em>Enum {foot|bicycle|car|taxi|shuttle}</em></td>
 <td><span class="hl">Les catégories d'accès autorisées au lieu d'arrêt pour lesquelles les situations seront renvoyées. </span><span class="hl">Par défaut “foot”</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Severity</span></strong></em></td>
 <td>0:1</td>
 <td><em>enum</em></td>
 <td><p><span class="hl">Valeur du filtre de gravité à appliquer : seules les SITUATIONS dont la gravité est supérieure ou égale à la valeur spécifiée seront renvoyées. . Par Defaut « undefined ».</span></p>
-<p><span class="hl">Filtre à appliquer sur la sévérité d’une Situation (cf §)</span></p></td>
+<p><span class="hl">Filtre à appliquer sur la sévérité d’une Situation (cf <a href="#desription-de-lenum-severity">&</a>)</span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>SituationClassifierFilterGroup</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
+<td><em>SituationClassifierFilterGroup</em></td>
 <td colspan="2"><em><strong><span class="hl">Keywords</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:NMTOKENS</em></td>
 <td><p>Any arbitrary filter keywords to use. Only incidents containing these words in their texts all be returned.</p>
-<p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, seules les valeurs suivantes seront utilisées et permettent de gérer la mise en cohérence avec les canaux General Message : «Perturbation</span><span class="hl_france">»</span></p></td>
+<p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, seules les valeurs suivantes seront utilisées et permettent de gérer la mise en cohérence avec les canaux General Message : «Perturbation</span><span class="hl">»</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="5"><em>Groups</em></td>
+<tr>
+<td rowspan="2"><em>Groups</em></td>
 <td colspan="2"><em><strong><span class="hl">SituationNetworkFilterGroup</span></strong></em></td>
 <td>0:1</td>
 <td><em>Group</em></td>
 <td><p>Filter the results to include only SITUATIONs relating to the NETWORK filter elements.</p>
 <p><span class="hl">Note : Regroupe les filtres operator, Line, StopPoint</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl_delete">SituationPlaceFilterGroup</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">Group</span></em></td>
 <td><span class="hl_delete">Filter the results to include only SITUATIONs relating to the given Place filter elements. </span></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td> </td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td> </td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="3"><em>Request Policy</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<td><em>Request Policy</em></td>
 <td colspan="2"><em><strong><span class="hl">MaximumNumberOfSituationElements</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positiveInteger</em></td>
 <td><span class="hl">Le nombre maximal de </span><strong><span class="hl">SituationElements</span></strong><span class="hl"> à inclure dans une diffusion donnée. Les n événements les plus récents dans la fenêtre d'anticipation sont inclus.</span></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -9164,8 +8111,8 @@ FilterGroup</td>
 <col style="width: 0%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td rowspan="10"><em>SituationNetworkFilterGroup</em></td>
+<tr>
+<td rowspan="8"><em>SituationNetworkFilterGroup</em></td>
 <td colspan="3"><em><strong><span class="hl">OperatorRef</span></strong></em></td>
 <td>0:1</td>
 <td><p><em>→OperatorCode</em></p>
@@ -9173,25 +8120,19 @@ FilterGroup</td>
 <td>Filtre les résultats pour n'inclure que les SITUATIONS relatives à l'Opérateur.</td>
 <td></td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">NetworkRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>→NetworkCode</em></td>
 <td colspan="2"><span class="hl">Filtre les résultats pour n'inclure que les SITUATIONS relatives au réseau</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"> </td>
 <td>0:*</td>
 <td><em>choice</em></td>
 <td colspan="2"><span class="hl">Filtre les résultats pour n'inclure que les SITUATIONS relatives LIGNES données</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>a</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:*</td>
@@ -9199,34 +8140,28 @@ FilterGroup</td>
 <p><em>(xsd:NMToken)</em></p></td>
 <td colspan="2"><span class="hl">Filtre les résultats pour n'inclure que les résultats de la LIGNE donnée. Si aucune LineRef n'est spécifiée comme filtre d'abonnement, cela implique implicitement la transmission de données pour toutes les LIGNES dans le SAE.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em><strong>b</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">Lines</span></strong></em></td>
 <td>0:1</td>
 <td><em>→LineDirection</em></td>
 <td colspan="2"></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">LineDirection</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td colspan="2"><span class="hl">Filtre les résultats pour n'inclure que les SITUATIONS relatives aux Lignes/Direction spécifiées </span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">StopPointRef</span></strong></em></td>
 <td>0:*</td>
 <td><p><em>→StopPointCode</em></p>
 <p><em>(xsd:NMToken)</em></p></td>
 <td colspan="2"><span class="hl">Filtre les résultats pour n'inclure que les SITUATIONS relatives points d’arrêt spécifiés </span></td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">FacilityRef</span></strong></em></td>
 <td>0:*</td>
 <td><em>→FacilityCode</em></td>
@@ -9246,37 +8181,37 @@ FilterGroup</td>
 <col style="width: 56%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>Situation ExchangeSubscriptionRequest</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Demande d'abonnement au Service d'échange de situation.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>SubscriptionIdentityGroup</em></td>
 <td><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>→ParticipantCode</em></td>
 <td rowspan="3">Voir SIRI Part 2 “Common <em><strong>SubscriptionRequest</strong></em> parameters.”</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">SubscriptionIdentifier</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>SubscriptionQualifierStructure</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Lease</em></td>
 <td><em><strong><span class="hl">InitialTerminationTime</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>xsd:dateTime</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Request</em></td>
 <td><em><strong><span class="hl">SituationExchangeRequest</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>+Structure</em></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Situation ExchangeSubscriptionPolicy</em></td>
 <td><em><strong><span class="hl">IncrementalUpdates</span></strong></em></td>
 <td>0:1</td>
@@ -9310,12 +8245,12 @@ implémenté dans un échange.
 <col style="width: 53%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>SituationExchangeDelivery</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Définition et mise à jour des informations de perturbation et messages IV associés.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Attributes</em></td>
 <td colspan="2"><em><strong><span class="hl">version</span></strong></em></td>
 <td><p>0:1</p>
@@ -9323,46 +8258,32 @@ implémenté dans un échange.
 <td><em>VersionString</em></td>
 <td>Version Identifier of Situation Exchange Service. Fixed, e.g. ‘1.1a’.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>HEADER</td>
 <td colspan="2"><em><strong><span class="hl">:::</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td>xxx<em>ServiceDelivery</em></td>
 <td>Voir SIRI Part 2 xxx<em><strong>ServiceDelivery</strong></em>.</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>SituationExchangePayloadGroup</em></td>
+<tr>
+<td rowspan="3"><em>SituationExchangePayloadGroup</em></td>
 <td colspan="2"><em><strong><span class="hl">PtSituationContext</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Décrit les valeurs communes à toutes les SITUATIONS de la diffusion</span>.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Situations</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><span class="hl"> </span></td>
 <td><em><strong><span class="hl">PtSituationElement</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Définition des pertrubations et messages IV associés (cf )</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -9384,99 +8305,74 @@ implémenté dans un échange.
 <col style="width: 43%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="7"><em><strong>PtSituationElement</strong></em></td>
 <td colspan="3"><em>+Structure</em></td>
 <td>Descriptin d’une perturbation</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
 <td colspan="5"><em><strong><span class="hl">CreationTime</span></strong></em></td>
 <td>1:1</td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td>Heure de creation de SITUATION</td>
 </tr>
-<tr class="odd">
-<td rowspan="8"><em>SituationSharedIdentityGroup</em></td>
+<tr>
+<td rowspan="6"><em>SituationSharedIdentityGroup</em></td>
 <td colspan="5"></td>
 <td></td>
 <td colspan="3"><em>→Group</em></td>
 <td>Éléments Référence à une SITUATION ou mise à jour d'une SITUATION. ParticipantRef est facultatif et peut être fourni à partir du contexte.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2" rowspan="3"></td>
 <td colspan="3"><em><strong><span class="hl">CountryRef</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>→CountryCode</em></td>
 <td>Code Pays du participant</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">ParticipantRef</span></strong></em></td>
 <td><p>0:1</p>
 <p><strong><span class="hl">1:1</span></strong></p></td>
 <td colspan="3"><em>→ParticipantCode</em></td>
 <td>Identifiant du système participant qui crée la SITUATION. Voir la partie 2.. Identifiant Unique par Pays</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">SituationNumber</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td colspan="3"><em>→SituationNumber</em></td>
 <td><p>Identifiant unique d’une SITUATION pour un Participant.</p>
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, correspond au </span><em><strong><span class="hl">InfoMessageIdentifier.</span></strong></em></p></td>
 </tr>
-<tr class="odd">
-<td colspan="2" rowspan="4"><em>SituationUpdateIdentityGroup</em></td>
+<tr>
+<td colspan="2" rowspan="2"><em>SituationUpdateIdentityGroup</em></td>
 <td colspan="3"></td>
 <td></td>
 <td colspan="3"><em>→Group</em></td>
 <td>Type de référence pour une mise à jour d’une SITUATION. ParticipantRef est facultatif et peut être fourni à partir du contexte.</td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Version</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>→Situation Version</em></td>
 <td><p>Version d’une mise à jour d’un SITUATION element</p>
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, correspond au </span><em><strong><span class="hl">InfoMessageVersion.</span></strong></em></p></td>
 </tr>
-<tr class="odd">
-<td rowspan="5"><em>SituationInfoGroup</em></td>
+<tr>
+<td rowspan="3"><em>SituationInfoGroup</em></td>
 <td colspan="5"></td>
 <td></td>
 <td colspan="3"></td>
 <td>SITUATION information.</td>
 </tr>
-<tr class="even">
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Source</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>+SituationSourceStructure</em></td>
 <td>Source d’une SITUATION</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"></td>
 <td colspan="2"><em><strong><span class="hl">SourceType</span></strong></em></td>
 <td>1:1</td>
@@ -9484,29 +8380,29 @@ implémenté dans un échange.
 <td><p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, seul le champ </span><strong><span class="hl">SourceType</span></strong><span class="hl"> de la structure sera utilisé, et positionné à </span><strong><span class="hl">directReport.</span></strong></p>
 <p>Définition Enum : <span class="hl"></span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Log</td>
 <td colspan="5"><em><strong><span class="hl">VersionedAtTime</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>PtSituationBodyGroup</em></td>
 <td colspan="5"></td>
 <td></td>
 <td colspan="3"><em>→Group</em></td>
 <td>Corps de SITUATION</td>
 </tr>
-<tr class="even">
-<td rowspan="6"><em>PtSituationBodyGroup\StatusGroup</em></td>
+<tr>
+<td rowspan="4"><em>PtSituationBodyGroup\StatusGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">Verification</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum {unknown|unverified|verified}</em></td>
+<td colspan="3"><em>Enum {unknown | unverified | verified}</em></td>
 <td><p>Si la SITUATION a été vérifiée. Valeurs d'énumération</p>
 <p>Valeur par défaut : unknown</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Progress</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>Enum</em></td>
@@ -9514,138 +8410,114 @@ implémenté dans un échange.
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, seuls les codes </span><em><strong><span class="hl">Open</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">Closed</span></strong></em><span class="hl"> sont utilisés. Le </span><em><strong><span class="hl">Closed</span></strong></em><span class="hl"> équivaut alors à un </span><strong><span class="hl">InfoMessageCancellation</span></strong></p>
 <p>Définition Enum : 6.7.4.1.2</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">QualityIndex</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum {certain|veryReliable|reliable|unreliable|unconfirmed}</em></td>
+<td colspan="3"><em>Enum {certain | veryReliable | reliable | unreliable | unconfirmed}</em></td>
 <td><p>Évaluation de l'exactitude probable des données. Valeurs d'énumération</p>
 <p>Valeur par défaut : unconfirmed</p></td>
 </tr>
-<tr class="odd">
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Publication</span></strong></em></td>
 <td>0:*</td>
 <td colspan="3"><em>PublicationStatus</em></td>
 <td>Statut de publication. L'un d'un ensemble spécifié de sous-états auxquels une SITUATION peut être attribuée.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="10"><em>PtSituationBodyGroup\TemporalGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">ValidityPeriod</span></strong></em></td>
 <td><strong>1:*</strong></td>
 <td colspan="3"><em>range</em></td>
 <td>Une ou plusieurs Période d'application globale inclusive de la SITUATION</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"></td>
 <td colspan="4"><em><strong><span class="hl">StartTime</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td>L'horodatage de début (inclusif)</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="4"><em><strong><span class="hl">EndTime</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td><span class="hl">L'horodatage de fin (inclusif). Si elle est omise, la fin de la plage est ouverte, c'est-à-dire qu'elle doit être interprétée comme "pour toujours".</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">EndTimeStatus</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum: {undefined | longTerm | shortTerm}</em></td>
+<td colspan="3"><em>Enum: {undefined  | longTerm  | shortTerm}</em></td>
 <td><span class="hl">Si l'heure de fin n'est pas fournie, s'il faut l'interpréter comme une SITUATION à long terme, à court terme ou d'une durée inconnue. </span><span class="hl">La valeur par défaut est indéfinie</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Repetitions</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>DayType</em></td>
 <td><span class="hl">La situation s'applique uniquement aux types de jours répétés au cours de la ou des périodes de validité globales. </span><span class="hl">Par exemple dimanche.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="4"><em><strong><span class="hl">DayType</span></strong></em></td>
 <td>1:*</td>
 <td colspan="3"><em>enum</em></td>
 <td>DayType</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">PublicationWindow</span></strong></em></td>
 <td>0:*</td>
 <td colspan="3"><em>range</em></td>
 <td>Fenêtre de publication pour SITUATION si différente de la période de validité. La période pendant laquelle le public est informé de SITUATION peut commencer avant ou après SITUATION.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"></td>
 <td colspan="4"><em><strong><span class="hl">StartTime</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td>L'horodatage de début (inclusif)</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="4"><em><strong><span class="hl">EndTime</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>xsd:dateTime</em></td>
 <td><span class="hl">L'horodatage de fin (inclusif). Si elle est omise, la fin de la plage est ouverte, c'est-à-dire qu'elle doit être interprétée comme "pour toujours".</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">EndTimeStatus</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum: {undefined | longTerm | shortTerm}</em></td>
+<td colspan="3"><em>Enum: {undefined  | longTerm  | shortTerm}</em></td>
 <td><p><span class="hl">Si l'heure de fin n'est pas fournie, s'il faut l'interpréter comme une SITUATION à long terme, à court terme ou d'une durée inconnue.</span></p>
 <p><span class="hl">La valeur par défaut est undefined </span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="16"><em>ClassifierGroup</em></td>
+<tr>
+<td rowspan="10"><em>ClassifierGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">ReasonGroup</span></strong></em></td>
 <td></td>
 <td colspan="3"></td>
 <td>Éléments de classification structurés. Correspond à la raison de l'événement TPEG.</td>
 </tr>
-<tr class="odd">
-<td colspan="2" rowspan="4"></td>
+<tr>
+<td colspan="2" rowspan="2"></td>
 <td colspan="3"><em><strong>ReasonGroup</strong></em></td>
 <td><strong>1:1</strong></td>
 <td colspan="3"><em>enum</em></td>
 <td></td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">ReasonName</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>string</em></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Severity</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>enum</em></td>
 <td><p>Sévérité de SITUATION, Corresponds to TPEG severities,</p>
 <p>Valeur par Defaut : is « normal »</p>
 <p>Définition de l’enum : 6.7.4.1.4)</p>
-<p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, ce champ sera utilisé pour les messages de type </span><em><strong><span class="hl_france">codedMessage</span></strong></em><span class="hl_france"> (le champ porte alors valeur du </span><strong><span class="hl_france">MessageText</span></strong><span class="hl_france"> pour les messages de type </span><em><strong><span class="hl_france">codedMessage).</span></strong></em></p></td>
+<p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, ce champ sera utilisé pour les messages de type </span><em><strong><span class="hl">codedMessage</span></strong></em><span class="hl"> (le champ porte alors valeur du </span><strong><span class="hl">MessageText</span></strong><span class="hl"> pour les messages de type </span><em><strong><span class="hl">codedMessage).</span></strong></em></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Priority</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>nonNegativeInteger</em></td>
@@ -9655,69 +8527,44 @@ implémenté dans un échange.
 <p><span class="hl">2 = urgent.</span></p>
 <p><span class="hl">3 = normal.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Sensitivity</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>Enum {high|medium|low}</em></td>
 <td><p>Confidentialité de SITUATION.</p>
 <p>Valeurpar défaut : medium</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Audience</span></strong></em></td>
 <td>0:1</td>
-<td colspan="3"><em>Enum {public|emergencyService|authorities|transportOperators}</em></td>
+<td colspan="3"><em>Enum {public | emergencyService | authorities | transportOperators}</em></td>
 <td>Audience de SITUATION.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">ScopeType</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>enum</em></td>
 <td><p>Type de périmètre de SITUATION.</p>
 <p>Définition de l’enum : 6.7.4.1.5</p></td>
 </tr>
-<tr class="even">
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Planned</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>boolean</em></td>
 <td><p>Si la SITUATION était planifiée (par exemple, travaux d'ingénierie) ou non planifiée (par exemple, modification du service).</p>
 <p>La valeur par défaut est false, c'est-à-dire non planifiée.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Keywords</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>xsd:NMTOKENS</em></td>
 <td><p>Arbitrary application specific classifiers.</p>
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General </span><span class="hl">Message, seules les valeurs suivantes seront utilisées et permettent de gérer la mise en cohérence avec les canaux General Message :</span></p>
-<p><span class="hl_france">«</span><strong><span class="hl_france">Perturbation</span></strong><span class="hl_france">»</span></p>
-<p><span class="hl_france">“Information”</span></p>
-<p><span class="hl_france">“Commercial”</span></p></td>
+<p><span class="hl">«</span><strong><span class="hl">Perturbation</span></strong><span class="hl">»</span></p>
+<p><span class="hl">“Information”</span></p>
+<p><span class="hl">“Commercial”</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="5"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="10"><em>DescriptionGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">Summary</span></strong></em></td>
 <td>0:*</td>
@@ -9725,98 +8572,85 @@ implémenté dans un échange.
 <td><p>Résumé de la SITUATION. S'il est absent, il doit être généré à partir des éléments de structure et/ou en condensant la Description. Pour l'utilisation du texte par défaut</p>
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, cf </span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Description</span></strong></em></td>
 <td>0:*</td>
 <td colspan="3"><em>DefaultedText</em></td>
 <td><p>Description de la SITUATION. Ne doit répéter aucune LIGNE incluse dans le résumé..</p>
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, </span>cf <span class="hl"></span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Detail</span></strong></em></td>
 <td>0:*</td>
 <td colspan="3"><em>DefaultedText</em></td>
 <td><span class="hl">Détails descriptifs supplémentaires sur la SITUATION. Pour l'utilisation du texte par défaut</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Advice</span></strong></em></td>
 <td>0:*</td>
 <td colspan="3"><em>DefaultedText</em></td>
 <td><span class="hl">Autres conseils aux passagers. Pour l'utilisation du texte par défaut</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Internal</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>DefaultedText</em></td>
 <td><span class="hl">Description de la SITUATION à usage (interne) de l'entreprise. Pour l'utilisation du texte par défaut</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">Images</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>Image</em></td>
 <td><span class="hl">Ajout d’une ou plusieurs Images.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"><span class="hl"> </span></td>
 <td><em><strong>Image</strong></em></td>
 <td><strong>1:*</strong></td>
 <td colspan="2"><em>+Structure</em></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">InfoLinks</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>InfoLink</em></td>
 <td>Un ou plusieurs InfoLinks pour description.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="5"></td>
 <td><em><strong><span class="hl">InfoLink</span></strong></em></td>
 <td><strong>1:*</strong></td>
 <td colspan="2"><em>+Structure</em></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"></td>
 <td></td>
 <td colspan="3"></td>
 <td>Identification des parties du réseau de transport affectées par la SITUATION. Autres liens internet.</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>PtBodyGroup</em></td>
+<tr>
+<td rowspan="3"><em>PtBodyGroup</em></td>
 <td colspan="5"><em><strong><span class="hl">Consequences</span></strong></em></td>
 <td>0:1</td>
 <td colspan="3"><em>many</em></td>
 <td><p>One or more consequences.</p>
 <p><span class="hl">Description des consequences de l’évènement</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="5"> </td>
 <td><em><strong><span class="hl">Consequence</span></strong></em></td>
 <td colspan="2"><strong>1:*</strong></td>
 <td><em>+Structure</em></td>
 <td>Voir 6.7.4.1.6</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="4"><em><strong><span class="hl">PublishingActions</span></strong></em></td>
 <td>0:1</td>
 <td><em>→ActionsStructure</em></td>
 <td colspan="3">Distribution actions to disseminate SITUATION.</td>
 <td><p>Consequence of the SITUATION.</p>
-<p><span class="hl">Description d’une consequence de l’évènement cf §</span></p></td>
-</tr>
-<tr class="odd">
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="5"></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
+<p><span class="hl">Description d’une consequence de l’évènement cf <a href="#description-de-la-structure-consequences">&</a></span></p></td>
 </tr>
 </tbody>
 </table>
@@ -9832,19 +8666,19 @@ implémenté dans un échange.
 <col style="width: 55%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>SituationSource</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Information relative à la source des données de la SITUATION</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">Country</span></strong></em></td>
 <td>0:1</td>
 <td><em>→CountryCode</em></td>
 <td>Pays d’origine de la Source. IANA code</td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">SourceType</span></strong></em></td>
 <td><strong>1:1</strong></td>
@@ -9853,269 +8687,209 @@ implémenté dans un échange.
 <p><span class="hl">Dans le cas de l'utilisation en lieu et place de General Message, seul le champ SourceType de la structure sera utilisé, et positionné à </span><strong><span class="hl">directReport</span></strong><span class="hl">.</span></p>
 <p>Définition Enum : 6.7.4.1.1.1</p></td>
 </tr>
-<tr class="even">
-<td rowspan="13"><em>SituationSourceDetailsGroup</em></td>
+<tr>
+<td rowspan="4"><em>SituationSourceDetailsGroup</em></td>
 <td><em><strong><span class="hl">Email</span></strong></em></td>
 <td>0:1</td>
 <td><em>string</em></td>
 <td>Email du fournisseur</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Phone</span></strong></em></td>
 <td>0:1</td>
 <td><em>phoneNumber</em></td>
 <td>Numéro téléphone fournisseur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl_delete">Fax</span></strong></em></td>
 <td><span class="hl_delete">0:1</span></td>
 <td><em><span class="hl_delete">phoneNumber</span></em></td>
 <td><span class="hl_delete">Numéro fax fournisseur.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Web</span></strong></em></td>
 <td>0:1</td>
 <td><em>anyURL</em></td>
 <td>URL du fournisseur.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
 
 ###### Description de l’enum SourceType
 
-| ***SIRI-SX***  | Description                               |
-|----------------|-------------------------------------------|
-| *directReport* | Rapport remis en direct                   |
-| *email*        | Rapport reçu via email                    |
-| *phone*        | Rapport reçu via téléphone                |
-|                |                                           |
-| *post*         | Rapport reçu via courrier postal          |
-| *feed*         | Rapport reçu via alimentation automatique |
-| *radio*        | Rapport reçu via radio                    |
-| *tv*           | Rapport reçu via TV                       |
-| *web*          | Rapport reçu via website                  |
-|                |                                           |
-| *text*         | Rapport reçu via message                  |
-| *other*        | Rapport reçu via autres moyens            |
+| ***SIRI-SX***  | Description  |
+|--|--|
+| *directReport*  | Rapport remis en direct  |
+| *email*  | Rapport reçu via email  |
+| *phone*  | Rapport reçu via téléphone  |
+| *post*  | Rapport reçu via courrier postal  |
+| *feed*  | Rapport reçu via alimentation automatique  |
+| *radio*  | Rapport reçu via radio  |
+| *tv*  | Rapport reçu via TV  |
+| *web*  | Rapport reçu via website  |
+| *text*  | Rapport reçu via message  |
+| *other*  | Rapport reçu via autres moyens  |
 
 ##### Decription de l’enum ‘Progress’
 
-| ***SIRI SX*** | **Description**               |
-|---------------|-------------------------------|
-|               |                               |
-|               |                               |
-|               |                               |
-| *open*        | Situation en cours            |
-| *published*   | Situation en cours et publiée |
-|               |                               |
-| *closed*      | Situation terminée            |
+| ***SIRI SX***  | **Description**  |
+|--|--|
+| *open*  | Situation en cours  |
+| *published*  | Situation en cours et publiée  |
+| *closed*  | Situation terminée  |
 
-| <span class="hl_france">SX-2</span> | Une situation ‘open’ n’est pas communiquée à l’extérieur du système. Dès lors que la situation est échangée avec l’extérieur le status doit passer à ‘published’. |
-|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <span class="hl">SX-2</span>  | Une situation ‘open’ n’est pas communiquée à l’extérieur du système. Dès lors que la situation est échangée avec l’extérieur le status doit passer à ‘published’.  |
+|--|--|
 
 ##### Description de l’enum ‘Reason’
 
 ###### Miscellaneous reasons
 
-| ***Group***    | ***SIRI-SX***             |
-|----------------|---------------------------|
-| Miscell­aneous | *unknown*                 |
-|                | *incident*                |
-|                | *bombExplosion*           |
-|                | *securityAlert*           |
-|                | *fire*                    |
-|                | *vandalism*               |
-|                | *accident*                |
-|                | *overcrowded*             |
-|                | *insufficientDemand*      |
-|                | *lightingFailure*         |
-|                | *leaderBoardFailure*      |
-|                | *serviceIndicatorFailure* |
-|                | *serviceFailure*          |
-|                | *operatorCeasedTrading*   |
-|                | *operatorSuspended*       |
-|                | *congestion*              |
-|                | *routeBlockage*           |
-|                | *personOnTheLine*         |
-|                | *vehicleOnTheLine*        |
-|                | *objectOnTheLine*         |
-|                | *animalOnTheLine*         |
-|                | *routeDiversion*          |
-|                | *roadClosed*              |
-|                | *roadworks*               |
-|                | *specialEvent*            |
-|                | *bridgeStrike*            |
-|                | *overheadObstruction*     |
-|                | *undefinedProblem*        |
+| ***Group***  | ***SIRI-SX***  |
+|--|--|
+| Miscell­aneous  | *unknown*  |
+|  | *incident*  |
+|  | *bombExplosion*  |
+|  | *securityAlert*  |
+|  | *fire*  |
+|  | *vandalism*  |
+|  | *accident*  |
+|  | *overcrowded*  |
+|  | *insufficientDemand*  |
+|  | *lightingFailure*  |
+|  | *leaderBoardFailure*  |
+|  | *serviceIndicatorFailure*  |
+|  | *serviceFailure*  |
+|  | *operatorCeasedTrading*  |
+|  | *operatorSuspended*  |
+|  | *congestion*  |
+|  | *routeBlockage*  |
+|  | *personOnTheLine*  |
+|  | *vehicleOnTheLine*  |
+|  | *objectOnTheLine*  |
+|  | *animalOnTheLine*  |
+|  | *routeDiversion*  |
+|  | *roadClosed*  |
+|  | *roadworks*  |
+|  | *specialEvent*  |
+|  | *bridgeStrike*  |
+|  | *overheadObstruction*  |
+|  | *undefinedProblem*  |
 
 ###### Personnel reasons
 
-| ***Group***            | ***SIRI-SX***               |
-|------------------------|-----------------------------|
-| ***Personnel Reason*** | *unknown*                   |
-|                        | *staffSickness*             |
-|                        | *staffAbsence*              |
-|                        | *staffInWrongPlace*         |
-|                        | *staffShortage*             |
-|                        | *industrialAction*          |
-|                        | *workToRule*                |
-|                        | *undefinedPersonnelProblem* |
+| ***Group***  | ***SIRI-SX***  |
+|--|--|
+| ***Personnel Reason***  | *unknown*  |
+|  | *staffSickness*  |
+|  | *staffAbsence*  |
+|  | *staffInWrongPlace*  |
+|  | *staffShortage*  |
+|  | *industrialAction*  |
+|  | *workToRule*  |
+|  | *undefinedPersonnelProblem*  |
 
-| ***Personne sub lReason*** | *staffInjury*                | staff sickness    |
-|----------------------------|------------------------------|-------------------|
-|                            | *contractorStaffInjury*      | staff sickness    |
-|                            | *unofficialIndustrialAction* | industrial action |
+| ***Personne sub lReason***  | *staffInjury*  | staff sickness  |
+|--|--|--|
+|  | *contractorStaffInjury*  | staff sickness  |
+|  | *unofficialIndustrialAction*  | industrial action  |
 
 ###### Equipment reasons
 
-|                        | ***SIRI-SX***               |
-|------------------------|-----------------------------|
-| ***Equipment Reason*** | *unknown*                   |
-|                        | *pointsProblem*             |
-|                        | *pointsFailure*             |
-|                        | *signalProblem*             |
-|                        | *signalFailure*             |
-|                        | *derailment*                |
-|                        | *engineFailure*             |
-|                        | *breakDown*                 |
-|                        | *technicalProblem*          |
-|                        | *repairWork*                |
-|                        | *constructionWork*          |
-|                        | *maintenanceWork*           |
-|                        | *powerProblem*              |
-|                        | *fuelProblem*               |
-|                        | *swingBridgeFailure*        |
-|                        | *escalatorFailure*          |
-|                        | *liftFailure*               |
-|                        | *gangwayProblem*            |
-|                        | *closedForMaintenance*      |
-|                        | *fuelShortage*              |
-|                        | *deicingWork*               |
-|                        | *wheelProblem*              |
-|                        | *luggageCarouselProblem*    |
-|                        | *undefinedEquipmentProblem* |
+|  | ***SIRI-SX***  |
+|--|--|
+| ***Equipment Reason***  | *unknown*  |
+|  | *pointsProblem*  |
+|  | *pointsFailure*  |
+|  | *signalProblem*  |
+|  | *signalFailure*  |
+|  | *derailment*  |
+|  | *engineFailure*  |
+|  | *breakDown*  |
+|  | *technicalProblem*  |
+|  | *repairWork*  |
+|  | *constructionWork*  |
+|  | *maintenanceWork*  |
+|  | *powerProblem*  |
+|  | *fuelProblem*  |
+|  | *swingBridgeFailure*  |
+|  | *escalatorFailure*  |
+|  | *liftFailure*  |
+|  | *gangwayProblem*  |
+|  | *closedForMaintenance*  |
+|  | *fuelShortage*  |
+|  | *deicingWork*  |
+|  | *wheelProblem*  |
+|  | *luggageCarouselProblem*  |
+|  | *undefinedEquipmentProblem*  |
 
-|                           | ***SIRI-SX***                       |
-|---------------------------|-------------------------------------|
-| ***Equipment Subreason*** | *tractionFailure*                   |
-|                           | *defectiveTrain*                    |
-|                           | *slipperyTrack*                     |
-|                           | *trainWarningSystemProblem*         |
-|                           | *trackCircuitProblem*               |
-|                           | *Signal and Switch Failure*         |
-|                           | *brokenRail*                        |
-|                           | *poorRailConditions*                |
-|                           | *wheelImpactLoad*                   |
-|                           | *lackOfOperationalStock*            |
-|                           | *defectiveFireAlarmEquipment*       |
-|                           | *defectivePlatformEdgeDoors*        |
-|                           | *defectiveCctv*                     |
-|                           | *defectivePublicAnnouncementSystem* |
-|                           | *ticketingSystemNotAvailable*       |
-|                           | *levelCrossingFailure*              |
-|                           | *trafficManagementSystemFailure*    |
-|                           | *emergencyEngineeringWork*          |
-|                           | *lateFinishToEngineeringWork*       |
-|                           | *overheadWireFailure*               |
+|  | ***SIRI-SX***  |
+|--|--|
+| ***Equipment Subreason***  | *tractionFailure*  |
+|  | *defectiveTrain*  |
+|  | *slipperyTrack*  |
+|  | *trainWarningSystemProblem*  |
+|  | *trackCircuitProblem*  |
+|  | *Signal and Switch Failure*  |
+|  | *brokenRail*  |
+|  | *poorRailConditions*  |
+|  | *wheelImpactLoad*  |
+|  | *lackOfOperationalStock*  |
+|  | *defectiveFireAlarmEquipment*  |
+|  | *defectivePlatformEdgeDoors*  |
+|  | *defectiveCctv*  |
+|  | *defectivePublicAnnouncementSystem*  |
+|  | *ticketingSystemNotAvailable*  |
+|  | *levelCrossingFailure*  |
+|  | *trafficManagementSystemFailure*  |
+|  | *emergencyEngineeringWork*  |
+|  | *lateFinishToEngineeringWork*  |
+|  | *overheadWireFailure*  |
 
 ###### Environment reason
 
-| ***Group***              | ***SIRI-SX***                   |
-|--------------------------|---------------------------------|
-| ***Environment Reason*** | *unknown*                       |
-|                          | *fog*                           |
-|                          | *roughSea*                      |
-|                          | *heavySnowFall*                 |
-|                          | *heavyRain*                     |
-|                          | *strongWinds*                   |
-|                          | *tidalRestrictions*             |
-|                          | *highTide*                      |
-|                          | *lowTide*                       |
-|                          | *ice*                           |
-|                          | *frozen*                        |
-|                          | *hail*                          |
-|                          | *highTemperatures*              |
-|                          | *flooding*                      |
-|                          | *waterlogged*                   |
-|                          | *lowWaterLevel*                 |
-|                          | *highWaterLevel*                |
-|                          | *fallenLeaves*                  |
-|                          | *fallenTree*                    |
-|                          | *landslide*                     |
-|                          | *undefinedEnvironmentalProblem* |
+| ***Group***  | ***SIRI-SX***  |
+|--|--|
+| ***Environment Reason***  | *unknown*  |
+|  | *fog*  |
+|  | *roughSea*  |
+|  | *heavySnowFall*  |
+|  | *heavyRain*  |
+|  | *strongWinds*  |
+|  | *tidalRestrictions*  |
+|  | *highTide*  |
+|  | *lowTide*  |
+|  | *ice*  |
+|  | *frozen*  |
+|  | *hail*  |
+|  | *highTemperatures*  |
+|  | *flooding*  |
+|  | *waterlogged*  |
+|  | *lowWaterLevel*  |
+|  | *highWaterLevel*  |
+|  | *fallenLeaves*  |
+|  | *fallenTree*  |
+|  | *landslide*  |
+|  | *undefinedEnvironmentalProblem*  |
 
-| ***Group***                         | ***SIRI-SX***        |
-|-------------------------------------|----------------------|
-| ***Environment Weather Subreason*** | *driftingSnow*       |
-|                                     | *blizzardConditions* |
-|                                     | *stormDamage*        |
-|                                     | *stormConditions*    |
-|                                     | *slipperiness*       |
-|                                     | *iceDrift*           |
-|                                     | *glazedFrost*        |
-|                                     | *lightningStrike*    |
-|                                     | *avalanches*         |
-|                                     | *flashFloods*        |
-| ***Environment ground Subreason***  | *mudslide*           |
-|                                     | *rockfalls*          |
-|                                     | *subsidence*         |
-|                                     | *earthquake­Damage*  |
-|                                     | *sewerOverflow*      |
-|                                     | *grassFire*          |
+| ***Group***  | ***SIRI-SX***  |
+|--|--|
+| ***Environment Weather Subreason***  | *driftingSnow*  |
+|  | *blizzardConditions*  |
+|  | *stormDamage*  |
+|  | *stormConditions*  |
+|  | *slipperiness*  |
+|  | *iceDrift*  |
+|  | *glazedFrost*  |
+|  | *lightningStrike*  |
+|  | *avalanches*  |
+|  | *flashFloods*  |
+| ***Environment ground Subreason***  | *mudslide*  |
+|  | *rockfalls*  |
+|  | *subsidence*  |
+|  | *earthquake­Damage*  |
+|  | *sewerOverflow*  |
+|  | *grassFire*  |
 
 ###### Autres raisons
 
@@ -10123,36 +8897,31 @@ implémenté dans un échange.
 
 ##### Desription de l’enum ‘Severity’
 
-| ***SIRI-SX*** | **Description** |
-|---------------|-----------------|
-| *unknown*     | unknown         |
-|               |                 |
-| *slight*      | slight          |
-| *normal*      | normal          |
-| *severe*      | severe          |
-|               |                 |
-| *noImpact*    | no impact       |
-| *undefined*   | *undefined*     |
+| ***SIRI-SX***  | **Description**  |
+|--|--|
+| *unknown*  | unknown  |
+|  |  |
+| *slight*  | slight  |
+| *normal*  | normal  |
+| *severe*  | severe  |
+|  |  |
+| *noImpact*  | no impact  |
+| *undefined*  | *undefined*  |
 
 ##### Description de l’enum ‘ScopeType’
 
-| **SIRI-SX**                                | **Description**                                |
-|--------------------------------------------|------------------------------------------------|
-| *<span class="hl">general</span>*        | Situation has a general scope.                 |
-| *<span class="hl">operator</span>*       | Situation scope is a specific OPERATOR.        |
-| *<span class="hl">network</span>*        | Situation scope is whole NETWORK.              |
-| *<span class="hl">route</span>*          | Situation scope is a specific ROUTE.           |
-| *<span class="hl">line</span>*           | Situation scope is a specific LINE.            |
-| *<span class="hl">place</span>*          | Situation scope is a specific PLACE.           |
-| *<span class="hl">StopPlace</span>*      | Situation scope is a specific STOP PLACE.      |
-|                                            |                                                |
-| *<span class="hl">stopPoint</span>*      | Situation scope is a specific STOP POINT.      |
-| *<span class="hl">vehicleJourney</span>* | Situation scope is a specific VEHICLE JOURNEY. |
-|                                            |                                                |
-|                                            |                                                |
-|                                            |                                                |
-|                                            |                                                |
-|                                            |                                                |
+| **SIRI-SX**  | **Description**  |
+|--|--|
+| *<span class="hl">general</span>*  | Situation has a general scope.  |
+| *<span class="hl">operator</span>*  | Situation scope is a specific OPERATOR.  |
+| *<span class="hl">network</span>*  | Situation scope is whole NETWORK.  |
+| *<span class="hl">route</span>*  | Situation scope is a specific ROUTE.  |
+| *<span class="hl">line</span>*  | Situation scope is a specific LINE.  |
+| *<span class="hl">place</span>*  | Situation scope is a specific PLACE.  |
+| *<span class="hl">StopPlace</span>*  | Situation scope is a specific STOP PLACE.  |
+|  |  |
+| *<span class="hl">stopPoint</span>*  | Situation scope is a specific STOP POINT.  |
+| *<span class="hl">vehicleJourney</span>*  | Situation scope is a specific VEHICLE JOURNEY.  |
 
 ##### Description de la structure ‘Consequences’
 
@@ -10166,38 +8935,12 @@ implémenté dans un échange.
 <col style="width: 52%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl_delete">PtConsequence</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Effet d’une SITUATION sur le service</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>Time</em></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><p><em>Classifiers</em></p>
 <p><span class="hl"> </span></p></td>
 <td colspan="2"><em><strong><span class="hl">Condition</span></strong></em></td>
@@ -10205,42 +8948,22 @@ implémenté dans un échange.
 <td><em>enum</em></td>
 <td><p>Classification de l'effet sur le service.</p>
 <p>Il peut être remplacé par JourneyCondition dans AffectedVehicleJourney</p>
-<p><em><span class="hl">Qualification de l’évènement sur l’offre de transport (cf §)</span></em></p></td>
+<p><em><span class="hl">Qualification de l’évènement sur l’offre de transport (cf <a href="#description-de-lenum-conditions">&</a>)</span></em></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Severity</span></strong></em></td>
 <td><strong>1:1</strong></td>
 <td><em>enum</em></td>
 <td>Gravité de la SITUATION. La valeur par défaut est normale.<span class="hl">cf </span><span class="hl"></span><span class="hl">.</span></td>
 </tr>
-<tr class="even">
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Advice</em></td>
 <td colspan="2"><em><strong><span class="hl">Advice</span></strong></em></td>
 <td>0:1</td>
 <td><em>+PtAdviceStructure</em></td>
 <td>Conseils aux passangers (cf ci-dessous)</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"></td>
 <td><em><strong><span class="hl">AdviceRef</span></strong></em></td>
 <td>0:1</td>
@@ -10248,163 +8971,92 @@ implémenté dans un échange.
 <td><p>Identifiant de la norme.</p>
 <p>Message d'information complémentaire aux passagers</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Details</span></strong></em></td>
 <td>0:*</td>
 <td><em>nlString</em></td>
 <td>Conseils textuels supplémentaires aux passagers.</td>
 </tr>
-<tr class="even">
-<td rowspan="3"><em>Blocking</em></td>
+<tr>
+<td rowspan="2"><em>Blocking</em></td>
 <td colspan="2"><em><strong><span class="hl">Blocking</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Comment la perturbation doit être gérée dans les systèmes d'information. Cf ci-après</td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
+<tr>
+<td></td>
 <td><em><strong><span class="hl">JourneyPlanner</span></strong></em></td>
 <td>0:1</td>
 <td><em>boolean</em></td>
 <td><p>Indique si les informations sur les parties du NETWORK identifiées par AffectsScope doivent être bloquées de la recherche d’itinéraire. La valeur par défaut est false ; ne pas supprimer.</p>
 <p><span class="hl">Indique si les données de l’évènement doivent être ou non prises en compte par un calculateur d’itinéraire</span></p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Activity</em></td>
 <td colspan="2"><em><strong><span class="hl">Boarding</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Public visé par SITUATION. Voir les lignes suivantes.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"></td>
 <td><em><strong><span class="hl">ArrivalBoardingActivity</span></strong></em></td>
 <td>0:1</td>
 <td><em>enum</em></td>
 <td>Type d'embarquement et de débarquement autorisé à l'arrêt à l’arrivée. La valeur par défaut est Embarquement.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">DepartureBoardingActivity</span></strong></em></td>
 <td>0:1</td>
 <td><em>enum</em></td>
 <td>Type d'embarquement et de débarquement autorisé à l'arrêt au départ. La valeur par défaut est Embarquement.</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>Delay</em></td>
+<tr>
+<td rowspan="2"><em>Delay</em></td>
 <td colspan="2"><em><strong><span class="hl">Delays</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Retards prévus .</td>
 </tr>
-<tr class="odd">
-<td rowspan="3"></td>
+<tr>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
 <td><em><strong><span class="hl">Delay</span></strong></em></td>
 <td>0:1</td>
 <td><em>dPositiveDuration</em></td>
 <td>Temps de trajet supplémentaire nécessaire pour surmonter les perturbations.</td>
 </tr>
-<tr class="even">
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-| SX-3 | Les délais sont exprimés uniquement sous la forme d’une durée |
-|------|---------------------------------------------------------------|
+| SX-3  | Les délais sont exprimés uniquement sous la forme d’une durée  |
+|--|--|
 
 ###### Description de l’enum ‘Conditions’
 
-| **SIRI-SX**                                             | **Description**               |
-|---------------------------------------------------------|-------------------------------|
-| *<span class="hl">unknown</span>*                     | unknown                       |
-| *<span class="hl">altered</span>*                     | altered                       |
-| *<span class="hl">cancelled</span>*                   | cancelled                     |
-| *<span class="hl">delayed</span>*                     | delayed                       |
-| *<span class="hl">diverted</span>*                    | diverted                      |
-| *<span class="hl">noService</span>*                   | no service                    |
-| *<span class="hl">disrupted</span>*                   | disrupted                     |
-| *<span class="hl">additionalService</span>*           | additional service            |
-| *<span class="hl">specialService</span>*              | special service               |
-| *<span class="hl">onTime</span>*                      | on time                       |
-| *<span class="hl">normalService</span>*               | normal service                |
-| *<span class="hl">intermittentService</span>*         | intermittent service          |
-| *<span class="hl">shortFormedService</span>*          | short formed service          |
-| *<span class="hl">fullLengthService</span>*           | full length service           |
-| *<span class="hl">extendedService</span>*             | extended service              |
-| *<span class="hl">splittingTrain</span>*              | splitting train               |
-| *<span class="hl">replacementTransport</span>*        | replacement transport         |
-| *<span class="hl">arrivesEarly</span>*                | arrives early                 |
-| *<span class="hl">shuttleService</span>*              | shuttle service               |
-| *<span class="hl">replacementService</span>*          | replacement service           |
-| *<span class="hl">undefinedServiceInformation</span>* | undefined service information |
+| **SIRI-SX**  | **Description**  |
+|--|--|
+| *<span class="hl">unknown</span>*  | unknown  |
+| *<span class="hl">altered</span>*  | altered  |
+| *<span class="hl">cancelled</span>*  | cancelled  |
+| *<span class="hl">delayed</span>*  | delayed  |
+| *<span class="hl">diverted</span>*  | diverted  |
+| *<span class="hl">noService</span>*  | no service  |
+| *<span class="hl">disrupted</span>*  | disrupted  |
+| *<span class="hl">additionalService</span>*  | additional service  |
+| *<span class="hl">specialService</span>*  | special service  |
+| *<span class="hl">onTime</span>*  | on time  |
+| *<span class="hl">normalService</span>*  | normal service  |
+| *<span class="hl">intermittentService</span>*  | intermittent service  |
+| *<span class="hl">shortFormedService</span>*  | short formed service  |
+| *<span class="hl">fullLengthService</span>*  | full length service  |
+| *<span class="hl">extendedService</span>*  | extended service  |
+| *<span class="hl">splittingTrain</span>*  | splitting train  |
+| *<span class="hl">replacementTransport</span>*  | replacement transport  |
+| *<span class="hl">arrivesEarly</span>*  | arrives early  |
+| *<span class="hl">shuttleService</span>*  | shuttle service  |
+| *<span class="hl">replacementService</span>*  | replacement service  |
+| *<span class="hl">undefinedServiceInformation</span>*  | undefined service information  |
 
 ##### Description de la structure ‘Publishing Actions’
 
@@ -10419,112 +9071,48 @@ implémenté dans un échange.
 <col style="width: 42%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="5"><strong>PublishingActions</strong></td>
 <td><em>+Structure</em></td>
 <td><p>List of actions to be carried out.</p>
 <p>Indication par type de canal de communication d’actions à realiser. Permet la diffusion des messages IV complémentaires sur des localisations particulières.</p></td>
 </tr>
-<tr class="even">
-<td rowspan="10"><em>ActionsGroup</em></td>
+<tr>
+<td rowspan="6"><em>ActionsGroup</em></td>
 <td colspan="3"><em><strong><span class="hl">PublishToWebAction</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Publish to web. <span class="hl">Cf </span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">PublishToMobileAction</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Publish to mobile device. <span class="hl">Cf </span></td>
 </tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">PublishToDisplayAction</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Diffusion sur des afficheurs Embarqués / Sol</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl_delete">ManualAction</span></strong></em></td>
 <td><span class="hl_delete">0:*</span></td>
 <td><em><span class="hl_delete">+Structure</span></em></td>
 <td><span class="hl_delete">Publish to manual notifcation channel. </span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">NotifyByEmailAction</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Publish to email channel. <span class="hl">Cf </span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">NotifyBySmsAction</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Publish to SMS channel.<span class="hl">Cf </span></td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="5"></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -10540,12 +9128,12 @@ implémenté dans un échange.
 <col style="width: 58%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>PublishToWebAction</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Paramètres de publication sur le canal Web.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>ParameterisedAction</em></td>
 <td><em><strong><span class="hl">ParameterisedAction</span></strong></em></td>
 <td>0:1</td>
@@ -10553,28 +9141,28 @@ implémenté dans un échange.
 <td><p>Hérité de <em><strong>ParameterisedAction</strong></em>.</p>
 <p><em><strong><span class="hl">ParameterisedAction</span></strong></em><span class="hl"> : Utilisé pour permettre de définir un message à publier sur le web cf </span><span class="hl"></span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">Incidents</span></strong></em></td>
 <td>0:1</td>
 <td><em>boolean</em></td>
 <td>Inclure dans les listes de SITUATION sur le site Web. La valeur par défaut est 'vrai'.</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">HomePage</span></strong></em></td>
 <td>0:1</td>
 <td><em>boolean</em></td>
 <td>Inclure sur la page d'accueil du site Web. La valeur par défaut est 'faux'.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">Ticker</span></strong></em></td>
 <td>0:1</td>
 <td><em>boolean</em></td>
 <td>Inclure dans la bande de défilement mobile. La valeur par défaut est 'faux'</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">SocialNetwork</span></strong></em></td>
 <td>0:*</td>
@@ -10595,12 +9183,12 @@ implémenté dans un échange.
 <col style="width: 56%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>PublishToMobileAction</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Paramètres de publication sur le canal Téléphone Mobile.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>ParameterisedAction</em></td>
 <td><em><strong><span class="hl">ParameterisedAction</span></strong></em></td>
 <td>0:1</td>
@@ -10608,14 +9196,14 @@ implémenté dans un échange.
 <td><p>Hérité de <em><strong>ParameterisedAction</strong></em>.</p>
 <p><em><strong><span class="hl">ParameterisedAction</span></strong></em><span class="hl"> : Utilisé pour permettre de définir un message à publier sur telephone portable cf </span><span class="hl"></span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">Incidents</span></strong></em></td>
 <td>0:1</td>
 <td><em>boolean</em></td>
 <td>Inclure dans les listes de SITUATION sur le site Web mobile. La valeur par défaut est 'vrai'.</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">HomePage</span></strong></em></td>
 <td>0:1</td>
@@ -10636,12 +9224,12 @@ implémenté dans un échange.
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>PublishToDisplayAction</strong></em></td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Paramètres pour diffuser sur un afficheur</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>ParameterisedAction</em></td>
 <td><em><strong><span class="hl">ParameterisedAction</span></strong></em></td>
 <td>0:1</td>
@@ -10649,14 +9237,14 @@ implémenté dans un échange.
 <td><p>Hérité de <em><strong>ParameterisedAction</strong></em>.</p>
 <p><em><strong>ParameterisedAction</strong></em> : <span class="hl">Utilisé pour permettre de définir un message à publier sur telephone portable cf </span><span class="hl"></span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">OnPlace</span></strong></em></td>
 <td>0:1</td>
 <td><em>boolean</em></td>
 <td><span class="hl">Indique si il s’agit d’un afficheur Sol</span> : Par Defaut 'true'.</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">Onboard</span></strong></em></td>
 <td>0:1</td>
@@ -10678,12 +9266,12 @@ implémenté dans un échange.
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>NotifyByEmailAction</strong></em></td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Paramètres pour diffuser sur </span> le canal Email</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>ParameterisedAction</em></td>
 <td colspan="2"><em><strong><span class="hl">ParameterisedAction</span></strong></em></td>
 <td>0:1</td>
@@ -10691,27 +9279,27 @@ implémenté dans un échange.
 <td><p>Hérité de <em><strong>ParameterisedAction</strong></em>.</p>
 <p><em><strong><span class="hl">ParameterisedAction</span></strong></em><span class="hl"> : Utilisé pour permettre de définir un message à publier via email cf </span><span class="hl"></span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>PushedActionStructure</em></td>
 <td colspan="2"><em><strong><span class="hl">BeforeNotices</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Indique si un rappel doit être envoyé, cf lignes ci-dessous.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><span class="hl"> </span></td>
 <td><em><strong><span class="hl">Interval</span></strong></em></td>
 <td>0:*</td>
 <td><em>→DurationType</em></td>
 <td>Interval avant la date de début auquel envoyer le rappel.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ClearNotice</span></strong></em></td>
 <td>0:1</td>
 <td><em>Boolean</em></td>
 <td>Indique si un avertissement de fin doit être envoyé</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td colspan="2"><em><strong><span class="hl">email</span></strong></em></td>
 <td>0:1</td>
@@ -10733,12 +9321,12 @@ implémenté dans un échange.
 <col style="width: 55%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>NotifyBySmsAction</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Paramètres de publication sur le canal SMS</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>ParameterisedAction</em></td>
 <td colspan="2"><em><strong><span class="hl">ParameterisedAction</span></strong></em></td>
 <td>0:1</td>
@@ -10746,34 +9334,34 @@ implémenté dans un échange.
 <td><p>Hérité de <em><strong>ParameterisedAction</strong></em>.</p>
 <p><em><strong><span class="hl">ParameterisedAction</span></strong></em><span class="hl"> : Utilisé pour permettre de définir un message sms cf </span><span class="hl"></span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>PushedActionStructure</em></td>
 <td colspan="2"><em><strong><span class="hl">BeforeNotices</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Indique si un rappel doit être envoyé, cf lignes ci-dessous.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><span class="hl"> </span></td>
 <td><em><strong><span class="hl">Interval</span></strong></em></td>
 <td>0:*</td>
 <td><em>→DurationType</em></td>
 <td>Interval avant la date de début auquel envoyer le rappel.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ClearNotice</span></strong></em></td>
 <td>0:1</td>
 <td><em>Boolean</em></td>
 <td>Indique si un avertissement de fin doit être envoyé</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td colspan="2"><em><strong><span class="hl">Phone</span></strong></em></td>
 <td>0:1</td>
 <td><em>→PhoneType</em></td>
 <td>Numéro de téléphone auquel envoyer le rappel</td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td colspan="2"><em><strong><span class="hl">Premium</span></strong></em></td>
 <td>0:1</td>
@@ -10796,47 +9384,47 @@ implémenté dans un échange.
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>AffectsScope</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Périmètre de la SITUATION et de ses consequences</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Level</td>
 <td colspan="2"><em><strong><span class="hl">AreaOfInterest</span></strong></em></td>
 <td>0:1</td>
 <td><em>enum</em></td>
 <td>Périmètre géographique Haut niveau – TOPOGRAPHIC PLACE REF</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Operators</em></td>
 <td colspan="2"><em><strong><span class="hl">Operators</span></strong></em></td>
 <td>0:1</td>
 <td><em>choice</em></td>
 <td>Périmètre niveau OPERATOR</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">AllOperators</span></strong></em></td>
 <td>1:1</td>
 <td><em>empty</em></td>
 <td>Tous les OPERATORs sont concernés</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>b</strong></em></td>
 <td><em><strong><span class="hl">AffectedOperator</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td>Annotation pour les opérateurs impactés par la SITUATION (cf 6.7.4.1.7.6.5)</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>network</em></td>
 <td colspan="2"><em><strong><span class="hl">Networks</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Identification des réseaux impactés</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">AffectedNetwork</span></strong></em></td>
 <td>1:*</td>
@@ -10844,7 +9432,7 @@ implémenté dans un échange.
 <td><p>Annotation pour les réseaux impactés par la SITUATION.</p>
 <p><span class="hl">Liste des réseaux cibles de l’action de publication</span> (cf 6.7.4.1.7.6.1)</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Stop</em></td>
 <td colspan="2"><em><strong><span class="hl">StopPoints</span></strong></em></td>
 <td>0:1</td>
@@ -10852,7 +9440,7 @@ implémenté dans un échange.
 <td><p>SCHEDULED STOP POINT (Point d’arrêt planifié) impactés par SITUATION.</p>
 <p><span class="hl">Points d’arrêt cible de la publication</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">AffectedStopPoint</span></strong></em></td>
 <td>1:*</td>
@@ -10861,35 +9449,35 @@ implémenté dans un échange.
 <p><span class="hl">Liste des points d’arrêt cibles de l’action de publication</span></p>
 <p>cf 6.7.4.1.7.6.2</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>StopPlace</em></td>
 <td colspan="2"><em><strong><span class="hl">StopPlaces</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>STOP PLACEs impactés par SITUATION. Cf lignes ci-dessous</td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">AffectedStopPlace</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td>Annotation pour les STOP PLACE impactés</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Place</em></td>
 <td colspan="2"><em><strong><span class="hl">Places</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>PLACEs impactés par SITUATION. Cf lignes ci-dessous</td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td><em><strong><span class="hl">AffectedPlace</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td>Annotation pour les PLACE.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Journey</em></td>
 <td colspan="2"><em><strong><span class="hl">VehicleJourneys</span></strong></em></td>
 <td>0:1</td>
@@ -10897,7 +9485,7 @@ implémenté dans un échange.
 <td><p>VEHICLE JOURNEYs impactés par SITUATION. Cf lignes ci-dessous</p>
 <p><span class="hl">Liste des Courses cibles de la publication</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">AffectedVehicleJourney</span></strong></em></td>
 <td>1:*</td>
@@ -10905,38 +9493,24 @@ implémenté dans un échange.
 <td><p>VEHICLE JOURNEY impacté par SITUATION.</p>
 <p><span class="hl">Course cible de la publication cf </span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Vehicles</em></td>
 <td colspan="2"><em><strong><span class="hl">Vehicles</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>VEHICLEs impactés SITUATION. Cf lignes ci-dessous</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><span class="hl"> </span></td>
 <td><em><strong><span class="hl">AffectedVehicle</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td>Annotation pour les VEHICLE impactés</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-####### Description de la structure AffectedNetwork
+<h7> Description de la structure AffectedNetwork</h7>
 
 <table>
 <colgroup>
@@ -10948,20 +9522,20 @@ implémenté dans un échange.
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>AffectedNetwork</strong></em></td>
 <td><em>+Structure</em></td>
 <td><p>Périmètre de la perturbation et ses conséquences sur le réseau</p>
 <p><span class="hl">Identification du/des réseaux sur lesquels publier l’action</span>.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Operators</em></td>
 <td colspan="2"><em><strong>AffectedOperator</strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Annotation à l’ Operator de services impacté par SITUATION.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Network</em></td>
 <td colspan="2"><em><strong><span class="hl">NetworkRef</span></strong></em></td>
 <td>0:1</td>
@@ -10970,41 +9544,41 @@ implémenté dans un échange.
 <td><p>RÉSEAU de la LIGNE concernée. S'il est absent, peut être extrait du contexte</p>
 <p><span class="hl">Identifiant du réseau (au sens transmodel)</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong>NetworkName</strong></em></td>
 <td>0:*</td>
 <td><em>nlString</em></td>
 <td>Nom du NETWORK.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong>RoutesAffected</strong></em></td>
 <td>0:*</td>
 <td><em>nlString</em></td>
 <td>Description textuelle de l'ensemble des ROUTE affectées.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Mode</em></td>
 <td colspan="2"><em>AffectedModeGroup</em></td>
 <td>0:1</td>
 <td><em>→Group</em></td>
 <td>Identification des modes impactés</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="4"><em>Lines</em></td>
 <td colspan="2"></td>
 <td></td>
 <td><em>choice</em></td>
 <td>Périmètre de la LINE</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>a</em></td>
 <td><em><strong><span class="hl">AllLines</span></strong></em></td>
 <td>1:1</td>
 <td><em>emptyType</em></td>
 <td>Toutes les LINEs du NETWORK sont impactées.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>b</em></td>
 <td><em><strong><span class="hl">SelectedRoutes</span></strong></em></td>
 <td>1:1</td>
@@ -11012,24 +9586,17 @@ implémenté dans un échange.
 <td><p>Seules certaines ROUTE sont affectées, les informations de niveau LIGNE ne sont pas disponibles.</p>
 <p>Cf L'élément RoutesAffected pour la description textuelle.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>c</em></td>
 <td><em><strong><span class="hl">AffectedLine</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Lignes du réseau impactées (cf )</span></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-####### Description de la structure AffectedStopPoint
+<h7> Description de la structure AffectedStopPoint</h7>
 
 <table>
 <colgroup>
@@ -11042,14 +9609,14 @@ implémenté dans un échange.
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong>AffectedStopPoint</strong></em></td>
 <td><em>+Structure</em></td>
 <td><p>Anotation au point d’arrêt topologique impacté par la SITUATION</p>
 <p><span class="hl">Points d’arrêt concernés par la publication</span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>Stop</em></td>
+<tr>
+<td><em>Stop</em></td>
 <td colspan="3"><em><strong><span class="hl">StopPointRef</span></strong></em></td>
 <td>0:1</td>
 <td><p><em>→StopPointCode</em></p>
@@ -11057,53 +9624,28 @@ implémenté dans un échange.
 <td><p>Identifiant de SCHEDULED STOP POINT (Point d’arrêt planifié).</p>
 <p><span class="hl">Identifiant de Point d’arrêt</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td> </td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Modes</em></td>
 <td colspan="3"><em><strong><span class="hl">AffectedModes</span></strong></em></td>
 <td>0:1</td>
 <td><em>choice</em></td>
 <td>MODE impactés</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>a</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">AllModes</span></strong></em></td>
 <td>0:1</td>
 <td><em>emptyType</em></td>
 <td>Tous les modes du SCHEDULED STOP POINT (Point d’arrêt planifié) sont impactés</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>b</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">Mode</span></strong></em></td>
 <td>0:*</td>
 <td><em>→AffectedModeGroup</em></td>
 <td>Modes impactés par la SITUATION.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Zone</em></td>
 <td colspan="3"><em><strong><span class="hl">PlaceRef</span></strong></em></td>
 <td>0:1</td>
@@ -11111,20 +9653,20 @@ implémenté dans un échange.
 <p><em>(xsd:NMTOKEN)</em></p></td>
 <td>Identifiant du Lieu où se situe le SCHEDULED STOP STOP (Point d’arrêt planifié)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">PlaceName</span></strong></em></td>
 <td>0:*</td>
 <td><em>nlString</em></td>
 <td>Nom du SCHEDULED STOP POINT (Point d’arrêt planifié).</td>
 </tr>
-<tr class="even">
+<tr>
 <td> </td>
 <td colspan="3"><em><strong><span class="hl">AccessibilityAssessment</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>ACCESSIBILITY ACCESSMENT pour le SCHEDULED STOP POINT (Point d’arrêt planifié).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td> </td>
 <td colspan="3"><em><strong><span class="hl">StopCondition</span></strong></em></td>
 <td>0:*</td>
@@ -11132,31 +9674,24 @@ implémenté dans un échange.
 <td><p>Etat du SCHEDULED STOP POINT (Point d’arrêt planifié).</p>
 <p>Plusieurs Condtions peuvent être valident en même temps.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"> </td>
 <td colspan="3"><em><strong><span class="hl">ConnectionLinks</span></strong></em></td>
 <td>0:1</td>
 <td><em>many</em></td>
 <td>CONNECTION links du SCHEDULED STOP POINT (Point d’arrêt planifié) impactés par SITUATION</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"></td>
 <td><em><strong><span class="hl">AffectedConnectionLink</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Annotation au CONNECTION link impactée SITUATION.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-####### Description de la structure AffectedVehicleJourney
+<h7> Description de la structure AffectedVehicleJourney</h7>
 
 <table>
 <colgroup>
@@ -11170,27 +9705,14 @@ implémenté dans un échange.
 <col style="width: 51%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="6"><em><strong>AffectedVehicleJourney</strong></em></td>
 <td><em>+Structure</em></td>
 <td><p>Annotation à la course référencée impactée par la SITUATION. Annotated</p>
 <p><span class="hl">Courses cibles de l’action de publication.</span></p></td>
 </tr>
-<tr class="even">
-<td rowspan="17"></td>
-<td colspan="4"></td>
+<tr>
 <td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
 <td colspan="2"><em><strong>b</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">VehicleJourneyRef</span></strong></em></td>
 <td>1:*</td>
@@ -11199,195 +9721,10 @@ implémenté dans un échange.
 <td><p>Simple identifier of VEHICLE JOURNEY. Deprecated. See \siri_model\siri_journey_support-v2.1.xsd.</p>
 <p><span class="hl">Identifiant de course (au sens transmodel)</span></p></td>
 </tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="5"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-####### Description de la structure AffectedLine
+<h7> Description de la structure AffectedLine</h7>
 
 <table>
 <colgroup>
@@ -11399,54 +9736,41 @@ implémenté dans un échange.
 <col style="width: 53%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong>AffectedLine</strong></em></td>
 <td><em>+Structure</em></td>
 <td>Annotation à la LINE impactée par la SITUATION</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"><em>Line</em></td>
+<tr>
+<td><em>Line</em></td>
 <td colspan="2"><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>1:1</td>
 <td><p><em>→LineCode</em></p>
 <p><em>(xsd:NMTOKEN)</em></p></td>
 <td>Identifiant de LINE.</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Destination</em></td>
 <td colspan="2"><em><strong><span class="hl">Destinations</span></strong></em></td>
 <td>0:*</td>
 <td></td>
 <td>DESTINATIONs impactée.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">AffectedStopPoint</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>STOP POINT impacté par SITUATION.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Direction</em></td>
 <td colspan="2"><em><strong><span class="hl">Direction</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>DIRECTIONs impactées.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"></td>
 <td><em><strong><span class="hl">DirectionRef</span></strong></em></td>
 <td>0:1</td>
@@ -11454,51 +9778,16 @@ implémenté dans un échange.
 <p><em>(xsd:NMTOKEN)</em></p></td>
 <td>Identifiant de DIRECTION.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">DirectionName</span></strong></em></td>
 <td>0:*</td>
 <td><em>nlString</em></td>
 <td>Nom de DIRECTION.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-####### Description de la structure AffectedOperator
+<h7> Description de la structure AffectedOperator</h7>
 
 <table>
 <colgroup>
@@ -11509,44 +9798,18 @@ implémenté dans un échange.
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong>AffectedOperator</strong></em></td>
 <td><em>+Structure</em></td>
 <td><p>Périmètre de la perturbation et ses conséquences sur le réseau</p>
 <p><span class="hl">Identification du/des opérateurs sur lesquels publier l’action</span>.</p></td>
 </tr>
-<tr class="even">
-<td rowspan="3"><em>Operator</em></td>
+<tr>
+<td><em>Operator</em></td>
 <td><em><strong><span class="hl">OperatorRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>→OperatorCode</em></td>
 <td><span class="hl">Identifiant de l’operateur (au sens transmodel)</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -11565,70 +9828,58 @@ implémenté dans un échange.
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="6"><em><strong>ParameterisedAction</strong></em></td>
 <td><em>+Structure</em></td>
 <td> </td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="10"><em>SimpleActionStructure</em></td>
 <td colspan="3"><em><strong><span class="hl">ActionStatus</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td><em>enum</em></td>
 <td>Status de l’Action. cf 6.7.4.1.7.7.1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Description</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td><em>nlString</em></td>
 <td>Description de l’action.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">ActionData</span></strong></em></td>
 <td colspan="2">0:*</td>
 <td><em>+Structure</em></td>
 <td>Information associée à l’action, cf lignes ci-dessous</td>
 </tr>
-<tr class="odd">
-<td rowspan="7"></td>
+<tr>
+<td rowspan="5"></td>
 <td colspan="2"><em><strong><span class="hl">Name</span></strong></em></td>
 <td>1:1</td>
 <td colspan="2"><em>xsd:NMTOKEN</em></td>
 <td>Nom de l’action</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Prompt</span></strong></em></td>
 <td>0:*</td>
 <td colspan="2"><em>nlString</em></td>
 <td><p>Display prompt(s) for presenting action to user.</p>
 <p><span class="hl">Libéllé du message associé au publishingAction.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">PublishAtScope</span></strong></em></td>
 <td>0:1</td>
 <td colspan="2"><em>+Structure</em></td>
 <td><span class="hl">Zone de diffusion du message ‘Prompt’</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"></td>
 <td><span class="hl">ScopeType</span></td>
 <td>0:1</td>
 <td colspan="2"><em>enum</em></td>
 <td><span class="hl">Type de l’action (cf )</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><span class="hl">Affects</span></td>
 <td>0:1</td>
 <td colspan="2"><em>+Structure</em></td>
@@ -11638,13 +9889,13 @@ implémenté dans un échange.
 </tbody>
 </table>
 
-####### Description de l’enum ‘ActionStatus’
+<h7> Description de l’enum ‘ActionStatus’</h7>
 
-| **Value**                             | **Description**                       |
-|---------------------------------------|---------------------------------------|
-| *<span class="hl">open</span>*      | Action is open but not yet published. |
-| *<span class="hl">published</span>* | Action is already published.          |
-| *<span class="hl">closed</span>*    | Action is closed.                     |
+| **Value**  | **Description**  |
+|--|--|
+| *<span class="hl">open</span>*  | Action is open but not yet published.  |
+| *<span class="hl">published</span>*  | Action is already published.  |
+| *<span class="hl">closed</span>*  | Action is closed.  |
 
 # Eléments techniques des messages
 
@@ -11662,141 +9913,90 @@ implémenté dans un échange.
 <col style="width: 43%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">ServiceRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Structure générale des requêtes</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em>log</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date d’émission de la requête.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="3"><em>Endpoint Properties</em></td>
 <td colspan="2"><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td>Adresse réseau de destination de la réponse (ici une URL étant donné le choix d’implémentation SOAP).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Requestor</span>­<span class="hl">Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Participant­Code</em></td>
 <td>Identifiant du demandeur (reprendre la structure [<em>fournisseur</em>] des identifiants).</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Message</span>­<span class="hl">Identifier</span></strong></em></td>
 <td><p>0:1</p>
 <p><strong><span class="hl">1:1</span></strong></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant unique de ce message.</td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Concrete service subscription</span></strong></em></td>
 <td></td>
 <td></td>
 <td><span class="hl">Si la suite contient plusieurs réponses, elles doivent toutes être du même type.</span></td>
 </tr>
-<tr class="even">
-<td rowspan="11"><em>Payload</em></td>
+<tr>
+<td rowspan="8"><em>Payload</em></td>
 <td><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">Production</span>­<span class="hl">Timetable­Request</span></strong></em></td>
 <td rowspan="11">-1:*</td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – Production Timetable.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>b</strong></em></td>
 <td><em><strong><span class="hl">Estimated</span>­<span class="hl">Timetable­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – Estimated Timetable.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong>d</strong></em></td>
 <td><em><strong><span class="hl">StopMonitoring­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – Stop Monitoring.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong>f</strong></em></td>
 <td><em><strong><span class="hl">Vehicle</span>­<span class="hl">Monitoring­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – Vehicle Monitoring.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em><strong>h</strong></em></td>
 <td><em><strong><span class="hl">Connection</span>­<span class="hl">Monitoring­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – Connection Monitoring.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>i</strong></em></td>
 <td><em><strong><span class="hl">General</span>­<span class="hl">Message­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 3 – General Message.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>j</strong></em></td>
 <td><em><strong><span class="hl">FacilityMonitoring­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>See SIRI Part 4 – Facility Monitoring. SIRI .</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>k</strong></em></td>
 <td><em><strong><span class="hl">SituationExchange­Request</span></strong></em></td>
 <td><em>+Structure</em></td>
@@ -11824,112 +10024,63 @@ façon très simplifiée.
 <col style="width: 0%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">ServiceRequestContext</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td colspan="2">Propriétés générales des requêtes.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="4"><em>Server Endpoint Address</em></td>
 <td colspan="2"><em><strong><span class="hl">Check</span>­<span class="hl">Status</span>­<span class="hl">Address </span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination du <em><strong>CheckStatus.</strong></em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscribe</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination des demandes d’abonnement.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Manage­Subscription­Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination pour la gestion des abonnements déjà établis (interruption, …).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Get</span>­<span class="hl">Data</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination des réponses aux requêtes.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="4"><em>Client End­point Address</em></td>
 <td colspan="2"><em><strong><span class="hl">Status</span>­<span class="hl">Response</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination des réponses aux <em><strong>CheckStatus.</strong></em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscriber</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination des réponses aux demandes de notification.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Notify</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination des notifications.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Consumer</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td colspan="2">Adresse (URL) de destination des données.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
-<td rowspan="5"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
+
+<tr>
 <td rowspan="2"><em>Location</em></td>
 <td><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">Wgs</span>­<span class="hl">Decimal</span>­<span class="hl">Degrees</span></strong></em></td>
@@ -11937,7 +10088,7 @@ façon très simplifiée.
 <td><em>EmptyType</em></td>
 <td colspan="2">Geospatial coordinates are given as WGS84 latitude and longitude, decimal degrees of arc.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>b</strong></em></td>
 <td><em><strong><span class="hl">Gml</span>­<span class="hl">Coordinate</span>­<span class="hl">Format</span></strong></em></td>
 <td></td>
@@ -11945,78 +10096,50 @@ façon très simplifiée.
 <td colspan="2"><p>Name of GML Coordinate format used for Geospatial points in responses.</p>
 <p><span class="hl">Les deux formats sont autorisés en France (</span><em><u><span class="hl">note</span></u></em><span class="hl"> : il existe de nombreux outils libres permettant de convertir les coordonnées d’un référentiel à l’autre).</span></p></td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Temporal Span</em></td>
 <td colspan="2"><em><strong><span class="hl">Data</span>­<span class="hl">Horizon</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td colspan="2"><span class="hl">Durée maximale de l’horizon de données des requêtes.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Request</span>­<span class="hl">Timeout</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td><span class="hl">Délai à partir duquel on peut considérer qu’une requête ne sera plus traitée (par défaut 1 minute).</span></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>Delivery Method</em></td>
 <td colspan="2"><em><strong><span class="hl">Delivery</span>­<span class="hl">Method</span></strong></em></td>
 <td>0:1</td>
-<td><em>fetch | direct</em></td>
+<td><em>fetch  | direct</em></td>
 <td colspan="2"><p>Delivery pattern</p>
 <p><span class="hl">Abonnement à une phase (voir en début de document) uniquement : donc </span><em><span class="hl">direct.</span></em></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Multipart</span>­<span class="hl">Despatch</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><span class="hl">Autorisation de segmentation des messages : </span><strong><span class="hl">Non</span></strong><span class="hl"> dans le profil francilien.</span></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Confirm</span>­<span class="hl">Receipt</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><span class="hl">Confirmation des réceptions: </span><strong><span class="hl">Non</span></strong><span class="hl"> dans le profil francilien.</span></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Resource Use</em></td>
 <td colspan="2"><em><strong><span class="hl">Maximum­Number</span>­<span class="hl">Of­Subscriptions</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td colspan="2"><span class="hl">Nombre maximal d’abonnements pour un unique abonné (par défaut non limité).</span></td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -12045,67 +10168,48 @@ façon très simplifiée.
 <col style="width: 45%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">ServiceDelivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>Structure générique de réponse aux requêtes.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Attrib­utes</em></td>
 <td colspan="3"><em><strong><span class="hl">srsName</span></strong></em></td>
 <td>0:1</td>
 <td colspan="2"><em>xsd:string</em></td>
 <td>Identifiant du système de projection (pour la localisation spatiale) : probablement Lambert 2 étendu (soit EPSG:27582 -NTF(Paris)/Lambert II étendu).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Log</em></td>
 <td colspan="3"><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td colspan="2"><em>xsd:dateTime</em></td>
 <td>Heure de production de la réponse.</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>End­­poi­nt proper­ties</em></td>
+<tr>
+<td rowspan="3"><em>End­­poi­nt proper­ties</em></td>
 <td colspan="3"><em><strong><span class="hl">ProducerRef</span></strong></em></td>
 <td>0:1</td>
 <td colspan="2"><em>Participant­Code</em></td>
 <td>Identifiant du producteur de la réponse (reprendre le code [<em>fournisseur</em>] des identifiants du profil FR)</td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Response</span>­<span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td colspan="2"><em>Message­Qualifier</em></td>
 <td>Identifiant unique du message de réponse.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Request</span>­<span class="hl">Message</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td colspan="2"><em>Message­Qualifier</em></td>
 <td>Identifiant de la requête à laquelle on répond.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>Status</em></td>
 <td colspan="3"><em><strong><span class="hl">Status</span></strong></em></td>
 <td><p>0:1</p>
@@ -12113,118 +10217,98 @@ façon très simplifiée.
 <td colspan="2"><em>xsd:boolean</em></td>
 <td>Indique si la requête a pu être traitée avec succès ou non.</td>
 </tr>
-<tr class="odd">
-<td rowspan="5"></td>
+<tr>
+<td rowspan="4"></td>
 <td colspan="3"><em><strong><span class="hl">Error­Condition</span></strong></em></td>
 <td>0:1</td>
 <td colspan="2"><em>See below</em></td>
 <td>Signalement d’erreur (voir le paragraphe sur la gestion des erreurs).</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>a</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">Capability­Not­Supported­Error</span></strong></em></td>
 <td>1:1</td>
 <td colspan="2"><em>+Error</em></td>
 <td>Requête non supportée.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>b</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">OtherError</span></strong></em></td>
 <td colspan="2"></td>
 <td><em>+Error</em></td>
 <td>Autre erreur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Description</span></strong></em></td>
 <td>0:1</td>
 <td colspan="2"><em>ErrorDescription</em></td>
 <td>Description de l’erreur .</td>
 </tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="12"><em>Payload</em></td>
+<tr>
+<td rowspan="10"><em>Payload</em></td>
 <td colspan="3"><em><strong>Concrete SIRI Service:</strong></em></td>
 <td></td>
 <td colspan="2"></td>
 <td><span class="hl">Plusieurs des structures suivantes peuvent se succéder, mais elles doivent être toutes du même type.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">Production­Timetable­Delivery</span></strong></em></td>
 <td>0:*</td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – Production Timetable.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong>b</strong></em></td>
 <td><em><strong><span class="hl">Estimated</span>­<span class="hl">Timetable­Delivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – Estimated Timetable.</td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong>d</strong></em></td>
 <td><em><strong><span class="hl">Stop</span>­<span class="hl">Monitoring­Delivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – Stop Monitoring.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong>e</strong></em></td>
 <td><em><strong><span class="hl">Vehicle</span>­<span class="hl">Monitoring</span>­<span class="hl">Delivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – Vehicle Monitoring.</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong>g</strong></em></td>
 <td><em><strong><span class="hl">Connection­Monitoring­Feeder­Delivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – Connection Monitoring.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong>h</strong></em></td>
 <td><em><strong><span class="hl">Connection­Monitoring­Distributor­Delivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – Connection Monitoring.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong>i</strong></em></td>
 <td><em><strong><span class="hl">General</span>­<span class="hl">Message­Delivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 3 – General Message.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong>j</strong></em></td>
 <td><em><strong><span class="hl">FacilityMonitoring­Delivery</span></strong></em></td>
 <td></td>
 <td colspan="2"><em>+Structure</em></td>
 <td>See SIRI Part 4 – Facility Monitoring.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong>k</strong></em></td>
 <td><em><strong><span class="hl">SituationExchange­ Delivery</span></strong></em></td>
 <td></td>
@@ -12251,20 +10335,20 @@ façon très simplifiée.
 <col style="width: 49%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="6"><em><strong><span class="hl">xxxDelivery</span></strong></em></td>
 <td colspan="2"></td>
 <td><em>+Structure</em></td>
 <td colspan="2">Structure générique des réponses aux services</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em>Log</em></td>
 <td colspan="4"><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td colspan="2">1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td colspan="2">Date et heure de production de la réponse.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2" rowspan="3"><em>Endpoint properties</em></td>
 <td colspan="4"><em><strong><span class="hl">Request­Message­Ref</span></strong></em></td>
 <td colspan="2"><p>0:1</p>
@@ -12272,34 +10356,21 @@ façon très simplifiée.
 <td><em>Message­Qualifier</em></td>
 <td colspan="2">Référence de la requête.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="4"><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td><em>Participant­Code</em></td>
 <td colspan="2"><p>Identification du souscripteur.</p>
 <p><span class="hl">Obligatoire en cas d’abonnement.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">Subscription­Ref</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td colspan="2"><p>Identification de la souscription.</p>
 <p><span class="hl">Obligatoire en cas d’abonnement.</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="2" rowspan="2"></td>
-<td colspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em>Status</em></td>
 <td colspan="4"><em><strong><span class="hl">Status</span></strong></em></td>
 <td colspan="2"><p>0:1</p>
@@ -12307,27 +10378,27 @@ façon très simplifiée.
 <td><em>xsd:boolean</em></td>
 <td colspan="2">Indique si la requête a pu être traitée avec succès ou non.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2" rowspan="3"></td>
 <td colspan="4"><em><strong><span class="hl">ErrorCondition</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td><em>+Structure</em></td>
 <td colspan="2">Signalement d’erreur (voir le paragraphe sur la gestion des erreurs).</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="4"></td>
 <td colspan="2"></td>
 <td><em>choice</em></td>
 <td colspan="2">Choix parmi les codes d’erreur</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">a</span></strong></em></td>
 <td colspan="2"><em><strong><span class="hl">ServiceNotAvailableError</span></strong></em></td>
 <td colspan="2">-1:1</td>
 <td></td>
 <td colspan="2">Error : Functional service is not available to use (but it is still capable of giving this response).</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2" rowspan="9"></td>
 <td colspan="2"><em><strong><span class="hl">b</span></strong></em></td>
@@ -12336,63 +10407,63 @@ façon très simplifiée.
 <td colspan="2"><em>+ Error</em></td>
 <td>Fonction non supportée.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">c</span></strong></em></td>
 <td colspan="2"><em><strong><span class="hl">Access</span>­<span class="hl">Not­Allowed­Error</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Accès refusé.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">d</span></strong></em></td>
 <td colspan="2"><em><strong><span class="hl">InvalidDataReferencesError</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Error: Request contains references to identifiers that are not known.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">e</span></strong></em></td>
 <td colspan="2"><em><strong><span class="hl">BeyondDataHorizon</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Error: Data period or subscription period is outside of period covered by service.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">f</span></strong></em></td>
 <td colspan="2"><em><strong><span class="hl">No</span>­<span class="hl">Info</span>­<span class="hl">For­Topic</span>­<span class="hl">Error</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Pas d’information pour cette requête.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">g</span></strong></em></td>
 <td colspan="2"><em><strong><span class="hl">ParametersIgnoredError</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Error: Request contained parameters that were not supported by the producer. A response has been provided but some parameters have been ignored.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">h</span></strong></em></td>
 <td colspan="2"><em><strong><span class="hl">UnknownExtensionsError</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Error: Request contained extensions that were not supported by the producer. A response has been provided but some or all extensions have been ignored.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong>i</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">Allowed­Resource­Usage­Exceeded­Error</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Réponse trop volumineuse.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong>j</strong></em></td>
 <td colspan="2"><em><strong><span class="hl">OtherError</span></strong></em></td>
 <td colspan="2"><em>+Error</em></td>
 <td>Autre erreur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"></td>
 <td colspan="2"></td>
 <td colspan="2"><em><strong><span class="hl">Description</span></strong></em></td>
@@ -12400,32 +10471,25 @@ façon très simplifiée.
 <td><em>Error­Description</em></td>
 <td colspan="2">Description de l’erreur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"></td>
 <td colspan="4"><em><strong><span class="hl">ValidUntil</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td colspan="2">Date de validité maximale de la réponse.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"></td>
 <td colspan="4"><em><strong><span class="hl">Shortest­Possible­Cycle</span></strong></em></td>
 <td colspan="2">0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td colspan="2">Intervalle minimal de mise à jour de la donnée.</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td colspan="4"></td>
-<td colspan="2"></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em>Pay­load</em></td>
 <td colspan="9"><em><strong>{Content Specific to SIRI Functional Service type. See Part 3.}</strong></em></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em>any</em></td>
 <td colspan="4"><em><strong>Extensions</strong></em></td>
 <td colspan="2">0:1</td>
@@ -12449,153 +10513,121 @@ façon très simplifiée.
 <col style="width: 39%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">SubscriptionRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Structure générale de requêtes d’abonnement</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Date de la requête d’abonnement.</span></td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="7"><em>End­point properties</em></td>
+<tr>
+<td rowspan="5"><em>End­point properties</em></td>
 <td colspan="2"><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td><span class="hl">Adresse de destination de la réponse à la demande d’abonnement (accepté ou non).</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">RequestorRef</span></strong></em></td>
 <td>1:1</td>
 <td><em>Participant­Code</em></td>
 <td><span class="hl">Identifiant du demandeur de la réponse (reprendre le code [</span><em><span class="hl">fournisseur</span></em><span class="hl">] des identifiants du profil FR</span>).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Message</span>­<span class="hl">Identifier</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td><span class="hl">Identifiant unique de la requête de souscription (utilisé dans la réponse).</span></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Consumer</span>­<span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td><span class="hl">Adresse (URL) de destination des notifications.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscription­Filter­Identifier</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:NMTOKEN</em></td>
 <td><span class="hl">Identification d’un canal d’abonnement qui permettra de grouper plusieurs requêtes d’abonnement (canal par défaut, non nommé si le champ n’est pas présent).</span></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="11"><em>Pay­load</em></td>
 <td colspan="2"><em><strong>Concrete service subscription:</strong></em></td>
 <td></td>
 <td><em>choice</em></td>
 <td>Plusieurs des structures suivantes peuvent se succéder, mais elles doivent être toutes du même type.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">Production­Timetable­Subscription­Request</span></strong></em></td>
 <td>–1:*</td>
 <td><em>+Structure</em></td>
 <td>voir SIRI Part 3 - Production Timetable.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>b</strong></em></td>
 <td><em><strong><span class="hl">Estimated­Timetable­Subscription­Request</span></strong></em></td>
 <td></td>
 <td><em>+Structure</em></td>
 <td>voir SIRI Part 3- Estimated Timetable.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>d</strong></em></td>
 <td><em><strong><span class="hl">Stop</span>­<span class="hl">Monitoring­Subscription</span>­<span class="hl">Request</span></strong></em></td>
 <td></td>
 <td><em>+Structure</em></td>
 <td>voir SIRI Part 3 - Stop Monitoring.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>e</strong></em></td>
 <td><em><strong><span class="hl">Vehicle</span>­<span class="hl">Monitoring­Subscription</span>­<span class="hl">Request</span></strong></em></td>
 <td></td>
 <td><em>+Structure</em></td>
 <td>voir SIRI Part 3 - Vehicle Monitoring.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>g</strong></em></td>
 <td><em><strong><span class="hl">Connection</span>­<span class="hl">Monitoring­Subscription­Request</span></strong></em></td>
 <td></td>
 <td><em>+Structure</em></td>
 <td>voir SIRI Part 3 - Connection Monitoring.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>h</strong></em></td>
 <td><em><strong><span class="hl">General­Message­Subscription­Request</span></strong></em></td>
 <td></td>
 <td><em>+Structure</em></td>
 <td>voir SIRI Part 3 – General Message.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong>i</strong></em></td>
 <td><em><strong><span class="hl">FacilityMonitoring­ Subscription­­Request</span></strong></em></td>
 <td></td>
 <td><em>+Structure</em></td>
 <td>voir SIRI Part 4 - Facility Monitoring.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong>j</strong></em></td>
 <td><em><strong><span class="hl">SituationExchange­ Subscription­­Request</span></strong></em></td>
 <td></td>
@@ -12616,74 +10648,61 @@ façon très simplifiée.
 <col style="width: 48%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">SubscriptionResponse</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Réponse à une demande d’abonnement.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
 <td><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et heure de production de la réponse.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>End­point prop­erties</em></td>
 <td><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td>Adresse pour la gestion ultérieure de l’abonnement.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Responder</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Participant­Code</em></td>
 <td>Identifiant du système répondant (reprendre le code [<em>fournisseur</em>] des identifiants du profil FR).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Request­Message</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant unique du message (de cette réponse).</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="3"><em>Pay­load</em></td>
 <td><em><strong><span class="hl">Response­Status</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td>Statut de la réponse (en erreur et donc refusée, ou Ok).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">SubscriptionManagerAddress</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td>Endpoint address of subscription manager if different from that of the Producer or known default.</td>
 </tr>
-<tr class="even">
-<td><em><strong>Service­Started­Time</strong></em></td>
+<tr>
+<td><em><strong><span class="hl_france">Service­Started­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><p>Time at which service providing the subscription was last started. Can be used to detect restarts. If absent, unknown.</p>
 <p><span class="hl">Dans le cas du profil France, le responsable des abonnements devra les mémoriser et les réactiver automatiquement au redémarrage, ce champ n’est donc pas utile dans le cas classique.</span></p>
-<p>Ce champ sera utilisé dans le cas des échanges avec les concentrateurs pour superviser les connexions d'abonnement.</p></td>
+<p><span class="hl_france">Ce champ sera utilisé dans le cas des échanges avec les concentrateurs pour superviser les connexions d'abonnement.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -12705,19 +10724,19 @@ façon très simplifiée.
 <col style="width: 42%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">Response­Status</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Qualificateur des réponses.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
 <td colspan="2"><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date de création de ce statut de réponse.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="4"><em>End­point</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Message</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
@@ -12725,27 +10744,27 @@ façon très simplifiée.
 <td><em>Message­Qualifier</em></td>
 <td>Référence de la requête.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscriber</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Participant­Code</em></td>
 <td>Identification du souscripteur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscription FilterRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>SubscriptionFilterRef</em></td>
 <td><p>Référence au filtre utilisé dans l'abonnement et auquel la réponse correspond.</p>
 <p>Peut être omis si un seul filtre est associé à l'abonnement.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscription­Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identification de la souscription.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="8"><em>Pay­load</em></td>
 <td colspan="2"><em><strong><span class="hl">Status</span></strong></em></td>
 <td><p>0:1</p>
@@ -12753,62 +10772,62 @@ façon très simplifiée.
 <td><em>xsd:boolean</em></td>
 <td>Indique si la requête a été traitée normalement ou pas.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Error</span>­<span class="hl">Condition</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Signalement d’erreur (voir le paragraphe sur la gestion des erreurs).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">a</span></strong></em></td>
 <td><em><strong><span class="hl">Capability­Not­Suppor</span><span class="hl">ted</span>­<span class="hl">Error</span></strong></em></td>
 <td>–1:1</td>
 <td><em>+Error</em></td>
 <td>Fonction non supportée.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">b</span></strong></em></td>
 <td><em><strong><span class="hl">AccessNot­AllowedError</span></strong></em></td>
 <td></td>
 <td><em>+Error</em></td>
 <td>Accès refusé.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">c</span></strong></em></td>
 <td><em><strong><span class="hl">No</span>­<span class="hl">Info</span>­<span class="hl">For­TopicError</span></strong></em></td>
 <td></td>
 <td><em>+Error</em></td>
 <td>Pas d’information pour cette requête.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">d</span></strong></em></td>
 <td><em><strong><span class="hl">Allowed</span>­<span class="hl">Resource­Usage</span>­<span class="hl">Exceeded­Error</span></strong></em></td>
 <td></td>
 <td><em>+Error</em></td>
 <td>Réponse trop volumineuse.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">e</span></strong></em></td>
 <td><em><strong><span class="hl">OtherError</span></strong></em></td>
 <td></td>
 <td><em>+Error</em></td>
 <td>Autre erreur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">Description</span></strong></em></td>
 <td>0:1</td>
 <td><em>Error­Description</em></td>
 <td>Description de l’erreur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Info</em></td>
 <td colspan="2"><em><strong><span class="hl">ValidUntil</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date de validité maximale de la réponse.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Shortest­Possible</span>­<span class="hl">Cycle</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
@@ -12829,86 +10848,60 @@ façon très simplifiée.
 <col style="width: 41%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">TerminateSubscriptionRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Demande de fin d’abonnement</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Endpoint properties</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date de la demande.</td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="3"><em>End­point prop­erties</em></td>
 <td colspan="2"><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>EndpointAddress</em></td>
 <td>Adresse du souscripteur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Requestor</span>­<span class="hl">Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Participant­Code</em></td>
 <td>Identifiant du souscripteur de la réponse (reprendre le code [fournisseur] des identifiants du profil FR).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">MessageIdentifier</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant unique du message.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="3"><em>Topic</em></td>
 <td colspan="2"></td>
 <td></td>
 <td><em>choice</em></td>
 <td>Au choix:</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">a</span></strong></em></td>
 <td><em><strong><span class="hl">All</span></strong></em></td>
 <td>–1:1</td>
 <td><em>EmptyType</em></td>
 <td>Demande de clôture de tous les abonnements.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">b</span></strong></em></td>
 <td><em><strong><span class="hl">Subscription­Ref</span></strong></em></td>
 <td></td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identifiant de l’abonnement à clôturer.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong>Extensions</strong></em></td>
 <td>0:1</td>
@@ -12931,74 +10924,61 @@ façon très simplifiée.
 <col style="width: 45%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="5"><em><strong><span class="hl">TerminateSubscriptionResponse</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Réponse aux demandes de fin de souscription</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="3"><em>Endpoint properties</em></td>
 <td colspan="3"><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Datation de la réponse.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Responder</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Participant­Code</em></td>
 <td><span class="hl">Identification du système répondant.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Request­Message</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td><span class="hl">Identification de la requête.</span></td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="12"><em>Payload</em></td>
 <td colspan="3"><em><strong><span class="hl">Termination­Response­Status</span></strong></em></td>
 <td>1:*</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Statut de la demande de clôture d’abonnement.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Heure de réponse (pour l’abonnement ci-dessous).</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Subscriber­Ref</span></strong></em></td>
 <td>0:1</td>
 <td><em>Participant­Code</em></td>
 <td><span class="hl">Identifiant du souscripteur.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Subscription­Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td><span class="hl">Identifiant de la souscription.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Status</span></strong></em></td>
 <td><p>0:1</p>
@@ -13006,21 +10986,21 @@ façon très simplifiée.
 <td><em>xsd:boolean</em></td>
 <td><span class="hl">Indique si la souscription a bien pu être clôturée.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Error­Condition</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Signale une éventuelle erreur.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"></td>
 <td></td>
 <td><em>choice</em></td>
 <td><span class="hl">Au choix :</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong>a</strong></em></td>
 <td><em><strong><span class="hl">Capability</span>­<span class="hl">Not­Supported</span>­<span class="hl">Error</span></strong></em></td>
@@ -13028,28 +11008,28 @@ façon très simplifiée.
 <td><em>+Error</em></td>
 <td><span class="hl">Fonction non supportée.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong>b</strong></em></td>
 <td><em><strong><span class="hl">Unknown­Subscriber</span>­<span class="hl">Error</span></strong></em></td>
 <td><em>+Error</em></td>
 <td><span class="hl">Souscripteur inconnu.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong>c</strong></em></td>
 <td><em><strong><span class="hl">Unknown­Subscription­Error</span></strong></em></td>
 <td><em>+Error</em></td>
 <td><span class="hl">Souscription inconnue.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong>d</strong></em></td>
 <td><em><strong><span class="hl">OtherError</span></strong></em></td>
 <td><em>+Error</em></td>
 <td><span class="hl">Autre erreur.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td></td>
 <td><em><strong><span class="hl">Description</span></strong></em></td>
@@ -13057,7 +11037,7 @@ façon très simplifiée.
 <td><em>Error­Description</em></td>
 <td><span class="hl">Description de l’erreur.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="3"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -13086,93 +11066,74 @@ façon très simplifiée.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Log</em></td>
 <td colspan="2"><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure de production de la réponse.</td>
 </tr>
-<tr class="even">
-<td rowspan="4"><em>End­point</em></td>
+<tr>
+<td rowspan="3"><em>End­point</em></td>
 <td colspan="2"><em><strong><span class="hl">ProducerRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>Participant­Code</em></td>
 <td><span class="hl">Identifiant du producteur de la réponse (reprendre le code [</span><em><span class="hl">fournisseur</span></em><span class="hl">] des identifiants du profil).</span></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Response</span>­<span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant unique du message de réponse.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Request</span>­<span class="hl">Message</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Identifiant de la requête à laquelle on répond.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td rowspan="6"><em>Sub­scription</em></td>
 <td colspan="2"><em><strong><span class="hl">Subscriber</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
 <td><em>Participant­Code</em></td>
 <td>Identification du souscripteur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">SubscriptionFilterRef</span></strong></em></td>
 <td>0:1</td>
 <td><em>SubscriptionFilterRef</em></td>
 <td><p>Référence au filtre utilisé dans l'abonnement et auquel la réponse correspond.</p>
 <p>Peut être omis si un seul filtre est associé à l'abonnement.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Subscription­Ref</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identification de la souscription.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Error­Condition</span></strong></em></td>
 <td>0:1</td>
 <td><em>See below</em></td>
 <td>Signalement d’erreur (voir le paragraphe sur la gestion des erreurs).</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2">Choice</td>
 <td><em><strong><span class="hl">OtherError</span></strong></em></td>
 <td></td>
 <td><em>+Error</em></td>
 <td>Autre erreur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Description</span></strong></em></td>
 <td>0:1</td>
 <td><em>Error­Description</em></td>
 <td>Description de l’erreur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -13195,45 +11156,32 @@ façon très simplifiée.
 <col style="width: 43%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="3"><em><strong><span class="hl">CheckStatusRequest</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td><span class="hl">Requête de vérification d’état</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
 <td><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><span class="hl">Datation de la requête.</span></td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Endpoint</em></td>
 <td><em><strong><span class="hl">Address</span></strong></em></td>
 <td>0:1</td>
 <td><em>Endpoint­Address</em></td>
 <td><span class="hl">Adresse (URL) de destination de la requête.</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">RequestorRef</span></strong></em></td>
 <td>1:1</td>
 <td><em>Participant­Code.</em></td>
 <td><span class="hl">Identifiant du demandeur.</span></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Identity</em></td>
 <td><em><strong><span class="hl">MessageIdentifier</span></strong></em></td>
 <td><p>0:1</p>
@@ -13241,20 +11189,7 @@ façon très simplifiée.
 <td><em>Message­Qualifier</em></td>
 <td><span class="hl">Identifiant de la requête.</span></td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>any</em></td>
 <td><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -13277,13 +11212,13 @@ façon très simplifiée.
 <col style="width: 0%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td colspan="4"><em><strong><span class="hl">CheckStatusResponse</span></strong></em></td>
 <td><em>+Structure</em></td>
 <td>Réponses aux requêtes de vérification d’état.</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Log</em></td>
 <td colspan="2"><em><strong><span class="hl">Response­Timestamp</span></strong></em></td>
 <td>1:1</td>
@@ -13291,8 +11226,8 @@ façon très simplifiée.
 <td><span class="hl">Datation de la réponse.</span></td>
 <td></td>
 </tr>
-<tr class="odd">
-<td rowspan="4"><em>End­point</em></td>
+<tr>
+<td rowspan="3"><em>End­point</em></td>
 <td colspan="2"><em><strong><span class="hl">ProducerRef</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
@@ -13300,14 +11235,7 @@ façon très simplifiée.
 <td><span class="hl">Identification du répondant.</span></td>
 <td></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Response</span>­<span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
@@ -13315,7 +11243,7 @@ façon très simplifiée.
 <td>Identifiant unique du message de réponse.</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Request­Message</span>­<span class="hl">Ref</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
@@ -13323,23 +11251,8 @@ façon très simplifiée.
 <td>Identifiant de la requête à laquelle on répond.</td>
 <td></td>
 </tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="10"><em>Payload</em></td>
+<tr>
+<td rowspan="7"><em>Payload</em></td>
 <td colspan="2"><em><strong><span class="hl">Status</span></strong></em></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
@@ -13347,66 +11260,47 @@ façon très simplifiée.
 <td>Signale si le système est bien disponible.</td>
 <td></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Error</span>­<span class="hl">Condition</span></strong></em></td>
 <td>0:1</td>
 <td><em>+Structure</em></td>
 <td>Signalement d’erreur.</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"></td>
 <td></td>
 <td><em>Choice</em></td>
 <td>Au choix :</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">a</span></strong></em></td>
 <td><em><strong><span class="hl">Service</span>­<span class="hl">Not­Available</span>­<span class="hl">Error</span></strong></em></td>
 <td rowspan="2">–1:1</td>
 <td><em>+Error</em></td>
 <td colspan="2">Service indisponible.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">c</span></strong></em></td>
 <td><em><strong><span class="hl">OtherError</span></strong></em></td>
 <td><em>+Error</em></td>
 <td colspan="2">Autre erreur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">Description</span></strong></em></td>
 <td>0:1</td>
 <td><em>Error­Description</em></td>
 <td colspan="2">Description de l’erreur.</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">ServiceStarted­Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time:</em></td>
 <td colspan="2">Dernière date et heure de mise en marche du système.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>any</em></td>
 <td colspan="2"><em><strong><span class="hl">Extensions</span></strong></em></td>
 <td>0:1</td>
@@ -13416,9 +11310,8 @@ façon très simplifiée.
 </tbody>
 </table>
 
-1.  121  
-      
-    Termes et définitions
+# Annexes      
+## Termes et définitions
 
 <table>
 <colgroup>
@@ -13426,72 +11319,72 @@ façon très simplifiée.
 <col style="width: 76%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>AVMS</td>
 <td>Automated Vehicle Management System</td>
 </tr>
-<tr class="even">
+<tr>
 <td>DMZ</td>
 <td><em><strong>D</strong>e<strong>M</strong>ilitarised <strong>Z</strong>one</em> - Zone tampon d'un réseau d'entreprise, située entre le réseau local et Internet, derrière le coupe-feu, qui correspond à un réseau intermédiaire regroupant des serveurs publics (HTTP, SMTP, FTP, DNS, etc.), et dont le but est d'éviter toute connexion directe avec le réseau interne et de prévenir celui-ci de toute attaque extérieure depuis le Web.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>FIREWALL</td>
 <td>Porte coupe-feu. Système de sécurité anti-intrusion permettant une protection des réseaux informatiques internes de l’entreprise contre les intrusions du monde extérieur, en particulier les piratages informatiques.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>HTML</td>
 <td><em><strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</em> - langage de programmation utilisé pour créer des documents hypertexte.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>HTTP</td>
 <td><em><strong>H</strong>yperText <strong>T</strong>ransfer <strong>P</strong>rotocol</em> - Le protocole technique utilisé sur le *Web pour transférer des fichiers au cours d'une séance entre le serveur et l'utilisateur.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>HTTPS</td>
 <td>HyperText Transfer Protocol Secured – Protocole Web sécurisé</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>PMR</td>
 <td>Personne à Mobilité Réduite</td>
 </tr>
-<tr class="even">
+<tr>
 <td>QUAY</td>
 <td>Zone d’embarquement. Peut etre constituée de positions d’embarquement</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>RER</td>
 <td>Réseau Express Régional. Le RER est un réseau de transport en commun urbain propre à la région parisienne.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>RTC</td>
 <td><em><strong>R</strong>éseau <strong>T</strong>éléphonique <strong>C</strong>ommuté</em>. Désigne le réseau téléphonique actuellement en place, utilisant des autocommutateurs pendant l’établissement des communications.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SERVEUR</td>
 <td>Processus ayant un ou plusieurs threads et qui reçoit des demandes de processus. Il implémente un ensemble de services et les met à la disposition de clients tournant sur le même ordinateur, ou sur divers ordinateurs dans un réseau distribué.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SAE</td>
 <td>Système d’Aide à l’Exploitation</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SAEIV</td>
 <td>Système d'Aide à l'Exploitation et d’Information Voyageurs<br />
 pour véhicules de transport en commun</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SIRI</td>
 <td><em><strong>S</strong>ervice <strong>I</strong>nterface for <strong>R</strong>ealtime <strong>I</strong>nformation</em> – norme de diffusion des données temps reel dans le domaine du transport.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SIV</td>
 <td>Système d’Information Voyageurs</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SMS</td>
 <td><em><strong>S</strong>hort <strong>M</strong>essage <strong>S</strong>ystem</em>- Message de 130 caractères au maximum qui transite entre les <a href="http://www.bonweb.com/glo_P.php#650">pagers</a> ou les téléphones portables.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>SOAP</td>
 <td><p><em><strong>S</strong>imple <strong>O</strong>bject <strong>A</strong>ccess <strong>P</strong>rotocol -</em> Protocole fondé sur XML pour l'échange d'informations en environnement décentralisé.</p>
 <p>Ce protocole qui fait l'objet d'une recommandation de la part du W3C, est couramment utilisé pour établir un canal de communication entre services web (invocation à distance via Internet de traitements informatiques). Il détaille 3 parties :<br />
@@ -13500,46 +11393,46 @@ pour véhicules de transport en commun</td>
 <p>- les conventions du protocole d’échange qui permettent de définir les procédures d'invocation et de réponse à distance.</p>
 <p>SOAP peut être utilisé au-dessus de nombreux protocoles de transport dont HTTP.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td>TRANSMODEL</td>
 <td>Norme européenne - modélisation conceptuelle de l’ensemble des notions utiles au transport en commun (définition des concepts, des objets et de leurs relations)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>TRIDENT</td>
 <td><p><em><strong>TR</strong>ansport <strong>I</strong>ntermodality <strong>D</strong>ata sharing and <strong>E</strong>xchange. <strong>N</strong>e<strong>T</strong>work</em> – Norme européenne d’échanges de données au format XML dans le domaine du transport</p>
 <p>Dans le cadre du profil, elle est utilisée essentiellement pour la partie qui concerne l’échange de la description des réseaux, des correspondances et des horaires théoriques.</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td>UML</td>
 <td><em><strong>U</strong>nify <strong>M</strong>odel <strong>L</strong>anguage</em> - Langage d'analyse et de conception orienté objet défini par l'OMG (Object Management Group). UML homogénéise les représentations graphiques des objets issues des travaux de Grady Booch chez Rational Software, de Rumbaugh et d'Ivar Jacobson.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>URL</td>
 <td><em><strong>U</strong>niform <strong>R</strong>esource <strong>L</strong>ocation</em> - adresse Internet reconnue par les navigateurs, qui leur permet d’appeler n’importe quelle page ou document.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>VPN</td>
 <td><em><strong>V</strong>irtual <strong>P</strong>rivate <strong>N</strong>etwork</em>. Réseau privé virtuel composé d'ordinateurs qui ne constituent pas un seul et même réseau à la base, mais qui peuvent être distants géographiquement.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>WEB</td>
 <td>"toile d'araignée" composée des pages HTML reliées entre elles par un réseau complexe de liens *hypertexte.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>WSDL</td>
 <td><p><em><strong>W</strong>eb <strong>S</strong>ervices <strong>D</strong>efinition <strong>L</strong>anguage -</em> WSDL est une tentative de normalisation du W3C suite à une proposition d'IBM, Microsoft et Ariba.</p>
 <p>WSDL met en oeuvre XML pour décrire, de manière indépendante de la plate-forme et du langage, la façon dont les applications peuvent accéder à un service web.</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>XML</td>
 <td><em>e<strong>X</strong>tended <strong>M</strong>arkup <strong>L</strong>anguage</em> - Langage de description des documents qui utilise des balises, permet l'utilisation de balises personnalisées et permet l'échange des données.</td>
 </tr>
 </tbody>
 </table>
 
-2.  (informative) Production TimeTable
+##  (informative) Production TimeTable
 
-    1.  ##  Requête d’information sur les horaires commandés/théoriques
+###  Requête d’information sur les horaires commandés/théoriques
 
 <table>
 <colgroup>
@@ -13559,90 +11452,83 @@ pour véhicules de transport en commun</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Attributes</em></td>
 <td colspan="2"><em><strong><span class="hl">Version</span></strong></em></td>
 <td>1:1</td>
 <td><em>VersionString</em></td>
 <td>Version du service “ <em><strong>ProductionTimetable</strong></em> ”, intégrant le numéro de version de profil (voir 5.7)</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"><em>Endpoint Properties</em></td>
 <td colspan="2"><em><strong><span class="hl">Request­Timestamp</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date d'émission de la requête.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Message­Identifier</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>Message­Qualifier</em></td>
 <td>Numéro d'identification du message.</td>
 </tr>
-<tr class="even">
-<td rowspan="7"><em>Line Topic</em></td>
+<tr>
+<td rowspan="6"><em>Line Topic</em></td>
 <td colspan="2"><em><strong><span class="hl">Validity</span>­<span class="hl">Period</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
+<p><span class="hl">1:1</span></p></td>
 <td><em>ClosedDate­Range­Structure</em></td>
 <td>Période pour laquelle on souhaite avoir des informations horaires.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">Start</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et heure de début de période.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">End</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et heure de fin de période.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Timetable</span>­<span class="hl">Version</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:string</em></td>
 <td>Version du référentiel théorique connue : seuls les écarts par rapport à ce référentiel seront <span class="hl">transmis (ce champ ne sera utilisable qu’à partir de la mise en œuvre du référentiel régional)</span></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Operator</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:*</td>
-<td><em>→Operator­Code</em></td>
+<td><em>➜Operator­Code</em></td>
 <td>Identifie le ou les exploitants pour lesquel on souhaite obtenir des informations<em>.</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>0:1</td>
-<td><em>→LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifie la ligne pour laquelle on souhaite obtenir des informations.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em>Policy</em></td>
 <td colspan="2"></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Incremental­Updates</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td>Indique si l’on souhaite ne disposer que des écarts par rapport aux données théoriques, ou de l’ensemble des informations sur la période.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="2"></td>
 <td></td>
@@ -13682,28 +11568,28 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
 <td><em><strong><span class="hl">SubscriberRef</span></strong></em></td>
 <td><p>0:1</p>
-<p><span class="hl_france">1:1</span></p></td>
-<td><em>→Participant­Code</em></td>
+<p><span class="hl">1:1</span></p></td>
+<td><em>➜Participant­Code</em></td>
 <td>Identification du système demandeur (voir SIRI Part 2 Common <em><strong>SubscriptionRequest</strong></em> parameters.)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Subscription­Identifier</span></strong></em></td>
 <td>1:1</td>
 <td><em>Subscription­Qualifier</em></td>
 <td>Identifiant de l'abonnement pour le système demandeur.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Lease</em></td>
 <td><em><strong><span class="hl">Initial­Termination­Time</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTIme</em></td>
 <td>Date et heure de fin de l'abonnement : un abonnement a forcément une date et heure de fin (les partenaires pourront décider de limiter la durée maximale d’un abonnement).</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Request</em></td>
 <td><em><strong><span class="hl">Production­Timetable­Request</span></strong></em></td>
 <td>1:1</td>
@@ -13715,12 +11601,11 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 
 ## Réponse aux requêtes d’informations sur les horaires commandés/théoriques
 
-| ***<span class="hl">Production­Timetable­Delivery</span>*** |                                                                                                                   |      | *+Structure*    | Description des horaires sur la période                                                                                                               |
-|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *Attributes*                                                  | ***<span class="hl">version</span>***                                                                           | 1:1  | *VersionString* | Numéro de version du service *Production Timetable*, intégrant le numéro de version de profil (voir Error: Reference source not found) (valeur fixe). |
-| *LEADER*                                                      | ***<span class="hl">::</span>***                                                                                | 1:1  | *xxx­Delivery*  | voir paragraphe 2.3                                                                                                                                   |
-| *Payload*                                                     | ***<span class="hl">Dated</span>­<span class="hl">Timetable­Version</span>­<span class="hl">Frame</span>*** | 0:\* | *+Structure*    | Voir DatedTimetableVersionFrame element.                                                                                                              |
-|                                                               |                                                                                                                   |      |                 |                                                                                                                                                       |
+| ***<span class="hl">Production­Timetable­Delivery</span>***  |  |  | *+Structure*  | Description des horaires sur la période  |
+|--|--|--|--|--|
+| *Attributes*  | ***<span class="hl">version</span>***  | 1:1  | *VersionString*  | Numéro de version du service *Production Timetable*, intégrant le numéro de version de profil (voir Error: Reference source not found) (valeur fixe).  |
+| *LEADER*  | ***<span class="hl">::</span>***  | 1:1  | *xxx­Delivery*  | voir paragraphe 2.3  |
+| *Payload*  | ***<span class="hl">Dated</span>­<span class="hl">Timetable­Version</span>­<span class="hl">Frame</span>***  | 0:\*  | *+Structure*  | Voir DatedTimetableVersionFrame element.  |
 
 ## Structure DatedTimetableVersionFrame
 
@@ -13740,94 +11625,33 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><em>Log</em></td>
 <td><em><strong><span class="hl">Recorded­AtTime</span></strong></em></td>
 <td>1:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et heure auxquelles ces données ont été produites.</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Line</em></td>
 <td><em><strong><span class="hl">LineRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>→LineCode</em></td>
+<td><em>➜LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">DirectionRef</span></strong></em></td>
 <td>1:1</td>
-<td><em>→Direction­Code</em></td>
+<td><em>➜Direction­Code</em></td>
 <td><p>Identifie la direction (typiquement Aller/Retour).</p>
 <p><span class="hl">La sélection de ce champ n’est pas dans la logique du reste du profil (plutôt porté sur Destination, voir plus bas) mais est maintenue du fait de la cardinalité imposée par SIRI.</span></p></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em>Journ­eys</em></td>
 <td><em><strong><span class="hl">Dated</span>­<span class="hl">Vehicle</span>­<span class="hl">Journey</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td>Description des horaires de la course.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -13853,28 +11677,22 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td rowspan="3"><em>Vehicle Journey Identity</em></td>
+<tr>
+<td rowspan="2"><em>Vehicle Journey Identity</em></td>
 <td rowspan="2">choice</td>
 <td colspan="3"><em><strong><span class="hl">Dated</span>­<span class="hl">Vehicle­Journey</span>­<span class="hl">Code</span></strong></em></td>
 <td>1:1</td>
-<td><em>→Vehicle­Journey­Code</em></td>
+<td><em>➜Vehicle­Journey­Code</em></td>
 <td>Identifie la course datée.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="3"><em><strong><span class="hl">Framed-Vehicle-JourneyRef</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td><p>Identifie la course datée.</p>
 <p>Cette version permet de préciser la version de jeu de données associé et est recommandée à partir de SIRI 2 (et doc du profil 2.4). Le mécanisme de choix placé ici permet d'assurer la compatibilité ascendante.</p></td>
 </tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="4"><em><strong><span class="hl">ExtraJourney</span></strong></em></td>
 <td>0:1</td>
@@ -13882,7 +11700,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><p>Signale qu’il s’agit d’une nouvelle course, ajoutée par rapport aux horaires théoriques.</p>
 <p>Valeur par défaut : « false»</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td colspan="4"><em><strong><span class="hl">Cancellation</span></strong></em></td>
 <td>0:1</td>
@@ -13890,93 +11708,35 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><p>Signale la suppression de la course identifiée.</p>
 <p>Valeur par défaut : « false»</p></td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>Journey Pattern Info</em></td>
 <td colspan="4"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Journey­Pattern­Info­Group</em></td>
 <td>Voir Journey­Pattern­Info­Group.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Service Info</em></td>
 <td colspan="4"><em><strong><span class="hl">:::</span></strong></em></td>
 <td>0:1</td>
 <td><em>Service­Info­Group</em></td>
 <td>Voir ServiceInfo­Group.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"><em>Journey Info</em></td>
+<tr>
+<td><em>Journey Info</em></td>
 <td colspan="4"><em><strong><span class="hl">Vehicle</span>­<span class="hl">Journey­Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Nom commercial de la course.</td>
 </tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="2"><em>Notes</em></td>
+<tr>
+<td><em>Notes</em></td>
 <td colspan="4"><em><strong><span class="hl">Destination­Display</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</td>
 </tr>
-<tr class="odd">
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>Timetable­info</em></td>
 <td colspan="4"><em><strong><span class="hl">Headway</span>­<span class="hl">Service</span></strong></em></td>
 <td>0:1</td>
@@ -13984,7 +11744,7 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><p>Indique si la course est gérée dans un contexte d’exploitation (ou d’information seulement) en fréquence.</p>
 <p>Valeur par défaut : « false»</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em>Real-time Info</em></td>
 <td colspan="4"><em><strong><span class="hl">Monitored</span></strong></em></td>
 <td>0:1</td>
@@ -13992,41 +11752,20 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><p>Signale si les données temps réel sont disponibles pour cette course (« false » permet de signaler une délocalisation).</p>
 <p>Valeur par défaut : « true»</p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="3"><em>Children</em></td>
+<tr>
+<td rowspan="2"><em>Children</em></td>
 <td rowspan="2"><em><strong>a</strong></em></td>
 <td colspan="3"><em><strong><span class="hl">Dated</span>­<span class="hl">Calls</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>Description ordonnée des points d’arrêts et heures de passage.</td>
 </tr>
-<tr class="even">
+<tr>
 <td></td>
 <td colspan="2"><em><strong><span class="hl">Dated</span>­<span class="hl">Call</span></strong></em></td>
 <td>2:*</td>
 <td><em>+Structure</em></td>
 <td>Voir DatedCall</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="3"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="4"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -14050,185 +11789,90 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td rowspan="4"><em>Stop Identity</em></td>
+<tr>
+<td rowspan="3"><em>Stop Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">StopPoint</span>­<span class="hl">Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>→StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifiant du Point d'arrêt (cet identifiant est à rapprocher de l’attribut <em>MonitoringRef</em> de la structure <em>MonitoredStopVisit</em>, mais restreint à ce cas de point d’arrêt là, ou le <em>MonitoringRef</em> peut aussi, dans le contexte général de SIRI, mais pas celui du profil francilien, référencer un afficheur, par exemple).</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet issu du profil NeTex Fr (Lieu d’arrêt mono ou multimodaux, zone d'embarquement): granularité la plus fine possible dans tous les cas.</span></p></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Order</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td>Numéro d'ordre de l'arrêt dans la mission.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">StopPoint</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><p>Nom du point d'arrêt.</p>
 <p><span class="hl">Si plusieurs noms sont disponibles chez le producteur, le nom le plus détaillé sera utilisé en priorité.</span></p></td>
 </tr>
-<tr class="odd">
-<td rowspan="3"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
+<tr>
 <td><em>Service Info</em></td>
 <td colspan="2"><em><strong><span class="hl">Destination</span>­<span class="hl">Display</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Destination telle qu'elle est affichée sur la girouette du véhicule à cet arrêt (ou sur l’afficheur local).</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="6"><em>Arrival</em></td>
+<tr>
+<td rowspan="3"><em>Arrival</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed­Arrival</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et Heure d'arrivée théorique (ou commandée)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Arrival­Platform</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Identification ou nom du quai d'arrivée.</td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td></td>
 <td><em><strong><span class="hl">Aimed­­QuayName</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td><span class="hl">Indication de la voie d'arrivée (en complément de Platform)</span><em><span class="hl">. </span></em></td>
 </tr>
-<tr class="even">
-<td rowspan="6"><em>Departure</em></td>
+<tr>
+<td rowspan="3"><em>Departure</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed­Departure</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Date et Heure de départ théorique (ou commandée).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Departure­Platform</span>­<span class="hl">Name</span></strong></em></td>
 <td>0:1</td>
 <td><em>NLString</em></td>
 <td>Identification ou nom du quai de départ.</td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Departure­Boarding</span>­<span class="hl">Activity</span></strong></em></td>
 <td>0:1</td>
-<td><em>boarding | noBoarding| passthru</em></td>
+<td><em>boarding  | noBoarding| passthru</em></td>
 <td>Caractérisation de l'horaire de départ attendu (ou mesuré si le véhicule est à quai).</td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
+<tr>
 <td><em>Headway</em></td>
 <td colspan="2"><em><strong><span class="hl">Aimed</span>­<span class="hl">Headway­Interval</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­DurationType</em></td>
 <td>Fréquence de passage théorique (ou commandée).</td>
 </tr>
-<tr class="even">
-<td rowspan="3"><em>Interchange</em></td>
+<tr>
+<td ><em>Interchange</em></td>
 <td colspan="2"><em><strong><span class="hl">Targeted­Interchange</span></strong></em></td>
 <td>0:*</td>
 <td><em>+Structure</em></td>
 <td><p>Permet de signaler une correspondance programmée à ce point arrêt (possibilité d’attendre une course arrivant).</p>
 <p>voir. Targeted­Interchange.</p></td>
 </tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+
+
 </tbody>
 </table>
 
@@ -14251,28 +11895,28 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td rowspan="2"><em>Identity</em></td>
 <td colspan="2"><em><strong><span class="hl">Interchange</span>­<span class="hl">Code</span></strong></em></td>
 <td>0:1</td>
-<td><em>→Inter­change­Code</em></td>
+<td><em>➜Inter­change­Code</em></td>
 <td><p>Identification de la correspondance.</p>
 <p><span class="hl">Dans le cadre du profil France, si ce paramètre est présent, il sera constitué de la concaténation de l’identifiant de la course de l’arrivant et de celui de la course au départ (séparés par le caractère ‘</span><strong><span class="hl">:</span></strong><span class="hl">’)</span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Distributor­Vehicle­Journey­Ref</span></strong></em></td>
 <td>1:1</td>
-<td><em>→Dated­Vehicle­Journey­Code</em></td>
+<td><em>➜Dated­Vehicle­Journey­Code</em></td>
 <td>Identifie la course de l’arrivant</td>
 </tr>
-<tr class="odd">
+<tr>
 <td rowspan="7"><em>Connection</em></td>
 <td colspan="2"><em><strong><span class="hl">Distributor­Connection­Link</span></strong></em></td>
 <td>1:1</td>
 <td><em>+Structure</em></td>
 <td>Description du cheminement physique de correspondance.</td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="2"></td>
 <td><em><strong><span class="hl">Connection</span>­<span class="hl">Code</span></strong></em></td>
 <td>1:1</td>
@@ -14280,115 +11924,59 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 <td><p>Identifiant du cheminement physique de correspondance.</p>
 <p><span class="hl">Ce champ est obligatoire dans le XSD SIRI, et l’est donc aussi dans le profil France : toutefois s’il n’était pas disponible au niveau du système alimentant, le champ sera fourni, mais laissé vide.</span></p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Stop</span>­<span class="hl">Point</span>­<span class="hl">Ref</span></strong></em></td>
 <td>0:1</td>
-<td><em>→StopPoint­Code</em></td>
+<td><em>➜StopPoint­Code</em></td>
 <td><p>Identifant du point d’arrêt de départ de la correspondance.</p>
 <p><span class="hl">Il convient d'utiliser ici un identifiant d'objet de référence partagé entre les systèmes communiquants (cf ) </span></p></td>
 </tr>
-<tr class="even">
+<tr>
 <td rowspan="4"></td>
 <td><em><strong><span class="hl">Interchange­Duration</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td>Durée de la correspondance (temps « normal » de marche à pied).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Frequent­Traveller­Duration</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td>Durée de la correspondance pour un voyageur habitué.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em><strong><span class="hl">Occasional­Traveller­Duration</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td>Durée de la correspondance pour un voyageur lent ou ne connaissant pas la correspondance.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><em><strong><span class="hl">Impaired­Access­Duration</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td>Durée de la correspondance pour une personne à mobilité réduite.</td>
 </tr>
-<tr class="even">
-<td rowspan="2"></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td rowspan="3"><em>Interchange Properties</em></td>
+<tr>
+<td rowspan="2"><em>Interchange Properties</em></td>
 <td colspan="2"><em><strong><span class="hl">StaySeated</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p>« true » signale que la correspondance s’effectue en restant dans le même véhicule.</p>
 <p>Valeur par défaut : « false»</p></td>
 </tr>
-<tr class="odd">
+<tr>
 <td colspan="2"><em><strong><span class="hl">Guaranteed</span></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:boolean</em></td>
 <td><p>« true » signale que la correspondance est garantie ou non.</p>
 <p>Valeur par défaut : « false»</p></td>
 </tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td rowspan="6"><em>Interchange Times</em></td>
+<tr>
+<td><em>Interchange Times</em></td>
 <td colspan="2"><em><strong><span class="hl">Maximum</span>­<span class="hl">Wait</span>­<span class="hl">Time</span></strong></em></td>
 <td>0:1</td>
 <td><em>Positive­Duration­Type</em></td>
 <td>Temps maximum qu’attendra le véhicule au depart si l’amenant est en retard.</td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
