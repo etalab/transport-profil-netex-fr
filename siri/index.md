@@ -314,11 +314,8 @@ par les attributs suivants
             <td colspan="2" >
                 <p>+Structure</p>
             </td>
-            <td colspan="3" >
+            <td colspan="4" >
                 <p>Delivery for xxx Service</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -334,11 +331,8 @@ par les attributs suivants
             <td colspan="2" >
                 <p>xsd:dateTime</p>
             </td>
-            <td colspan="3" >
+            <td colspan="4" >
                 <p>Heure de creation de la response.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -354,11 +348,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>➜MessageQualifier</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>For direct requests, Identifier of request that this Delivery satisfies.&nbsp;</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -371,11 +362,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>➜ParticipantCode</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Required if Delivery is for a Subscription, Participant Reference of Subscriber.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -388,11 +376,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>➜SubcriptionFilterCode</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Unique identifier of Subscription filter to which this subscription is assigned. If there is only a single filter, then can be omitted.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -405,11 +390,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>➜SubscriptionQualifier</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p><span size="2">Required if Delivery is for a Subscription, Identifier of Subscription issued by Requestor. Unique within Subscriber (i.e. within&nbsp;</span><span size="2"><em><strong>ParticipantRef</strong></em></span> of Subscriber), and SIRI Functional Service type.&nbsp;</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -425,11 +407,8 @@ par les attributs suivants
             <td colspan="2" >
                 <p>Xsd:anyURI</p>
             </td>
-            <td colspan="3" >
+            <td colspan="4" >
                 <p>Address of original Consumer, i.e. requesting system to which delegating response is to be returned.&nbsp;</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -442,11 +421,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>➜ParticipantCode</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Identifier of delegating system that originated message.&nbsp;</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -462,11 +438,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>xsd:boolean</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p><span size="2">Whether the complete request could be processed successfully or not. Default is true. If any of the individual requests within the delivery failed, should be set to&nbsp;</span><span size="2"><em>false</em></span>.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -479,11 +452,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>+Structure</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Description of any error or warning conditions that apply to the specific functional request or response.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -496,18 +466,15 @@ par les attributs suivants
             <td colspan="3" >
                 <p>choice</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>One of the following Error codes.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
             <td >
                 <p>a</p>
             </td>
-            <td colspan="2" >
+            <td >
                 <p>CapabilityNotSupportedError</p>
             </td>
             <td colspan="2" rowspan="5" >
@@ -516,7 +483,7 @@ par les attributs suivants
             <td colspan="3" >
                 <p>+ Error</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Error: Capability not supported.</p>
             </td>
         </tr>
@@ -524,13 +491,13 @@ par les attributs suivants
             <td >
                 <p>b</p>
             </td>
-            <td colspan="2" >
+            <td >
                 <p>AccessNotAllowedError</p>
             </td>
             <td colspan="3" >
                 <p>+Error</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Error: Requestor is not authorised to the service or data requested.</p>
             </td>
         </tr>
@@ -538,13 +505,13 @@ par les attributs suivants
             <td >
                 <p>c</p>
             </td>
-            <td colspan="2" >
+            <td >
                 <p>NoInfoForTopicError</p>
             </td>
             <td colspan="3" >
                 <p>+Error</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Error: Valid request was made but service does not hold any data for the requested topic expression.</p>
             </td>
         </tr>
@@ -552,13 +519,13 @@ par les attributs suivants
             <td >
                 <p>d</p>
             </td>
-            <td colspan="2" >
+            <td >
                 <p>AllowedResourceUsageExceededError</p>
             </td>
             <td colspan="3" >
                 <p>+Error</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Error: Valid request was made but request would exceed the permitted resource usage of the client.</p>
             </td>
         </tr>
@@ -566,13 +533,13 @@ par les attributs suivants
             <td >
                 <p>e</p>
             </td>
-            <td colspan="2" >
+            <td >
                 <p>OtherError</p>
             </td>
             <td colspan="3" >
                 <p>+Error</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Error other than a well-defined category.</p>
             </td>
         </tr>
@@ -580,7 +547,7 @@ par les attributs suivants
             <td >
                 <p><br></p>
             </td>
-            <td colspan="2" >
+            <td >
                 <p>Description</p>
             </td>
             <td colspan="2" >
@@ -589,7 +556,7 @@ par les attributs suivants
             <td colspan="3" >
                 <p>➜ErrorDescription</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Description of Error.</p>
             </td>
         </tr>
@@ -603,11 +570,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>xsd:dateTime</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>End of data horizon of the data producer.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -620,11 +584,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>PositiveDurationType</p>
             </td>
-            <td colspan="2" >
+            <td colspan="3" >
                 <p>Minimum interval at which updates can be sent.</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
         <tr>
@@ -640,11 +601,8 @@ par les attributs suivants
             <td colspan="3" >
                 <p>Xsd:language</p>
             </td>
-            <td colspan="2" >
+            <td colspan=3" >
                 <p>Default language for text elements.&nbsp;</p>
-            </td>
-            <td >
-                <p><br></p>
             </td>
         </tr>
     </tbody>
