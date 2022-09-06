@@ -544,10 +544,7 @@ par les attributs suivants
             </td>
         </tr>
         <tr>
-            <td >
-                <p><br></p>
-            </td>
-            <td >
+            <td colspan="2" >
                 <p>Description</p>
             </td>
             <td colspan="2" >
