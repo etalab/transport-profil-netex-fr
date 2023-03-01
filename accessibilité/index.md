@@ -173,7 +173,7 @@ NeTEx sera nécessaire à sa bonne compréhension.
 
 # Domaine d'application
 
-Le présent document est un profil de le la CEN/TS 16614 (NeTEx) pour
+Le présent document est un profil du CEN/TS 16614 (NeTEx) pour
 l'échange de données de description de l'accessibilité des réseaux en
 France. Il permet de décrire et de structurer l'information pour des
 échanges entre systèmes d'information ainsi que pour en proposer des
@@ -185,7 +185,7 @@ de base de l'accessibilité via les concepts d'**ACCESSIBILITÉ**
 (ACCESSIBILITY ASSEMENT) et de **LIMITATION D'ACCESSIBILITÉ**
 (ACCESSIBILITY LIMITATION), détaillées dans le profil Éléments Communs
 et utilisées par tous les autres. On notera aussi que le profil Réseaux
-prose une vue très limités du CHEMINEMENT (NAVIGATION PATH) dont la
+prose une vue très limitée du CHEMINEMENT (NAVIGATION PATH) dont la
 vocation n'est que de porter les ***AccessFeatureList*** (types
 d'équipement rencontrés sur un cheminement) pour les correspondances
 entre sites.
@@ -198,9 +198,9 @@ intervenus dans le cadre du GT7 ainsi qu'en utilisant les conclusions de
 l'étude CAMERA.
 
 Si la première motivation pour la définition de ce profil est bien
-l'accessibilité, cet object n'est en aucun cas limitatif et les
+l'accessibilité, cet objet n'est en aucun cas limitatif et les
 informations contenues (en particulier concernant les équipements et les
-cheminements) ont été génralisées pour un usage de type information
+cheminements) ont été généralisées pour un usage de type information
 voyageur sans restriction particulière à l'accessibilité (ce qui
 correspond bien à l'approche de NeTEx).
 
@@ -228,7 +228,7 @@ suivants s'appliquent. Ils sont directement issus de la traduction
 française de Transmodel et NeTEx <span class="hl">(on notera que
 certaines traductions sont un peu « étonnantes », toutefois il a été
 jugé préférable de rester cohérent avec la traduction officielle). Il
-conviendra souvent de se référer au coprs du docuement car certaines
+conviendra souvent de se référer au corps du document car certaines
 traductions officielles peuvent amener à une totale incompréhension des
 concepts.</span>
 
@@ -754,7 +754,7 @@ Notez que les concepts présents dans les tableaux sont les ceux qui sont
 directement référencés par l’annexe du règlement européen
 (<https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32017R1926&from=FR>),
 mais que pour beaucoup d’entre eux, cela impliquera d’autres concepts
-(soit par héritage soit par relation, au s sens UML des termes). Ces
+(soit par héritage soit par relation, au sens UML des termes). Ces
 éléments d’héritage et de relations sont présentés dans les profils,
 mais pas dans ce tableau.
 
@@ -786,7 +786,7 @@ De plus, le profil accessibilité propose 3 niveaux d’information, du
 plus basique au plus complet : les informations de base (voir 6.2), un
 niveau intermédiaire décrivant les services disponibles (voir 6.4) et un
 niveau complet qui permet de détailler les cheminements et les
-équipements (voir 6.5, 6.6 et Annexe A). À ce stade, ni la LOM ni le
+équipements (voir 6.5, 6.6 et Annexe). À ce stade, ni la LOM ni le
 règlement Européen n’impose d’utiliser un niveau ou un autre, le strict
 minimum restant naturellement les informations de base.
 
@@ -795,7 +795,7 @@ Concernant le cas spécifique du rail, la STI PMR
 demande que « les obstacles et entraves existants à
 l'accessibilité » soient signalés, et de « fournir des informations
 pratiques aux usagers ». Toutefois à ce stade cela ne permet pas de
-stature précisément sur le minimum d’information à échanger. En tout
+statuer précisément sur le minimum d’information à échanger. En tout
 état de cause, comme indiqué précédemment, le strict minimum reste de
 fournir les informations de base décrite en 6.2.
 
@@ -891,7 +891,7 @@ NAVIGATION PATH<br />
 <td><strong>NAVIGATION PATH<br />
 </strong></td>
 <td>Le profil Accessibilité peut caractériser l'accessibilité des infrastructures mais pas fournir la topologie nécessaire à un calculateur d'itinéraire<br />
-INSPIRE (en partie seulement), OSM et DGF sont les principales source potentielles pour ces informations</td>
+INSPIRE (en partie seulement), OSM et DGF sont les principales sources potentielles pour ces informations</td>
 </tr>
 <tr class="even">
 <td>1</td>
@@ -911,7 +911,7 @@ Facility Monitoring</strong></p></td>
 <td><p><em>(Profil Tarif)</em></p>
 <p><strong>ACCESS RIGHT PARAMETER ASSIGNMENT</strong></p></td>
 <td></td>
-<td>A associer au FARE PRODUCT en priorité, ou ausFARE OFFER PACKAGEs et FARE STRUCTURE ELEMENTs (nécessite donc une description de l’offre tarifaitre).</td>
+<td>À associer au FARE PRODUCT en priorité, ou aux FARE OFFER PACKAGEs et FARE STRUCTURE ELEMENTs (nécessite donc une description de l’offre tarifaitre).</td>
 </tr>
 <tr class="even">
 <td><p><em>Cas</em></p>
@@ -919,7 +919,7 @@ Facility Monitoring</strong></p></td>
 <td><p><strong>Parking</strong></p>
 <p><strong>REGULATION (EU) 2015/962</strong> et</p>
 <p><strong>REGULATION (EU) 2017/1926</strong></p></td>
-<td>Informations sur les pakings (tous modes confondus)</td>
+<td>Informations sur les parkings (tous modes confondus)</td>
 <td><p><em>(Profil Parking<br />
 à venir)</em></p>
 <p><strong>PARKING</strong></p>
@@ -937,13 +937,13 @@ NAVIGATION PATH<br />
 
 ## Conventions de représentation
 
-NOTE les choix de conventions présentées ici ont pour vocation d'être
-cohérents avec celle réalisée dans le cadre du profil SIRI. De plus tous
+NOTE les choix de conventions présentés ici ont pour vocation d'être
+cohérents avec ceux réalisés dans le cadre du profil SIRI. De plus tous
 les profils NeTEx partagent les mêmes conventions.
 
 Les messages constituant ce profil d'échange sont décrits ci-dessous
 selon un double formalisme: une description sous forme de diagrammes XSD
-(leur compréhension néc essite une connaissance préalable de XSD: XML
+(leur compréhension nécessite une connaissance préalable de XSD: XML
 Schema Definition) et une description sous forme tabulaire. Les tableaux
 proposent ces colonnes:
 
@@ -979,8 +979,8 @@ proposent ces colonnes:
     
 
     -   «cntd» (contained) indique un structure, un ensemble d'éléments,
-        contenus dans l'objet décrit: on n'en donne alors que l'
-        l'intituler et non le détail de façon à éviter de surcharger le
+        contenus dans l'objet décrit: on n'en donne alors que 
+        l'intitulé et non le détail de façon à éviter de surcharger le
         tableau.
 
 
@@ -1029,7 +1029,7 @@ the empty <span></span> makes the figure autonumbering work.
 *Exemple de classe abstraite ou non retenue*
 
 De plus les schémas UML conserve les noms des classes en anglais (non
-traduit) car c'est sous cette domination que les objets présentés se
+traduit) car c'est sous cette dénomination que les objets présentés se
 retrouveront dans le modèle XSD et donc dans les tags XML utilisés dans
 l'implémentation et les échanges.
 
@@ -1068,7 +1068,7 @@ ZONE D'EMBARQUEMENT (QUAY), une LIGNE (LINE) ou une COURSE COMMERCIALE
 *VisualSignsAvailable: une signalétique visuelle est disponible*
 
 
-Cela correspond, dans les grandes lignes aux principaux pictog rammes
+Cela correspond, dans les grandes lignes aux principaux pictogrammes
 d'accessibilité classiquement rencontrés. Les valeurs potentiellement
 portées par chacun de ces indicateurs sont: ***Oui***, ***Non***,
 ***Partiel*** ou ***Inconnu***.
@@ -1105,8 +1105,8 @@ médias de présentation en final).
 *Accessibilité des profils précédents*
 
 Toutefois, cela correspond à une information globale et synthétique,
-mais qui dans de nombreuses situations manquera des précisions, d'une
-par vis-à-vis des besoins d'accessibilité et d'autre part en terme de
+mais qui dans de nombreuses situations manquera de précisions, d'une
+part vis-à-vis des besoins d'accessibilité et d'autre part en terme de
 précision sur les équipements et cheminements rencontrés.
 
 ## Adéquation aux besoins
@@ -1118,7 +1118,7 @@ cadre du profill accessibilité.</span>
 ## Les services disponibles
 
 Les SERVICES DISPONIBLES (FACILITY SET) permettent de décrire, pour une
-COURSE, un TYPE DE VEHICULE ou un SITE, l'ensemble des services
+COURSE, un TYPE DE VÉHICULE ou un SITE, l'ensemble des services
 disponibles mais sans en préciser les caractéristiques détaillées, ni le
 nombre, ni la localisation. Il sera ainsi possible d'indiquer qu'un site
 dispose de toilettes (*toilet*), de toilettes accessibles en fauteuil
@@ -1127,7 +1127,7 @@ d'équipement audio (*visualDisplays*) et si cet équipement a été conçu
 pour un handicap visuel (*displaysForVisuallyImpaired*).
 
 On peut voir la liste de ces services comme la façon répondre à la prise
-en compte des besoins (ADEQUATION AU BESOIN (SUITABILITY) présentée
+en compte des besoins (ADÉQUATION AU BESOIN (SUITABILITY)) présentée
 ci-dessus. Mais on peut aussi y voir une certaine redondance.
 
 La description des services disponible est retenue dans le cadre du
@@ -1140,9 +1140,9 @@ disposant pas de la possibilité de décrire les équipements disponibles.
 
 SERVICES DISPONIBLES (FACILITY SET) contient une liste de services et
 peut se spécialiser en SERVICES SUR SITE (SITE FACILITY SET) et SERVICES
-A BORD (SERVICE FACILITY) qui lui-même se spécialise en SERVICE
+À BORD (SERVICE FACILITY) qui lui-même se spécialise en SERVICE
 D'INSTALLATION (ACCOMODATION, qui décrit le type de siège, couchette,
-etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
+etc.) et POSSIBILITÉ DE RESTER À BORD (ONBOARD STAY).
 
 ![image](media/image10.svg)
 *SERVICES DISPONIBLES – détail des énumérations*
@@ -1164,7 +1164,7 @@ etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 |-|-|-|-|-|
 | ::> | ::> | *FacilitySet* | ::> | SERVICE FACILITY SET inherite de FACILITY SET. |
 | «PK» | id | *ServiceFacilitySetIdType* | 1:1 | Identifiant du SERVICE FACILITY SET. |
-| «cntd» | ***ServiceFacility­Group*** | xxx*FacilityList* | 0:\* | SERVICE FACILITies au sein d’n SERVICE FACILITY SET définit en tant que listes de valeurs énumérées. Il existe des spécificités pour le SERVICE FACILITY SET. |
+| «cntd» | ***ServiceFacility­Group*** | xxx*FacilityList* | 0:\* | SERVICE FACILITies au sein d’un SERVICE FACILITY SET défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le SERVICE FACILITY SET. |
 | «cntd» | ***accommodations*** | *accommodations* | 0:1 | Accommodations (couchette, etc.) disponibles. |
 | «cntd» | ***onboardStays*** | *onboardStays* | 0:1 | Autorisations de rester à bord. |
 
@@ -1182,12 +1182,12 @@ etc.) et POSSIBILITÉ DE RESTER A BORD (ONBOARD STAY).
 |-|-|-|-|-|
 | | ***Name*** | *MultilingualString* | 0:1  | Nom de l’accomodation |
 | | Accommodation­Facility | AccommodationFacility­Enum | 0:1  | Type d'accommodation  |
-| | ToiletFacility | SanitaryFacilityEnum | 0:1  | Type de tyoilette pour l’ACCOMMODATION. |
+| | ToiletFacility | SanitaryFacilityEnum | 0:1  | Type de toilette pour l’ACCOMMODATION. |
 | | ***PassengerCommsFacilityList*** | *PassengerCommsFacilityListOfEnumerations* | 0:1  | Listes des services de communication. |
 
 
-Les SERVICES DISPONIBLES communs à toutes ses spécialisations et <span
-class="hl">retenu dans le cadre du profil sont les suivants</span>:
+Les SERVICES DISPONIBLES communs à toutes ces spécialisations et <span
+class="hl">retenus dans le cadre du profil sont les suivants</span>:
 
 ***<u>-Information d'accessibilité</u>***
 
@@ -1276,7 +1276,7 @@ avec le gestionnaire pour plus de précisions</span>)boardingAssistance
 
 * *nextStopIndicator (indicateur de prochain arrêt)*
 
-* stopAnnouncements (annonce des arrêts)*
+* *stopAnnouncements (annonce des arrêts)*
 
 * *passengerInformationDisplay (affichage pour l’inforamtion voyageur)*
 
@@ -1311,7 +1311,7 @@ ligne)*
 * *mobileTicketing (billettique mobile – sur smartphone)*
 
 Les SERVICES DISPONIBLES de type Service (sans redondance des catégories
-précédentes) <span class="hl">retenu dans le cadre du profil sont les
+précédentes) <span class="hl">retenus dans le cadre du profil sont les
 suivants</span>:
 
 ***<u>-Services Réservés</u>***
@@ -1331,7 +1331,7 @@ les fauteuil roulants notamment)*
 * *cyclesAllowed (vélos autorisés en bagage)*
 
 Les SERVICES DISPONIBLES spécifiques aux lieux (sans redondance des
-catégories précédentes) <span class="hl">retenu dans le cadre du profil
+catégories précédentes) <span class="hl">retenus dans le cadre du profil
 sont les suivants</span>:
 
 ***<u>-Urgence</u>***
@@ -1363,22 +1363,22 @@ station)*
 
 * *partTime (personne present à temps partiel)*
 
-* *unmanned (sans personnel )*
+* *unmanned (sans personnel)*
 
 Les SERVICES DISPONIBLES disponible au niveau de la place, lors du
 voyage (sans redondance des catégories précédentes) <span
-class="hl">retenu dans le cadre du profil sont les suivants:</span>
+class="hl">retenus dans le cadre du profil sont les suivants:</span>
 
 ***<u>Installation</u>***
 
-* *specialSleeper (couhettes spéciales/adaptées)*
+* *specialSleeper (couchettes spéciales/adaptées)*
 
-* *specialSeating (siéges spéciausx/adaptés)*
+* *specialSeating (sièges spéciaux/adaptés)*
 
 ## Les Équipements
 
 Un ÉQUIPEMENT est un matériel particulier installé, soit fixe
-(ÉQUIPEMENT DE LIEU) ou à bord de véhicules (EQUIPEMENT DE VEHICULE).
+(ÉQUIPEMENT DE LIEU) ou à bord de véhicules (EQUIPEMENT DE VÉHICULE).
 C'est une notion qu'il faut considérer de façon générale et un service
 (SERVICE LOCAL tel qu’OBJETS TROUVES, BILLETTERIE) est également
 considéré comme un ÉQUIPEMENT.
@@ -1386,7 +1386,7 @@ considéré comme un ÉQUIPEMENT.
 <span class="hl">Dans le cadre du profil pour l'accessibilité, la
 description des équipements est recommandée à chaque fois que cela est
 possible (et que l'information est disponible). La description des
-ÉQUIPEMENTs est donc à préférée à la description des services
+ÉQUIPEMENTs est donc préférée à la description des services
 disponibles.</span>
 
 ### Équipements localisés
@@ -1398,12 +1398,12 @@ propose deux spécialisations: SERVICE LOCAL (LOCAL SERVICE) et
 ![image](media/image11.svg)
 *Structure générique des ÉQUIPEMENT*
 
-L'ÉQUIPEMENT INSTALLÉ (INSTALLED EQUIPMENT) peut luis même être
-spécialisé en ÉQUIPEMENT DE LIEN (PLACE EQUIPMENT), ÉQUIPEMENT POUR
-PASSAGER (PASSENGER EQUIPMENT) ou ÉQUIPEMENT DE VEHICULE (ACTUAL VEHICLE
+L'ÉQUIPEMENT INSTALLÉ (INSTALLED EQUIPMENT) peut lui-même être
+spécialisé en ÉQUIPEMENT DE LIEU (PLACE EQUIPMENT), ÉQUIPEMENT POUR
+PASSAGER (PASSENGER EQUIPMENT) ou ÉQUIPEMENT DE VÉHICULE (ACTUAL VEHICLE
 EQUIPMENT). On notera que l'ÉQUIPEMENT POUR PASSAGER est particulier car
 il peut soit être localisé dans un lieu (LIEU D'ARRÊT) soit dans un
-VEHICULE (par exemple pour des équipement sanitaire comme les toilette
+VÉHICULE (par exemple pour des équipements sanitaires comme les toilettes
 que le trouvera aussi bien en station que dans une rame de TGV).
 
 <div class="table-title">Equipment – Element</div>
@@ -1457,7 +1457,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td><em><strong>PublicCode</strong></em></td>
 <td><em>PublicCode</em></td>
 <td>0:1</td>
-<td><p>Code public de l’équipement, et qui firgure généralement sur l’équipement, typiquement sous la forme d’une étiquette.</p>
+<td><p>Code public de l’équipement, et qui figure généralement sur l’équipement, typiquement sous la forme d’une étiquette.</p>
 <p><span class="hl">Pourra contenir des codes comme, par exemple, les codes MIR de la RATP</span></p>
 <p><span class="hl">Noter que ce code doit être accessible/préhensible sur l'équipement (notament en vue d'utilisation pour du crowd-sourcing et de la signalisation d'anomalie, etc.)</span></p></td>
 </tr>
@@ -1474,7 +1474,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td>TypeOfEquipment­Ref</td>
 <td>TypeOfEquipmentRef</td>
 <td>0:1</td>
-<td>Reference du type l’EQUIPEMENT.</td>
+<td>Référence du type l’EQUIPEMENT.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1497,8 +1497,8 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td><em><strong>OutOfService</strong></em></td>
 <td>boolean</td>
 <td>0:1</td>
-<td><p>Indique si l’équipement est hors service pour une durée proongée. Une veritable information de disponibilité en temps réel pourra être fournie avec le service SIRI facility Monitoring.</p>
-<p><span class="hl">Quand </span><em><strong><span class="hl">OutOfService</span></strong></em><span class="hl"> est utilisé, l'utilisation du ValidityCondition devient obligatoire pou, en particulier, indiquer la période prévue d'indsiponibilité (et donc la date prévue de retour en fonctionnement)</span></p></td>
+<td><p>Indique si l’équipement est hors service pour une durée prolongée. Une veritable information de disponibilité en temps réel pourra être fournie avec le service SIRI facility Monitoring.</p>
+<p><span class="hl">Quand </span><em><strong><span class="hl">OutOfService</span></strong></em><span class="hl"> est utilisé, l'utilisation du ValidityCondition devient obligatoire pour, en particulier, indiquer la période prévue d'indisponibilité (et donc la date prévue de retour en fonctionnement)</span></p></td>
 </tr>
 </tbody>
 </table>
