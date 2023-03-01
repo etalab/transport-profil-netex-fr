@@ -271,16 +271,12 @@ et/ou un LIEU.
 ## **ACCESS MODE (MODE D'ACCÈS)**
 
 Caractérisation du trajet d'un passager lorsqu'il emprunte un moyen de
-transport autre que les transports
-
-publics (p. ex : à pied, à vélo, etc.).
+transport autre que les transports publics (p. ex : à pied, à vélo, etc.).
 
 ## **ACCOMODATION (HÉBERGEMENT)**
 
 Combinaison de caractéristiques d'hébergement disponibles sur un service
-(p. ex : "Couchette première
-
-classe douche/2 lits").
+(p. ex : "Couchette première classe douche/2 lits").
 
 ## **ACTUAL VEHICLE EQUIPMENT (ÉQUIPEMENT VÉHICULE RÉEL)**
 
@@ -2365,25 +2361,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tbody>
 </table>
 
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
@@ -4333,19 +4310,6 @@ passagers)* *–* Element
 |                     | ***MaximumBagDepth***      | *LengthType*         | 0:1              | Profondeur maximale des bagages                                                                 |
 |                     | ***LuggageMaximalWeigth*** | *xsd:decimal*        | 0:1              | Poid maximal des bagages                                                                        |
 
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-
 <div class="table-title">CustomerService (service clientèle) – Element</div>
 
 |                     |          |                  |                  |                                          |
@@ -4357,11 +4321,6 @@ passagers)* *–* Element
 |                     | InfoLink | InfoLink         | 0:1              | Lien URL pour accèder au service client  |
 |                     |          |                  |                  |                                          |
 
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
 
 <div class="table-title">LostPropertyService (objets trouvés) – Element</div>
 
@@ -4447,18 +4406,6 @@ passagers)* *–* Element
 
 ## Commercial Service
 
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-
 <div class="table-title">HireService (service de location) – Element</div>
 
 <table>
@@ -4501,18 +4448,6 @@ passagers)* *–* Element
 </tr>
 </tbody>
 </table>
-
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
-
-|     |     |     |     |     |
-|-----|-----|-----|-----|-----|
-|     |     |     |     |     |
-|     |     |     |     |     |
-|     |     |     |     |     |
 
 ## Parking Equipment
 
