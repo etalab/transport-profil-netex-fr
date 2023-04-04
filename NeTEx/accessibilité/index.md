@@ -1993,15 +1993,15 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>Width</em></td>
-<td>PassengersPerMinute</td>
+<td><em>MinimumWidth</em></td>
+<td>LengthType</td>
 <td>0:1</td>
 <td>Largeur du cheminement</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>Flooring</em></td>
-<td><em>xsd :decimal</em></td>
+<td><em>FlooringType</em></td>
+<td><em>FlooringTypeEnum</em></td>
 <td>0:1</td>
 <td><p>Type de surface au sol</p>
 <ul>
@@ -2019,7 +2019,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>Wood (bois)</em></p></li>
 <li><p><em>Stone (pierre)</em></p></li>
 <li><p><em>Grass (gazon)</em></p></li>
-<li><p><em>Dirt (terre)</em></p></li>
+<li><p><em>Earth (terre)</em></p></li>
 <li><p><em>Gravel (graviers)</em></p></li>
 <li><p><em>Uneven (inégal)</em></p></li>
 <li><p><em>Unknown (inconnu)</em></p></li>
@@ -2029,7 +2029,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <tr class="odd">
 <td></td>
 <td><em>RightSideBorder</em></td>
-<td><em>FlooringTypeEnum</em></td>
+<td><em>BorderTypeEnum</em></td>
 <td>0:1</td>
 <td><p>Type de bordure sur le côté droit (dans le sens direct, from/to, du cheminement)</p>
 <ul>
@@ -2062,14 +2062,14 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <tr class="odd">
 <td></td>
 <td><em>TiltAngle</em></td>
-<td><em>BorderTypeEnum</em></td>
+<td><em>xsd:integer</em></td>
 <td>0:1</td>
 <td>Dévers (inclinaison latérale) de +20 a -20 degrès (dans le sens direct, from/to, du cheminement)</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>CodedTilt</em></td>
-<td><em>xsd:integer</em></td>
+<td><em>TiltType</em></td>
+<td><em>TiltTypeEnum</em></td>
 <td>0:1</td>
 <td><p>Valeur codée du dévers</p>
 <ul>
