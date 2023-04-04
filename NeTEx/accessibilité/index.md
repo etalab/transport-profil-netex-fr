@@ -1813,10 +1813,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em>::></em></td>
 <td><em>Link</em></td>
 <td><em>::></em></td>
-<td><p>PATH LINK hérite de LINK.</p>
-<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité.</span></p>
-<p><span class="hl">Notez aussi que, en complément de l'attribut Transition, si une information de pente précise est souhaitée, on utilisera les informations de hauteur/altitude associées aux points aux extrémités du LINK.</span></p>
-<p><span class="hl">De plus, toujours dans le contexte du profil pour l'accessibilité, la géométrie des </span><span class="hl">PATH LINKs sera systématiquement décrite avec l'attribut </span><em><strong><span class="hl">LineString</span></strong></em><span class="hl"> (GML) aussi </span><span class="hl">hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notament au niveau des extrémités, des centroïdes des objets référencés par </span><em><strong><span class="hl">From</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">To</span></strong></em><span class="hl"> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du LineString devront coincider avec ceux des autre </span><span class="hl">PATH LINK connectés dans le cadre d'un NAVIGATION PATH.</span></p></td>
+<td>PATH LINK hérite de LINK.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
@@ -1824,6 +1821,24 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>PathLinkIdType</td>
 <td>1:1</td>
 <td>Identifiant du PATH LINK.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Distance</td>
+<td>DistanceType</td>
+<td><p>0:1</p>
+<p><span class="hl">1:1</span></p></td>
+<td><p>Longueur du tronçon de cheminement.</p>
+<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité.</span></p></td>
+</tr>
+<tr class="odd">
+<td>«cntd»</td>
+<td>LineString</td>
+<td>gmlLineString</td>
+<td><p>0:1</p>
+<p><span class="hl">1:1</span></p></td>
+<td><p>Géométrie du tronçon de cheminement.</p>
+<p><span class="hl">Dans le contexte du profil pour l'accessibilité, la géométrie des PATH LINKs sera systématiquement décrite avec l'attribut <em><strong>LineString</strong></em> (GML) hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notament au niveau des extrémités, des centroïdes des objets référencés par <em><strong>From</strong></em> et <em><strong>To</strong></em> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du LineString devront coincider avec ceux des autres PATH LINK connectés dans le cadre d'un NAVIGATION PATH.</span></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -2064,7 +2079,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em>TiltAngle</em></td>
 <td><em>xsd:integer</em></td>
 <td>0:1</td>
-<td>Dévers (inclinaison latérale) de +20 a -20 degrès (dans le sens direct, from/to, du cheminement)</td>
+<td>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -2082,6 +2097,13 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tr>
 <tr class="odd">
 <td></td>
+<td><em>Gradient</em></td>
+<td><em>xsd:integer</em></td>
+<td>0:1</td>
+<td>Pente en degrés (dans le sens direct, from/to, du cheminement)</td>
+</tr>
+<tr class="even">
+<td></td>
 <td><em>TactileWarningStrip</em></td>
 <td><em>TactileWarningEnum</em></td>
 <td>0:1</td>
@@ -2094,14 +2116,13 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>unknown (inconnu)</em></p></li>
 </ul></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td><em>TactileGuidingStrip</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Indique s’il y a des bandes de guidage podotactiles.</td>
 </tr>
-
 <tr class="even">
 <td>«cntd»</td>
 <td>TransferDuration</td>
@@ -2114,6 +2135,13 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>OccasionalTravellerDuration (durée pour un voyageur occasionel)</em></p></li>
 <li><p><em>MobilityRestrictedTravellerDuration (durée pour un voyageur à mobilité réduite)</em></p></li>
 </ul></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><em>placeEquipments</em></td>
+<td>Equipment</td>
+<td>0:1</td>
+<td>Liste des équipements dont dépend le tronçon de cheminement.</td>
 </tr>
 </tbody>
 </table>
