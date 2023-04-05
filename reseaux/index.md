@@ -1,6 +1,6 @@
 ---
-title: "Profil d’échange pour la description des réseaux de transport en commun"
-date: 2022-01-12T00:00:00+00:00
+title: "NeTEx - Profil France - Description des réseaux"
+date: 2022-01-13T00:00:00+00:04
 draft: false
 tags: ["NeTEx"]
 autonumbering: true

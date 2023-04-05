@@ -1,6 +1,6 @@
 ---
-title: "Profil d’échange pour la description des horaires de transport en commun"
-date: 2022-01-12T00:00:00+00:00
+title: "NeTEx - Profil France - Horaires"
+date: 2022-01-13T00:00:00+00:02
 draft: false
 tags: ["NeTEx"]
 autonumbering: true

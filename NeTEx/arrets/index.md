@@ -1,6 +1,6 @@
 ---
-title: "Profil d’échange pour la description des arrêts de transport en commun"
-date: 2021-10-19T13:21:16+00:00
+title: "NeTEx - Profil France - Description des arrêts"
+date: 2022-01-13T00:00:00+00:01
 draft: false
 tags: ["NeTEx"]
 autonumbering: true

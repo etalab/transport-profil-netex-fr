@@ -1,6 +1,5 @@
 ---
-title: "Éléments communs aux profils d'échange pour les informations planifiées
-du transport en commun"
+title: "NeTEx - Profil France - Éléments communs"
 date: 2022-01-13T00:00:00+00:00
 draft: false
 tags: ["NeTEx"]
