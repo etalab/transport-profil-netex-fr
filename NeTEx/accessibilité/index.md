@@ -3749,7 +3749,7 @@ passagers)* *–* Element
 </tr>
 <tr class="odd">
 <td></td>
-<td>TypeOfHandrail</td>
+<td>HandrailType</td>
 <td><em>Handrail­Enum</em></td>
 <td>0:1</td>
 <td><p>Type de main courante</p>
