@@ -3074,7 +3074,55 @@ passagers)* *–* Element
 </tbody>
 </table>
 
+<div class="table-title">KeyList pour CrossingEquipment</div>
 
+<table style="width:100%;">
+<tbody>
+<tr class="odd">
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>MarkingStatus</em></td>
+<td><p>État du marquage au sol de la traversée piétonne :</p>
+<ul>
+<li><p><em>none (pas de marquage)</em></p></li>
+<li><p><em>good (bon état)</em></p></li>
+<li><p><em>worn (dégradation sans gravité)</em></p></li>
+<li><p><em>discomfortable (dégradation entraînant une difficulté d'usage ou d'inconfort)</em></p></li>
+<li><p><em>hazardous (dégradation entraînant un problème de sécurité immédiat)</em></p></li>
+</ul>
+<p>Correspond à l'attribut TRAVERSEE.marquageSol dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>BumpCrossing</em></td>
+<td><p>Indique si la traversée piétonne est convexe, bombée (elle monte puis descend) :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></p></li>
+</ul>
+<p>Correspond à l'attribut TRAVERSEE.chausseeBombee dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>VisualBuffer</em></td>
+<td><p>Indique la présence et le type de masque visuel sécurisant la traversée :</p>
+<ul>
+<li><p><em>none (aucun)</em></p></li>
+<li><p><em>carParking (stationnement voiture)</em></p></li>
+<li><p><em>vegetation (végétation)</em></p></li>
+<li><p><em>building (bâti)</em></p></li>
+<li><p><em>streetFurniture (mobilier urbain)</em></p></li>
+<li><p><em>marking (marquage au sol)</em></p></li>
+<li><p><em>other (autre)</em></p></li>
+</ul>
+<p>Le masque visuel doit être positionné à 5 mètres en amont de la traversée et permettre aux piétons et aux automobilistes de se voir.</p>
+<p>À rapprocher de l'attribut TRAVERSEE.covisibilite dans le standard CNIG.</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 <div class="table-title">EntranceEquipment (entrèes) – Element</div>
 
