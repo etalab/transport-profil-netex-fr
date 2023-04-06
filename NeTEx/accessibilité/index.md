@@ -197,6 +197,13 @@ Ce document a été élaboré sur la base des réflexions et échanges
 intervenus dans le cadre du GT7 ainsi qu'en utilisant les conclusions de
 l'étude CAMERA.
 
+Ce document a également été enrichi à l'aide du standard d’échange de
+données sur l’accessibilité des déplacements pour les personnes en
+situation de handicap produit par le groupe de travail CNIG sur
+l'Accessibilité. Ce modèle a pour but de décrire l'accessibilité
+des cheminements extérieurs en voirie, typiquement des trottoirs
+reliant un arrêt de transport en commun à l’entrée d’un ERP.
+
 Si la première motivation pour la définition de ce profil est bien
 l'accessibilité, cet objet n'est en aucun cas limitatif et les
 informations contenues (en particulier concernant les équipements et les
@@ -720,6 +727,22 @@ AO
 <div class="Definition">
 
 Autorité Organisatrice de Transports
+
+</div>
+
+CNIG
+
+<div class="Definition">
+
+Conseil National de l'Information Géographique
+
+</div>
+
+OSM
+
+<div class="Definition">
+
+OpenStreetMap
 
 </div>
 
@@ -1828,7 +1851,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>KeyList</td>
 <td>0:1</td>
 <td><p>Ensemble de couples clef/valeur (voir le profil Éléments Commun pour plus de détail sur ce mécanisme d'extension).</p>
-<p><span class="hl">Dans le cadre du profil, on les utilisera pour décrire des identifiants secondaires de l'objet ou pour compléter les attributs.</span></p>
+<p><span class="hl">Dans le cadre du profil, on les utilisera pour décrire des identifiants secondaires de l'objet ou pour compléter les attributs. Voir tableau ci-dessous.</span></p>
 <p><span class="hl">Remarque : il est interdit, dans le profil, d’utiliser le système de clef/valeur pour décrire des informations qui pourraient être fournies avec des attributs NeTEx existants (même s’ils ne sont pas retenus par le profil).</span></p></td>
 </tr>
 <tr class="even">
@@ -1838,7 +1861,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><p>Longueur du tronçon de cheminement.</p>
-<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité.</span></p></td>
+<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité. Il s'agit de la distance parcourue le long du tronçon de cheminement et non de la distance à vol d'oiseau entre les points de départ et d'arrivée.</span></p></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1878,7 +1901,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>ACCESSIBILITY du PATH LINK.</td>
 </tr>
-
 <tr class="odd">
 <td></td>
 <td>PublicUse</td>
@@ -1892,7 +1914,8 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>Covered</td>
 <td>CoveredEnum</td>
 <td>0:1</td>
-<td>Type de couvertrure</td>
+<td>Type de couverture.
+<p><span class="hl">La valeur <em>mixed</em> n'est pas retenue dans le cadre du profil pour l'accessibilité : il convient dans ce cas de segmenter en plusieurs SitePathLink avec chacun un type de couverture propre.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1921,7 +1944,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>Indique si le cheminement est pratiquable en fauteuil roulant.</td>
 </tr>
-
 <tr class="odd">
 <td>«cntd»</td>
 <td>facilities</td>
@@ -1948,7 +1970,8 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>NumberOfSteps</td>
 <td>xsd:integer</td>
 <td>0:1</td>
-<td>Nombre de marche rencontrées sur le cheminement.</td>
+<td>Nombre de marches rencontrées sur le cheminement.
+<p><span class="hl">Il s'agit du nombre de marches total de l'escalier si le tronçon de cheminement correspond à un escalier, ou du nombre de ressauts ou marches isolées sinon.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1967,9 +1990,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>up (montée)</em></p></li>
 <li><p><em>down (descente)</em></p></li>
 <li><p><em>level (pas de changement de niveau)</em></p></li>
-<li><p><em>upAndDown (montée puis descente)</em></p></li>
-<li><p><em>downAndUp (descente puis montée)</em></p></li>
-</ul></td>
+</ul><p><span class="hl">Les valeurs <em>upAndDown</em> (montée puis descente) et <em>downAndUp</em> (descente puis montée) ne sont pas retenues dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs SitePathLink avec chacun un type de transition propre.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2020,7 +2041,8 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em>MinimumWidth</em></td>
 <td>LengthType</td>
 <td>0:1</td>
-<td>Largeur du cheminement</td>
+<td><p>Largeur du cheminement</p>
+<p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
 </tr>
 <tr class="even">
 <td></td>
@@ -2150,10 +2172,49 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em>placeEquipments</em></td>
 <td>Equipment</td>
 <td>0:1</td>
-<td>Liste des équipements dont dépend le tronçon de cheminement.</td>
+<td>Liste des AccessEquipment (équipements d’accès) dont dépend le tronçon de cheminement.</td>
 </tr>
 </tbody>
 </table>
+
+<div class="table-title">KeyList pour SitePathLink</div>
+
+<table style="width:100%;">
+<tbody>
+<tr class="odd">
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>FlooringStatus</em></td>
+<td><p>État du revêtement :</p>
+<ul>
+<li><p><em>none (pas de revêtement)</em></p></li>
+<li><p><em>good (bon état)</em></p></li>
+<li><p><em>worn (dégradation sans gravité)</em></p></li>
+<li><p><em>discomfortable (dégradation entraînant une difficulté d'usage ou d'inconfort)</em></p></li>
+<li><p><em>hazardous (dégradation entraînant un problème de sécurité immédiat)</em></p></li>
+</ul>
+<p>À rapprocher de l'attribut CIRCULATION.etatRevetement dans le standard CNIG</p>
+</td>
+</tr>
+<tr>
+<td><em>HighwayType</em></td>
+<td><p>Type de voie d’après le schéma directeur de la voirie français :</p>
+<ul>
+<li><p><em>street (voie classique : rue, avenue, boulevard)</em></p></li>
+<li><p><em>limitedSpeedStreet (zone 30)</em></p></li>
+<li><p><em>livingStreet (zone de rencontre)</em></p></li>
+<li><p><em>pedestrian (rue piétonne, aire piétonne, sente piétonne)</em></p></li>
+<li><p><em>bicycle (voie verte)</em></p></li>
+<li><p><em>unclassified (autre type de voie inscrit au schéma directeur de la voirie)</em></p></li>
+</ul>
+<p>Correspond à l'attribut TRONCON_CHEMINEMENT.statutVoie dans le standard CNIG</p>
+</td>
+</tr>
+</tbody>
+</table>
+
 
 <div class="table-title">PathLinkEnd – Element</div>
 
@@ -4958,3 +5019,7 @@ cette étude ne porte que sur les modes de surface)*
 
 EN 28701, Intelligent transport systems - Public transport -
 Identification of Fixed Objects in Public Transport (IFOPT)
+
+Standard CNIG Accessibilité du cheminement en voirie : 
+http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessibilite_v2022-05.pdf 
+(v2021-10 rev. 2022-05)
