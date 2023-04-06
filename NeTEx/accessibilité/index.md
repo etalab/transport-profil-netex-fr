@@ -3292,7 +3292,7 @@ passagers)* *–* Element
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
 <td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
@@ -3385,6 +3385,53 @@ passagers)* *–* Element
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale que la rampe est temporaire</td>
+</tr>
+</tbody>
+</table>
+
+<div class="table-title">KeyList pour RampEquipment</div>
+
+<table style="width:100%;">
+<tbody>
+<tr class="odd">
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>RestStopDistance</em></td>
+<td><p>La distance maximale entre deux paliers de repos, en mètres arrondis au cm.</p>
+<p>Il est recommandé d'implanter un palier de repos en bas et en haut de chaque rampe, ainsi que tous les 10 mètres en cas de longue rampe.</p>
+<p>À rapprocher de l'attribut RAMPE.distPalierRepos dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>SafetyEdge</em></td>
+<td><p>Indique la présence d'une bordure chasse-roue (bordure latérale visant à bloquer la roue du fauteuil roulant pour éviter les chutes) :</p>
+<ul>
+<li><p><em>none</em> (aucune)</p></li>
+<li><p><em>oneSide</em> (d’un côté uniquement)</p></li>
+<li><p><em>bothSides</em> (des deux côtés)</p></li>
+</ul>
+<p>Correspond à l'attribut RAMPE.chasseRoue dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>TurningSpace</em></td>
+<td><p>Position de l'espace de manœuvre :</p>
+<ul>
+<li><p><em>none (pas d'espace de manœuvre)</em></p></li>
+<li><p><em>bottom (en bas)</em></p></li>
+<li><p><em>top (en haut)</em></p></li>
+<li><p><em>topAndBottom (en haut et en bas)</em></p></li>
+</ul>
+<p>Correspond à l'attribut RAMPE.aireRotation dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>MaximumLoad</em></td>
+<td><p>Charge maximale supportée par la rampe, en kg</p>
+<p>Correspond à l'attribut RAMPE.poidsSupporte dans le standard CNIG.</p>
+</td>
 </tr>
 </tbody>
 </table>
