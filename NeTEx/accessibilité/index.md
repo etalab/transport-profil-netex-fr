@@ -3088,9 +3088,9 @@ passagers)* *–* Element
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­ality</strong></td>
+<td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -3102,28 +3102,28 @@ passagers)* *–* Element
 </tr>
 <tr class="odd">
 <td>«PK»</td>
-<td><em><strong>id</strong></em></td>
+<td><em>id</em></td>
 <td>EntranceEquipment­IdType</td>
 <td>1:1</td>
 <td>Identifiant du ENTRANCE EQUIPMENT.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Door</strong></em></td>
+<td><em>Door</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présence d’une porte (‘<em>false’</em> indique qu’il n’y a pas de porte)</td>
+<td>Signale la présence d’une porte (<em>false</em> indique qu’il n’y a pas de porte)</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>KeptOpen</strong></em></td>
+<td><em>KeptOpen</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la si la porte et conservée en position ouverte (pendant les heures d’ouverture)</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>RevolvingDoor</strong></em></td>
+<td><em>RevolvingDoor</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale une porte tambour (en complément de <em><strong>Door</strong></em>)</td>
@@ -3137,10 +3137,10 @@ passagers)* *–* Element
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>NumberOfGates</strong></em></td>
+<td><em>NumberOfGates</em></td>
 <td>xsd:integer</td>
 <td>0:1</td>
-<td>Nombre de porte (ou passages)</td>
+<td>Nombre de portes (ou passages)</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3151,36 +3151,35 @@ passagers)* *–* Element
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>EntranceRequires­Staffing</strong></em></td>
+<td><em>EntranceRequires­Staffing</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale que le passage requiert la présence d’agents du personnel</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>EntranceRequiresTicket</strong></em></td>
+<td><em>EntranceRequiresTicket</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale que le passage requiert un ticket</td>
 </tr>
-
 <tr class="odd">
 <td></td>
-<td><em><strong>AcousticSensor</strong></em></td>
+<td><em>AcousticSensor</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présence de capteur acvoustiques</td>
+<td>Signale la présence de capteurs acoustiques</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>AutomaticDoor</strong></em></td>
+<td><em>AutomaticDoor</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale que le la porte est à ouverture/fermeture automatique</td>
+<td>Signale que la porte est à ouverture/fermeture automatique</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>DropKerbOutside</strong></em></td>
+<td><em>DropKerbOutside</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage</td>
@@ -3194,7 +3193,7 @@ passagers)* *–* Element
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>WheelchairPassable</strong></em></td>
+<td><em>WheelchairPassable</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la possibilité de franchissement en fauteuil roulant.</td>
@@ -3211,48 +3210,47 @@ passagers)* *–* Element
 <td>EntranceAttention</td>
 <td>EntranceAttention­Enum</td>
 <td>0:1</td>
-<td><p>Nature de la sonette ou du signal d’appel</p>
+<td><p>Nature de la sonnette ou du signal d’appel</p>
 <ul>
-<li><p><em>doorbell</em>(sonette)</p></li>
+<li><p><em>doorbell</em> (sonnette)</p></li>
 <li><p><em>helpPoint</em> (point d’aide)</p></li>
 <li><p><em>intercom</em> (intercom)</p></li>
 <li><p><em>none</em> (aucun)</p></li>
 <li><p><em>other</em> (autre)</p></li>
 </ul></td>
 </tr>
-
 <tr class="odd">
 <td></td>
-<td><em><strong>AudioOrVideoIntercom</strong></em></td>
+<td><em>AudioOrVideoIntercom</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la necessité d’une communication audio ou vidéo pour pouvoir entrer</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Airlock</strong></em></td>
+<td><em>Airlock</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présenc ed’un sas</td>
+<td>Signale la présence d’un sas</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>DoorstepMark</strong></em></td>
+<td><em>DoorstepMark</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présente d’une marque de seuil (de franchissement) podotactyle.</td>
+<td>Signale la présente d’une marque de seuil (de franchissement) podotactile.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>AudioPassthroughIndicator</strong></em></td>
+<td><em>AudioPassthroughIndicator</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présente d’un signal sonore de franchissement.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>NecessaryForceToOpen</strong></em></td>
-<td>xsd:boolean</td>
+<td><em>NecessaryForceToOpen</em></td>
+<td>NecessaryForceEnum</td>
 <td>0:1</td>
 <td><p>Force nécessaire pour l’ouverture de la porte</p>
 <ul>
