@@ -3666,19 +3666,18 @@ passagers)* *–* Element
 |                     | ***DogsMustBeCarried***    | xsd:boolean      | 0:1              | Signale si les chiens doivent être pris dans les bras (ou transporté d’une autre manière) pour pouvoir franchir l’escalator |
 |                     | ***EscalatorWithLanding*** | xsd:boolean      | 0:1              | Signale un escalator avec une zone plate au début ou à la fin                                                               |
 
-<div class="table-title">TravelatorEquipment(tapis roulant) – Element</div>
+<div class="table-title">TravelatorEquipment (tapis roulant) – Élément</div>
 
-|                     |                                |                        |                  |                                                                                                    |
-|---------------------|--------------------------------|------------------------|------------------|----------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**                       | **Type**               | **Cardin­ality** | **Description**                                                                                    |
-| *::>*               | *::>*                          | *PlaceAccessEquipment* | *::>*            | TRAVELATOR hérite de ACCESS EQUIPMENT                                                              |
-| «PK»                | id                             | TravelatorIdtype       | 1:1              | Identifiant du TRAVELATOR.                                                                         |
-|                     | TactileActuators               | xsd:boolean            | 0:1              | Signale une mise en marche par détecteur (tactile ou autre)                                        |
-|                     | EnergySaving                   | xsd:boolean            | 0:1              | Signale un tapis roulant à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé) |
-|                     | Speed                          | SpeedType              | 0:1              | Vitesse du tapis roulant                                                                           |
-|                     | ***Length***                   | LengthType             | 0:1              | Longueur du tapis roulant                                                                          |
-|                     | ***Slope***                    | xsd:Integer            | 0:1              | Pente (en degrés entiers) du tapis roulant                                                         |
-|                     | ***IntegrateAnEscalatorPart*** | xsd:boolean            | 0:1              | Signale la présente d’une partie en escalator                                                      |
+| **Classification** | **Nom**                 | **Type**               | **Cardinalité** | **Description**                                                                                    |
+| ------------------ | ------------------------ | ---------------------- | --------------- | -------------------------------------------------------------------------------------------------- |
+| *::>*              | *::>*                    | *PlaceAccessEquipment* | *::>*           | TRAVELATOR hérite de ACCESS EQUIPMENT                                                              |
+| «PK»               | id                       | TravelatorIdtype       | 1:1             | Identifiant du TRAVELATOR.                                                                         |
+|                    | TactileActuators         | xsd:boolean            | 0:1             | Signale une mise en marche par détecteur (tactile ou autre)                                        |
+|                    | EnergySaving             | xsd:boolean            | 0:1             | Signale un tapis roulant à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé) |
+|                    | Speed                    | SpeedType              | 0:1             | Vitesse du tapis roulant                                                                           |
+|                    | Length                   | LengthType             | 0:1             | Longueur du tapis roulant                                                                          |
+|                    | Gradient                 | xsd:Integer            | 0:1             | Pente (en degrés entiers) du tapis roulant                                                         |
+|                    | IntegrateAnEscalatorPart | xsd:boolean            | 0:1             | Signale la présence d’une partie en escalator                                                      |
 
 <div class="table-title">LiftEquipment (ascenseur) – Element</div>
 
