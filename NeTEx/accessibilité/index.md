@@ -2529,8 +2529,8 @@ Les tableaux ci-dessous fournissent les détails des attributs propres à
 chaque type d'équipement.
 
 Dans un certain nombre de cas, des attributs complémentaires ont été
-demandé pour le profil accessibilité. Pour répondre à cette semande, on
-utilise le mécaniseme d'extension par clé-valeur proposé par NeTEx (voir
+demandés pour le profil accessibilité. Pour répondre à cette demande, on
+utilise le mécanisme d'extension par clef-valeur proposé par NeTEx (KeyList, voir
 le profil Éléments Commun pour plus de détail sur ce mécanisme). Les
 tableaux contenants ces extensions sont présentées à la suite des
 descriptions des objets qu'ils complètent.
@@ -2962,7 +2962,7 @@ passagers)* *–* Element
 |                     |                       |                            |                  |                                                                         |
 |                     | ***SafeForGuideDog*** | *xsd:boolean*              | 0:1              | Signale si l’accès est sans risqué pour un chien guide.                 |
 
-<div class="table-title">CrossingEquipment (croisements et traversées) – Element</div>
+<div class="table-title">CrossingEquipment (croisements et traversées) – Élément</div>
 
 <table>
 <colgroup>
@@ -2975,9 +2975,9 @@ passagers)* *–* Element
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­ality</strong></td>
+<td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -2996,74 +2996,73 @@ passagers)* *–* Element
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>CrossingType</strong></em></td>
-<td>CrossingtTypeEnum</td>
+<td><em>CrossingType</em></td>
+<td>CrossingTypeEnum</td>
 <td>0:1</td>
 <td><p>Type de CROSSING:</p>
 <ul>
-<li><p><em>levelCrossing</em> (passage a niveau)</p></li>
-<li><p><em>barrowCrossing</em> (passage a niveau sans passage à niveau)</p></li>
-<li><p><em>roadCrossing</em> (passage piétion, trzaversée de route)</p></li>
-<li><p><em>roadCrossingWithIsland</em> (passage piéton avec ilot en centre de voirie)</p></li>
-<li><p><em>other</em>( autre)</p></li>
+<li><p><em>levelCrossing</em> (passage à niveau)</p></li>
+<li><p><em>barrowCrossing</em> (passage à niveau sans passage à niveau)</p></li>
+<li><p><em>roadCrossing</em> (passage piéton, traversée de route)</p></li>
+<li><p><em>roadCrossingWithIsland</em> (passage piéton avec îlot en centre de voirie)</p></li>
+<li><p><em>other</em> (autre)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>ZebraCrossing</strong></em></td>
+<td><em>ZebraCrossing</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présence de zebras</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>PedestrianLights</strong></em></td>
+<td><em>PedestrianLights</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présence de feu de signalisation pour le passage</td>
+<td>Signale la présence de feu pour les piétons</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>AcousticDeviceSensors</strong></em></td>
+<td><em>AcousticDeviceSensors</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présence de capteurs de signaux</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>AccousticCrossingAid</strong></em></td>
+<td><em>AcousticCrossingAids</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présence d’une aide acoustique à la traversée</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>TactileGuideStrips</strong></em></td>
+<td><em>TactileGuidanceStrips</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présence de bandes de guidage podotactiles</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>VisualGuidanceBands</strong></em></td>
+<td><em>VisualGuidanceBands</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présence de bandes de guidage visuel</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>DroppedKerb</strong></em></td>
+<td><em>DroppedKerb</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la présence de bateaux (abaissement du trottoir) des deux côtés.</td>
 </tr>
-
 <tr class="odd">
 <td></td>
-<td><em><strong>TactileWarningStrip</strong></em></td>
+<td><em>TactileWarningStrip</em></td>
 <td><em>TactileWarningEnum</em></td>
 <td>0:1</td>
-<td><p>Signale la présence de bandes de d’interception podotactiles (dans le sens du PATHLINK associé):</p>
+<td><p>Signale la présence de bandes d’interception podotactiles (dans le sens du PATHLINK associé):</p>
 <ul>
 <li><p><em>TactileStripAtBeginning</em> (bande d’interception au début)</p></li>
 <li><p><em>TactileStripAtEnd</em> (bande d’interception à la fin)</p></li>
@@ -3074,6 +3073,8 @@ passagers)* *–* Element
 </tr>
 </tbody>
 </table>
+
+
 
 <div class="table-title">EntranceEquipment (entrèes) – Element</div>
 
