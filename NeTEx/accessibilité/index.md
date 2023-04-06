@@ -3264,6 +3264,105 @@ passagers)* *–* Element
 </tbody>
 </table>
 
+<div class="table-title">KeyList pour EntranceEquipment</div>
+
+<table style="width:100%;">
+<tbody>
+<tr class="odd">
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>EntranceImportance</em></td>
+<td><p>Importance de l'entrée :</p>
+<ul>
+<li><p><em>mainEntrance (entrée principale)</em></p></li>
+<li><p><em>secondaryEntrance (entrée secondaire)</em></p></li>
+<li><p><em>siteEntrance (entrée de site)</em></p></li>
+</ul>
+<p>À rapprocher de l'attribut ENTREE.type dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>RampDoorbell</em></td>
+<td><p>Indique si l'entrée dispose d'une sonnette au droit de la rampe. Pertinent uniquement lorsqu'il y a une rampe amovible :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></p></li>
+</ul>
+<p>Correspond à l'attribut ENTREE.rampeSonnette dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>Recognizable</em></td>
+<td><p>Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></p></li>
+</ul>
+<p>Correspond à l'attribut ENTREE.reperabilite dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>DedicatedSign</em></td>
+<td><p>Indique s'il y a une signalétique spécifique à l'entrée :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></p></li>
+</ul>
+<p>Correspond à l'attribut ENTREE.signaletique dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>TurningSpace</em></td>
+<td><p>Position de l'espace de manœuvre :</p>
+<ul>
+<li><p><em>None (pas d'espace de manœuvre)</em></p></li>
+<li><p><em>outside (extérieur)</em></p></li>
+<li><p><em>inside (intérieur)</em></p></li>
+<li><p><em>insideAndOutside (intérieur et extérieur)</em></p></li>
+</ul>
+<p>L'espace de manœuvre est un espace laissé à proximité immédiate de la porte pour la manœuvrer correctement et il se matérialise par un rectangle situé à la base de la porte.</p>
+<p>Correspond à l'attribut ENTREE.espaceManœuvre dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>OutsideTurningSpaceWidth</em></td>
+<td>La plus petite dimension de l'espace de manœuvre extérieur, en mètres arrondis au cm.</td>
+</tr>
+<tr>
+<td><em>OutsideTurningSpaceLength</em></td>
+<td>La plus grande dimension de l'espace de manœuvre extérieur, en mètres arrondis au cm.</td>
+</tr>
+<tr>
+<td><em>InsideTurningSpaceWidth</em></td>
+<td>La plus petite dimension de l'espace de manœuvre intérieur, en mètres arrondis au cm.</td>
+</tr>
+<tr>
+<td><em>InsideTurningSpaceLength</em></td>
+<td>La plus grande dimension de l'espace de manœuvre intérieur, en mètres arrondis au cm.</td>
+</tr>
+<tr>
+<td><em>DoorHandle</em></td>
+<td><p>Le type de poignée :</p>
+<ul>
+<li><p><em>none (pas de poignée)</em></p></li>
+<li><p><em>lever (poignée à levier)</em></p></li>
+<li><p><em>button (bouton)</em></p></li>
+<li><p><em>knob (pommeau)</em></p></li>
+<li><p><em>crashBar (barre antipanique)</em></p></li>
+<li><p><em>landing (poignée palière)</em></p></li>
+<li><p><em>pull (poignée de tirage)</em></p></li>
+<li><p><em>windowLever (levier de fenêtre)</em></p></li>
+<li><p><em>vertical (bâton de maréchal, barre verticale)</em></p></li>
+<li><p><em>other (autre)</em></p></li>
+</ul>
+<p>À rapprocher de l'attribut ENTREE.typePoignée dans le standard CNIG.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
 <div class="table-title">QueueingEquipment (gestion de queue) – Element</div>
 
 |                     |                             |                        |                  |                                                                                            |
