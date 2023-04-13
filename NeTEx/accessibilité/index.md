@@ -3572,16 +3572,16 @@ passagers)* *–* Element
 <td>StepColourContrast</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Indique les le bodure de marche se distingue par un signalement par contraste coloré</td>
+<td>Indique si les bordures de marche se distinguent par un signalement par contraste coloré</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>TypeOfHandrail</td>
+<td>HandrailType</td>
 <td><em>HandrailEnum</em></td>
 <td>0:1</td>
 <td><p>Type de main courante</p>
 <ul>
-<li><p><em>None</em> (aucun)</p></li>
+<li><p><em>none</em> (aucun)</p></li>
 <li><p><em>oneSide</em> (d’un côté seulement)</p></li>
 <li><p><em>bothSides</em> (des deux côtés)</p></li>
 </ul></td>
@@ -3616,7 +3616,7 @@ passagers)* *–* Element
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>WithoutRiser</strong></em></td>
+<td><em>WithoutRiser</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale des marches ouvertes (pas de contremarches)</td>
@@ -3626,12 +3626,11 @@ passagers)* *–* Element
 
 <div class="table-title">StairEnd (extrèmités d’escaliers) – Element</div>
 
-|                     |                           |             |                  |                                                                                                      |
-|---------------------|---------------------------|-------------|------------------|------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**                  | **Type**    | **Cardin­ality** | **Description**                                                                                      |
-|                     | ***Continuing­Handrail*** | xsd:boolean | 0:1              | Signale une main courante continue avec la suite de l’escalier                                       |
-|                     | ***TexturedSurface***     | xsd:boolean | 0:1              | Signale une surface au sol texturée                                                                  |
-|                     | VisualContrast            | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur |
+| **Classifi­cation** | **Name**              | **Type**    | **Cardin­ality** | **Description**                                                                                      |
+| ------------------- | --------------------- | ----------- | ---------------- | ---------------------------------------------------------------------------------------------------- |
+|                     | Continuing­Handrail | xsd:boolean | 0:1              | Signale une main courante continue avec la suite de l’escalier                                       |
+|                     | TexturedSurface     | xsd:boolean | 0:1              | Signale une surface au sol texturée                                                                  |
+|                     | VisualContrast      | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur |
 
 <div class="table-title">StaircaseEquipment (escaliers composé de plusieurs volées)</div>
 *–* Element
@@ -3641,8 +3640,8 @@ passagers)* *–* Element
 | **Classifi­cation** | **Name**            | **Type**         | **Cardin­ality** | **Description**                                                     |
 | *::>*               | *::>*               | *StairEquipment* | *::>*            | STAIRCASE hérite de STAIR EQUIPMENT.                                |
 | «PK»                | id                  | StaircaseIdType  | 1:1              | Identifiant du STAIRCASE.                                           |
-|                     | Continuous­Handrail | xsd:boolean      | 0:1              | Signale une main courante continue avec entre les volées de marches |
-|                     | SpiralStair         | xsd:boolean      | 0:1              | Signale un escalier en spiral                                       |
+|                     | Continuous­Handrail | xsd:boolean      | 0:1              | Signale une main courante continue entre les volées de marches |
+|                     | SpiralStair         | xsd:boolean      | 0:1              | Signale un escalier en spirale                                       |
 |                     | NumberOfFlights     | xsd:integer      | 0:1              | Nombre de volées de marches                                         |
 | «cntd»              | flights             | StairFlight      | 0:\*             | Description des volées de marche constituant l’escalier             |
 
