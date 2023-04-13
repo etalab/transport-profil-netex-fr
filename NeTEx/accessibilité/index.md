@@ -3477,7 +3477,7 @@ passagers)* *–* Element
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
 <td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
@@ -3514,6 +3514,38 @@ passagers)* *–* Element
 <li><p><em>smooth</em> (lisse)</p></li>
 <li><p><em>other</em> (autre)</p></li>
 </ul></td>
+</tr>
+</tbody>
+</table>
+
+<div class="table-title">KeyList pour RoughSurface</div>
+
+<table style="width:100%;">
+<tbody>
+<tr class="odd">
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>RemainingWidth</em></td>
+<td><p>La largeur de passage utile restante sur le cheminement lors du contournement de la surface accidentée, en mètres arrondis au cm.</p>
+<p>À rapprocher de l'attribut OBSTACLE.largeurUtile dans le standard CNIG.</p></td>
+</tr>
+<tr>
+<td><em>Length</em></td>
+<td><p>La longueur de l'obstacle, en mètres arrondis au cm.</p>
+<p>Si la surface accidentée présente une longueur importante, un SitePathLink dédié sera plus adapté à sa représentation.</p>
+<p>À rapprocher de l'attribut OBSTACLE.longueurObstacle dans le standard CNIG.</p></td>
+</tr>
+<tr>
+<td><em>VisualContrast</em></td>
+<td><p>Indique si un contraste visuel est présent par rapport à l'environnement immédiat :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></li>
+</ul>
+<p>Correspond à l'attribut OBSTACLE.reperabiliteVisuelle dans le standard CNIG.</p>
+</td>
 </tr>
 </tbody>
 </table>
