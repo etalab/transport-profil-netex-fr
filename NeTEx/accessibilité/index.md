@@ -3889,6 +3889,52 @@ passagers)* *–* Element
 </tbody>
 </table>
 
+<div class="table-title">KeyList pour LiftEquipment</div>
+
+<table style="width:100%;">
+<tbody>
+<tr class="odd">
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>MonitoringRemoteControl</em></td>
+<td><p>Indique si l’ascenseur est équipé d’un système de contrôle du fonctionnement à distance :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></li>
+</ul>
+<p>Correspond à l'attribut ASCENSEUR.supervision dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>ReachedFloorAnnouncement</em></td>
+<td><p>Indique si la cabine d’ascenseur dispose d’un affichage visuel, tactile ou sonore permettant d’annoncer l’étage atteint, sous la forme d'une liste de valeurs énumérées :</p>
+<ul>
+<li><p><em>none</em> (aucun)</p></li>
+<li><p><em>visual</em> (visuel)</p></li>
+<li><p><em>tactile</em> (tactile)</p></li>
+<li><p><em>audio</em> (sonore)</p></li>
+</ul>
+<p>À rapprocher de l'attribut ASCENSEUR.signalEtage dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>OtherExitDoors</em></td>
+<td><p>Indique la position des portes de sortie aux étages lorsqu'elle est différente de celle du rez-de-chaussée :</p>
+<ul>
+<li><p><em>none (position identique à tous les étages)</em></p></li>
+<li><p><em>left (porte à gauche)</em></p></li>
+<li><p><em>right (porte à droite)</em></p></li>
+<li><p><em>opposide (porte en face)</em></p></li>
+</ul>
+<p>Pour choisir le côté, on considère qu'on rentre dans l'ascenseur au rez-de-chaussée et sans se retourner.</p>
+<p>Correspond à l'attribut ASCENSEUR.autrePorteSortie dans le standard CNIG.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Sign Equipment
 
 <div class="table-title">SignEquipment (signalétique) – Element</div>
