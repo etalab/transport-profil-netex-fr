@@ -3464,7 +3464,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">RoughSurface (surface irrégulière) – Element</div>
+<div class="table-title">RoughSurface (surface irrégulière) – Élément</div>
 
 <table>
 <colgroup>
@@ -3479,7 +3479,7 @@ passagers)* *–* Element
 <td><strong>Classifi­cation</strong></td>
 <td><strong>Name</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­ality</strong></td>
+<td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -3501,7 +3501,7 @@ passagers)* *–* Element
 <td>SurfaceType</td>
 <td>SurfaceEnum</td>
 <td>1:1</td>
-<td><p>Type of Surface.</p>
+<td><p>Type de surface.</p>
 <ul>
 <li><p><em>asphalt</em> (asphalte)</p></li>
 <li><p><em>bricks</em> (brique)</p></li>
@@ -3515,7 +3515,6 @@ passagers)* *–* Element
 <li><p><em>other</em> (autre)</p></li>
 </ul></td>
 </tr>
-
 </tbody>
 </table>
 
