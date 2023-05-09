@@ -204,6 +204,11 @@ l'Accessibilité. Ce modèle a pour but de décrire l'accessibilité
 des cheminements extérieurs en voirie, typiquement des trottoirs
 reliant un arrêt de transport en commun à l’entrée d’un ERP.
 
+Des compléments issus de l'ontologie du projet OpenStreetMap ont également
+été apportés au document. OpenStreetMap (OSM) est un projet collaboratif
+de cartographie proposant une base de données géographiques libre du monde
+entier.
+
 Si la première motivation pour la définition de ce profil est bien
 l'accessibilité, cet objet n'est en aucun cas limitatif et les
 informations contenues (en particulier concernant les équipements et les
@@ -2195,7 +2200,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>discomfortable (dégradation entraînant une difficulté d'usage ou d'inconfort)</em></p></li>
 <li><p><em>hazardous (dégradation entraînant un problème de sécurité immédiat)</em></p></li>
 </ul>
-<p>À rapprocher de l'attribut CIRCULATION.etatRevetement dans le standard CNIG</p>
+<p>À rapprocher de l'attribut CIRCULATION.etatRevetement dans le standard CNIG et du tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:smoothness">smoothness</a>.</p>
 </td>
 </tr>
 <tr>
@@ -5054,3 +5059,7 @@ Identification of Fixed Objects in Public Transport (IFOPT)
 Standard CNIG Accessibilité du cheminement en voirie : 
 http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessibilite_v2022-05.pdf 
 (v2021-10 rev. 2022-05)
+
+Documentation collaborative sur la cartographie des cheminements piétons
+et de l'accessibilité dans OpenStreetMap : 
+https://wiki.openstreetmap.org/wiki/FR:Cheminements_pi%C3%A9tons
