@@ -2650,7 +2650,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">SanitaryEquipment (sanitaires) – Element</div>
+<div class="table-title">SanitaryEquipment (sanitaires) – Élément</div>
 
 <table>
 <colgroup>
@@ -2663,9 +2663,9 @@ passagers)* *–* Element
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­ality</strong></td>
+<td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -2711,18 +2711,12 @@ passagers)* *–* Element
 <li><p><em>wheelchairBabyChange</em> (espace bébé accessibles en fauteil roulant)</p></li>
 </ul></td>
 </tr>
-
-
-
-
-
-
 <tr class="odd">
 <td></td>
 <td>Wheelchair­TurningCircle</td>
 <td>LengthType</td>
 <td>0:1</td>
-<td>Rayoon de braquage pour les fauteils roulants</td>
+<td>Rayon de braquage pour les fauteils roulants</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -2758,7 +2752,7 @@ passagers)* *–* Element
 <td><em><strong>SupportBarHeigth</strong></em></td>
 <td>xsd:decimal</td>
 <td>0:1</td>
-<td>Hauteur de la barre de support (qund il y en a une)</td>
+<td>Hauteur de la barre de support (quand il y en a une)</td>
 </tr>
 <tr class="odd">
 <td></td>
