@@ -2915,15 +2915,14 @@ passagers)* *–* Element
 |                     | ***Heated***          | xsd:boolean     | 0:1              | Signale s’il l’espace est chauffé                         |
 |                     | ***AirConditioned***  | xsd:boolean     | 0:1              | Signale s’il l’espace est climatisé                       |
 
-<div class="table-title">SeatingEquipment (sièges) – Element</div>
+<div class="table-title">SeatingEquipment (sièges) – Élément</div>
 
-|                     |                     |                        |                  |                                               |
-|---------------------|---------------------|------------------------|------------------|-----------------------------------------------|
-| **Classifi­cation** | **Name**            | **Type**               | **Cardin­ality** | **Description**                               |
-| *::>*               | *::>*               | *WaitingEquipment*     | *::>*            | SEATING EQUIPMENT hérite de WAITING EQUIPMENT |
-| «PK»                | id                  | SeatingEquipmentIdType | 1:1              | Identifiant du SEATING EQUIPMENT.             |
-|                     | ***Armrest***       | *xsd:boolean*          | 0:1              | Signale s’il le siège dispose d’un acoudoir   |
-|                     | ***SeatingHeight*** | *xsd:decimal*          | 0:1              | Hauteur de l’assise en cm                     |
+| Classifi­cation  | Nom           | Type                   | Cardin­alité  | Description                                   |
+| --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
+| *::>*           | *::>*         | *WaitingEquipment*     | *::>*        | SEATING EQUIPMENT hérite de WAITING EQUIPMENT |
+| «PK»            | id            | SeatingEquipmentIdType | 1:1          | Identifiant du SEATING EQUIPMENT.             |
+|                 | Armrest       | xsd:boolean            | 0:1          | Signale si le siège dispose d’un accoudoir    |
+|                 | SeatingHeight | xsd:decimal            | 0:1          | Hauteur de l’assise en cm                     |
 
 <div class="table-title">ShelterEquipment (abris) – Element</div>
 
