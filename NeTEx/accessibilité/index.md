@@ -3096,6 +3096,16 @@ passagers)* *–* Element
 </td>
 </tr>
 <tr>
+<td><em>VibratingCrossingAids</em></td>
+<td><p>Signale la présence d'un dispositif délivrant des vibrations pour faciliter la traversée des déficients visuels :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></p></li>
+</ul>
+<p>Correspond aux tags OpenStreetMap <a target='_blank' href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:vibration'>traffic_signals:vibration</a> et <a target='_blank' href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:floor_vibration'>traffic_signals:floor_vibration</a>.</p>
+</td>
+</tr>
+<tr>
 <td><em>BumpCrossing</em></td>
 <td><p>Indique si la traversée piétonne est convexe, bombée (elle monte puis descend) :</p>
 <ul>
@@ -3119,6 +3129,19 @@ passagers)* *–* Element
 </ul>
 <p>Le masque visuel doit être positionné à 5 mètres en amont de la traversée et permettre aux piétons et aux automobilistes de se voir.</p>
 <p>À rapprocher de l'attribut TRAVERSEE.covisibilite dans le standard CNIG.</p>
+</td>
+</tr>
+<tr>
+<td><em>BollardCrossing</em></td>
+<td><p>Indique la présence de potelets destinés à protéger les piétons :</p>
+<ul>
+<li><p><em>none (pas de potelets)</em></p></li>
+<li><p><em>contrasted : potelets de part et d'autre et bien contrastés par rapport à l'environnement</em></p></li>
+<li><p><em>yes : potelets de part et d'autre de la traversée</em></p></li>
+<li><p><em>partial : potelets uniquement d'un côté de la traversée</em></p></li>
+<li><p><em>limited : potelets présents trop bas ou mal positionnés par rapport à la traversée</em></p></li>
+</ul>
+<p>Correspond au tag OpenStreetMap <a target='_blank' href='https://wiki.openstreetmap.org/wiki/Key:crossing:bollard'>crossing:bollard</a>.</p>
 </td>
 </tr>
 </tbody>
