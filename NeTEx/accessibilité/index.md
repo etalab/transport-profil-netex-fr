@@ -2212,6 +2212,37 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <p>Correspond à l'attribut TRONCON_CHEMINEMENT.statutVoie dans le standard CNIG</p>
 </td>
 </tr>
+<tr>
+<td><em>TactileGuidingStripContrast</em></td>
+<td><p>indique si la couleur de l'éventuelle bande de guidage constraste suffisamment avec la couleur du sol :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></li>
+</ul>
+<p>À rapprocher du tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:tactile_paving">tactile_paving</a>.</p>
+</td>
+</tr>
+<tr>
+<td><em>TactileGuidingStripStatus</em></td>
+<td><p>Fournit des détails supplémentaires sur l'éventuelle bande de guidage :</p>
+<ul>
+<li><p><em>primitive : lorsqu'il n'y a pas de bande de guidage à proprement parler mais qu'un élément de décor ou un rebord peut être utilisé à cet effet</em></p></li>
+<li><p><em>incorrect : lorsqu'il existe une bande de guidage mais qu'elle ne correspond pas à un cheminement réellement empruntable (passe au milieu d'un obstacle sans le coutourner par exemple)</em></p></li>
+<li><p><em>bad : lorsque la bande de guidage est dégradée et difficile à interpréter</em></p></li>
+</ul>
+<p>À rapprocher du tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:tactile_paving">tactile_paving</a>.</p>
+</td>
+</tr>
+<tr>
+<td><em>TactileWarningStripContrast</em></td>
+<td><p>indique si la couleur des bandes d'éveil à la vigilance aux extrémités constraste suffisamment avec la couleur du sol :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></li>
+</ul>
+<p>À rapprocher du tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:tactile_paving">tactile_paving</a>.</p>
+</td>
+</tr>
 </tbody>
 </table>
 
