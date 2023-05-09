@@ -2764,6 +2764,48 @@ passagers)* *–* Element
 </tbody>
 </table>
 
+<div class="table-title">KeyList pour SanitaryEquipment</div>
+
+<table style="width:100%;">
+<tbody>
+<tr>
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>HandWashing</em></td>
+<td><p>Indique si les sanitaires disposent d'un lavabo permettant un lavage des mains avec du savon :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></li>
+</ul>
+<p>Correspond au tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing">toilets:handwashing</a>.</p>
+</td>
+</tr>
+<tr>
+<td><em>DrinkingWater</em></td>
+<td><p>Indique si le robinet à l'intérieur des sanitaires fournit de l'eau potable :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></li>
+</ul>
+<p>Correspond au tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:drinking_water">drinking_water</a>.</p>
+</td>
+</tr>
+<tr>
+<td><em>ToiletsPosition</em></td>
+<td><p>Indique la position d'utilisation des toilettes, sous la forme d'une liste de valeurs énumérées :</p>
+<ul>
+<li><p><em>seated (position assise)</em></p></li>
+<li><p><em>urinal (position debout)</em></p></li>
+<li><p><em>squat (position accroupie)</em></p></li>
+</ul>
+<p>Correspond au tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/Key:toilets:position">toilets:position</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
 <div class="table-title">RubbishDisposalEquipment (poubelles) – Element</div>
 
 |                     |                      |                                 |                  |                                                              |
