@@ -2924,6 +2924,27 @@ passagers)* *–* Element
 |                 | Armrest       | xsd:boolean            | 0:1          | Signale si le siège dispose d’un accoudoir    |
 |                 | SeatingHeight | xsd:decimal            | 0:1          | Hauteur de l’assise en cm                     |
 
+<div class="table-title">KeyList pour SeatingEquipment</div>
+
+<table style="width:100%;">
+<tbody>
+<tr>
+<td><strong>Clef</strong></td>
+<td><strong>Valeurs et description</strong></td>
+</tr>
+<tr>
+<td><em>BackRest</em></td>
+<td><p>Signale si le siège dispose d'un dossier pour reposer son dos :</p>
+<ul>
+<li><p><em>true</em></p></li>
+<li><p><em>false</em></li>
+</ul>
+<p>Correspond au tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:backrest">backrest</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
 <div class="table-title">ShelterEquipment (abris) – Element</div>
 
 |                     |                                |                        |                  |                                                              |
