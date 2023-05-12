@@ -3529,13 +3529,13 @@ passagers)* *–* Element
 <tr>
 <td><em>RemainingWidth</em></td>
 <td><p>La largeur de passage utile restante sur le cheminement lors du contournement de la surface accidentée, en mètres arrondis au cm.</p>
-<p>À rapprocher de l'attribut OBSTACLE.largeurUtile dans le standard CNIG.</p></td>
+<p>À rapprocher de l'attribut OBSTACLE.largeurUtile dans le standard CNIG et du tag OpenStreetMap maxwidth:physical.</p></td>
 </tr>
 <tr>
 <td><em>Length</em></td>
 <td><p>La longueur de l'obstacle, en mètres arrondis au cm.</p>
 <p>Si la surface accidentée présente une longueur importante, un SitePathLink dédié sera plus adapté à sa représentation.</p>
-<p>À rapprocher de l'attribut OBSTACLE.longueurObstacle dans le standard CNIG.</p></td>
+<p>À rapprocher de l'attribut OBSTACLE.longueurObstacle dans le standard CNIG et du tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:length">length</a>.</p></td>
 </tr>
 <tr>
 <td><em>VisualContrast</em></td>
