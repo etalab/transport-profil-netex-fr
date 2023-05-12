@@ -3075,7 +3075,7 @@ passagers)* *–* Element
 </tbody>
 </table>
 
-<div class="table-title">EntranceEquipment (entrèes) – Element</div>
+<div class="table-title">EntranceEquipment (entrées) – Élément</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -3279,8 +3279,10 @@ passagers)* *–* Element
 <li><p><em>mainEntrance (entrée principale)</em></p></li>
 <li><p><em>secondaryEntrance (entrée secondaire)</em></p></li>
 <li><p><em>siteEntrance (entrée de site)</em></p></li>
+<li><p><em>serviceEntrance (entrée de service, principalement pour les employés et les livraisons)</em></p></li>
+<li><p><em>emergencyEntrance (sortie de secours)</em></p></li>
 </ul>
-<p>À rapprocher de l'attribut ENTREE.type dans le standard CNIG.</p>
+<p>À rapprocher de l'attribut ENTREE.type dans le standard CNIG et du tag OpenStreetMap <a target="_blank" href="https://wiki.openstreetmap.org/wiki/FR:Key:entrance">entrance</a>.</p>
 </td>
 </tr>
 <tr>
@@ -3317,7 +3319,7 @@ passagers)* *–* Element
 <td><em>TurningSpace</em></td>
 <td><p>Position de l'espace de manœuvre :</p>
 <ul>
-<li><p><em>None (pas d'espace de manœuvre)</em></p></li>
+<li><p><em>none (pas d'espace de manœuvre)</em></p></li>
 <li><p><em>outside (extérieur)</em></p></li>
 <li><p><em>inside (intérieur)</em></p></li>
 <li><p><em>insideAndOutside (intérieur et extérieur)</em></p></li>
@@ -3357,7 +3359,7 @@ passagers)* *–* Element
 <li><p><em>vertical (bâton de maréchal, barre verticale)</em></p></li>
 <li><p><em>other (autre)</em></p></li>
 </ul>
-<p>À rapprocher de l'attribut ENTREE.typePoignée dans le standard CNIG.</p>
+<p>À rapprocher de l'attribut ENTREE.typePoignée dans le standard CNIG et du tag OpenStreetMap door:handle.</p>
 </td>
 </tr>
 </tbody>
