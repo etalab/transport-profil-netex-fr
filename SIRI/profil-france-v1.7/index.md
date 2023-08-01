@@ -80,7 +80,7 @@ par l’ensemble de documents normatifs suivants :
 - NEPTUNE : Projet de norme AFNOR - PR NF P99-506 Décembre 2009
 
 Dans le document, les règles propres au profil sont présentées sur
-<span class="mark">fond gris</span>. Les autres règles ont plus un rôle
+<span class="m_fr">fond gris</span>. Les autres règles ont plus un rôle
 d'explication, d'accompagnement ou de recommandation.
 
 Ce document est structuré en quatre parties :
