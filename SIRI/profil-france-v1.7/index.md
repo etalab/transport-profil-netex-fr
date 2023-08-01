@@ -1975,9 +1975,13 @@ La liste des identifiants secondaires est spécifique à chaque
 fournisseur. Voir aussi PrivateCode du GroupOfEntities pour les
 identifiants alternatifs:
 
+<div class="no_h">
+
 | KL-1 | Les KeyList ne sont à utiliser que s'il y a plusieurs identifiants alternatifs, et si elles sont utilisées, le PrivateCode doit impérativement être aussi renseigné.                                              |
 |------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | KL-2 | Il est interdit, dans le profil, d’utiliser le système de clé/valeur pour décrire des informations qui pourraient être fournies avec des attributs SIRI existants (même s’ils ne sont pas retenus par le profil). |
+
+</div>
 
 #### Structure Extension
 
