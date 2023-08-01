@@ -28,6 +28,12 @@ mark, .mark {
     animation: none  !important;
 }
 
+.m_hub {
+    background-color: #00FF00 !important;
+    color: 000 !important;
+    animation: none  !important;
+}
+
 .no_h th {
     font-weight: normal;
 }
@@ -664,7 +670,7 @@ indiquée (‘choice’ au niveau XSD).
 
 Si la cardinalité SIRI est précisée pour le profil SIRI France, cela
 sera aussi noté, en complément dans cette colonne et
-<span class="mark">surligné en gris.</span>
+<span class="m_fr">surligné en gris.</span>
 
 Les différentes possibilités d'exprimer la cardinalité sont donc les
 suivantes :
@@ -674,12 +680,12 @@ suivantes :
   1:1 » ou « 1:\* » signifient que le champ est obligatoire). Ces champs
   font partie du profil SIRI France.
 
-- En noir <span class="mark">surligné en gris</span>: la cardinalité du
+- En noir <span class="m_fr">surligné en gris</span>: la cardinalité du
   document normatif SIRI est précisée par le profil SIRI France (pour
   rendre un champ facultatif obligatoire ). C'est alors la version
-  <span class="mark">surlignée en gris</span> qui s'applique.
+  <span class="m_fr">surlignée en gris</span> qui s'applique.
 
-- En noir <span class="mark">surligné en vert</span> : la cardinalité du
+- En noir <span class="m_hub">surligné en vert</span> : la cardinalité du
   document normatif SIRI est précisée par le profil SIRI France pour la
   mise en place des concentrateurs . En effet, les concentrateurs ont
   des spécificités, en particulier en terme de volumétrie et de mise en
