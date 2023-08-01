@@ -6,6 +6,30 @@ tags: ["SIRI"]
 autonumbering: true
 ---
 
+<style type="text/css" rel="stylesheet">
+  /* temporary CSS used here to let us customize while versioning for clarity
+     will ultimately be moved to the main.css in transport-normes-site */
+
+mark, .mark {
+    background-color: red;
+    color: white;
+    animation: blink-live 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes blink-live{
+    0% { opacity: 1.0; }
+    50% { opacity: 0.1; }
+    100% { opacity: 1.0; }
+}
+
+.m_fr {
+    background-color: #c0c0c0 !important;
+    color: 000 !important;
+    animation: none  !important;
+}
+
+</style>
+
 Profil d'échange pour la description des informations temps-réel des
 réseaux de transport en commun
 
