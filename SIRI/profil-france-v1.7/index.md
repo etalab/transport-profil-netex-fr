@@ -1167,7 +1167,7 @@ objets ci-dessous, toute information disponible est supposée être
 fournie (mais on ne crée pas d’information si elle n’est pas
 disponible).
 
-Table 1 – *Concepts relatifs à la LOM et à la Règlementation Européenne*
+**Table 1 – Concepts relatifs à la LOM et à la Règlementation Européenne**
 
 <table>
 <colgroup>
@@ -1460,7 +1460,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 **Règles de gestion**
 
-<table>
+<table class="no_h">
 <colgroup>
 <col style="width: 4%" />
 <col style="width: 95%" />
@@ -1482,8 +1482,6 @@ doit donc contenir toutes les informations.</p></td>
 </tr>
 </tbody>
 </table>
-
-## 
 
 ### Protocoles d’échange des données SIRI
 
