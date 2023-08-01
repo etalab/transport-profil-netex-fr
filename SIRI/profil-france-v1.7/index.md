@@ -2155,8 +2155,12 @@ retour de l’appel fonctionnel SOAP).</span>
 segmenter les messages (découper un grand message en un ensemble de
 messages plus petits, qu'il faudra ré-assembler).</span>
 
+<div class="no_h">
+
 | R020 | <span class="mark">La segmentation des messages peut être intéressante si les échanges sont réalisés sur des réseaux de communication fortement contraints, mais ne présente pas d'intérêt dans le cadre du profil France, et n'est donc **pas retenue**.</span> |
 |------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 ### Vérification de la disponibilité des partenaires
 
@@ -2184,7 +2188,7 @@ d’assurer cette surveillance :
     message pendant une durée supérieure au délai paramétré, c'est que
     la communication avec le système distant n'est plus possible.
 
-<table>
+<table class="no_h">
 <colgroup>
 <col style="width: 7%" />
 <col style="width: 92%" />
@@ -2215,11 +2219,15 @@ n'ont plus eu d’échange avec le système distant depuis un certain temps
 
 <span class="mark">Dans le cadre du profil SIRI France :</span>
 
+<div class="no_h">
+
 | R035 | <span class="mark">Le champ facultatif au niveau SIRI «Status» sera toujours présent, dans le profil France, et égal à « true » si le système est parfaitement opérationnel, et à « false » s’il est en mesure de recevoir les requêtes, mais dans l'impossibilité d'y apporter une réponse (contact avec le gestionnaire de données perdu, etc.)</span> |
 |------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | R040 | <span class="mark">Le champ facultatif au niveau «ErrorCondition» reste facultatif, au niveau du profil France, si aucune erreur n’est détectée, mais devra obligatoirement être présent et instancié à chaque fois qu'une erreur sera détectée.</span>                                                                                                  |
 | R045 | <span class="mark">Les champs facultatifs de «SuccessInfoGroup» restent facultatifs.</span>                                                                                                                                                                                                                                                              |
 | R050 | <span class="mark">Le champ facultatif au niveau SIRI «ServiceStartedTime» sera toujours présent dans le profil France, et instancié avec l'heure du dernier démarrage du système.</span>                                                                                                                                                                |
+
+</div>
 
 ### Utilisation des WSDL
 
@@ -2227,8 +2235,12 @@ Les WSDL introduites ci-dessus, permettent de décrire complètement
 l'interface des services SIRI dans le contexte de Web Service de type
 SOAP.
 
+<div class="no_h">
+
 | R055 | <span class="mark">Dans le cadre du profil France, seuls les encodages *RPC-Literal* et *Document-Literal-Wrapped* sont supportés.</span> |
 |------|-------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 ### Gestion des filtres multiples
 
@@ -2255,8 +2267,12 @@ un mécanisme de filtres multiples permettant aux clients de recevoir,
 dans une unique notification, les informations issues de l'ensemble des
 abonnements : c'est le mécanisme de filtres multiples sur un abonnement.
 
+<div class="no_h">
+
 | R060 | <span class="mark">En cohérence avec le choix des notifications à une phase, le profil SIRI France retient ce <u>mécanisme de filtres multiples</u> qui devra donc être mis en œuvre à chaque fois que les services d'abonnement seront retenus (cela permettra de recevoir plusieurs informations dans une même réponse ou notification, et donc limiter le nombre de messages).</span> |
 |------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 ### Structuration XML
 
