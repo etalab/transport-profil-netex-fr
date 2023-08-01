@@ -289,8 +289,7 @@ logique, selon les implémentations, par l’intermédiaire d’une
 affectation (STOP ASSIGNMENT). La figure ci-après illustre ces relations
 (Profil NeTEx France \[R11.4\]).
 
-<img src="SIRI/profil-france-v1.7/media/image1.png"
-style="width:7.16528in;height:3.37222in" />
+![image](media/image1.png)
 
 ## Définitions de « Départ » et « Arrivée »
 
@@ -4310,16 +4309,14 @@ positionnées dans un RecordedCall.
 
 Les trames ET ne contiennent que des EstimatedCall
 
-<img src="SIRI/profil-france-v1.7/media/image2.png"
-style="width:5.90903in;height:1.01944in" />
+![image](media/image2.png)
 
 **Pendant la course**
 
 Les informations relatives aux arrêts déjà désservis sont transmises
 dans les structures RecordedCall.
 
-<img src="SIRI/profil-france-v1.7/media/image3.png"
-style="width:4.74028in;height:1.01944in" />
+![image](media/image3.png)
 
 **A l’arrêt**
 
@@ -7687,8 +7684,7 @@ Cette structure spécifique constitue le mécanisme de filtrage du service
 « General Message » et s'insère au sein de l'élément **extension** de la
 requête.
 
-<img src="SIRI/profil-france-v1.7/media/image4.png"
-style="width:3.53056in;height:3.82639in" />
+![image](media/image4.png)
 
 <table>
 <colgroup>
@@ -7732,8 +7728,7 @@ etc.)</mark></p></li>
 
 ### Structure spécifique des messages pour le profil FR
 
-<img src="SIRI/profil-france-v1.7/media/image5.png"
-style="width:4.73889in;height:7.65208in" />
+![image](media/image5.png)
 
 <span class="mark">Cette structure correspond au champ *Content* de la
 structure *Infomessage*.</span>
