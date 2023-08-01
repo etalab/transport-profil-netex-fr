@@ -1167,8 +1167,6 @@ objets ci-dessous, toute information disponible est supposée être
 fournie (mais on ne crée pas d’information si elle n’est pas
 disponible).
 
-### 
-
 Table 1 – *Concepts relatifs à la LOM et à la Règlementation Européenne*
 
 <table>
