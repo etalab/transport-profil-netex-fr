@@ -2053,25 +2053,13 @@ un certain nombre de précisions dans le cadre du profil France.
 Ainsi, la norme SIRI propose deux méthodes pour accéder à l'information
 :
 
-1.  Les **requêtes directes**, générant immédiatement une, et une seule,
+* 1 - Les **requêtes directes**, générant immédiatement une, et une seule,
     réponse portant les informations demandées ;
+* 2 - Un mécanisme d'abonnement où la même requête est soumise, mais pour laquelle on recevra régulièrement des mises à jour des informations au fur et à mesure de leur évolution. Ce mécanisme d'abonnement propose lui-même deux variantes:
+  * a) un mécanisme de notification à deux phases (fetched delivery) : lors d'une évolution des données on reçoit une indication de « mise à jour disponible » et on peut alors aller chercher les données en question auprès du serveur, via une nouvelle requête ;
+  * b) un mécanisme de notification à une phase (direct delivery) : lors d'une évolution des données on reçoit directement les données mises à jour.
 
-2.  Un mécanisme d'abonnement où la même requête est soumise, mais pour
-    laquelle on recevra régulièrement des mises à jour des informations
-    au fur et à mesure de leur évolution.
-
-> Ce mécanisme d'abonnement propose lui-même deux variantes:
-
-1.  un mécanisme de notification à deux phases (fetched delivery) : lors
-    > d'une évolution des données on reçoit une indication de « mise à
-    > jour disponible » et on peut alors aller chercher les données en
-    > question auprès du serveur, via une nouvelle requête ;
-
-2.  un mécanisme de notification à une phase (direct delivery) : lors
-    > d'une évolution des données on reçoit directement les données
-    > mises à jour.
-
-<table>
+<table class="no_h">
 <colgroup>
 <col style="width: 7%" />
 <col style="width: 92%" />
