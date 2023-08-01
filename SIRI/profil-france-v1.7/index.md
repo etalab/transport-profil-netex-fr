@@ -13,7 +13,7 @@ réseaux de transport en commun
 
 **BNTRA-CN03-GT7_NF Profil SIRI FR_v1.7 20230727**
 
-<span id="_Toc5293724" class="anchor"></span>Avant-propos
+**Avant-propos**
 
 Ce document présente de façon détaillée le profil SIRI National France
 (également appelé « local agreement SIRI France »), soit la déclinaison
@@ -95,7 +95,7 @@ reproduits avec l’accord de l’AFNOR. Seul le texte original et complet
 de la norme telle que diffusée par l'AFNOR – accessible via le site
 Internet www.afnor. org – possède une valeur normative.
 
-<span id="_Toc109133980" class="anchor"></span>Introduction
+**Introduction**
 
 La norme SIRI (Service Interface for Real time Information) définit le
 protocole d’échange de l’information Temps Réel pour les transports
