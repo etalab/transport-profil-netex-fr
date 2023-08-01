@@ -11,27 +11,11 @@ autonumbering: true
      will ultimately be moved to the main.css in transport-normes-site */
 
 mark, .mark {
-    background-color: red;
-    color: white;
-    animation: blink-live 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-
-@keyframes blink-live{
-    0% { opacity: 1.0; }
-    50% { opacity: 0.1; }
-    100% { opacity: 1.0; }
-}
-
-.m_fr {
-    background-color: #c0c0c0 !important;
-    color: 000 !important;
-    animation: none  !important;
+    background-color: #c0c0c0;
 }
 
 .m_hub {
-    background-color: #00FF00 !important;
-    color: 000 !important;
-    animation: none  !important;
+    background-color: #00FF00;
 }
 
 .no_h th {
@@ -90,7 +74,7 @@ par l’ensemble de documents normatifs suivants :
 - NEPTUNE : Projet de norme AFNOR - PR NF P99-506 Décembre 2009
 
 Dans le document, les règles propres au profil sont présentées sur
-<span class="m_fr">fond gris</span>. Les autres règles ont plus un rôle
+<span class="mark">fond gris</span>. Les autres règles ont plus un rôle
 d'explication, d'accompagnement ou de recommandation.
 
 Ce document est structuré en quatre parties :
@@ -382,7 +366,7 @@ La description des services SIRI fait référence à une structure LEADER.
 
 <div class="no_h">
 
-| LEADER | <span class="m_fr">:::</span> | 1:1 | xxx­Delivery | voir xxx**Delivery**. |
+| LEADER | <span class="mark">:::</span> | 1:1 | xxx­Delivery | voir xxx**Delivery**. |
 |--------|-------------------------------|-----|-------------|-----------------------|
 
 </div>
@@ -569,10 +553,10 @@ Le present profil contient un ensemble de règles de gestion applicables.
 Ces règles de gestion sont présentées sous forme tabulaire et
 numérotées.
 
-| Numéro | <span class="m_fr">Intitulé de la règle</span> |
+| Numéro | <span class="mark">Intitulé de la règle</span> |
 |--------|------------------------------------------------|
 
-<span class="m_fr">Des textes explicatifs viennent compléter les règles
+<span class="mark">Des textes explicatifs viennent compléter les règles
 d’application du profil FR</span>.
 
 ## Conventions & Représention des messages
@@ -580,7 +564,7 @@ d’application du profil FR</span>.
 Les messages constituant ce profil d'échange sont décrits en adoptant un
 formalisme tabulaire. Les tableaux proposent ces colonnes:
 
-<table class="m_fr">
+<table class="mark">
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 14%" />
@@ -670,7 +654,7 @@ indiquée (‘choice’ au niveau XSD).
 
 Si la cardinalité SIRI est précisée pour le profil SIRI France, cela
 sera aussi noté, en complément dans cette colonne et
-<span class="m_fr">surligné en gris.</span>
+<span class="mark">surligné en gris.</span>
 
 Les différentes possibilités d'exprimer la cardinalité sont donc les
 suivantes :
@@ -680,10 +664,10 @@ suivantes :
   1:1 » ou « 1:\* » signifient que le champ est obligatoire). Ces champs
   font partie du profil SIRI France.
 
-- En noir <span class="m_fr">surligné en gris</span>: la cardinalité du
+- En noir <span class="mark">surligné en gris</span>: la cardinalité du
   document normatif SIRI est précisée par le profil SIRI France (pour
   rendre un champ facultatif obligatoire ). C'est alors la version
-  <span class="m_fr">surlignée en gris</span> qui s'applique.
+  <span class="mark">surlignée en gris</span> qui s'applique.
 
 - En noir <span class="m_hub">surligné en vert</span> : la cardinalité du
   document normatif SIRI est précisée par le profil SIRI France pour la
