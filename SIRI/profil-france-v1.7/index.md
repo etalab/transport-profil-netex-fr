@@ -28,6 +28,10 @@ mark, .mark {
     animation: none  !important;
 }
 
+.no_h th {
+    font-weight: normal;
+}
+
 </style>
 
 Profil d'échange pour la description des informations temps-réel des
@@ -305,8 +309,12 @@ référence aux concepts Transmodel \[R1\] suivants :
 
 - Pole Monomodal (STOP PLACE).
 
+<div class="no_h">
+
 | DEF.1 | Chacun de ces points d’arrêt doit disposer d’un identifiant spécifique indépendamment de son type. |
 |-------|----------------------------------------------------------------------------------------------------|
+
+</div>
 
 Le point d’arrêt physique peut être ou non rattaché à un point d’arrêt
 logique, selon les implémentations, par l’intermédiaire d’une
@@ -366,14 +374,24 @@ le véhicule ne s'arrête pas réellement).
 
 La description des services SIRI fait référence à une structure LEADER.
 
-| LEADER | <span class="mark">:::</span> | 1:1 | xxx­Delivery | voir xxx**Delivery**. |
+<div class="no_h">
+
+| LEADER | <span class="m_fr">:::</span> | 1:1 | xxx­Delivery | voir xxx**Delivery**. |
 |--------|-------------------------------|-----|-------------|-----------------------|
+
+</div>
 
 Le Leader est (indirectement) défini dans la spécification SIRI \[R6\]
 par les attributs suivants :
 
+<div class="no_h">
+
 | xxxDelivery |     | +Structure | Réponse pour le service xxx. |
 |-------------|-----|------------|------------------------------|
+
+</div>
+
+<div class="no_h">
 
 <table>
 <colgroup>
@@ -525,6 +543,8 @@ envoyées.</td>
 </tbody>
 </table>
 
+</div>
+
 ## Référentiel théorique
 
 Le référentiel théorique est l’objet d’un accord entre les parties.
@@ -543,10 +563,10 @@ Le present profil contient un ensemble de règles de gestion applicables.
 Ces règles de gestion sont présentées sous forme tabulaire et
 numérotées.
 
-| Numéro | <span class="mark">Intitulé de la règle</span> |
+| Numéro | <span class="m_fr">Intitulé de la règle</span> |
 |--------|------------------------------------------------|
 
-<span class="mark">Des textes explicatifs viennent compléter les règles
+<span class="m_fr">Des textes explicatifs viennent compléter les règles
 d’application du profil FR</span>.
 
 ## Conventions & Représention des messages
@@ -554,7 +574,7 @@ d’application du profil FR</span>.
 Les messages constituant ce profil d'échange sont décrits en adoptant un
 formalisme tabulaire. Les tableaux proposent ces colonnes:
 
-<table>
+<table class="m_fr">
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 14%" />
@@ -563,13 +583,13 @@ formalisme tabulaire. Les tableaux proposent ces colonnes:
 <col style="width: 34%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td>Classification</td>
-<td>Nom de l’élement</td>
-<td>Min :<br />
-Max</td>
-<td>Type de données</td>
-<td>Description</td>
+<tr>
+<th>Classification</th>
+<th>Nom de l’élement</th>
+<th>Min :<br />
+Max</th>
+<th>Type de données</th>
+<th>Description</th>
 </tr>
 </tbody>
 </table>
