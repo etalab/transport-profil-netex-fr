@@ -718,8 +718,12 @@ Cette colonne indique le type de l'élément:
   Ce type permet de définir les chaines de caractères associées à une
   langue. La structure est la suivante :
 
+<div class="no_h">
+
 | NaturalLanguageStringStructure |
 |--------------------------------|
+
+</div>
 
 <table>
 <colgroup>
