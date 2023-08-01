@@ -5199,7 +5199,7 @@ qui devront être fixes en amont de l'échange).</mark></td>
 </tbody>
 </table>
 
-####### L'arrêt 
+<h7>L'arrêt </h7>
 
 |                                               |              |                                     |
 |-----------------------------------------------|--------------|-------------------------------------|
@@ -5456,7 +5456,7 @@ courante du vehicule et l'arrêt considéré.</mark></td>
 </tbody>
 </table>
 
-####### Arrêts suivants
+<h7>Arrêts suivants</h7>
 
 |                                            |              |                                                   |
 |--------------------------------------------|--------------|---------------------------------------------------|
@@ -10409,7 +10409,7 @@ ci-dessous.</p>
 </tbody>
 </table>
 
-####### Description de la structure AffectedNetwork
+<h7>Description de la structure AffectedNetwork</h7>
 
 <table>
 <colgroup>
@@ -10509,7 +10509,7 @@ ne sont pas disponibles.</p>
 </tbody>
 </table>
 
-####### Description de la structure AffectedStopPoint
+<h7>Description de la structure AffectedStopPoint</h7>
 
 |                         |              |                                                                  |
 |-------------------------|--------------|------------------------------------------------------------------|
@@ -10614,7 +10614,7 @@ impactés par la SITUATION.</td>
 </tbody>
 </table>
 
-####### Description de la structure AffectedVehicleJourney
+<h7>Description de la structure AffectedVehicleJourney</h7>
 
 <table>
 <colgroup>
@@ -10659,7 +10659,7 @@ impactés par la SITUATION.</td>
 </tbody>
 </table>
 
-####### Description de la structure “AffectedLine”
+<h7>Description de la structure “AffectedLine”</h7>
 
 |                    |              |                                                 |
 |--------------------|--------------|-------------------------------------------------|
@@ -10721,7 +10721,7 @@ impactés par la SITUATION.</td>
 </tbody>
 </table>
 
-####### Description de la structure « AffectedOperator”
+<h7>Description de la structure « AffectedOperator”</h7>
 
 <table>
 <colgroup>
@@ -10762,7 +10762,7 @@ l’action</mark>.</p></td>
 |                         | ⮆ ***<span class="mark">ScopeType</span>***                               | 0:1  | *enum*        |              | <span class="mark">Type de l’action (cf 6.7.4.1.5).</span>                         |
 |                         | ⮆ ***<span class="mark">Affects</span>***                                 | 0:1  | *+Structure*  |              | <span class="mark">Zone de diffusion du message ‘*prompt’*, cf 6.7.4.1.7.6.</span> |
 
-####### Description de l’enum ‘ActionStatus’
+<h7>Description de l’enum ‘ActionStatus’</h7>
 
 Les valeurs retenues par le profil SIRI France sont les suivantes :
 
