@@ -4045,6 +4045,7 @@ cf § 6.1.3.3.</td>
 ###### Structure EstimatedCall
 
 <div class="no_h">
+
 | ***<span class="mark">EstimatedCall</span>*** | *+­Structure* | Description d’un arrêt prévu, avec ses informations horaires. |
 |-----------------------------------------------|--------------|---------------------------------------------------------------|
 
