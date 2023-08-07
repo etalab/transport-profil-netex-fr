@@ -3147,7 +3147,7 @@ La codification de version proposée par SIRI est de la forme x.y :
 - y constitue le numéro de version mineure: <span class="mark">il est
   potentiellement suivi d'une lettre (facultative) qui précise
   éventuellement la version de l'XSD utilisée, on aura par exemple une
-  version ***2.1n*** pour indiquer la version ***21*** de Siri et la
+  version ***2.1n*** pour indiquer la version ***2.1*** de SIRI et la
   version ***n*** de l'XSD correspondant.</span>
 
 Par exemple pour SIRI 1, les versions 1.0, 1.2, 1.3 et 1.4, et pour SIRI
