@@ -3507,7 +3507,7 @@ ajoutée par rapport aux horaires théoriques).</mark></p>
 <p><mark>Si ce champ est présent,.
 <em><strong>ExtraJourney</strong></em> doit être positionné à ‘true’ (et
 réciproquement…).</mark></p>
-<p><mark>Cette information est obligatoire (si une course a été ajoutée)
+<p><mark class="m_hub">Cette information est obligatoire (si une course a été ajoutée)
 dans le cadre des échanges avec un concentrateur. Dans le cas ou
 l'adjonction de course ne peut être détectée, la structure
 <em><strong>Dated­Vehicle­Journey­Ref</strong></em> sera remplie comme pour
@@ -3623,7 +3623,7 @@ d’exploitation (ou d’information seulement) en fréquence.</mark></p>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>Origin­Aimed­Departure­Time</strong></em></td>
+<td><em><strong class="m_hub">Origin­Aimed­Departure­Time</strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td colspan="3">Heure théorique de départ de la course à son point de
@@ -3631,7 +3631,7 @@ départ.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Destination­Aimed­Arrival­Time</strong></em></td>
+<td><em><strong class="m_hub">Destination­Aimed­Arrival­Time</strong></em></td>
 <td>0:1</td>
 <td><em>xsd:date­Time</em></td>
 <td colspan="3">Heure théorique d'arrivée de la course à son point de
