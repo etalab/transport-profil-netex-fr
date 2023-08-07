@@ -4044,17 +4044,13 @@ cf § 6.1.3.3.</td>
 
 ###### Structure EstimatedCall
 
+<div class="no_h">
 | ***<span class="mark">EstimatedCall</span>*** | *+­Structure* | Description d’un arrêt prévu, avec ses informations horaires. |
 |-----------------------------------------------|--------------|---------------------------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 20%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 44%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Stop Identity</em></th>
@@ -4281,13 +4277,7 @@ Handling of Predictions in the Estimated Timetable Service ».
 
 #### ExpectedDepartureOccupancy
 
-<table>
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 49%" />
-</colgroup>
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em><strong>Expected-Departure-Occupancy</strong></em></th>
