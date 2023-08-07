@@ -384,66 +384,55 @@ par les attributs suivants :
 <div class="no_h">
 
 <table>
-<colgroup>
-<col style="width: 7%" />
-<col style="width: 17%" />
-<col style="width: 0%" />
-<col style="width: 5%" />
-<col style="width: 0%" />
-<col style="width: 11%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 57%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th>Log</th>
 <th>Response­Timestamp</th>
-<th colspan="2">1:1</th>
-<th colspan="2">xsd:dateTime</th>
-<th colspan="3">Heure de creation de la response.</th>
+<th>1:1</th>
+<th>xsd:dateTime</th>
+<th>Heure de creation de la response.</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>End­point prop­erties</td>
 <td>RequestMessageRef</td>
-<td colspan="2">0:1</td>
-<td colspan="3">➞ Message­Qualifier</td>
-<td colspan="2">Pour les requêtes directes, identifiant de la requête
+<td>0:1</td>
+<td>➞ Message­Qualifier</td>
+<td>Pour les requêtes directes, identifiant de la requête
 origine de la réponse.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>SubscriberRef</td>
-<td colspan="2">0:1</td>
-<td colspan="3">➞ Participant­Code</td>
-<td colspan="2">Obligatoire si la réponse concerne un Abonnement,
+<td>0:1</td>
+<td>➞ Participant­Code</td>
+<td>Obligatoire si la réponse concerne un Abonnement,
 Identfiant de l’abonné.</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Subscription­FilterRef</td>
-<td colspan="2">0:1</td>
-<td colspan="3">➞ SubcriptionFilterCode</td>
-<td colspan="2">Identifiant unique du filtre d'abonnement auquel cet
+<td>0:1</td>
+<td>➞ SubcriptionFilterCode</td>
+<td>Identifiant unique du filtre d'abonnement auquel cet
 abonnement est affecté. S'il n'y a qu'un seul filtre, alors ce champ
 peut être omis.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>Subscription­Ref</td>
-<td colspan="2">1:1</td>
-<td colspan="3">➞ Subscript­ion­Qualifier</td>
-<td colspan="2"><p>Obligatoire si la réponse concerne un Abonnement.</p>
+<td>1:1</td>
+<td>➞ Subscript­ion­Qualifier</td>
+<td><p>Obligatoire si la réponse concerne un Abonnement.</p>
 <p>Identifiant de l'Abonnement émis par le Demandeur.</p></td>
 </tr>
 <tr class="odd">
 <td>Status</td>
 <td>Status</td>
-<td colspan="2">0:1</td>
-<td colspan="3">xsd:boolean</td>
-<td colspan="2"><p>Indique si la demande complète a pu être traitée avec
+<td>0:1</td>
+<td>xsd:boolean</td>
+<td><p>Indique si la demande complète a pu être traitée avec
 succès ou non. La valeur par défaut est true.</p>
 <p>Si l'une des demandes individuelles de la diffusion a échoué, doit
 être à "false".</p></td>
@@ -451,84 +440,84 @@ succès ou non. La valeur par défaut est true.</p>
 <tr class="even">
 <td></td>
 <td>ErrorCondition</td>
-<td colspan="2">0:1</td>
-<td colspan="3">+Structure</td>
-<td colspan="2">Description de toute condition d'erreur ou de warning
+<td>0:1</td>
+<td>+Structure</td>
+<td>Description de toute condition d'erreur ou de warning
 qui s'applique à la demande ou à la réponse.</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>➞ <em>choix</em></td>
-<td colspan="2">-1:1</td>
-<td colspan="3"></td>
-<td colspan="2">Un des codes erreurs suivants.</td>
+<td>-1:1</td>
+<td></td>
+<td>Un des codes erreurs suivants.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2">a) Capability­Not­Supported­Error</td>
-<td colspan="2">0:1</td>
-<td colspan="3">+ Error</td>
+<td>a) Capability­Not­Supported­Error</td>
+<td>0:1</td>
+<td>+ Error</td>
 <td>Erreur : fonctionnalité non prise en charge.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2">b) AccessNot­Allowed­Error</td>
-<td colspan="2">0:1</td>
-<td colspan="3">+Error</td>
+<td>b) AccessNot­Allowed­Error</td>
+<td>0:1</td>
+<td>+Error</td>
 <td>Erreur : le demandeur n'est pas autorisé à accéder au service ou aux
 données demandés.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2">c) NoInfoFor­TopicError</td>
-<td colspan="2">0:1</td>
-<td colspan="3">+Error</td>
+<td>c) NoInfoFor­TopicError</td>
+<td>0:1</td>
+<td>+Error</td>
 <td>Erreur : une demande valide a été effectuée, mais le service ne
 contient aucune donnée pour l'expression de rubrique demandée.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2">d) Allowed­Resource­Usage­Exceeded­Error</td>
-<td colspan="2">0:1</td>
-<td colspan="3">+Error</td>
+<td>d) Allowed­Resource­Usage­Exceeded­Error</td>
+<td>0:1</td>
+<td>+Error</td>
 <td>Erreur : une demande valide a été effectuée, mais la demande
 dépasserait l'utilisation autorisée des ressources du client.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2">e) OtherError</td>
-<td colspan="2">0:1</td>
-<td colspan="3">+Error</td>
+<td>e) OtherError</td>
+<td>0:1</td>
+<td>+Error</td>
 <td>Erreur autre</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2">➞ Description</td>
-<td colspan="2">0:1</td>
-<td colspan="3">➞ ErrorDescription</td>
+<td>➞ Description</td>
+<td>0:1</td>
+<td>➞ ErrorDescription</td>
 <td>Description de l’erreur.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>ValidUntil</td>
-<td colspan="2">0:1</td>
-<td colspan="3">xsd:dateTime</td>
-<td colspan="2">Limite de validité des données.</td>
+<td>0:1</td>
+<td>xsd:dateTime</td>
+<td>Limite de validité des données.</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Shortest­Possible­Cycle</td>
-<td colspan="2">0:1</td>
-<td colspan="3">Positive­Duration­Type</td>
-<td colspan="2">Intervalle minimum auquel les mises à jour peuvent être
+<td>0:1</td>
+<td>Positive­Duration­Type</td>
+<td>Intervalle minimum auquel les mises à jour peuvent être
 envoyées.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>DefaultLanguage</td>
-<td colspan="2">0:1</td>
-<td colspan="3">Xsd:language</td>
-<td colspan="2">Langue par défaut des éléments de texte.</td>
+<td>0:1</td>
+<td>Xsd:language</td>
+<td>Langue par défaut des éléments de texte.</td>
 </tr>
 </tbody>
 </table>
