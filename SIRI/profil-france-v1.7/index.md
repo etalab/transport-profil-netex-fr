@@ -3328,6 +3328,7 @@ par défaut », qui est volontairement haute pour ne pas surcharger les
 échanges : dans le cas nominal elle devra être précisée avec une valeur
 plus faible (mais tous les systèmes ne fonctionnent pas à la minute,
 surtout côté client).</p>
+<p class="m_hub">Dans le cadre des échanges avec un concentrateur la valeur par défaut
 est de <strong>1 minute.</strong></p>
 <p><mark>De plus il est important de noter que l'abonnement à Estimated
 Timetable fonctionne exclusivement en mode <strong>incrémental</strong>
