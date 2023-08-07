@@ -2009,7 +2009,7 @@ d’extension. Chaque paire de clef /valeur doit être unique.</th>
 <td>Une paire arbitraire de clé-valeur.</td>
 </tr>
 <tr class="even">
-<td>⮆ <strong>TypeOfKey</strong></td>
+<td>⇉ <strong>TypeOfKey</strong></td>
 <td>0:1</td>
 <td>xsd:normalizedString</td>
 <td><p><strong>Attribut</strong> qui spécifie le type / objectif de la
@@ -2020,7 +2020,7 @@ reconnue dans le cadre du profil. Tout autre type de type de clé devra
 être ignoré (sans toutefois générer d'erreur</mark>).</p></td>
 </tr>
 <tr class="odd">
-<td>⮆ <strong>Key</strong></td>
+<td>⇉ <strong>Key</strong></td>
 <td>1:1</td>
 <td>xsd:normalizedString</td>
 <td>Clé de KEY VALUE.</td>
