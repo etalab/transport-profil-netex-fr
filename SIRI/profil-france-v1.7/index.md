@@ -3241,8 +3241,15 @@ des protocoles d’accord entre AOT et OTP.
 
 ### Requête d’informations horaires calculées sur la ligne
 
+<div class="no_h">
+
 | **<span class="mark">EstimatedTimetable­Request</span>** | *+Structure* | Requête d’informations horaires calculées sur la ligne |
 |---------------------------------------------------------|--------------|--------------------------------------------------------|
+
+
+</div>
+
+<div class="no_h">
 
 | *Attributes*          | ***<span class="mark">Version</span>***             | 1:1                               | *VersionString*        | Version du service “ Estimated Timetable”, intégrant le numéro de version de profil (voir 5.9) par exemple - ‘2.1:FR-1.0’                                                                                                                                                                                                                       |
 |-----------------------|-----------------------------------------------------|-----------------------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -3255,6 +3262,8 @@ des protocoles d’accord entre AOT et OTP.
 |                       | ➞ ***<span class="mark">LineDirection</span>***     | 0:1                               | *LineDirection­Code*    | Identifie la ligne pour laquelle on souhaite obtenir des informations.                                                                                                                                                                                                                                                                          |
 |                       |                                                     |                                   |                        |                                                                                                                                                                                                                                                                                                                                                 |
 | Any                   | Extensions                                          | 0:1                               | +Structure             | Emplacement pour extension utilisateur (cf 5.4.2.2)                                                                                                                                                                                                                                                                                             |
+
+</div>
 
 ### Abonnement aux horaires calculés sur la ligne
 
@@ -3272,8 +3281,14 @@ EstimatedTimetable.
 | A minima pour le dernier arrêt (et si possible pour tous les arrêts), lorsque le véhicule arrive à l'arrêt                                                                                     | Notification en positionnant le champ ***VehicleAtStop*** à *’True’*                                                       |
 | En cas de changement de quai                                                                                                                                                                   | Notification en positionnant les informations relatives au quai.                                                           |
 
+<div class="no_h">
+
 | **EstimatedTimetable­SubscriptionRequest** | *+Structure* | Requête d’abonnement aux horaires calculés sur la ligne |
 |-------------------------------------------|--------------|---------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 <table>
 <colgroup>
@@ -3343,10 +3358,17 @@ rapport à l'objectif de limiter les volumes d'échange.</mark></p></td>
 </tbody>
 </table>
 
+</div>
+
 ### Réponse aux requêtes d’horaires calculés sur la ligne
+
+<div class="no_h">
 
 | **<span class="mark">EstimatedTimetableDelivery</span>** | *+Structure* | Décrit une *Dated Timetable* (horaire pour un jour d’application donné). |
 |----------------------------------------------------------|--------------|--------------------------------------------------------------------------|
+
+</div>
+<div class="no_h">
 
 | *Attributes* | ***<span class="mark">version</span>***                      | 1:1  | *Version­String* | Numéro de version du service *Estimated Timetable*, intégrant le numéro de version de profil (voir 5.9) (valeur fixe). |
 |--------------|--------------------------------------------------------------|------|-----------------|------------------------------------------------------------------------------------------------------------------------|
@@ -3354,10 +3376,18 @@ rapport à l'objectif de limiter les volumes d'échange.</mark></p></td>
 | *Payload*    | ***<span class="mark">EstimatedJourneyVersionFrame</span>*** | 0:\* | *+Structure*    | Voir EstimatedJourneyVersionFrame element.                                                                             |
 | *any*        | ***Extensions***                                             | 0:1  | *+Structure*    | Emplacement pour extension utilisateur (cf 5.4.2.2)                                                                    |
 
+</div>
+
 #### Structure EstimatedJourneyVersionFrame
+
+<div class="no_h">
 
 | **EstimatedJourneyVersionFrame** | *+Structure* | Fournit les horaires attendus pour un itinéraire (ligne+direction) donné. |
 |----------------------------------|--------------|---------------------------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 <table>
 <colgroup>
@@ -3406,10 +3436,17 @@ référence ie version du référentiel théorique (voir
 </tbody>
 </table>
 
+</div>
+
 ##### Structure EstimatedVehicleJourney
+
+<div class="no_h">
 
 | **EstimatedVehicleJourney** | *+Structure* | Description d’une course. |
 |-----------------------------|--------------|---------------------------|
+
+</div>
+<div class="no_h">
 
 <table>
 <colgroup>
@@ -3743,6 +3780,8 @@ séquence d'arrêt sera régulièrement incomplète.</mark></p>
 </tr>
 </tbody>
 </table>
+
+</div>
 
 ###### Structure RecordedCall
 
