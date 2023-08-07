@@ -22,6 +22,10 @@ mark, .mark {
     background-color: #55FFFF;
 }
 
+.m_red {
+    color: #FF0000;
+}
+
 .no_h th {
     font-weight: normal;
 }
@@ -4481,11 +4485,15 @@ ActualDepartureTime.
 
 Comme règles générales dans ce contexte :
 
-| ET001 | L’implémentation des recordedcalls est facultative.                                                                                                                                                                                                                                  |
+<div class="no_h">
+
+| <span class="m_red">ET001</span> | <span class="m_red">L’implémentation des recordedcalls est facultative.</span>|
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ET010 | Un seul type de passage (enregistré ou estimé) est associé à un arrêt à un moment donné dans un cycle de vie EstimatedVehicleJourney ou une séquence de messages de mise à jour.                                                                                                     |
 | ET015 | Après l'enregistrement de l'arrivée effective à un arrêt, toutes les mises à jour potentielles se rapportant à cet arrêt doivent être transmises dans les RecordedCall respectifs.                                                                                                   |
 | ET020 | Si, lors de l’activation d'un nouvel abonnement, toutes les courses actives sont transmises, le producteur doit également inclure pour ces courses les RecordedCalls déjà transmis (pour chaque trajet estimé) de ces arrêts qui sont déjà dans le passé ou qui ont été enregistrés. |
+
+</div>
 
 ##### Cas particulier
 
