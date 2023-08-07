@@ -3237,7 +3237,7 @@ l’initialisation des heures, minutes et secondes.
 Par contre si un système s’attend à recevoir des données après minuit et
 que le fournisseur n’est pas en mesure de les produire, cela peut poser
 problème : ce point sera donc à qualifier, si nécessaire, dans le cadre
-des protocoles d’accord en tre AOT et OTP.
+des protocoles d’accord entre AOT et OTP.
 
 ### Requête d’informations horaires calculées sur la ligne
 
