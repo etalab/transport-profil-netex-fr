@@ -875,15 +875,15 @@ overall request.</td>
 ### Indentation des données
 
 La représentation des données imbriquées est représentée en utilisant
-les symboles ➞ et ⮆ pour indiquer le niveau d’imbrication.
+les symboles ➞ et ⇉ pour indiquer le niveau d’imbrication.
 
 | **Nom**              | **Card** | **Type**   | **Description**                                                                                               |
 |----------------------|----------|------------|---------------------------------------------------------------------------------------------------------------|
 | **Donnée Niv 1**     |          | +Structure | Cette information est constituée des structure « Donnée 1 Niv 2 » et « Donnée 2 Niv 2 »                       |
 | ➞ **Donnée 1 Niv 2** | 1:\*     | +Structure | « Donnée 1 Niv 2 » définie par ailleurs                                                                       |
 | ➞ **Donnée 2 Niv 2** | 1:\*     | +Structure | « Donnée 2 Niv 2 » est une structure constituée de « Donnée 1 Niv 3 » et « Donnée 2 Niv 3 » definies ci-apres |
-| ⮆ **Donnée 1 Niv 3** | 0:1      | Type 1     | Donnée de « Donnée 2 Niv 2 »                                                                                  |
-| ⮆ **Donnée 2 Niv 3** | 0:1      | Type 2     | Donnée de « Donnée 2 Niv 2 »                                                                                  |
+| ⇉ **Donnée 1 Niv 3** | 0:1      | Type 1     | Donnée de « Donnée 2 Niv 2 »                                                                                  |
+| ⇉ **Donnée 2 Niv 3** | 0:1      | Type 2     | Donnée de « Donnée 2 Niv 2 »                                                                                  |
 
 # Partie I - Description du cadre
 
