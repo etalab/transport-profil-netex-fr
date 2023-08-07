@@ -2029,7 +2029,7 @@ reconnue dans le cadre du profil. Tout autre type de type de clé devra
 <td>⮆ <strong>Value</strong></td>
 <td>1:1</td>
 <td>xsd:normalizedString</td>
-<td>Valeur de KAY VALUE.</td>
+<td>Valeur de KEY VALUE.</td>
 </tr>
 </tbody>
 </table>
