@@ -3784,17 +3784,14 @@ séquence d'arrêt sera régulièrement incomplète.</mark></p>
 Structure permettant de décrire les informations concernant un arrêt
 déjà desservi par une course.
 
+<div class="no_h">
+
 | **RecordedCall** | *+Structure* | Décrit un arrêt déjà desservi par la course. |
 |------------------|--------------|----------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 17%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 48%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Stop Identity</em></th>
