@@ -409,7 +409,7 @@ par les attributs suivants :
 <td>End­point prop­erties</td>
 <td>RequestMessageRef</td>
 <td colspan="2">0:1</td>
-<td colspan="3">Message­Qualifier</td>
+<td colspan="3">➞ Message­Qualifier</td>
 <td colspan="2">Pour les requêtes directes, identifiant de la requête
 origine de la réponse.</td>
 </tr>
@@ -417,7 +417,7 @@ origine de la réponse.</td>
 <td></td>
 <td>SubscriberRef</td>
 <td colspan="2">0:1</td>
-<td colspan="3">Participant­Code</td>
+<td colspan="3">➞ Participant­Code</td>
 <td colspan="2">Obligatoire si la réponse concerne un Abonnement,
 Identfiant de l’abonné.</td>
 </tr>
@@ -425,7 +425,7 @@ Identfiant de l’abonné.</td>
 <td></td>
 <td>Subscription­FilterRef</td>
 <td colspan="2">0:1</td>
-<td colspan="3">SubcriptionFilterCode</td>
+<td colspan="3">➞ SubcriptionFilterCode</td>
 <td colspan="2">Identifiant unique du filtre d'abonnement auquel cet
 abonnement est affecté. S'il n'y a qu'un seul filtre, alors ce champ
 peut être omis.</td>
@@ -434,7 +434,7 @@ peut être omis.</td>
 <td></td>
 <td>Subscription­Ref</td>
 <td colspan="2">1:1</td>
-<td colspan="3">Subscript­ion­Qualifier</td>
+<td colspan="3">➞ Subscript­ion­Qualifier</td>
 <td colspan="2"><p>Obligatoire si la réponse concerne un Abonnement.</p>
 <p>Identifiant de l'Abonnement émis par le Demandeur.</p></td>
 </tr>
@@ -505,7 +505,7 @@ dépasserait l'utilisation autorisée des ressources du client.</td>
 <td></td>
 <td colspan="2">➞ Description</td>
 <td colspan="2">0:1</td>
-<td colspan="3">ErrorDescription</td>
+<td colspan="3">➞ ErrorDescription</td>
 <td>Description de l’erreur.</td>
 </tr>
 <tr class="even">
