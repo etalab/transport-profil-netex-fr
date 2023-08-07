@@ -4308,7 +4308,7 @@ VÉHICULE, par ex. ‘manySeatsAvailable’ ou ‘standingRoomOnly’.</p>
 ou capacités individuelles ci-dessous.<mark>L’énumération ‘occupancy’
 est le suivant :</mark></p>
 <p><em><mark>full | seats­Available | standing­Available | unknown | empty
-| manySeatAvailable | fewSeatAvailable | standingRoomOnly |
+| <span class="m_excl">manySeatAvailable | fewSeatAvailable</span> | standingRoomOnly |
 crushStandingRoomOnly | notAcceptingPassengers</mark></em></p></td>
 </tr>
 <tr class="odd">
