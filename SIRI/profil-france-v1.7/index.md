@@ -2030,7 +2030,7 @@ reconnue dans le cadre du profil. Tout autre type de type de clé devra
 <td>Clé de KEY VALUE.</td>
 </tr>
 <tr class="even">
-<td>⮆ <strong>Value</strong></td>
+<td>⇉ <strong>Value</strong></td>
 <td>1:1</td>
 <td>xsd:normalizedString</td>
 <td>Valeur de KEY VALUE.</td>
@@ -3307,7 +3307,7 @@ EstimatedTimetable.
 <th><em>Identity</em></th>
 <th><em><strong>Subscriber­Ref</strong></em></th>
 <th><mark>1:1</mark></th>
-<th><em>Participant­Code</em></th>
+<th><em>→ Participant­Code</em></th>
 <th>Identification du système demandeur (voir SIRI Partie 2 Common
 <em><strong>SubscriptionRequest</strong></em> parameters.)</th>
 </tr>
@@ -3415,7 +3415,7 @@ rapport à l'objectif de limiter les volumes d'échange.</mark></p></td>
 <td><em>Identity</em></td>
 <td><strong><mark>VersionRef</mark></strong></td>
 <td>0:1</td>
-<td><em>VersionCode</em></td>
+<td><em>→ VersionCode</em></td>
 <td><p>Contexte d'identification de la course (SAE pour le jour
 d'exploitation, version du référentiel de données, etc.).</p>
 <p><mark>Ce champ permet de qualifier la version des données de
@@ -3467,7 +3467,7 @@ référence ie version du référentiel théorique (voir
 <th><em>Vehicle Journey Identity</em></th>
 <th><em><strong>LineRef</strong></em></th>
 <th>1:1</th>
-<th><em>LineCode</em></th>
+<th><em>→ LineCode</em></th>
 <th colspan="3">Identifiant de la ligne.</th>
 </tr>
 </thead>
@@ -3476,7 +3476,7 @@ référence ie version du référentiel théorique (voir
 <td></td>
 <td><em><strong><mark>DirectionRef</mark></strong></em></td>
 <td>1:1</td>
-<td><em>Direction­Code</em></td>
+<td><em>→ Direction­Code</em></td>
 <td colspan="3"><p>Identifie la direction (typiquement
 Aller/Retour).</p>
 <p><mark>La sélection de ce champ n’est pas dans la logique du reste du
@@ -3499,7 +3499,7 @@ problème…)</p></td>
 <td><em><strong>a)
 <mark>Dated­Vehicle­Journey­Ref</mark></strong></em></td>
 <td>0:1</td>
-<td colspan="2"><em>DatedVehicle­Journey­Code</em></td>
+<td colspan="2"><em>→ DatedVehicle­Journey­Code</em></td>
 <td colspan="2"><p>Identifie la course.</p>
 <p><mark class="m_hub">Cette information est obligatoire dans le cadre des échanges
 avec un concentrateur.</mark></p></td>
@@ -3550,7 +3550,7 @@ d’arrêt.</td>
 <td></td>
 <td>➞ <em><strong>Destination­Ref</strong></em></td>
 <td>1:1</td>
-<td colspan="2"><em>StopPoint­Code</em></td>
+<td colspan="2"><em>→ StopPoint­Code</em></td>
 <td colspan="2">Identifiant du dernier point d’arrêt de la course.</td>
 </tr>
 <tr class="odd">
@@ -3686,7 +3686,7 @@ sequence permet notament de gérer les trains couples)</mark></td>
 <td></td>
 <td>➞ <em><strong><mark>TrainNumberRef</mark></strong></em></td>
 <td>1:1</td>
-<td><em>TrainNumber</em></td>
+<td>➞ <em>TrainNumber</em></td>
 <td colspan="3"><mark>Numéro de train</mark></td>
 </tr>
 <tr class="even">
@@ -3706,9 +3706,9 @@ ci-dessous.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>⮆ <em><strong><mark>Journey­PartRef</mark></strong></em></td>
+<td>⇉ <em><strong><mark>Journey­PartRef</mark></strong></em></td>
 <td>0:1</td>
-<td><em>JourneyPart­Code</em></td>
+<td>➞ <em>JourneyPart­Code</em></td>
 <td colspan="3"><p><mark>Dans le cadre du profil France ce champ
 permettra d'identifier les portions de courses exploitées par des
 opérateurs différents : les valeurs d'identification des JourneyPart
@@ -3719,9 +3719,9 @@ exploitées par la RATP et celles exploitées par la SNCF</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>⮆ <em><strong><mark>Train­NumberRef</mark></strong></em></td>
+<td>⇉ <em><strong><mark>Train­NumberRef</mark></strong></em></td>
 <td>0:1</td>
-<td><em>TrainNumber</em></td>
+<td>➞ <em>TrainNumber</em></td>
 <td colspan="3"><mark>n'ont pas été échangés mais que la parité doit
 tout de même être échangée, le champ précédent (JourneyPartRef, qui est
 obligatoire) prendra la valeur arbitraire de
@@ -3736,7 +3736,7 @@ obligatoire) prendra la valeur arbitraire de
 </tr>
 <tr class="odd">
 <td></td>
-<td>⮆ <em><strong><mark>RecordedCall</mark></strong></em></td>
+<td>⇉ <em><strong><mark>RecordedCall</mark></strong></em></td>
 <td><em>1:*</em></td>
 <td colspan="3"><em>+Structure</em></td>
 <td>Décrit un arrêt déjà desservi par la course.</td>
@@ -3755,7 +3755,7 @@ correspondant même après avoir été passé.)</p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>⮆ <em><strong><mark>Estimated­Call</mark></strong></em></td>
+<td>⇉ <em><strong><mark>Estimated­Call</mark></strong></em></td>
 <td><em>1:*</em></td>
 <td colspan="3"><em>+Structure</em></td>
 <td>Voir EstimatedCall.</td>
