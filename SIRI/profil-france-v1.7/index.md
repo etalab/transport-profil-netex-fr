@@ -3800,7 +3800,7 @@ déjà desservi par une course.
 <th><em>Stop Identity</em></th>
 <th><strong>Stop­Point­Ref</strong></th>
 <th>1:1</th>
-<th><em>StopPoint­Code</em></th>
+<th>→ <em>StopPoint­Code</em></th>
 <th>Identifiant du Point d'arrêt (cet identifiant est à rapprocher de
 l’attribut MonitoringRef de la structure MonitoredStopVisit, mais
 restreint à ce cas de point d’arrêt là ou le MonitoringRef peut aussi,
@@ -3945,7 +3945,7 @@ d’embarquement).</td>
 <td></td>
 <td><strong>➞ Aimed­­QuayRef</strong></td>
 <td>0:1</td>
-<td><em>QuayCode­Type</em></td>
+<td>➞ <em>QuayCode­Type</em></td>
 <td>Physical QUAY to use according to the planned timetable.</td>
 </tr>
 <tr class="odd">
@@ -3959,7 +3959,7 @@ d’embarquement).</td>
 <td></td>
 <td><strong>➞ Expected­­QuayRef</strong></td>
 <td>0:1</td>
-<td><em>QuayCode­Type</em></td>
+<td>➞ <em>QuayCode­Type</em></td>
 <td>Physical QUAY to use according to the real-time prediction.</td>
 </tr>
 <tr class="odd">
@@ -4015,7 +4015,7 @@ véhicule est à quai).</p>
 <td></td>
 <td><strong>➞ ExpectedQuayRef</strong></td>
 <td>0:1</td>
-<td><em>QuayCode­Type</em></td>
+<td>➞ <em>QuayCode­Type</em></td>
 <td>Physical QUAY (Platform) to use according to the real-time
 prediction.</td>
 </tr>
