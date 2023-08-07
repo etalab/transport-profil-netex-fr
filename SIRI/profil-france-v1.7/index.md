@@ -11,7 +11,7 @@ autonumbering: true
      will ultimately be moved to the main.css in transport-normes-site */
 
 mark, .mark {
-    background-color: #c0c0c0;
+    background-color: #d7d7d7;
 }
 
 .m_hub {
