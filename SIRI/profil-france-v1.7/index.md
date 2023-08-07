@@ -2280,13 +2280,21 @@ La spécification SIRI propose, la possibilité de « déstructurer »
 l'arborescence XML pour la rendre « plate » (« flat XML »), et ce, afin
 de simplifier la compatibilité avec certains systèmes existants.
 
+<div class="no_h">
+
 | R065 | <span class="mark">Cette option de XML à plat (« flat XML ») n'est pas retenue dans le cadre du profil SIRI France.</span> |
 |------|----------------------------------------------------------------------------------------------------------------------------|
 
+</div>
+
 ### Identification de la version de SIRI
+
+<div class="no_h">
 
 | R070 | <span class="mark">La version de SIRI utilisée dans le cadre du profil SIRI France est la version 2.1.</span> |
 |------|---------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 ### Réseau et sécurité
 
@@ -2297,8 +2305,12 @@ couche de transport réseau retenue.</span>
 <span class="mark">SIRI étant un protocole inter-systèmes, la sécurité
 est plus facile à maîtriser.</span>
 
+<div class="no_h">
+
 | R075 | <span class="mark">A minima, la mise en place de filtres sur les adresses IP (ou des plages d'adresses IP), complétés par l'utilisation d'un canal crypté HTTPS, est recommandée.</span> |
 |------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 <span class="mark">Cette solution est peu coûteuse et simple à mettre en
 oeuvre, car elle ne repose que sur une configuration du serveur
@@ -2310,8 +2322,12 @@ avec DMZ, etc. Cependant ces éléments n'ont pas d’impact sur les
 échanges SIRI eux-mêmes et sont du ressort de chaque intervenant (points
 sur lesquels ils auront une parfaite autonomie).</span>
 
+<div class="no_h">
+
 | R080 | <span class="mark">Par contre, dans tous les cas, les services SIRI France seront accessibles à partir d'une liaison Web classique et ne nécessiteront donc pas la mise en place de liaisons spécialisées, d'abonnement à un gestionnaire de réseau spécifique, ni d'utilisation de réseaux point à point (RTC, etc.) sauf accord entre les parties.</span> |
 |------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 Ces recommandations valent de façon générale pour tous les accès SIRI
 indépendamment des cas d'utilisation : il est souhaitable que le mode
@@ -2333,13 +2349,15 @@ contiennent l'identifiant de celui qui l'a émis.</span>
 contrôle d'accès pour, par exemple, ne permettre à un système distant de
 n'accéder qu'à certaines lignes ou certains arrêts.</span>
 
+<div class="no_h">
+
 <table>
 <colgroup>
 <col style="width: 7%" />
 <col style="width: 92%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>R085</th>
 <th><p><mark>Dans le cadre du profil France, un tel contrôle sera
 possible, mais ne pourra porter que :</mark></p>
@@ -2357,17 +2375,25 @@ exploitants).</mark></p></li>
 </tbody>
 </table>
 
+</div>
+
 <span class="mark">Les éventuelles informations de restrictions devront
 être communiquées aux personnes en charge de la gestion et de
 l'exploitation du système client concerné.</span>
 
+<div class="no_h">
+
 | R090 | <span class="mark">Toutefois, cet échange sera réalisé par courrier ou par mail, mais sans utiliser les structures d'autorisation (« ***permission structures »***) proposées par SIRI et dont l'implémentation ne correspond pas à un besoin exprimé en France (pour mémoire les « ***permission structures »*** permettent à un client de demander **dynamiquement** « quelles sont les informations auxquelles j'ai droit » -.).</span> |
 |------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 ### Gestion des erreurs
 
 La gestion des erreurs constitue un point important, auquel SIRI apporte
 une réponse claire et précise.
+
+<div class="no_h">
 
 <table>
 <colgroup>
@@ -2389,6 +2415,8 @@ erreur a été rencontrée.</mark></p></th>
 <tbody>
 </tbody>
 </table>
+
+</div>
 
 Le tableau ci-dessous détaille chacun des codes d'erreur proposés par
 SIRI :
@@ -2470,6 +2498,8 @@ de requête introduite par SIRI 2.</p></td>
 
 <span class="mark">Dans le cadre du profil SIRI France :</span>
 
+<div class="no_h">
+
 <table>
 <colgroup>
 <col style="width: 7%" />
@@ -2498,6 +2528,8 @@ mais signalant le problème).</mark></p></li>
 </tbody>
 </table>
 
+</div>
+
 <span class="mark">Ce champ signale qu'un problème a été rencontré, et
 non qu'il n'y a pas de réponse : il peut donc être positionné à
 « **false »** alors qu'une information est bien retournée.</span>
@@ -2511,30 +2543,42 @@ liste d'arrêts. Dans ce cas aussi, un « **Status** » à « **false »**
 dans l'entête signifie qu'il y a une des réponses portant une erreur, et
 non qu'il n'y a pas de réponse.</span>
 
+<div class="no_h">
+
 | R105 | <span class="mark">Le champ facultatif « **ErrorCondition** » reste facultatif, mais devra être présent et instancié à chaque fois qu'une erreur sera détectée.</span>           |
 |------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | R110 | <span class="mark">La liste des codes erreur à supporter dans le cadre du profil France est détaillée dans le tableau ci-dessous.</span>                                         |
 | R115 | <span class="mark">S'il ne s'agit pas d'un service optionnel non implémenté, le champ « **OtherError** » précisera sous forme textuelle la nature de l'erreur rencontrée.</span> |
 
+</div>
+
+<div class="no_h">
+
 | R120 | <span class="mark">Le champ facultatif « Description » reste facultatif et permettra juste de préciser l'erreur (les éléments fondamentaux étant précisés dans l'un des deux champs précédents). Il devra contenir une description de l’erreur ainsi que le champ incriminé, par exemple : "Erreur \[nom du champ\] : \[Raison de l’erreur avec valorisation reçue\]".</span> |
 |------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | R130 | <span class="mark">De façon à systématiser les messages d'erreur, le champ « **OtherError** » sera structuré en débutant par un code prédéfini entre crochets, suivi d'un texte explicatif.</span>                                                                                                                                                                            |
+
+</div>
 
 <span class="mark">La liste des codes prédéfinis est la suivante
 :</span>
 
 - <span class="mark">**\[BAD_REQUEST\]** : impossible de décoder la
-  > requête.</span>
+  requête.</span>
 
 - <span class="mark">**\[BAD_PARAMETER\]** : la requête contient un
-  > paramètre inutilisable (le texte devra alors préciser le paramètre
-  > posant problème).</span>
+  paramètre inutilisable (le texte devra alors préciser le paramètre
+  posant problème).</span>
 
 - <span class="mark">**\[INTERNAL_ERROR\]** : erreur non identifiée,
-  > mais empêchant la fourniture d'un résultat.</span>
+  mais empêchant la fourniture d'un résultat.</span>
+
+<div class="no_h">
 
 | R135 | <span class="mark">De façon à assurer une homogénéité de comportement dans le traitement des erreurs, il est convenu des comportements suivants :</span> |
 |------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 | **<span class="mark">Erreur</span>**                              | **<span class="mark">Comportement</span>**                                                                                                                                 |
 |-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2553,10 +2597,14 @@ non qu'il n'y a pas de réponse.</span>
 <span class="mark">Il n'y a pas d'obligation pour un système d'être en
 mesure de remonter chacune de ces erreurs.</span>
 
+<div class="no_h">
+
 | R140 | <span class="mark">Toutefois, en cas d'anomalie, les systèmes devront s'astreindre à utiliser le code correspondant au problème rencontré pour le signaler (et ce en rapport avec leurs capacités et limitations de détection d'anomalie, ce qui signifie qu'ils ne sont pas tenus de remonter une erreur qu'ils ne savent pas identifier).</span> |
 |------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | R145 | <span class="mark">Les erreurs rencontrées devront de plus être conservées dans des fichiers (fichier type « log ») tant au niveau des systèmes serveurs que des systèmes clients, de façon à permettre une analyse « post-mortem » et d’envisager d'éventuels correctifs ultérieurs.</span>                                                       |
 | R150 | <span class="mark">La durée minimale de conservation des fichiers « log » sera définie dans le cadre des projets ; on peut toutefois considérer que **3** mois est une valeur acceptable et **1** an une valeur maximale.</span>                                                                                                                   |
+
+</div>
 
 <span class="mark">La remontée d'erreur n'a en effet d'intérêt que si on
 l’utilise pour comprendre et corriger les causes des anomalies. Cela
@@ -2565,9 +2613,13 @@ d’exploitation puis dispatchées, après une première analyse, vers les
 partenaires, les industriels ou tout intervenant susceptible d’y
 apporter un remède.</span>
 
+<div class="no_h">
+
 | R155 | <span class="mark">Dans le cas où une requête ne reçoit pas de réponse, une erreur pourra être déclarée. Cette anomalie sera mentionnée dans le « log » d'erreur du client. Le délai d'attente (« timeout » avant identification d'une panne) est fixé par défaut à une minute (cette valeur « par défaut » pourra être ajustée localement, notamment au regard du délai « normal » de rafraîchissement des données).</span> |
 |------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | R160 | <span class="mark">*ATTENTION* : il est tout à fait possible que la réponse arrive finalement, mais après le délai imparti, le système client pourra alors décider de la prendre en compte ou de l'ignorer (à définir localement dans l'implémentation du système).</span>                                                                                                                                                   |
+
+</div>
 
 ### Identification des services disponibles
 
@@ -2589,10 +2641,16 @@ façon indispensable pour identifier la liste des serveurs SIRI à
 contacter (il suffit alors, pour chaque serveur, de préciser la liste
 des services disponibles).</span>
 
+<div class="no_h">
+
 | R165 | <span class="mark">De façon à ne pas alourdir le développement des systèmes la possibilité de « **Capability Checking** » proposée par SIRI n'est pas retenue, au profit d'un système non dynamique basé sur des fichiers de configuration (l'aspect dynamique et automatique ne présente pas d'intérêt particulier dans le cadre France).</span> |
 |------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
+</div>
+
 ### Compression
+
+<div class="no_h">
 
 <table>
 <colgroup>
@@ -2613,14 +2671,20 @@ simple configuration.</mark></p></th>
 </tbody>
 </table>
 
+</div>
+
 ### Encodage des caractères
+
+<div class="no_h">
 
 | R175 | <span class="mark">Les différentes chaines de caractères présentent dans les données XML seront encodées exclusivement en UTF-8 (abréviation de l’anglais Universal Character Set Transformation Format - 8 bits sans Bit-Order-Mark (BOM)).</span> |
 |------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-<span class="mark">Tehchniquement cela se traduira, si l'on souhaite
-être explicite, par un " **\<?xml version="1.0"
-encoding="UTF-8**"**?\>** " en entête du document. Mais cela n'est pas
+</div>
+
+<span class="mark">Techniquement cela se traduira, si l'on souhaite
+être explicite, par un `<?xml version="1.0"
+encoding="UTF-8"?>` en entête du document. Mais cela n'est pas
 indispensable car l'UTF-8 est la valeur par défaut quand l'encodage
 n'est pas précisé.</span>
 
@@ -2676,9 +2740,13 @@ partenaires impliqués dans l'échange.
 différente suivant qu'on les utilise dans le service StopMonitoring ou
 le service VehicleMonitoring.</span>
 
+<div class="no_h">
+
 | R180 | <span class="mark">Le « PreviousCall » n'a pas été retenu par le profil France et ne doit donc pas être utilisé.</span>                                                                                                                                                                         |
 |------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | R185 | <span class="mark">Le « MonitoredCall» correspond à l'arrêt pour lequel on a fait l'interrogation (et n'est donc en aucun cas lié à la position du véhicule). Les « OnwardCall » correspondent alors à tous les arrêts suivant ce « MonitoredCall» dans le cadre des courses concernées.</span> |
+
+</div>
 
 <span class="mark">Dans le cas du service VehicleMonitoring le
 « MonitoredCall» correspond au dernier arrêt marqué ou à l'arrêt où se
@@ -2963,7 +3031,7 @@ d'adaptation au cadre du profil France (on définit tout de même les
 codes possibles : « Perturbation », « Information » ou « Commercial
 »).</span>
 
-<span class="mark">On peut toutefois noter que le champ «** icon **»
+<span class="mark">On peut toutefois noter que le champ « **icon** »
 pourra souvent rester vide.</span>
 
 <span class="mark">*<u>Note</u>*: voir la description du service de
@@ -3069,7 +3137,7 @@ chacune des ***xxxxRequestStructure*** sous la forme d'un attribut nommé
 champs est disponible pour chacune des ***xxxxDeliveryStructure,*** là
 aussi sous la forme d'un attribut nommé ***Version***).</span>
 
-<span class="mark"><u>Note**:**</u> il s'agit bien ici de l'attribut
+<span class="mark"><u>Note</u> : il s'agit bien ici de l'attribut
 **Version** au niveau des services et non de l'attribut que l'on trouve
 sur la racine **Siri** du schéma, cette dernière n'étant pas accessible
 dans le cadre des échanges SOAP.</span>
