@@ -3648,8 +3648,8 @@ destination donnée. L'interprétation comme "première ou dernière course
 pour une mission donnée" est acceptable, mais devra être précisée dans
 les spécifications d'interface du serveur (et le JourneyPatterInfoGroup
 devra alors être renseigné).</mark></p>
-<p>(<mark>firstServiceOfDay</mark> | <mark>lastServiceOfDay</mark> |
-<mark>otherService</mark> | <mark>unspecified</mark>).</p></td>
+<p>(firstServiceOfDay | lastServiceOfDay |
+otherService | unspecified).</p></td>
 </tr>
 <tr class="even">
 <td><em>Disruption­Group</em></td>
