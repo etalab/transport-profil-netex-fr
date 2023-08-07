@@ -5278,7 +5278,7 @@ notament de gérer les trains couples).</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>⮆ <em><strong><mark>Journey­PartRef</mark></strong></em></td>
+<td>⇉ <em><strong><mark>Journey­PartRef</mark></strong></em></td>
 <td>1:1</td>
 <td><em>JourneyPart­Code</em></td>
 <td><mark>Dans le cadre du profil France ce champ permettra
@@ -5289,7 +5289,7 @@ qui devront être fixes en amont de l'échange).</mark></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>⮆ <em><strong>Train­NumberRef</strong></em></td>
+<td>⇉ <em><strong>Train­NumberRef</strong></em></td>
 <td>0:1</td>
 <td><em>TrainNumbere</em></td>
 <td></td>
