@@ -4363,8 +4363,14 @@ véhicule pour une partie du trajet, et si oui sous quel nom.</td>
 
 #### Structure ExpectedDepartureCapacity
 
+<div class="no_h">
+
 | ***Expected-Departure-Capacities*** | 0:\* | *+Structure* | Capacités en temps réel (nombre de places disponibles) d'un VEHICULE après le départ d'un arrêt donné. Autre moyen de communiquer les mesures d'occupation. |
 |-------------------------------------|------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | ***:::***                      | 0:1 | *TrainFormation-ReferenceGroup* | Voir SIRI Partie 2 ***TrainFormationReferenceGroup.***          |
 |--------------------------------|-----|---------------------------------|-----------------------------------------------------------------|
@@ -4376,6 +4382,8 @@ véhicule pour une partie du trajet, et si oui sous quel nom.</td>
 | ***Wheelchair-PlaceCapacity*** | 0:1 | *NumberOf-Passengers*           | Le nombre de places en fauteuil roulant du véhicule.            |
 | ***PramPlace-Capacity***       | 0:1 | *xsd:nonnegative-Integer*       | Le nombre de places du véhicule adaptées aux poussettes.        |
 | ***BicycleRack-Capacity***     | 0:1 | *xsd:nonnegative-Integer*       | Le nombre de porte-vélos du véhicule.                           |
+
+</div>
 
 ####  Gestion des passages échus
 
