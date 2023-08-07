@@ -18,6 +18,10 @@ mark, .mark {
     background-color: #00FF00;
 }
 
+.m_excl {
+    background-color: #55FFFF;
+}
+
 .no_h th {
     font-weight: normal;
 }
@@ -3206,7 +3210,7 @@ maintien ou non de leur caractère facultatif, etc.
   en Gris.</span>
 
 - Les éléments non retenus pour le profil sont en
-  <span class="mark">texte masqué surligné bleu</span>
+  <span class="m_excl">texte masqué surligné bleu</span>
 
 - Les éléments ne comportant aucune marque font partie du profil
   conformément aux spécifications de la norme SIRI.
