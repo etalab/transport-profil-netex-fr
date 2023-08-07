@@ -1978,14 +1978,18 @@ identifiants alternatifs:
 
 #### Structure Extension
 
+<div class="no_h">
+
 | **Extensions** |      | +Structure | Placeholder for user extensions. |
 |----------------|------|------------|----------------------------------|
 | ➞ **KeyList**  | 0:1  | +Structure | Set of KEY VALUE pairs.          |
 | ➞ **…**        | 0:\* | xsd:any\*  | Any user defined content.        |
 
+</div>
+
 #### Structure KeyList
 
-<table>
+<table class="no_h">
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 5%" />
