@@ -4063,7 +4063,7 @@ cf § 6.1.3.3.</td>
 <th><em>Stop Identity</em></th>
 <th><em><strong><mark>Stop­Point­Ref</mark></strong></em></th>
 <th><mark>1:1</mark></th>
-<th><em>StopPoint­Code</em></th>
+<th>➞ <em>StopPoint­Code</em></th>
 <th><mark>Identifiant du Point d'arrêt (cet identifiant est à rapprocher
 de l’attribut <em>MonitoringRef</em> de la structure
 <em>MonitoredStopVisit</em>, mais restreint à ce cas de point d’arrêt là
