@@ -3323,7 +3323,7 @@ souhaite pas être notifié (si l'on demande un seuil de 5mn et qu'un
 horaire de départ change de 2 minutes, on ne sera pas notifié, évitant
 ainsi des flux d'information inutiles).</p>
 <p><mark>Si ce champ n'est pas présent, une valeur de
-<strong>5minutes</strong> est prise par défaut.</mark>C’est une valeur «
+<strong>5 minutes</strong> est prise par défaut.</mark> C’est une valeur «
 par défaut », qui est volontairement haute pour ne pas surcharger les
 échanges : dans le cas nominal elle devra être précisée avec une valeur
 plus faible (mais tous les systèmes ne fonctionnent pas à la minute,
