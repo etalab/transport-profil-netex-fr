@@ -3527,7 +3527,7 @@ permet de la décrire succinctement.</mark></td>
 <td></td>
 <td>➞ <em><strong>Origin­Ref</strong></em></td>
 <td>1:1</td>
-<td colspan="2"><em>StopPoint­Code</em></td>
+<td colspan="2"><em>→ StopPoint­Code</em></td>
 <td colspan="2">Identifiant du premier point d’arrêt de la course.</td>
 </tr>
 <tr class="odd">
