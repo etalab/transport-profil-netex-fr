@@ -3456,7 +3456,7 @@ problème…)</p></td>
 <td>0:1</td>
 <td colspan="2"><em>DatedVehicle­Journey­Code</em></td>
 <td colspan="2"><p>Identifie la course.</p>
-<p><mark>Cette information est obligatoire dans le cadre des échanges
+<p><mark class="m_hub">Cette information est obligatoire dans le cadre des échanges
 avec un concentrateur.</mark></p></td>
 </tr>
 <tr class="even">
