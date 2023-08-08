@@ -7997,59 +7997,35 @@ En conséquence, il convient donc d'encoder (en attribut) le type de la
 structure utilisée pour décrire le message, en l'occurrence sous la
 forme :
 
-\<Content xsi:type="siri:FrGeneralMessageStructure"\>
+```xml
+<Content xsi:type="siri:FrGeneralMessageStructure">
+```
 
 Les lignes ci-dessous proposent un exemple de *Delivery* d'un *General
 Message* dans le cadre du profil France.
 
-<span class="mark">\<siri:GeneralMessageDelivery version="1.3"\></span>
-
-<span class="mark">\<siri:ResponseTimestamp\>2013-12-19T11:26:59.677+01:00\</siri:ResponseTimestamp\></span>
-
-<span class="mark">\<siri:RequestMessageRef\>SOAP-REQ-12345\</siri:RequestMessageRef\></span>
-
-<span class="mark">\<siri:Status\>true\</siri:Status\></span>
-
-<span class="mark">\<siri:ValidUntil\>2013-12-19T11:28:59.677+01:00\</siri:ValidUntil\></span>
-
-<span class="mark">\<siri:DefaultLanguage\>FR\</siri:DefaultLanguage\></span>
-
-<span class="mark">\<siri:GeneralMessage
-formatRef="</span>France<span class="mark">"\></span>
-
-<span class="mark">
-\<siri:RecordedAtTime\>2013-12-19T11:26:59.767+01:00\</siri:RecordedAtTime\></span>
-
-<span class="mark">
-\<siri:ItemIdentifier\></span>ITEM-ID-1234567<span class="mark">\</siri:ItemIdentifier\></span>
-
-<span class="mark">
-\<siri:InfoMessageIdentifier\></span>INFMSG-ID-12345678\</<span class="mark">siri:InfoMessageIdentifier\></span>
-
-<span class="mark">
-\<siri:InfoChannelRef\>Information\</siri:InfoChannelRef\></span>
-
-<span class="mark">
-\<siri:ValidUntilTime\>2013-13-19T11:32:59.767+01:00\</siri:ValidUntilTime\></span>
-
-<span class="mark"> \<siri:Content
-xsi:type="siri:FrGeneralMessageStructure"\></span>
-
-<span class="mark"> \<siri:Message\></span>
-
-<span class="mark">
-\<siri:MessageType\>textOnly\</siri:MessageType\></span>
-
-<span class="mark"> \<siri:MessageText xml:lang="FR"\>Trafic normal sur
-l'ensemble du réseau.\</siri:MessageText\></span>
-
-<span class="mark"> \</siri:Message\></span>
-
-<span class="mark"> \</siri:Content\></span>
-
-<span class="mark">\</siri:GeneralMessage\></span>
-
-<span class="mark">\</siri:GeneralMessageDelivery\></span>
+```xml
+<siri:GeneralMessageDelivery version="1.3"> 
+    <siri:ResponseTimestamp>2013-12-19T11:26:59.677+01:00</siri:ResponseTimestamp> 
+    <siri:RequestMessageRef>SOAP-REQ-12345</siri:RequestMessageRef> 
+    <siri:Status>true</siri:Status> 
+    <siri:ValidUntil>2013-12-19T11:28:59.677+01:00</siri:ValidUntil> 
+    <siri:DefaultLanguage>FR</siri:DefaultLanguage> 
+    <siri:GeneralMessage formatRef="France"> 
+        <siri:RecordedAtTime>2013-12-19T11:26:59.767+01:00</siri:RecordedAtTime> 
+        <siri:ItemIdentifier>ITEM-ID-1234567</siri:ItemIdentifier> 
+        <siri:InfoMessageIdentifier>INFMSG-ID-12345678</siri:InfoMessageIdentifier> 
+        <siri:InfoChannelRef>Information</siri:InfoChannelRef> 
+        <siri:ValidUntilTime>2013-13-19T11:32:59.767+01:00</siri:ValidUntilTime> 
+        <siri:Content xsi:type="siri:FrGeneralMessageStructure"> 
+            <siri:Message> 
+                <siri:MessageType>textOnly</siri:MessageType> 
+                <siri:MessageText xml:lang="FR">Trafic normal sur l'ensemble du réseau.</siri:MessageText> 
+            </siri:Message> 
+        </siri:Content> 
+    </siri:GeneralMessage> 
+</siri:GeneralMessageDelivery> 
+```
 
 ## Facility Monitoring
 
