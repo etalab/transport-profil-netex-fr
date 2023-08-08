@@ -8034,15 +8034,10 @@ traduit en français. Aucun terme équivalent pertinent n’ayant été
 trouvé. Une facility désigne à la fois :
 
 - Un équipement
-
 - Des services (Banquaires, Commerces, …)
-
 - Un véhicule
-
 - Un emplacement de parking
-
 - Une zone
-
 - …
 
 A chaque « Facility » peut être associé un mécanisme de comptage et une
@@ -8054,15 +8049,11 @@ Ce service permet d’échanger :
   localisation. **Dans le cadre du profil France** **l’utilisation de
   l’identifiant sera privilégiée**. La définition de la « Facility »
   étant connu au travers d’échanges NetEx (cf Profil NetEx France)
-
 - L’état d’une ou plusieurs « facilities » (disponibilité) et des
   actions possibles pour traiter une indisponibilité.
-
 - Et/ou des informations de comptage (le type, l’unité et la valuer).
-
 - Et/ou des informations de localisation (identifiants de point d’arrêt,
   lieu d’arrêt, vehicule, course, exploitant, …)
-
 - Des impacts des états de la « facility » sur l’accessibilité
 
 ### Requête d’information sur l’état des équipements « Facility » pour lequel les informations seront retournées
