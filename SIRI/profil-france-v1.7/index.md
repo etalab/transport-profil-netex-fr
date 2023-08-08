@@ -7097,37 +7097,42 @@ PreviousCall est précisée en 5.7.
 
 ### Requête d’information sur les véhicules
 
+<div class="no_h">
+
 | ***VehicleMonitoringRequest*** | *+Structure* | Requête d’information sur les véhicules |
 |--------------------------------|--------------|-----------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | *Attrib­utes*          | ***<span class="mark">version</span>***    | 1:1   | *VersionString*    | <span class="mark">Version du service “Vehicle Monitoring”, intégrant le numéro de version de profil par exemple. ‘2.1:FR-1.0’.</span> |
 |-----------------------|--------------------------------------------|-------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | *End­point Properties* | ***Request­Timestamp***                     | 1:1   | *xsd:dateTime*     | Date d'émission de la requête.                                                                                                         |
 |                       | ***Message­Identifier***                    | 0:1   | *Message­Qualifier* | Numéro d'identification du message.                                                                                                    |
 | *Topic*               | *choix*                                    | -1:1  |                    |                                                                                                                                        |
-|                       | ***a) Vehicle­Ref***                        | 0:1   | *VehicleCode*      | Identifiant du véhicule.                                                                                                               |
-|                       | ***b) <span class="mark">LineRef</span>*** | 0:1   | *LineCode*         | Identifiant de la ligne <span class="mark">(tous les véhicules de la ligne seront remontés).</span>                                    |
+|                       | ***a) Vehicle­Ref***                        | 0:1   | → *VehicleCode*      | Identifiant du véhicule.                                                                                                               |
+|                       | ***b) <span class="mark">LineRef</span>*** | 0:1   | → *LineCode*         | Identifiant de la ligne <span class="mark">(tous les véhicules de la ligne seront remontés).</span>                                    |
 | *any*                 | ***Extensions***                           | *0:1* | *+Structure*       | Emplacement pour extension utilisateur (cf 5.4.2.2)                                                                                    |
 
+</div>
+
 ### Abonnement aux informations sur les véhicules
+
+<div class="no_h">
 
 | ***<span class="mark">VehicleMonitoring­SubscriptionRequest</span>*** | *+Structure* | Abonnement aux informations sur les véhicules. |
 |----------------------------------------------------------------------|--------------|------------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 19%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 49%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Identity</em></th>
 <th><em><strong>SubscriberRef</strong></em></th>
 <th>0:1</th>
-<th><em>Participant­Code</em></th>
+<th>→ <em>Participant­Code</em></th>
 <th>Identification du système demandeur ( voir SIRI Part 2 Common
 <em><strong>SubscriptionRequest</strong></em> parameters.).</th>
 </tr>
@@ -7197,8 +7202,14 @@ qu'un horaire de départ change de 2 minutes, on ne sera pas notifié,
 
 ### Réponse aux requêtes d’information sur les véhicules
 
+<div class="no_h">
+
 | ***<span class="mark">VehicleMonitoringDelivery</span>*** | *+Structure* | Réponse aux requêtes d’information sur les véhicules. |
 |-----------------------------------------------------------|--------------|-------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | *Attributes* | ***version***                     | 1:1   | *VersionString* | Numéro de version du service *Vehicle Monitoring*, intégrant le numéro de version de profil (voir 5.9) (valeur fixe). |
 |--------------|-----------------------------------|-------|-----------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -7207,19 +7218,18 @@ qu'un horaire de départ change de 2 minutes, on ne sera pas notifié,
 |              | ***VehicleActivity­Cancellation*** | 0:\*  | *+Structure*    | Signale l’annulation du service du véhicule.                                                                          |
 | *any*        | ***Extensions***                  | *0:1* | *+Structure*    | Emplacement pour extension utilisateur (cf 5.4.2.2).                                                                  |
 
+</div>
+
 #### Structure VehicleActivity
+
+<div class="no_h">
 
 | ***VehicleActivity*** | *+Structure* | Informations sur le véhicule. |
 |-----------------------|--------------|-------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 50%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Log</em></th>
@@ -7314,18 +7324,26 @@ du véhicule (vehicleLocation).Voir paragraphe
 
 #### Structure VehicleActivityCancellation
 
+<div class="no_h">
+
 | ***<span class="mark">VehicleActivityCancellation</span>*** | *+Structure* | Annulation de l’affectation d’un véhicule à une course. |
 |-------------------------------------------------------------|--------------|---------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | *End­point*           | ***Recorded­AtTime***          | 1:1  | *xsd:dateTime*            | Heure à laquelle l'annulation a été signalée/publiée.         |
 |----------------------|-------------------------------|------|---------------------------|---------------------------------------------------------------|
 | *Event­Identity*      | ***ItemRef***                 | 0:1  | *ItemIdentifier*          | Identifiant de l’objet annulé (voir ***ItemRef*** plus haut). |
-|                      | ***Vehicle­Monitoring­Ref***    | 0:1  | *Vehicle­Monitoring­Code*   | Identifiant du véhicule.                                      |
+|                      | ***Vehicle­Monitoring­Ref***    | 0:1  | → *Vehicle­Monitoring­Code*   | Identifiant du véhicule.                                      |
 |                      | ***Framed­Vehicle­Journey­Ref*** | 0:1  | *+Structure*              | Description de la course annulée.                             |
-|                      | ***LineRef***                 | 0:1  | *LineCode*                | Identifiant de la ligne.                                      |
+|                      | ***LineRef***                 | 0:1  | → *LineCode*                | Identifiant de la ligne.                                      |
 | *Journey­Pattern­Info* | ***:::***                     | 0:1  | *JourneyPattern­InfoGroup* | Voir SIRI Partie 2 JourneyPatternInfoGroup.                   |
 | *Message*            | ***Reason***                  | 0:\* | *NLString*                | Description textuelle de la cause de l’annulation.            |
 | *any*                | ***Extensions***              | 0:1  | *Any*                     | Emplacement pour extension utilisateur (cf 5.4.2.2).          |
+
+</div>
 
 ## General Message
 
