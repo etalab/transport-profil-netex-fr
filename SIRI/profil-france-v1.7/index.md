@@ -6217,17 +6217,14 @@ indique une avance).</mark></td>
 
 ### Requête d’information sur les correspondances
 
+<div class="no_h">
+
 | **Connection­Monitoring­Request** | *+Structure* | Requête d’information sur les correspondances |
 |---------------------------------|--------------|-----------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 50%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Attributes</em></th>
@@ -6266,7 +6263,7 @@ dans la durée indiquée.</mark></td>
 <td></td>
 <td><em><strong><mark>ConnectionLink­Ref</mark></strong></em></td>
 <td>1:1</td>
-<td><em>Connec­tion­Link­Code</em></td>
+<td><mark>→</mark> <em>Connec­tion­Link­Code</em></td>
 <td><p><mark>Identifiant de la correspondance interrogée (à déterminer
 entre les participants).</mark></p>
 <p><mark>Pour mémoire, le « ConnectionLink » référence le cheminement
@@ -6292,14 +6289,14 @@ réalise donc en empruntant un « ConnectionLink »). </mark></p></td>
 <td></td>
 <td><strong>➞ <em>LineRef</em></strong></td>
 <td>1:1</td>
-<td><em>Line­Code</em></td>
+<td>→ <em>Line­Code</em></td>
 <td></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><strong>➞ <em>Direction Ref</em></strong></td>
 <td>1:1</td>
-<td><em>Direction­Code</em></td>
+<td>→ <em>Direction­Code</em></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -6323,39 +6320,44 @@ Connecting­Journey­Filter</mark></strong></em></td>
 
 #### Structure ConnectingTimeFilter
 
+<div class="no_h">
+
 | *Filter* | ***<span class="mark">Connecting­TimeFilter</span>*** |     | *+Structure*    | Filtre temporel pour les requêtes.                                           |
 |----------|------------------------------------------------------|-----|-----------------|------------------------------------------------------------------------------|
-|          | **➞ *LineRef***                                      | 1:1 | *LineCode*      | Identifiant de la ligne amenante.                                            |
-|          | **➞ *DirectionRef***                                 | 1:1 | *Direction­Code* | Indication de direction (aller/retour).                                      |
+|          | **➞ *LineRef***                                      | 1:1 | → *LineCode*      | Identifiant de la ligne amenante.                                            |
+|          | **➞ *DirectionRef***                                 | 1:1 | → *Direction­Code* | Indication de direction (aller/retour).                                      |
 |          | **➞ *Earliest­ArrivalTime***                          | 1:1 | *xsd:dateTime*  | Début de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée). |
 |          | **➞ *Latest­ArrivalTime***                            | 1:1 | *xsd:dateTime*  | Fin de la fenêtre temporelle d’interrogation (basé sur l’heure d’arrivée).   |
 
+</div>
+
 #### Structure ConnectingJourneyFilter
+
+<div class="no_h">
 
 | *Filter* | ***Connecting­JourneyFilter*** |     | *+Structure*              | Filtre sur les courses.                                                     |
 |----------|-------------------------------|-----|---------------------------|-----------------------------------------------------------------------------|
-|          | **➞*Dated­Vehicle­JourneyRef*** | 1:1 | *Dated­Vehicle­Journey­Code* | Identifiant de la course.                                                   |
+|          | **➞*Dated­Vehicle­JourneyRef*** | 1:1 | →  *Dated­Vehicle­Journey­Code* | Identifiant de la course.                                                   |
 |          | **➞ *Aimed­Arrival­Time***      | 0:1 | *xsd:dateTime*            | Date et heure d’arrivée prévue au point d’arrêt (départ de correspondance). |
 
+</div>
+
 ### Abonnement aux informations sur les correspondances
+
+<div class="no_h">
 
 | ***Connection­Monitoring­Subscription­Request*** | *+Structure* | Abonnement aux informations sur les correspondances. |
 |-----------------------------------------------|--------------|------------------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 49%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Identity</em></th>
 <th><em><strong>Subscriber­Ref</strong></em></th>
 <th><em><strong>1:1</strong></em></th>
-<th><em>Participant­Code</em></th>
+<th>→ <em>Participant­Code</em></th>
 <th>Identification du système demandeur ( voir SIRI Partie 2 Common
 <em><strong>SubscriptionRequest</strong></em> parameters).</th>
 </tr>
@@ -6412,27 +6414,32 @@ fonctionnent pas à la minute, surtout côté client).</mark></p></td>
 
 ### Réponse aux requêts d’information sur les correspondances
 
+<div class="no_h">
+
 | ***ServiceDelivery*** | *+Structure* | Réponse aux requêtes d’information sur les correspondances. |
 |-----------------------|--------------|-------------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | HEADER    | :::                                           | 1:1  | *See ServiceDelivery* |                                               |
 |-----------|-----------------------------------------------|------|-----------------------|-----------------------------------------------|
 | *Payload* | ***ConnectionMonitoring­FeederDelivery***      | 1:\* | *+Structure*          | voir ConnectionMonitoring­Feeder­Delivery.      |
 |           | ***ConnectionMonitoring­DistributorDelivery*** | 1:\* | *+Structure*          | voir ConnectionMonitoringDistributor­Delivery. |
 
+</div>
+
 #### Connection MonitoringFeeder Delivery
+
+<div class="no_h">
 
 | ***Connection­MonitoringFeeder­Delivery*** | *+Structure* | Réponse aux requêtes d’information sur les correspondances : description des alimentants. |
 |------------------------------------------|--------------|-------------------------------------------------------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 48%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Attributes</em></th>
@@ -6479,17 +6486,14 @@ intégrant le numéro de version de profil (voir 5.9) (valeur fixe).</th>
 
 ##### Structure MonitoredFeederArrival
 
+<div class="no_h">
+
 | ***<span class="mark">MonitoredFeederArrival</span>*** | *+Structure* | Information sur l’amenant. |
 |--------------------------------------------------------|--------------|----------------------------|
 
-<table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 16%" />
-<col style="width: 6%" />
-<col style="width: 16%" />
-<col style="width: 49%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Log</em></th>
@@ -6511,7 +6515,7 @@ intégrant le numéro de version de profil (voir 5.9) (valeur fixe).</th>
 <td><em>Feeder Inter­change Identity</em></td>
 <td><em><strong><mark>Interchange­Ref</mark></strong></em></td>
 <td>0:1</td>
-<td><em>Interchange­Code</em></td>
+<td>→ <em>Interchange­Code</em></td>
 <td><p>Identifiant de la correspondance entre course.</p>
 <p><mark>Dans le cadre du profil France, si ce paramètre est présent, il
 sera constitué de la concaténation de l’identifiant de la course
@@ -6522,14 +6526,14 @@ arrivant et de celui de la course au départ (séparés par le caractère
 <td></td>
 <td><em><strong>Connection­Link­Ref</strong></em></td>
 <td>1:1</td>
-<td><em>Connection­Link­Code</em></td>
+<td>→ <em>Connection­Link­Code</em></td>
 <td>Identifiant de la correspondance physique.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td><em><strong><mark>Stop­Point­Ref</mark></strong></em></td>
 <td>0:1</td>
-<td><em>StopPoint­Code</em></td>
+<td>→ <em>StopPoint­Code</em></td>
 <td><p>Identifiant du point d’arrêt de l’amenant (généralement porté par
 le ConnectionLink)..</p>
 <p><mark>Il convient d'utiliser ici un identifiant d'objet de
@@ -6554,7 +6558,7 @@ granularité la plus fine possible dans tous les cas.</mark></p></td>
 <td></td>
 <td><em><strong>Clear­Down­Ref</strong></em></td>
 <td>0:1</td>
-<td><em>Cleardown­Code</em></td>
+<td>→ <em>Cleardown­Code</em></td>
 <td><em>Cleardown</em> : indicateur « véhicule à l’arrêt » ou « à
 l’approche ».</td>
 </tr>
@@ -6606,12 +6610,18 @@ l’approche ».</td>
 
 ##### Structure FeederJourney
 
+<div class="no_h">
+
 | ***<span class="mark">FeederJourney</span>*** | *+Structure* | Description de la course de l’amenant. |
 |-----------------------------------------------|--------------|----------------------------------------|
 
-| *VehicleJourney­Identity* | ***LineRef***                             | 1:1   | *LineCode*                | Identifiant de la ligne.                                                                       |
+</div>
+
+<div class="no_h">
+
+| *VehicleJourney­Identity* | ***LineRef***                             | 1:1   | → *LineCode*                | Identifiant de la ligne.                                                                       |
 |--------------------------|-------------------------------------------|-------|---------------------------|------------------------------------------------------------------------------------------------|
-|                          | ***DirectionRef***                        | 1:1   | *Direction­Code*           | Indication de direction (aller/retour).                                                        |
+|                          | ***DirectionRef***                        | 1:1   | → *Direction­Code*           | Indication de direction (aller/retour).                                                        |
 |                          | ***Framed­Vehicle­JourneyRef***             | 0:1   | *+Structure*              | Identification de la course.                                                                   |
 | *JourneyPattern­Info*     | ***:::***                                 | 0:1   | *Journey­Pattern­Info­Group* | Voir Journey­Pattern­Info­Group.                                                                  |
 | *VehicleJourney­Info*     | ***:::***                                 | 0:1   | *Vehicle­JourneyInfo­Group* | Voir Vehicle­JourneyInfo­Group.                                                                  |
@@ -6620,19 +6630,18 @@ l’approche ».</td>
 | *Call Times*             | ***Aimed­Arrival­Time***                    | 0:1   | *xsd:dateTime*            | Heure d’arrivée prévue à l’arrêt.                                                              |
 | *any*                    | ***Extensions***                          | *0:1* | *any*                     | Emplacement pour extension utilisateur (cf 5.4.2.2).                                           |
 
+</div>
+
 ##### Structure MonitoredFeederArrivalCancellation
+
+<div class="no_h">
 
 | ***<span class="mark">MonitoredFeederArrival­Cancellation</span>*** | *+Structure* | Information d’annulation de course. |
 |--------------------------------------------------------------------|--------------|-------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 17%" />
-<col style="width: 5%" />
-<col style="width: 18%" />
-<col style="width: 49%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Log</em></th>
@@ -6659,7 +6668,7 @@ Inter­change<br />
 Identity</em></td>
 <td><em><strong><mark>Interchange­Ref</mark></strong></em></td>
 <td>0:1</td>
-<td><em>Interchange<strong>­</strong>Code</em></td>
+<td>→ <em>Interchange<strong>­</strong>Code</em></td>
 <td><p>Identifiant de la correspondance entre courses.</p>
 <p><mark>Dans le cadre du profil France, si ce paramètre est présent, il
 sera constitué de la concaténation de l’identifiant de la course
@@ -6670,14 +6679,14 @@ arrivant et de celui de la course au départ (séparés par le caractère
 <td></td>
 <td><em><strong>ConnectionLink­Ref</strong></em></td>
 <td>1:1</td>
-<td><em>Connection­Link­Code</em></td>
+<td>→ <em>Connection­Link­Code</em></td>
 <td>Identifiant de la correspondance physique.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td><em><strong><mark>StopPoint­Ref</mark></strong></em></td>
 <td>0:1</td>
-<td><em>StopPoint­Code</em></td>
+<td>→ <em>StopPoint­Code</em></td>
 <td><p>Identifiant du point d’arrêt de l’amenant (généralement porté par
 le <em>ConnectionLink</em>).</p>
 <p><mark>Il convient d'utiliser ici un identifiant d'objet de
@@ -6702,14 +6711,14 @@ granularité la plus fine possible dans tous les cas.</mark></p></td>
 <td><em>Journey Info</em></td>
 <td><em><strong>LineRef</strong></em></td>
 <td>1:1</td>
-<td><em>LineCode</em></td>
+<td>→ <em>LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td><em><strong>DirectionRef</strong></em></td>
 <td>1:1</td>
-<td><em>Destination­Code</em></td>
+<td>→ <em>Destination­Code</em></td>
 <td>Identifiant de la direction (aller/retour).</td>
 </tr>
 <tr class="odd">
@@ -6723,7 +6732,7 @@ granularité la plus fine possible dans tous les cas.</mark></p></td>
 <td></td>
 <td><em><strong>JourneyPatternRef</strong></em></td>
 <td>0:1</td>
-<td><em>Journey­PatternCode</em></td>
+<td>→ <em>Journey­PatternCode</em></td>
 <td>Identifiant de la mission.</td>
 </tr>
 <tr class="odd">
@@ -6751,7 +6760,7 @@ intercontinentalFlight, domesticScheduledFlight, shuttleFlight
 <td></td>
 <td><em><strong>RouteRef</strong></em></td>
 <td>0:1</td>
-<td><em>RouteCode</em></td>
+<td>→ <em>RouteCode</em></td>
 <td>Identifiant de l'itinéraire suivi.</td>
 </tr>
 <tr class="even">
@@ -6765,7 +6774,7 @@ intercontinentalFlight, domesticScheduledFlight, shuttleFlight
 <td></td>
 <td><em><strong><mark>GroupOfLinesRef</mark></strong></em></td>
 <td>0:1</td>
-<td><em>GroupOfLinesCode</em></td>
+<td>→ <em>GroupOfLinesCode</em></td>
 <td><mark>Identifiant du Goupe de Lignes (réseau ou tout autre groupe de
 ligne auquel la course est rattachée<del>).</del></mark></td>
 </tr>
@@ -6798,8 +6807,14 @@ informations.</mark></p></td>
 
 #### Structure ConnectionMonitoringDistributorDelivery
 
+<div class="no_h">
+
 | ***<span class="mark">ConnectionMonitoringDistributor­Delivery</span>*** | *+Structure* | Information concernant le “partant”. |
 |-------------------------------------------------------------------------|--------------|--------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | *Attributes* | ***version***                          | 1:1   | *VersionString* | Version du service intégrant le numéro de version de profil (voir 5.9) par exemple. ‘2.1:FR-IDF-2.4’. |
 |--------------|----------------------------------------|-------|-----------------|-------------------------------------------------------------------------------------------------------|
@@ -6809,10 +6824,18 @@ informations.</mark></p></td>
 |              | ***Distributor­Departure­Cancellation*** | 0:\*  | *+Structure*    | Annulation de départ.                                                                                 |
 | *any*        | ***Extensions***                       | *0:1* | *+Structure*    | Emplacement pour extension utilisateur (cf 5.4.2.2).                                                  |
 
+</div>
+
 ##### Structure WaitProlongedDeparture
+
+<div class="no_h">
 
 | ***<span class="mark">WaitProlongedDeparture</span>*** | *+Structure* | Description d’une prologation d’arrêt pour attente de l’amenant |
 |--------------------------------------------------------|--------------|-----------------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | *Log*             | ***Recorded­AtTime***        | 1:1   | *xsd:dateTime*         | Date et heure auxquelles ces données ont été produites. |
 |-------------------|-----------------------------|-------|------------------------|---------------------------------------------------------|
@@ -6820,30 +6843,37 @@ informations.</mark></p></td>
 | *Change*          | ***Expected­Departure­Time*** | 1:1   | *xsd:dateTime*         | Nouvelle heure de départ prévue.                        |
 | *any*             | ***Extensions***            | *0:1* | *any*                  | Emplacement pour extension utilisateur (cf 5.4.2.2).    |
 
+</div>
+
 ##### Structure StoppingPositionChangedDeparture
+
+<div class="no_h">
 
 | ***<span class="mark">StoppingPosition­ChangedDeparture</span>*** | *+Structure* | Description d’un déplacement (temporaire) de point d’arrêt. |
 |------------------------------------------------------------------|--------------|-------------------------------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | *Log*             | ***Recorded­AtTime*** | 1:1 | *xsd:dateTime*         | Date et heure auxquelles ces données ont été produites. |
 |-------------------|----------------------|-----|------------------------|---------------------------------------------------------|
 | *Distributor­Info* | ***:::***            | 1:1 | *Distributor­Info­Group* | Voir DistributorInfoGroup (6.3.3.2.4)**.**              |
 | *Change*          | ***ChangeNote***     | 1:1 | *NLString*             | Description de la nouvelle position (textuelle).        |
-|                   | ***NewLocation***    | 0:1 | *Location*             | Nouvelle position de l’arrêt.                           |
+|                   | ***NewLocation***    | 0:1 | → *Location*             | Nouvelle position de l’arrêt.                           |
+
+</div>
 
 ###### Structure Location
+
+<div class="no_h">
 
 | ***<span class="mark">LocationStructure</span>*** | 0:1 | *+Structure* | Geospatial Location. |
 |---------------------------------------------------|-----|--------------|----------------------|
 
-<table>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 16%" />
-<col style="width: 7%" />
-<col style="width: 15%" />
-<col style="width: 43%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th rowspan="2"><em>Attributes</em></th>
@@ -6915,12 +6945,16 @@ degrés décimaux.</td>
 
 ##### Structure DistributorDepartureCancellation
 
+<div class="no_h">
+
 | ***DistributorDeparture­­Cancellation*** |                      |       | *+Structure*           | Indication d’annulation de depart.                      |
 |----------------------------------------|----------------------|-------|------------------------|---------------------------------------------------------|
 | *Log*                                  | ***Recorded­AtTime*** | 1:1   | *xsd:dateTime*         | Date et heure auxquelles ces données ont été produites. |
 | *DistributorInfo*                      | ***:::***            | 1:1   | *Distributor­Info­Group* | Voir DistributorInfoGroup(6.3.3.2.4).                   |
 | *Call time*                            | ***Reason***         | 1:1   | *NLString*             | Raison de l’annulation.                                 |
 | *any*                                  | ***Extension***      | *0:1* | *any*                  | Emplacement pour extension utilisateur (cf 5.4.2.2).    |
+
+</div>
 
 ##### Structure DistributorInfoGroup
 
