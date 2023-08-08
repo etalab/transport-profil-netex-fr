@@ -4972,8 +4972,12 @@ remontées.</mark></p></td>
 
 ### Requête multiple d'information temps réel au point d'arrêt en utilisant SOAP
 
+<div class="no_h">
+
 | SM065 | <span class="mark">Il existe plusieurs façons de réaliser des requêtes d'information temps réel pour plusieurs points d'arrêt. Toutefois seule la solution ***GetSiri*** (voir ci-dessous) est recommandée par le profil FR, les autres solutions ne pouvant être maintenues que pour compatibilité ascendante.</span> |
 |-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 Le service SOAP ***GetSiri*** *(introduit par SIRI 2)* est celui qui
 doit être utilisé pour les requêtes multiples d'information temps réel
@@ -4987,14 +4991,7 @@ requête illimitée.
 |----------------------------------|--------------|------------------------------------------------------------------------------------------------------------------------|
 | ***StopMonitoringSubscription*** | *+Structure* | Requête d'abonnement pour obtenir des informations temps réel sur les heures d'arrivée et de départ à un point d'arrêt |
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 18%" />
-<col style="width: 5%" />
-<col style="width: 13%" />
-<col style="width: 53%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Identity</em></td>
@@ -5037,7 +5034,7 @@ d'information ou s’il faut systématiquement renvoyer toutes les
 informations si l'une d'elles change.</mark></p>
 <p><mark>Valeur par défaut : « true » (mise à jour
 incrémentale)</mark>.</p>
-<p><mark>Dans le cadre des échanges avec un concentrateur seul le mode
+<p><mark class="m_hub">Dans le cadre des échanges avec un concentrateur seul le mode
 incrémental est supporté.</mark></p></td>
 </tr>
 <tr class="even">
@@ -5051,7 +5048,7 @@ horaire de départ ou d'arrivée change de 2mn, on ne sera pas notifié,
 évitant ainsi des flux d'information inutiles).</mark></p>
 <p><mark>Si ce champ n'est pas présent, une valeur de <strong>5
 minutes</strong> est prise par défaut.</mark></p>
-<p><mark>Dans le cadre des échanges avec un concentrateur la valeur par
+<p><mark class="m_hub">Dans le cadre des échanges avec un concentrateur la valeur par
 défaut est de <strong>1 minute</strong>.</mark></p>
 <p><mark>C’est une valeur « par défaut », qui est volontairement haute
 pour ne pas surcharger les échanges : dans le cas nominal elle devra
@@ -5093,14 +5090,7 @@ dès que :
 |------------------------------|--------------|---------------------------------------|
 | ***StopMonitoringDelivery*** | *+Structure* | Delivery for Stop Monitoring Service. |
 
-<table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 14%" />
-<col style="width: 49%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Attributes</em></td>
@@ -5159,14 +5149,7 @@ l'arrêt).</mark></td>
 |----------------------------------------------------|--------------|-------------------------------------------------------------------------------|
 | ***<span class="mark">MonitoredStopVisit</span>*** | *+Structure* | Description du passage d'un véhicule à un arrêt (dans le cadre d'une course). |
 
-<table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 15%" />
-<col style="width: 6%" />
-<col style="width: 19%" />
-<col style="width: 43%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Log</em></td>
@@ -5216,14 +5199,7 @@ l'arrêt.</mark></p></td>
 |---------------------------------------------------------|--------------|---------------------------|
 | ***<span class="mark">MonitoredVehicleJourney</span>*** | *+Structure* | Description de la course. |
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 20%" />
-<col style="width: 5%" />
-<col style="width: 13%" />
-<col style="width: 51%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Vehicle Journey Identity</em></td>
@@ -5236,10 +5212,10 @@ l'arrêt.</mark></p></td>
 <td></td>
 <td><em><strong><mark>Framed­Vehicle­JourneyRef</mark></strong></em></td>
 <td><p>0:1</p>
-<p><strong><mark>1:1</mark></strong></p></td>
+<p><strong><mark class="m_hub">1:1</mark></strong></p></td>
 <td><em>+Framed­Vehicle­JourneyRef­Structure</em></td>
 <td><p>Identification de la course.</p>
-<p><mark>Champ obligatoire pour les échanges avec les concentrateurs :
+<p><mark class="m_hub">Champ obligatoire pour les échanges avec les concentrateurs :
 ce champ n'est pas forcément le reflet d'une valeur d'identifiant
 planifié et peut être construit localement par l'émetteur, mais il sera
 important pour une bonne gestion des abonnements en mode différentiel
@@ -5285,7 +5261,7 @@ notament de gérer les trains couples).</td>
 <td></td>
 <td>➞ <em><strong><mark>TrainNumberRef</mark></strong></em></td>
 <td>1:1</td>
-<td><em>TrainNumber</em></td>
+<td>➞ <em>TrainNumber</em></td>
 <td>Numéro de train.</td>
 </tr>
 <tr class="odd">
@@ -5306,7 +5282,7 @@ notament de gérer les trains couples).</td>
 <td></td>
 <td>⇉ <em><strong><mark>Journey­PartRef</mark></strong></em></td>
 <td>1:1</td>
-<td><em>JourneyPart­Code</em></td>
+<td>➞ <em>JourneyPart­Code</em></td>
 <td><mark>Dans le cadre du profil France ce champ permettra
 d'identifier, en particulier dans le contexte du RER, les portions de
 courses exploitées par la RATP et celles exploitées par la SNCF (les
@@ -5317,7 +5293,7 @@ qui devront être fixes en amont de l'échange).</mark></td>
 <td></td>
 <td>⇉ <em><strong>Train­NumberRef</strong></em></td>
 <td>0:1</td>
-<td><em>TrainNumbere</em></td>
+<td>➞ <em>TrainNumber</em></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -5357,20 +5333,13 @@ qui devront être fixes en amont de l'échange).</mark></td>
 |-----------------------------------------------|--------------|-------------------------------------|
 | ***<span class="mark">MonitoredCall</span>*** | *+Structure* | Informations horaires pour l'arrêt. |
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 19%" />
-<col style="width: 47%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Stop Identity</em></td>
 <td><em><strong><mark>Stop­Point­Ref</mark></strong></em></td>
 <td><p>0:1</p>
-<p><strong><mark>1:1</mark></strong></p></td>
+<p><strong><mark class="m_hub">1:1</mark></strong></p></td>
 <td><em>StopPoint­Code</em></td>
 <td><p>Identifiant du Point d'arrêt (cet identifiant est à rapprocher de
 l’attribut <em>MonitoringRef</em> de la structure
@@ -5385,7 +5354,7 @@ multimodalStopPointRef est une zone d'embarquement, si l'émetteur est
 capable de la fournir.</mark></p>
 <p><mark>- Sinon, StopPointRef estun lieu d’arrêt (granularité la plus
 fine possible dans tous les cas)</mark>.</p>
-<p><mark>Champ obligatoire pour les échanges avec les
+<p><mark class="m_hub">Champ obligatoire pour les échanges avec les
 concentrateurs</mark>.</p></td>
 </tr>
 <tr class="even">
@@ -5614,14 +5583,7 @@ courante du vehicule et l'arrêt considéré.</mark></td>
 |--------------------------------------------|--------------|---------------------------------------------------|
 | ***<span class="mark">OnwardCall</span>*** | *+Structure* | Information sur les arrêts suivants de la course. |
 
-<table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 22%" />
-<col style="width: 5%" />
-<col style="width: 12%" />
-<col style="width: 49%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Stop Identity</em></td>
@@ -5781,12 +5743,7 @@ courante du vehicule et l'arrêt considéré.</mark></td>
 
 ##### Annulation d'arrêts
 
-<table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 11%" />
-<col style="width: 52%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em><strong><mark>MonitoredStopVisit­Cancellation</mark></strong></em></td>
@@ -5799,14 +5756,7 @@ course.</p></td>
 </tbody>
 </table>
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 6%" />
-<col style="width: 15%" />
-<col style="width: 49%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Log</em></td>
@@ -5820,10 +5770,10 @@ signalée/publiée.</td>
 <td><em>Event­Identity</em></td>
 <td><em><strong><mark>ItemRef</mark></strong></em></td>
 <td><p>0:1</p>
-<p><strong><mark>1:1</mark></strong></p></td>
+<p><strong><mark class="m_hub">1:1</mark></strong></p></td>
 <td><em>ItemIdentifier</em></td>
 <td><p>Identifiant de l'arrêt annulé (voir ItemRef plus haut).</p>
-<p><mark>Champ obligatoire pour les échanges avec les concentrateurs (il
+<p><mark class="m_hub">Champ obligatoire pour les échanges avec les concentrateurs (il
 doit être unique et pérenne, dans le cadre d'une journée d'exploitation,
 et bien permettre une annulation de passage à l'arrêt).</mark></p></td>
 </tr>
@@ -5847,10 +5797,10 @@ par le paramètre <em>FramedVehicleJourneyRef</em> ).</mark></td>
 <td></td>
 <td><em><strong><mark>Vehicle­JourneyRef</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>1:1</mark></p></td>
+<p><mark class="m_hub">1:1</mark></p></td>
 <td><em>+Structure (FramedVehicleJourneyRefStructure)</em></td>
 <td><p>Identification de la course concernée<em>.</em></p>
-<p><mark>Champ obligatoire pour les échanges avec les
+<p><mark class="m_hub">Champ obligatoire pour les échanges avec les
 concentrateurs</mark></p></td>
 </tr>
 <tr class="even">
@@ -5879,14 +5829,7 @@ concentrateurs</mark></p></td>
 
 #### FramedVehicleJourneyRef
 
-<table>
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 19%" />
-<col style="width: 5%" />
-<col style="width: 13%" />
-<col style="width: 44%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em><strong><mark>Framed­Vehicle­JourneyRef</mark></strong></em></td>
@@ -5923,14 +5866,7 @@ n'est pas applicable.</mark></p></td>
 |---------------------------------------------------------|-----|-----|---------------------------|
 | ***<span class="mark">VehicleJourneyInfo­Group</span>*** |     |     | Description de la course. |
 
-<table>
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 17%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 47%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Service­Info</em></td>
@@ -5995,22 +5931,15 @@ donnée. L'interprétation comme "première ou dernière course pour une
 mission donnée" est acceptable, mais devra être précisée dans les
 spécifications d'interface du serveur (et le JourneyPatterInfoGroup
 devra alors être renseigné).</mark></p>
-<p>(<mark>firstServiceOfDay</mark> | <mark>lastServiceOfDay</mark> |
-<mark>otherService</mark> | <mark>unspecified</mark>).</p></td>
+<p>(firstServiceOfDay | lastServiceOfDay |
+otherService | unspecified).</p></td>
 </tr>
 </tbody>
 </table>
 
 #### ServiceInfoGroup
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 18%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 49%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td>Service Info</td>
@@ -6046,12 +5975,12 @@ rapport à la liste recommandée par la norme (<em>voir SIRI 2 Partie 1
 paragraphe 3.3.14.1</em>) pour signaler les trains courts et les trains
 longs. Les codes retenus sont:</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark><em><strong>shortTrain</strong></em> : Train court</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>longTrain</strong></em> : Train long</mark></p>
-</blockquote></li>
+</li>
 </ul></td>
 </tr>
 </tbody>
@@ -6059,14 +5988,7 @@ longs. Les codes retenus sont:</mark></p>
 
 #### JourneyEndNamesGroup
 
-<table>
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 17%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 47%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>ServiceEnd Names</em></td>
@@ -6133,14 +6055,7 @@ est fourni, le nom doit l'être aussi).</mark></td>
 |---------------------------------------------------------|-----|-----|-----------------------------------------------------|
 | ***<span class="mark">JourneyPatternInfoGroup</span>*** |     |     | Groupe d'attributs pour la description des missions |
 
-<table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 21%" />
-<col style="width: 5%" />
-<col style="width: 13%" />
-<col style="width: 45%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Journey Pattern Info</em></td>
@@ -6203,6 +6118,8 @@ informations.</mark></p></td>
 vont être étendus dans le cadre des services « *Facility Monitoring* »
 et « *Situation Exchange* ».</span>
 
+<div class="no_h">
+
 | SM-14 | <span class="mark">Seule la référence à un événement sera retenue, les informations complémentaires pour l'état des équipements et les perturbations seront déterminées dans le cadre du service « *Situation Exchange* ».</span> |
 |-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -6210,20 +6127,15 @@ et « *Situation Exchange* ».</span>
 |-------------|----------------------------------------------|------|-----------------|---------------------------------------------------------------------------------------------|
 | *Situation* | ***<span class="mark">SituationRef</span>*** | 0:\* | *SituationCode* | Identifiant (externe) de l'événement qui est la cause des modifications horaires indiquées. |
 
+</div>
+
 #### JourneyProgressInfoGroup
 
 |                                                          |                                                           |
 |----------------------------------------------------------|-----------------------------------------------------------|
 | ***<span class="mark">JourneyProgressInfoGroup</span>*** | Groupe d'attributs précisant l’avancement sur la mission. |
 
-<table>
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 14%" />
-<col style="width: 6%" />
-<col style="width: 20%" />
-<col style="width: 43%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Status</em></td>
