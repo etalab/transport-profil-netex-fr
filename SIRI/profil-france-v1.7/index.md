@@ -11276,14 +11276,7 @@ colspan="2"><em><strong><mark>Shortest­Possible­Cycle</mark></strong></em></td
 |----------------------------|--------------|-------------------------------------|
 | ***SubscriptionResponse*** | *+Structure* | Réponse à une demande d’abonnement. |
 
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 48%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Log</em></td>
@@ -11331,7 +11324,7 @@ producteur ou de celle connue par défaut.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong><mark>Service­Started­Time</mark></strong></em></td>
+<td><em><strong><mark class="m_hub">Service­Started­Time</mark></strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td><p>Heure à laquelle le service fournissant l’abonnement a été
@@ -11340,7 +11333,7 @@ un redémarrage. S’il est absent, l’adresse est inconnue.</p>
 <p><mark>Dans le cas du profil France, le responsable des abonnements
 devra les mémoriser et les réactiver automatiquement au redémarrage, ce
 champ n’est donc pas utile dans le cas classique.</mark></p>
-<p><mark>Ce champ sera utilisé dans le cas des échanges avec les
+<p><mark class="m_hub">Ce champ sera utilisé dans le cas des échanges avec les
 concentrateurs pour superviser les connexions
 d'abonnement.</mark></p></td>
 </tr>
@@ -11589,27 +11582,24 @@ Allowed­Resource­Usage­Exceeded­Error</mark></strong></em></td>
 |                       | **➞ *<span class="mark">Subscription­Ref</span>***              | 1:1                               | *Subscription­Qualifier* | <span class="mark">Identifiant de la souscription.</span>                  |
 |                       | **➞ *<span class="mark">Status</span>***                       | **<span class="mark">1:1</span>** | *xsd:boolean*           | <span class="mark">Indique si la souscription a bien pu être close</span>  |
 |                       | **➞ *<span class="mark">Error­Condition</span>***               | 0:1                               | *+Structure*            | <span class="mark">Signale une éventuelle erreur.</span>                   |
-|                       | ⮆ *choix*                                                      | -1 :1                             |                         | <span class="mark">Au choix :</span>                                       |
+|                       | ⇉ *choix*                                                      | -1 :1                             |                         | <span class="mark">Au choix :</span>                                       |
 |                       | ***<span class="mark">a) Capability­Not­Supported­Error</span>*** | 0:1                               | *+Error*                | <span class="mark">Fonction non supportée.</span>                          |
 |                       | ***<span class="mark">b) Unknown­Subscriber­Error</span>***      | 0:1                               | *+Error*                | <span class="mark">Souscripteur inconnu.</span>                            |
 |                       | ***<span class="mark">c) Unknown­Subscription­Error</span>***    | 0:1                               | *+Error*                | <span class="mark">Souscription inconnue.</span>                           |
 |                       | ***<span class="mark">d) OtherError</span>***                  | 0:1                               | *+Error*                | <span class="mark">Autre erreur.</span>                                    |
-|                       | ⮆ ***<span class="mark">Description</span>***                  | 0:1                               | *Error­Description*      | <span class="mark">Description de l’erreur.</span>                         |
+|                       | ⇉ ***<span class="mark">Description</span>***                  | 0:1                               | *Error­Description*      | <span class="mark">Description de l’erreur.</span>                         |
 | *any*                 | ***Extensions***                                               | 0:1                               | *any*                   | Emplacement pour extension utilisateur (cf 5.4.2.2).                       |
 
 ### Notification de clôture de souscription
 
+<div class="no_h">
+
 | ***<span class="mark">SubscriptionTerminatedNotification</span>*** | *+Structure* | Notification permettant au producteur de données de signaller l'interruption d'un ou plusieurs abonnement en cours |
 |--------------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 23%" />
-<col style="width: 5%" />
-<col style="width: 10%" />
-<col style="width: 52%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Log</em></th>
@@ -11741,7 +11731,9 @@ erreurs).</td>
 |            | ***<span class="mark">ServiceStarted­Time</span>***          | 0:1                               | *xsd:date­Time:*    | Dernière date et heure de mise en marche du système.   |
 | *any*      | ***Extensions***                                            | 0:1                               | *any*              | Emplacement pour extension utilisateur (cf 5.4.2.2)    |
 
-1.  <span id="_Toc109134019" class="anchor"></span>Termes et définitions
+# Annexe A
+
+## Termes et définitions
 
 <table>
 <colgroup>
@@ -11924,8 +11916,7 @@ et permet l'échange des données.</td>
 </tbody>
 </table>
 
-2.   <span id="_Toc109134020" class="anchor"></span>(informative)
-    Production TimeTable
+# Annexe B (informative) Production TimeTable
 
 ##  Requête d’information sur les horaires commandés/théoriques
 
@@ -11940,10 +11931,10 @@ et permet l'échange des données.</td>
 |                       | **➞ *<span class="mark">Start</span>***             | 1:1                               | *xsd:dateTime*             | Date et heure de début de période.                                                                                                                                                                                      |
 |                       | **➞ *<span class="mark">End</span>***               | 1:1                               | *xsd:dateTime*             | Date et heure de fin de période.                                                                                                                                                                                        |
 |                       | ***<span class="mark">Timetable­Version­Ref</span>*** | 0:1                               | *xsd:string*               | Version du référentiel théorique connue : seuls les écarts par rapport à ce référentiel seront <span class="mark">transmis (ce champ ne sera utilisable qu’à partir de la mise en œuvre du référentiel régional)</span> |
-|                       | ***<span class="mark">Operator­Ref</span>***         | 0:\*                              | *Operator­Code*             | Identifie le ou les exploitants pour lesquel on souhaite obtenir des informations*.*                                                                                                                                    |
+|                       | ***<span class="mark">Operator­Ref</span>***         | 0:\*                              | → *Operator­Code*             | Identifie le ou les exploitants pour lesquel on souhaite obtenir des informations*.*                                                                                                                                    |
 |                       | ***<span class="mark">Lines</span>***               |                                   |                            |                                                                                                                                                                                                                         |
 |                       | **➞ *<span class="mark">LineDirection</span>***     |                                   |                            |                                                                                                                                                                                                                         |
-|                       | ⮆ ***<span class="mark">LineRef</span>***           | 0:1                               | *LineCode*                 | Identifie la ligne pour laquelle on souhaite obtenir des informations.                                                                                                                                                  |
+|                       | ⮆ ***<span class="mark">LineRef</span>***           | 0:1                               | → *LineCode*                 | Identifie la ligne pour laquelle on souhaite obtenir des informations.                                                                                                                                                  |
 | *Policy*              | ***<span class="mark">Incremental­Updates</span>***  | 0:1                               | *xsd:boolean*              | Indique si l’on souhaite ne disposer que des écarts par rapport aux données théoriques, ou de l’ensemble des informations sur la période.                                                                               |
 |                       |                                                     |                                   |                            | <span class="mark">Emplacement pour extension utilisateur (cf 5.4.2.2)</span>.                                                                                                                                          |
 
@@ -11961,19 +11952,33 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 
 ## Abonnement aux informations sur les horaires commandés/théoriques
 
+<div class="no_h">
+
 | ***ProductionTimetable­SubscriptionRequest*** | *+Structure* | Requête pour un abonnement au service SIRI *Production Timetable Service*. |
 |----------------------------------------------|--------------|----------------------------------------------------------------------------|
 
-| *Identity* | ***SubscriberRef***              | 0:1 | *Participant­Code*       | Identification du système demandeur (voir SIRI Part 2 Common ***SubscriptionRequest*** parameters.)                                                                        |
+</div>
+
+<div class="no_h">
+
+| *Identity* | ***SubscriberRef***              | 0:1 | → *Participant­Code*       | Identification du système demandeur (voir SIRI Part 2 Common ***SubscriptionRequest*** parameters.)                                                                        |
 |------------|----------------------------------|-----|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |            | ***Subscription­Identifier***     | 1:1 | *Subscription­Qualifier* | Identifiant de l'abonnement pour le système demandeur.                                                                                                                     |
 | *Lease*    | ***Initial­Termination­Time***     | 1:1 | *xsd:dateTIme*          | Date et heure de fin de l'abonnement : un abonnement a forcément une date et heure de fin (les partenaires pourront décider de limiter la durée maximale d’un abonnement). |
 | *Request*  | ***Production­Timetable­Request*** | 1:1 | *+Structure*            | Voir ProductionTimetable­Request.                                                                                                                                           |
 
+</div>
+
 ## Réponse aux requêtes d’informations sur les horaires commandés/théoriques
+
+<div class="no_h">
 
 | ***<span class="mark">Production­Timetable­Delivery</span>*** | *+Structure* | Description des horaires sur la période |
 |-------------------------------------------------------------|--------------|-----------------------------------------|
+
+</div>
+
+<div class="no_h">
 
 | *Attributes* | ***<span class="mark">version</span>*** | 1:1  | *VersionString* | Numéro de version du service *Production Timetable*, intégrant le numéro de version de profil (valeur fixe). |
 |--------------|-----------------------------------------|------|-----------------|--------------------------------------------------------------------------------------------------------------|
@@ -11981,19 +11986,18 @@ indiquées par les éléments « Call » : ces heures sont en effet de type
 | *Payload*    | ***Dated­Timetable­Version­Frame***        | 0:\* | *+Structure*    | Voir DatedTimetableVersionFrame element.                                                                     |
 |              |                                         |      |                 |                                                                                                              |
 
+</div>
+
 ## Structure DatedTimetableVersionFrame
+
+<div class="no_h">
 
 | ***DatedTimetableVersionFrame*** | *+Structure* | Fournit les courses applicables pour un itinéraire |
 |----------------------------------|--------------|----------------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 20%" />
-<col style="width: 5%" />
-<col style="width: 17%" />
-<col style="width: 43%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Log</em></th>
@@ -12033,17 +12037,14 @@ du fait de la cardinalité imposée par SIRI.</mark></p></td>
 
 ## Structure DatedVehicleJourney
 
+<div class="no_h">
+
 | ***<span class="mark">DatedVehicleJourney</span>*** | *+Structure* | Description de la course |
 |-----------------------------------------------------|--------------|--------------------------|
 
-<table>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 14%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 46%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Vehicle Journey Identity</em></th>
@@ -12058,7 +12059,7 @@ du fait de la cardinalité imposée par SIRI.</mark></p></td>
 <td></td>
 <td><em><strong><mark>Dated­Vehicle­Journey­Code</mark></strong></em></td>
 <td>0:1</td>
-<td><em>Vehicle­Journey­Code</em></td>
+<td>→ <em>Vehicle­Journey­Code</em></td>
 <td>Identifie la course datée.</td>
 </tr>
 <tr class="even">
@@ -12169,23 +12170,20 @@ course (« false » permet de signaler une délocalisation).</p>
 
 ## Structure DatedCall
 
+<div class="no_h">
+
 | ***DatedCall*** | *+Structure* | Information et heures de passage à l’arrêt |
 |-----------------|--------------|--------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 48%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Stop Identity</em></th>
 <th><em><strong><mark>StopPoint­Ref</mark></strong></em></th>
 <th>1:1</th>
-<th><em>StopPoint­Code</em></th>
+<th>→ <em>StopPoint­Code</em></th>
 <th><mark>Il convient d'utiliser ici un identifiant d'objet issu du
 profil NeTex Fr (Lieu d’arrêt mono ou multimodal, zone d'embarquement):
 granularité la plus fine possible dans tous les cas.</mark></th>
@@ -12281,12 +12279,7 @@ véhicule est à quai).</td>
 
 ## Structure TargetedInterchange
 
-<table>
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 14%" />
-<col style="width: 46%" />
-</colgroup>
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em><strong><br />
@@ -12300,20 +12293,13 @@ l’arrivant).</th>
 </tbody>
 </table>
 
-<table>
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 18%" />
-<col style="width: 5%" />
-<col style="width: 14%" />
-<col style="width: 46%" />
-</colgroup>
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Identity</em></th>
 <th><em><strong><mark>Interchange­Code</mark></strong></em></th>
 <th>0:1</th>
-<th><em>Inter­change­Code</em></th>
+<th>→ <em>Inter­change­Code</em></th>
 <th><p>Identification de la correspondance.</p>
 <p><mark>Dans le cadre du profil France, si ce paramètre est présent, il
 sera constitué de la concaténation de l’identifiant de la course de
@@ -12326,7 +12312,7 @@ l’arrivant et de celui de la course au départ (séparés par le caractère
 <td></td>
 <td><em><strong><mark>Distributor­Vehicle­Journey­Ref</mark></strong></em></td>
 <td>1:1</td>
-<td><em>Dated­Vehicle­Journey­Code</em></td>
+<td>→ <em>Dated­Vehicle­Journey­Code</em></td>
 <td>Identifie la course de l’arrivant</td>
 </tr>
 <tr class="even">
@@ -12351,7 +12337,7 @@ vide.</mark></p></td>
 <td></td>
 <td><strong>➞ <em><mark>Stop­Point­Ref</mark></em></strong></td>
 <td>0:1</td>
-<td><em>StopPoint­Code</em></td>
+<td>→ <em>StopPoint­Code</em></td>
 <td><p>Identifant du point d’arrêt de départ de la correspondance.</p>
 <p><mark>Il convient d'utiliser ici un identifiant d'objet de référence
 partagé entre les systèmes communiquants (cf 5.4.1.1).</mark></p></td>
@@ -12416,40 +12402,25 @@ retard.</td>
 </tbody>
 </table>
 
-<span id="_Toc109134028" class="anchor"></span>Bibliographie
+# Bibliographie
 
 1.  ISO 8601, Data elements and interchange formats – Information
     interchange – Representation of dates and times
-
 2.  ISO 639/IETF 1766, Tags for the Identification of Languages
-
 3.  ISO/IEC 19501-1:2002, Unified Modelling Language (UML) – Part 1:
     Specification
-
 4.  Normes nationales, enparticulier NEPTUNE, TransXChange, BISON and
     VDV 452, et d’autres documents comme NOPTIS
-
 5.  ERA TAP-TSI: Commission Regulation (EU) No 454/2011 of 5 May 2011 on
     the technical specification for interoperability relating to the
-    subsystem ‘telematics applications for passenger services’ of the
-    trans-European rail system.
-
+    subsystem ‘telematics applications for passenger services’ of the trans-European rail system.
 6.  UIC recommendations and leaflets
-
 7.  XML, Extensible Mark-up Language (XML) 1.0 W3C Recommendation 04
     February 2004, available at
     http://www.w3.org/TR/2004/REC-xml-20040204.
-
-8.  Europe on the Move: Commission takes action for clean, competitive
-    and connected mobility
-
-<https://ec.europa.eu/transport/modes/road/news/2017-05-31-europe-on-the-move_en>
-
+8.  Europe on the Move: Commission takes action for clean, competitive and connected mobility <https://ec.europa.eu/transport/modes/road/news/2017-05-31-europe-on-the-move_en>
 9.  Commission Delegated Regulation on the provision of EU-wide
-    multimodal travel information service
-
-<http://ec.europa.eu/info/law/better-regulation/initiatives/c-2017-3574_en>
-
+    multimodal travel information service <http://ec.europa.eu/info/law/better-regulation/initiatives/c-2017-3574_en>
 10. Github SIRI disponible sur le lien <http://github.com/siri-cen/siri>
 
 Accès aux xsd et wsdl SIRI
