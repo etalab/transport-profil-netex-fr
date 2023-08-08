@@ -6958,20 +6958,13 @@ degrés décimaux.</td>
 
 ##### Structure DistributorInfoGroup
 
-<table>
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 18%" />
-<col style="width: 5%" />
-<col style="width: 17%" />
-<col style="width: 46%" />
-</colgroup>
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><em>Distributor Inter­change_ Identity</em></th>
 <th><em><strong><mark>Interchange­Ref</mark></strong></em></th>
 <th>0:1</th>
-<th><em>InterchangeCode</em></th>
+<th>→ <em>InterchangeCode</em></th>
 <th><p>Identifiant de la correspondance entre courses.</p>
 <p><mark>Dans le cadre du profil France, si ce paramètre est présent, il
 sera constitué de la concaténation de l’identifiant de la course
@@ -6984,14 +6977,14 @@ arrivant et de celui de la course au départ (séparés par le caractère
 <td></td>
 <td><em><strong>Connection­Link­Ref</strong></em></td>
 <td><strong><mark>1:1</mark></strong></td>
-<td><em>Connection­Link­Code</em></td>
+<td>→ <em>Connection­Link­Code</em></td>
 <td>Identifiant de la correspondance physique.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td><em><strong><mark>StopPoint­Ref</mark></strong></em></td>
 <td>0:1</td>
-<td><em>StopPoint­Code</em></td>
+<td>→ <em>StopPoint­Code</em></td>
 <td><p>Identifiant du point d’arrêt du partant (généralement porté par
 le <em>ConnectionLink</em>).</p>
 <p><mark>Il convient d'utiliser ici un identifiant d'objet de référence
@@ -7025,14 +7018,7 @@ courses).</td>
 
 ##### Structure ConnectingJourney
 
-<table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 16%" />
-<col style="width: 47%" />
-</colgroup>
+<table class="no_h">
 <thead>
 <tr class="header">
 <th colspan="3"><em><strong>ConnectingJourney</strong></em></th>
@@ -7046,7 +7032,7 @@ alimentant (“feeder”) ou partant (« distributor”) suivant les cas.</th>
 <td><em>Vehicle­Journey­Identity</em></td>
 <td><em><strong>LineRef</strong></em></td>
 <td>0:1</td>
-<td><em>LineCode</em></td>
+<td>→ <em>LineCode</em></td>
 <td>Identifiant de la ligne.</td>
 </tr>
 <tr class="even">
