@@ -8064,87 +8064,79 @@ Ce service permet d’échanger :
 
 <span class="mark"></span>
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 0%" />
-<col style="width: 18%" />
-<col style="width: 5%" />
-<col style="width: 12%" />
-<col style="width: 54%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td>Attrib­utes</td>
 <td colspan="2"><em><strong><mark>Version</mark></strong></em></td>
 <td>1:1</td>
-<td><blockquote>
+<td>
 <p><em>Version­String</em></p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Version du service ‘Facility Monitoring’ integrant le numéro de
 <mark>version du profil France ‘2.1:FR-1.0’</mark></p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td>End­pointProperties</td>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p><em><strong>Request­Timestamp</strong></em></p>
-</blockquote></td>
+</td>
 <td>1:1</td>
-<td><blockquote>
+<td>
 <p><em>xsd:dateTime</em></p>
-</blockquote></td>
+</td>
 <td>Date d’émission de la requête</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p><em><strong>Message­Identifier</strong></em></p>
-</blockquote></td>
+</td>
 <td><strong><mark>1:1</mark></strong></td>
-<td><blockquote>
+<td>
 <p><em>Message­Qualifier</em></p>
-</blockquote></td>
+</td>
 <td>Numéro d’identification du message</td>
 </tr>
 <tr class="even">
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p><em>Topic</em></p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p><em><strong><mark>FacilityRef</mark></strong></em></p>
-</blockquote></td>
+</td>
 <td>0:1</td>
-<td><blockquote>
+<td>
 <p><em>FacilityCode</em></p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p><mark>Il convient d’utiliser ici un identifiant d’objet de type
 ‘Facility’ pour lequel les informations seront retournées</mark></p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td colspan="2"></td>
-<td><blockquote>
+<td>
 <p><em><strong>LineRef</strong></em></p>
-</blockquote></td>
+</td>
 <td>0:1</td>
 <td><em>LineCode</em></td>
-<td><blockquote>
+<td>
 <p>Filtre permettant d’obtenir les informations temps reel de tous les
 « facilities » d’une ligne.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td colspan="2"></td>
 <td><em><strong>StopPoint­Ref</strong></em></td>
 <td>0:1</td>
 <td><em>StopPoint­Code</em></td>
-<td><blockquote>
+<td>
 <p>Filtre permettant d’obtenir les informations temps reel de tous les
 « Facilities » d’un point d’arrêt.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
 <td colspan="2"></td>
@@ -8164,9 +8156,9 @@ services d’un lieu d’arrêt.</td>
 </tr>
 <tr class="odd">
 <td colspan="2"></td>
-<td><blockquote>
+<td>
 <p><em><strong>StopPlaceComponentRef</strong></em></p>
-</blockquote></td>
+</td>
 <td>0:1</td>
 <td><em>StopPlaceComponent­Code</em></td>
 <td>Filtre permettant d’obtenir les informations temps réel de tous les
@@ -8174,9 +8166,9 @@ services d’un composant de lieu d’arrêt.</td>
 </tr>
 <tr class="even">
 <td colspan="2"></td>
-<td><blockquote>
+<td>
 <p><em><strong><mark>SiteRef</mark></strong></em></p>
-</blockquote></td>
+</td>
 <td>0:1</td>
 <td><em>Site­Code</em></td>
 <td><p>Reference to a Site.</p>
@@ -8185,9 +8177,9 @@ parkings</mark>.</p></td>
 </tr>
 <tr class="odd">
 <td colspan="2">Request Policy</td>
-<td><blockquote>
+<td>
 <p><em><strong><mark>Maximum­FacilityStatus</mark></strong></em></p>
-</blockquote></td>
+</td>
 <td>0:1</td>
 <td><em>xsd:positive­Integer</em></td>
 <td><mark>Nombre maximum de Facility à prendre en compte dans la
@@ -8283,19 +8275,16 @@ identifiée, …)
 Le profil SIRI France permet de remonter les informations d’état, de
 comptage et de localisation.
 
-#### Description de la strcuture ‘FacilityCondition’
+#### Description de la structure ‘FacilityCondition’
+
+<div class="no_h">
 
 | ***FacilityCondition*** | *+Structure* | Description de l’état d’une “Facility ». |
 |-------------------------|--------------|------------------------------------------|
 
-<table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 18%" />
-<col style="width: 5%" />
-<col style="width: 12%" />
-<col style="width: 52%" />
-</colgroup>
+</div>
+
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><p><em>Facility</em></p>
@@ -8313,7 +8302,7 @@ sera à limiter au maximum. Voir FM-1</mark>.</p></td>
 <td></td>
 <td><em><strong><mark>FacilityRef</mark></strong></em></td>
 <td>1:1</td>
-<td><em>FacilityCode</em></td>
+<td>→ <em>FacilityCode</em></td>
 <td><p>Identifiant d’une Facility.</p>
 <p><mark>L’utilisation de references aux facility sera
 privilégiée</mark> <mark>Voir FM-1</mark>.</p></td>
@@ -8367,10 +8356,16 @@ jour-type Voir <em><strong>ValidityCondition</strong>.</em></td>
 </tbody>
 </table>
 
+<div class="no_h">
+
 | <span class="mark">FM001</span> | La définition de la « Facility » sera récupérée via un flux NeTEx. Le service SIRI FM privilégiera l’utilisation du champ FacilityRef. |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 
+</div>
+
 ##### Description de la structure ‘Facility’
+
+<div class="no_h">
 
 | <span class="mark">FM002</span> | A renseigner uniquement si non inclue dans les exchanges NeTEx |
 |---------------------------------|----------------------------------------------------------------|
@@ -8378,6 +8373,8 @@ jour-type Voir <em><strong>ValidityCondition</strong>.</em></td>
 |                |              |                                   |
 |----------------|--------------|-----------------------------------|
 | ***Facility*** | *+Structure* | Décrit l’état de la « Facility ». |
+
+</div>
 
 <table>
 <colgroup>
@@ -8474,7 +8471,7 @@ le service est localisé</mark>.</td>
 <td></td>
 <td><strong>➞ <em><mark>StopPlaceComponentId</mark></em></strong></td>
 <td>0:1</td>
-<td><em>ComponentId</em></td>
+<td><em>ComponentId</em></td>
 <td><mark>Identifiant d’un composant de lieu d’arrêt (au sens
 Transmodel) sur lequel le service est localisé</mark>.</td>
 </tr>
@@ -8527,7 +8524,7 @@ Se reporter au profil NeTex France Accessibilité \[R1\].
 
 Se reporter au profil NeTex France Accessibilité \[R1\].
 
-#### Description de l’état d’une ”Facility”
+#### Description de l’état d’une "Facility"
 
 |                      |              |                                   |
 |----------------------|--------------|-----------------------------------|
@@ -8593,14 +8590,7 @@ véhicule, sur un quai, nombre de place de parking, nombre de bornes
 libres / occupées pour les aires de staionnement de vehicules partagés,
 …
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 22%" />
-<col style="width: 45%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Counting<br />
@@ -8626,16 +8616,16 @@ Type</em></td>
 (complément aux informations provenant du type de la Facility
 lui-même)<mark>Exemples :</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Nombre de kilomètres restant pour les vélos en libre
 service ;</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>Charge batterie disponible ;</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>A prédéfinir.</mark></p>
-</blockquote></li>
+</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -8656,7 +8646,7 @@ service ;</mark></p>
 <td></td>
 <td><em><strong><mark>b) Percentage</mark></strong></em></td>
 <td>0:1</td>
-<td><em>PrecentageType</em></td>
+<td><em>PercentageType</em></td>
 <td>Valeur exprimée en pourcentage (0.0 à 100.0) de la valeur maximale
 possible.</td>
 </tr>
@@ -8683,10 +8673,6 @@ description</em></td>
 Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 80%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Value</strong></th>
@@ -8719,8 +8705,12 @@ etc.</td>
 </tbody>
 </table>
 
+<div class="no_h">
+
 | **FM001** | L’utilisation de la valeur ‘currentStateCount’ nécessite que le champ ‘TypeOfCountedFeature’ soit présent. |
 |-----------|------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 ##### Description de l’enum ‘CountedFeatureUnit’
 
