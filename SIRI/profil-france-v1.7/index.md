@@ -4538,13 +4538,21 @@ panneaux d'affichage.
 
 ## Stop Monitoring
 
+<div class="no_h">
+
 | SM005 | <span class="mark">La notion de «niveau de détail » (Detail Level) proposée pour ce service par SIRI n'est pas retenue pour le profil SIRI France.</span> |
 |-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 
+</div>
+
 ### Matrice de capacité
+
+<div class="no_h">
 
 | SM010 | <span class="mark">Cette matrice n'est pas échangée dans le cadre du profil France :</span> |
 |-------|---------------------------------------------------------------------------------------------|
+
+</div>
 
 <span class="mark">Cette,matrice est présentée ici pour indiquer les
 principales fonctions retenues pour le service (les explications ne sont
@@ -4598,7 +4606,7 @@ Note concernant la granularité des objets interrogés :
 
 - <span class="mark">une Zone d'Embarquement.</span>
 
-| SM015 | <span class="mark">Toutefois il n'y a pas d'obligation pour un serveur de supporter tous ces niveaux (sauf pour les concentrateurs pour lesquels le Lieu d’arrêt (multimodal/monomodal est obligatoire): il conviendra donc de s'assurer que le serveur sollicité reconnait bien le niveau requis</span> |
+| SM015 | <span class="mark">Toutefois il n'y a pas d'obligation pour un serveur de supporter tous ces niveaux <span class="m_hub">(sauf pour les concentrateurs pour lesquels le Lieu d’arrêt (multimodal/monomodal est obligatoire)</span>: il conviendra donc de s'assurer que le serveur sollicité reconnait bien le niveau requis</span> |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 #### Statuts de départ & Arrivée
@@ -4621,23 +4629,28 @@ heures de passage:</span>
   ou de départ calculée par le SAE sur la base de la progression du
   véhicule et du commandé (ou modifié en cours d'exploitation).</span>
 
+<div class="no_h">
+
 | SM020 | <span class="mark">Il n'est pas obligatoire de diffuser avant le départ du véhicule l'horaire théorique modifié du jour même ou modifié en cours d'exploitation suite à une régulation. Cette information peut par contre être renseignée dans l' «Expected(Departure/Arrival)Time», le champ étant par la suite mis à jour en fonction de l'avancement du véhicule.</span>                                                                                                                                                                                                                                                            |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SM025 | <span class="mark">En mode requête classique, les heures de passage à l'arrêt ne sont fournies que tant que le véhicule est en amont de l’arrêt ou à l’arrêt ; dès lors qu’il a quitté l’arrêt, aucune information concernant ce véhicule à cet arrêt n'est plus fournie (dans la limite ci-dessous).</span>                                                                                                                                                                                                                                                                                                                           |
 | SM030 | <span class="mark">En mode abonnement, une notification est envoyée lorsque le véhicule a quitté l’arrêt, en utilisant la structure « MonitoredStopVisitCancellation ». Ceci permet de signaler aux diffuseurs que le prochain passage en question doit être retiré des medias de diffusion (on utilisera donc pas le champ "ActualDepartureTime" à cet effet). En complément, une notification est aussi réalisée lors de l'arrivée au dernier arrêt (En effet, il n'y aura pas de notification de départ dans ce cas: on notifiera alors un « MonitoredStopVisitCancellation » au moment de l'arrivée du véhicule à l'arrêt).</span> |
 | SM040 | <span class="mark">En situation perturbée il peut arriver qu'une information «Expected(Departure/Arrival)Time» soit antérieure à l’heure courante. Toutefois il est précisé qu'en tout état de cause, un temps d’attente inférieur ou égal à 0, induit par une telle information, doit être diffusé comme un temps d’attente égal à 0 (et probablement accompagné d'une indication de retard).</span>                                                                                                                                                                                                                                  |
 
+</div>
+
 <span class="mark">SIRI propose des statuts de départ et d'arrivée pour
 qualifier l'horaire calculé par rapport à l'horaire planifié. Le tableau
 ci-dessous précise l'usage des différentes valeurs de statuts.</span>
 
-| ***<span class="mark">Statuts</span>*** | ***<span class="mark">ArrivalStatus</span>***                                                                                                                                                                        | ***<span class="mark">DepartureStatus</span>*** |                                                        |                                                                                                                                                                                                                      |
-|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *<span class="mark">onTime</span>*      | <span class="mark">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>                                   |                                                 |                                                        | <span class="mark">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>                                   |
-| *<span class="mark">Early</span>*       | <span class="mark">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |                                                 |                                                        | <span class="mark">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |
-| *<span class="mark">Delayed</span>*     | <span class="mark">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |                                                 |                                                        | <span class="mark">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |
-| *<span class="mark">Cancelled</span>*   | <span class="mark">Passage annulé</span>                                                                                                                                                                             |                                                 |                                                        | <span class="mark">Passage annulé (note: ce passage annulé reste comptabilisé dans le nombre de passages utilisé dans les filtres de requêtes).</span>                                                               |
-| *<span class="mark">noReport</span>*    | <span class="mark">Pas d’information « ExpectedArrivalTime » disponible (par contre le « AimededArrivalTime » peut être fourni)</span>                                                                               |                                                 | <span class="mark">Pas d’information disponible</span> |                                                                                                                                                                                                                      |
+
+| ***<span class="mark">Statuts</span>***    | ***<span class="mark">ArrivalStatus</span>*** | ***<span class="mark">DepartureStatus</span>*** |
+| -------- | ------- | ------ |
+| *<span class="mark">onTime</span>*      | <span class="mark">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> | <span class="mark">A l’heure ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span>                                   |
+| *<span class="mark">Early</span>*       | <span class="mark">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> | <span class="mark">En avance par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |
+| *<span class="mark">Delayed</span>*     | <span class="mark">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> | <span class="mark">En retard par rapport à l’horaire théorique ; la notion peut être précisée à la discrétion du producteur selon un seuil à préciser dans les spécifications d’interface à titre informatif.</span> |
+| *<span class="mark">Cancelled</span>*   | <span class="mark">Passage annulé</span> | <span class="mark">Passage annulé (note: ce passage annulé reste comptabilisé dans le nombre de passages utilisé dans les filtres de requêtes).</span>                                                               |
+| *<span class="mark">noReport</span>*    | <span class="mark">Pas d’information « ExpectedArrivalTime » disponible (par contre le « AimededArrivalTime » peut être fourni)</span>        | <span class="mark">Pas d’information disponible</span> |   
 
 #### Derniers arrêts de course
 
@@ -4659,16 +4672,20 @@ arrêt d'une course :</span>
 
 Note concernant les cas ou il n'y a pas ou plus d'information:
 
+<div class="no_h">
+
 | SM045 | <span class="mark">S'il n'y a de réponse à une requête « Stop monitoring » car elle intervient après le dernier passage de la journée, le producteur doit dans la mesure du possible fournir une information via le service « General message ». Il est donc recommandé que le client, s'il n'obtient pas de réponse au « Stop monitoring », fasse dans la foulée une requête au « General message ».</span> |
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SM050 | <span class="mark">Dans le cas des déviations : pour les arrêts non desservis, il conviendra aussi de fournir une information via le service « Situation Exchange » (SX) (la réponse à « Stop monitoring n'est toutefois pas forcément vide si la déviation est temporaire ») ou le service « General Message » si le SX n’est pas implémenté.</span>                                                        |
+
+</div>
 
 Note concernant les annulations de passage :
 
 <span class="mark">Concernant les informations permettant d'indiquer
 l'annulation d'un passage il est précisé que:</span>
 
-<table>
+<table class="no_h">
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 90%" />
@@ -4703,14 +4720,7 @@ course.</p></li>
 |-------------------------------------------------------|--------------|------------------------------------------------------------------------------------------------------------|
 | ***<span class="mark">StopMonitoringRequest</span>*** | *+Structure* | Requête pour obtenir des informations temps réel sur les heures d'arrivée et de départ à un point d'arrêt. |
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 13%" />
-<col style="width: 53%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Attributes</em></td>
@@ -4748,7 +4758,7 @@ courante sera utilisée).</mark></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>StartTime</strong></em></td>
+<td><em><strong class="m_hub">StartTime</strong></em></td>
 <td>0:1</td>
 <td><em>xsd:dateTime</em></td>
 <td>Heure à partir de laquelle doit être compté le
@@ -4761,18 +4771,18 @@ courante sera utilisée).</mark></td>
 <td><em>Monitoring­Code</em></td>
 <td><p>Identifiant du point d'arrêt concerné par la requête.</p>
 <p><mark>Il convient d'utiliser ici un identifiant d'objets (arrêt) de
-référence (</mark>Zone d'Embarquement, Lieu d’arrêt multi ou mono modal
-ou Groupe de Lieux<mark>), et non d'objet particulier.</mark></p></td>
+référence (Zone d'Embarquement, Lieu d’arrêt multi ou mono modal
+ou Groupe de Lieux), et non d'objet particulier.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><em><strong><mark>LineRef</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>LineCode</em></td>
 <td><p>Filtre permettant de n'obtenir que les départs et arrivées pour
 une ligne donnée (dont on fournit l'identifiant).</p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentants (le relai s'informe sur toutes les lignes sans
 distinction).</mark></p></td>
 </tr>
@@ -4780,12 +4790,12 @@ distinction).</mark></p></td>
 <td></td>
 <td><em><strong><mark>Destination­Ref</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>StopPoint­Code</em></td>
 <td><p>Filtre permettant de n'obtenir que les départs et arrivées ayant
 une destination donnée (dont on fournit l'identifiant de point
 d'arrêt).</p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentant (le relai s'informe sur toutes les directions sans
 distinction).</mark></p></td>
 </tr>
@@ -4793,19 +4803,19 @@ distinction).</mark></p></td>
 <td></td>
 <td><em><strong><mark>OperatorRef</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>Operator­Code</em></td>
 <td><p>Filtre permettant de n'obtenir que les départs et arrivées pour
 un exploitant donné (dont on fournit l'identifiant).</p>
 <p>Filtre particulièrement utile pour les pôles d'échange.</p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentants (le concentrateur).</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><em><strong><mark>StopVisit­Types</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>all | departures | arrivals</em></td>
 <td><p>Indique si l'on souhaite avoir les départs, les arrivées ou les
 deux.</p>
@@ -4817,19 +4827,19 @@ pour chaque implémentation).</mark></p>
 « <em><strong>all</strong></em> ».</mark></p>
 <p><mark>Quelques règles de gestion sont précisées :</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>dans le cas du <strong>StopVisitTypes</strong> =
 <em><strong>all</strong></em> ou <em><strong>departures</strong></em>,
 si l’heure de départ n'est pas connue (pour les SAEIV bus notament)
 alors l'heure de départ sera renseignée égale à l'heure d’arrivée et les
 2 champs sont renseignés.</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>Inversement, dans le cas du <strong>StopVisitTypes</strong> =
 <em><strong>all</strong></em> ou <em><strong>arrivals</strong></em>, si
 l’heure d’arrivée n'est pas connue alors l'heure d’arrivée prend la
 valeur de l'heure de départ et les 2 champs sont renseignés.</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Il faut noter que, pour la gestion des correspondances, l’heure
 d’arrivée sera particulièrement utile …</mark></p>
@@ -4838,7 +4848,7 @@ concentrateurs: <em>voir ci-dessous</em>), toutefois l'XSD lui définit
 une valeur par défaut qui est "<em>all</em>". S'il n'est pas présent il
 faut donc le gérer comme s'il était positionné à
 "<em>all</em>".</mark></p>
-<p><mark>Dans le cas des échanges avec les concentrateurs, ce filtre ne
+<p><mark class="m_hub">Dans le cas des échanges avec les concentrateurs, ce filtre ne
 sera jamais présent et c'est donc avec la valeur par défaut
 <em><strong>all</strong></em> qu'il faudra
 l'interpréter.</mark></p></td>
@@ -4847,13 +4857,13 @@ l'interpréter.</mark></p></td>
 <td><em>Request Policy</em></td>
 <td><em><strong><mark>Maximum­StopVisits</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>xsd:nonNegativeInteger</em></td>
 <td><p>Nombre maximal d'informations de départ ou d'arrivée que l'on
 souhaite recevoir sur l’arrêt requêté. Si aucune valeur n’est fournie,
 toutes les informations disponibles seront remontées.</p>
 <p>De plus « 0 » est une valeur interdite pour ce champ (erreur).</p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentants : pas de limitation du nombre d'informations
 remontées.</mark></p></td>
 </tr>
@@ -4869,7 +4879,7 @@ remontées.</mark></p></td>
 <td><em><strong><mark>a)
 Minimum­StopVisits­PerLine</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>xsd:nonNegativeInteger</em></td>
 <td><p>Ce paramètre permet de demander un nombre minimum de réponses par
 ligne passant à l'arrêt. Cela permet d'éviter que pour un arrêt où
@@ -4887,7 +4897,7 @@ arrivait, le <em><strong>Maximum­StopVisits</strong></em> serait dominé
 par le <em><strong>Minimum­StopVisits­PerLine</strong></em> et la liste
 des informations disponibles pourrait être plus importante que stipulé
 par <em><strong>Maximum­StopVisits</strong></em>.</mark></p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentant</mark>s</p></td>
 </tr>
 <tr class="even">
@@ -4895,7 +4905,7 @@ alimentant</mark>s</p></td>
 <td><em><strong><mark>b)
 MinimumStop­Visits­PerLine­Via</mark></strong></em></td>
 <td><p><mark>0:1</mark></p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em><mark>xsd:nonNegative­Integer</mark></em></td>
 <td><p>Ce paramètre permet de demander un nombre minimum de réponses (de
 passage) par couple Ligne+Via (et donc pour chaque itinéraire
@@ -4908,20 +4918,20 @@ possible (et par ligne).</mark></p>
 <p><mark><u>Note</u>: ce filtre étant à comprendre comme "nombre de
 passage pour tous les VIA possibles", les VIA ne sont naturellement pas
 à préciser.</mark></p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentants</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><em><strong><mark>Maximum­Number­Of­Calls</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>+Structure</em></td>
 <td><p>Structure permettant de préciser combien d’arrêts suivants ou
 précédents on souhaite obtenir au maximum (sous réserve de leur
 disponibilité). Si cette structure facultative n'est pas présente, aucun
 arrêt suivant ou précédent ne sera retourné.</p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentants : aucune information de type OnwardCall n'est remontée par
 les concentrateurs.</mark></p></td>
 </tr>
@@ -4929,7 +4939,7 @@ les concentrateurs.</mark></p></td>
 <td></td>
 <td>➞ <em><strong><mark>Onwards</mark></strong></em></td>
 <td><p>0:1</p>
-<p><mark>0:0</mark></p></td>
+<p><mark class="m_hub">0:0</mark></p></td>
 <td><em>xsd:nonNegativeInteger</em></td>
 <td><p>Nombre maximal d'arrêts suivants souhaités (pour une course
 donnée).</p>
@@ -4945,7 +4955,7 @@ information relative aux OnwardCalls n'est remontée.</p>
 le traitement des paramètres <em><strong>Maximum­StopVisits</strong></em>
 et <em><strong>Minimum­StopVisits­PerLine qui ne concernent que l'arrêt
 requêté.</strong></em></mark></p>
-<p><mark>Filtre non utilisé entre le relai et ses concentrateurs
+<p><mark class="m_hub">Filtre non utilisé entre le relai et ses concentrateurs
 alimentants: pas de limitation du nombre d'informations
 remontées.</mark></p></td>
 </tr>
