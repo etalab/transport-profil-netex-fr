@@ -8750,8 +8750,12 @@ Dans le cadre de cette version du profil il a pour objectif de définir
 une perturbation, ses zones de conséquence et les messages associés à
 diffuser.
 
+<div class="no_h">
+
 | <span class="mark">SX001</span> | Si ce service est implémenté, le service GM ne doit plus etre utilisé pour la diffusion de message de type perturbation. |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+
+</div>
 
 Pour la mise à jour des systèmes utilisant le service GM pour le
 transfert de message de perturbation les règles de traduction sont
@@ -8822,14 +8826,13 @@ façon suivante :</span>
 
 *<span class="mark">Exemple de message :</span>*
 
-> *<span class="mark">MIME-Version: 1.0</span>*
->
-> *<span class="mark">Content-Type: text/plain</span>*
->
-> *<span class="mark">Content-Description: SIRI-FR-IDF no line break
-> message</span>*
->
-> *<span class="mark">Ceci est un Message</span>*
+```text
+MIME-Version: 1.0 
+Content-Type: text/plain 
+Content-Description: SIRI-FR-IDF no line break message 
+
+Ceci est un Message 
+```
 
 #### Messages avec Zones de diffusion
 
@@ -8854,14 +8857,7 @@ l’implémentation du Service GM
 
 > <span class="mark"></span>
 
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 14%" />
-<col style="width: 50%" />
-</colgroup>
+<table class="no_h>
 <tbody>
 <tr class="odd">
 <td>Attributes</td>
@@ -9674,6 +9670,8 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 Les valeurs retenues par le profil SIRI France sont les suivantes :
 
+<div class="no_h">
+
 | ***SIRI SX*** | **Description**               |
 |---------------|-------------------------------|
 | *open*        | Situation en cours            |
@@ -9683,6 +9681,8 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 | <span class="mark">SX-2</span> | Une situation ‘open’ n’est pas communiquée à l’extérieur du système. Dès lors que la situation est échangée avec l’extérieur le status doit passer à ‘published’. |
 |--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
+</div>
+
 ##### Description de l’enum ‘Reason’
 
 ###### Miscellaneous reasons
@@ -9691,29 +9691,29 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 | ***Group***   | ***SIRI-SX***                                  |                                                     |
 |---------------|------------------------------------------------|-----------------------------------------------------|
-| Miscellaneous | *<span class="mark">unknown</span>*            | *<span class="mark">inconnu</span>*                 |
-|               | *<span class="mark">incident</span>*           | *<span class="mark">incident</span>*                |
-|               | *<span class="mark">bombExplosion</span>*      | *<span class="mark">explosion d’une bombe</span>*   |
-|               | *<span class="mark">securityAlert</span>*      | *<span class="mark">alerte sécurité</span>*         |
-|               | *<span class="mark">fire</span>*               | *<span class="mark">feu</span>*                     |
-|               | *<span class="mark">vandalism</span>*          | *<span class="mark">vandalisme</span>*              |
-|               | *<span class="mark">accident</span>*           | *<span class="mark">accident</span>*                |
-|               | *<span class="mark">overcrowded</span>*        | *<span class="mark">surchargé</span>*               |
-|               | *<span class="mark">insufficientDemand</span>* | *<span class="mark">Demande insiffisante</span>*    |
-|               | *<span class="mark">lightingFailure</span>*    | *<span class="mark">Panne d’éclairage</span>*       |
-|               | *<span class="mark">serviceFailure</span>*     | *<span class="mark">Défaut de service</span>*       |
-|               | *<span class="mark">congestion</span>*         | *<span class="mark">congestion</span>*              |
-|               | *<span class="mark">routeBlockage</span>*      | *<span class="mark">Blocage de l’itinéraire</span>* |
-|               | *<span class="mark">personOnTheLine</span>*    | *<span class="mark">Personne sur la ligne</span>*   |
-|               | *<span class="mark">vehicleOnTheLine</span>*   | *<span class="mark">Véhicule sur la ligne</span>*   |
-|               | *<span class="mark">objectOnTheLine</span>*    | *<span class="mark">Objet sur la ligne</span>*      |
-|               | *<span class="mark">animalOnTheLine</span>*    | *<span class="mark">Animal sur la ligne</span>*     |
-|               | *<span class="mark">routeDiversion</span>*     | *<span class="mark">Déviation</span>*               |
-|               | *<span class="mark">roadClosed</span>*         | *<span class="mark">Route fermée</span>*            |
-|               | *<span class="mark">roadworks</span>*          | *<span class="mark">Travaux</span>*                 |
-|               | *<span class="mark">specialEvent</span>*       | *<span class="mark">Evénement spécial</span>*       |
-|               | *<span class="mark">bridgeStrike</span>*       | *<span class="mark">Grève de pont</span>*           |
-|               | *<span class="mark">undefinedProblem</span>*   | *<span class="mark">Problème non défini</span>*     |
+| Miscellaneous | *unknown*            | *inconnu*                 |
+|               | *incident*           | *incident*                |
+|               | *bombExplosion*      | *explosion d’une bombe*   |
+|               | *securityAlert*      | *alerte sécurité*         |
+|               | *fire*               | *feu*                     |
+|               | *vandalism*          | *vandalisme*              |
+|               | *accident*           | *accident*                |
+|               | *overcrowded*        | *surchargé*               |
+|               | *insufficientDemand* | *Demande insiffisante*    |
+|               | *lightingFailure*    | *Panne d’éclairage*       |
+|               | *serviceFailure*     | *Défaut de service*       |
+|               | *congestion*         | *congestion*              |
+|               | *routeBlockage*      | *Blocage de l’itinéraire* |
+|               | *personOnTheLine*    | *Personne sur la ligne*   |
+|               | *vehicleOnTheLine*   | *Véhicule sur la ligne*   |
+|               | *objectOnTheLine*    | *Objet sur la ligne*      |
+|               | *animalOnTheLine*    | *Animal sur la ligne*     |
+|               | *routeDiversion*     | *Déviation*               |
+|               | *roadClosed*         | *Route fermée*            |
+|               | *roadworks*          | *Travaux*                 |
+|               | *specialEvent*       | *Evénement spécial*       |
+|               | *bridgeStrike*       | *Grève de pont*           |
+|               | *undefinedProblem*   | *Problème non défini*     |
 
 ###### Personnel reasons
 
@@ -9721,19 +9721,19 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 | ***Group***            | ***SIRI-SX***                                         |                                                              |
 |------------------------|-------------------------------------------------------|--------------------------------------------------------------|
-| ***Personnel Reason*** | *<span class="mark">unknown</span>*                   | *<span class="mark">Inconnu</span>*                          |
-|                        | *<span class="mark">staffSickness</span>*             | *<span class="mark">Personnel Malade</span>*                 |
-|                        | *<span class="mark">staffAbsence</span>*              | *<span class="mark">Personnel absent</span>*                 |
-|                        | *<span class="mark">staffInWrongPlace</span>*         | *<span class="mark">Personne mal positionné</span>*          |
-|                        | *<span class="mark">staffShortage</span>*             | *<span class="mark">Manque de personnel</span>*              |
+| ***Personnel Reason*** | *unknown*                   | *Inconnu*                          |
+|                        | *staffSickness*             | *Personnel Malade*                 |
+|                        | *staffAbsence*              | *Personnel absent*                 |
+|                        | *staffInWrongPlace*         | *Personne mal positionné*          |
+|                        | *staffShortage*             | *Manque de personnel*              |
 |                        | *industrialAction*                                    | *Grève.*                                                     |
-|                        | *<span class="mark">undefinedPersonnelProblem</span>* | *<span class="mark">Problème de personnel non défini</span>* |
+|                        | *undefinedPersonnelProblem* | *Problème de personnel non défini* |
 
 |                            | ***SIRI-SX***                                          |                                |
 |----------------------------|--------------------------------------------------------|--------------------------------|
-| ***Personne sub lReason*** | *<span class="mark">staffInjury</span>*                | Blessure du personnel          |
-|                            | *<span class="mark">contractorStaffInjury</span>*      | Personnel sous-traitant malade |
-|                            | *<span class="mark">unofficialIndustrialAction</span>* | Grève officieuse               |
+| ***Personne sub lReason*** | *staffInjury*                | Blessure du personnel          |
+|                            | *contractorStaffInjury*      | Personnel sous-traitant malade |
+|                            | *unofficialIndustrialAction* | Grève officieuse               |
 |                            | staff sickness                                         | Personnel malade               |
 |                            | industrial action                                      | Grève                          |
 
@@ -9743,49 +9743,49 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 |                        | ***SIRI-SX***                                         |                                                              |
 |------------------------|-------------------------------------------------------|--------------------------------------------------------------|
-| ***Equipment Reason*** | *<span class="mark">unknown</span>*                   | *<span class="mark">inconnu</span>*                          |
-|                        | *<span class="mark">signalProblem</span>*             | *<span class="mark">Problème de signalisation</span>*        |
-|                        | *<span class="mark">signalFailure</span>*             | *<span class="mark">Panne de signalisation</span>*           |
-|                        | *<span class="mark">derailment</span>*                | *<span class="mark">déraillement</span>*                     |
-|                        | *<span class="mark">engineFailure</span>*             | *<span class="mark">Panne moteur</span>*                     |
-|                        | *<span class="mark">breakDown</span>*                 | *<span class="mark">Panne</span>*                            |
-|                        | *<span class="mark">technicalProblem</span>*          | *<span class="mark">Problème technique</span>*               |
-|                        | *<span class="mark">repairWork</span>*                | *<span class="mark">En réparation</span>*                    |
-|                        | *<span class="mark">constructionWork</span>*          | *<span class="mark">Travaux de construction</span>*          |
-|                        | *<span class="mark">maintenanceWork</span>*           | *<span class="mark">En maintenance</span>*                   |
-|                        | *<span class="mark">powerProblem</span>*              | *<span class="mark">Problème d’alimentation</span>*          |
-|                        | *<span class="mark">fuelProblem</span>*               | *<span class="mark">Problème de carburant</span>*            |
-|                        | *<span class="mark">swingBridgeFailure</span>*        | *Échec du pont tournant*                                     |
-|                        | *<span class="mark">escalatorFailure</span>*          | *<span class="mark">Panne d’escalator</span>*                |
-|                        | *<span class="mark">liftFailure</span>*               | *<span class="mark">Panne d’ascenseur</span>*                |
-|                        | *<span class="mark">gangwayProblem</span>*            | *Problème de passerelle*                                     |
-|                        | *<span class="mark">closedForMaintenance</span>*      | *<span class="mark">Fermeture pour maintenance</span>*       |
-|                        | *<span class="mark">fuelShortage</span>*              | *Pénurie de carburant*                                       |
-|                        | *<span class="mark">deicingWork</span>*               | *Travaux de dégivrage*                                       |
-|                        | *<span class="mark">wheelProblem</span>*              | *Problème de roue*                                           |
-|                        | *<span class="mark">luggageCarouselProblem</span>*    | *<span class="mark">Problème carrousel à bagages</span>*     |
-|                        | *<span class="mark">undefinedEquipmentProblem</span>* | *<span class="mark">Problème d’équipement non défini</span>* |
+| ***Equipment Reason*** | *unknown*                   | *inconnu*                          |
+|                        | *signalProblem*             | *Problème de signalisation*        |
+|                        | *signalFailure*             | *Panne de signalisation*           |
+|                        | *derailment*                | *déraillement*                     |
+|                        | *engineFailure*             | *Panne moteur*                     |
+|                        | *breakDown*                 | *Panne*                            |
+|                        | *technicalProblem*          | *Problème technique*               |
+|                        | *repairWork*                | *En réparation*                    |
+|                        | *constructionWork*          | *Travaux de construction*          |
+|                        | *maintenanceWork*           | *En maintenance*                   |
+|                        | *powerProblem*              | *Problème d’alimentation*          |
+|                        | *fuelProblem*               | *Problème de carburant*            |
+|                        | *swingBridgeFailure*        | *Échec du pont tournant*                                     |
+|                        | *escalatorFailure*          | *Panne d’escalator*                |
+|                        | *liftFailure*               | *Panne d’ascenseur*                |
+|                        | *gangwayProblem*            | *Problème de passerelle*                                     |
+|                        | *closedForMaintenance*      | *Fermeture pour maintenance*       |
+|                        | *fuelShortage*              | *Pénurie de carburant*                                       |
+|                        | *deicingWork*               | *Travaux de dégivrage*                                       |
+|                        | *wheelProblem*              | *Problème de roue*                                           |
+|                        | *luggageCarouselProblem*    | *Problème carrousel à bagages*     |
+|                        | *undefinedEquipmentProblem* | *Problème d’équipement non défini* |
 
 |                           | ***SIRI-SX***                                                 |                                                               |
 |---------------------------|---------------------------------------------------------------|---------------------------------------------------------------|
-| ***Equipment Subreason*** | *<span class="mark">tractionFailure</span>*                   | *Défaut de la traction*                                       |
-|                           | *<span class="mark">defectiveTrain</span>*                    | *Train défectueux*                                            |
-|                           | *<span class="mark">slipperyTrack</span>*                     | *Voie glissante*                                              |
-|                           | *<span class="mark">trackCircuitProblem</span>*               | *problème de circuit de voie*                                 |
-|                           | *<span class="mark">Signal and Switch Failure</span>*         | *Échec du signal et de switch*                                |
-|                           | *<span class="mark">brokenRail</span>*                        | *rail cassé*                                                  |
-|                           | *<span class="mark">poorRailConditions</span>*                | *mauvaises conditions ferroviaires*                           |
-|                           | *<span class="mark">lackOfOperationalStock</span>*            | *manque de stock opérationnel*                                |
-|                           | *<span class="mark">defectiveFireAlarmEquipment</span>*       | *Équipement d'alarme incendie défectueux*                     |
-|                           | *<span class="mark">defectivePlatformEdgeDoors</span>*        | *portes palières défectueuses*                                |
-|                           | *<span class="mark">defectiveCctv</span>*                     | *CCTV défectueux*                                             |
-|                           | *<span class="mark">defectivePublicAnnouncementSystem</span>* | *Système d'annonce publique défectueux*                       |
-|                           | *<span class="mark">ticketingSystemNotAvailable</span>*       | *<span class="mark">Système billetique non disponible</span>* |
-|                           | *<span class="mark">levelCrossingFailure</span>*              | *Défaut deu passage à niveau*                                 |
-|                           | *<span class="mark">trafficManagementSystemFailure</span>*    | *Défaillance du système de gestion du trafic*                 |
-|                           | *<span class="mark">emergencyEngineeringWork</span>*          | *Travaux d'ingénierie d'urgence*                              |
-|                           | *<span class="mark">lateFinishToEngineeringWork</span>*       | *finition tardive de travaux d'ingénierie*                    |
-|                           | *<span class="mark">overheadWireFailure</span>*               | *Panne de cables aérien*                                      |
+| ***Equipment Subreason*** | *tractionFailure*                   | *Défaut de la traction*                                       |
+|                           | *defectiveTrain*                    | *Train défectueux*                                            |
+|                           | *slipperyTrack*                     | *Voie glissante*                                              |
+|                           | *trackCircuitProblem*               | *problème de circuit de voie*                                 |
+|                           | *Signal and Switch Failure*         | *Échec du signal et de switch*                                |
+|                           | *brokenRail*                        | *rail cassé*                                                  |
+|                           | *poorRailConditions*                | *mauvaises conditions ferroviaires*                           |
+|                           | *lackOfOperationalStock*            | *manque de stock opérationnel*                                |
+|                           | *defectiveFireAlarmEquipment*       | *Équipement d'alarme incendie défectueux*                     |
+|                           | *defectivePlatformEdgeDoors*        | *portes palières défectueuses*                                |
+|                           | *defectiveCctv*                     | *CCTV défectueux*                                             |
+|                           | *defectivePublicAnnouncementSystem* | *Système d'annonce publique défectueux*                       |
+|                           | *ticketingSystemNotAvailable*       | *Système billetique non disponible* |
+|                           | *levelCrossingFailure*              | *Défaut deu passage à niveau*                                 |
+|                           | *trafficManagementSystemFailure*    | *Défaillance du système de gestion du trafic*                 |
+|                           | *emergencyEngineeringWork*          | *Travaux d'ingénierie d'urgence*                              |
+|                           | *lateFinishToEngineeringWork*       | *finition tardive de travaux d'ingénierie*                    |
+|                           | *overheadWireFailure*               | *Panne de cables aérien*                                      |
 
 ###### Environment reason
 
@@ -9793,46 +9793,46 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 | ***Group***              | ***SIRI-SX***                                             |                                                               |
 |--------------------------|-----------------------------------------------------------|---------------------------------------------------------------|
-| ***Environment Reason*** | *<span class="mark">unknown</span>*                       | *<span class="mark">Inconnu</span>*                           |
-|                          | *<span class="mark">fog</span>*                           | *<span class="mark">broullard</span>*                         |
-|                          | *<span class="mark">roughSea</span>*                      | *<span class="mark">Mer agitée</span>*                        |
-|                          | *<span class="mark">heavySnowFall</span>*                 | *fortes chutes de neige*                                      |
-|                          | *<span class="mark">heavyRain</span>*                     | *<span class="mark">Fortes pluies</span>*                     |
-|                          | *<span class="mark">strongWinds</span>*                   | *<span class="mark">Vents forts</span>*                       |
-|                          | *<span class="mark">tidalRestrictions</span>*             | *<span class="mark">Restriction liée aux marées</span>*       |
-|                          | *<span class="mark">highTide</span>*                      | *<span class="mark">Marée Haute</span>*                       |
-|                          | *<span class="mark">lowTide</span>*                       | *<span class="mark">Marée basse</span>*                       |
-|                          | *<span class="mark">ice</span>*                           | *<span class="mark">Glace</span>*                             |
-|                          | *<span class="mark">frozen</span>*                        | *<span class="mark">Gel</span>*                               |
-|                          | *<span class="mark">hail</span>*                          | *<span class="mark">Grêle</span>*                             |
-|                          | *<span class="mark">highTemperatures</span>*              | *<span class="mark">Température élevée</span>*                |
-|                          | *<span class="mark">flooding</span>*                      | *<span class="mark">Innondation</span>*                       |
-|                          | *<span class="mark">waterlogged</span>*                   | *<span class="mark">Sol détrempé</span>*                      |
-|                          | *<span class="mark">lowWaterLevel</span>*                 | *niveau d'eau faible*                                         |
-|                          | *<span class="mark">highWaterLevel</span>*                | *niveau d'eau élevé*                                          |
-|                          | *<span class="mark">fallenLeaves</span>*                  | *<span class="mark">Feuilles mortes</span>*                   |
-|                          | *<span class="mark">fallenTree</span>*                    | *<span class="mark">Chute d’arbres</span>*                    |
-|                          | *<span class="mark">landslide</span>*                     | *glissement de terrain*                                       |
-|                          | *<span class="mark">undefinedEnvironmentalProblem</span>* | *<span class="mark">Problème environmental non défini</span>* |
+| ***Environment Reason*** | *unknown*                       | *Inconnu*                           |
+|                          | *fog*                           | *broullard*                         |
+|                          | *roughSea*                      | *Mer agitée*                        |
+|                          | *heavySnowFall*                 | *fortes chutes de neige*                                      |
+|                          | *heavyRain*                     | *Fortes pluies*                     |
+|                          | *strongWinds*                   | *Vents forts*                       |
+|                          | *tidalRestrictions*             | *Restriction liée aux marées*       |
+|                          | *highTide*                      | *Marée Haute*                       |
+|                          | *lowTide*                       | *Marée basse*                       |
+|                          | *ice*                           | *Glace*                             |
+|                          | *frozen*                        | *Gel*                               |
+|                          | *hail*                          | *Grêle*                             |
+|                          | *highTemperatures*              | *Température élevée*                |
+|                          | *flooding*                      | *Innondation*                       |
+|                          | *waterlogged*                   | *Sol détrempé*                      |
+|                          | *lowWaterLevel*                 | *niveau d'eau faible*                                         |
+|                          | *highWaterLevel*                | *niveau d'eau élevé*                                          |
+|                          | *fallenLeaves*                  | *Feuilles mortes*                   |
+|                          | *fallenTree*                    | *Chute d’arbres*                    |
+|                          | *landslide*                     | *glissement de terrain*                                       |
+|                          | *undefinedEnvironmentalProblem* | *Problème environmental non défini* |
 
 | ***Group***                         | ***SIRI-SX***                                  |                                                         |
 |-------------------------------------|------------------------------------------------|---------------------------------------------------------|
-| ***Environment Weather Subreason*** | *<span class="mark">driftingSnow</span>*       | *Neige à la dérive*                                     |
-|                                     | *<span class="mark">blizzardConditions</span>* | *Conditions de blizzard*                                |
-|                                     | *<span class="mark">stormDamage</span>*        | *dégâts de tempête*                                     |
-|                                     | *<span class="mark">stormConditions</span>*    | *Conditions de tempête*                                 |
-|                                     | *<span class="mark">slipperiness</span>*       | *glissance*                                             |
-|                                     | *<span class="mark">iceDrift</span>*           | *Dérive de glace*                                       |
-|                                     | *<span class="mark">glazedFrost</span>*        | *glacé*                                                 |
-|                                     | *<span class="mark">lightningStrike</span>*    | *coup de foudre*                                        |
-|                                     | *<span class="mark">avalanches</span>*         | *<span class="mark">avalanches</span>*                  |
-|                                     | *<span class="mark">flashFloods</span>*        | *crues éclair*                                          |
-| ***Environment ground Subreason***  | *<span class="mark">mudslide</span>*           | *glissement de terrain*                                 |
-|                                     | *<span class="mark">rockfalls</span>*          | *chutes de pierres*                                     |
-|                                     | *<span class="mark">subsidence</span>*         | *affaissement*                                          |
-|                                     | *<span class="mark">earthquake­Damage</span>*   | *<span class="mark">Dégats Tremblement de terre</span>* |
-|                                     | *<span class="mark">sewerOverflow</span>*      | *<span class="mark">Débordement d’égout</span>*         |
-|                                     | *<span class="mark">grassFire</span>*          | *<span class="mark">Feu d’herbe</span>*                 |
+| ***Environment Weather Subreason*** | *driftingSnow*       | *Neige à la dérive*                                     |
+|                                     | *blizzardConditions* | *Conditions de blizzard*                                |
+|                                     | *stormDamage*        | *dégâts de tempête*                                     |
+|                                     | *stormConditions*    | *Conditions de tempête*                                 |
+|                                     | *slipperiness*       | *glissance*                                             |
+|                                     | *iceDrift*           | *Dérive de glace*                                       |
+|                                     | *glazedFrost*        | *glacé*                                                 |
+|                                     | *lightningStrike*    | *coup de foudre*                                        |
+|                                     | *avalanches*         | *avalanches*                  |
+|                                     | *flashFloods*        | *crues éclair*                                          |
+| ***Environment ground Subreason***  | *mudslide*           | *glissement de terrain*                                 |
+|                                     | *rockfalls*          | *chutes de pierres*                                     |
+|                                     | *subsidence*         | *affaissement*                                          |
+|                                     | *earthquake­Damage*   | *Dégats Tremblement de terre* |
+|                                     | *sewerOverflow*      | *Débordement d’égout*         |
+|                                     | *grassFire*          | *Feu d’herbe*                 |
 
 ###### Autres raisons
 
@@ -9857,15 +9857,15 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 | **SIRI-SX**                                | **Description**                                               |
 |--------------------------------------------|---------------------------------------------------------------|
-| *<span class="mark">general</span>*        | La perturbation a un impact global.                           |
-| *<span class="mark">operator</span>*       | La perturbation a un impact sur un opérateur spécifique.      |
-| *<span class="mark">network</span>*        | La perturbation a un impact sur tout le réseau.               |
-| *<span class="mark">route</span>*          | La perturbation a un impact sur un itinéraire particulier.    |
-| *<span class="mark">line</span>*           | La perturbation a un impact sur une ligne particulière.       |
-| *<span class="mark">place</span>*          | La perturbation a un impact sur un lieu particulier.          |
-| *<span class="mark">StopPlace</span>*      | La perturbation a un impact sur un lieu d’arrêt particulier.  |
-| *<span class="mark">stopPoint</span>*      | La perturbation a un impact sur un point d’arrêt particulier. |
-| *<span class="mark">vehicleJourney</span>* | La perturbation a un impact sur une course spécifique.        |
+| *general*        | La perturbation a un impact global.                           |
+| *operator*       | La perturbation a un impact sur un opérateur spécifique.      |
+| *network*        | La perturbation a un impact sur tout le réseau.               |
+| *route*          | La perturbation a un impact sur un itinéraire particulier.    |
+| *line*           | La perturbation a un impact sur une ligne particulière.       |
+| *place*          | La perturbation a un impact sur un lieu particulier.          |
+| *StopPlace*      | La perturbation a un impact sur un lieu d’arrêt particulier.  |
+| *stopPoint*      | La perturbation a un impact sur un point d’arrêt particulier. |
+| *vehicleJourney* | La perturbation a un impact sur une course spécifique.        |
 
 ##### Description de la structure ‘Consequences’
 
@@ -9983,8 +9983,12 @@ perturbations.</td>
 </tbody>
 </table>
 
+<div class="no_h">
+
 | SX-3 | Les délais sont exprimés uniquement sous la forme d’une durée |
 |------|---------------------------------------------------------------|
+
+</div>
 
 ###### Description de l’enum ‘Conditions’
 
@@ -9992,25 +9996,25 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 | **SIRI-SX**                                             | **Description**                |
 |---------------------------------------------------------|--------------------------------|
-| *<span class="mark">unknown</span>*                     | inconnu                        |
-| *<span class="mark">altered</span>*                     | dégradé                        |
-| *<span class="mark">cancelled</span>*                   | annulé                         |
-| *<span class="mark">delayed</span>*                     | retardé                        |
-| *<span class="mark">diverted</span>*                    | Dévié                          |
-| *<span class="mark">noService</span>*                   | pas de service                 |
-| *<span class="mark">disrupted</span>*                   | perturbé                       |
-| *<span class="mark">additionalService</span>*           | service supplémentaire         |
-| *<span class="mark">specialService</span>*              | service spécial                |
-| *<span class="mark">onTime</span>*                      | à l’heure                      |
-| *<span class="mark">normalService</span>*               | service normal                 |
-| *<span class="mark">intermittentService</span>*         | service intermittant           |
-| *<span class="mark">extendedService</span>*             | service étendu                 |
-| *<span class="mark">splittingTrain</span>*              | train fractionné               |
-| *<span class="mark">replacementTransport</span>*        | transport de remplacement      |
-| *<span class="mark">arrivesEarly</span>*                | en avance                      |
-| *<span class="mark">shuttleService</span>*              | service navette                |
-| *<span class="mark">replacementService</span>*          | service de remplacement        |
-| *<span class="mark">undefinedServiceInformation</span>* | service d’information inconnu. |
+| *unknown*                     | inconnu                        |
+| *altered*                     | dégradé                        |
+| *cancelled*                   | annulé                         |
+| *delayed*                     | retardé                        |
+| *diverted*                    | Dévié                          |
+| *noService*                   | pas de service                 |
+| *disrupted*                   | perturbé                       |
+| *additionalService*           | service supplémentaire         |
+| *specialService*              | service spécial                |
+| *onTime*                      | à l’heure                      |
+| *normalService*               | service normal                 |
+| *intermittentService*         | service intermittant           |
+| *extendedService*             | service étendu                 |
+| *splittingTrain*              | train fractionné               |
+| *replacementTransport*        | transport de remplacement      |
+| *arrivesEarly*                | en avance                      |
+| *shuttleService*              | service navette                |
+| *replacementService*          | service de remplacement        |
+| *undefinedServiceInformation* | service d’information inconnu. |
 
 ##### Description de la structure ‘Publishing Actions’
 
@@ -10792,8 +10796,8 @@ l’action</mark>.</p></td>
 |                         | **➞ *<span class="mark">Name</span>***                                    | 1:1  | *xsd:NMTOKEN* |              | Nom de l’action.                                                                   |
 |                         | **➞*<span class="mark">Prompt</span>***                                   | 0:\* | *nlString*    |              | <span class="mark">Libéllé du message associé au publishingAction.</span>          |
 |                         | <span class="mark"></span>**➞*<span class="mark">PublishAtScope</span>*** | 0:1  | *+Structure*  |              | <span class="mark">Zone de diffusion du message ‘Prompt’.</span>                   |
-|                         | ⮆ ***<span class="mark">ScopeType</span>***                               | 0:1  | *enum*        |              | <span class="mark">Type de l’action (cf 6.7.4.1.5).</span>                         |
-|                         | ⮆ ***<span class="mark">Affects</span>***                                 | 0:1  | *+Structure*  |              | <span class="mark">Zone de diffusion du message ‘*prompt’*, cf 6.7.4.1.7.6.</span> |
+|                         | ⇉ ***<span class="mark">ScopeType</span>***                               | 0:1  | *enum*        |              | <span class="mark">Type de l’action (cf 6.7.4.1.5).</span>                         |
+|                         | ⇉ ***<span class="mark">Affects</span>***                                 | 0:1  | *+Structure*  |              | <span class="mark">Zone de diffusion du message ‘*prompt’*, cf 6.7.4.1.7.6.</span> |
 
 <h7>Description de l’enum ‘ActionStatus’</h7>
 
@@ -10801,9 +10805,9 @@ Les valeurs retenues par le profil SIRI France sont les suivantes :
 
 | **Value**                             | **Description**             |
 |---------------------------------------|-----------------------------|
-| *<span class="mark">open</span>*      | Action ouverte non publiée. |
-| *<span class="mark">published</span>* | Action publiée.             |
-| *<span class="mark">closed</span>*    | Action close.               |
+| *open*      | Action ouverte non publiée. |
+| *published* | Action publiée.             |
+| *closed*    | Action close.               |
 
 # Eléments techniques des messages
 
