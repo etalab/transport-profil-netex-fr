@@ -7388,12 +7388,7 @@ profil France: elle présente les principales fonctions retenues pour le
 service (les explications ne sont pas traduites dans ce tableau, mais on
 retrouve les traductions dans les tableaux qui suivent).</span>
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 28%" />
-<col style="width: 59%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Topic</em></td>
@@ -7448,14 +7443,7 @@ langues sont systèmatiquement diffusées)</p></td>
 |-------------------------------------------------------|--------------|-------------------------------|
 | ***<span class="mark">GeneralMessageRequest</span>*** | *+Structure* | Requête d'accès aux messages. |
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 5%" />
-<col style="width: 17%" />
-<col style="width: 50%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>Attributes</em></td>
@@ -7490,15 +7478,15 @@ Si ce champ n'est pas présent, la requête concerne tous les canaux.</p>
 <p><mark>Dans le cadre du profil FR, seules les valeurs suivantes seront
 utilisées pour identifier les canaux:</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>«Perturbation»,</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>«Information»,</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>«Commercial».</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark><u>Note</u>: ce sont bien ces libellés texte précis, qui sont
 utilisés pour instancier l'attribut <strong>InfoChannelRef</strong> (et
@@ -7531,9 +7519,13 @@ langues.</mark></p></td>
 
 ### Requête d'abonnement au service « General Message »
 
+<div class="no_h">
+
 |                                         |              |                                                        |
 |-----------------------------------------|--------------|--------------------------------------------------------|
 | ***GeneralMessage­SubscriptionRequest*** | *+Structure* | Requête d’abonnement au service SIRI *GeneralMessage*. |
+
+</div>
 
 |            |                                               |                                   |                         |                                                                                              |
 |------------|-----------------------------------------------|-----------------------------------|-------------------------|----------------------------------------------------------------------------------------------|
@@ -7576,14 +7568,7 @@ contenir plusieurs de chaque)</span>.
 |---------------------------------------------|--------------|------------------------|
 | ***<span class="mark">InfoMessage</span>*** | *+Structure* | Message d'information. |
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 5%" />
-<col style="width: 13%" />
-<col style="width: 52%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>attribute</em></td>
@@ -7718,14 +7703,7 @@ role="doc-backlink">↩︎</a></p></li>
 |-------------------------------------------------------|--------------|--------------------------------------------|
 | **<span class="mark">InfoMessageCancellation</span>** | *+Structure* | Annulation d'un message émis précédemment. |
 
-<table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 20%" />
-<col style="width: 5%" />
-<col style="width: 15%" />
-<col style="width: 47%" />
-</colgroup>
+<table class="no_h">
 <tbody>
 <tr class="odd">
 <td><em>log</em></td>
@@ -7788,11 +7766,7 @@ requête.
 
 ![image](media/image4.png)
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><mark>GM-1</mark></th>
@@ -7840,20 +7814,16 @@ le profil FR car la norme SIRI n'impose pas de structure de message (et
 n'en propose pas non plus) : il revient donc à chaque profil de décrire
 ces messages.</span>
 
-<table>
-<colgroup>
-<col style="width: 7%" />
-<col style="width: 92%" />
-</colgroup>
+<table class="no_h">
 <thead>
 <tr class="header">
 <th><mark>GM-3</mark></th>
 <th><p><mark>Les champs de la structure sont les suivants :</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Le champ «LineRef» identifie la ou les lignes concernées par le
 message.</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Si une ligne est indiquée, le message porte sur toute la ligne
 sans restriction.</mark></p>
@@ -7863,10 +7833,10 @@ concernant tous les arrêts desservis par la ligne, etc.) restent à
 l'appréciation du producteur et seront précisés par les
 spécifications.</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Le champ «StopPointRef» identifie le ou les points d'arrêt (cf
 2.2) concernés par le message.</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Il convient d'utiliser ici un identifiant d'objet de
 référence . Zone dembarquement, Lieu d’arrêt monomodal, Lieu d’arrêt
@@ -7877,42 +7847,42 @@ toutes les lignes de l’opérateur desservant l’arrêt, etc.) restent à
 l'appréciation du producteur et seront précisés par les
 spécifications.</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Le champ «JourneyPatternRef» identifie la ou les missions
 concernées par le message.</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Si une mission est indiquée, le message porte sur toute la
 mission sans restriction.</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Le champ «DestinationRef» identifie la ou les destinations
 concernées par le message</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Si une destination est indiquée, le message porte sur toutes
 les courses ayant cette destination sans restriction.</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Le champ «RouteRef» identifie le ou les itinéraires concernés
 par le message.</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Si un itinéraire est indiqué, le message porte sur tout
 l'itinéraire sans restriction.</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Le champ «GroupOfLinesRef» permet d'indiquer que le message est
 relatifs au groupe de lignes indiqué (réseau ou tout groupe de lignes
 dont le code a été préalablement échangé comme donnée de référence :
 Noctilien, lignes attachées à un dépôt, etc.). Toutes les lignes du
 groupe de lignes sont alors concernées par le message.</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>Le champ «LineSection» identifie la ou les sections de lignes
 (premier et dernier arrêt ainsi que leur ligne d'appartenance)
 concernée(s) par le message.</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Si une section de ligne est indiquée, le message porte sur tous
 les arrêts de cette section, sans restriction.</mark></p>
@@ -7921,35 +7891,35 @@ section d’itinéraires, mais beaucoup de systèmes ne disposant pas de la
 notion d’itinéraires, le choix a été de faire porter la section sur la
 ligne.</mark></p>
 <ul>
-<li><blockquote>
+<li>
 <p><mark>Le champ « Message » contient le message lui-même :</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>« NumberOfLines » est une information facultative de formatage
 précisant le nombre de lignes du message ;</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>« NumberOfCharPerLine » est une information facultative de
 formatage précisant le nombre maximum de caractères par ligne
 d’affichage dans le message ;</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark>« MessageType » permet de donner un type au contenu du message.
 Les valeurs possibles pour ce type sont :</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>shortMessage</strong></em> : message texte court,
 par opposition au <em><strong>longMessage</strong></em> ; l'utilisation
 de ce code suppose que l'on disposera aussi d'une version longue du même
 message.</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>longMessage</strong></em> : message texte long, par
 opposition au <em><strong>shortMessage</strong></em> ; l'utilisation de
 ce code suppose que l'on disposera aussi d'une version courte du même
 message.</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>textOnly</strong></em> : texte libre sans
 restriction ni formatage particulier, mais n'utilisant que des
 caractères textes imprimables sans saut de ligne. Le profil établit
@@ -7957,25 +7927,25 @@ depuis sa vesion 2.3 que la fourniture du message sous cette version est
 <strong>obligatoire</strong>. Un <em><strong>messageText</strong></em>
 est évidemment obligatoire quand <strong>MessageType</strong> est
 positionné à <em><strong>textOnly</strong></em>.</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>formattedText</strong></em> : texte formaté en
 nombre de lignes et de caractères (voir les champs précédents). Dans ce
 cas le retour chariot est &lt;LF&gt; seul (code ascii 10 en
 décimal) ;</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>HTML</strong></em> : format compatible HTML
 4 ;</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>RTF</strong></em> : Rich Text Format ;</mark></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><mark><em><strong>codedMessage</strong></em> : Ce type permettra par
 exemple de définir une bibliothèque de messages de n’en communiquer que
 le type (en laissant alors vide le champ texte).</mark></p>
-</blockquote></li>
+</li>
 </ul>
 <p><mark>Si une telle bibliothèque est utilisée, elle devra être définie
 dans le protocole d’accord établi entre les différents intervenants dans
@@ -8004,9 +7974,13 @@ adapté à son usage et ses contraintes.</span>
 <span class="mark">La fin de validitié d'un message, en particulier
 d'une perturbation, est gérée de la façon suivante :</span>
 
+<div class="no_h">
+
 | <span class="mark">GM-4</span> | <span class="mark">En mode requête, le diffuseur doit considérer une information reçue précédemment comme obsolète quand la réponse qu'il reçoit est vide (ou tout du moins quand elle ne retourne plus l'information précédemment reçue) ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time) ; le producteur n’envoie en effet que les messages actifs au moment de la requête.</span> |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <span class="mark">GM-5</span> | <span class="mark">En mode abonnement, le diffuseur doit considérer une information reçue précédemment comme obsolète quand il reçoit une information de type "InfoMessageCancellation" ou quand l’heure de fin d’évènement est expirée (champ Valid­Until­Time).</span>                                                                                                                                     |
+
+</div>
 
 ### Précision sur l'encodage de la structure spécifique France et exemple de message
 
