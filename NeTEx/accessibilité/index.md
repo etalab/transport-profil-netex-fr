@@ -204,9 +204,10 @@ l'Accessibilité. Ce modèle a pour but de décrire l'accessibilité
 des cheminements extérieurs en voirie, typiquement des trottoirs
 reliant un arrêt de transport en commun à l’entrée d’un ERP.
 
-Des compléments issus de l'ontologie du projet OpenStreetMap ont également
-été apportés au document. OpenStreetMap (OSM) est un projet collaboratif
-de cartographie proposant une base de données géographiques libre du monde
+Des compléments permettant d'assurer la mise en relation avec l'ontologie
+ du projet OpenStreetMap ont également été apportés au document.
+ OpenStreetMap (OSM) est un projet collaboratif de cartographie
+ proposant une base de données géographiques libre du monde
 entier.
 
 Si la première motivation pour la définition de ce profil est bien
@@ -1980,6 +1981,14 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tr>
 <tr class="odd">
 <td></td>
+<td>MinimumWidth</td>
+<td>LengthType</td>
+<td>0:1</td>
+<td><p>Largeur du cheminement</p>
+<p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
+</tr>
+<tr class="odd">
+<td></td>
 <td>AllowedUse</td>
 <td>DirectionOfUseEnum</td>
 <td>0:1</td>
@@ -2040,14 +2049,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>underpass (passage sous-terrain)</em></p></li>
 <li><p><em>tunnel (tunnel)</em></p></li>
 </ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>MinimumWidth</em></td>
-<td>LengthType</td>
-<td>0:1</td>
-<td><p>Largeur du cheminement</p>
-<p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
 </tr>
 <tr class="even">
 <td></td>
@@ -2112,6 +2113,13 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tr>
 <tr class="odd">
 <td></td>
+<td><em>Gradient</em></td>
+<td><em>xsd:integer</em></td>
+<td>0:1</td>
+<td>Pente en degrés (dans le sens direct, from/to, du cheminement)</td>
+</tr>
+<tr class="odd">
+<td></td>
 <td><em>TiltAngle</em></td>
 <td><em>xsd:integer</em></td>
 <td>0:1</td>
@@ -2130,13 +2138,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>mediumRightTilt (dévers moyen à droite)</em></p></li>
 <li><p><em>strongRightTilt (dévers fort à droite)</em></p></li>
 </ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Gradient</em></td>
-<td><em>xsd:integer</em></td>
-<td>0:1</td>
-<td>Pente en degrés (dans le sens direct, from/to, du cheminement)</td>
 </tr>
 <tr class="even">
 <td></td>
