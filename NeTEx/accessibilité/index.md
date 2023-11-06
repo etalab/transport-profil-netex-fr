@@ -3002,7 +3002,7 @@ passagers)* *–* Element
 <td><p>Type de CROSSING:</p>
 <ul>
 <li><p><em>levelCrossing</em> (passage à niveau)</p></li>
-<li><p><em>barrowCrossing</em> (passage à niveau sans passage à niveau)</p></li>
+<li><p><em>barrowCrossing</em> (passage à niveau sans barrière)</p></li>
 <li><p><em>roadCrossing</em> (passage piéton, traversée de route)</p></li>
 <li><p><em>roadCrossingWithIsland</em> (passage piéton avec îlot en centre de voirie)</p></li>
 <li><p><em>other</em> (autre)</p></li>
@@ -3116,18 +3116,17 @@ passagers)* *–* Element
 </td>
 </tr>
 <tr>
-<td><em>VisualBuffer</em></td>
-<td><p>Indique la présence et le type de masque visuel sécurisant la traversée :</p>
+<td><em>VisualObstacle</em></td>
+<td><p>Indique la présence et le type d'obstacle visuel à la visibilité :</p>
 <ul>
 <li><p><em>none (aucun)</em></p></li>
 <li><p><em>carParking (stationnement voiture)</em></p></li>
 <li><p><em>vegetation (végétation)</em></p></li>
 <li><p><em>building (bâti)</em></p></li>
 <li><p><em>streetFurniture (mobilier urbain)</em></p></li>
-<li><p><em>marking (marquage au sol)</em></p></li>
 <li><p><em>other (autre)</em></p></li>
 </ul>
-<p>Le masque visuel doit être positionné à 5 mètres en amont de la traversée et permettre aux piétons et aux automobilistes de se voir.</p>
+<p>L'obstacle visuel est un élément, positionné jusqu'à 5 mètres en amont de la traversée, et qui gêne le piéton pour voir et être vu au moment de traverser.</p>
 <p>À rapprocher de l'attribut TRAVERSEE.covisibilite dans le standard CNIG.</p>
 </td>
 </tr>
