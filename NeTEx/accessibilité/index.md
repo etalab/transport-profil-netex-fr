@@ -5064,3 +5064,6 @@ http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessi
 Documentation collaborative sur la cartographie des cheminements piétons
 et de l'accessibilité dans OpenStreetMap : 
 https://wiki.openstreetmap.org/wiki/FR:Cheminements_pi%C3%A9tons
+
+Règles de conversion vers le profil, pour OpenStreetMap et le standard CNIG Accessibilité :
+https://doc.transport.data.gouv.fr/documentation/normes-europeennes/accessibilite
