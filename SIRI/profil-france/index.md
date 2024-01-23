@@ -6,6 +6,8 @@ tags: ["SIRI"]
 autonumbering: true
 ---
 
+**DRAFT v1.7 - publication non terminée**
+
 <style type="text/css" rel="stylesheet">
   /* temporary CSS used here to let us customize while versioning for clarity
      will ultimately be moved to the main.css in transport-normes-site */
