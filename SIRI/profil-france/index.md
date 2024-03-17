@@ -15,33 +15,6 @@ réseaux de transport en commun
 
 **Avant-propos**
 
-<style type="text/css" rel="stylesheet">
-
-/* moved down a bit to ensure top-level preview does not show this */
-/* ultimately this will have to move to main.css in transport-normes-site */
-
-mark, .mark {
-    background-color: #d7d7d7;
-}
-
-.m_hub {
-    background-color: #00FF00;
-}
-
-.m_excl {
-    background-color: #55FFFF;
-}
-
-.m_red {
-    color: #FF0000;
-}
-
-.no_h th {
-    font-weight: normal;
-}
-
-</style>
-
 Ce document présente de façon détaillée le profil SIRI National France
 (également appelé « local agreement SIRI France »), soit la déclinaison
 de la norme SIRI aux besoins métiers français. Il contient tous les
@@ -52,6 +25,16 @@ réécriture ni une traduction de l'ensemble des documents normatifs SIRI
 - Le lecteur devra donc se référer à la norme quand cela sera
   nécessaire, en particulier au niveau technique avant d'envisager toute
   implémentation de SIRI.
+
+<style type="text/css" rel="stylesheet">
+/* moved down a bit to ensure top-level preview does not show this */
+/* ultimately this will have to move to main.css in transport-normes-site */
+mark, .mark { background-color: #d7d7d7; }
+.m_hub { background-color: #00FF00; }
+.m_excl { background-color: #55FFFF; }
+.m_red { color: #FF0000; }
+.no_h th { font-weight: normal;}
+</style>
 
 D'autre part, l'ensemble de la terminologie utilisée dans ce document
 est celle de SIRI, et par voie de conséquence de TRANSMODEL version 6.0.
