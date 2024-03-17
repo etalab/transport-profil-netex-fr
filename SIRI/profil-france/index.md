@@ -6,11 +6,19 @@ tags: ["SIRI"]
 autonumbering: true
 ---
 
-**DRAFT v1.7 - publication non terminée**
+Profil d'échange pour la description des informations temps-réel des
+réseaux de transport en commun
+
+**SIRI - Profil Français v1.7**
+
+**BNTRA-CN03-GT7_NF Profil SIRI FR_v1.7 20230727**
+
+**Avant-propos**
 
 <style type="text/css" rel="stylesheet">
-  /* temporary CSS used here to let us customize while versioning for clarity
-     will ultimately be moved to the main.css in transport-normes-site */
+
+/* moved down a bit to ensure top-level preview does not show this */
+/* ultimately this will have to move to main.css in transport-normes-site */
 
 mark, .mark {
     background-color: #d7d7d7;
@@ -33,15 +41,6 @@ mark, .mark {
 }
 
 </style>
-
-Profil d'échange pour la description des informations temps-réel des
-réseaux de transport en commun
-
-**SIRI - Profil Français**
-
-**BNTRA-CN03-GT7_NF Profil SIRI FR_v1.7 20230727**
-
-**Avant-propos**
 
 Ce document présente de façon détaillée le profil SIRI National France
 (également appelé « local agreement SIRI France »), soit la déclinaison
