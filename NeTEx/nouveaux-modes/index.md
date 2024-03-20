@@ -1,6 +1,6 @@
 ## Avant-propos
 
-## Introduction
+# Introduction
 
 # Domaine d'application
 
