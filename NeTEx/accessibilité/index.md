@@ -1,5 +1,5 @@
 ---
-title: "NeTEx - Profil France - Accessibilité"
+title: "Profil NeTEx accessibilité France"
 date: 2022-01-13T00:00:00+00:05
 draft: false
 tags: ["NeTEx"]
