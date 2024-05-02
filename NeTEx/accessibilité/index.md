@@ -2064,7 +2064,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em><strong>TiltAngle</strong></em></td>
 <td><em>BorderTypeEnum</em></td>
 <td>0:1</td>
-<td>Dévers (inclinaison latérale) de +20 a -20 degrès (dans le sens direct, fom/to, du cheminement)</td>
+<td>Dévers (inclinaison latérale) de +20 a -20 degrès (dans le sens direct, from/to, du cheminement)</td>
 </tr>
 <tr class="even">
 <td></td>
