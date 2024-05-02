@@ -3523,10 +3523,10 @@ passagers)* *–* Element
 
 |                     |            |                        |                  |                                    |
 |---------------------|------------|------------------------|------------------|------------------------------------|
-| **Classifi­cation** | **Name**   | **Type**               | **Cardin­ality** | **Description**                    |
+| **Classifi­cation**  | **Name**   | **Type**               | **Cardin­ality**  | **Description**                    |
 | *::>*               | *::>*      | *PlaceAccessEquipment* | *::>*            | STAIR hérite de ACCESS EQUIPMENT   |
 | «PK»                | id         | StairIdType            | 1:1              | Identifiant du STAIR.              |
-|                     | StairGroup | StairGroup             | 1:1              | Prorpiétés auommunes aux escaliers |
+|                     | StairGroup | StairGroup             | 1:1              | Propriétés communes aux escaliers  |
 
 <div class="table-title">StairGroup (série de marches d’escaliers) – Group</div>
 
