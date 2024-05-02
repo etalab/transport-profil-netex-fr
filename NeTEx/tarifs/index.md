@@ -6,64 +6,6 @@ tags: ["NeTEx"]
 autonumbering: true
 ---
 
-<style>
-  .mark      { background-color: yellow; }
-  .mark-blue { background-color: cyan;   }
-
-  .red { color: red; }
-
-  /* Hide terms & definitions lists in ToC */
-  .toc.autonumbering .inner > ul > li:nth-of-type(3) > ul { display: none; }
-  .toc.autonumbering .inner > ul > li:nth-of-type(4) > ul { display: none; }
-
-  /* Renumber annexes in ToC */
-  .toc.autonumbering {
-    counter-set: lvl1 0;
-  }
-  .toc.autonumbering .inner > ul > li:nth-child(n+8)::before {
-    counter-increment: lvl1;
-    content: 'Annexe 'counter(lvl1, upper-alpha)' – ';
-  }
-  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul {
-    counter-set: lvl2 0;
-  }
-  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul ul {
-    counter-set: lvl3 0;
-  }
-  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul > li::before {
-    counter-increment: lvl2;
-    content: counter(lvl1, upper-alpha)'.' counter(lvl2)'.';
-  }
-  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul > li > ul > li::before {
-    counter-increment: lvl3;
-    content: counter(lvl1, upper-alpha)'.' counter(lvl2)'.' counter(lvl3)'.';
-  }
-  /* But hide numbering for Bibliographie */
-  .toc.autonumbering .inner > ul > li:last-child::before {
-    content: "";
-  }
-
-  /* Renumber annexes in body */
-  .annexes {
-    counter-set: h1 0 h2 0 h3 0;
-  }
-  .annexes h1::before {
-    content: 'Annexe 'counter(h1, upper-alpha)' – ';
-  }
-  .annexes h2::before {
-    counter-increment: h2;
-    content: counter(h1, upper-alpha)'.' counter(h2)'. ';
-  }
-  .annexes h3::before {
-    counter-increment: h3;
-    content: counter(h1, upper-alpha)'.' counter(h2)'.' counter(h3)'. ';
-  }
-  /* But hide numbering for Bibliographie */
-  .annexes h1:last-of-type::before {
-    content: "";
-  }
-</style>
-
 **Avant-propos**
 
 L’harmonisation des pratiques dans l’échange des données relatives aux
@@ -10744,3 +10686,61 @@ information relating to public transport operations - Part 5: Functional
 service interfaces - Situation Exchange
 
 </div>
+
+<style>
+  .mark      { background-color: yellow; }
+  .mark-blue { background-color: cyan;   }
+
+  .red { color: red; }
+
+  /* Hide terms & definitions lists in ToC */
+  .toc.autonumbering .inner > ul > li:nth-of-type(3) > ul { display: none; }
+  .toc.autonumbering .inner > ul > li:nth-of-type(4) > ul { display: none; }
+
+  /* Renumber annexes in ToC */
+  .toc.autonumbering {
+    counter-set: lvl1 0;
+  }
+  .toc.autonumbering .inner > ul > li:nth-child(n+8)::before {
+    counter-increment: lvl1;
+    content: 'Annexe 'counter(lvl1, upper-alpha)' – ';
+  }
+  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul {
+    counter-set: lvl2 0;
+  }
+  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul ul {
+    counter-set: lvl3 0;
+  }
+  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul > li::before {
+    counter-increment: lvl2;
+    content: counter(lvl1, upper-alpha)'.' counter(lvl2)'.';
+  }
+  .toc.autonumbering .inner > ul > li:nth-child(n+8) > ul > li > ul > li::before {
+    counter-increment: lvl3;
+    content: counter(lvl1, upper-alpha)'.' counter(lvl2)'.' counter(lvl3)'.';
+  }
+  /* But hide numbering for Bibliographie */
+  .toc.autonumbering .inner > ul > li:last-child::before {
+    content: "";
+  }
+
+  /* Renumber annexes in body */
+  .annexes {
+    counter-set: h1 0 h2 0 h3 0;
+  }
+  .annexes h1::before {
+    content: 'Annexe 'counter(h1, upper-alpha)' – ';
+  }
+  .annexes h2::before {
+    counter-increment: h2;
+    content: counter(h1, upper-alpha)'.' counter(h2)'. ';
+  }
+  .annexes h3::before {
+    counter-increment: h3;
+    content: counter(h1, upper-alpha)'.' counter(h2)'.' counter(h3)'. ';
+  }
+  /* But hide numbering for Bibliographie */
+  .annexes h1:last-of-type::before {
+    content: "";
+  }
+</style>
