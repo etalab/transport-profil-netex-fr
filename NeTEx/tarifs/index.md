@@ -10743,4 +10743,10 @@ service interfaces - Situation Exchange
   .annexes h1:last-of-type::before {
     content: "";
   }
+
+  .post-content img {
+    margin-inline: auto;
+    width: unset;
+    max-width: 100%;
+  }
 </style>
