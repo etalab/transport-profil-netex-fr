@@ -197,6 +197,19 @@ Ce document a été élaboré sur la base des réflexions et échanges
 intervenus dans le cadre du GT7 ainsi qu'en utilisant les conclusions de
 l'étude CAMERA.
 
+Ce document a également été enrichi à l'aide du standard d’échange de
+données sur l’accessibilité des déplacements pour les personnes en
+situation de handicap produit par le groupe de travail CNIG sur
+l'Accessibilité. Ce modèle a pour but de décrire l'accessibilité
+des cheminements extérieurs en voirie, typiquement des trottoirs
+reliant un arrêt de transport en commun à l’entrée d’un ERP.
+
+Des compléments permettant d'assurer la mise en relation avec l'ontologie
+ du projet OpenStreetMap ont également été apportés au document.
+ OpenStreetMap (OSM) est un projet collaboratif de cartographie
+ proposant une base de données géographiques libre du monde
+entier.
+
 Si la première motivation pour la définition de ce profil est bien
 l'accessibilité, cet objet n'est en aucun cas limitatif et les
 informations contenues (en particulier concernant les équipements et les
@@ -720,6 +733,22 @@ AO
 <div class="Definition">
 
 Autorité Organisatrice de Transports
+
+</div>
+
+CNIG
+
+<div class="Definition">
+
+Conseil National de l'Information Géographique
+
+</div>
+
+OSM
+
+<div class="Definition">
+
+OpenStreetMap
 
 </div>
 
@@ -1829,7 +1858,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><p>Longueur du tronçon de cheminement.</p>
-<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité.</span></p></td>
+<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité. Il s'agit de la distance parcourue le long du tronçon de cheminement et non de la distance à vol d'oiseau entre les points de départ et d'arrivée.</span></p></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1869,7 +1898,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>ACCESSIBILITY du PATH LINK.</td>
 </tr>
-
 <tr class="odd">
 <td></td>
 <td>PublicUse</td>
@@ -1883,7 +1911,8 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>Covered</td>
 <td>CoveredEnum</td>
 <td>0:1</td>
-<td>Type de couvertrure</td>
+<td>Type de couverture.
+<p><span class="hl">La valeur <em>mixed</em> est déconseillée dans le cadre du profil pour l'accessibilité : il convient dans ce cas de segmenter en plusieurs SitePathLink avec chacun un type de couverture propre.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1912,7 +1941,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>Indique si le cheminement est pratiquable en fauteuil roulant.</td>
 </tr>
-
 <tr class="odd">
 <td>«cntd»</td>
 <td>facilities</td>
@@ -1939,7 +1967,16 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>NumberOfSteps</td>
 <td>xsd:integer</td>
 <td>0:1</td>
-<td>Nombre de marche rencontrées sur le cheminement.</td>
+<td>Nombre de marches rencontrées sur le cheminement.
+<p><span class="hl">Il s'agit du nombre de marches total de l'escalier si le tronçon de cheminement correspond à un escalier, ou du nombre de ressauts ou marches isolés sinon.</span></p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>MinimumWidth</td>
+<td>LengthType</td>
+<td>0:1</td>
+<td><p>Largeur du cheminement</p>
+<p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1958,9 +1995,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>up (montée)</em></p></li>
 <li><p><em>down (descente)</em></p></li>
 <li><p><em>level (pas de changement de niveau)</em></p></li>
-<li><p><em>upAndDown (montée puis descente)</em></p></li>
-<li><p><em>downAndUp (descente puis montée)</em></p></li>
-</ul></td>
+</ul><p><span class="hl">Les valeurs <em>upAndDown</em> (montée puis descente) et <em>downAndUp</em> (descente puis montée) sont déconseillées dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs SitePathLink avec chacun un type de transition propre.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1999,7 +2034,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><p>Précision du type de caractèristique associée au PATH LINK:</p>
 <p>:</p>
 <ul>
-<li><p><em>pathway (sentier)</em></p></li>
+<li><p><em>pathway (sentier, en surface)</em></p></li>
 <li><p><em>corridor (couloir)</em></p></li>
 <li><p><em>overpass (passerelle, pont)</em></p></li>
 <li><p><em>underpass (passage sous-terrain)</em></p></li>
@@ -2141,7 +2176,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em>placeEquipments</em></td>
 <td>Equipment</td>
 <td>0:1</td>
-<td>Liste des équipements dont dépend le tronçon de cheminement.</td>
+<td>Liste des AccessEquipment (équipements d’accès) dont dépend le tronçon de cheminement.</td>
 </tr>
 </tbody>
 </table>
@@ -4946,3 +4981,14 @@ cette étude ne porte que sur les modes de surface)*
 
 EN 28701, Intelligent transport systems - Public transport -
 Identification of Fixed Objects in Public Transport (IFOPT)
+
+Standard CNIG Accessibilité du cheminement en voirie : 
+http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessibilite_v2022-05.pdf 
+(v2021-10 rev. 2022-05)
+
+Documentation collaborative sur la cartographie des cheminements piétons
+et de l'accessibilité dans OpenStreetMap : 
+https://wiki.openstreetmap.org/wiki/FR:Cheminements_pi%C3%A9tons
+
+Règles de conversion vers le présent profil, depuis OpenStreetMap et depuis le standard CNIG Accessibilité :
+https://doc.transport.data.gouv.fr/documentation/normes-europeennes/accessibilite
