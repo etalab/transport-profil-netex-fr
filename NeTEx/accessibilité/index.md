@@ -3279,7 +3279,7 @@ passagers)* *–* Element
 |                     | ***DisabledPriority***      | xsd:boolean            | 0:1              | Indique une priorité d’accès aux personnes handicapées (et généralement femmes enceintes). |
 |                     | ***QueuingSeatedPossible*** | xsd:boolean            | 0:1              | Indique la possibilité d’être assis en faisant la queue                                    |
 
-<div class="table-title">RampEquipment (rampes) – Element</div>
+<div class="table-title">RampEquipment (rampes) – Élément</div>
 
 <table>
 <colgroup>
@@ -3292,9 +3292,9 @@ passagers)* *–* Element
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­ality</strong></td>
+<td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -3306,28 +3306,28 @@ passagers)* *–* Element
 </tr>
 <tr class="odd">
 <td>«PK»</td>
-<td><em><strong>id</strong></em></td>
+<td><em>id</em></td>
 <td>RampIdType</td>
 <td>0:1</td>
 <td>Identifiant du RAMP.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Length</strong></em></td>
+<td><em>Length</em></td>
 <td>LengthType</td>
 <td>0:1</td>
 <td>Longueur de la rampe</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>Gradient</strong></em></td>
+<td><em>Gradient</em></td>
 <td>xsd:integer</td>
 <td>0:1</td>
 <td>Inclinaison de la rampe</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>GradientType</strong></em></td>
+<td><em>GradientType</em></td>
 <td><em>GradientType</em></td>
 <td>0:1</td>
 <td><p>Inclinaison de la rampe en valeurs codées:</p>
@@ -3341,56 +3341,51 @@ passagers)* *–* Element
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>Pedestal</strong></em></td>
+<td><em>Pedestal</em></td>
 <td>xsd:boolean</td>
-<td></td>
+<td>0:1</td>
 <td>Indique si la rampe repose sur un pied central</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>HandrailHeight</strong></em></td>
+<td><em>HandrailHeight</em></td>
 <td>LengthType</td>
 <td>0:1</td>
 <td>Hauteur de la main courante</td>
 </tr>
-
 <tr class="even">
 <td>«FK»</td>
-<td><em><strong>HandrailType</strong></em></td>
-<td><em>HandrailEnum</em>eration</td>
+<td><em>HandrailType</em></td>
+<td><em>HandrailEnumeration</em></td>
 <td>0:1</td>
 <td><p>Type de main courante :</p>
 <ul>
-<li><p><em>None</em> (aucune)</p></li>
+<li><p><em>none</em> (aucune)</p></li>
 <li><p><em>oneSide</em> (d’un côté uniquement)</p></li>
 <li><p><em>bothSides</em> (des deux côtés)</p></li>
-</ul>
-<blockquote>
-
-</blockquote></td>
+</ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>TactileGuidance­Strips</strong></em></td>
+<td><em>TactileGuidance­Strips</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Indique si la rampe dispose d’une bande de guidage podotactile</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>VisualGuidance­Bands</strong></em></td>
+<td><em>VisualGuidance­Bands</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Indique si la rampe dispose de bandes de guidage visuelles</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>Temporary</strong></em></td>
+<td><em>Temporary</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale que la rampe est temporaire</td>
 </tr>
-
 </tbody>
 </table>
 
