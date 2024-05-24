@@ -248,7 +248,7 @@ Peut ou non être un POINT D'ARRÊT PLANIFIÉ.
 Spécialisation du DROIT A REDUCTION utilisé pour les tarifications de
 type « pay-as-you-go », où une fois qu'un certain niveau de consommation
 a été atteint dans un intervalle de temp donné, un plafond (tel que
-spécifié par une ou plusieurs RÈGLES DE PLA-FONNEMENT) est appliqué, par
+spécifié par une ou plusieurs RÈGLES DE PLAFONNEMENT) est appliqué, par
 exemple en limitant le coût, pour toute utilisation au cours d’une même
 journée, au prix d'un passe journalier.
 
@@ -444,7 +444,7 @@ associer un PRIX).
 
 ## GROUP OF SALES OFFER PACKAGES (GROUPE D’OFFRES À LA VENTE)
 
-Un groupement d’OFFREs À LA VENTE)
+Un groupement d’OFFREs À LA VENTE
 
 ## GROUP TICKET (TICKET DE GROUPE)
 
@@ -548,11 +548,11 @@ PACKAGE) particulières.
 
 ## SALE OFFER ENTITLEMENT GIVEN (DROIT D’ACCES A UNE OFFRE)
 
-DROIT accordé pour utiliser une OFFRE A LAVENTE.
+DROIT accordé pour utiliser une OFFRE A LA VENTE.
 
 ## SALE OFFER ENTITLEMENT REQUIRED (DROIT NÉCESSAIRE POUR ACCEDER A L’OFFRE)
 
-DROIT nécessaire pour utiliser une OFFRE A LAVENTE.
+DROIT nécessaire pour utiliser une OFFRE A LA VENTE.
 
 ## SALES NOTICE ASSIGNMENT (AFFECTATION D’UNE NOTE)
 
@@ -1404,23 +1404,23 @@ et associés à des ÉLÉMENTS DE STRUCTURE TARIFAIRE.
 Les règles déterminant les droits d'accès peuvent être classées en deux
 grandes catégories :
 
-Des règles globales qui permettent de déterminer la validité d'une gamme
+- Des règles globales qui permettent de déterminer la validité d'une gamme
 de droits d'accès génériques servant de base au calcul du prix de leur
 consommation. Un tel ensemble de règles est classiquement appelé
 « structure tarifaire ».
 
-Règles de limitation de validité qui consistent à attribuer certains
+- Règles de limitation de validité qui consistent à attribuer certains
 « paramètres de limitation » à des droits d'accès spécifiques. Par
 exemple, un trajet peut être limité par la dernière heure de départ
 possible, un pass valable uniquement pour les étudiants, etc. Ces
 limitations sont exprimées par deux catégories de paramètres:
 
-- « Paramètres de validité », qui affectent les caractéristiques
+  - « Paramètres de validité », qui affectent les caractéristiques
   physiques des droits d'accès (principalement dans l'espace ou dans le
   temps); des exemples de paramètres de limitation de validité sont
   GROUPE DE LIGNES, TYPE DE JOUR, etc.
 
-- « CONDITIONS D’UTILISATION », qui affectent l'utilisation réelle des
+  - « CONDITIONS D’UTILISATION », qui affectent l'utilisation réelle des
   droits d'accès, tels que PROFIL D'UTILISATEUR, FRÉQUENCE
   D'UTILISATION, TRANSFÉRABILITÉ, etc.
 
@@ -1431,16 +1431,16 @@ paramètres bien définies construit un TARIF.
 La structure tarifaire est composé d'un certain nombre de sous-modèles
 décrits ci-dessous.
 
-Le modèle géographique définit des aspects spatiaux de la structure
+- Le modèle géographique définit des aspects spatiaux de la structure
 tarifaire.
 
-Le modèle temporel définit des aspects temporels de la structure des
+- Le modèle temporel définit des aspects temporels de la structure des
 tarifs.
 
-Les FACTEURs DE QUALITÉ définissent d'autres aspects qualitatifs de la
+- Les FACTEURs DE QUALITÉ définissent d'autres aspects qualitatifs de la
 structure tarifaire.
 
-La MATRICE DE DISTANCE montre les origine/destination possibles et leurs
+- La MATRICE DE DISTANCE montre les origine/destination possibles et leurs
 caractéristiques.
 
 ![](media/image4.png) *Structure tarifaire – Modèle conceptuel*
@@ -1609,7 +1609,7 @@ ELEMENT.</td>
 <tr class="odd">
 <td></td>
 <td colspan="2"></td>
-<td><em>CHOICE</em></td>
+<td><em>Choice</em></td>
 <td></td>
 <td></td>
 </tr>
@@ -3078,7 +3078,7 @@ En outre, deux autres types de « produits » non liés au voyage peuvent
 
 - un PRODUIT TIERS: UN PRODUIT TARIFAIRE qui est commercialisé avec un
   PRODUIT TARIFAIRE pour les transports publics mais qui n’y est pas lié
-  (un acc-s à un salon, un abonnement sportif, etc.).
+  (un accès à un salon, un abonnement sportif, etc.).
 
 ![](media/image9.png) *Produits Tarifaires – Modèle conceptuel*
 
@@ -4883,7 +4883,7 @@ règles peuvent être exprimées sous forme de propositions logiques avec
 des opérateurs logiques (et, ou, ou-exclusif). Cela signifie que
 différents types de combinaisons doivent être pris en compte et que
 l’AFFECTATION DE DROITS D'ACCÈS est une affectation multiple. Pour cela,
-les attributs *xxx**GroupingType ***ci-dessous sont définis avec les
+les attributs *xxx**GroupingType*** ci-dessous sont définis avec les
 valeurs d'un opérateur logique (AND, OR, NOT, XOR). Cela permettra
 d’exprimer des choses comme un droit valable de 6h00 à 8h30 ET de 19h30
 à 21h00, par opposition à une droit valable de 6h00 à 8h30 OU (EXCLUSIF)
@@ -5149,11 +5149,11 @@ Paramètres liés au SIÈGE:
 
 | **Classification** | **Name**                                   | **Type**              | **Cardinality** | **Description**                                                        |
 |--------------------|--------------------------------------------|-----------------------|-----------------|------------------------------------------------------------------------|
-| XGRP               | ***OrganisationValidity-ParametersGroup*** | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant l’ORGANISATION cible de l’affecation. |
-| XGRP               | ***NetworkValidity-ParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le NETWORK cible de l’affecation.     |
+| XGRP               | ***OrganisationValidityParametersGroup*** | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant l’ORGANISATION cible de l’affecation. |
+| XGRP               | ***NetworkValidityParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le NETWORK cible de l’affecation.     |
 | XGRP               | ***RouteValidityParametersGroup***         | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant la ROUTE cible de l’affecation.       |
-| XGRP               | ***ServiceValidity-ParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le SERVICE cible de l’affecation.     |
-| XGRP               | ***ProductValidity-ParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le PRODUCT cible de l’affecation.     |
+| XGRP               | ***ServiceValidityParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le SERVICE cible de l’affecation.     |
+| XGRP               | ***ProductValidityParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le PRODUCT cible de l’affecation.     |
 
 La figure ci-dessous fournit une vue d’ensemble de ce ciblage des droits
 d’accès (le tableau des attributs lui-même n’est pas fourni car il
