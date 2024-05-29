@@ -5149,11 +5149,11 @@ Paramètres liés au SIÈGE:
 
 | **Classification** | **Name**                                   | **Type**              | **Cardinality** | **Description**                                                        |
 |--------------------|--------------------------------------------|-----------------------|-----------------|------------------------------------------------------------------------|
-| XGRP               | ***OrganisationValidityParametersGroup*** | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant l’ORGANISATION cible de l’affecation. |
-| XGRP               | ***NetworkValidityParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le NETWORK cible de l’affecation.     |
+| XGRP               | ***OrganisationValidityParametersGroup***  | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant l’ORGANISATION cible de l’affecation. |
+| XGRP               | ***NetworkValidityParametersGroup***       | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le NETWORK cible de l’affecation.     |
 | XGRP               | ***RouteValidityParametersGroup***         | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant la ROUTE cible de l’affecation.       |
-| XGRP               | ***ServiceValidityParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le SERVICE cible de l’affecation.     |
-| XGRP               | ***ProductValidityParametersGroup***      | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le PRODUCT cible de l’affecation.     |
+| XGRP               | ***ServiceValidityParametersGroup***       | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le SERVICE cible de l’affecation.     |
+| XGRP               | ***ProductValidityParametersGroup***       | ***<u>xmlGroup</u>*** | 1:1             | Paramètre de validité concernant le PRODUCT cible de l’affecation.     |
 
 La figure ci-dessous fournit une vue d’ensemble de ce ciblage des droits
 d’accès (le tableau des attributs lui-même n’est pas fourni car il
