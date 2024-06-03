@@ -31,19 +31,19 @@ offres de transport est essentielle :
 - pour les opérateurs, qui pourront utiliser ce format d’échange pour
   leurs systèmes de planification, les systèmes d’aide à l’exploitation,
   leurs systèmes billettiques et leurs systèmes d’information voyageur
-  (information planifiée et information temps réel)
+  (information planifiée et information temps réel) ;
 
 - pour les industriels et développeurs pour pérenniser et fiabiliser
   leurs investissements sur les formats d’échanges implémentés par les
   systèmes qu’ils réalisent, tout en limitant fortement l’effort de
-  spécification lié aux formats d’échange
+  spécification lié aux formats d’échange ;
 
 Ce document est le fruit de la collaboration entre les différents
 partenaires des autorités organisatrices de transports, opérateurs,
 industriels et développeurs de solutions et de systèmes informatiques
 ayant pour objet l’aide à l’exploitation du transport public et
 l’information des voyageurs. Il a pour objet de présenter le profil
-d’échange Profil NeTEx Tarifs: "format de référence pour l'échange de
+d’échange Profil NeTEx Tarifs : "format de référence pour l'échange de
 données de description des offres tarifaires" (issu des travaux NeTEx,
 et Transmodel) qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
@@ -167,7 +167,7 @@ description des horaires de transport public de façon :
   billettiques, etc.).
 
 Les éléments présentés ci-dessous couvrent donc l’ensemble des concepts
-propres à la description des offre tarifaire (on notera que le prix
+propres à la description des offres tarifaires (on notera que le prix
 n’est que l’un des élément possible de description de l’offre tarifaire,
 et que le prix n’est pas toujours connu, notamment dans le cas des
 tarifs dits « yieldés »).
@@ -214,8 +214,8 @@ une information complète, il conviendra toutefois de se référer au
 document normatif.
 
 NOTE Les définitions ci-dessus sont des traductions littérales du
-document normatif. Seules les définition spécifique du profil tarif sont
-proposées ici, celles relatives aux autres profil sont disponibles dans
+document normatif. Seules les définitions spécifiques du profil tarif sont
+proposées ici, celles relatives aux autres profils sont disponibles dans
 les profils correspondants.
 
 ## ACCESS RIGHT IN PRODUCT (DROIT D’ACCÈS D’UN PRODUIT tarifaire)
@@ -234,7 +234,7 @@ etc.).
 
 ## AMOUNT OF PRICE UNIT (MONTANT D’UNITÉS TARIFAIRE)
 
-PRODUIT TARIFAIRE constitué d'une valeur stockée d'UNITÉS TARIFAIRE: une
+PRODUIT TARIFAIRE constitué d'une valeur stockée d'UNITÉS TARIFAIRE : une
 somme d'argent sur un porte-monnaie électronique, une quantité d'unités
 transport sur une carte, etc.
 
@@ -247,7 +247,7 @@ Peut ou non être un POINT D'ARRÊT PLANIFIÉ.
 
 Spécialisation du DROIT A REDUCTION utilisé pour les tarifications de
 type « pay-as-you-go », où une fois qu'un certain niveau de consommation
-a été atteint dans un intervalle de temp donné, un plafond (tel que
+a été atteint dans un intervalle de temps donné, un plafond (tel que
 spécifié par une ou plusieurs RÈGLES DE PLAFONNEMENT) est appliqué, par
 exemple en limitant le coût, pour toute utilisation au cours d’une même
 journée, au prix d'un passe journalier.
@@ -365,7 +365,7 @@ disponibles pour une dénomination donnée.
 ## FARE SCHEDULED STOP POINT (POINT D’ARRÊT TARIFAIRE)
 
 Une spécialisation de POINT D'ARRÊT PLANIFIÉ décrivant un arrêt avec des
-caractéristiques tarifaire en lien avec l’itinéraire.
+caractéristiques tarifaires en lien avec l’itinéraire.
 
 ## FARE SECTION (SECTION TARIFAIRE)
 
@@ -582,7 +582,7 @@ A LA VENTE : prix total par défaut, etc.
 ## SCOPING VALIDITY PARAMETERS (CIBLAGE DES PARAMÈTRES DE VALIDITÉ)
 
 Regroupement des affectations de PARAMETRE DE VALIDITÉ aux éléments pour
-les associé à un ensemble de cibles (éléments auxquels ils
+les associer à un ensemble de cibles (éléments auxquels ils
 s’appliquent).
 
 ## SEATING VALIDITY PARAMETERS (PARAMÈTRES DE VALIDITÉ DES SIÈGES)
@@ -775,8 +775,8 @@ disposition, dans l'ensemble de l'Union, de services d'informations sur
 les déplacements multimodaux) rendent obligatoire la mise à disposition,
 quand elles existent, de certains types de données.
 
-Le tableau ci-dessous résulte de l’analyse de la LOM et du règlement
-délégué et fournit la liste attentes fonctionnelles relatives à la
+Le tableau ci-dessous résulte de l’analyse de la LOM et du Règlement
+Délégué et fournit la liste attentes fonctionnelles relatives à la
 tarification. Il sera donc nécessaire de fournir ces données pour être
 conforme à la législation (il s’agit bien de mettre à disposition toutes
 les données existantes dans les SI transport, et non de créer des
@@ -817,7 +817,7 @@ titres et les tarifs sur lesquels elle communique de façon exhaustive
 cette sélection couvre :
 
 - Les abonnements et le ou les titres unitaires les plus utilisés,
-  l’ensemble devant représenter au moins 80% des validations
+  l’ensemble devant représenter au moins 80% des validations.
 
 - Ainsi que les tarifs sociaux et ceux dédiés aux accompagnateurs de
   personnes handicapées.
@@ -850,18 +850,18 @@ Mobilités et CEREMA). De plus tous les profils NeTEx partagent les mêmes
 conventions.
 
 Les messages constituant ce profil d'échange sont décrits ci-dessous
-selon un double formalisme: une description sous forme de diagrammes XSD
-(leur compréhension nécessite une connaissance préalable de XSD: XML
+selon un double formalisme : une description sous forme de diagrammes XSD
+(leur compréhension nécessite une connaissance préalable de XSD : XML
 Schema Definition) et une description sous forme tabulaire. Les tableaux
-proposent ces colonnes:
+proposent ces colonnes :
 
 | **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
 |--------------------|---------|----------|-----------------|-----------------|
 
 - **Classification** : permet de catégoriser l'attribut. Les principales
-  catégories sont:
+  catégories sont :
 
-  - PK (Public Key) que l'on peut interpréter comme Identifiant Unique:
+  - PK (Public Key) que l'on peut interpréter comme Identifiant Unique :
     il permet à lui seul d'identifier l'objet, de façon unique, pérenne
     et non ambiguë. C'est l'identifiant qui sera utilisé pour référencer
     l'objet dans les relations.
@@ -874,7 +874,7 @@ proposent ces colonnes:
     unique (PK) d'un autre objet avec lequel il est en relation.
 
   - GROUP est un groupe XML nommé (ensemble d'attributs utilisables dans
-    différents contextes) (cf:
+    différents contextes) (cf.
     <http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/#AttrGroups> )
 
 - **Nom** : nom de l'élément ou attribut XSD
@@ -888,12 +888,12 @@ proposent ces colonnes:
   maximal; "1:1" une et une seule occurrence; etc.).
 
 - Description : texte de description de l'élément ou attribut XSD (seul
-  les attributs retenus par le profil ont un texte en français; les
+  les attributs retenus par le profil ont un texte en français ; les
   textes surlignés en jaune indiquent une spécificité du profil par
   rapport à NeTEx).
 
 Les textes surlignés en <span class="mark">jaune</span> sont ceux
-présentant une particularité (spécialisation) par rapport à NeTEx: une
+présentant une particularité (spécialisation) par rapport à NeTEx : une
 codification particulière, une restriction d'usage, etc.
 
 Les textes surlignés en <span class="mark-blue">bleu</span>
@@ -915,8 +915,8 @@ restent facultatifs dans l'XSD (le contrôle de cardinalité devra donc
 
 Dans la mesure du possible, le profil sélectionne les valeurs de code à
 utiliser pour caractériser des éléments et les limite à un ensemble de
-valeurs documentées. NETEX propose plusieurs mécanismes différents pour
-spécifier les valeurs de code autorisées:
+valeurs documentées. NeTEx propose plusieurs mécanismes différents pour
+spécifier les valeurs de code autorisées :
 
 - des énumérations fixes définies dans le cadre du schéma XSD NeTEx. Le
   profil impose alors un sous-ensemble des codes NeTEx.
@@ -930,25 +930,25 @@ spécifier les valeurs de code autorisées:
   « FR_IV_metadata » (https://netex-cen.eu/FR_IV) indiqué par un préfixe
   « FR_IV ». (par exemple, « FR_IV: monomodal ».
 
-- des instances TypeOfFrame: le profil utilise plusieurs TYPES DE FRAME
+- des instances TypeOfFrame : le profil utilise plusieurs TYPES DE FRAME
   pour spécifier l'utilisation de VERSION FRAME dans le profil.
 
 ### Indication des classes abstraites
 
-NeTEx, et Transmodel, utilisent largement l'héritage de classe; cela
+NeTEx, et Transmodel, utilisent largement l'héritage de classe ; cela
 simplifie considérablement la spécification en évitant les répétitions
 puisque les attributs partagés sont déclarés par une superclasse et que
 des sous-classes viennent ensuite les spécialiser sans avoir à répéter
 ces attributs et en n’ajoutant que ceux qui lui sont spécifiques. La
 plupart des superclasses sont « abstraites » - c’est-à-dire qu’il
-n’existe aucune instance concrète; seules les sous-classes terminales
+n’existe aucune instance concrète ; seules les sous-classes terminales
 sont « concrètes ».
 
 Un inconvénient de l'héritage est que si l'on veut comprendre les
 propriétés d'une classe concrète unique, il faut également examiner
 toutes ses super-classes. Pour cette raison, le profil inclut les
 classes abstraites nécessaires pour comprendre les classes concrètes,
-même si ces classes concrètes ne sont jamais directement instanciées
+même si ces classes abstraites ne sont jamais directement instanciées
 dans un document NeTEx.
 
 - Les super-classes sont signalées dans les en-têtes par le suffixe
@@ -1003,7 +1003,7 @@ automatique, débit d’une carte, post-paiement, par exemple).
 NeTEx, dans sa Partie 3, couvre uniquement la description planifiée de
 l’offre tarifaire et l’information voyageur qui y est associée (la
 validation et le contrôle, l’information en temps réel sur les prix de
-vente quand ils ne sont pas fixe, la disponibilité, ou encore le suivi
+vente quand ils ne sont pas fixes, la disponibilité, ou encore le suivi
 des ventes, ne font pas partie du périmètre courvert). L’objectif est
 donc de pouvoir renseigner sur les différents titres disponibles ainsi
 que leurs variantes, les droits qu’ils ouvrent, les supports utilisés,
@@ -1015,14 +1015,14 @@ de façon planifiée.
 Les principales catégories de données disponibles dans NeTEx sont les
 suivantes :
 
-- Description de la structure tarifaire (les éléments de bases sur
+- Description de la structure tarifaire (les éléments de base sur
   lesquels s’appuie l’offre tarifaire : trajet simple, la durée de
   voyage autorisée, les origines/destinations, etc.)
 
 - Description des droits d'accès (accès aux réseaux, aux lignes, les
   possibilités de correspondances, les aller/retour, etc.)
 
-- Les Prix (quand ils sont connus à l’avance, et sinon des informations
+- Les prix (quand ils sont connus à l’avance, et sinon des informations
   sur les services pour obtenir les prix variables)
 
 - Les conditions de vente (possibilités d’échange et remboursement,
@@ -1050,13 +1050,13 @@ exemple un carnet de tickets « aller simple »). Chaque package vendu
 fait partie d'un « contrat » individuel avec un client particulier.
 
 L’offre tarifaire peut être décrite en plusieurs étapes (Figure 9),
-résumées comme suit ;
+résumées comme suit :
 
 1.  Les éléments pertinents du réseau de transport (arrêts, zones
     tarifaires, etc.) et les services planifiés (par exemple, des
-    trajets spécifiques avec des restrictions tarifaires, etc.). qui
+    trajets spécifiques avec des restrictions tarifaires, etc.), qui
     peuvent être utilisés dans un produit sont identifiés (ces
-    information sont décrite par les profils Arrêts, Réseau et Horaire).
+    informations sont décrites par les profils Arrêts, Réseau et Horaire).
 
 2.  Une STRUCTURE TARIFAIRE (FARE STRUCTURE) définie en fonction des
     éléments spatiaux et temporels utilisés, ainsi que tout autre
@@ -1091,10 +1091,10 @@ utilisées pour les horaires et les tarifs.
 Même si l’infrastructure et les services sont très complètement décrits
 par les parties 1 et 2 de NeTEx, la description de l’offre tarifaire
 nécessite de compléter certaines de ces informations avec des attributs
-propre à la tarification. C’est ce que proposent les spécialisation et
-complément d’objet présentés dans ce chapitre.
+propres à la tarification. C’est ce que proposent les spécialisations et
+compléments d’objet présentés dans ce chapitre.
 
-Note : en gris, les éléments non instancié (abstraits) ou issu des
+Note : en gris, les éléments non instanciés (abstraits) ou issu des
 autres profils (et donc non décrits dans ce document).
 
 ![](media/image3.png) *Éléments du réseau dédié à l’offre tarifaire –
@@ -1103,7 +1103,7 @@ Modèle conceptuel*
 NeTEx Partie 1 décrit le concept de ZONE TARIFAIRE, qui peut être
 utilisé pour définir les zones tarifaires permanentes d'un système. Un
 POINT D'ARRÊT PLANIFIÉ donné peut appartenir à une ou plusieurs ZONE
-TARIFAIRES. Le MODÈLE DE ZONE TARIFAIRE NeTEx Partie 3 les complète des
+TARIFAIREs. Le MODÈLE DE ZONE TARIFAIRE NeTEx Partie 3 les complète des
 concepts supplémentaires relatifs au réseau qui peuvent être utilisés en
 plus pour étayer les structures tarifaires.
 
@@ -1151,9 +1151,9 @@ Le tableau suivant fournit les valeurs autorisées pour
 | **Value**             | **Description**                                                                                                                                                                                                                            |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *overlapping*         | Les zones sont de forme arbitraire et peuvent se chevaucher                                                                                                                                                                                |
-| *honeycomb*           | Les zones sont disposées en nid d'abeilles en mosaïque de polygones réguliers (par exemple, des hexagones, des carrés, etc.) Les zones ne se chevauchent pas.                                                                              |
-| *ring*                | Les zones sont disposées en anneaux. Les zones internes imbriquées sont incluses dans toutes les zones externes contenant.                                                                                                                 |
-| *annular*             | Les zones sont disposées en anneaux non imbriqués. La immédiatement imbriquée est exclue de la zone externe contenante.                                                                                                                    |
+| *honeycomb*           | Les zones sont disposées en nid d'abeilles, en mosaïque de polygones réguliers (par exemple, des hexagones, des carrés, etc.) Les zones ne se chevauchent pas.                                                                              |
+| *ring*                | Les zones sont disposées en anneaux. Les zones internes imbriquées sont incluses dans toutes les zones externes contenantes.                                                                                                                 |
+| *annular*             | Les zones sont disposées en anneaux non imbriqués. La zone immédiatement imbriquée est exclue de la zone externe contenante.                                                                                                                    |
 | *nested*              | Les zones sont imbriquées, c'est-à-dire que certaines zones sont entièrement contenues dans d'autres zones et sont automatiquement incluses si la zone extérieure est sélectionnée. Elles peuvent également chevaucher les zones voisines. |
 | *tiled*               | Les zones sont disposées sous forme de tuiles adjacentes ou de formes arbitraires qui ne se chevauchent pas.                                                                                                                               |
 | *sequence*            | Les zones sont disposées en tuiles adjacentes en séquence qui se touchent à l'une ou aux deux extrémités. Elles ne se chevauchent pas.                                                                                                     |
@@ -1171,7 +1171,7 @@ structure tarifaire.
 | ::\>           | ::\>                    | *<u>CommonSection</u>*  | ::\>            | FARE SECTION hérite de COMMON SECTION.                                   |
 | « PK »         | ***id***                | *FareSectionIdType*     | 1:1             | Identifiant de la FARE SECTION.                                          |
 |                | ***Name***              | *MultilingualString*    | 0:1             | Nom de la FARE SECTION.                                                  |
-| « FK »         | ***JourneyPatternRef*** | *JourneyPatternRef+*    | 0:1             | Reference au JOURNEY PATTERN sur laquelle cette FARE SECTION s’applique. |
+| « FK »         | ***JourneyPatternRef*** | *JourneyPatternRef+*    | 0:1             | Référence au JOURNEY PATTERN sur laquelle cette FARE SECTION s’applique. |
 | « FK »         | ***FromFarePointRef***  | *FarePointInPatternRef* | 0:1             | Référence au FARE POINT IN PATTERN auquel la FARE SECTION débute.        |
 | « FK »         | ***ToFarePointRef***    | *FarePointInPatternRef* | 0:1             | Référence au FARE POINT IN PATTERN auquel la FARE SECTION se termine.    |
 
@@ -1232,7 +1232,7 @@ le calcul des tarifs. Peut ou non être un POINT D'ARRÊT PLANIFIÉ.
 
 Une ***SeriesConstraint*** est une extension d'un ÉLÉMENT DE MATRICE DE
 DISTANCE, une cellule d'une matrice origine-destination pour les ZONE
-TARIFAIRES ou les POINTS D'ARRÊT, exprimant une distance tarifaire pour
+TARIFAIREs ou les POINTs D'ARRÊT, exprimant une distance tarifaire pour
 le trajet correspondant (en tant que valeur en km, nombre d'unités
 tarifaires etc.) et éventuellement une contrainte pour n’autoriser les
 déplacements que sur des itinéraires spécifiques.
@@ -1370,7 +1370,7 @@ SÉRIE.</td>
 <td><em><strong>journeyPatterns</strong></em></td>
 <td><em>JourneyPatternRef+</em></td>
 <td>0:*</td>
-<td>References aux JOURNEY PATTERN “equivalent” à la SERIES
+<td>Références aux JOURNEY PATTERN “equivalent” à la SERIES
 CONSTRAINT.</td>
 </tr>
 <tr class="even">
@@ -1393,10 +1393,10 @@ La définition des éléments de la structure tarifaire repose sur des
 règles génériques, principalement quantitatives, qui influencent les
 droits d'accès réglementant la consommation des services de transport,
 et donc le prix qu'un passager doit payer pour une consommation
-spécifique: limitation de la durée ou de la durée des trajets , le
+spécifique : limitation de la durée ou de la durée des trajets , le
 nombre de zones traversées, etc.
 
-Ces règles décrivent l'utilisation du système de transport se
+Ces règles décrivent l'utilisation du système de transport et se
 définissent en termes d'espace, de temps et de qualité de service.
 Ainsi, les paramètres spatiaux, temporels et de qualité seront spécifiés
 et associés à des ÉLÉMENTS DE STRUCTURE TARIFAIRE.
@@ -1413,11 +1413,11 @@ consommation. Un tel ensemble de règles est classiquement appelé
 « paramètres de limitation » à des droits d'accès spécifiques. Par
 exemple, un trajet peut être limité par la dernière heure de départ
 possible, un pass valable uniquement pour les étudiants, etc. Ces
-limitations sont exprimées par deux catégories de paramètres:
+limitations sont exprimées par deux catégories de paramètres :
 
   - « Paramètres de validité », qui affectent les caractéristiques
   physiques des droits d'accès (principalement dans l'espace ou dans le
-  temps); des exemples de paramètres de limitation de validité sont
+  temps) ; des exemples de paramètres de limitation de validité sont
   GROUPE DE LIGNES, TYPE DE JOUR, etc.
 
   - « CONDITIONS D’UTILISATION », qui affectent l'utilisation réelle des
@@ -1425,7 +1425,7 @@ limitations sont exprimées par deux catégories de paramètres:
   D'UTILISATION, TRANSFÉRABILITÉ, etc.
 
 Une version particulière de la structure tarifaire fixe les valeurs des
-différents paramètres: cet ensemble de règles avec des valeurs de
+différents paramètres : cet ensemble de règles avec des valeurs de
 paramètres bien définies construit un TARIF.
 
 La structure tarifaire est composé d'un certain nombre de sous-modèles
@@ -1550,10 +1550,10 @@ OBJECT<em><strong>.</strong></em></td>
 <td>0:1</td>
 <td><p>Reference au GEOGRAPHICAL INTERVAL associé au FARE STRUCTURE
 ELEMENT.</p>
-<p><mark>Note de façon général on n’utilisera les références que s’il y
+<p><mark>Note : de façon générale on n’utilisera les références que s’il y
 a effectivement réutilisation (donc ici on préférera
 <em><strong>geographicalIntervals</strong> à
-<strong>GeographicalIntervalRef</strong> sauf si les même
+<strong>GeographicalIntervalRef</strong> sauf si les mêmes
 <strong>GeographicalInterval</strong> sont utilisés à plusieurs
 reprises)</em></mark></p></td>
 </tr>
@@ -1587,7 +1587,7 @@ ELEMENT.</td>
 <td><em><strong>TimeIntervalRef</strong></em></td>
 <td><em>TimeIntervalRef</em></td>
 <td>0:1</td>
-<td>Reference au TIME INTERVAL ass associé au FARE STRUCTURE
+<td>Référence au TIME INTERVAL ass associé au FARE STRUCTURE
 ELEMENT.</td>
 </tr>
 <tr class="odd">
@@ -1619,7 +1619,7 @@ ELEMENT.</td>
 <td><em><strong>QualityStructureFactorRef</strong></em></td>
 <td><em>QualityStructureFactorRef</em></td>
 <td>0:1</td>
-<td>Reference au QUALITY STRUCTURE FACTOR associé au FARE STRUCTURE
+<td>Référence au QUALITY STRUCTURE FACTOR associé au FARE STRUCTURE
 ELEMENT.</td>
 </tr>
 <tr class="odd">
@@ -1641,7 +1641,7 @@ ELEMENT.</td>
 <td><em><strong>DistanceMatrixElementRef</strong></em></td>
 <td><em>DistanceMatrixElementRef</em></td>
 <td>0:1</td>
-<td>Reference au DISTANCE MATRIX ELEMENT associé au FARE STRUCTURE
+<td>Référence au DISTANCE MATRIX ELEMENT associé au FARE STRUCTURE
 ELEMENT.</td>
 </tr>
 <tr class="even">
@@ -1659,7 +1659,7 @@ DistanceMatrixElementRef</em></td>
 <td><em><strong>GroupOfDistanceMatrixElementsRef</strong></em></td>
 <td><em>GroupOfDistanceMatrixElementsRef</em></td>
 <td>0:1</td>
-<td>Reference au GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE
+<td>Référence au GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE
 STRUCTURE ELEMENT.</td>
 </tr>
 <tr class="even">
@@ -1698,9 +1698,9 @@ de la STRUCTURE FARE.
 | « PK »             | ***id***                      | *FareStructureElementInSequenceIdType* | 1:1             | Identifiant du FARE STRUCTURE ELEMENT IN SEQUENCE.                     |
 | « FK »             | ***FareStructureElementRef*** | *FareStructureElementRef*              | 0:1             | Référence à unFARE STRUCTURE ELEMENT.                                  |
 
-<span class="mark">Note : les éventuelle
+<span class="mark">Note : les éventuels
 ***ValidityParameterAssignment*** ne sont pas retenus dans le
-***FareStructureElementInSequence*** et seront, si nécessaire, placé
+***FareStructureElementInSequence*** et seront, si nécessaire, placés
 dans les ***FareStructureElement*** « hôte » de la séquence.</span>
 
 <div class='table-title'>FareElementInSequence – Element</div>
@@ -1759,17 +1759,17 @@ dans les ***FareStructureElement*** « hôte » de la séquence.</span>
 </FareStructureElement>
 ```
 
-### Régle d’application des caractéristiques (QualityStructureFactor) 
+### Règle d’application des caractéristiques (QualityStructureFactor) 
 
 Les FACTEURs DE QUALITÉ définissent les aspects qualitatifs de la
 structure tarifaire. Par exemple, le niveau de congestion ou
-d'occupation (par exemple en%) peut influencer le tarif ou une
+d'occupation (par exemple en %) peut influencer le tarif ou une
 limitation des droits d'accès. Certains opérateurs ferroviaires
 appliquent des tarifs différents si la réservation est effectuée tôt ou
 tard (par exemple en nombre de jours).
 
 Deux spécialisations peuvent être utilisées pour des aspects
-spécifiques: Un FACTEUR DE FREQUENTATION (FARE DEMAND FACTOR) définit
+spécifiques : Un FACTEUR DE FREQUENTATION (FARE DEMAND FACTOR) définit
 une « tranche horaire » pour le voyage, par ex. aux heures de pointe ou
 aux heures creuses, et un QUOTA TARIFAIRE (FARE QUOTA FACTOR) définit
 une allocation limitée de sièges disponibles à un prix particulier.
@@ -1782,7 +1782,7 @@ une allocation limitée de sièges disponibles à un prix particulier.
 est véritablement partie intégrante de la structure sur laquelle
 s’appuie la tarification (par exemple si l’on a systématiquement une
 prise en compte de la différence heure creuse/heure de pointe). Si par
-contre s’il ne s’applique que pour un ou quelques titre ou carte de
+contre il ne s’applique que pour un ou quelques titres ou cartes de
 réduction (par exemple une carte de réduction valable uniquement en
 heures creuses), alors le ***QualityStructureFactor*** sera référencé
 par le ***ValidityParameterAssignment*** (et en cas d’ambiguïté, c’est
@@ -1810,7 +1810,7 @@ est très spécifique, on en effectuera la description dans une Notice
 |                    | ***PrivateCode***                  | *PrivateCodeStructure*                  | 0:1             | Code externe associé au facteur                          |
 |                    | ***TypeOfFareStructureFactorRef*** | *TypeOfFareStructureFactorRefStructure* | 0:1             | Référence à un TYPE OF FARE STRUCTURE FACTOR.            |
 
-<span class="mark">Note : dans le cas où les *FatreStructureFactor* est
+<span class="mark">Note : dans le cas où les *FareStructureFactor* est
 très spécifique, on en effectuera la description dans une Notice
 (disponible via l’héritage PriceableObject).</span>
 
@@ -1875,7 +1875,7 @@ TYPE.</td>
 </table>
 
 Le NIVEAU DE SERVICE (TIME DEMAND TYPE) est définie dans la Partie 1 de
-NeTEx mais n’avait pas été retenu par les profils Français jusqu’à
+NeTEx mais n’avait pas été retenu par les profils français jusqu’à
 maintenant. C’est a la base un indicateur temporel des conditions de
 circulation (ou taux de remplissage) ou d'autres facteurs qui peuvent
 influer sur la circulation des véhicules, les temps d'attente ou la
@@ -2031,10 +2031,10 @@ autre.
 
 L'entité TARIF décrit une VERSION de tous les paramètres composant une
 structure tarifaire particulière. Lors de l'application des règles
-tarifaire, un algorithme choisira les paramètres en fonction du TARIF
+tarifaires, un algorithme choisira les paramètres en fonction du TARIF
 valide au moment spécifié par la demande.
 
-Le principe est donc très similaire à celui des FRAME mais avec, ici,
+Le principe est donc très similaire à celui des FRAMEs mais avec, ici,
 une granularité plus fine (une FRAME pour par exemple contenir plusieurs
 TARIFs, un pour le bus en période scolaire, un autre pour la période de
 vacances et un troisième TARIF pour le ferré, etc.).
@@ -2047,7 +2047,7 @@ vacances et un troisième TARIF pour le ferré, etc.).
 | « PK »             | ***id***                       | *TariffIdType*             | 1:1             | Identifiant du TARIFF.                                    |
 | XGRP               | ***TariffDescriptionGroup***   | *xmlGroup*                 | 0:1             | Éléments descriptifs du TARIFF.                           |
 |                    | ***PrivateCode***              | *PrivateCodeType*          | 0:1             | Identifiant alternatif                                    |
-| XGRP               | ***TariffOrganisationGroup***  | *xmlGroup*                 | 0:1             | Éléments descriptifs de ORGANISATIONs opérant TARIFF.     |
+| XGRP               | ***TariffOrganisationGroup***  | *xmlGroup*                 | 0:1             | Éléments descriptifs des ORGANISATIONs opérant TARIFF.     |
 | XGRP               | ***TariffApplicabilityGroup*** | *xmlGroup*                 | 0:1             | Éléments descriptifs des LINEs opérant TARIFF.            |
 | XGRP               | ***TariffCalculationGroup***   | *xmlGroup*                 | 0:1             | Éléments descriptifs des paramètre de calcul du TARIFF.   |
 | XGRP               | ***TariffGeographicalGroup***  | *xmlGroup*                 | 0:1             | Éléments descriptifs des aspects géographiques du TARIFF. |
@@ -2227,7 +2227,7 @@ Zéro indique qu’il n’y a pas de changement de jour.</td>
 <td><em><strong>MinimumDuration</strong></em></td>
 <td><em>xsd:duration</em></td>
 <td>0:1</td>
-<td>Durée minumale du TIME INTERVAL.</td>
+<td>Durée minimale du TIME INTERVAL.</td>
 </tr>
 </tbody>
 </table>
@@ -2245,7 +2245,7 @@ Zéro indique qu’il n’y a pas de changement de jour.</td>
 | « FK »             | ***QualityStructureFactorRef*** | *QualityStructureFactorRef*  | 0:\*            | QUALITY FACTOR associé au TIME STRUCTURE FACTOR.       |
 
 Note : les ***TimeInterval***, ***TimeUnit*** et
-***QualityStructureFactor*** s’applique de façon combinée (ET logique)
+***QualityStructureFactor*** s’appliquent de façon combinée (ET logique)
 dans le ***TimeStructureFactor***
 
 #### Unité Temporelle (TimeUnit )
@@ -2256,7 +2256,7 @@ dans le ***TimeStructureFactor***
 |--------------------|----------------|-------------------|-----------------|------------------------------------------------------------------------------------------------|
 | ::\>               | ::\>           | *<u>FareUnit</u>* | ::\>            | TIME UNIT hérite de FARE UNIT.                                                                 |
 | « PK »             | ***id***       | *TimeUnitIdType*  | 1:1             | Identifiant du TIME UNIT.                                                                      |
-|                    | ***Type***     | *xsd:NCName*      | 0:1             | Nom de la type XML associé à l’unité e.g. gday, gMonth. Cette information est une métadonnée.. |
+|                    | ***Type***     | *xsd:NCName*      | 0:1             | Nom de type XML associé à l’unité e.g. gday, gMonth. Cette information est une métadonnée. |
 |                    | ***Duration*** | *xsd:duration*    | 0:1             | Durée associée à l’unité, e.g. P1D, PT1S.                                                      |
 
 #### Exemple
@@ -2285,12 +2285,12 @@ distance), gradués en fonction d'une distance, et utilisant des zones.
 Certains de ces types peuvent être combinés.
 
 L'entité INTERVALLE GÉOGRAPHIQUE décrit une classification des ÉLÉMENTS
-DE STRUCTURE TARIFAIRE en fonction de leur longueur, par exemple:
+DE STRUCTURE TARIFAIRE en fonction de leur longueur, par exemple :
 
 - 1 zone (ou section tarifaire) traversée, 2 à 4 zones traversées, plus
-  de 4 zones traversées;
+  de 4 zones traversées ;
 
-- longueur de trajet inférieure à 5 km, entre 5 et 15 km, plus de 15 km;
+- longueur de trajet inférieure à 5 km, entre 5 et 15 km, plus de 15 km ;
 
 - etc.
 
@@ -2303,7 +2303,7 @@ par l'entité UNITE GEOGRAPHIQUE. Le tarif d'un voyage sera calculé en
 multipliant la distance par un paramètre de prix attaché à l'UNITÉ
 GEOGRAPHIQUE.
 
-De nombreux réseaux utilisent des ZONE TARIFAIRES (ZONE définie
+De nombreux réseaux utilisent des ZONEs TARIFAIREs (ZONE définie
 spécifiquement pour le calcul des tarifs). Elle définit notamment un
 périmètre qui contient des POINTS D'ARRÊT PLANIFIÉS. Une ZONE TARIFAIRE
 peut avoir des points spécifiques sur ses frontières (POINTS
@@ -2429,7 +2429,7 @@ est basé sur le nombre de sections tarifaires traversées, il peut
 varier, par exemple, selon que le trajet s'effectue d'une banlieue vers
 le centre-ville ou entre deux banlieues. Cette structure associera des
 INTERVALLE GÉOGRAPHIQUE (sections tarifaires) et des ÉLÉMENTS DE MATRICE
-DE DISTANCE (en utilisant un ensemble de ZONES TARIFAIRES, par exemple
+DE DISTANCE (en utilisant un ensemble de ZONEs TARIFAIREs, par exemple
 « centre » et « banlieue »).
 
 L'entité GEOGRAPHICAL STRUCTURE FACTOR permet de combiner deux
@@ -2479,10 +2479,10 @@ INTERVALLE GÉOGRAPHIQUE ou un ÉLÉMENT DE MATRICE DE DISTANCE.
 
 #### Élément de Matrice de Distances (DistanceMatrixElement)
 
-La MATRICE DE DISTANCES permet de décrire les tarifs point à point.
+La MATRICE DE DISTANCEs permet de décrire les tarifs point à point.
 Chaque ELEMENT DE MATRICE DE DISTANCE représente le tarif pour un couple
 d'origine-destination. Un GROUPE D'ÉLÉMENTS DE MATRICE DE DISTANCE
-spécifie un ensemble d'ÉLÉMENTS DE MATRICE DE DISTANCE, permettant un
+spécifie un ensemble d'ÉLÉMENTs DE MATRICE DE DISTANCE, permettant un
 ensemble commun de prix entre différentes paires origine-destination si
 nécessaire.
 
@@ -2517,12 +2517,12 @@ contrainte de routage différente.
 | « FK »             | ***a***  | ***StartStopPointRef***          | *ScheduledStopPointRef* | 0:1             | SCHEDULED STOP POINT duquel le DISTANCE MATRIX ELEMENT commence.                                     |
 | « FK »             | ***c***  | ***StartTariffZoneRef***         | *TariffZoneRef*         | 0:1             | TARIFF ZONE à laquelle DISTANCE MATRIX ELEMENT commence.                                             |
 | « FK »             | ***e***  | ***StartFareSectionRef***        | *FareSectionRef*        | 0:1             | FARE SECTION à laquelle DISTANCE MATRIX ELEMENT commence.                                            |
-| « FK »             | ***f***  | ***StartFarePointInPatternRef*** | *FarePointInPatternRef* | 0:1             | FARE POINT IN PATTERN duquel le DISTANCE MATRIX ELEMENT commence (gère le cas des passages répétées) |
+| « FK »             | ***f***  | ***StartFarePointInPatternRef*** | *FarePointInPatternRef* | 0:1             | FARE POINT IN PATTERN duquel le DISTANCE MATRIX ELEMENT commence (gère le cas des passages répétés) |
 |                    |          |                                  | *Choice*                | 1:1             | Destination du DISTANCE MATRIX ELEMENT.                                                              |
 | « FK »             | ***a***  | ***EndStopPointRef***            | *ScheduledStopPointRef* | 0:1             | SCHEDULED STOP POINT où le DISTANCE MATRIX ELEMENT se termine.                                       |
 | « FK »             | ***c***  | ***EndTariffZoneRef***           | *TariffZoneRef*         | 0:1             | TARIFF ZONE à laquelle le DISTANCE MATRIX ELEMENT se termine.                                        |
 | « FK »             | ***e***  | ***EndFareSectionRef***          | *FareSectionRef*        | 0:1             | FARE SECTION à laquelle le DISTANCE MATRIX ELEMENT se termine.                                       |
-| « FK »             | ***f***  | ***EndFarePointInPatternRef***   | *FarePointInPatternRef* | 0:1             | FARE POINT IN PATTERN où le DISTANCE MATRIX ELEMENT se termine. (gère le cas des passages répétées)  |
+| « FK »             | ***f***  | ***EndFarePointInPatternRef***   | *FarePointInPatternRef* | 0:1             | FARE POINT IN PATTERN où le DISTANCE MATRIX ELEMENT se termine. (gère le cas des passages répétée)  |
 
 <div class='table-title'>DistanceMatrixElementComponentGroup – Group</div>
 
@@ -2541,9 +2541,9 @@ contrainte de routage différente.
 | « PK »             | ***id***                | *GroupOfDistanceMatrixElementsIdType* | 1:1             | Identifiant du GROUP of DISTANCE MATRIX ELEMENTS.                                                                                                                          |
 |                    | ***UseToExclude***      | *xsd:boolean*                         | 0:1             | Indique si le contenu du groupe doit être utilisé pour exclure (vrai) l’information d'une liste plus importante. La valeur par défaut est "false" (c'est-à-dire "include") |
 |                    | ***Distance***          | *DistanceType*                        | 0:1             | Distance entre les origines et les destinations d'un GROUP OF DISTANCE MATRIX ELEMENTs.                                                                                    |
-| « cntd »           | ***structureFactors***  | *GeographicalStructureFactorRef*      | 0:\*            | References à un GEOGRAPHICAL STRUCTURE FACTORs.                                                                                                                            |
+| « cntd »           | ***structureFactors***  | *GeographicalStructureFactorRef*      | 0:\*            | Référence à un GEOGRAPHICAL STRUCTURE FACTORs.                                                                                                                            |
 | « cntd »           | ***noticeAssignments*** | *<u>NoticeAsssignment</u>*            | 0:\*            | NOTICE ASSIGNMENTs pour le GROUP OF DISTANCE MATRIX ELEMENTs.                                                                                                              |
-| « cntd »           | ***members***           | *<u>DistanceMatrixElements</u>*       | 0:\*            | References aux members du GROUP OF DISTANCE MATRIX ELEMENTs.                                                                                                               |
+| « cntd »           | ***members***           | *<u>DistanceMatrixElements</u>*       | 0:\*            | Référence les membres du GROUP OF DISTANCE MATRIX ELEMENTs.                                                                                                               |
 
 #### Exemple
 
@@ -2592,7 +2592,7 @@ passer par des JP, mais ausi par des points ... ou des correspondances-->
 </DistanceMatrixElement>
 ```
 
-## Les Élément Validables (ValidableElement)
+## Les Éléments Validables (ValidableElement)
 
 Le système de contrôle d'un organisme de transport public est organisé
 pour « valider » régulièrement la consommation des droits d'accès,
@@ -2714,12 +2714,12 @@ titre ouvrant droit à réduction</mark></p></td>
 </ValidableElement>
 ```
 
-## Les Élément Contrôlable (ControllableElement)
+## Les Éléments Contrôlables (ControllableElement)
 
 <span class="red">**UNIQUEMENT UTILE SI L’ALIMENTATION D’UN SYSTÈME
 BILLETTIQUE EST ENVISAGEE !**</span>
 
-<span class="mark">Note : l’ÉLÉMENT CONTRÔLABLE n’est a utiliser que
+<span class="mark">Note : l’ÉLÉMENT CONTRÔLABLE n’est à utiliser que
 dans les contexte de l’alimentation d’un système billettique (de façon à
 lui préciser les élément effectivement à contrôler)</span>
 
@@ -2729,7 +2729,7 @@ restent les mêmes et sont constamment valables. Un ELEMENT CONTROLLABLE
 est défini comme le plus petit élément de service :
 
 - dont la consommation réelle peut être contrôlée, au moyen de contrôles
-  réguliers ou occasionnels;
+  réguliers ou occasionnels ;
 
 - tout au long duquel tout paramètre contrôlé reste valide.
 
@@ -2742,13 +2742,13 @@ transports publics :
 - La montée dans un véhicule, par exemple dans des bus, des tramways ou
   d'autres systèmes « ouverts ». Un trajet d'un POINT D'ARRÊT PLANIFIÉ à
   un autre, au cours d'une COURSE, peut représenter un tel ÉLÉMENT
-  CONTRÔLABLE;
+  CONTRÔLABLE ;
 
 - Les voyages, composés de séquences de segments et de correspondances,
   par exemple dans des systèmes fermés comme le métro avec des
   tourniquets d'entrée / sortie. Dans un tel cas, les échanges sont
   autorisés au sein du même ÉLÉMENT CONTRÔLABLE et ne sont pas
-  contrôlés;
+  contrôlés ;
 
 - L’accès aux services communs (par ex. parking, salon, etc.), le cas
   échéant.
@@ -2760,21 +2760,21 @@ un seul trajet sur cette ligne sera composé de deux ÉLÉMENTS
 CONTRÔLABLES, distingués par le paramètre OPÉRATEUR.
 
 Les paramètres de validité peuvent être associés à un ÉLÉMENT
-CONTRÔLABLE, soit:
+CONTRÔLABLE, soit :
 
-- au début de l'élément, contrôlé par un contrôle d'entrée; par exemple,
-  la consommation doit commencer à un POINT D'ARRÊT PLANIFIÉ donné;
+- au début de l'élément, contrôlé par un contrôle d'entrée ; par exemple,
+  la consommation doit commencer à un POINT D'ARRÊT PLANIFIÉ donné ;
 
-- à la fin de l'élément, contrôlé par un contrôle de sortie; par
-  exemple, la consommation ne doit pas se terminer après 16 heures;
+- à la fin de l'élément, contrôlé par un contrôle de sortie ; par
+  exemple, la consommation ne doit pas se terminer après 16 heures ;
 
 - tout au long de l'élément (paramètre « en route »), éventuellement
-  contrôlé par tout contrôle d'entrée, de sortie ou en route; par
+  contrôlé par tout contrôle d'entrée, de sortie ou en route ; par
   exemple, la consommation doit avoir lieu sur la ligne 18.
 
 ![](media/image7.png) *Élément contrôlable – Modèle conceptuel*
 
-Note : l’association avec les ÈLÈMENTS DE STRUCTURE TARIFAIRE se fait
+Note : l’association avec les ÉLÉMENTS DE STRUCTURE TARIFAIRE se fait
 via les ***FareStructureComponentGroup***
 
 <div class='table-title'>ControllableElement – Element</div>
@@ -2804,27 +2804,27 @@ DOCUMENTS DE VOYAGE. Par exemple, un PRODUIT TARIFAIRE « passe
 mensuelle » peut être incorporé de différentes manières sur un billet
 papier spécifique ou stocké sur une carte électronique.
 
-Le fait que les PRODUITS TARIFAIREs se distinguent en fonction du MOMENT
-DE PAIMENT montre la caractéristique intrinsèque d'un PRODUIT TARIFAIRE;
-ce sont des droits d'accès
+Le fait que les PRODUITs TARIFAIREs se distinguent en fonction du MOMENT
+DE PAIEMENT montre la caractéristique intrinsèque d'un PRODUIT TARIFAIRE ;
+ce sont des droits d'accès.
 
-Les exemples classiques de MOMENT DE PAIMENT sont les suivants:
+Les exemples classiques de MOMENT DE PAIMENT sont les suivants :
 
-- pré-paiement avec annulation (billets jetables);
+- pré-paiement avec annulation (billets jetables );
 
-- pré-paiement avec débit sur un DOCUMENT DE VOYAGE (carte de valeur);
+- pré-paiement avec débit sur un DOCUMENT DE VOYAGE (carte de valeur) ;
 
-- pré-paiement sans enregistrement de la consommation (pass illimité);
+- pré-paiement sans enregistrement de la consommation (pass illimité) ;
 
 - post-paiement (carte électronique avec compte central et débit
-  mensuel);
+  mensuel) ;
 
 - gratuit.
 
 Ces principales catégories peuvent naturellement être subdivisées en
 fonction des exigences spécifiques de l'opérateur.
 
-Les PRODUITS TARIFAIRES les plus classiques sont des combinaisons de
+Les PRODUITs TARIFAIREs les plus classiques sont des combinaisons de
 droits d'accès spécifiés (ticket unique, ticket hebdomadaire, abonnement
 mensuel, etc.). Un tel PRODUIT TARIFAIRE PRÉDÉFINI est décrit comme un
 PRODUIT TARIFAIRE composé d'un ou plusieurs ÉLÉMENTS VALIDABLES
@@ -2835,7 +2835,7 @@ A LA VENTE (voir plus loin) pour décrire un produit commercialisé que
 l'utilisateur peut acheter matérialisé sur un DOCUMENT DE VOYAGE
 (ticket, carte, mobile, etc.).
 
-<span class="mark">Note :la plupart de spécialisation de : UN PRODUIT
+<span class="mark">Note : la plupart de spécialisation de : UN PRODUIT
 TARIFAIRE dispose d’un attribut ***ProductType***. Par convention, dans
 le cadre du profil si le produit est "*single trip*" et qu’il référence
 plusieurs ***ValidableElements***, alors le PRODUIT ne donne la
@@ -2935,7 +2935,7 @@ en fin de période tarifaire)</em></p>
 <tr class="even">
 <td>« FK »</td>
 <td><em><strong>TransportOrganisationRef</strong></em></td>
-<td><em>(TransportOrganisationRef) OperatorRef | AuthrityRef</em></td>
+<td><em>(TransportOrganisationRef) OperatorRef | AuthorityRef</em></td>
 <td>0:1</td>
 <td>OPERATOR ou AUTHORITY en charge du FARE PRODUCT.</td>
 </tr>
@@ -3009,7 +3009,7 @@ PRODUCT<em><strong>.</strong></em></td>
 <p><em>dayReturnTrip (aller-retour dans la journée)</em></p>
 <p><em>periodReturnTrip (aller-retour sur période fixe)</em></p>
 <p><em>multistepTrip (trajet à étapes)</em></p>
-<p><em>dayPass (pass journalier)</em></p>
+<p><em>dayPass (passe journalier)</em></p>
 <p><em>periodPass (abonnement pour une période)</em></p>
 <p><em>supplement (supplément)</em></p>
 <p><em>other (autre)</em></p>
@@ -3025,12 +3025,12 @@ PRODUCT<em><strong>.</strong></em></td>
 | ::\>               | ::\>     | *<u>TypeOfValue</u>*   | ::\>            | TYPE OF CHARGING MOMENT hérite de TYPE OF VALUE. |
 | « PK »             | ***id*** | *ChargingMomentIdType* | 1:1             | Identifiant du TYPE OF CHARGING MOMENT.          |
 
-Les quatre principaux types de PRODUITS TARIFAIRES sont les suivants:
+Les quatre principaux types de PRODUITS TARIFAIRES sont les suivants :
 
 - Le PRODUIT TARIFAIRE PRÉDÉFINI est une combinaison commercialisable
   d'ÉLÉMENTS VALIDABLES spécifiés. Il s'agit du PRODUIT TARIFAIRE le
   plus courant dans les transports publics (matérialisé par exemple sous
-  forme de ticket unique, d'abonnement mensuel, etc.);
+  forme de ticket unique, d'abonnement mensuel, etc.) ;
 
 - Le AMOUNT OF PRICE UNIT, qui correspond à une porte-monnaie d’unités
   transport, est un PRODUIT TARIFAIRE exprimé par un nombre spécifié
@@ -3040,21 +3040,21 @@ Les quatre principaux types de PRODUITS TARIFAIRES sont les suivants:
   certains cas, les billets simples doivent être considérés comme
   « unité transport », lorsqu'il est nécessaire de poinçonner un nombre
   variable de billets en fonction de la nature ou la durée du voyage
-  effectué;
+  effectué ;
 
 - Le DROIT A REMISE est un PRODUIT TARIFAIRE permettant à son titulaire
   de bénéficier de remises lors de l'achat d’OFFRES A LA VENTE
   spécifiques. Les compagnies de train, par exemple, proposent
   généralement de telles réductions (par exemple, une carte de réduction
-  de 30%);
+  de 30%) ;
 
 - Le DROIT A REMISE A L’USAGE est un PRODUIT TARIFAIRE permettant à son
   titulaire de bénéficier de remises lors de la consommation des ELEMENT
-  VALIDABLES spécifié, et ce en fonction de l’usage qu’il fait des
-  service de transport (c’est typiquement le principe des « Miles »,
-  cartes voyageur, etc.) .
+  VALIDABLEs spécifiés, et ce en fonction de l’usage qu’il fait des
+  services de transport (c’est typiquement le principe des « Miles »,
+  cartes voyageur, etc.).
 
-Deux autres types de PRODUITS TARIFAIRES existent également:
+Deux autres types de PRODUITs TARIFAIREs existent également :
 
 - REMISE PAR PLAFONNEMENT un affinement du droit de remise utilisé pour
   les tarifs électroniques avancés de paiement à la consommation, où une
@@ -3063,12 +3063,12 @@ Deux autres types de PRODUITS TARIFAIRES existent également:
   par exemple en limitant l'utilisation quotidienne a coût d'un passe
   journalier.
 
-- PRODUIT SUPPLÉMENTAIRE: Un produit accessoire, tel qu'un surclassement
+- PRODUIT SUPPLÉMENTAIRE : Un produit accessoire, tel qu'un surclassement
   de siège ou un repas, qui ne peut être acheté qu'en complément d'un
   autre produit.
 
 En outre, deux autres types de « produits » non liés au voyage peuvent
-être déclarés et référencés
+être déclarés et référencés :
 
 - un PRODUIT OUVRANT DES DROITS peut également être utilisé pour
   représenter des qualifications non liées au transport telles que des
@@ -3076,7 +3076,7 @@ En outre, deux autres types de « produits » non liés au voyage peuvent
   retraités qui sont des conditions préalables à l'achat ou à la
   consommation de produits de voyage.
 
-- un PRODUIT TIERS: UN PRODUIT TARIFAIRE qui est commercialisé avec un
+- un PRODUIT TIERS : UN PRODUIT TARIFAIRE qui est commercialisé avec un
   PRODUIT TARIFAIRE pour les transports publics mais qui n’y est pas lié
   (un accès à un salon, un abonnement sportif, etc.).
 
@@ -3138,7 +3138,7 @@ du DROIT A REDUCTION utilisé pour les tarifications de type
 été atteint dans un intervalle de temp donné, un plafond (tel que
 spécifié par une ou plusieurs RÈGLES DE PLAFONNEMENT) est appliqué, par
 exemple en limitant le coût, pour toute utilisation au cours d’une même
-journée, au prix d'un passe journalier
+journée, au prix d'un passe journalier.
 
 <div class='table-title'>CappedDiscountRight – Element</div>
 
@@ -3209,7 +3209,7 @@ produit.</td>
 </tr>
 <tr class="even">
 <td>« cntd »</td>
-<td><em><strong>validityParameteAssignments</strong></em></td>
+<td><em><strong>validityParameterAssignments</strong></em></td>
 <td><em><u>ValidityParameterAssignment+</u></em></td>
 <td>0:*</td>
 <td>VALIDITY PARAMETER ASSIGNMENTS pour cette règle.</td>
@@ -3290,8 +3290,8 @@ supplément.</td>
 </table>
 
 La REDUCTION A L’USAGE (USAGE DISCOUNT RIGHT) est un PRODUIT TARIFAIRE
-permettant à son titulaire de bénéficier de remises basée sur sa
-consommation titres de transport. Par exemple, un tel produit peut
+permettant à son titulaire de bénéficier de remises basées sur sa
+consommation de titres de transport. Par exemple, un tel produit peut
 accorder à son détenteur une réduction pour un parking relai (« park and
 ride »), alors que le stationnement ou les trajets en transport en
 commun consommés seuls sont facturés au tarif normal. Le principe des
@@ -3381,7 +3381,7 @@ transport sur une carte, etc.
 <td><p>Classification du AMOUNT OF PRICE UNIT.</p>
 <blockquote>
 <p><em>tripCarnet (carnet)</em></p>
-<p><em>passCarnet (carnet de pass)</em></p>
+<p><em>passCarnet (carnet de passes)</em></p>
 <p><em>unitCoupon (coupon unitaire)</em></p>
 <p><em>storedValue (valeur)</em></p>
 <p><em>other (autre)</em></p>
@@ -3419,7 +3419,7 @@ transport. On peut, titre d’exemple, citer un titre de transport associé
 | « PK »             | ***id*** |                                                                | *ThirdPartyProductIdType*                                  | 1:1                                | Identifiant du THIRD PARTY PRODUCT.                                                                   |
 |                    |          |                                                                | CHOICE                                                     |                                    |                                                                                                       |
 | « cntd »           | ***a***  | ***GeneralGroupOfEntities***                                   | *<u>GeneralGroupOfEntities</u>*                            | 0:1                                | GENERAL GROUP OF ENTITIES associé au THIRD PARTY PRODUCT.                                             |
-| « cntd »           | ***a***  | ***<span class="mark-blue">GeneralGroupOfEntitiesRef</span>*** | *<span class="mark-blue">GeneralGroupOfEntitiesRef</span>* | <span class="mark-blue">0:1</span> | <span class="mark-blue">RRefrence to GENERAL GROUP OF ENTITIES associé au Third PARTY product.</span> |
+| « cntd »           | ***a***  | ***<span class="mark-blue">GeneralGroupOfEntitiesRef</span>*** | *<span class="mark-blue">GeneralGroupOfEntitiesRef</span>* | <span class="mark-blue">0:1</span> | <span class="mark-blue">Référence à GENERAL GROUP OF ENTITIES associé au Third PARTY product.</span> |
 
 ### Résumé Des Conditions Tarifaires 
 
@@ -3429,7 +3429,7 @@ de comparaison et d'information des voyageurs. Le résumé indique
 généralement simplement l'existence d'une condition - les conditions
 réelles elles-mêmes sont décrites plus exactement par les CONDITIONS
 D’UTILISATION, les AFFECTATIONS DE DROITS D'ACCÈS et d'autres éléments.
-Le résumé peut inclure des informations sur:
+Le résumé peut inclure des informations sur :
 
 - Les exigences concernant les cartes liées au produit.
 
@@ -3451,7 +3451,7 @@ spécialisés par le profil NeTEx Tarif France</span>. Ainsi certains sont
 uniquement destinés à être utilisés par les PRODUITs TARIFAIREs (Fare
 Product) et d’autres sont réservés aux OFFREs À LA VENTE
 (SalesPackageOffer). Cette restriction et ce systématisme ont pour
-vocation de simplifier l’usage d’u profil (placer uns information donnée
+vocation de simplifier l’usage d’un profil (placer une information donnée
 à un endroit unique quand cela est possible). Une colonne précisant
 **<span class="mark">PT</span>** (PRODUITs TARIFAIRE) ou
 **<span class="mark">OalV</span>** (OFFRE À LA VENTE) a été ajoutée pour
@@ -3524,7 +3524,7 @@ reste utilisable dans les deux cas)*.*
 <td><em>xsd:boolean</em></td>
 <td>0:1</td>
 <td><p>Indique si une NOTICE est associée au produit.</p>
-<p><mark>Note : la NOTICE doit systématiquement être affiché en contexte
+<p><mark>Note : la NOTICE doit systématiquement être affichée en contexte
 d’information voyageur</mark></p></td>
 <td></td>
 </tr>
@@ -3803,7 +3803,7 @@ O-D, contenant de très nombreuses O-D, mais avec une seule tarification comme d
 </PreassignedFareProduct>
 ```
 
-## Les Offre à la Vente (SalesPackageOffer)
+## Les Offres à la Vente (SalesPackageOffer)
 
 Les PRODUITS TARIFAIREs sont associés à des DOCUMENTS DE VOYAGE afin de
 constituer des packages propices à la vente. Une OFFRE A LA VENTE est
@@ -3812,7 +3812,7 @@ TARIFAIREs matérialisés grâce à un ou plusieurs DOCUMENTS DE VOYAGE.
 
 Les PRODUITS TARIFAIREs peuvent être soit directement attachés aux
 DOCUMENTS DE VOYAGE (impression, stockage magnétique, etc.), soit
-rechargeables sur des DOCUMENTS DE VOYAGE (tels que des porte-monnaie
+rechargeables sur des DOCUMENTS DE VOYAGE (tels que des porte-monnaies
 électroniques ou des laissez-passer).
 
 Dans la plupart des cas, une OFFRE A LA VENTE ne comprendra qu'un seul
@@ -3821,11 +3821,11 @@ complexes sont possibles. Elles permettent aussi de proposer des
 packages temporaires (par exemple pendant une semaine de promotion) ou
 permanents.
 
-Les OFFRE A LA VENTE sont décrits par des ÉLÉMENTS D'OFFRE DE VENTE,
+Les OFFRE A LA VENTE sont décrites par des ÉLÉMENTS D'OFFRE DE VENTE,
 chacun associant un PRODUIT TARIFAIRE spécifique à un TYPE DE DOCUMENT
 DE VOYAGE spécifique.
 
-Une OFFRE A LA DE VENTE peut parfois être soumis à des limitations : par
+Une OFFRE A LA DE VENTE peut parfois être soumise à des limitations : par
 exemple n’être vendu que dans une certaine ZONE D'ARRÊT.
 
 ![](media/image11.png) *Offre à la Vente – Modèle conceptuel*
@@ -3911,7 +3911,7 @@ OFFER PACKAGEs.</td>
 <td><em><u>ConditionSummary</u></em></td>
 <td>0:1</td>
 <td><p>Description synthétique des conditions d'une OFFRE A LA VENTE
-pouvant être utilisé pour fournir des informations aux passagers.</p>
+pouvant être utilisée pour fournir des informations aux passagers.</p>
 <p><mark>Note : dans le cadre du profil, seuls certains attributs des
 <em><strong>ConditionSummary</strong></em> sont acceptés pour le
 <em><strong>SalesOfferPackage</strong></em> (voir description des
@@ -3940,7 +3940,7 @@ ASSIGNMENTs) associé au SALES OFFER PACKAGE.</td>
 <td><p>SALES OFFER PACKAGE ELEMENTs associé au SALES OFFER PACKAGE.</p>
 <p><mark>Note : on n’utilisera ici la possibilité de faire des
 références que s’il y a réutilisation du
-<em><strong>SalesOfferPackageElement</strong></em>, dans tous les autre
+<em><strong>SalesOfferPackageElement</strong></em>, dans tous les autres
 cas on inculera directement le
 <em><strong>SalesOfferPackageElement</strong></em> dans la structure
 XML.</mark></p></td>
@@ -3948,7 +3948,7 @@ XML.</mark></p></td>
 </tbody>
 </table>
 
-Les OFFRE A LA VENTE sont décrits par des ÉLÉMENTS D'OFFRE DE VENTE,
+Les OFFRE A LA VENTE sont décrites par des ÉLÉMENTS D'OFFRE DE VENTE,
 chacun associant un PRODUIT TARIFAIRE spécifique à un TYPE DE DOCUMENT
 DE VOYAGE spécifique.
 
@@ -4031,11 +4031,11 @@ ELEMENT.</td>
 
 | **Classification** | **Name**                           | **Type**                           | **Cardinality** | **Description**                                                                 |
 |--------------------|------------------------------------|------------------------------------|-----------------|---------------------------------------------------------------------------------|
-| ::\>               | ::\>                               | *<u>GroupOfEntities</u>*           | ::\>            | GROUP of SALES OFFER PACKAGEs hérite de GROUP OF ENTITIES. See NeTEx Part1.     |
+| ::\>               | ::\>                               | *<u>GroupOfEntities</u>*           | ::\>            | GROUP of SALES OFFER PACKAGEs hérite de GROUP OF ENTITIES. Voir NeTEx Partie 1.     |
 | « PK »             | ***id***                           | *GroupOfSalesOffer-PackagesIdType* | 1:1             | Identifiant du GROUP of SALES OFFER PACKAGEs.                                   |
 | « cntd »           | ***alternativeNames***             | *<u>AlternativeName</u>*           | 0:\*            | ALTERNATIVE NAMEs for GROUP of SALES OFFER PACKAGEs.                            |
 | XGRP               | ***SalesOfferPackageCommonGroup*** | ***<u>xmlGroup</u>***              | 0:1             | Propriétés communes du SALES OFFER PACKAGE et du GROUP OF SALES OFFER PACKAGES. |
-| « cntd »           | ***members***                      | *SalesOfferPackageRef*             | 0:\*            | References aux constituants du GROUP OF SALES OFFER PACKAGEs.                   |
+| « cntd »           | ***members***                      | *SalesOfferPackageRef*             | 0:\*            | Références aux constituants du GROUP OF SALES OFFER PACKAGEs.                   |
 
 ### Exemple
 
@@ -4101,34 +4101,34 @@ données opérateur, s'ils appartiennent à des clients identifiés (carte
 de valeur rechargeable, document de droit de remise, etc.). Ceci est
 bien sûr obligatoire pour les méthodes de post-paiement.
 
-Les DOCUMENTs DE VOYAGE sont catégorisé par un TYPE DE DOCUMENT DE
-VOYAGE, qui exprime:
+Les DOCUMENTs DE VOYAGE sont catégorisés par un TYPE DE DOCUMENT DE
+VOYAGE, qui exprime :
 
 - leurs caractéristiques générales (type de support, types de produits
-  tarifaires compatibles, etc.);
+  tarifaires compatibles, etc.) ;
 
 - leurs caractéristiques fonctionnelles locales, propres à l'opérateur
   ou à la collectivité (produits tarifaires spécifiques stockés sur ce
   type, type de revendeur, etc.).
 
-Les types le plus classiques de DOCUMENTS DE VOYAGE sont par exemple:
+Les types le plus classiques de DOCUMENTS DE VOYAGE sont par exemple :
 
 - billet jetable à usage unique, donnant le droit de consommer un seul
-  ELEMENT VALIDABLE (par exemple un voyage);
+  ELEMENT VALIDABLE (par exemple un voyage) ;
 
 - billet jetable, offrant un droit d'accès en utilisant un certain
   nombre d'unités (généralement en les poinçonnant ensemble dans un
-  validateur);
+  validateur) ;
 
 - carte, débitée d'un certain montant pour chaque consommation
-  d'ÉLÉMENTS VALIDABLES;
+  d'ÉLÉMENTS VALIDABLES ;
 
 - porte-monnaie électronique rechargeable, permettant l'accès au réseau
-  de transport; débité à chaque achat.
+  de transport, débité à chaque achat ;
 
-- Carte de crédit transport, avec post-paiement sur un compte central;
+- Carte de crédit transport, avec post-paiement sur un compte central ;
 
-- document attestant le droit de bénéficier d'une réduction;
+- document attestant le droit de bénéficier d'une réduction ;
 
 - etc.
 
@@ -4150,8 +4150,8 @@ Les types le plus classiques de DOCUMENTS DE VOYAGE sont par exemple:
 <td>::&gt;</td>
 <td><em><u>TypeOfValue</u></em></td>
 <td>::&gt;</td>
-<td>TYPE OF TRAVEL DOCUMENT hérite de TYPE OF VALUE. See NeTEx
-Part1.</td>
+<td>TYPE OF TRAVEL DOCUMENT hérite de TYPE OF VALUE. Voir NeTEx
+Partie 1.</td>
 </tr>
 <tr class="even">
 <td>« PK »</td>
@@ -4194,7 +4194,7 @@ carte.</td>
 <p><em>paperTicket (ticket papier)</em></p>
 <p><em>paperTicketWithCoupons (ticket papier et coupon)</em></p>
 <p><em>coupon (coupon)</em></p>
-<p><em>selfPrintPaperTicket (impression a domicile)</em></p>
+<p><em>selfPrintPaperTicket (impression à domicile)</em></p>
 <p><em>smartCard (carte à puce)</em></p>
 <p><em>mobileApp (application sur mobile)</em></p>
 <p><em>card (carte)</em></p>
@@ -4215,7 +4215,7 @@ machine :</p>
 <p><em>magneticStrip (bande magnétique)</em></p>
 <p><em>chip (puce)</em></p>
 <p><em>ocr (reconnaissance de caractères)</em></p>
-<p><em>barCode (cde barre)</em></p>
+<p><em>barCode (code barre)</em></p>
 <p><em>shotCode (numéro d’émission)</em></p>
 <p><em>nfc (NFC)</em></p>
 <p><em>other (autre)</em></p>
@@ -4234,7 +4234,7 @@ READABILITY.</td>
 <td><em><strong>alternativeNames</strong></em></td>
 <td><em><u>AlternativeName</u></em></td>
 <td>0:*</td>
-<td>ALTERNATIVE NAMEs pour l’éléments.</td>
+<td>ALTERNATIVE NAMEs pour l’élément.</td>
 </tr>
 </tbody>
 </table>
@@ -4260,7 +4260,7 @@ aussi ne pas faire figurer cet élément-->
 </TypeOfTravelDocument>
 ```
 
-### DistributionChannel
+### Canal de distribution (DistributionChannel)
 
 Le modèle de distribution des titres de transport spécifie les règles
 pour savoir où et comment les PRODUITs TARIFAIREs peuvent être achetés,
@@ -4293,7 +4293,7 @@ peut également être indiqué.
 <td>::&gt;</td>
 <td><em>TypeOfValue</em></td>
 <td>::&gt;</td>
-<td>DISTRIBUTION CHANNEL hérite de TYPE OF VALUE. See NeTEx Part1.</td>
+<td>DISTRIBUTION CHANNEL hérite de TYPE OF VALUE. Voir NeTEx Partie 1.</td>
 </tr>
 <tr class="even">
 <td>« PK »</td>
@@ -4321,7 +4321,7 @@ peut également être indiqué.
 <p><em>online (en ligne)</em></p>
 <p><em>onlineAccount (sur compte en ligne)</em></p>
 <p><em>telephone(par téléphone)</em></p>
-<p><em>electronicPass (pass électronique)</em></p>
+<p><em>electronicPass (passe électronique)</em></p>
 <p><em>postal (postal)</em></p>
 <p><em>mobileDevice (sur terminal mobile)</em></p>
 <p><em>agency (en agence)</em></p>
@@ -4349,7 +4349,7 @@ donc qu'elle doit être autorisée).</td>
 <td><em><strong>OrganisationRef</strong></em></td>
 <td><em>(OrganisationRef)</em></td>
 <td>0:1</td>
-<td>ORGANISATION associé au channel.</td>
+<td>ORGANISATION associée au channel.</td>
 </tr>
 <tr class="even">
 <td>« enum »</td>
@@ -4359,7 +4359,7 @@ donc qu'elle doit être autorisée).</td>
 <td><p>Méthode de paiement supportée</p>
 <blockquote>
 <p><em>cash (liquide)</em></p>
-<p><em>cashExactChangeOnly (miquide sans rendu de monaie)</em></p>
+<p><em>cashExactChangeOnly (liquide sans rendu de monaie)</em></p>
 <p><em>cashAndCard (liquide et cartes)</em></p>
 <p><em>coin (pièces)</em></p>
 <p><em>banknote (billets)</em></p>
@@ -4450,11 +4450,11 @@ billet ne peut être acheté qu'à une gare spécifique.</td>
 | **Classification** | **Name**                  |                                      | **Type**                         | **Cardinality** | **Description**                                                                             |
 |--------------------|---------------------------|--------------------------------------|----------------------------------|-----------------|---------------------------------------------------------------------------------------------|
 |                    |                           |                                      | CHOICE                           |                 | Pays/Région/Ville dans lequel la distribution peut avoir lieu.                              |
-| « FK »             | ***TopographicPlaceRef*** |                                      | *TopographicPlaceRef*            | 0:1             | TOPOGRAPHIC PLACE associée au DISTRIBUTION ASSIGNMENT.                                      |
+| « FK »             | ***TopographicPlaceRef*** |                                      | *TopographicPlaceRef*            | 0:1             | TOPOGRAPHIC PLACE associé au DISTRIBUTION ASSIGNMENT.                                      |
 |                    |                           |                                      | CHOICE                           |                 | Canal par lequel la distribution peut être effectuée.                                       |
 |                    | ***a***                   | ***AllDistributionChannelsRef***     | *AllDistributionChannelsRef*     | 0:1             | La distribution peut se faire par tous les canaux.                                          |
-| « FK »             | ***b***                   | ***DistributionChannelRef***         | *DistributionChannelRef*         | 0:1             | DISTRIBUTION CHANNEL associée au DISTRIBUTION ASSIGNMENT.                                   |
-| « FK »             | ***c***                   | ***GroupOfDistributionChannelsRef*** | *GroupOfDistributionChannelsRef* | 0:1             | GROUP OF DISTRIBUTION CHANNELs associée au DISTRIBUTION ASSIGNMENT.                         |
+| « FK »             | ***b***                   | ***DistributionChannelRef***         | *DistributionChannelRef*         | 0:1             | DISTRIBUTION CHANNEL associé au DISTRIBUTION ASSIGNMENT.                                   |
+| « FK »             | ***c***                   | ***GroupOfDistributionChannelsRef*** | *GroupOfDistributionChannelsRef* | 0:1             | GROUP OF DISTRIBUTION CHANNELs associé au DISTRIBUTION ASSIGNMENT.                         |
 |                    | ***AllowedInChannel***    |                                      | *xsd:boolean*                    | 0:1             | Indique si la distribution est autorisée ou interdite par le DISTRIBUTION CHANNEL spécifié. |
 |                    | ***RestrictedToChannel*** |                                      | *xsd:boolean*                    | 0:1             | Indique si la distribution est limitée aux seuls DISTRIBUTION CHANNEL spécifiés.            |
 
@@ -4487,13 +4487,13 @@ billet ne peut être acheté qu'à une gare spécifique.</td>
 <td><em><strong>TicketingServiceFacility</strong></em></td>
 <td><em>TicketingServiceFacilityEnum</em></td>
 <td>0:*</td>
-<td><p>Liste des TICKETING SERVICE FACILITies, par ex. achat, collecte.
+<td><p>Liste des TICKETING SERVICE FACILITies, par ex. achat, collecte,
 faire le plein.</p>
 <blockquote>
 <p><em>Purchase (achat)</em></p>
 <p><em>Collection (collection)</em></p>
 <p><em>cardTopUp (recharge de carte)</em></p>
-<p><em>reservations (réservation)</em></p>
+<p><em>reservations (réservations)</em></p>
 <p><em>exchange (échange)</em></p>
 <p><em>refund (remboursement)</em></p>
 <p><em>renewal (renouvellement)</em></p>
@@ -4515,7 +4515,7 @@ identité personnelle en ligne ou autrement.</td>
 <td><em><strong>FulfilmentMethodRef</strong></em></td>
 <td><em>FulfilmentMethodRef</em></td>
 <td>0:1</td>
-<td>FULFILMENT METHOD a utiliser pour cette distribution.</td>
+<td>FULFILMENT METHOD à utiliser pour cette distribution.</td>
 </tr>
 </tbody>
 </table>
@@ -4689,15 +4689,15 @@ Ce modèle permet d'associer des DROITS D'ACCÈS spécifiques à des
 éléments de la structure tarifaire à l'aide de divers paramètres de
 validité. L'élément central est l'AFFECTATION DES PARAMÈTRES DE DROITS
 D'ACCÈS (ACCESS RIGHT PARAMETER ASSIGNMENT) qui attribue un ensemble
-droits et limitation; Il est possible de combiner ces droits en
+droits et limitation. Il est possible de combiner ces droits en
 utilisant un opérateur logique (ET, OU ou OU-Exclusif) pour créer des
 combinaisons complexes de conditions qui peuvent ensuite être associées
 à de nombreux éléments du modèle tarifaire (ÉLÉMENT DE STRUCTURE
 TARIFAIRE, ÉLÉMENT DE MATRICE DE DISTANCE, GROUPE D'ÉLÉMENTS DE MATRICE
 DE DISTANCE, PRODUIT TARIFAIRE, PACKAGE D'OFFRE DE VENTE, ÉLÉMENT
-VALIDABLE , ou ÉLÉMENT CONTRÔLABLE)
+VALIDABLE, ou ÉLÉMENT CONTRÔLABLE)
 
-Une l'AFFECTATION DE PARAMÈTRES DE VALIDITÉ permet de spécifier un
+Une AFFECTATION DE PARAMÈTRES DE VALIDITÉ permet de spécifier un
 paramètre limitant un droit d'accès théorique, par exemple, une période
 temporelle après laquelle le titre ne sera plus utilisable.
 
@@ -4707,7 +4707,7 @@ valeur de paramètre à une caractéristique de l'objet associé. L’attribut
 différents types de comparaisons possibles, spécifiées par le type
 d’attribution d’attribut, dont les valeurs sont un opérateur de
 comparaison (« GT », « EQ », « LT », etc.). Ils expriment que la
-caractéristique comparée, par exemple:
+caractéristique comparée, par exemple :
 
 - « EQ » est strictement égal au paramètre, par exemple : Titre limité à
   la LIGNE « 27 ».
@@ -4715,11 +4715,11 @@ caractéristique comparée, par exemple:
 - « NE » est différent d’une certaine valeur, par exemple : pour
   représenter la règle « le droit d’accès est valable sur toutes les
   LIGNES du réseau de bus à l’exception de la LIGNE 278 et de la LIGNE
-  66 » ou « le droit d’accès à la zone 4 n’est pas valable entre« 2 h 00
+  66 » ou « le droit d’accès à la zone 4 n’est pas valable entre 2 h 00
   et 4 h 00 »
 
 - « GE » est supérieur ou égal au paramètre, par exemple : le voyage
-  doit se terminer après « 23 heures »;
+  doit se terminer après « 23 heures » ;
 
 - « LE » est égal ou inférieur au paramètre, par exemple : le voyage
   doit se terminer avant « 23h00 ».
@@ -4728,8 +4728,8 @@ caractéristique comparée, par exemple:
 préfèrera faire porter les ***ValidityParameter***s par le
 **FareProduct**… le passage par le ***SalesOffPackage***, ou le
 ***ValidableElement*** (voir le ***FareStructureElement***) ne se fera
-que si les droits sont véritablement complètement spécifiques de ces
-concepts</span>
+que si les droits sont véritablement complètement spécifiques à ces
+concepts.</span>
 
 <span class="mark">A titre d’exemple l’association des
 ***ValidityParameter***s au ***SalesOffPackage*** sera justifiée si le
@@ -4738,9 +4738,9 @@ fait de porter son titre sur une « carte grand voyageur » donnait accès
 titre sur billet papier ou billet électronique.</span>
 
 <span class="mark">De plus, seuls les ***ValidityParameter***s
-génériques sur un ***FareProduct*** seront affecté « en dur », et toutes
+génériques sur un ***FareProduct*** seront affectés « en dur », et toutes
 les variantes avec impact sur le prix (réduction famille nombreuse,
-tarifs enfants, etc. pour ce même ***FareProduct***) seront affecté via
+tarifs enfants, etc. pour ce même ***FareProduct***) seront affectées via
 une ***FareTable***.</span>
 
 La figure ci-dessous propose une vue d’ensemble des affectations de
@@ -4750,7 +4750,7 @@ façons de décrire les tarifs.
 
 L’AFFECTATION DES PARAMÈTRES DES DROITS D'ACCÈS (ACCESS RIGHT PARAMETER
 ASSIGNMENT) est l’élément central de l’affectation des droits.
-<span class="mark">Toutefois dans le contexte du profil il est considéré
+<span class="mark">Toutefois, dans le contexte du profil, il est considéré
 comme abstrait et on ne l’instanciera pas en tant qu’élément XML, mais
 uniquement via sa spécialisation en AFFECTATION DES PARAMÈTRES
 GÉNÉRIQUES (GENERIC PARAMETER ASSIGNMENT).</span>
@@ -4768,7 +4768,7 @@ PARAMÈTRE D’UTILISATION spécifient les conditions d’utilisation
 bagages, profil utilisateur comme les classes d’âge, etc.). Les
 PARAMÈTRES DE VALIDITÉ TEMPORELS précise naturellement les aspects
 temporels (à ne pas confondre avec les ÉLÉMENTS DE STRUCTURE TARIFAIRE
-décrivant la temporalité : par exemple un ticket de bu permettant de
+décrivant la temporalité : par exemple un ticket de bus permettant de
 voyager pendant 90 minute relève de la structure tarifaire, par contre
 si ce même billet doit être utilisé dans l’année suivant la date
 d’achat, cela relève des PARAMÈTRES DE VALIDITÉ TEMPORELS).
@@ -4820,7 +4820,7 @@ Modèle conceptuel*
 <td><em>FareProductRef+</em></td>
 <td>0:1</td>
 <td><p>FARE PRODUCT cible de l’affectation.</p>
-<p><mark>Note ; dans le cadre du profil France, c’est sur le FARE
+<p><mark>Note : dans le cadre du profil France, c’est sur le FARE
 PRODUCT que l’on fera porter l’affectation des droits à chaque fois que
 cela est possible.</mark></p></td>
 </tr>
@@ -4850,7 +4850,7 @@ cela est possible.</mark></p></td>
 <td><em><strong>DistanceMatrixInverseRef</strong></em></td>
 <td><em>DistanceMatrixRef</em></td>
 <td>0:1</td>
-<td>DISTANCE MATRIX ELEMENT cible de l’affectation; lLa référence est
+<td>DISTANCE MATRIX ELEMENT cible de l’affectation. La référence est
 pour le sens inverse de celui de l'élément.</td>
 </tr>
 <tr class="even">
@@ -4865,7 +4865,7 @@ pour le sens inverse de celui de l'élément.</td>
 <td><em><strong>GroupOfDistanceMatrixElementsRef</strong></em></td>
 <td><em>GroupOfDistanceMatrixElementsRef</em></td>
 <td>0:1</td>
-<td>GROUP OF DISTANCE MATRIX ELEMENTs to cible de l’affectation.</td>
+<td>GROUP OF DISTANCE MATRIX ELEMENTs cible de l’affectation.</td>
 </tr>
 <tr class="even">
 <td>« FK »</td>
@@ -4925,8 +4925,8 @@ ci-dessous.</p>
 <td>0:1</td>
 <td><p>Lorsqu'un ou plusieurs paramètres constituent un groupe contenant
 plusieurs éléments, (GROUP OF xxx), opérateur d'ensemble pour faire la
-distinction entre l'ensemble complet et les différentes possibilité de
-sélections.</p>
+distinction entre l'ensemble complet et les différentes possibilités de
+sélection.</p>
 <blockquote>
 <p><em>oneOfAnyOneSet (un seul d’entre eux)</em></p>
 <p><em>oneOfEachSet (un de chaque)</em></p>
@@ -5010,7 +5010,7 @@ sélections.</p>
 <td><em><strong>temporalValidityParameters</strong></em></td>
 <td><em>TemporalValidityParametersGroup</em></td>
 <td>0:*</td>
-<td>Validité temporelle associées.</td>
+<td>Validité temporelle associée.</td>
 </tr>
 <tr class="odd">
 <td>« cntd »</td>
@@ -5098,7 +5098,7 @@ PARAMETER ASSIGNMENT composite.</td>
 Le ciblage permet de restreindre les droits d'accès des éléments de la
 structure tarifaire à des éléments spécifiques du réseau.
 
-Paramètres liés à l'organisation:
+Paramètres liés à l'organisation :
 
 - Quels OPÉRATEURS ou GROUPES D'OPÉRATEURS peuvent être utilisés.
 
@@ -5126,7 +5126,7 @@ Paramètres liés au service :
 
 - Quelle CLASSE peuvent être utilisées.
 
-Paramètres liés au SITE:
+Paramètres liés au SITE :
 
 - Le LIEU D'ARRÊT, le PARKING ou LE POINT D'INTÉRÊT qui est concerné.
 
@@ -5134,7 +5134,7 @@ Paramètres liés au SITE:
 
 - LIEU TOPOGRAPHIQUE auquel l'affectation s'applique.
 
-Paramètres liés au SIÈGE:
+Paramètres liés au SIÈGE :
 
 - La COURSE et le NUMÉRO DE TRAIN auxquels l'affectation s'applique.
 
@@ -5223,7 +5223,7 @@ D’UTILISATION.
 Les CONDITIONS D’UTILISATION spécifient divers types de limitations
 fonctionnelles sur un élément tarifaire, par exemple, quand il peut être
 acheté (FENÊTRE D'ACHAT), qui peut l'acheter (PROFIL UTILISATEUR), s'il
-peut être donné à quelqu'un d'autre (TRANSFÉRABILITÉ) etc. Les
+peut être donné à quelqu'un d'autre (TRANSFÉRABILITÉ), etc. Les
 paramètres se répartissent en quatre groupes principaux qui sont
 présentés ci-dessous.
 
@@ -5238,30 +5238,30 @@ PÉRIODE DE VALIDITÉ D'UTILISATION, SÉJOUR MINIMUM.
   des droits d'accès, en particulier des abonnements. Il peut inclure
   une « durée standard » de validité (1 jour, 1 mois…), des limites de
   temps (« date de début » et « date de fin », « heure de début » et
-  « heure de fin »), ou une combinaison des deux;
+  « heure de fin »), ou une combinaison des deux ;
 
 - FRÉQUENCE D'UTILISATION décrit la limitation d'un droit d'accès, en
   fonction de la fréquence d'utilisation pendant une PÉRIODE DE
   VALIDITÉ. Par exemple, un produit est proposé à un tarif spécial s'il
-  est utilisé plus de 50 fois par mois;
+  est utilisé plus de 50 fois par mois ;
 
 - CORRESPONDANCE exprimant les limites de correspondances au cours d'un
-  voyage;
+  voyage ;
 
 - SÉJOUR MINIMUM, exprimant les détails de tout séjour minimum à
   destination requis pour utiliser le produit (typiquement une réduction
-  si l’on passe un weekend sur place);
+  si l’on passe un weekend sur place) ;
 
 - LIMITE DE SEUIL, paramètre géographique limitant les droits d'accès
-  par comptage d'arrêts, tronçons ou zones;
+  par comptage d'arrêts, tronçons ou zones ;
 
 - ITINERAIRE, expression des limitations lié à l’itinéraire suivi, pour
-  un droit d'accès.
+  un droit d'accès ;
 
 - SUPENSION, décrivant les conditions applicables pour suspendre
   temporairement un droit d'accès tel qu'un abonnement.
 
-L’éligibilité spécifient les limites sur les personnes autorisées à
+L’éligibilité spécifie les limites sur les personnes autorisées à
 utiliser un produit telles que PROFIL D'UTILISATEUR, BILLET DE GROUPE,
 COMPAGNON OU MEMBRE DU GROUPE, PROFIL COMMERCIAL, DROIT DONNÉ et DROIT
 REQUIS.
@@ -5270,16 +5270,16 @@ REQUIS.
   généralement utilisé pour permettre des réductions en fonction des
   groupes d'âge (par exemple moins de 18 ans), du sexe, de la
   profession, du statut social (par exemple étudiant, retraité,
-  chômeur), etc.
+  chômeur), etc. ;
 
 - PROFIL COMMERCIAL, qui permet de décrire les catégories de clients en
   fonction de leurs relations commerciales avec l'opérateur (grand
   voyageur, montant des achats par une entreprise, etc.). Il est
-  généralement utilisé pour permettre des remises;
+  généralement utilisé pour permettre des remises ;
 
 - TICKET DE GROUPE décrit le nombre et les caractéristiques des
   personnes éventuellement habilitées à voyager en plus du titulaire
-  d'un droit d'accès;
+  d'un droit d'accès ;
 
 - PROFIL D’ACCOMPAGNATEUR, indiquant le nombre et les caractéristiques
   des personnes habilitées à voyager en groupe ou en tant
@@ -5297,7 +5297,7 @@ préalablement requis pour un produit, ou les droits donnés par un
 produit.
 
 - DROIT REQUIS, indiquant si un PRODUIT requis pour pouvoir utiliser le
-  droit d'accès (carte famille nombreuse par exemple);
+  droit d'accès (carte famille nombreuse par exemple) ;
 
 - DROIT DONNÉ, indiquant si un produit permet d’en utiliser d’autres.
 
@@ -5306,7 +5306,7 @@ les bagages (quantité, poids maximal, etc.).
 
 - ALLOCATION DE BAGAGES décrit le nombre et les caractéristiques (poids
   ou volume, vélos, etc.) des bagages que le titulaire d'un droit
-  d'accès est en droit de transporter ;
+  d'accès est en droit de transporter.
 
 Les CONDITIONS DE VENTE spécifient les limites des transactions de
 réservation telles que la FENÊTRE D'ACHAT, la TRANSFÉRABILITÉ, les
@@ -5321,13 +5321,13 @@ RÉSERVATION, l’ÉCHANGE, le REMBOURSEMENT.
 - REVENTE, exprimant les conditions de revente attachées au produit ;
 
 - ÉCHANGE indiquant si et comment le droit d'accès peut être échangé
-  contre un autre droit d'accès.
+  contre un autre droit d'accès ;
 
 - REMBOURSEMENT indiquant si et comment le droit d'accès acheté peut
-  être remboursé.
+  être remboursé ;
 
 - REMPLACEMENT indiquant si et comment le droit d'accès peut être
-  remplacé (par exemple si un ticket est perdu ou défectueux).
+  remplacé (par exemple si un ticket est perdu ou défectueux) ;
 
 - RÉSERVATION indiquant si le droit d'accès nécessite une réservation.
 
@@ -5490,14 +5490,14 @@ s'ajoute l'&#xE9;ventuelle diff&#xE9;rence de prix entre l'ancien et le nouveau 
 ## Les Grilles Tarifaires (FareTable)
 
 <span class="mark">Dans tous les tableaux précédents, les attributs
-fournissant une information de prix non pas été retenus dans le cadre du
+fournissant une information de prix n'ont pas été retenus dans le cadre du
 Profil France : cela tient au fait que l’option retenue par le profil
 est de systématiser la présentation des prix au travers d’une GRILLE
 TARIFAIRE (FARE TABLE). L’objectif est ici de systématiser la production
 et l’interprétation des données d’ordre tarifaire, mais aussi d’éviter
-une trop grande disparité des choix et optione de modélisation qui ne
+une trop grande disparité des choix et options de modélisation qui ne
 manquerait pas de se présenter (surtout dans le domaine tarifaire) s’il
-elles n’étaient pas un peu contrainte.</span>
+elles n’étaient pas un peu contraintes.</span>
 
 <span class="mark">La présentation des prix sous forme de grille des
 tarifs reste un grand classique dans le domaine des transports, et ce
@@ -5505,8 +5505,8 @@ choix permettra aussi la simplification de la présentation de l’offre
 aux voyageur (ce qui est cohérent avec l’objectif d’information voyageur
 du profil).</span>
 
-<span class="mark">Il reste toutefois quelques cas ou des prix pourront
-être fournit en dehors des GRILLEs TARIFAIREs : par exemple si un
+<span class="mark">Il reste toutefois quelques cas où des prix pourront
+être fournis en dehors des GRILLEs TARIFAIREs : par exemple si un
 produit offre une réduction fixe, par exemple de 5€, cela pourra être
 indiqué explicitement dans la description du produit tarifaire de façon
 à pouvoir en donner une description complète et pertinente au
@@ -5523,19 +5523,19 @@ peut avoir des références PROFIL UTILISATEUR + ÉLÉMENT DE MATRICE DE
 DISTANCE + CLASSE D'UTILISATION sur chaque cellule afin de définir les
 tarifs adulte et enfant pour la première et la deuxième classe.
 
-Les grilles peuvent être imbriqués ; Tous les objets héritant de
+Les grilles peuvent être imbriqués. Tous les objets héritant de
 « PRICEABLE OBJECT » (ce qui est le cas de la grande majorité des objets
-de ce profil) peuvent être utilisés au sein d’un GRILLE TARIFAIRE
+de ce profil) peuvent être utilisés au sein d’un GRILLE TARIFAIRE.
 
 La construction en GRILLE TARIFAIRE permet de définir tout un ensemble
-de composants relativement indépendant et potentiellement réutilisables
+de composants relativement indépendants et potentiellement réutilisables
 qui seront assemblés (par référence) au sein de la grille pour fournir
 un prix correspondant (par exemple : Titre pour zones A et B + billet à
 l’unité + jeune voyageur (18-25 ans) =\> Prix). On conserve donc une
 construction très modulaire.
 
 <span class="mark">La GRILLE TARIFAIRE fera des références vers tous les
-éléments qui la constituent à l’exception des prix eux même qui, n’étant
+éléments qui la constituent à l’exception des prix eux-mêmes qui, n’étant
 pas définis par ailleurs, devront être complètement définis au sein de
 la GRILLE TARIFAIRE.</span>
 
@@ -5674,7 +5674,7 @@ références à « potentiellement » combiner).
 <td>1:1</td>
 <td><p>Tout objet héritant de FARE PRICE fournissant le prix pour cette
 CELL.</p>
-<p><mark>Dans le cas du profile France on utilisera de façon très
+<p><mark>Dans le cas du profil France on utilisera de façon très
 préférentielle (voir exclusivement) un
 <em><strong>SalesOfferPAckegePrice</strong></em> ici</mark></p></td>
 </tr>
@@ -5787,7 +5787,7 @@ itinéraire indirect.</p>
 | « FK »             | ***TypeOfFareProductRef***           | *TypeOfFareProductRef*           | 0:1             | TYPE OF FARE PRODUCT pour lequel la CELL fournit un prix.                         |
 | « FK »             | ***DistributionChannelRef***         | *DistributionChannelRef*         | 0:1             | DISTRIBUTION CHANNEL pour laquelle la CELL fournit un prix.                       |
 | « FK »             | ***GroupOfDistributionChannelsRef*** | *GroupOfDistributionChannelsRef* | 0:1             | GROUP OF DISTRIBUTION CHANNELs pour laquelle la CELL fournit un prix.             |
-| « enum »           | ***PaymentMethods***                 | *PaymentMethodEnum*              | 0:1             | Valeur standard de ***PaymentMethod*** pour laquelle la CELLULE fournit un prix.. |
+| « enum »           | ***PaymentMethods***                 | *PaymentMethodEnum*              | 0:1             | Valeur standard de ***PaymentMethod*** pour laquelle la CELL fournit un prix. |
 | « FK »             | ***TypeOfPaymentMethodRef***         | *TypeOfPaymentMethodRef*         | 0:1             | TYPE OF PAYMENT METHOD pour lequel la CELL fournit un prix.                       |
 
 <div class='table-title'>CellHeadingsGroup – Group</div>
@@ -5888,13 +5888,13 @@ A 11 ANS => 60% de réduction-->
 Le modèle complète de façon très naturelle le reste de la description de
 l’offre tarifaire.
 
-Tout élément qui peut avoir un prix (ou auquel on peu faire correspondre
+Tout élément qui peut avoir un prix (ou auquel on peut faire correspondre
 un prix ou une variation de prix) est une spécialisation d’un OBJET
 VALORISABLE (PRICEABLE OBJECT), ce qui est le cas de la majorité des
 concepts introduits dans ce profil.
 
 Il existe différents types de PRIX pour chaque OBJET VALORISABLE, par
-exemple prix d’un L'ÉLÉMENT DE MATRICE DE DISTANCE, prix d’un PRODUIT
+exemple prix d’un ÉLÉMENT DE MATRICE DE DISTANCE, prix d’un PRODUIT
 TARIFAIRE, etc.
 
 Les PRIX peuvent être un montant absolu (par exemple 23,00 euros) ou
@@ -5902,11 +5902,11 @@ Les PRIX peuvent être un montant absolu (par exemple 23,00 euros) ou
 (par exemple un pourcentage de réduction). Le PRIX peut indiquer le prix
 et la règle dont il est dérivé ainsi que le montant qui en résulte.
 
-- Une RÈGLE DE RÉDUCTION spécifie les paramètres relatifs à la remise;
+- Une RÈGLE DE RÉDUCTION spécifie les paramètres relatifs à la remise ;
   Les remises peuvent être exprimées en pourcentage (par exemple 10%) ou
   en montant absolu (par exemple 5 euros).
 
-- Une RÈGLE DE LIMITATION peut être utilisée pour définir peut être
+- Une RÈGLE DE LIMITATION peut être utilisée pour définir une règle
   définie sur les résultats, par exemple pour fixer un prix minimum et
   maximum.
 
@@ -5984,9 +5984,9 @@ OBJECT.</td>
 <td><em><strong>noticeAssignments</strong></em></td>
 <td><em><u>NoticeAssignment</u></em></td>
 <td>0:*</td>
-<td><p>NOTICE ASSIGNMENTs associé à cet element.</p>
+<td><p>NOTICE ASSIGNMENTs associé à cet élément.</p>
 <p><mark>Note : on n’utilisera cette possibilité de NOTICE que si l’on
-est pas en mesure de la faire figurer dans la GRILLE TAIFAIRE (FARE
+n’est pas en mesure de la faire figurer dans la GRILLE TAIFAIRE (FARE
 TABLE)</mark></p></td>
 </tr>
 </tbody>
@@ -6005,7 +6005,7 @@ TABLE)</mark></p></td>
 |                    | ***EndDate***                              | *xsd:date*                                   | 0:1                                | Date de fin pour la validité du PRICE.                                                     |
 |                    | ***Amount***                               | *AmountType*                                 | 0:1                                | Prix dans l’unité monétaire convenue.                                                      |
 |                    | ***Currency***                             | *CurrencyType*                               | 0:1                                | Code de devise ISO 4217 (Ceci dans une optimisation permettant d'omettre les PRICE UNITs). |
-| « FK »             | ***PriceUnitRef***                         | *PriceUnitRef*                               | 0:1                                | Référence à un PRICE UNIT; peut-être remplacé par ***Currency***.                          |
+| « FK »             | ***PriceUnitRef***                         | *PriceUnitRef*                               | 0:1                                | Référence à un PRICE UNIT ; peut-être remplacé par ***Currency***.                          |
 |                    | ***<span class="mark-blue">Units</span>*** | *<span class="mark-blue">xsd:decimal</span>* | <span class="mark-blue">0:1</span> | <span class="mark-blue">Nombe d'unités désignée.</span>                                    |
 | « FK »             | ***PricingServiceRef***                    | *PricingServiceRef*                          | 0:1                                | Référence à un PRICE SERVICE qui peut fournir le prix (pour la tarification dynamique).    |
 | XGRP               | ***FarePriceCalculationGroup***            | ***<u>xmlGroup</u>***                        | 0:1                                | Éléments régissant le calcul des prix.                                                     |
@@ -6099,16 +6099,16 @@ avec d'autres remises.</td>
 |--------------------|-----------------|----------------------|-----------------|-------------------------------------|
 | ::\>               | ::\>            | *<u>TypeOfValue</u>* | ::\>            | PRICE UNIT hérite de TYPE OF VALUE. |
 | « PK »             | ***id***        | *PriceUnitIdType*    | 1:1             | Identifiant du PRICE UNIT.          |
-|                    | ***Precision*** | *xsd:integer*        | 0:1             | Precision su PRICE UNIT.            |
+|                    | ***Precision*** | *xsd:integer*        | 0:1             | Précision su PRICE UNIT.            |
 
-***PricingParameterSet*** décrit Ensemble de paramètres tarifaires
+***PricingParameterSet*** décrit l'Ensemble de paramètres tarifaires
 globaux commun à tous les éléments de la FRAME.
 
 <div class='table-title'>PricingParameterSet – Element</div>
 
 | **Classification** | **Name**                       | **Type**                     | **Cardinality** | **Description**                                                                                                      |
 |--------------------|--------------------------------|------------------------------|-----------------|----------------------------------------------------------------------------------------------------------------------|
-| ::\>               | ::\>                           | *<u>DataManagedObject</u>*   | ::\>            | PRICING PARAMETER SET hérite de DATA MANAGED OBJECT. See NeTEx Part1.                                                |
+| ::\>               | ::\>                           | *<u>DataManagedObject</u>*   | ::\>            | PRICING PARAMETER SET hérite de DATA MANAGED OBJECT. Voir NeTEx Partie 1.                                                |
 |                    | ***id***                       | *PricingParameterSetIdType*  | 1:1             | Identifiant du PRICING PARAMETER SET.                                                                                |
 |                    | ***Name***                     | *MultilingualString*         | 0:1             | Nom du PRICING PARAMETER SET.                                                                                        |
 | « cntd »           | ***priceUnits***               | *<u>PriceUnit</u>*           | 0:\*            | PRICE UNITs disponibles.                                                                                             |
@@ -6158,12 +6158,12 @@ quand il a de grande chance d’être pertinent et que la note associée
 permette à l’usager de décider si le titre lui convient ou pas.
 
 La figure ci-dessous montre un titre TER (Bourgogne-Franche-Compté) que
-l’on peut décrire en détail avec NeTEx mais qui nécessite de nombre
+l’on peut décrire en détail avec NeTEx mais qui nécessite de nombreux
 éléments de profil utilisateur combinés (salarié des entreprises, agent
 des administrations, autre professionnels…), qui nécessitera aussi un
 enregistrement du professionnel ou de sa société, etc. Ces éléments de
 droits d’accès et de profil utilisateur peuvent, en première approche,
-être inséré dans une note : en réutilisant le titre
+être insérés dans une note : en réutilisant le titre
 (***PreassignedFareProduct***) « standard » on créera une offre à la
 vente (***SalesOfferPackage***) dédiée que l’on associera, dans la
 grille tarifaire (***FareTable***) à une note (***Notice***) et à
@@ -6174,18 +6174,18 @@ ici de 30%.
 l’usage d’une note pour le simplifier*
 
 <span class="mark">Autre élément important dans le cadre de ce profil :
-les Notice seront exclusivement rattachées aux une grille tarifaires
-(***FareTable***), qui permettra en fait de l’associé à une offre à la
+les Notices seront exclusivement rattachées aux grilles tarifaires
+(***FareTable***), qui permettra en fait de l’associer à une offre à la
 vente (***SalesOfferPackage***), ou éventuellement à un produit
 tarifaire (***PreassignedFareProduct***). Théoriquement une note peut
-être attaché à n’importe quel objet mais attacher les note sans règle à
-de nombreux endroit rendrait l’exploitation de la donnée très
+être attachée à n’importe quel objet mais attacher les note sans règle à
+de nombreux endroits rendrait l’exploitation de la donnée très
 délicate.</span>
 
 Il sera aussi souvent utile de pouvoir proposer des traductions des
 notes dans différentes langues : on procédera naturellement à ces
 traduction grâce à l’élément ***AlternativeText*** (décrit dans le
-document **NF_Profil NeTEx éléments communs(F)** à partir de la verion
+document **NF_Profil NeTEx éléments communs(F)** à partir de la version
 2).
 
 ### Exemple minimal
@@ -6303,7 +6303,7 @@ les éléments ***members*** du ***GeneralFrame***.
 <td><em><strong>classes</strong></em></td>
 <td><em>ClassInContextRef</em></td>
 <td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
+<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
 <p><mark>La liste est fixe pour NETEX_TARIF:</mark></p>
 <ul>
 <li><p><mark>FARE STRUCTURE ELEMENT</mark></p></li>
@@ -7789,7 +7789,7 @@ allowing discounts.*
 |--------------------|---------------------------------|-----------------------------|-----------------|-----------------------------------------------------------------------------|
 | ::\>               | ::\>                            | *<u>UsageParameter</u>*     | ::\>            | COMMERCIAL PROFILE hérite de USAGE PARAMETER.                               |
 | « PK »             | ***id***                        | *CommercialProfileIdType*   | 1:1             | Identifiant du COMMERCIAL PROFILE.                                          |
-| « FK »             | ***TypeOfConcessionRef***       | *TypeOfConcessionRef*       | 0:1             | Référence à unTYPE OF CONCESSION.                                           |
+| « FK »             | ***TypeOfConcessionRef***       | *TypeOfConcessionRef*       | 0:1             | Référence à un TYPE OF CONCESSION.                                           |
 |                    | ***ConsumptionAmount***         | *xsd:anyType*               | 0:1             | Consumption amount associé au COMMERCIAL PROFILE.                           |
 |                    | ***ConsumptionUnits***          | *xsd:anyType*               | 0:1             | Units for Consumption amount associé au COMMERCIAL PROFILE.                 |
 |                    | ***GeneralGroupOfEntitiesRef*** | *GeneralGroupOfEntitiesRef* | 0:1             | GROUP OF ORGANISATIONs or other entities associé au the COMMERCIAL PROFILE. |
