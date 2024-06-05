@@ -1975,7 +1975,7 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>MinimumWidth</td>
 <td>LengthType</td>
 <td>0:1</td>
-<td><p>Largeur du cheminement</p>
+<td><p>Largeur minimale du cheminement</p>
 <p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
 </tr>
 <tr class="odd">
@@ -1996,6 +1996,34 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>down (descente)</em></p></li>
 <li><p><em>level (pas de changement de niveau)</em></p></li>
 </ul><p><span class="hl">Les valeurs <em>upAndDown</em> (montée puis descente) et <em>downAndUp</em> (descente puis montée) sont déconseillées dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs SitePathLink avec chacun un type de transition propre.</span></p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Gradient</td>
+<td>xsd:integer</td>
+<td>0:1</td>
+<td>Pente en degrés (dans le sens direct, from/to, du cheminement)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>TiltAngle</td>
+<td>xsd:integer</td>
+<td>0:1</td>
+<td>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>TiltType</td>
+<td>TiltTypeEnum</td>
+<td>0:1</td>
+<td><p>Valeur codée du dévers</p>
+<ul>
+<li><p><em>strongLeftTilt (dévers fort à gauche)</em></p></li>
+<li><p><em>mediumLeftTilt (dévers moyen à gauche)</em></p></li>
+<li><p><em>nearlyFlat (preque plat)</em></p></li>
+<li><p><em>mediumRightTilt (dévers moyen à droite)</em></p></li>
+<li><p><em>strongRightTilt (dévers fort à droite)</em></p></li>
+</ul></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2041,17 +2069,10 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>tunnel (tunnel)</em></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td><em>MinimumWidth</em></td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Largeur du cheminement</td>
-</tr>
 <tr class="even">
 <td></td>
-<td><em>FlooringType</em></td>
-<td><em>FlooringTypeEnum</em></td>
+<td>FlooringType</td>
+<td>FlooringTypeEnum</td>
 <td>0:1</td>
 <td><p>Type de surface au sol</p>
 <ul>
@@ -2108,34 +2129,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em>BorderTypeEnum</em></td>
 <td>0:1</td>
 <td>Type de bordure sur le côté droit (dans le sens direct, from/to, du cheminement)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>TiltAngle</em></td>
-<td><em>xsd:integer</em></td>
-<td>0:1</td>
-<td>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>TiltType</em></td>
-<td><em>TiltTypeEnum</em></td>
-<td>0:1</td>
-<td><p>Valeur codée du dévers</p>
-<ul>
-<li><p><em>strongLeftTilt (dévers fort à gauche)</em></p></li>
-<li><p><em>mediumLeftTilt (dévers moyen à gauche)</em></p></li>
-<li><p><em>nearlyFlat(preque plat)</em></p></li>
-<li><p><em>mediumRightTilt (dévers moyen à droite)</em></p></li>
-<li><p><em>strongRightTilt (dévers fort à droite)</em></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Gradient</em></td>
-<td><em>xsd:integer</em></td>
-<td>0:1</td>
-<td>Pente en degrés (dans le sens direct, from/to, du cheminement)</td>
 </tr>
 <tr class="even">
 <td></td>
