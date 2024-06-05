@@ -3552,7 +3552,7 @@ passagers)* *–* Element
 <td>Identifiant du STAIRCASE.</td>
 </tr>
 <tr class="even">
-<td rowspan="8">StairGroup</td>
+<td rowspan="7">StairGroup</td>
 <td>Depth</td>
 <td>LengthType</td>
 <td>0:1</td>
@@ -3602,31 +3602,32 @@ passagers)* *–* Element
 <td>Hauteur d’une éventuelle seconde main courante abaissée</td>
 </tr>
 <tr class="odd">
-<td>WithoutRiser</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale des marches ouvertes (pas de contremarches)</td>
-</tr>
-<tr class="even">
 <td>«cntd»</td>
 <td>TopEnd</td>
 <td>StairEnd</td>
 <td>0:1</td>
 <td>Caractérisation de l’extrémité haute de l’escalier</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>«cntd»</td>
 <td>BottomEnd</td>
 <td>StairEnd</td>
 <td>0:1</td>
 <td>Caractérisation de l’extrémité basse de l’escalier</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>Continuous­Handrail</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Indique si la main courante est continue et sans rupture sur toute la longueur de l’escalier, y compris entre les volées de marches</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>WithoutRiser</td>
+<td>xsd:boolean</td>
+<td>0:1</td>
+<td>Signale des marches ouvertes (pas de contremarches)</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3658,7 +3659,7 @@ passagers)* *–* Element
 | ------------------- | ------------------- | ----------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                     | Continuing­Handrail | xsd:boolean | 0:1              | Indique si la main courante de l'escalier se prolonge au-delà des marches. <br> <span class="hl">La prolongation doit être au moins égale à la largeur d'une marche.</span>                                                                                                            |
 |                     | TexturedSurface     | xsd:boolean | 0:1              | Signale une surface au sol texturée. <br> <span class="hl">On indiquera ainsi la présence d'une bande d'éveil à la vigilance (BEV).</span>                                                                                                                                             |
-|                     | VisualContrast      | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur  <br> <span class="hl">On indiquera ainsi par exemple la présence de contremarches d'une couleur différente du reste de l'escalier pour la première et la dernière marche.</span> |
+|                     | VisualContrast      | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur.  <br> <span class="hl">On indiquera ainsi par exemple la présence de contremarches d'une couleur différente du reste de l'escalier pour la première et la dernière marche.</span> |
 
 <div class="table-title">StairFlight (volées de marche d’escalier) – Élément</div>
 
