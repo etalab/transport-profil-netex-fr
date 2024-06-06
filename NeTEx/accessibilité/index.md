@@ -3654,17 +3654,16 @@ passagers)* *–* Element
 | «PK»                | id                  | StairFlightIdType | 1:1              | Identifiant du STAIR FLIGHT.                                            |
 |                     | Continuing­Handrail | xsd:boolean       | 0:1              | Signale une main courante continue avec la volées de marches précédente |
 
-<div class="table-title">EscalatorEquipment (escalator) – Element</div>
+<div class="table-title">EscalatorEquipment (escalator) – Élément</div>
 
-|                     |                            |                  |                  |                                                                                                                             |
-|---------------------|----------------------------|------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**                   | **Type**         | **Cardin­ality** | **Description**                                                                                                             |
-| *::>*               | *::>*                      | *StairEquipment* | *::>*            | ESCALATOR hérite de STAIR EQUIPMENT                                                                                         |
-| «PK»                | id                         | EscalatorIdtype  | 1:1              | Identifiant du ESCALATOR.                                                                                                   |
-|                     | TactileActuators           | xsd:boolean      | 0:1              | Signale une mise en marche par détecteur (tactile ou autre)                                                                 |
-|                     | EnergySaving               | xsd:boolean      | 0:1              | Signale un escalator à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé)                              |
-|                     | ***DogsMustBeCarried***    | xsd:boolean      | 0:1              | Signale si les chiens doivent être pris dans les bras (ou transporté d’une autre manière) pour pouvoir franchir l’escalator |
-|                     | ***EscalatorWithLanding*** | xsd:boolean      | 0:1              | Signale un escalator avec une zone plate au début ou à la fin                                                               |
+| **Classifi­cation** | **Name**             | **Type**         | **Cardin­alité** | **Description**                                                                                                              |
+| ------------------- | -------------------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| *::>*               | *::>*                | *StairEquipment* | *::>*            | ESCALATOR hérite de STAIR EQUIPMENT                                                                                          |
+| «PK»                | id                   | EscalatorIdtype  | 1:1              | Identifiant de l'ESCALATOR.                                                                                                  |
+|                     | TactileActuators     | xsd:boolean      | 0:1              | Signale une mise en marche par détecteur (tactile ou autre)                                                                  |
+|                     | EnergySaving         | xsd:boolean      | 0:1              | Signale un escalator à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé)                               |
+|                     | DogsMustBeCarried    | xsd:boolean      | 0:1              | Signale si les chiens doivent être pris dans les bras (ou transportés d’une autre manière) pour pouvoir franchir l’escalator |
+|                     | EscalatorWithLanding | xsd:boolean      | 0:1              | Signale un escalator avec une zone plate au début ou à la fin                                                                |
 
 <div class="table-title">TravelatorEquipment(tapis roulant) – Element</div>
 
