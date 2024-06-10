@@ -325,8 +325,7 @@ Personne à Mobilité Réduite
 # Exigences minimum liées à la LOM et la règlementation Européenne
 
 La LOI n° 2019-1428 du 24 décembre 2019 d'orientation des mobilités
-(LOM :
-<https://www.legifrance.gouv.fr/dossierlegislatif/JORFDOLE000037646678>)
+(LOM : <https://www.legifrance.gouv.fr/loda/id/JORFTEXT000039666574>)
 et, au niveau Européen, le Règlement Délégué (UE) 2017/1926 de La
 Commission du 31 mai 2017 et (EU) 2015/962 et 18 décembre 2014
 (complétant la directive 2010/40/UE du Parlement européen et du Conseil
