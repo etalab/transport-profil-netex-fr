@@ -832,13 +832,13 @@ technique\]** sera « **NAP** ».</span>
 
 <div class='table-title'>Parking – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1237,13 +1237,13 @@ utilisera ici l’inclusion XML et non les références.</mark></p></td>
 
 <div class='table-title'>PaymentByMobile – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1285,12 +1285,16 @@ page fournissant l’ensemble de liens de téléchargement.</p></td>
 
 <div class='table-title'>TypeOfPaymentMethod – Element</div>
 
-| **Classification** | **Name**            | **Type**                    | **Cardinality** | **Description**                                                                                       |
-|--------------------|---------------------|-----------------------------|-----------------|-------------------------------------------------------------------------------------------------------|
-| ::\>               | ::\>                | *<u>TypeOfValue</u>*        | ::\>            | TYPE OF PAYMENT METHOD hérite de TYPE OF VALUE (voir Profil Éléments Communs).                        |
-| « PK »             | ***id***            | *TypeOfPayment­MethodIdType* | 1:1             | Identifiant du TYPE OF PAYMENT METHOD.                                                                |
-| « enum »           | ***PaymentMethod*** | *PaymentMethodEnum*         | 0:1             | Type de méthode de paiement prédéfinie que l’on peut associée à ce TYPE OF PAYMENT METHOD spécifique. |
-|                    | ***AutomatedUse***  | xsd:boolean                 | 0:1             | Indique si le paiement peut être automatisé (débit direct, etc.).                                     |
+<div class='attributes'>
+
+| **Class.** | **Name**            | **Type**                     | **Card.** | **Description**                                                                                       |
+|------------|---------------------|------------------------------|-----------|-------------------------------------------------------------------------------------------------------|
+| ::\>       | ::\>                | *<u>TypeOfValue</u>*         | ::\>      | TYPE OF PAYMENT METHOD hérite de TYPE OF VALUE (voir Profil Éléments Communs).                        |
+| « PK »     | ***id***            | *TypeOfPayment­MethodIdType* | 1:1       | Identifiant du TYPE OF PAYMENT METHOD.                                                                |
+| « enum »   | ***PaymentMethod*** | *PaymentMethodEnum*          | 0:1       | Type de méthode de paiement prédéfinie que l’on peut associée à ce TYPE OF PAYMENT METHOD spécifique. |
+|            | ***AutomatedUse***  | xsd:boolean                  | 0:1       | Indique si le paiement peut être automatisé (débit direct, etc.).                                     |
+
+</div>
 
 #### Exemple
 
@@ -1338,13 +1342,13 @@ page fournissant l’ensemble de liens de téléchargement.</p></td>
 
 <div class='table-title'>ParkingArea – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1415,13 +1419,13 @@ PMR.</mark></p></td>
 
 <div class='table-title'>ParkingComponent – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1490,13 +1494,13 @@ La ***ParkingBay*** correspond à l’emplacement pour garer un véhicule.
 
 <div class='table-title'>ParkingBay – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1569,13 +1573,13 @@ ses constituants, à l’exception des caractéristiques de capacité.
 
 <div class='table-title'>ParkingProperties – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1756,13 +1760,13 @@ et de ses constituants.
 
 <div class='table-title'>ParkingCapacity – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1778,28 +1782,28 @@ et de ses constituants.
 <td>« PK »</td>
 <td><em><strong>id</strong></em></td>
 <td><em>ParkingCapacityIdType</em></td>
-<td>1 :1</td>
+<td>1:1</td>
 <td>Identifiant du PARKING CAPACITY.</td>
 </tr>
 <tr class="odd">
 <td>« enum »</td>
 <td><em><strong>ParkingUser­Type</strong></em></td>
 <td><em>ParkingUserEnum</em></td>
-<td>0 :1</td>
+<td>0:1</td>
 <td>Type d’utilisateur concerné par cette capacité</td>
 </tr>
 <tr class="even">
 <td>« enum »</td>
 <td><em><strong>ParkingVehicle­Type</strong></em></td>
 <td><em>ParkingVehicleEnum</em></td>
-<td>0 :1</td>
+<td>0:1</td>
 <td>Type de véhicule concerné par cette capacité</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><em><strong>TransportTypeRef</strong></em></td>
 <td><em>TransportTypeRef</em></td>
-<td>0 :1</td>
+<td>0:1</td>
 <td>Type de véhicule en complément du champ précédent (valeur libre non
 précodée <mark>uniquement pour les type non proposés par
 <em><strong>ParkingVehicleTypes</strong></em></mark>)<br />
@@ -1811,7 +1815,7 @@ GPL, voir A.3-</mark>Véhicules<mark>)</mark></td>
 <td>« enum »</td>
 <td><em><strong>ParkingStayType</strong></em></td>
 <td><em>ParkingStayEnum</em></td>
-<td>0 :1</td>
+<td>0:1</td>
 <td><p>Durée de stationnement pour ce PARKING CAPACITY.</p>
 <blockquote>
 <p><em>shortStay (courte durée)</em></p>
@@ -1827,14 +1831,14 @@ GPL, voir A.3-</mark>Véhicules<mark>)</mark></td>
 <td></td>
 <td><em><strong>NumberOfSpaces</strong></em></td>
 <td><em>NumberOfVehicles</em></td>
-<td>0 :1</td>
+<td>0:1</td>
 <td>Nombre total de places de parking.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>NumberOfSpacesWithRecharge­Point</strong></em></td>
+<td><em><strong>NumberOfSpacesWithRechargePoint</strong></em></td>
 <td><em>NumberOfVehicles</em></td>
-<td>0 :1</td>
+<td>0:1</td>
 <td>Dont, nombre de places de parking équipé en bornes de recharge.</td>
 </tr>
 </tbody>
@@ -1862,13 +1866,13 @@ PARKING depuis la voirie.
 
 <div class='table-title'>ParkingEntranceForVehicle – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -1919,13 +1923,13 @@ pour les piétons (incluant les accès type fauteils roulant, etc.).
 
 <div class='table-title'>ParkingPassengerEntrance – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2036,13 +2040,13 @@ l’utilisation d’un PARKING ou d’une PARKING AREA.
 
 <div class='table-title'>ParkingTariff – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardin­ality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2162,13 +2166,13 @@ ou d’une PARKING AREA pour une période donnée.
 
 <div class='table-title'>ParkingChargeBand – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardin­ality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2344,21 +2348,29 @@ Parking) et décrite de façon détaillée dans le profil accessibilité.
 
 <div class='table-title'>RefuellingEquipment – Element</div>
 
-| **Classification** | **Name**                  | **Type**                    | **Cardin­ality** | **Description**                                     |
-|--------------------|---------------------------|-----------------------------|-----------------|-----------------------------------------------------|
-| ::\>               | ::\>                      | *PlaceEquipment*            | ::\>            | REFUELLING EQUIPMENT hérite de PLACE EQUIPMENT      |
-| « PK »             | ***Id***                  | *RefuellingEquipmentIdType* | 1:1             | Identifiant du REFUELLING G EQUIPMENT.              |
-|                    | ***TypeOfFuelAvailable*** | *FuelTypeEnum*              | 1:1             | Type de carburant disponible (inclus l’électrique). |
+<div class='attributes'>
+
+| **Class.** | **Name**                  | **Type**                    | **Card.** | **Description**                                     |
+|------------|---------------------------|-----------------------------|-----------|-----------------------------------------------------|
+| ::\>       | ::\>                      | *PlaceEquipment*            | ::\>      | REFUELLING EQUIPMENT hérite de PLACE EQUIPMENT      |
+| « PK »     | ***Id***                  | *RefuellingEquipmentIdType* | 1:1       | Identifiant du REFUELLING G EQUIPMENT.              |
+|            | ***TypeOfFuelAvailable*** | *FuelTypeEnum*              | 1:1       | Type de carburant disponible (inclus l’électrique). |
+
+</div>
 
 <div class='table-title'>VehicleChargingEquipment – Element</div>
 
-| **Classification** | **Name**             | **Type**                     | **Cardin­ality** | **Description**                                      |
-|--------------------|----------------------|------------------------------|-----------------|------------------------------------------------------|
-| ::\>               | ::\>                 | *PlaceEquipment*             | ::\>            | VEHICLE CHARGING EQUIPMENT hérite de PLACE EQUIPMENT |
-| « PK »             | ***id***             | *VehicleChargingEquipmentId* | 1:1             | Identifiant du VEHICLE CHARGING EQUIPMENT.           |
-|                    | ***FreeRecharging*** | *xsd:boolean*                | 0:1             | Indique si la recharge est gratuite.                 |
-|                    | ***Reservation***    | *xsd:boolean*                | 0:1             | Indique si une réservation est nécessaire.           |
-|                    | ***ReservationUrl*** | *xsd:anyURI*                 | 0:1             | URL de réservation.                                  |
+<div class='attributes'>
+
+| **Class.** | **Name**             | **Type**                     | **Card.** | **Description**                                      |
+|------------|----------------------|------------------------------|-----------|------------------------------------------------------|
+| ::\>       | ::\>                 | *PlaceEquipment*             | ::\>      | VEHICLE CHARGING EQUIPMENT hérite de PLACE EQUIPMENT |
+| « PK »     | ***id***             | *VehicleChargingEquipmentId* | 1:1       | Identifiant du VEHICLE CHARGING EQUIPMENT.           |
+|            | ***FreeRecharging*** | *xsd:boolean*                | 0:1       | Indique si la recharge est gratuite.                 |
+|            | ***Reservation***    | *xsd:boolean*                | 0:1       | Indique si une réservation est nécessaire.           |
+|            | ***ReservationUrl*** | *xsd:anyURI*                 | 0:1       | URL de réservation.                                  |
+
+</div>
 
 <span class="mark">Note : si l’on souhaite décrire les équipements de
 recharge de de façon détaillée (types de prise, puissance, voltage,
@@ -2379,13 +2391,13 @@ dans les éléments ***members*** du ***GeneralFrame***.
 
 <div class='table-title'>TypeOfFrame – Element (objet inclus)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2421,15 +2433,15 @@ PARKING AREAs, VEHICLE ENTRANCEs, etc.)</mark></li>
 </tbody>
 </table>
 
-<div class='table-title'>TypeOfValue (pour le TypeOfFrame NETEX\_PARKING) – Element</div>
+<div class='table-title'>TypeOfValue (pour le TypeOfFrame NETEX_PARKING) – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 <th></th>
 </tr>
@@ -2547,13 +2559,13 @@ objets PLACE et SITE et possèdent donc des caractéristiques communes).
 
 <div class='table-title'>Place – Element (abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2619,25 +2631,29 @@ du parking pouvant se faire par le <strong>ParkingType</strong> du
 
 <div class='table-title'>AddressablePlace – Element (abstrait)</div>
 
-| **Classification** | **Nom**             | **Type**              |        | **Description**                    |
-|--------------------|---------------------|-----------------------|--------|------------------------------------|
-| *::\>*             | *::\>*              | *ADDRESSABLE* *PLACE* | *::\>* | ADDRESSABLE PLACE hérite de PLACE. |
-|                    | ***Url***           | *xsd:anyURI*          | 0:1    | Url d'information associée au lieu |
-|                    | ***Image***         | *xsd:anyURI*          | 0:1    | Image et photo du lieu (en ligne)  |
-|                    | ***PostalAddress*** | *PostalAddress*       | 0:1    | Adresse postale                    |
-|                    | ***RoadAddress***   | *RoadAddress*         | 0:1    | Adresse sur voirie                 |
+<div class='attributes'>
+
+| **Class.** | **Nom**             | **Type**              | **Card.** | **Description**                    |
+|------------|---------------------|-----------------------|-----------|------------------------------------|
+| *::\>*     | *::\>*              | *ADDRESSABLE* *PLACE* | *::\>*    | ADDRESSABLE PLACE hérite de PLACE. |
+|            | ***Url***           | *xsd:anyURI*          | 0:1       | Url d'information associée au lieu |
+|            | ***Image***         | *xsd:anyURI*          | 0:1       | Image et photo du lieu (en ligne)  |
+|            | ***PostalAddress*** | *PostalAddress*       | 0:1       | Adresse postale                    |
+|            | ***RoadAddress***   | *RoadAddress*         | 0:1       | Adresse sur voirie                 |
+
+</div>
 
 ### Attributs du SiteElement
 
 <div class='table-title'>SiteElement – Element (abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2720,13 +2736,13 @@ D'EMBARQUEMENT ou de l'ACCÈS</mark> (par exemple "en face du café XXX",
 
 <div class='table-title'>SiteElementPropertiesGroup – Group (objet inclus)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2793,13 +2809,13 @@ uniquement</li>
 
 <div class='table-title'>Site – Element (abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2900,13 +2916,13 @@ D'ARRÊT</mark></p></td>
 
 <div class='table-title'>SiteComponent – Element (abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -2953,13 +2969,13 @@ etc.</td>
 
 <div class='table-title'>Entrance – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3048,13 +3064,13 @@ marche)</td>
 
 <div class='table-title'>TopographicPlace – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3190,13 +3206,13 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 
 <div class='table-title'>TopographicPlaceDescriptor – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3239,37 +3255,45 @@ orientée vers le transport en commun).
 
 <div class='table-title'>SimpleVehicleType – Element</div>
 
-| **Classification** | **Name**              | **Type**                  | **Cardinality** | **Description**                                                    |
-|--------------------|-----------------------|---------------------------|-----------------|--------------------------------------------------------------------|
-| ::\>               | *::\>*                | *<u>TransportType</u>*    | ::\>            | SimpleVehicleType inherits from **TransportType**                  |
-| « PK »             | ***id***              | *SimpleVehicleTypeIdType* | 1:1             | Identifier of SIMPLE VEHICLE TYPE.                                 |
-| « enum »           | ***RequiresLicence*** | *LicenceRequirementsEnum* | 0:1             | Whether the means of transport requires a licence to use.          |
-|                    | ***MinimumAge***      | *xsd:integer*             | 0:1             | Minimum age required to use vehicle.                               |
-| « enum »           | ***VehicleCategory*** | *VehicleCategoryEnum*     | 0:1             | Category of vehicle.                                               |
-|                    | ***Portable***        | *xsd:boolean*             | 0:1             | Whether the vehicle is portable, e.g., a fold up biker or scooter. |
+<div class='attributes'>
+
+| **Class.** | **Name**              | **Type**                  | **Card.** | **Description**                                                    |
+|------------|-----------------------|---------------------------|-----------|--------------------------------------------------------------------|
+| ::\>       | *::\>*                | *<u>TransportType</u>*    | ::\>      | SimpleVehicleType inherits from **TransportType**                  |
+| « PK »     | ***id***              | *SimpleVehicleTypeIdType* | 1:1       | Identifier of SIMPLE VEHICLE TYPE.                                 |
+| « enum »   | ***RequiresLicence*** | *LicenceRequirementsEnum* | 0:1       | Whether the means of transport requires a licence to use.          |
+|            | ***MinimumAge***      | *xsd:integer*             | 0:1       | Minimum age required to use vehicle.                               |
+| « enum »   | ***VehicleCategory*** | *VehicleCategoryEnum*     | 0:1       | Category of vehicle.                                               |
+|            | ***Portable***        | *xsd:boolean*             | 0:1       | Whether the vehicle is portable, e.g., a fold up biker or scooter. |
+
+</div>
 
 <div class='table-title'>TransportType – Element</div>
 
-| **Classification** | **Name**                           | **Type**                   | **Cardinality** | **Description**                                                                                                                           |
-|--------------------|------------------------------------|----------------------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| ::\>               | ::\>                               | *<u>DataManagedObject</u>* | ::\>            | TRANSPORT TYPE inherits from DATA MANAGED OBJECT.                                                                                         |
-| « PK »             | ***id***                           | *TransportTypeIdType*      | 1:1             | Identifier of TRANSPORT TYPE.                                                                                                             |
-|                    | ***Name***                         | *MultilingualString*       | 0:1             | Nom du TYPE DE VEHICULE.                                                                                                                  |
-|                    | ***Description***                  | *MultilingualString*       | 0:1             | Description of TRANSPORT TYPE.                                                                                                            |
-| XGRP               | ***TransportType­PropertiesGroup*** | ***<u>xmlGroup</u>***      | 0:1             | Elements describing the properties of a VEHICLE TYPE. See below.                                                                          |
-| « enum »           | ***TransportMode***                | *AllVehicleModesEnum*      | 0:1             | Mode of transport – see allowed values for MODE.                                                                                          |
-|                    | ***EuroClass***                    | *xsd:normalizedString*     | 0:1             | Euroclasse du TYPE DE VEHICULE (normes européennes d'émission: <http://fr.wikipedia.org/wiki/Normes_europ%C3%A9ennes_d%27%C3%A9mission>). |
-| « cntd »           | ***Passenger­Capacity***            | *<u>PassengerCapacity</u>* | 0:1             | Total passenger carrying capacity of VEHICLE TYPE.                                                                                        |
+<div class='attributes'>
+
+| **Class.** | **Name**                            | **Type**                   | **Card.** | **Description**                                                                                                                           |
+|------------|-------------------------------------|----------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| ::\>       | ::\>                                | *<u>DataManagedObject</u>* | ::\>      | TRANSPORT TYPE inherits from DATA MANAGED OBJECT.                                                                                         |
+| « PK »     | ***id***                            | *TransportTypeIdType*      | 1:1       | Identifier of TRANSPORT TYPE.                                                                                                             |
+|            | ***Name***                          | *MultilingualString*       | 0:1       | Nom du TYPE DE VEHICULE.                                                                                                                  |
+|            | ***Description***                   | *MultilingualString*       | 0:1       | Description of TRANSPORT TYPE.                                                                                                            |
+| XGRP       | ***TransportType­PropertiesGroup*** | ***<u>xmlGroup</u>***      | 0:1       | Elements describing the properties of a VEHICLE TYPE. See below.                                                                          |
+| « enum »   | ***TransportMode***                 | *AllVehicleModesEnum*      | 0:1       | Mode of transport – see allowed values for MODE.                                                                                          |
+|            | ***EuroClass***                     | *xsd:normalizedString*     | 0:1       | Euroclasse du TYPE DE VEHICULE (normes européennes d'émission: <http://fr.wikipedia.org/wiki/Normes_europ%C3%A9ennes_d%27%C3%A9mission>). |
+| « cntd »   | ***Passenger­Capacity***            | *<u>PassengerCapacity</u>* | 0:1       | Total passenger carrying capacity of VEHICLE TYPE.                                                                                        |
+
+</div>
 
 <div class='table-title'>TransportTypePropertiesGroup – Group</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3337,20 +3361,24 @@ motrice ou un véhicule tracteur.</td>
 
 <div class='table-title'>Address – Element (objet inclus)</div>
 
-| **Classification** | **Nom**           | **Type**             |     | **Description**                         |
-|--------------------|-------------------|----------------------|-----|-----------------------------------------|
-| « FK »             | ***CountryRef***  | *CountryEnum*        | 0:1 | Code ISO 3166 du pays (deux caractères) |
-|                    | ***CountryName*** | *MultilingualString* | 0:1 | Nom du pays                             |
+<div class='attributes'>
+
+| **Class.** | **Nom**           | **Type**             | **Card.** | **Description**                         |
+|------------|-------------------|----------------------|-----------|-----------------------------------------|
+| « FK »     | ***CountryRef***  | *CountryEnum*        | 0:1       | Code ISO 3166 du pays (deux caractères) |
+|            | ***CountryName*** | *MultilingualString* | 0:1       | Nom du pays                             |
+
+</div>
 
 <div class='table-title'>PostalAddress – Element (objet inclus)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3431,13 +3459,13 @@ Parking</mark></strong></p></td>
 
 <div class='table-title'>RoadAddress – Element (objet inclus)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3512,13 +3540,13 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 
 <div class='table-title'>GroupOfEntities – Element (Abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3621,13 +3649,13 @@ D'ARRÊT)</mark></strong></li>
 
 <div class='table-title'>Point – Element (Abstrait)</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinalité</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3692,13 +3720,13 @@ jeu de données OSM, NavTeQ Here, etc.</mark></p></td>
 
 <div class='table-title'>Location – Element (abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3768,13 +3796,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 
 <div class='table-title'>Zone – Element (Abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3845,13 +3873,13 @@ informations de responsabilité (et rôles associés) à une
 
 <div class='table-title'>DataManagedObject – Element (Abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3920,13 +3948,13 @@ etc.).</td>
 
 <div class='table-title'>Entity – Element (Abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -3960,13 +3988,13 @@ nécessaires que pour les objets racines).</mark></strong></p></td>
 
 <div class='table-title'>EntityInVersion – Element (Abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4077,13 +4105,13 @@ mais avec un numero de version différent.</p></td>
 
 <div class='table-title'>KeyList – Element (Abstrait)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4119,13 +4147,13 @@ toutefois générer d'erreur).</mark></p></td>
 
 <div class='table-title'>ValidityCondition – Element (objet inclus)</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinalité</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4184,13 +4212,13 @@ etc.)
 
 <div class='table-title'>AvailabilityCondition – Element (objet inclus)</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinalité</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4267,13 +4295,13 @@ VALIDITÉ.</mark></p></td>
 
 <div class='table-title'>ValidityTrigger – Element (objet inclus)</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinalité</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4305,13 +4333,13 @@ Situation Exchange.</mark></p></td>
 
 <div class='table-title'>ValidBetween – Element (objet inclus)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4341,20 +4369,24 @@ s’il n’est pas rempli, la validété débute au
 
 <div class='table-title'>ResponsibilitySet – Element</div>
 
-| **Classification** | **Name**    | **Type**                       | **Cardin­ality** | **Description**                                                |
-|--------------------|-------------|--------------------------------|-----------------|----------------------------------------------------------------|
-| ::\>               | ::\>        | *DataManagedObject*            | ::\>            | RESPONSIBILITY SET hérite de DATA MANAGED OBJECT.              |
-| « cntd »           | ***roles*** | *ResponsibilityRoleAssignment* | 1:\*            | AFFECTATIONs de ROLE constituant l'ENSEMBLE DE RESPONSABILITÉ. |
+<div class='attributes'>
+
+| **Class.** | **Name**    | **Type**                       | **Card.** | **Description**                                                |
+|------------|-------------|--------------------------------|-----------|----------------------------------------------------------------|
+| ::\>       | ::\>        | *DataManagedObject*            | ::\>      | RESPONSIBILITY SET hérite de DATA MANAGED OBJECT.              |
+| « cntd »   | ***roles*** | *ResponsibilityRoleAssignment* | 1:\*      | AFFECTATIONs de ROLE constituant l'ENSEMBLE DE RESPONSABILITÉ. |
+
+</div>
 
 <div class='table-title'>ResponsibilityRoleAssignment – Element (objet inclus)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4441,13 +4473,13 @@ contrat quand cela est nécessaire.</mark></p></td>
 
 <div class='table-title'>Notice – Element</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinalité</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4531,10 +4563,10 @@ une NOTICE déjà défini dans un NOTICE ASSIGNMENT antérieur.</span>
 <table>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th colspan="2"><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4632,13 +4664,13 @@ d'accessibilité classiquement rencontrés.
 
 <div class='table-title'>AccessibilityAssessment – Element (objet inclus)</div>
 
-<table>
+<table class="attributes">
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinalité</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4697,14 +4729,18 @@ recommandé (pour des raisons de cohérence) que sa valeur soit:
 
 <div class='table-title'>AccessibilityLimitation – Element (objet inclus)</div>
 
-| **Classification** | **Nom**                     | **Type**               |     | **Description**                                                                                                                                 |
-|--------------------|-----------------------------|------------------------|-----|-------------------------------------------------------------------------------------------------------------------------------------------------|
-|                    | ***WheelchairAccess***      | *LimitationStatusEnum* | 1:1 | Indique si l'accès est possible sans fauteuil roulant (codification: ***true***/***false***/***unknow***/***partial***).                        |
-|                    | ***StepFreeAccess***        | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans franchissement de marche ou d'escalier (codification: ***true***/***false***/ ***unknow***/***partial***). |
-|                    | ***EscalatorFreeAccess***   | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans utiliser d'escalator (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
-|                    | ***LiftFreeAccess***        | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans utiliser d'ascenseur (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
-|                    | ***AudibleSignsAvailable*** | *LimitationStatusEnum* | 0:1 | Indique si une signalétique auditive est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
-|                    | ***VisualSignsAvailable***  | *LimitationStatusEnum* | 0:1 | Indique si une signalétique visuelle est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
+<div class='attributes'>
+
+| **Class.** | **Nom**                     | **Type**               | **Card.** | **Description**                                                                                                                                 |
+|------------|-----------------------------|------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+|            | ***WheelchairAccess***      | *LimitationStatusEnum* | 1:1       | Indique si l'accès est possible sans fauteuil roulant (codification: ***true***/***false***/***unknow***/***partial***).                        |
+|            | ***StepFreeAccess***        | *LimitationStatusEnum* | 0:1       | Indique si l'accès est possible sans franchissement de marche ou d'escalier (codification: ***true***/***false***/ ***unknow***/***partial***). |
+|            | ***EscalatorFreeAccess***   | *LimitationStatusEnum* | 0:1       | Indique si l'accès est possible sans utiliser d'escalator (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
+|            | ***LiftFreeAccess***        | *LimitationStatusEnum* | 0:1       | Indique si l'accès est possible sans utiliser d'ascenseur (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
+|            | ***AudibleSignsAvailable*** | *LimitationStatusEnum* | 0:1       | Indique si une signalétique auditive est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
+|            | ***VisualSignsAvailable***  | *LimitationStatusEnum* | 0:1       | Indique si une signalétique visuelle est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
+
+</div>
 
 <span class="mark">Chaque fois que pour ***LimitationStatus*** la valeur
 "partial" est utilisée, une "***ValidityCondition-\> Description***"
@@ -4718,13 +4754,13 @@ conséquence pour expliquer pourquoi l'accessibilité n'est que partielle
 
 <div class='table-title'>AlternativeName – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4825,13 +4861,13 @@ utilisé comme balise incluse (et non comme élément racine).</span>
 
 <div class='table-title'>AlternativeText – XML Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -4879,13 +4915,17 @@ par exemple).
 
 <div class='table-title'>TypeOfValue – Element (abstrait)</div>
 
-| **Classification** | **Nom**           | **Type**             |      | **Description**                              |
-|--------------------|-------------------|----------------------|------|----------------------------------------------|
-| ::\>               | ::\>              | *DataManagedObject*  | ::\> | TYPE OF VALUE hérite de DATA MANAGED OBJECT. |
-|                    | ***Name***        | *MultilingualString* | 0:1  | Nom du TYPE DE VALEUR.                       |
-|                    | ***Description*** | *MultilingualString* | 0:1  | Description du TYPE OF VALUE.                |
-|                    | ***Image***       | *anyURI*             | 0:1  | Image associée au TYPE OF VALUE.             |
-|                    | ***Url***         | *anyURI*             | 0:1  | URL associée au TYPE OF VALUE.               |
+<div class='attributes'>
+
+| **Class.** | **Nom**           | **Type**             | **Card.** | **Description**                              |
+|------------|-------------------|----------------------|-----------|----------------------------------------------|
+| ::\>       | ::\>              | *DataManagedObject*  | ::\>      | TYPE OF VALUE hérite de DATA MANAGED OBJECT. |
+|            | ***Name***        | *MultilingualString* | 0:1       | Nom du TYPE DE VALEUR.                       |
+|            | ***Description*** | *MultilingualString* | 0:1       | Description du TYPE OF VALUE.                |
+|            | ***Image***       | *anyURI*             | 0:1       | Image associée au TYPE OF VALUE.             |
+|            | ***Url***         | *anyURI*             | 0:1       | URL associée au TYPE OF VALUE.               |
+
+</div>
 
 ### Presentation
 
@@ -4895,18 +4935,22 @@ etc.).
 
 <div class='table-title'>Presentation – Type (objet inclus)</div>
 
-| **Classification** | **Name**                   | **Type**               | **Cardin­ality** | **Description**                                                                                                                                                                                                                                                       |
-|--------------------|----------------------------|------------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                    | ***Colour***               | *ColourValue*          | 0:1             | Couleur <span class="mark">(format RVB)</span>                                                                                                                                                                                                                        |
-|                    | ***ColourName***           | *xsd:normalizedString* | 0:1             | Nom de la couleur                                                                                                                                                                                                                                                     |
-|                    | ***BackGroundColour***     | *ColourValueType*      | 0:1             | Valeur RVB de la couleur de fond (par exemple la couleur de la ligne de transport)                                                                                                                                                                                    |
-|                    | ***BackgroundColour­Name*** | *xsd:String*           | 0:1             | Nom de la couleur de fond dans le *ColourSystem*.                                                                                                                                                                                                                     |
-|                    | ***TextColour***           | *ColourValue*          | 0:1             | Couleur du texte <span class="mark">(format RVB)</span>                                                                                                                                                                                                               |
-|                    | ***TextColourName***       | *xsd:normalizedString* | 0:1             | Nom de la couleur du texte                                                                                                                                                                                                                                            |
-|                    | ***TextFont***             | *xsd:normalizedString* | 0:1             | Identifiant de la police de caractère                                                                                                                                                                                                                                 |
-|                    | ***TextFontName***         | *xsd:normalizedString* | 0:1             | Nom de la police de caractère                                                                                                                                                                                                                                         |
-|                    | ***InfoLink***             | *InfoLink*             | 0:1             | URL d'un élément graphique de représentation (généralement une icône).                                                                                                                                                                                                |
-|                    | ***ColourSystem***         | *xsd:String*           | 0:1             | Nom du système de couleur utilisé pour le nommage: par exemple RAL, https://en.wikipedia.org/wiki/RAL_colour_standard, DIN 6164 http://www.dtpstudio.de/atlas/farbsysteme/DIN%206164_bs00_3.htm, Pantone (attention Pantone est une classification commerciale), etc. |
+<div class='attributes'>
+
+| **Class.** | **Name**                    | **Type**               | **Card.** | **Description**                                                                                                                                                                                                                                                       |
+|------------|-----------------------------|------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|            | ***Colour***                | *ColourValue*          | 0:1       | Couleur <span class="mark">(format RVB)</span>                                                                                                                                                                                                                        |
+|            | ***ColourName***            | *xsd:normalizedString* | 0:1       | Nom de la couleur                                                                                                                                                                                                                                                     |
+|            | ***BackGroundColour***      | *ColourValueType*      | 0:1       | Valeur RVB de la couleur de fond (par exemple la couleur de la ligne de transport)                                                                                                                                                                                    |
+|            | ***BackgroundColour­Name*** | *xsd:String*           | 0:1       | Nom de la couleur de fond dans le *ColourSystem*.                                                                                                                                                                                                                     |
+|            | ***TextColour***            | *ColourValue*          | 0:1       | Couleur du texte <span class="mark">(format RVB)</span>                                                                                                                                                                                                               |
+|            | ***TextColourName***        | *xsd:normalizedString* | 0:1       | Nom de la couleur du texte                                                                                                                                                                                                                                            |
+|            | ***TextFont***              | *xsd:normalizedString* | 0:1       | Identifiant de la police de caractère                                                                                                                                                                                                                                 |
+|            | ***TextFontName***          | *xsd:normalizedString* | 0:1       | Nom de la police de caractère                                                                                                                                                                                                                                         |
+|            | ***InfoLink***              | *InfoLink*             | 0:1       | URL d'un élément graphique de représentation (généralement une icône).                                                                                                                                                                                                |
+|            | ***ColourSystem***          | *xsd:String*           | 0:1       | Nom du système de couleur utilisé pour le nommage: par exemple RAL, https://en.wikipedia.org/wiki/RAL_colour_standard, DIN 6164 http://www.dtpstudio.de/atlas/farbsysteme/DIN%206164_bs00_3.htm, Pantone (attention Pantone est une classification commerciale), etc. |
+
+</div>
 
 ### Branding
 
@@ -4915,36 +4959,40 @@ marques.
 
 <div class='table-title'>Branding – Element (objet inclus)</div>
 
-| **Classification** | **Nom**            | **Type**                |      | **Description**                                                                |
-|--------------------|--------------------|-------------------------|------|--------------------------------------------------------------------------------|
-| ::\>               | ::\>               | *DataManagedObject*     | ::\> | BRANDING hérite de TYPE OF VALUE.                                              |
-|                    | ***Presentation*** | *PresentationStructure* | 0:1  | Iinformations de graphisme et de style de représentation associés à la marque. |
+<div class='attributes'>
+
+| **Class.** | **Nom**            | **Type**                | **Card.** | **Description**                                                                |
+|------------|--------------------|-------------------------|-----------|--------------------------------------------------------------------------------|
+| ::\>       | ::\>               | *DataManagedObject*     | ::\>      | BRANDING hérite de TYPE OF VALUE.                                              |
+|            | ***Presentation*** | *PresentationStructure* | 0:1       | Iinformations de graphisme et de style de représentation associés à la marque. |
+
+</div>
 
 ### Institutions (exploitants)
 
 <div class='table-title'>Organisation et GeneralOrganisation – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
-<th colspan="2"><strong>Nom</strong></th>
+<th><strong>Class.</strong></th>
+<th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>::&gt;</td>
-<td colspan="2">::&gt;</td>
+<td>::&gt;</td>
 <td><em>DataManagedObject</em></td>
 <td>::&gt;</td>
 <td>ORGANISATION hérite de DATA MANAGED OBJECT.</td>
 </tr>
 <tr class="even">
 <td>« AK »</td>
-<td colspan="2"><em><strong>PublicCode</strong></em></td>
+<td><em><strong>PublicCode</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td>Identifiant (code) public de l'INSTITUTION (exemples: STIF, SNCF,
@@ -4952,7 +5000,7 @@ etc.)</td>
 </tr>
 <tr class="odd">
 <td>« AK »</td>
-<td colspan="2"><em><strong>CompanyNumber</strong></em></td>
+<td><em><strong>CompanyNumber</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td><p>Numéro d'enregistrement de l'institution<span
@@ -4963,28 +5011,28 @@ et propriétaire de parkings.</mark></strong></p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2"><em><strong>Name</strong></em></td>
+<td><em><strong>Name</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td>Nom de l'organisation</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2"><em><strong>ShortName</strong></em></td>
+<td><em><strong>ShortName</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td>0:1</td>
 <td>Nom court de l'ORGANISATION</td>
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2"><em><strong>LegalName</strong></em></td>
+<td><em><strong>LegalName</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td>0:1</td>
 <td>Nom légal de l'ORGANISATION</td>
 </tr>
 <tr class="odd">
 <td>« cntd »</td>
-<td colspan="2"><em><strong>alternativeNames</strong></em></td>
+<td><em><strong>alternativeNames</strong></em></td>
 <td><em><u>AlternativeName</u></em></td>
 <td>0:*</td>
 <td><p>Nom alternative pour l’ORGANISATION.</p>
@@ -4994,21 +5042,21 @@ et propriétaire de parkings.</mark></strong></p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2"><em><strong>Description</strong></em></td>
+<td><em><strong>Description</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td>0:1</td>
 <td>Texte descriptif associé à l'INSTITUTION.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td colspan="2"><em><strong>ContactDetails</strong></em></td>
+<td><em><strong>ContactDetails</strong></em></td>
 <td><em>ContactDetails</em></td>
 <td>0:1</td>
 <td>Contact details for ORGANISATION for public use.</td>
 </tr>
 <tr class="even">
 <td>« FK »</td>
-<td colspan="2"><em><strong>OrganisationType</strong></em></td>
+<td><em><strong>OrganisationType</strong></em></td>
 <td><em>TypeOfOrganisationEnum</em></td>
 <td><p>0:1</p>
 <p><span class="mark-gray">1:1</span></p></td>
@@ -5028,7 +5076,7 @@ public</li>
 </tr>
 <tr class="odd">
 <td>« cntd »</td>
-<td colspan="2"><em><strong>parts</strong></em></td>
+<td><em><strong>parts</strong></em></td>
 <td><em>OrganisationPart</em></td>
 <td>0:*</td>
 <td><p>Ensemble des entités constituant ou faisant partie de
@@ -5041,33 +5089,41 @@ utilisées dans le cadre des profils NeTEx.</span></p></td>
 
 <div class='table-title'>ContactDetails – Element (objet inclus)</div>
 
-| **Classification** | **Nom**              | **Type**               |     | **Description**                      |
-|--------------------|----------------------|------------------------|-----|--------------------------------------|
-|                    | ***ContactPerson***  | *xsd:normalizedString* | 0:1 | Nom de la personne de contact.       |
-|                    | ***Email***          | *EmailAddressType*     | 0:1 | Email de contact au format ISO.      |
-|                    | ***Phone***          | *PhoneNumberType*      | 0:1 | Numéro de téléphone de contact       |
-|                    | ***Fax***            | *PhoneNumberType*      | 0:1 | Numéro de fax                        |
-|                    | ***Url***            | *xsd:anyURI*           | 0:1 | Site web de contact et d'information |
-|                    | ***FurtherDetails*** | *xsd:string*           | 0:1 | Information en texte libre           |
+<div class='attributes'>
+
+| **Class.** | **Nom**              | **Type**               | **Card.** | **Description**                      |
+|------------|----------------------|------------------------|-----------|--------------------------------------|
+|            | ***ContactPerson***  | *xsd:normalizedString* | 0:1       | Nom de la personne de contact.       |
+|            | ***Email***          | *EmailAddressType*     | 0:1       | Email de contact au format ISO.      |
+|            | ***Phone***          | *PhoneNumberType*      | 0:1       | Numéro de téléphone de contact       |
+|            | ***Fax***            | *PhoneNumberType*      | 0:1       | Numéro de fax                        |
+|            | ***Url***            | *xsd:anyURI*           | 0:1       | Site web de contact et d'information |
+|            | ***FurtherDetails*** | *xsd:string*           | 0:1       | Information en texte libre           |
+
+</div>
 
 ### Responsabilités
 
 <div class='table-title'>ResponsibilitySet – Element</div>
 
-| **Classification** | **Name**    | **Type**                       | **Cardin­ality** | **Description**                                                |
-|--------------------|-------------|--------------------------------|-----------------|----------------------------------------------------------------|
-| ::\>               | ::\>        | *DataManagedObject*            | ::\>            | RESPONSIBILITY SET hérite de DATA MANAGED OBJECT.              |
-| « cntd »           | ***roles*** | *ResponsibilityRoleAssignment* | 1:\*            | AFFECTATIONs de ROLE constituant l'ENSEMBLE DE RESPONSABILITÉ. |
+<div class='attributes'>
+
+| **Class.** | **Name**    | **Type**                       | **Card.** | **Description**                                                |
+|------------|-------------|--------------------------------|-----------|----------------------------------------------------------------|
+| ::\>       | ::\>        | *DataManagedObject*            | ::\>      | RESPONSIBILITY SET hérite de DATA MANAGED OBJECT.              |
+| « cntd »   | ***roles*** | *ResponsibilityRoleAssignment* | 1:\*      | AFFECTATIONs de ROLE constituant l'ENSEMBLE DE RESPONSABILITÉ. |
+
+</div>
 
 <div class='table-title'>ResponsibilityRoleAssignment – Element (objet inclus)</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Nom</strong></th>
 <th><strong>Type</strong></th>
-<th></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -5171,13 +5227,13 @@ D'EMBARQUEMENT (QUAY).
 
 <div class='table-title'>SiteConnection – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardin­ality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -5224,10 +5280,10 @@ dans un profil dédié.</mark></p></td>
 <table>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th colspan="2"><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardin­ality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -5283,7 +5339,7 @@ disposera d'un profil pour les POIs.</mark></em></p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2"><em><strong>ParrkingEndGroup</strong></em></td>
+<td colspan="2"><em><strong>ParkingEndGroup</strong></em></td>
 <td><em>ParkingEndGroup</em></td>
 <td>0:1</td>
 <td><p>Eléments pour identifier un PARKING à l’extrémité d’un SITE
@@ -5315,11 +5371,6 @@ le numéro de version réel du POI s’il est connu).
 Précision pour l’accessibilité des places
 
 <table>
-<thead>
-<tr class="header">
-<th colspan="2"></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
 <td>Localisation de la place</td>
@@ -5390,63 +5441,83 @@ FacilitySets
 
 <div class='table-title'>FarePrice – Element</div>
 
-| **Classification** | **Name**                        | **Type**                | **Cardinality** | **Description**                                                                      |
-|--------------------|---------------------------------|-------------------------|-----------------|--------------------------------------------------------------------------------------|
-| ::\>               | ::\>                            | *<u>VersionedChild</u>* | ::\>            | FARE PRICE inherits from VERSIONED CHILD                                             |
-| « PK »             | ***id***                        | *FarePriceIdType*       | 1:1             | Identifier of FARE PRICE.                                                            |
-|                    | ***Name***                      | *MultilingualString*    | 0:1             | Name of PRICE.                                                                       |
-|                    | ***Description***               | *MultilingualString*    | 0:1             | Description of PRICE. +v1.1                                                          |
-|                    | ***PrivateCode***               | *PrivateCode*           | 0:1             | External identifier of PRICE. +v1.1                                                  |
-|                    | ***StartDate***                 | *xsd:date*              | 0:1             | Start date for PRICE validity.                                                       |
-|                    | ***EndDate***                   | *xsd:date*              | 0:1             | End date for PRICE validity.                                                         |
-|                    | ***Amount***                    | *AmountType*            | 0:1             | Price in a specified currency.                                                       |
-|                    | ***Currency***                  | *CurrencyType*          | 0:1             | Currency ISO 4217 code (This in an optimization to allow PRICE UNITs to be omitted). |
-| « FK »             | ***PriceUnitRef***              | *PriceUnitRef*          | 0:1             | Reference to a PRICE UNIT; may be a currency.                                        |
-|                    | ***Units***                     | *xsd:decimal*           | 0:1             | Amount in designated unit.                                                           |
-| « FK »             | ***PricingServiceRef***         | *PricingServiceRef*     | 0:1             | Reference to a PRICE SERVICE which can provide / provided price.                     |
-| XGRP               | ***FarePriceCalculationGroup*** | ***<u>xmlGroup</u>***   | 0:1             | Elements governing the calculation of prices.                                        |
-|                    | ***Ranking***                   | *xsd:integer*           | 0:1             | Relative ranking of price relative to other prices.                                  |
+<div class='attributes'>
+
+| **Class.** | **Name**                        | **Type**                | **Card.** | **Description**                                                                      |
+|------------|---------------------------------|-------------------------|-----------|--------------------------------------------------------------------------------------|
+| ::\>       | ::\>                            | *<u>VersionedChild</u>* | ::\>      | FARE PRICE inherits from VERSIONED CHILD                                             |
+| « PK »     | ***id***                        | *FarePriceIdType*       | 1:1       | Identifier of FARE PRICE.                                                            |
+|            | ***Name***                      | *MultilingualString*    | 0:1       | Name of PRICE.                                                                       |
+|            | ***Description***               | *MultilingualString*    | 0:1       | Description of PRICE. +v1.1                                                          |
+|            | ***PrivateCode***               | *PrivateCode*           | 0:1       | External identifier of PRICE. +v1.1                                                  |
+|            | ***StartDate***                 | *xsd:date*              | 0:1       | Start date for PRICE validity.                                                       |
+|            | ***EndDate***                   | *xsd:date*              | 0:1       | End date for PRICE validity.                                                         |
+|            | ***Amount***                    | *AmountType*            | 0:1       | Price in a specified currency.                                                       |
+|            | ***Currency***                  | *CurrencyType*          | 0:1       | Currency ISO 4217 code (This in an optimization to allow PRICE UNITs to be omitted). |
+| « FK »     | ***PriceUnitRef***              | *PriceUnitRef*          | 0:1       | Reference to a PRICE UNIT; may be a currency.                                        |
+|            | ***Units***                     | *xsd:decimal*           | 0:1       | Amount in designated unit.                                                           |
+| « FK »     | ***PricingServiceRef***         | *PricingServiceRef*     | 0:1       | Reference to a PRICE SERVICE which can provide / provided price.                     |
+| XGRP       | ***FarePriceCalculationGroup*** | ***<u>xmlGroup</u>***   | 0:1       | Elements governing the calculation of prices.                                        |
+|            | ***Ranking***                   | *xsd:integer*           | 0:1       | Relative ranking of price relative to other prices.                                  |
+
+</div>
 
 <div class='table-title'>TariffDescriptionGroup – Group</div>
 
-| **Classification** | **Name**                | **Type**             | **Cardinality** | **Description**                             |
-|--------------------|-------------------------|----------------------|-----------------|---------------------------------------------|
-|                    | ***Name***              | *MultilingualString* | 0:1             | Name of TARIFF.                             |
-| « cntd »           | ***alternativeNames***  | *AlternativeName*    | 0:\*            | Alternative names for TARIFF.               |
-|                    | ***Description***       | *MultilingualString* | 0:1             | Description of TARIFF.                      |
-| « cntd »           | ***noticeAssignments*** | *NoticeAssignment*   | 0:\*            | NOTICE ASSIGNMENTs for TARIFF.              |
-| « cntd »           | ***documentLinks***     | *InfoLink*           | 0:\*            | Links for documents associated with TARIFF. |
+<div class='attributes'>
+
+| **Class.** | **Name**                | **Type**             | **Card.** | **Description**                             |
+|------------|-------------------------|----------------------|-----------|---------------------------------------------|
+|            | ***Name***              | *MultilingualString* | 0:1       | Name of TARIFF.                             |
+| « cntd »   | ***alternativeNames***  | *AlternativeName*    | 0:\*      | Alternative names for TARIFF.               |
+|            | ***Description***       | *MultilingualString* | 0:1       | Description of TARIFF.                      |
+| « cntd »   | ***noticeAssignments*** | *NoticeAssignment*   | 0:\*      | NOTICE ASSIGNMENTs for TARIFF.              |
+| « cntd »   | ***documentLinks***     | *InfoLink*           | 0:\*      | Links for documents associated with TARIFF. |
+
+</div
 
 <div class='table-title'>TariffOrganisationGroup – Group</div>
 
-| **Classification** | **Name**                      | **Type**                  | **Cardinality** | **Description**                                 |
-|--------------------|-------------------------------|---------------------------|-----------------|-------------------------------------------------|
-| « FK »             | ***OrganisationRef***         | *(OrganisationRef)*       | 0:1             | ORGANISATION to which TARIFF applies.           |
-| « FK »             | ***GroupOfOrganisationsRef*** | *GroupOfOrganisationsRef* | 0:1             | GROUP OF ORGANISATIONs to which TARIFF applies. |
+<div class='attributes'>
+
+| **Class.** | **Name**                      | **Type**                  | **Card.** | **Description**                                 |
+|------------|-------------------------------|---------------------------|-----------|-------------------------------------------------|
+| « FK »     | ***OrganisationRef***         | *(OrganisationRef)*       | 0:1       | ORGANISATION to which TARIFF applies.           |
+| « FK »     | ***GroupOfOrganisationsRef*** | *GroupOfOrganisationsRef* | 0:1       | GROUP OF ORGANISATIONs to which TARIFF applies. |
+
+</div>
 
 <div class='table-title'>TariffTimeGroup – Group</div>
 
-| **Classification** | **Name**                   | **Type**              | **Cardinality** | **Description**                                |
-|--------------------|----------------------------|-----------------------|-----------------|------------------------------------------------|
-| « FK »             | ***TimeUnitRef***          | *TimeUnitRef*         | 0:1             | Reference to TIME UNIT for TARIFF.             |
-| « cntd »           | ***timeIntervals***        | *TimeInterval*        | 0:\*            | TIME INTERVALs associated with TARIFF.         |
-| « cntd »           | ***timeStructureFactors*** | *TimeStructureFactor* | 0:\*            | TIME STRUCTURE FACTORs associated with TARIFF. |
+<div class='attributes'>
+
+| **Class.** | **Name**                   | **Type**              | **Card.** | **Description**                                |
+|------------|----------------------------|-----------------------|-----------|------------------------------------------------|
+| « FK »     | ***TimeUnitRef***          | *TimeUnitRef*         | 0:1       | Reference to TIME UNIT for TARIFF.             |
+| « cntd »   | ***timeIntervals***        | *TimeInterval*        | 0:\*      | TIME INTERVALs associated with TARIFF.         |
+| « cntd »   | ***timeStructureFactors*** | *TimeStructureFactor* | 0:\*      | TIME STRUCTURE FACTORs associated with TARIFF. |
+
+</div>
 
 <div class='table-title'>TariffQualityGroup – Group</div>
 
-| **Classification** | **Name**                      | **Type**                 | **Cardinality** | **Description**                                   |
-|--------------------|-------------------------------|--------------------------|-----------------|---------------------------------------------------|
-| « cntd »           | ***qualityStructureFactors*** | *QualityStructureFactor* | 0:\*            | QUALITY STRUCTURE FACTORs associated with TARIFF. |
+<div class='attributes'>
+
+| **Class.** | **Name**                      | **Type**                 | **Card.** | **Description**                                   |
+|------------|-------------------------------|--------------------------|-----------|---------------------------------------------------|
+| « cntd »   | ***qualityStructureFactors*** | *QualityStructureFactor* | 0:\*      | QUALITY STRUCTURE FACTORs associated with TARIFF. |
+
+</div>
 
 <div class='table-title'>TimeInterval – Element</div>
 
-<table>
+<table class='attributes'>
 <thead>
 <tr class="header">
-<th><strong>Classification</strong></th>
+<th><strong>Class.</strong></th>
 <th><strong>Name</strong></th>
 <th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
+<th><strong>Card.</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
@@ -5507,13 +5578,17 @@ FacilitySets
 
 <div class='table-title'>TimeStructureFactor – Element</div>
 
-| **Classification** | **Name**                        | **Type**                     | **Cardinality** | **Description**                                            |
-|--------------------|---------------------------------|------------------------------|-----------------|------------------------------------------------------------|
-| ::\>               | ::\>                            | *<u>FareStructureFactor</u>* | ::\>            | TIME STRUCTURE FACTOR inherits from FARE STRUCTURE FACTOR. |
-| « PK »             | ***id***                        | *TimeStructureFactorIdType*  | 1:1             | Identifier of TIME STRUCTURE FACTOR.                       |
-| « FK »             | ***TimeIntervalRef***           | *TimeIntervalRef*            | 0:1             | Reference to TIME INTERVAL associated with factor.         |
-| « FK »             | ***TimeUnitRef***               | *TimeUnitRef*                | 0:1             | Reference to TIME UNIT associated with factor.             |
-| « FK »             | ***QualityStructureFactorRef*** | *QualityStructureFactorRef*  | 0:\*            | QUALITY FACTOR associated with the TIME STRUCTURE FACTOR.  |
+<div class='attributes'>
+
+| **Class.** | **Name**                        | **Type**                     | **Card.** | **Description**                                            |
+|------------|---------------------------------|------------------------------|-----------|------------------------------------------------------------|
+| ::\>       | ::\>                            | *<u>FareStructureFactor</u>* | ::\>      | TIME STRUCTURE FACTOR inherits from FARE STRUCTURE FACTOR. |
+| « PK »     | ***id***                        | *TimeStructureFactorIdType*  | 1:1       | Identifier of TIME STRUCTURE FACTOR.                       |
+| « FK »     | ***TimeIntervalRef***           | *TimeIntervalRef*            | 0:1       | Reference to TIME INTERVAL associated with factor.         |
+| « FK »     | ***TimeUnitRef***               | *TimeUnitRef*                | 0:1       | Reference to TIME UNIT associated with factor.             |
+| « FK »     | ***QualityStructureFactorRef*** | *QualityStructureFactorRef*  | 0:\*      | QUALITY FACTOR associated with the TIME STRUCTURE FACTOR.  |
+
+</div>
 
 # Traçabilité avec les éléments d’entrée
 
@@ -6644,5 +6719,39 @@ tarifs</td>
   table.mapping del {
     color: red;
     background: linear-gradient(to right,red 100%,transparent 0)0/1px 1px repeat-x;
+  }
+
+  table.attributes, div.attributes table {
+    font-size: 12px;
+  }
+
+  div.attributes table th:nth-child(1),
+  div.attributes table td:nth-child(1),
+  div.attributes table th:nth-child(4),
+  div.attributes table td:nth-child(4),
+  table.attributes th:nth-child(1),
+  table.attributes td:nth-child(1),
+  table.attributes th:nth-child(4),
+  table.attributes td:nth-child(4) {
+    min-width: unset;
+  }
+
+  div.attributes table th:nth-child(2),
+  div.attributes table td:nth-child(2),
+  div.attributes table th:nth-child(3),
+  div.attributes table td:nth-child(3),
+  table.attributes th:nth-child(2),
+  table.attributes td:nth-child(2),
+  table.attributes th:nth-child(3),
+  table.attributes td:nth-child(3) {
+    min-width: unset;
+    width: min-content;
+  }
+
+  table.attributes th:nth-child(5),
+  table.attributes td:nth-child(5),
+  div.attributes table th:nth-child(5),
+  div.attributes table td:nth-child(5) {
+    min-width: 300px;
   }
 </style>
