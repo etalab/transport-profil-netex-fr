@@ -576,7 +576,7 @@ products and add on products such as parking and travel, minimum stay
 
 ---
 
-###  COMMISSION DELEGATED REGULATION (EU) 2015/962 
+###  COMMISSION DELEGATED REGULATION (EU) 2015/962
 
 <u>1. The types of the static road data include in particular:</u>
 
@@ -789,23 +789,23 @@ technique ou LOC\]**, on aura donc :</span>
 - <span class="mark">**\[Code commune INSEE\]**: 5 caractères (exemple :
   78297 pour Guyancourt), 2 caractères pour le département et 3 pour la
   commune elle-même en France métropolitaine et 3 2 caractères pour le
-  département et 2 pour la commune elle-même pour l’outre-mer.  
+  département et 2 pour la commune elle-même pour l’outre-mer.
   Ce code commune pourra, de façon optionnelle, être complété par le
   numéro d’arrondissement de commune précédé d’un « - » (tiret, ASCII
-  code 45) codé sur un ou deux caractères numériques.  
+  code 45) codé sur un ou deux caractères numériques.
   En cas de mise à jour du code commune par l’INSEE, par souci de
   pérennité de l’identifiant, on conservera le code attribué
   initialement (pas de suivi d’un éventuel changement de codification
   INSEE donc).</span>
 - **<span class="mark">\[Type d’objet\]: Parking</span>**
-- <span class="mark">**\[Code arrêt spécifique\]:** code technique
+- <span class="mark">**\[Code arrêt spécifique\]** : code technique
   libre</span>
-- <span class="mark">**\[Code émetteur du code technique\] :**
+- <span class="mark">**\[Code émetteur du code technique\]** :
   Identifiant de l’attributeur de code technique, par exemple EFFIA,
   QParK, Indigo, Parcub, ou l’identifiant de la collectivité en charge
   du parking. **LOC** permet de préciser que l'identifiant a été défini
   de façon locale entre les parties engagées dans l'échange, et qu'il ne
-  fait donc pas partie du référentiel partagé (local,régional, national,
+  fait donc pas partie du référentiel partagé (local, régional, national,
   etc.) L'utilisation de ce qualificatif est obligatoire quand
   l'identifiant est local. Pour les objets faisant partie de
   référentiels partagés on peut le remplacer par un \[NomAttributaire\]
@@ -828,7 +828,7 @@ la forme ***INSEE-P-xxx*** (où INSEE est le code ***INSEE*** de la
 commune et ***xxx*** est le numéro d’ordre sur 3 chiffres) le code INSEE
 sera réutilisé dans la structuration ci-dessus et ***xxx*** sera utilisé
 pour le **\[Code arrêt spécifique\]**, le **\[Code émetteur du code
-technique\] **sera « **NAP ** ».</span>
+technique\]** sera « **NAP** ».</span>
 
 <div class='table-title'>Parking – Element</div>
 
@@ -5310,7 +5310,7 @@ le numéro de version réel du POI s’il est connu).
 <PointOfInterestRef ref=“SK_INSPIRE_Poi:SK.SOPSK.SKUEV0319” versionRef=“any” />
 ```
 
-## Équipements, cheminements et accessibilité 
+## Équipements, cheminements et accessibilité
 
 Précision pour l’accessibilité des places
 
