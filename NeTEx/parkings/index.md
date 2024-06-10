@@ -1292,7 +1292,7 @@ page fournissant l’ensemble de liens de téléchargement.</p></td>
 | « enum »           | ***PaymentMethod*** | *PaymentMethodEnum*         | 0:1             | Type de méthode de paiement prédéfinie que l’on peut associée à ce TYPE OF PAYMENT METHOD spécifique. |
 |                    | ***AutomatedUse***  | xsd:boolean                 | 0:1             | Indique si le paiement peut être automatisé (débit direct, etc.).                                     |
 
-#### Example
+#### Exemple
 
 ``` xml
 <Parking id="FR:75105:Parking:076:Qpark" version="2" responsibilitySetRef="FR:ResponsibilitySet:0123:LOC">
@@ -1840,7 +1840,7 @@ GPL, voir A.3-</mark>Véhicules<mark>)</mark></td>
 </tbody>
 </table>
 
-#### Example
+#### Exemple
 
 ``` xml
 <ParkingArea id="FR:ParkingArea:76-1:Qpark" version="any">
@@ -1962,7 +1962,7 @@ des attributs obligatoire pour le profi Parking.</mark></p></td>
 </tbody>
 </table>
 
-#### Example
+#### Exemple
 
 ``` xml
 <vehicleEntrances>
@@ -2216,7 +2216,7 @@ profil</mark>.</p></td>
 </tbody>
 </table>
 
-#### Example de grille horaire
+#### Exemple de grille horaire
 
 ``` xml
 <ParkingTariff id="FR:75105:ParkingTariff:076:Qpark" version="any">
@@ -2277,7 +2277,7 @@ profil</mark>.</p></td>
 </ParkingTariff>
 ```
 
-#### Example d’abonnement (basé sur le profil tarifaire)
+#### Exemple d’abonnement (basé sur le profil tarifaire)
 
 ``` xml
 <ParkingTariff id="FR:75105:ParkingTariff:077:Qpark" version="any">
