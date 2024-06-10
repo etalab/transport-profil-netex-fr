@@ -2028,7 +2028,7 @@ comple en annexe de ce document).
 
 .
 
-![](media/image3.png) *Figure 3 — Parking Tariff – Conceptual Model*
+![](media/image3.png) *Parking Tariff – Conceptual Model*
 
 #### Parking Tariff – Attributes and XSD
 
@@ -2535,7 +2535,7 @@ Cette vue permet de visualiser en une seule fois l’ensemble des
 possibilités offertes par NeTEX. Elle peut être facilement obtenue à
 partir de l’XSD NeTEx en utilisant des outils comme Oxygen ou XML-Spy.
 
-![](media/image4.png) *![](media/image4.png) ![](media/image4.png)*
+![](media/image4.png)
 
 ## Profil Arrêt
 
