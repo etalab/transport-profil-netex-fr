@@ -1313,7 +1313,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><em><strong>TransportMode</strong></em></td>
 <td><em>VehicleModeEnum</em></td>
 <td>1:1</td>
-<td>Mode de transport principal pour le LIEU. La liste des modes est présentée en 5.15 dans le Profil Éléments Communs.</td>
+<td>Mode de transport principal pour le LIEU. La liste des modes est présentée en 6.17 dans le Profil Éléments Communs.</td>
 </tr>
 <tr class="odd">
 <td><em>(Choice)</em></td>
