@@ -253,7 +253,7 @@ Capacités d’accueil du parking.
 
 <div class="Definition">
 
-Entrèe (et/ou sortie) du parking destinée aux véhicules
+Entrée (et/ou sortie) du parking destinée aux véhicules
 
 </div>
 
@@ -267,7 +267,7 @@ Entrèe (et/ou sortie) du parking destinée aux véhicules
 
 <div class="Definition">
 
-Entrèe (et/ou sortie) du parking destinée aux piétons et tout conducteur
+Entrée (et/ou sortie) du parking destinée aux piétons et tout conducteur
 ou passager des véhicule (y-compruis fauteuils roulants).
 
 </div>
@@ -1230,7 +1230,7 @@ utilisera ici l’inclusion XML et non les références.</mark></p></td>
 <td><em><strong>entrances</strong></em></td>
 <td><em>StopPlaceEntrance</em></td>
 <td>0 :*</td>
-<td>Liste des entrèes pour les véhicules et les piértons.</td>
+<td>Liste des entrées pour les véhicules et les piértons.</td>
 </tr>
 </tbody>
 </table>
@@ -1855,7 +1855,7 @@ GPL, voir A.3-</mark>Véhicules<mark>)</mark></td>
 </ParkingArea>
 ```
 
-### Entrèes des Parkings
+### Entrées des Parkings
 
 ***ParkingEntranceForVehicle*** décrit une possibilité d’accès au
 PARKING depuis la voirie.
@@ -1901,7 +1901,7 @@ des attributs obligatoire pour le profi Parking.</mark></p></td>
 <td><em>ModeOfOperationRef</em></td>
 <td>0 :*</td>
 <td><p>Types de services auxquel cette entrèe est dédiée.</p>
-<p>Le ModeOfOperation permettra de spécialiser les entrèes : pour
+<p>Le ModeOfOperation permettra de spécialiser les entrées : pour
 l’autopartage, les locations, le covoiturage, etc.</p></td>
 </tr>
 <tr class="even">
@@ -1937,7 +1937,7 @@ pour les piétons (incluant les accès type fauteils roulant, etc.).
 <td><em>::&gt;</em></td>
 <td><p>PARKING PASSENGER ENTRANCE hérite de ENTRANCE.</p>
 <p>Voir <em><strong>A.2.6-Entrée</strong></em></p>
-<p><mark>Note : Les caractéristiques d’accessibilité des entrèes de
+<p><mark>Note : Les caractéristiques d’accessibilité des entrées de
 parking peuvent être détaillées par les classiques ACCESSIBILITY
 ASSESMENTs et il est aussi possible d’y associer des FACILITY SET
 (services et équipement disponibles)</mark></p>
@@ -2528,7 +2528,7 @@ d’objets présentés dans d’autres profils et il est indispensable de les
 connaître un minimum pour avoir une vue complète des possibilités
 offertes par chaque concept.
 
-La figure ci-dessous (distribuée sue 3 pages) donne une vue complètement
+La figure ci-dessous (distribuée sur 3 pages) donne une vue complètement
 déployée de l’objet ***Parking*** et de tous les objets dont il hérite.
 Cette vue permet de visualiser en une seule fois l’ensemble des
 possibilités offertes par NeTEX. Elle peut être facilement obtenue à
