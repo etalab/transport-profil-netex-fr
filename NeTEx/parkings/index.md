@@ -6723,6 +6723,7 @@ tarifs</td>
 
   table.attributes, div.attributes table {
     font-size: 12px;
+    display: table;
   }
 
   div.attributes table th:nth-child(1),
