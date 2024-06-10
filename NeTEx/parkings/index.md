@@ -2534,7 +2534,7 @@ Cette vue permet de visualiser en une seule fois l’ensemble des
 possibilités offertes par NeTEX. Elle peut être facilement obtenue à
 partir de l’XSD NeTEx en utilisant des outils comme Oxygen ou XML-Spy.
 
-![](media/image4.png)
+![](media/image4.png) *XSD Parking*
 
 ## Profil Arrêt
 
