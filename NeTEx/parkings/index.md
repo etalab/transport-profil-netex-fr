@@ -1271,7 +1271,7 @@ utilisera ici l’inclusion XML et non les références.</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>PaymentApp­DownloadUrl</strong></em></td>
+<td><em><strong>PaymentAppDownloadUrl</strong></em></td>
 <td><em>xsd:anyUri</em></td>
 <td>0:1</td>
 <td><p>URL pour télécharger l’application de paiement.</p>
@@ -1290,7 +1290,7 @@ page fournissant l’ensemble de liens de téléchargement.</p></td>
 | **Class.** | **Name**            | **Type**                     | **Card.** | **Description**                                                                                       |
 |------------|---------------------|------------------------------|-----------|-------------------------------------------------------------------------------------------------------|
 | ::\>       | ::\>                | *<u>TypeOfValue</u>*         | ::\>      | TYPE OF PAYMENT METHOD hérite de TYPE OF VALUE (voir Profil Éléments Communs).                        |
-| « PK »     | ***id***            | *TypeOfPayment­MethodIdType* | 1:1       | Identifiant du TYPE OF PAYMENT METHOD.                                                                |
+| « PK »     | ***id***            | *TypeOfPaymentMethodIdType* | 1:1       | Identifiant du TYPE OF PAYMENT METHOD.                                                                |
 | « enum »   | ***PaymentMethod*** | *PaymentMethodEnum*          | 0:1       | Type de méthode de paiement prédéfinie que l’on peut associée à ce TYPE OF PAYMENT METHOD spécifique. |
 |            | ***AutomatedUse***  | xsd:boolean                  | 0:1       | Indique si le paiement peut être automatisé (débit direct, etc.).                                     |
 
@@ -1787,14 +1787,14 @@ et de ses constituants.
 </tr>
 <tr class="odd">
 <td>« enum »</td>
-<td><em><strong>ParkingUser­Type</strong></em></td>
+<td><em><strong>ParkingUserType</strong></em></td>
 <td><em>ParkingUserEnum</em></td>
 <td>0:1</td>
 <td>Type d’utilisateur concerné par cette capacité</td>
 </tr>
 <tr class="even">
 <td>« enum »</td>
-<td><em><strong>ParkingVehicle­Type</strong></em></td>
+<td><em><strong>ParkingVehicleType</strong></em></td>
 <td><em>ParkingVehicleEnum</em></td>
 <td>0:1</td>
 <td>Type de véhicule concerné par cette capacité</td>
@@ -2067,28 +2067,28 @@ l’utilisation d’un PARKING ou d’une PARKING AREA.
 </tr>
 <tr class="odd">
 <td>XGRP</td>
-<td><em><strong>Tariff­Description­Group</strong></em></td>
+<td><em><strong>TariffDescriptionGroup</strong></em></td>
 <td><em><strong><u>xmlGroup</u></strong></em></td>
 <td>0:1</td>
 <td>Voir A.7-Profil Tarif</td>
 </tr>
 <tr class="even">
 <td>XGRP</td>
-<td><em><strong>Tariff­Organisation­Group</strong></em></td>
+<td><em><strong>TariffOrganisationGroup</strong></em></td>
 <td><em><strong><u>xmlGroup</u></strong></em></td>
 <td>0:1</td>
 <td>Voir A.7-Profil Tarif</td>
 </tr>
 <tr class="odd">
 <td>XGRP</td>
-<td><em><strong>Tariff­Time­Group</strong></em></td>
+<td><em><strong>TariffTimeGroup</strong></em></td>
 <td><em><strong><u>xmlGroup</u></strong></em></td>
 <td>0:1</td>
 <td>Voir Profil Tarif</td>
 </tr>
 <tr class="even">
 <td>XGRP</td>
-<td><em><strong>Tariff­Quality­Group</strong></em></td>
+<td><em><strong>TariffQualityGroup</strong></em></td>
 <td><em><strong><u>xmlGroup</u></strong></em></td>
 <td>0:1</td>
 <td>Voir Profil Tarif</td>
@@ -2102,7 +2102,7 @@ l’utilisation d’un PARKING ou d’une PARKING AREA.
 </tr>
 <tr class="even">
 <td>« enum »</td>
-<td><em><strong>ParkingStay­Type</strong></em></td>
+<td><em><strong>ParkingStayType</strong></em></td>
 <td><em>ParkingStayEnum</em></td>
 <td>0:1</td>
 <td><p>Durée de stationnement pour ce TARIFF.</p>
@@ -2118,7 +2118,7 @@ l’utilisation d’un PARKING ou d’une PARKING AREA.
 </tr>
 <tr class="odd">
 <td>« enum »</td>
-<td><em><strong>Parking­VehicleType</strong></em></td>
+<td><em><strong>ParkingVehicleType</strong></em></td>
 <td><em>ParkingVehicleEnum</em></td>
 <td>0:1</td>
 <td>Types de véhicule concerné par ce tarif.</td>
@@ -2188,13 +2188,13 @@ un PRICEABLE OBJECT).</td>
 <tr class="even">
 <td>« PK »</td>
 <td><em><strong>id</strong></em></td>
-<td><em>ParkingCharge­BandIdType</em></td>
+<td><em>ParkingChargeBandIdType</em></td>
 <td>1:1</td>
 <td>Identifiant de la tranche horaire PARKING CHARGE BAND.</td>
 </tr>
 <tr class="odd">
 <td>« enum »</td>
-<td><em><strong>Parking­VehicleType</strong></em></td>
+<td><em><strong>ParkingVehicleType</strong></em></td>
 <td><em>ParkingVehicleEnum</em></td>
 <td>0:1</td>
 <td>Type de véhicule associé à cette tranche horaire PARKING CHARGE
@@ -2726,8 +2726,8 @@ D'EMBARQUEMENT ou de l'ACCÈS</mark> (par exemple "en face du café XXX",
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>SiteElement­PropertiesGroup</strong></em></td>
-<td><em>Element­PropertiesGroup</em></td>
+<td><em><strong>SiteElementPropertiesGroup</strong></em></td>
+<td><em>ElementPropertiesGroup</em></td>
 <td>0:1</td>
 <td>Propriétés complémentaires de l’élément, voir ci-dessous..</td>
 </tr>
@@ -2988,7 +2988,7 @@ etc.</td>
 <td>ENTRANCE hérite de SITE COMPONENT.</td>
 </tr>
 <tr class="even">
-<td rowspan="8">SITE COMP­ONENT GROUP</td>
+<td rowspan="8">SITE COMPONENT GROUP</td>
 <td><em><strong>PublicCode</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
@@ -3051,7 +3051,7 @@ commercial par exemple)</td>
 </tr>
 <tr class="even">
 <td>EXTERNAL ENTRANCE GROUP</td>
-<td><em><strong>DroppedKerb­Outside</strong></em></td>
+<td><em><strong>DroppedKerbOutside</strong></em></td>
 <td><em>xsd:boolean</em></td>
 <td>0:1</td>
 <td>Marche abaissée à l’entrée (à mettre à false pour indiquer une
@@ -3111,7 +3111,7 @@ obligatoire du <strong>Descriptor</strong> prévaut)</mark></em></p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Topographic­PlaceType</strong></em></td>
+<td><em><strong>TopographicPlaceType</strong></em></td>
 <td><em>TopographicTypeEnum</em></td>
 <td>0:1</td>
 <td><p>Classification de la zone administrative:</p>
@@ -3163,7 +3163,7 @@ href="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm">www.iso.org/
 </tr>
 <tr class="even">
 <td>« FK »</td>
-<td><em><strong>ParentTopo­graphic­PlaceRef</strong></em></td>
+<td><em><strong>ParentTopographicPlaceRef</strong></em></td>
 <td><em>TopographicPlaceRef</em></td>
 <td>0:1</td>
 <td><p>Référence la zone administrative dans laquelle est incluse
@@ -3278,10 +3278,10 @@ orientée vers le transport en commun).
 | « PK »     | ***id***                            | *TransportTypeIdType*      | 1:1       | Identifier of TRANSPORT TYPE.                                                                                                             |
 |            | ***Name***                          | *MultilingualString*       | 0:1       | Nom du TYPE DE VEHICULE.                                                                                                                  |
 |            | ***Description***                   | *MultilingualString*       | 0:1       | Description of TRANSPORT TYPE.                                                                                                            |
-| XGRP       | ***TransportType­PropertiesGroup*** | ***<u>xmlGroup</u>***      | 0:1       | Elements describing the properties of a VEHICLE TYPE. See below.                                                                          |
+| XGRP       | ***TransportTypePropertiesGroup*** | ***<u>xmlGroup</u>***      | 0:1       | Elements describing the properties of a VEHICLE TYPE. See below.                                                                          |
 | « enum »   | ***TransportMode***                 | *AllVehicleModesEnum*      | 0:1       | Mode of transport – see allowed values for MODE.                                                                                          |
 |            | ***EuroClass***                     | *xsd:normalizedString*     | 0:1       | Euroclasse du TYPE DE VEHICULE (normes européennes d'émission: <http://fr.wikipedia.org/wiki/Normes_europ%C3%A9ennes_d%27%C3%A9mission>). |
-| « cntd »   | ***Passenger­Capacity***            | *<u>PassengerCapacity</u>* | 0:1       | Total passenger carrying capacity of VEHICLE TYPE.                                                                                        |
+| « cntd »   | ***PassengerCapacity***            | *<u>PassengerCapacity</u>* | 0:1       | Total passenger carrying capacity of VEHICLE TYPE.                                                                                        |
 
 </div>
 
@@ -3434,7 +3434,7 @@ motrice ou un véhicule tracteur.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>PostCode­Extension</strong></em></td>
+<td><em><strong>PostCodeExtension</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td>Extension du code postal (avec éventuel cedex ou boite postale)</td>
@@ -3512,14 +3512,14 @@ ZONE D'EMBARQUEMENT ou de l'ACCÈS).</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>OddNumber­Range</strong></em></td>
+<td><em><strong>OddNumberRange</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td>Plage de numéros impairs dans laquelle se situe le LIEU</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>EvenNumber­Range</strong></em></td>
+<td><em><strong>EvenNumberRange</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td><p>Plage de numéros pairs dans laquelle se situe le LIEU</p>
@@ -4076,7 +4076,7 @@ qu'elle remplace temporairement.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>« FK »</td>
-<td><em><strong>compatibleWith­VersionRef</strong></em></td>
+<td><em><strong>compatibleWithVersionRef</strong></em></td>
 <td><em>VersionIdType</em></td>
 <td>0:1</td>
 <td><p><mark>Cet attribut est utilisé uniquement pour les CADREs DE
@@ -4454,7 +4454,7 @@ contrat quand cela est nécessaire.</mark></p></td>
 </tr>
 <tr class="even">
 <td>« FK »</td>
-<td><em><strong>Responsible­OrganisationRef</strong></em></td>
+<td><em><strong>ResponsibleOrganisationRef</strong></em></td>
 <td><em>OrganisationRef</em></td>
 <td>0:1</td>
 <td>Référence l'institution concernée</td>
@@ -4581,7 +4581,7 @@ une NOTICE déjà défini dans un NOTICE ASSIGNMENT antérieur.</span>
 <tr class="even">
 <td>« PK »</td>
 <td colspan="2"><em><strong>id</strong></em></td>
-<td><em>TypeOfNotice­AssignmentIdType</em></td>
+<td><em>TypeOfNoticeAssignmentIdType</em></td>
 <td>1:1</td>
 <td>Identifiant du NOTICE ASSIGNMENT.</td>
 </tr>
@@ -4684,8 +4684,8 @@ d'accessibilité classiquement rencontrés.
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>MobilityImpaired­Access</strong></em></td>
-<td><em>Accessibility­Enumeration</em></td>
+<td><em><strong>MobilityImpairedAccess</strong></em></td>
+<td><em>AccessibilityEnumeration</em></td>
 <td>1:1</td>
 <td><p>Indication globale d'accessibilité (de la LIGNE ou du LIEU).</p>
 <p>Il peut valoir <em>true</em> (accessible), <em>false</em> (non
@@ -4942,7 +4942,7 @@ etc.).
 |            | ***Colour***                | *ColourValue*          | 0:1       | Couleur <span class="mark">(format RVB)</span>                                                                                                                                                                                                                        |
 |            | ***ColourName***            | *xsd:normalizedString* | 0:1       | Nom de la couleur                                                                                                                                                                                                                                                     |
 |            | ***BackGroundColour***      | *ColourValueType*      | 0:1       | Valeur RVB de la couleur de fond (par exemple la couleur de la ligne de transport)                                                                                                                                                                                    |
-|            | ***BackgroundColour­Name*** | *xsd:String*           | 0:1       | Nom de la couleur de fond dans le *ColourSystem*.                                                                                                                                                                                                                     |
+|            | ***BackgroundColourName*** | *xsd:String*           | 0:1       | Nom de la couleur de fond dans le *ColourSystem*.                                                                                                                                                                                                                     |
 |            | ***TextColour***            | *ColourValue*          | 0:1       | Couleur du texte <span class="mark">(format RVB)</span>                                                                                                                                                                                                               |
 |            | ***TextColourName***        | *xsd:normalizedString* | 0:1       | Nom de la couleur du texte                                                                                                                                                                                                                                            |
 |            | ***TextFont***              | *xsd:normalizedString* | 0:1       | Identifiant de la police de caractère                                                                                                                                                                                                                                 |
@@ -5191,7 +5191,7 @@ référencer un type de contrat quand cela est nécessaire.</span></p></td>
 </tr>
 <tr class="even">
 <td>« FK »</td>
-<td><em><strong>Responsible­OrganisationRef</strong></em></td>
+<td><em><strong>ResponsibleOrganisationRef</strong></em></td>
 <td><em>OrganisationRef</em></td>
 <td>0:1</td>
 <td>Référence l'institution concernée</td>
