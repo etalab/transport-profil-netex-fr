@@ -421,13 +421,13 @@ pour tous les objets susceptibles d’en porter.</td>
 <td><strong>2</strong></td>
 <td><em><strong>Location search (demand-responsive
 modes)</strong></em></td>
-<td><p>-Park &amp; Ride stops</p>
-<p>-Bike sharing stations</p>
-<p>-Car-sharing stations</p>
-<p>-Publicly accessible refuelling stations <em>(for petrol, diesel,
+<td><ul><li>Park &amp; Ride stops</li>
+<li>Bike sharing stations</li>
+<li>Car-sharing stations</li>
+<li>Publicly accessible refuelling stations <em>(for petrol, diesel,
 CNG/LNG, hydrogen powered vehicles, charging stations for electric
-vehicles)</em></p>
-<p>-Secure bike parking (such as locked bike garages)</p></td>
+vehicles)</em></li>
+<li>Secure bike parking (such as locked bike garages)</li></ul></td>
 <td><strong>PARKING</strong></td>
 <td><p><strong>PARKING AREA</strong></p>
 <p><strong>REFUELLING EQUIPMENT</strong></p>
