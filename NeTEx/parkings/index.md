@@ -545,7 +545,7 @@ retail channels, fulfilment methods, payment methods)
 
 *<u>Level of service 3</u>*
 
-Special Fare Products: …. aggregated products combining different
+Special Fare Products: … aggregated products combining different
 products and add on products such as parking and travel, minimum stay
 
 \(b\) Information service (all modes):
@@ -982,9 +982,9 @@ renseignement de <strong>vehicleTypes</strong>)</mark></em></p>
 <td><em>TransportTypeRef</em></td>
 <td>0:1</td>
 <td>Type de véhicule en complément du champ précédent (valeur libre non
-précodée <mark>uniquement pour les type non proposés par
+précodée <mark>uniquement pour les types non proposés par
 <em><strong>ParkingVehicleTypes</strong></em></mark>)<br />
-<mark>Note : les information lées aux types de carburant nécessitent
+<mark>Note : les information liées aux types de carburant nécessitent
 l’utilisation des VehicleType (VehicleType.FuelType, par exemple pour le
 GPL, voir A.3-</mark>Véhicules<mark>)</mark></td>
 </tr>
@@ -1287,12 +1287,12 @@ page fournissant l’ensemble de liens de téléchargement.</p></td>
 
 <div class='attributes'>
 
-| **Class.** | **Name**            | **Type**                     | **Card.** | **Description**                                                                                       |
-|------------|---------------------|------------------------------|-----------|-------------------------------------------------------------------------------------------------------|
-| ::\>       | ::\>                | *<u>TypeOfValue</u>*         | ::\>      | TYPE OF PAYMENT METHOD hérite de TYPE OF VALUE (voir Profil Éléments Communs).                        |
+| **Class.** | **Name**            | **Type**                    | **Card.** | **Description**                                                                                       |
+|------------|---------------------|-----------------------------|-----------|-------------------------------------------------------------------------------------------------------|
+| ::\>       | ::\>                | *<u>TypeOfValue</u>*        | ::\>      | TYPE OF PAYMENT METHOD hérite de TYPE OF VALUE (voir Profil Éléments Communs).                        |
 | « PK »     | ***id***            | *TypeOfPaymentMethodIdType* | 1:1       | Identifiant du TYPE OF PAYMENT METHOD.                                                                |
-| « enum »   | ***PaymentMethod*** | *PaymentMethodEnum*          | 0:1       | Type de méthode de paiement prédéfinie que l’on peut associée à ce TYPE OF PAYMENT METHOD spécifique. |
-|            | ***AutomatedUse***  | xsd:boolean                  | 0:1       | Indique si le paiement peut être automatisé (débit direct, etc.).                                     |
+| « enum »   | ***PaymentMethod*** | *PaymentMethodEnum*         | 0:1       | Type de méthode de paiement prédéfinie que l’on peut associée à ce TYPE OF PAYMENT METHOD spécifique. |
+|            | ***AutomatedUse***  | xsd:boolean                 | 0:1       | Indique si le paiement peut être automatisé (débit direct, etc.).                                     |
 
 </div>
 
@@ -3272,15 +3272,15 @@ orientée vers le transport en commun).
 
 <div class='attributes'>
 
-| **Class.** | **Name**                            | **Type**                   | **Card.** | **Description**                                                                                                                           |
-|------------|-------------------------------------|----------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| ::\>       | ::\>                                | *<u>DataManagedObject</u>* | ::\>      | TRANSPORT TYPE inherits from DATA MANAGED OBJECT.                                                                                         |
-| « PK »     | ***id***                            | *TransportTypeIdType*      | 1:1       | Identifier of TRANSPORT TYPE.                                                                                                             |
-|            | ***Name***                          | *MultilingualString*       | 0:1       | Nom du TYPE DE VEHICULE.                                                                                                                  |
-|            | ***Description***                   | *MultilingualString*       | 0:1       | Description of TRANSPORT TYPE.                                                                                                            |
+| **Class.** | **Name**                           | **Type**                   | **Card.** | **Description**                                                                                                                           |
+|------------|------------------------------------|----------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| ::\>       | ::\>                               | *<u>DataManagedObject</u>* | ::\>      | TRANSPORT TYPE inherits from DATA MANAGED OBJECT.                                                                                         |
+| « PK »     | ***id***                           | *TransportTypeIdType*      | 1:1       | Identifier of TRANSPORT TYPE.                                                                                                             |
+|            | ***Name***                         | *MultilingualString*       | 0:1       | Nom du TYPE DE VEHICULE.                                                                                                                  |
+|            | ***Description***                  | *MultilingualString*       | 0:1       | Description of TRANSPORT TYPE.                                                                                                            |
 | XGRP       | ***TransportTypePropertiesGroup*** | ***<u>xmlGroup</u>***      | 0:1       | Elements describing the properties of a VEHICLE TYPE. See below.                                                                          |
-| « enum »   | ***TransportMode***                 | *AllVehicleModesEnum*      | 0:1       | Mode of transport – see allowed values for MODE.                                                                                          |
-|            | ***EuroClass***                     | *xsd:normalizedString*     | 0:1       | Euroclasse du TYPE DE VEHICULE (normes européennes d'émission: <http://fr.wikipedia.org/wiki/Normes_europ%C3%A9ennes_d%27%C3%A9mission>). |
+| « enum »   | ***TransportMode***                | *AllVehicleModesEnum*      | 0:1       | Mode of transport – see allowed values for MODE.                                                                                          |
+|            | ***EuroClass***                    | *xsd:normalizedString*     | 0:1       | Euroclasse du TYPE DE VEHICULE (normes européennes d'émission: <http://fr.wikipedia.org/wiki/Normes_europ%C3%A9ennes_d%27%C3%A9mission>). |
 | « cntd »   | ***PassengerCapacity***            | *<u>PassengerCapacity</u>* | 0:1       | Total passenger carrying capacity of VEHICLE TYPE.                                                                                        |
 
 </div>
@@ -4937,18 +4937,18 @@ etc.).
 
 <div class='attributes'>
 
-| **Class.** | **Name**                    | **Type**               | **Card.** | **Description**                                                                                                                                                                                                                                                       |
-|------------|-----------------------------|------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|            | ***Colour***                | *ColourValue*          | 0:1       | Couleur <span class="mark">(format RVB)</span>                                                                                                                                                                                                                        |
-|            | ***ColourName***            | *xsd:normalizedString* | 0:1       | Nom de la couleur                                                                                                                                                                                                                                                     |
-|            | ***BackGroundColour***      | *ColourValueType*      | 0:1       | Valeur RVB de la couleur de fond (par exemple la couleur de la ligne de transport)                                                                                                                                                                                    |
+| **Class.** | **Name**                   | **Type**               | **Card.** | **Description**                                                                                                                                                                                                                                                       |
+|------------|----------------------------|------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|            | ***Colour***               | *ColourValue*          | 0:1       | Couleur <span class="mark">(format RVB)</span>                                                                                                                                                                                                                        |
+|            | ***ColourName***           | *xsd:normalizedString* | 0:1       | Nom de la couleur                                                                                                                                                                                                                                                     |
+|            | ***BackGroundColour***     | *ColourValueType*      | 0:1       | Valeur RVB de la couleur de fond (par exemple la couleur de la ligne de transport)                                                                                                                                                                                    |
 |            | ***BackgroundColourName*** | *xsd:String*           | 0:1       | Nom de la couleur de fond dans le *ColourSystem*.                                                                                                                                                                                                                     |
-|            | ***TextColour***            | *ColourValue*          | 0:1       | Couleur du texte <span class="mark">(format RVB)</span>                                                                                                                                                                                                               |
-|            | ***TextColourName***        | *xsd:normalizedString* | 0:1       | Nom de la couleur du texte                                                                                                                                                                                                                                            |
-|            | ***TextFont***              | *xsd:normalizedString* | 0:1       | Identifiant de la police de caractère                                                                                                                                                                                                                                 |
-|            | ***TextFontName***          | *xsd:normalizedString* | 0:1       | Nom de la police de caractère                                                                                                                                                                                                                                         |
-|            | ***InfoLink***              | *InfoLink*             | 0:1       | URL d'un élément graphique de représentation (généralement une icône).                                                                                                                                                                                                |
-|            | ***ColourSystem***          | *xsd:String*           | 0:1       | Nom du système de couleur utilisé pour le nommage: par exemple RAL, https://en.wikipedia.org/wiki/RAL_colour_standard, DIN 6164 http://www.dtpstudio.de/atlas/farbsysteme/DIN%206164_bs00_3.htm, Pantone (attention Pantone est une classification commerciale), etc. |
+|            | ***TextColour***           | *ColourValue*          | 0:1       | Couleur du texte <span class="mark">(format RVB)</span>                                                                                                                                                                                                               |
+|            | ***TextColourName***       | *xsd:normalizedString* | 0:1       | Nom de la couleur du texte                                                                                                                                                                                                                                            |
+|            | ***TextFont***             | *xsd:normalizedString* | 0:1       | Identifiant de la police de caractère                                                                                                                                                                                                                                 |
+|            | ***TextFontName***         | *xsd:normalizedString* | 0:1       | Nom de la police de caractère                                                                                                                                                                                                                                         |
+|            | ***InfoLink***             | *InfoLink*             | 0:1       | URL d'un élément graphique de représentation (généralement une icône).                                                                                                                                                                                                |
+|            | ***ColourSystem***         | *xsd:String*           | 0:1       | Nom du système de couleur utilisé pour le nommage: par exemple RAL, https://en.wikipedia.org/wiki/RAL_colour_standard, DIN 6164 http://www.dtpstudio.de/atlas/farbsysteme/DIN%206164_bs00_3.htm, Pantone (attention Pantone est une classification commerciale), etc. |
 
 </div>
 
