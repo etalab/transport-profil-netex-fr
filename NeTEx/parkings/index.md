@@ -6720,6 +6720,10 @@ tarifs</td>
     color: red;
     background: linear-gradient(to right,red 100%,transparent 0)0/1px 1px repeat-x;
   }
+  table.mapping th:nth-child(3),
+  table.mapping td:nth-child(3) {
+    min-width: 300px;
+  }
 
   table.attributes, div.attributes table {
     font-size: 12px;
