@@ -1446,7 +1446,7 @@ PMR.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>ParkingPayment­Code</strong></em></td>
+<td><em><strong>ParkingPaymentCode</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td>Code de paiement associé au PARKING COMPONENT</td>
