@@ -3679,7 +3679,7 @@ passagers)* *–* Element
 |                    | Gradient                 | xsd:Integer            | 0:1             | Pente (en degrés entiers) du tapis roulant                                                         |
 |                    | IntegrateAnEscalatorPart | xsd:boolean            | 0:1             | Signale la présence d’une partie en escalator                                                      |
 
-<div class="table-title">LiftEquipment (ascenseur) – Element</div>
+<div class="table-title">LiftEquipment (ascenseur) – Élément</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -3692,9 +3692,9 @@ passagers)* *–* Element
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­ality</strong></td>
+<td><strong>Cardin­alité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -3748,12 +3748,12 @@ passagers)* *–* Element
 </tr>
 <tr class="odd">
 <td></td>
-<td>TypeOfHandrail</td>
+<td>HandrailType</td>
 <td><em>Handrail­Enum</em></td>
 <td>0:1</td>
 <td><p>Type de main courante</p>
 <ul>
-<li><p><em>None</em> (aucun)</p></li>
+<li><p><em>none</em> (aucun)</p></li>
 <li><p><em>oneSide</em> (d’un côté seulement)</p></li>
 <li><p><em>bothSides</em> (des deux côtés)</p></li>
 </ul></td>
@@ -3798,16 +3798,15 @@ passagers)* *–* Element
 <td>BrailleButtons</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td><p>Signale si les boutons sont marqué en brailles</p>
+<td><p>Signale si les boutons sont marqués en braille</p>
 <p><span class="hl">A utiliser aussi pour les marques tactiles (non braille)</span></p></td>
 </tr>
-
 <tr class="odd">
 <td></td>
 <td>MirrorOnOppositeSide</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présence d’un mirroir en face de l’ascenceur</td>
+<td>Signale la présence d’un miroir en face de l’ascenceur</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -3851,41 +3850,40 @@ passagers)* *–* Element
 <td>0:1</td>
 <td>Signale si l’accès à l'ascenseur est fléché/signalé</td>
 </tr>
-
 <tr class="odd">
 <td></td>
-<td><em><strong>MagneticInductionLoop</strong></em></td>
+<td><em>MagneticInductionLoop</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la presence d’une boucle d’induction magnétique</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>TactileGroundFloorButton</strong></em></td>
+<td><em>TactileGroundFloorButton</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale la presence d’une marque tactile spécifique sur le bouton du rez-de-chaussée</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>ExternalFloorSelection</strong></em></td>
+<td><em>ExternalFloorSelection</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale que la selection de l’étage de destination se fait à l’extérieur de l’ascenceur</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>ButtonsHeigt</strong></em></td>
+<td><em>ButtonsHeigt</em></td>
 <td><em>LengthType</em></td>
 <td>0:1</td>
-<td>Hauteur (taille) des bouton (en cm)</td>
+<td>Hauteur (taille) des boutons (en cm)</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>GroundMarkalignedWithButton</strong></em></td>
+<td><em>GroundMarkalignedWithButton</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présente de marquage podotactile pour repérer les boutons</td>
+<td>Signale la présence de marquage podotactile pour repérer les boutons</td>
 </tr>
 </tbody>
 </table>
