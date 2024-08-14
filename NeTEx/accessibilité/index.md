@@ -197,6 +197,19 @@ Ce document a été élaboré sur la base des réflexions et échanges
 intervenus dans le cadre du GT7 ainsi qu'en utilisant les conclusions de
 l'étude CAMERA.
 
+Ce document a également été enrichi à l'aide du standard d’échange de
+données sur l’accessibilité des déplacements pour les personnes en
+situation de handicap produit par le groupe de travail CNIG sur
+l'Accessibilité. Ce modèle a pour but de décrire l'accessibilité
+des cheminements extérieurs en voirie, typiquement des trottoirs
+reliant un arrêt de transport en commun à l’entrée d’un ERP.
+
+Des compléments permettant d'assurer la mise en relation avec l'ontologie
+ du projet OpenStreetMap ont également été apportés au document.
+ OpenStreetMap (OSM) est un projet collaboratif de cartographie
+ proposant une base de données géographiques libre du monde
+entier.
+
 Si la première motivation pour la définition de ce profil est bien
 l'accessibilité, cet objet n'est en aucun cas limitatif et les
 informations contenues (en particulier concernant les équipements et les
@@ -720,6 +733,22 @@ AO
 <div class="Definition">
 
 Autorité Organisatrice de Transports
+
+</div>
+
+CNIG
+
+<div class="Definition">
+
+Conseil National de l'Information Géographique
+
+</div>
+
+OSM
+
+<div class="Definition">
+
+OpenStreetMap
 
 </div>
 
@@ -1790,7 +1819,7 @@ recommandé de ne pas trop les subdiviser (et donc de ne pas les faire
 trop petits) pour éviter de surcharger l'utilisateur en information et
 aussi pour limiter le volume d'information à gérer par les systèmes.
 
-<div class="table-title">PathLink – Element</div>
+<div class="table-title">SitePathLink – Élément</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -1803,9 +1832,9 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <tbody>
 <tr class="odd">
 <td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardinality</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -1813,32 +1842,47 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><em>::></em></td>
 <td><em>Link</em></td>
 <td><em>::></em></td>
-<td><p>PATH LINK inherite de LINK.</p>
-<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tonçon de cheminement par le profil pour l'accessibilité.</span></p>
-<p><span class="hl">Notez aussi que, en complément de l'attribut Transition, si une information de pente précise est souhaitée, on utilisera les informations de hauter/altitude associées aux points aux extrémités du LINK.</span></p>
-<p><span class="hl">De plus, toujours dans le contexte du profil pour l'accessibilité, la géométrie des </span><span class="hl">PATH LINKs sera systématiquement décrite avec l'attribut </span><em><strong><span class="hl">LineString</span></strong></em><span class="hl"> (GML) aussi </span><span class="hl">hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notament au niveau des extrémités, des centroïdes des objets référencés par </span><em><strong><span class="hl">From</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">To</span></strong></em><span class="hl"> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du LineString devront coincider avec ceux des autre </span><span class="hl">PATH LINK connectés dans le cadre d'un NAVIGATION PATH.</span></p></td>
+<td>PATH LINK hérite de LINK.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
 <td>PathLinkIdType</td>
 <td>1:1</td>
-<td>Identifiand du PATH LINK.</td>
+<td>Identifiant du PATH LINK.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Distance</td>
+<td>DistanceType</td>
+<td><p>0:1</p>
+<p><span class="hl">1:1</span></p></td>
+<td><p>Longueur du tronçon de cheminement.</p>
+<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité. Il s'agit de la distance parcourue le long du tronçon de cheminement et non de la distance à vol d'oiseau entre les points de départ et d'arrivée.</span></p></td>
+</tr>
+<tr class="odd">
+<td>«cntd»</td>
+<td>LineString</td>
+<td>gmlLineString</td>
+<td><p>0:1</p>
+<p><span class="hl">1:1</span></p></td>
+<td><p>Géométrie du tronçon de cheminement.</p>
+<p><span class="hl">Dans le contexte du profil pour l'accessibilité, la géométrie des PATH LINKs sera systématiquement décrite avec l'attribut <em><strong>LineString</strong></em> (GML) hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notament au niveau des extrémités, des centroïdes des objets référencés par <em><strong>From</strong></em> et <em><strong>To</strong></em> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du LineString devront coincider avec ceux des autres PATH LINK connectés dans le cadre d'un NAVIGATION PATH.</span></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
 <td>From</td>
 <td>PathLinkEnd</td>
 <td>1:1</td>
-<td>Point ou lieu de départ du PATH LINK.</td>
+<td>Point ou lieu de départ du PATH LINK. Voir tableau suivant</td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
 <td>To</td>
 <td>PathLinkEnd</td>
 <td>1:1</td>
-<td><p>Point ou lieu de fin du PATH LINK.</p>
-<p><em><strong><span class="hl">From</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">To</span></strong></em><span class="hl"> peuvent référencer le même espace, mais avec des </span><em><strong><span class="hl">LineString </span></strong><span class="hl">(voir ci-dessus)</span></em><span class="hl"> différentes. On utlisera notament cette particularité pour traverser des équipements long (comme un tapi roulant) situé dans un EQUIPMENT PLACE (ZONE).</span></p></td>
+<td><p>Point ou lieu de fin du PATH LINK. Voir tableau suivant</p>
+<p><em><strong><span class="hl">From</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">To</span></strong></em><span class="hl"> peuvent référencer le même espace, mais avec des </span><em><strong><span class="hl">LineString </span></strong><span class="hl">(voir ci-dessus)</span></em><span class="hl"> différentes. On utilisera notament cette particularité pour traverser des équipements long (comme un tapis roulant) situés dans un EQUIPMENT PLACE (ZONE).</span></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1854,7 +1898,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>ACCESSIBILITY du PATH LINK.</td>
 </tr>
-
 <tr class="odd">
 <td></td>
 <td>PublicUse</td>
@@ -1868,7 +1911,8 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>Covered</td>
 <td>CoveredEnum</td>
 <td>0:1</td>
-<td>Typde e couvertrure</td>
+<td>Type de couverture.
+<p><span class="hl">La valeur <em>mixed</em> est déconseillée dans le cadre du profil pour l'accessibilité : il convient dans ce cas de segmenter en plusieurs SitePathLink avec chacun un type de couverture propre.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1897,7 +1941,6 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>0:1</td>
 <td>Indique si le cheminement est pratiquable en fauteuil roulant.</td>
 </tr>
-
 <tr class="odd">
 <td>«cntd»</td>
 <td>facilities</td>
@@ -1910,28 +1953,37 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td>Towards</td>
 <td>MultilingualString</td>
 <td>0:1</td>
-<td>Direction indiquée qand le cheminement est effectué dans le sens FROM vers TO.</td>
+<td>Direction indiquée quand le cheminement est effectué dans le sens FROM vers TO (sens direct).</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>Back</td>
 <td>MultilingualString</td>
 <td>0:1</td>
-<td>Direction indiquée qand le cheminement est effectué dans le sens TO vers FROM.</td>
+<td>Direction indiquée quand le cheminement est effectué dans le sens TO vers FROM.</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>NumberOfSteps</td>
 <td>xsd:integer</td>
 <td>0:1</td>
-<td>Nombre de marche rencontrées sur le cheminement.</td>
+<td>Nombre de marches rencontrées sur le cheminement.
+<p><span class="hl">Il s'agit du nombre de marches total de l'escalier si le tronçon de cheminement correspond à un escalier, ou du nombre de ressauts ou marches isolés sinon.</span></p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>MinimumWidth</td>
+<td>LengthType</td>
+<td>0:1</td>
+<td><p>Largeur minimale du cheminement</p>
+<p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
 </tr>
 <tr class="odd">
 <td></td>
 <td>AllowedUse</td>
 <td>DirectionOfUseEnum</td>
 <td>0:1</td>
-<td>Allowed direction of use of PATH LINK.</td>
+<td>Indique si le cheminement est empruntable dans les deux sens.</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1943,8 +1995,34 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>up (montée)</em></p></li>
 <li><p><em>down (descente)</em></p></li>
 <li><p><em>level (pas de changement de niveau)</em></p></li>
-<li><p><em>upAndDown (montée puis descente)</em></p></li>
-<li><p><em>downAndUp (descente puis montés)</em></p></li>
+</ul><p><span class="hl">Les valeurs <em>upAndDown</em> (montée puis descente) et <em>downAndUp</em> (descente puis montée) sont déconseillées dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs SitePathLink avec chacun un type de transition propre.</span></p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Gradient</td>
+<td>xsd:integer</td>
+<td>0:1</td>
+<td>Pente en degrés (dans le sens direct, from/to, du cheminement)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>TiltAngle</td>
+<td>xsd:integer</td>
+<td>0:1</td>
+<td>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>TiltType</td>
+<td>TiltTypeEnum</td>
+<td>0:1</td>
+<td><p>Valeur codée du dévers</p>
+<ul>
+<li><p><em>strongLeftTilt (dévers fort à gauche)</em></p></li>
+<li><p><em>mediumLeftTilt (dévers moyen à gauche)</em></p></li>
+<li><p><em>nearlyFlat (preque plat)</em></p></li>
+<li><p><em>mediumRightTilt (dévers moyen à droite)</em></p></li>
+<li><p><em>strongRightTilt (dévers fort à droite)</em></p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -1984,24 +2062,17 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <td><p>Précision du type de caractèristique associée au PATH LINK:</p>
 <p>:</p>
 <ul>
-<li><p><em>pathway (sntier)</em></p></li>
+<li><p><em>pathway (sentier, en surface)</em></p></li>
 <li><p><em>corridor (couloir)</em></p></li>
 <li><p><em>overpass (passerelle, pont)</em></p></li>
 <li><p><em>underpass (passage sous-terrain)</em></p></li>
 <li><p><em>tunnel (tunnel)</em></p></li>
 </ul></td>
 </tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>Width</strong></em></td>
-<td>PassengersPerMinute</td>
-<td>0:1</td>
-<td>Largeur du cheminement</td>
-</tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Flooring</strong></em></td>
-<td><em>xsd :decimal</em></td>
+<td>FlooringType</td>
+<td>FlooringTypeEnum</td>
 <td>0:1</td>
 <td><p>Type de surface au sol</p>
 <ul>
@@ -2019,19 +2090,19 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>Wood (bois)</em></p></li>
 <li><p><em>Stone (pierre)</em></p></li>
 <li><p><em>Grass (gazon)</em></p></li>
-<li><p><em>Dirt (terre)</em></p></li>
+<li><p><em>Earth (terre)</em></p></li>
 <li><p><em>Gravel (graviers)</em></p></li>
 <li><p><em>Uneven (inégal)</em></p></li>
 <li><p><em>Unknown (inconnu)</em></p></li>
+<li><p><em>Other (autre)</em></p></li>
 </ul>
-<p><em>Other</em></p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>RightSideBorder</strong></em></td>
-<td><em>FlooringTypeEnum</em></td>
+<td><em>RightSideBorder</em></td>
+<td><em>BorderTypeEnum</em></td>
 <td>0:1</td>
-<td><p>Type de bordure sur le côté droit (dans le sens direct, fom/to, du cheminement)</p>
+<td><p>Type de bordure sur le côté droit (dans le sens direct, from/to, du cheminement)</p>
 <ul>
 <li><p><em>Wall (mur)</em></p></li>
 <li><p><em>Grass (gazon)</em></p></li>
@@ -2054,38 +2125,17 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>LeftDideBorder</strong></em></td>
+<td><em>LeftSideBorder</em></td>
 <td><em>BorderTypeEnum</em></td>
 <td>0:1</td>
-<td>Type de bordure sur le côté droit (dans le sens direct, fom/to, du cheminement)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>TiltAngle</strong></em></td>
-<td><em>BorderTypeEnum</em></td>
-<td>0:1</td>
-<td>Dévers (inclinaison latérale) de +20 a -20 degrès (dans le sens direct, fom/to, du cheminement)</td>
+<td>Type de bordure sur le côté droit (dans le sens direct, from/to, du cheminement)</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>CodedTilt</strong></em></td>
-<td><em>xsd:integer</em></td>
-<td>0:1</td>
-<td><p>Valeur codée du dévers</p>
-<ul>
-<li><p><em>strongLeftTilt (dévers fort à gauche)</em></p></li>
-<li><p><em>mediumLeftTilt (dévers moyen à gauche)</em></p></li>
-<li><p><em>nearlyFlat(preque plat)</em></p></li>
-<li><p><em>mediumRightTilt (dévers moyen à droite)</em></p></li>
-<li><p><em>strongRightTilt (dévers fort à droite)</em></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>TactileWarningStrip</strong></em></td>
+<td><em>TactileWarningStrip</em></td>
 <td><em>TactileWarningEnum</em></td>
 <td>0:1</td>
-<td><p>Indique s’il y a des bandes d’interception podotactyles (in the direction of the pathLink way) :</p>
+<td><p>Indique s’il y a des bandes d’interception podotactiles (dans le sens direct, from/to, du cheminement) :</p>
 <ul>
 <li><p><em>TactileStripAtBeginning (bande au depart)</em></p></li>
 <li><p><em>TactileStripAtEnd (bande à l’arrivèe)</em></p></li>
@@ -2094,26 +2144,32 @@ aussi pour limiter le volume d'information à gérer par les systèmes.
 <li><p><em>unknown (inconnu)</em></p></li>
 </ul></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
-<td><em><strong>TactileGuidingStrip</strong></em></td>
+<td><em>TactileGuidingStrip</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Indique s’il y a des bandes de guidage podotactyles.</td>
+<td>Indique s’il y a des bandes de guidage podotactiles.</td>
 </tr>
-
 <tr class="even">
 <td>«cntd»</td>
 <td>TransferDuration</td>
 <td>TransferDuration</td>
 <td>0:1</td>
-<td><p>Temps moyens pour franchir le cheminement (4 valeures disponibles):</p>
+<td><p>Temps moyens pour franchir le cheminement (4 valeurs disponibles):</p>
 <ul>
 <li><p><em>DefaultDuration (durée moyenne)</em></p></li>
-<li><p><em>FrequentTravellerDuration (durée pour un voyageur habituée)</em></p></li>
+<li><p><em>FrequentTravellerDuration (durée pour un voyageur habitué)</em></p></li>
 <li><p><em>OccasionalTravellerDuration (durée pour un voyageur occasionel)</em></p></li>
 <li><p><em>MobilityRestrictedTravellerDuration (durée pour un voyageur à mobilité réduite)</em></p></li>
 </ul></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><em>placeEquipments</em></td>
+<td>Equipment</td>
+<td>0:1</td>
+<td>Liste des AccessEquipment (équipements d’accès) dont dépend le tronçon de cheminement.</td>
 </tr>
 </tbody>
 </table>
@@ -4918,3 +4974,14 @@ cette étude ne porte que sur les modes de surface)*
 
 EN 28701, Intelligent transport systems - Public transport -
 Identification of Fixed Objects in Public Transport (IFOPT)
+
+Standard CNIG Accessibilité du cheminement en voirie : 
+http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessibilite_v2022-05.pdf 
+(v2021-10 rev. 2022-05)
+
+Documentation collaborative sur la cartographie des cheminements piétons
+et de l'accessibilité dans OpenStreetMap : 
+https://wiki.openstreetmap.org/wiki/FR:Cheminements_pi%C3%A9tons
+
+Règles de conversion vers le présent profil, depuis OpenStreetMap et depuis le standard CNIG Accessibilité :
+https://doc.transport.data.gouv.fr/documentation/normes-europeennes/accessibilite
