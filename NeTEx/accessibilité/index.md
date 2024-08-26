@@ -1584,7 +1584,7 @@ position et ses caractéristiques propres.
 |                     | ***EquipmentRef***       | *EquipmentRef*          | 1:1              | Référence à l’EQUIPMENT dont on fournit la position.                                                                                                                                                                                                                                                                        |
 |                     | Description              | MultilingualString      | 0:1              | Description de la postion de l'équipement.                                                                                                                                                                                                                                                                                  |
 |                     | ***Location***           | *Location*              | 0:1              | Position de l’EQUIPMENT (position géographique).                                                                                                                                                                                                                                                                             |
-| «FK»                | ***ReferencePoint­Ref*** | *PointRef*              | 0:1              | Point de référence pour un positionnement relatif de l’équipement (realisé par les 2 attributs suivants : XOffset et YOffset). S’il est absent on utilisera le coin supérieur gauche de l’EQUIPMENT PLACE. S’il est présent, il correpondra à une entrée ou un élément facimement identifiable au sein de l’EQUIPMENT PLACE. |
+| «FK»                | ***ReferencePoint­Ref*** | *PointRef*              | 0:1              | Point de référence pour un positionnement relatif de l’équipement (réalisé par les 2 attributs suivants : XOffset et YOffset). S’il est absent on utilisera le coin supérieur gauche de l’EQUIPMENT PLACE. S’il est présent, il correspondra à une entrée ou un élément facilement identifiable au sein de l’EQUIPMENT PLACE. |
 |                     | ***XOffset***            | *LengthType*            | 0:1              | Position nord/sud ou décalage vertical par rapport au point de référence                                                                                                                                                                                                                                                    |
 |                     | ***YOffset***            | *LengthType*            | 0:1              | Position est/ouest ou décalage horizontal par rapport au point de référence                                                                                                                                                                                                                                                 |
 
@@ -1825,9 +1825,8 @@ trop petits) pour éviter de surcharger l'utilisateur en information et
 aussi pour limiter le volume d'information à gérer par les systèmes.
 
 <span class="hl">À noter qu’en présence de bandes de guidage, il est obligatoire de créer un 
-ou plusieurs objets SitePathLink pour les modéliser, avec les attributs 
-*TactileWarningStrip* et/ou *TactileGuidingStrip* dûment renseignés. 
-Leur définition détaillée est en Table 11 plus bas. </span>
+ou plusieurs objets SitePathLink pour les modéliser avec l'attribut *TactileGuidingStrip* dûment renseigné. 
+Sa définition détaillée est en Table 11 plus bas. </span>
 
 <div class="table-title">SitePathLink – Élément</div>
 
@@ -1987,6 +1986,7 @@ Leur définition détaillée est en Table 11 plus bas. </span>
 <td>0:1</td>
 <td><p>Largeur minimale du cheminement</p>
 <p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs et trottoirs.</span></p>    
 </tr>
 <tr class="odd">
 <td></td>
@@ -2012,14 +2012,18 @@ Leur définition détaillée est en Table 11 plus bas. </span>
 <td>Gradient</td>
 <td>xsd:integer</td>
 <td>0:1</td>
-<td>Pente en degrés (dans le sens direct, from/to, du cheminement)</td>
+<td><p>Pente en degrés (dans le sens direct, from/to, du cheminement)</p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</span></p>   
+</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>TiltAngle</td>
 <td>xsd:integer</td>
 <td>0:1</td>
-<td>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</td>
+<td><p>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</span></p>   
+</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -2153,8 +2157,7 @@ Leur définition détaillée est en Table 11 plus bas. </span>
 <li><p><em>noTactileStrip (pas de bandes d’interception)</em></p></li>
 <li><p><em>unknown (inconnu)</em></p></li>
 </ul>
-<p><span class="hl">En cas de présence de bandes d’interception podotactiles, il 
-est obligatoire de renseigner les tronçons de cheminement correspondants.</span></p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les escaliers et passages piétons.</span></p>   
 </td>
 </tr>
 <tr class="odd">
@@ -2703,7 +2706,7 @@ passagers)* *–* Élément
 <li><p><em>app</em> (application sur smartphone)</p></li>
 <li><p><em>internetPage</em> (Page internet via <em><strong>Image</strong>-xsd:anyURI</em> hérité de EQUIPMENT)</p></li>
 <li><p><em>specificDevice (</em>télécommande<em>)</em></p></li>
-<li><p><em>pushButton</em>(boutton poussoir)</p></li>
+<li><p><em>pushButton </em>(boutton poussoir)</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -2993,13 +2996,15 @@ passagers)* *–* Élément
 
 ## Access Equipment
 
+<span class="hl">Dans le cas des entrées de gare, l'attribut *Width* est rendu obligatoire par l'arrêté du 28 mai 2024. Voir le détail dans la table ci-après.</span>
+
 <div class="table-title">AccessEquipment (équipement d’accès) – Élément</div>
 
 | **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
 | *::>*               | *::>*                 | *PlaceEquipment*           | *::>*            | ACCESS EQUIPMENT hérite de PLACE EQUIPMENT.                             |
 | «PK»                | id                    | PlaceAccessEquipmentIdType | 1:1              | Identifiant du ACCESS EQUIPMENT.                                        |
-|                     | ***Width***           | meters                     | 0:1              | Largeur de la porte our l’espace d’entrès                               |
+|                     | ***Width***           | meters                     | 0:1              | Largeur de la porte our l’espace d’entrée                               |
 |                     | ***DirectionOfUse***  | DirectionOfUseEnum         | 0:1              | Direction dans laquelle on peut emprunter l’accès (les deux par defaut) |
 |                     | ***SafeForGuideDog*** | *xsd:boolean*              | 0:1              | Signale si l’accès est sans risqué pour un chien guide.                 |
 
@@ -3079,7 +3084,9 @@ Voir la table ci-après pour la description de cet élément.</span>
 <td><em>AcousticCrossingAids</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale la présence d’une aide acoustique à la traversée</td>
+<td><p>Signale la présence d’une aide acoustique à la traversée</p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</span></p> 
+</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3114,7 +3121,9 @@ Voir la table ci-après pour la description de cet élément.</span>
 <li><p><em>TactileStripAtBothEnds</em> (bandes d’interception des deux côtés)</p></li>
 <li><p><em>noTactileStrip</em> (pas de bande d’interception)</p></li>
 <li><p><em>unknown</em> (inconnu)</p></li>
-</ul></td>
+</ul>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</span></p> 
+</td>
 </tr>
 </tbody>
 </table>
@@ -3225,7 +3234,9 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td><em>AutomaticDoor</em></td>
 <td>xsd:boolean</td>
 <td>0:1</td>
-<td>Signale que la porte est à ouverture/fermeture automatique</td>
+<td><p>Signale que la porte est à ouverture/fermeture automatique</p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span></p>
+</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3309,7 +3320,9 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <li><p><em>mediumForce</em> (force moyenne)</p></li>
 <li><p><em>heavyForce</em> (force importante)</p></li>
 <li><p><em>unknown</em> (inconnu)</p></li>
-</ul></td>
+</ul>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span></p> 
+</td>
 </tr>
 </tbody>
 </table>
@@ -3647,7 +3660,9 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>TopEnd</td>
 <td>StairEnd</td>
 <td>0:1</td>
-<td>Caractérisation de l’extrémité haute de l’escalier</td>
+<td><p>Caractérisation de l’extrémité haute de l’escalier</p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les bandes d'éveil de vigilance en haut des escaliers.</span></p>
+</td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -3770,7 +3785,9 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>Depth</td>
 <td>LengthType</td>
 <td>0:1</td>
-<td>Profondeur de l’ascenceur</td>
+<td><p>Profondeur de l’ascenseur</p>
+<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</span></p>   
+</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -4535,14 +4552,16 @@ Pour **AccessFeatureType** valant *crossing*, on considèrera les éventuelles m
 et *false* si **WheelchairAccess** est *false*.
 
 
-**EscalatorFreeAccess** : accès sans escalator.
+**EscalatorFreeAccess** : ce n'est pas un escalator.
 En particulier, **EscalatorFreeAccess** prendra la valeur *false* pour **AccessFeatureType** valant *escalator*, 
-et la valeur *true* dans tous les autres cas.
+et la valeur *true* dans tous les autres cas. 
+En d'autres termes, si le SitePathLink est un escalator, la valeur vaut **true** ; sinon elle vaut **false**.
 
 
-**LiftFreeAccess** : accès sans ascenseur.
+**LiftFreeAccess** : ce n'est pas un ascenseur.
 En particulier, **LiftFreeAccess** prendra la valeur *false* pour **AccessFeatureType** valant *lift*, 
-et la valeur true dans tous les autres cas.
+et la valeur true dans tous les autres cas. 
+En d'autres termes, si le SitePathLink est un ascenseur, la valeur vaut **true** ; sinon elle vaut **false**.
 
 
 **AudibleSignalsAvailable**
