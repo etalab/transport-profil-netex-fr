@@ -2706,7 +2706,7 @@ passagers)* *–* Élément
 <li><p><em>app</em> (application sur smartphone)</p></li>
 <li><p><em>internetPage</em> (Page internet via <em><strong>Image</strong>-xsd:anyURI</em> hérité de EQUIPMENT)</p></li>
 <li><p><em>specificDevice (</em>télécommande<em>)</em></p></li>
-<li><p><em>pushButton </em>(boutton poussoir)</p></li>
+<li><p><em>pushButton </em>(bouton poussoir)</p></li>
 </ul></td>
 </tr>
 </tbody>
