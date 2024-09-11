@@ -1102,7 +1102,7 @@ les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) :
 - *AudibleSignalsAvailable* : une information sonore ou une signalétique auditive
  est disponible
 - *VisualSignsAvailable* : une information visuelle ou une signalétique visuelle
- est disponible*
+ est disponible
 
 
 Les valeurs potentiellement portées par chacun de ces indicateurs sont:
@@ -4501,7 +4501,7 @@ En particulier :
  pente de moins de 5% et largeur d’au moins 1,40m ;
 - si le dévers est de moins de 5%, ou la pente de moins de 8%, ou la largeur d’au moins 90 cm,
  on pourra utiliser *partial* ;
-- •	on pourra également utiliser *partial* pour qualifier une rampe conforme à la réglementation
+- on pourra également utiliser *partial* pour qualifier une rampe conforme à la réglementation
  française mais pas à cette définition ;
 - *false* sera systématiquement utilisé pour les *AccessFeatureType* suivants :
 * stairs
@@ -4529,7 +4529,7 @@ Pour plus de détails, renseigner aussi :
 - LiftEquipment/WheelchairTurningCircle
 
 
-**StreFreeAccess** : il n’y a pas de marche infranchissable.
+**StepFreeAccess** : il n’y a pas de marche infranchissable.
 En particulier, ça sera 
 - *true* s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
 - *partial* s’il y a une marche de moins de 4 cm
