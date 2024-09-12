@@ -2535,11 +2535,11 @@ faut l'interprété "trainTram").
 </tr>
 <tr class="even">
 <td><em><strong>local</strong></em></td>
-<td>Train locall</td>
+<td>Train local</td>
 </tr>
 <tr class="odd">
 <td><em><strong>highSpeedRail</strong></em></td>
-<td><p>Train à grande vitesseTrain à grande vitesse</p>
+<td><p>Train à grande vitesse</p>
 <p><em>Voir ERA B.4.7009 - 8 high speed train: Long distance train formed by a unit capable for high speed running on high speed or normal lines most modern train unit.</em></p></td>
 </tr>
 <tr class="even">
@@ -2550,7 +2550,7 @@ faut l'interprété "trainTram").
 <tr class="odd">
 <td><em><strong>regionalRail</strong></em></td>
 <td><p>Train régional</p>
-<p>See ERA B.4.7009 - 11 Regional: Regional train organised by the regional government even if formed by a unit capable for high speed running on high speed lines.</p></td>
+<p><em>See ERA B.4.7009 - 11 Regional: Regional train organised by the regional government even if formed by a unit capable for high speed running on high speed lines.</em></p></td>
 </tr>
 <tr class="even">
 <td><em><strong>interregionalRail</strong></em></td>
@@ -2636,11 +2636,11 @@ faut l'interprété "trainTram").
 | ***nationalCarFerry***            | Ferry national                                                    |
 | ***regionalCarFerry***            | Ferry régional                                                    |
 | ***localCarFerry***               | Ferry local                                                       |
-| ***internationalPassengerFerry*** | Ferry de transport de passager international *(pas de véhicules)* |
-| ***nationalPassengerFerry***      | Ferry de transport de passager national *(pas de véhicules)*      |
+| ***internationalPassengerFerry*** | Ferry de transport de passagers international *(pas de véhicules)* |
+| ***nationalPassengerFerry***      | Ferry de transport de passagers national *(pas de véhicules)*     |
 | ***regionalPassengerFerry***      | Ferry de transport de passagers régional *(pas de véhicules)*     |
 | ***localPassengerFerry***         | Ferry de transport de passagers local                             |
-| ***riverBus***                    | Bateaubus sur fleuve ou rivière                                   |
+| ***riverBus***                    | Bateau-bus sur fleuve ou rivière                                  |
 
 ## Institutions
 
