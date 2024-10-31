@@ -2799,7 +2799,7 @@ services à des conditions spécifiques. Il peut s'agir de droits d'accès
 spécifiés (PRODUIT TARIFAIRE PRÉDÉFINI) ou d'autres produits (remises,
 montant d'unité de prix, etc.).
 
-Un PRODUIT FARE bien qu’immatériel, peut être matérialisé sur différents
+Un PRODUIT TARIFARE bien qu’immatériel, peut être matérialisé sur différents
 DOCUMENTS DE VOYAGE. Par exemple, un PRODUIT TARIFAIRE « passe
 mensuelle » peut être incorporé de différentes manières sur un billet
 papier spécifique ou stocké sur une carte électronique.
