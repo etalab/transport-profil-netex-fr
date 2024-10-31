@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/New%20Modes/PT%200303/XSD/1.2.2r/xsd/NeTEx_publication.xsd" version="1.1">
+	<!--- =============== ENTETE =========== -->
+	<PublicationTimestamp>2019-06-12T09:30:47.0Z</PublicationTimestamp>
+	<ParticipantRef>AURIGE001</ParticipantRef>
+	<!-- ========== DONNEES =========== -->
+	<dataObjects>
+		<!-- =========================================== -->
+		<!-- CompositeFrame.de type NETEX_FRANCE -->
+		<CompositeFrame version="1" created="2019-06-12T09:30:47.0Z" id="FR-Tarif-Example:CompositeFrame:myFrame01:LOC">
+			<frames>
+				<!-- =========================================== -->
+				<!-- Frame NETEX_TARIF -->
+				<GeneralFrame version="001" id="FR-Tarif-Example:TypeOfFrame:NETEX_TARIF-Example1:LOC">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF">version="1.01:FR-NETEX_TARIF-1.0"</TypeOfFrameRef>
+					<members modificationSet="all">
+
+						<!-- ===================================================================================================================== -->
+						<!-- LE TITRE -->
+						<PreassignedFareProduct id="FR-Tarif-Example:PreassignedFareProduct:T+001:LOC" version="any">
+							<Name>Ticket 1h30</Name>
+							<AuthorityRef ref="FR-Tarif-Example:Authority:IDFM:"/>
+							<ConditionSummary>
+								<TariffBasis>period</TariffBasis>
+								<CanBreakJourney>false</CanBreakJourney>
+								<IsRefundable>false</IsRefundable>
+								<IsExchangable>false</IsExchangable>
+							</ConditionSummary>
+							
+							<ProductType>singleTrip</ProductType>
+						</PreassignedFareProduct>
+						
+						<!-- ===================================================================================================================== -->
+						<!-- FARE TABLE avec affectation des prix -->
+						<!-- Version minimaliste sans SalesOfferPackage (le lien direct avec FareProduct) -->
+						<FareTable version="any" id="FR-Tarif-Example:TickeT+FareTable:001:LOC">
+							<Name> Bus Fare Prices - 18+Student </Name>
+							<cells>
+								<Cell version="any" id="FR-Tarif-Example:Cell:001:LOC" order="1">
+									<SalesOfferPackagePrice version="any" id="lFR-Tarif-Example:SalesOfferPackagePrice:001:LOC">
+										<Name>Ticket 1h30</Name>
+										<Amount>1.90</Amount>
+									</SalesOfferPackagePrice>
+									<PreassignedFareProductRef ref="FR-Tarif-Example:PreassignedFareProduct:T+001:LOC" version="any"/>
+									<NetworkRef ref="FR-Tarif-Example:Network:001:"/> <!--Réseau concerné-->
+									<noticeAssignments>
+										<NoticeAssignmentView>
+											<Text>Ticket 1h30 - à l'unité plein tarif - Aller retour interdit, gratuit pour le moins de 4 ans, ticket disponible en agence uniquement</Text>
+											<CanBeAdvertised>true</CanBeAdvertised>
+										</NoticeAssignmentView>
+									</noticeAssignments>
+								</Cell>
+								<!-- etc. -->
+							</cells>
+						</FareTable>
+						<!-- ===================================================================================================================== -->
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
