@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/New%20Modes/PT%200303/XSD/1.2.2r/xsd/NeTEx_publication.xsd" version="1.1">
+	<!--- =============== ENTETE =========== -->
+	<PublicationTimestamp>2019-06-12T09:30:47.0Z</PublicationTimestamp>
+	<ParticipantRef>AURIGE001</ParticipantRef>
+	<!-- ========== DONNEES =========== -->
+	<dataObjects>
+		<!-- =========================================== -->
+		<!-- CompositeFrame.de type NETEX_FRANCE -->
+		<CompositeFrame version="1" created="2019-06-12T09:30:47.0Z" id="AURIGE:CompositeFrame:myFrame01:LOC">
+			<frames>
+				<!-- =========================================== -->
+				<!-- Frame NETEX_TARIF -->
+				<GeneralFrame version="001" id="AURIGE:TypeOfFrame:NETEX_TARIF-Example1:LOC">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF">version="1.01:FR-NETEX_TARIF-1.0"</TypeOfFrameRef>
+					<members modificationSet="all">
+						<!-- ===================================================================================================================== -->
+						<!-- STRUCTURE TARIFAIRE ET DROITS DE BASE -->
+						<DistanceMatrixElement id="LEMAN-EXPRESS:DistanceMatrixElement:001:LOC" version="any"> <!--Exemple d'OD Arrêt vers Zone -->
+							<InverseAllowed>true</InverseAllowed>
+							<StartStopPointRef versionRef="any" ref="LEMAN-EXPRESS:ScheduledStopPoint:Chambési-87271007:LOC"/>
+							<EndTariffZoneRef versionRef="any" ref="LEMAN-EXPRES:TariffZone:Zone-250:LOC"/>
+						</DistanceMatrixElement>
+						
+						<FareStructureElement id="LEMAN-EXPRESS:FareStructureElement:001:LOC" version="any">
+							<DistanceMatrixElementRef ref="FR-Tarif-Example:DistanceMatrixElement:001:LOC"/>
+							<GenericParameterAssignment id="LEMAN-EXPRESS:GenericParameterAssignment:001:LOC" version="any" order="1"> 
+								<limitations>
+									<UsageValidityPeriod id="LEMAN-EXPRESS:UsageValidityPeriod:001:LOC" version="any"> 										<!--Peut être une référence pour mutualiser la définition-->
+										<UsageTrigger>purchase</UsageTrigger> 		<!--On a aussi l'option startOutboundRide, etc.--> 
+										<StandardDuration>PT180M</StandardDuration>
+									</UsageValidityPeriod>
+								</limitations> 
+							</GenericParameterAssignment> 
+						</FareStructureElement>
+						
+						<!-- ===================================================================================================================== -->						
+
+<!--			            ETC. -->						
+						
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>

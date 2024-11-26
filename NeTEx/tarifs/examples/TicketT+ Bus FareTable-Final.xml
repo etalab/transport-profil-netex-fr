@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/New%20Modes/PT%200303/XSD/1.2.2r/xsd/NeTEx_publication.xsd" version="1.1">
+	<!--- =============== ENTETE =========== -->
+	<PublicationTimestamp>2019-06-12T09:30:47.0Z</PublicationTimestamp>
+	<ParticipantRef>AURIGE001</ParticipantRef>
+	<!-- ========== DONNEES =========== -->
+	<dataObjects>
+		<!-- =========================================== -->
+		<!-- CompositeFrame.de type NETEX_FRANCE -->
+		<CompositeFrame version="1" created="2019-06-12T09:30:47.0Z" id="AURIGE:CompositeFrame:myFrame01:LOC">
+			<frames>
+				<!-- =========================================== -->
+				<!-- Frame NETEX_TARIF -->
+				<GeneralFrame version="001" id="AURIGE:TypeOfFrame:NETEX_TARIF-Example1:LOC">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF">version="1.01:FR-NETEX_TARIF-1.0"</TypeOfFrameRef>
+					<members modificationSet="all">
+						<!-- ===================================================================================================================== -->
+						<!-- STRUCTURE TARIFAIRE ET DROITS DE BASE -->
+						<TimeInterval id="FR-Tarif-Example:TimeInterval:001:LOC" version="any">
+							<Description>1h30 de validité pour bus et TRam</Description>
+							<Duration>PT90M</Duration>
+							<timeStructureFactors>
+								<TimeStructureFactor id="FR-Tarif-Example:TimeStructureFactor:001:LOC" version="any">
+									<Name>Entre première et dernière validation</Name>
+									<!--A présenter pour l'IV-->
+									<Description>Time Structure Factor pour "entre première et dernière validation"</Description>
+									<TypeOfFareStructureFactorRef ref="BetweenFirstAndLastValidation"/>
+								</TimeStructureFactor>
+							</timeStructureFactors>
+						</TimeInterval>
+						<ValidableElement id="FR-Tarif-Example:ValidableElement:001:LOC" version="any">
+							<noticeAssignments>
+								<NoticeAssignment id="FR-Tarif-Example:NoticeAssignment:001:LOC" version="any" order="1">
+									<NoticeRef ref="FR-Tarif-Example:Notice:001:LOC"/>
+								</NoticeAssignment>
+							</noticeAssignments>
+							<fareStructureElements>
+								<FareStructureElementRef ref="FR-Tarif-Example:FareStructureElement:001:LOC"/>
+							</fareStructureElements>
+						</ValidableElement>
+						
+						<FareStructureElement id="FR-Tarif-Example:FareStructureElement:001:LOC" version="any">
+							<TimeIntervalRef ref="FR-Tarif-Example:TimeInterval:001:LOC"/>
+						</FareStructureElement>
+						
+						<Notice id="FR-Tarif-Example:Notice:001:LOC" version="any">
+							<Name>Ticket Validation Notice</Name>
+							<Text>À chaque entrée ou changement de bus ou de tramway, vous devez valider à nouveau votre ticket T+</Text>
+							<CanBeAdvertised>true</CanBeAdvertised>
+						</Notice>
+
+						<!-- ===================================================================================================================== -->
+						<!-- LE TITRE -->
+						<PreassignedFareProduct id="FR-Tarif-Example:PreassignedFareProduct:T+BusTram-001:LOC" version="any">
+							<Name>Ticket T+ Bus-Tram</Name>
+							<AuthorityRef ref="FR-Tarif-Example:Authority:IDFM:"/>
+							<ConditionSummary>
+								<TariffBasis>period</TariffBasis>
+								<CanBreakJourney>false</CanBreakJourney>
+								<IsRefundable>false</IsRefundable>
+								<IsExchangable>false</IsExchangable>
+							</ConditionSummary>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="FR-Tarif-Example:GenericParameterAssignment:001:LOC" version="any" order="1">
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<RoundTripRef ref="FR-Tarif-Example:RoundTrip:001:LOC"/>
+										<ExchangingRef ref="FR-Tarif-Example:Exchanging:001:LOC"/>
+										<RefundingRef ref="FR-Tarif-Example:Refunding:001:LOC"/>
+									</limitations>
+									<validityParameters>
+										<VehicleModes>tram bus</VehicleModes>
+									</validityParameters>
+									<IncludesGroupingType>AND</IncludesGroupingType>
+									<includes>
+										<GenericParameterAssignment id="FR-Tarif-Example:GenericParameterAssignment:003:LOC" version="any" order="1">
+											<Description>Voir http://www.navigo.fr/wp-content/uploads/2016/06/lignes_tarification_speciale_07-2014.pdf  pour les lignes à tarification spéciale</Description>
+											<IsAllowed>false</IsAllowed>
+											<validityParameters>
+												<LineRef ref="FR-Tarif-Example:Line:Orlybus:LOC"/>
+												<LineRef ref="FR-Tarif-Example:Line:Tram11:LOC"/>
+												<LineRef ref="FR-Tarif-Example:Line:RAPT350:LOC"/>
+												<LineRef ref="FR-Tarif-Example:Line:RAPT351:LOC"/>
+												<GroupOfLinesRef ref="FR-Tarif-Example:GroupOfLines:Noctilien:LOC"/>
+											</validityParameters>
+										</GenericParameterAssignment>
+									</includes>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<validableElements>
+								<ValidableElementRef ref="FR-Tarif-Example:ValidableElement:001:LOC"/>
+							</validableElements>
+							<ProductType>singleTrip</ProductType>
+						</PreassignedFareProduct>
+						
+						<RoundTrip id="FR-Tarif-Example:RoundTrip:001:LOC" version="any">
+							<TripType>single</TripType>
+						</RoundTrip>
+						<Exchanging id="FR-Tarif-Example:Exchanging:001:LOC" version="any">
+							<Description>Echangé seulement si défectueux</Description>
+							<Allowed>none</Allowed>
+						</Exchanging>
+						<Refunding id="FR-Tarif-Example:Refunding:001:LOC" version="any">
+							<Allowed>none</Allowed>
+						</Refunding>
+						<!-- ======================================================== -->
+						<SalesOfferPackageElement id="FR-Tarif-Example:SalesOfferPackageElement:001:LOC" version="any" order="1">
+							<RequiresValidation>true</RequiresValidation>
+							<TypeOfTravelDocumentRef ref="FR-Tarif-Example:TypeOfTravelDocument:001:LOC"/>
+							<PreassignedFareProductRef ref="FR-Tarif-Example:PreassignedFareProduct:T+001:LOC"/>
+						</SalesOfferPackageElement>
+						
+						<TypeOfTravelDocument id="FR-Tarif-Example:TypeOfTravelDocument:001:LOC" version="any">
+							<Name>Ticket T+ carton a bande magnétique</Name>
+							<Url>http://www.navigo.fr/wp-content/uploads/2018/11/127099_Ticket-T_carnet-de-10-300x136.png</Url>
+							<MediaType>paperTicket</MediaType>
+							<MachineReadable>magneticStrip</MachineReadable>
+						</TypeOfTravelDocument>
+						
+						<SalesOfferPackage id="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+							<Name>Ticket à l'unité</Name>
+							<prices>
+								<SalesOfferPackagePrice id="FR-Tarif-Example:SalesOfferPackagePrise:001:LOC" version="any">
+									<Amount>1.90</Amount>
+									<Currency>EUR</Currency>
+								</SalesOfferPackagePrice>
+							</prices>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						
+						<SalesOfferPackage id="FR-Tarif-Example:SalesOfferPackage:002:LOC" version="any">
+							<Name>Carnet de 10 Ticket</Name>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="FR-Tarif-Example:GenericParameterAssignment:002:LOC" version="any" order="1">
+									<limitations>
+										<UsageValidityPeriod id="FR-Tarif-Example:UsageValidityPeriod:001:LOC" version="any">
+											<ValidityPeriodType>carnet</ValidityPeriodType>
+										</UsageValidityPeriod>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<prices>
+								<SalesOfferPackagePrice id="FR-Tarif-Example:SalesOfferPackagePrice:001:LOC" version="any">
+									<Amount>14.90</Amount>
+									<Currency>EUR</Currency>
+								</SalesOfferPackagePrice>
+							</prices>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<!-- ===================================================================================================================== -->
+						<!-- TARIF REDUIT -->
+						<UserProfile id="FR-Tarif-Example:UserProfile:001:LOC" version="any">
+							<!--Plein tarif classique-->
+							<Name>Plein tarif</Name>
+							<Description>Plein tarif adulte sans réduction</Description>
+							<MinimumAge>10</MinimumAge>
+						</UserProfile>
+						<UserProfile id="FR-Tarif-Example:UserProfile:002:LOC" version="any">
+							<!--Gratuit pour les enfants-->
+							<Name>Moins de 4 ans</Name>
+							<Description>Gratuit pour les enfants de moins de 4 ans</Description>
+							<MaximumAge>4</MaximumAge>
+							<DiscountBasis>free</DiscountBasis>
+						</UserProfile>
+						<UserProfile id="FR-Tarif-Example:UserProfile:003:LOC" version="any">
+							<!--50% pour les enfants entre 4 et 10 ans -->
+							<Name>Tarif Enfant</Name>
+							<Description>50%de réduction pour les enfants entre 4 et 10 ans </Description>
+							<prices>
+								<UsageParameterPrice id="FR-Tarif-Example:UsageParameterPrice:003:LOC" version="any">
+									<LimitingRule id="FR-Tarif-Example:LimitingRule:003:LOC" version="any">
+										<DiscountAsPercentage>0.50</DiscountAsPercentage>
+										<CanBeCumulative>false</CanBeCumulative>
+									</LimitingRule>
+								</UsageParameterPrice>
+							</prices>
+							<MinimumAge>4</MinimumAge>
+							<MaximumAge>10</MaximumAge>
+							<DiscountBasis>discount</DiscountBasis>
+						</UserProfile>
+						<EntitlementRequired id="FR-Tarif-Example:EntitlementRequired:004:LOC" version="any">
+							<!--50% carte famille nombreuse -->
+							<Name>Carte Famille Nombreuse SNCF</Name>
+							<Description>50% de réduction aus titulaires d’une carte "Famille nombreuse" de couleur bleue délivrée par la SNCF (enfant de – de 18 ans, contrairement à la carte rouge …) </Description>
+							<EntitlementProductRef ref="FR-Tarif-Example:EntitlementProduct:001:LOC"/>
+						</EntitlementRequired>
+						<EntitlementProduct id="FR-Tarif-Example:EntitlementProduct:001:LOC" version="any">
+							<Name>carte famille nombreuse SNCF bleue </Name>
+							<Description>carte "Famille nombreuse" de couleur bleue délivrée par la SNCF (enfant de – de 18 ans, contrairement à la carte rouge …)</Description>
+							<InfoUrl>https://www.service-public.fr/particuliers/vosdroits/F15292</InfoUrl>
+							<documentLinks>
+								<InfoLink>https%3A%2F%2Fwww.legifrance.gouv.fr%2Ftelecharger_rtf.do%3FidTexte%3DLEGITEXT000006063361%26dateTexte%3D20190617</InfoLink>
+							</documentLinks>
+							<GeneralOrganisationRef ref="FR-Tarif-Example:OperatorRef:SNCF:"/>
+						</EntitlementProduct>
+						
+<!--						<UserProfile id="FR-Tarif-Example:UserProfile:004:LOC" version="any">
+						    --><!-- User Profile pour les titulaire de carter Famille Nombreuse  --><!--
+							<Name>Titulaire de carte famille nombreuse SNCF bleue</Name>
+							<Description>50%de réduction</Description>
+							<prices>
+								<UsageParameterPrice id="FR-Tarif-Example:UsageParameterPrice:004:LOC" version="any">
+									<LimitingRule id="FR-Tarif-Example:LimitingRule:004:LOC" version="any">
+										<DiscountAsPercentage>0.50</DiscountAsPercentage>
+										<CanBeCumulative>false</CanBeCumulative>
+									</LimitingRule>
+								</UsageParameterPrice>
+							</prices>
+							
+							<DiscountBasis>discount</DiscountBasis>
+						</UserProfile>-->
+						<!-- ===================================================================================================================== -->
+						<!-- POINTS DE VENTE -->
+						<DistributionChannel id="FR-Tarif-Example:DistributionChannel:001:LOC" version="any">
+							<Name>Points de vente RATP</Name>
+							<Description>Vente de ticket dans tous les points de vente RATP</Description>
+							<DistributionChannelType>agency</DistributionChannelType>
+							<OrganisationRef ref="FR-Tarif-Example:Organisation:RATP:"/>
+							<distributionPoints>
+								<PointRef ref="etc."/>
+								<PointRef ref="etc."/>
+							</distributionPoints>
+						</DistributionChannel>
+						<GroupOfDistributionChannels id="FR-Tarif-Example:GroupOfDistributionChannels:001:LOC" version="any">
+							<Name>Tous les points de vente du Ticket T+</Name>
+							<members>
+								<DistributionChannelRef ref="FR-Tarif-Example:DistributionChannel:001:LOC"/>
+								<!--Etc.-->
+							</members>
+						</GroupOfDistributionChannels>
+						<DistributionAssignment id="FR-Tarif-Example:DistributionAssignment:001:LOC" version="any" order="1">
+							<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC"/>
+							<!--Ticket T+ plein tarif à l'unité-->
+							<GroupOfDistributionChannelsRef ref="FR-Tarif-Example:GroupOfDistributionChannels:001:LOC"/>
+						</DistributionAssignment>
+						<!-- ===================================================================================================================== -->
+						<!-- FARE TABLE avec affectation des prix -->
+						<!-- Pour chaque cellule: Prix / UserProfile ou Entitlement / SalesOfferPackage (le lien avec les FareProduct est fait par le SalesOfferPackage) -->
+						<FareTable version="any" id="lFR-Tarif-Example:TickeT+FareTable:001:LOC">
+							<Name> Bus Fare Prices - 18+Student </Name>
+							<cells>
+								<Cell version="any" id="lFR-Tarif-Example:Cell:001:LOC" order="1">
+									<SalesOfferPackagePrice version="any" id="lFR-Tarif-Example:SalesOfferPackagePrice:001:LOC">
+										<Name>Ticket a l'unité plein tarif</Name>
+										<Amount>1.90</Amount>
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:001:LOC"/>
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+								</Cell>
+								<Cell version="any" id="lFR-Tarif-Example:Cell:002:LOC" order="2">
+									<SalesOfferPackagePrice version="any" id="lFR-Tarif-Example:SalesOfferPackagePrice:002:LOC">
+										<Name>Gratuit pour les enfants</Name>
+										<Amount>0.00</Amount>
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:002:LOC"/>
+									<!--Gratuit pour les enfants-->
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+								</Cell>
+								<Cell version="any" id="lFR-Tarif-Example:Cell:003:LOC" order="3">
+									<SalesOfferPackagePrice version="any" id="lFR-Tarif-Example:SalesOfferPackagePrice:003:LOC">
+										<Name>50% pour les enfants entre 4 et 10 ans</Name>
+										<Amount>0.80</Amount>
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:003:LOC"/>
+									<!--50% pour les enfants entre 4 et 10 ans -->
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+								</Cell>
+								<Cell version="any" id="lFR-Tarif-Example:Cell:004:LOC" order="4">
+									<SalesOfferPackagePrice version="any" id="lFR-Tarif-Example:SalesOfferPackagePrice:004:LOC">
+										<Name>Carnet de 10 Tickets plein tarif</Name>
+										<Amount>14.90</Amount>
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:001:LOC"/>
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:002:LOC" version="any"/>
+								</Cell>
+								<Cell version="any" id="lFR-Tarif-Example:Cell:005:LOC" order="5">
+									<SalesOfferPackagePrice version="any" id="lFR-Tarif-Example:SalesOfferPackagePrice:005:LOC">
+										<Name>Carnet de 10 Tickets plein tarif famille nombreuse</Name>
+										<Amount>7.45</Amount>
+									</SalesOfferPackagePrice>
+									<EntitlementRequiredRef ref="FR-Tarif-Example:EntitlementRequired:004:LOC" version="any"/> <!--EntitlementRequired au lieu de UserProfile -->
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:002:LOC" version="any"/>
+								</Cell>
+								<!-- etc. -->
+							</cells>
+						</FareTable>
+						<!-- ===================================================================================================================== -->
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
