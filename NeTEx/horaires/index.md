@@ -1694,11 +1694,23 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td><p>Type de carburant du TYPE DE VEHICULE:</p>
 <ul>
-<li><p><em>petrol :</em> essence</p></li>
+<li><p><em>battery :</em> batterie</p></li>
+<li><p><em>biodiesel :</em> biogazole ou diesel bio</p></li>
 <li><p><em>diesel:</em> diesel</p></li>
-<li><p><em>naturalGas :</em> gaz</p></li>
-<li><p><em>biodiesel :</em> diesel bio</p></li>
+<li><p><em>dieselBatteryHybrid :</em> hybride diesel et batterie</p></li>
+<li><p><em>electricContact :</em> contact électrique</p></li>
 <li><p><em>electricity :</em> électrique</p></li>
+<li><p><em>ethanol :</em> éthanol</p></li>
+<li><p><em>hydrogen :</em> hydrogène</p></li>
+<li><p><em>liquidGas :</em> gaz liquide</p></li>
+<li><p><em>tpg (thermochemical power group) :</em> group thermochimique</p></li>
+<li><p><em>methane :</em> méthane</p></li>
+<li><p><em>naturalGas :</em> gaz</p></li>
+<li><p><em>petrol :</em> essence</p></li>
+<li><p><em>petrolBatteryHybrid :</em> hybride essence et batterie</p></li>
+<li><p><em>petrolLeaded :</em> essence au plomb</p></li>
+<li><p><em>petrolUnleaded :</em> essence sans plomb</p></li>
+<li><p><em>none :</em> aucun</p></li>
 <li><p><em>other :</em> autre</p></li>
 </ul></td>
 </tr>
