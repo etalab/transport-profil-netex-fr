@@ -1088,7 +1088,7 @@ utilisées pour les horaires et les tarifs.
 
 ## Les éléments non définis dans l’offre des service (réseau et horaires)
 
-Même si l’infrastructure et les services sont très complètement décrits
+Même si l’infrastructure et les services sont complètement décrits
 par les parties 1 et 2 de NeTEx, la description de l’offre tarifaire
 nécessite de compléter certaines de ces informations avec des attributs
 propres à la tarification. C’est ce que proposent les spécialisations et
@@ -2841,7 +2841,7 @@ le cadre du profil si le produit est "*single trip*" et qu’il référence
 plusieurs ***ValidableElements***, alors le PRODUIT ne donne la
 possibilité que d’utiliser un seul de ces ***ValidableElement*** parmi
 la miste proposée. Cela permet de gérer les cas où un produit donne
-accès à une droit A **ou** B **ou** C .... On pourra aussi utliser ce
+accès à un droit A **ou** B **ou** C .... On pourra aussi utliser ce
 mécanisme pour faire un unique produit O-D, contenant de très nombreuses
 O-D, mais avec une seule tarification comme dans le cas du Yield
 Management. Pour mémoire, le ***ValidableElement*** peut lui-même être
@@ -4886,7 +4886,7 @@ l’AFFECTATION DE DROITS D'ACCÈS est une affectation multiple. Pour cela,
 les attributs *xxx**GroupingType*** ci-dessous sont définis avec les
 valeurs d'un opérateur logique (AND, OR, NOT, XOR). Cela permettra
 d’exprimer des choses comme un droit valable de 6h00 à 8h30 ET de 19h30
-à 21h00, par opposition à une droit valable de 6h00 à 8h30 OU (EXCLUSIF)
+à 21h00, par opposition à un droit valable de 6h00 à 8h30 OU (EXCLUSIF)
 de 19h30 à 21h00.
 
 <div class='table-title'>UsageValidityParameter – Group</div>
@@ -5910,7 +5910,7 @@ et la règle dont il est dérivé ainsi que le montant qui en résulte.
   définie sur les résultats, par exemple pour fixer un prix minimum et
   maximum.
 
-Il peut être nécessaire de regrouper les de prix en GROUPES DE PRIX, par
+Il peut être nécessaire de regrouper les prix en GROUPES DE PRIX, par
 exemple pour définir des catégories auxquelles la même augmentation, en
 valeur ou en pourcentage, peut être appliquée.
 
