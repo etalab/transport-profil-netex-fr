@@ -562,7 +562,7 @@ d'accès, etc.).
 
 * **PMR** : Personne à Mobilité Réduite
 
-# Exigences minimum liées au code des transports et la réglementation Européenne
+# Exigences minimales liées au code des transports et la réglementation européenne
 
 La mise à disposition des données, quand elles existent, est obligatoire et se conforme aux exigences :
 - Au niveau européen, du règlement délégué (UE) 2017/1926 de la Commission du 31 mai 2017 modifié par le
@@ -582,7 +582,7 @@ Notez que  beaucoup de concepts dépendent des concepts issus de Transmodel/NeTE
 soit par relation au sens UML des termes. Par ailleurs, certains concepts additionnels peuvent relever d’autres parties
 du profil France, précisés dans le tableau le cas échéant.
 
-La partie Élément Commun n’est naturellement pas la première concernée par
+La partie "Éléments Communs" n’est naturellement pas la première concernée par
 la réglementation, car, contrairement aux autres parties du profil France qui sont plus
 métier, elle propose essentiellement des éléments de construction (qui
 seront référencés par héritage ou par relation par les autres parties du profil France).
