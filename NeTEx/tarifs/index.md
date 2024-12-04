@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France - Tarifs"
-date: 2024-04-30T12:00:00+02:00
+title: "NeTEx - Profil France v2.3 - Tarifs"
+date: 2024-12-04T00:00:00+01:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
