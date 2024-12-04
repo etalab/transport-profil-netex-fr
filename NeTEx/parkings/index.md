@@ -322,7 +322,7 @@ Autorité Organisatrice de Transports
 
 Personne à Mobilité Réduite
 
-# Exigences minimum liées au code des transports et la règlementation Européenne
+# Exigences minimales liées au code des transports et la règlementation européenne
 
 La mise à disposition des données, quand elles existent, est obligatoire et se conforme aux exigences :
 - Au niveau européen, du règlement délégué (UE) 2017/1926 de la Commission du 31 mai 2017 modifié par le
