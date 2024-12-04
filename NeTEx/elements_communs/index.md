@@ -583,9 +583,10 @@ soit par relation au sens UML des termes. Par ailleurs, certains concepts additi
 du profil France, précisés dans le tableau le cas échéant.
 
 La partie "Éléments Communs" n’est naturellement pas la première concernée par
-la réglementation, car, contrairement aux autres parties du profil France qui sont plus
-métier, elle propose essentiellement des éléments de construction (qui
-seront référencés par héritage ou par relation par les autres parties du profil France).
+la réglementation. En effet, contrairement aux autres parties du profil France, 
+elle propose essentiellement des éléments de construction (qui
+seront référencés par héritage ou par relation par les autres parties du profil France). 
+Ces éléments ne sont pas directement liés aux besoins métiers.
 Toutefois elle décrit certains éléments réutilisables directement visés
 par la réglementation : ce sont ces éléments qui présentés dans le
 tableau ci-dessous.
