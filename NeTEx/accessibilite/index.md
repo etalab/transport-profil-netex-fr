@@ -757,7 +757,7 @@ Personne à Mobilité Réduite
 
 </div>
 
-# Exigences minimum liées au code des transports et la règlementation Européenne
+# Exigences minimales liées au code des transports et la règlementation européenne
 
 La collecte et la mise à disposition des données « accessibilité » sont obligatoires et se conforment aux exigences :
 - Au niveau européen, du règlement délégué (UE) 2017/1926 de la Commission du 31 mai 2017 modifié par le
