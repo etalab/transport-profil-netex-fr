@@ -778,7 +778,7 @@ dits arrêté « ERP », liste l’ensemble des exigences techniques à respecte
 
 Ainsi, les critères proposés dans le Profil « Accessibilité » sont marqués « oui » 
 uniquement s’ils sont conformes à la réglementation en vigueur. Par exemple, 
-pour le critère « accessible en fauteuil roulant » soit marqué « oui » pour un arrêt de bus, 
+pour que le critère « accessible en fauteuil roulant » soit marqué « oui » pour un arrêt de bus, 
 ce dernier doit impérativement respecter les exigences techniques mentionnées aux trois premiers 
 alinéas du 12° de l’article 1 de l’arrêté du 15 janvier 2007.
 
@@ -786,12 +786,12 @@ Le profil « Accessibilité » propose 3 niveaux d’information, du plus basiqu
 afin de fournir une information détaillée aux usagers, il est recommandé de compléter directement 
 les attributs du niveau 3 du profil « Accessibilité » lorsqu’ils sont disponibles. 
 Ces 3 niveaux d’information sont : 
-- les informations de base (voir 6.2), éfondée sur l’évaluation a minima du respect
+- les informations de base (voir 6.2), fondées sur l’évaluation a minima du respect
  des exigences d'accessibilité définies par la réglementation en vigueur mais pouvant
- également être déduite par le renseignement du niveau 3 (6.5, 6.6 et Annexes) ;
+ également être déduites par le renseignement du niveau 3 (6.5, 6.6 et Annexes) ;
 - un niveau intermédiaire décrivant les services disponibles (voir 6.4) ;
-- et un niveau complet détaillant les cheminements et les équipements
- (voir 6.5, 6.6 et Annexe) et permettant le déploiement de l’information voyageur afin 
+- un niveau complet détaillant les cheminements et les équipements
+ (voir 6.5, 6.6 et Annexe), permettant le déploiement de l’information voyageur afin 
  proposer des trajets accessibles selon le profil et les besoins des usagers, respectant 
  ainsi le caractère non discriminatoire des services d’information et les exigences de l’article 
  L. 1115-8 du code des transports en matière d’information sur l’accessibilité.
@@ -802,7 +802,7 @@ soit tous les éléments de base.
 Le tableau ci-dessous résulte de l’analyse du code des transports et du règlement MMTIS et fournit la liste des concepts 
 concernés dans le présent profil correspondant aux données mentionnées dans le dispositif réglementaire. Il est donc nécessaire 
 de fournir les données prévues dans ces concepts pour être conforme au cadre réglementaire. Les différents concepts présentés ne 
-sont bien sûr pas détaillés dans ce tableau, mais dans le profil lui-même. C’est aussi dans la description du profil que l’on trouvera 
+sont bien sûr pas détaillés dans ce tableau mais dans le profil lui-même. C’est aussi dans la description du profil que l’on trouvera 
 les détails concernant les attributs (obligatoire/facultatif, règles de remplissage, codification, etc.). Pour ce qui est des attributs 
 facultatifs, la règle reste que, pour les objets ci-dessous, toute information disponible est supposée être fournie. 
 
