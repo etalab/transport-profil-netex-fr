@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France - Horaires"
-date: 2022-01-13T00:00:00+00:02
+title: "NeTEx - Profil France v2.3 - Horaires"
+date: 2024-11-21T00:00:00+00:02
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
