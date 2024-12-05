@@ -4,6 +4,7 @@ date: 2024-11-21T00:00:00+00:05
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
+weight: 6
 aliases:
 - /normes/netex/accessibilité/
 ---
