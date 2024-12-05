@@ -184,7 +184,7 @@ décrire les tarifs des transports publics et la manière dont ils
 pourront être structurés pour des échanges entre systèmes d'information
 ainsi que pour leur présentation aux voyageurs.
 
-Ce sont les tarificatations des services de transport au sens large
+Ce sont les tarifications des services de transport au sens large
 qui sont pris en compte dans ce contexte, et non la structure de l'offre de transport
 (voir les autres parties du profil pour cela).
 
