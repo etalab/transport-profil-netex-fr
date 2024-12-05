@@ -178,16 +178,15 @@ NeTEx sera nécessaire à sa bonne compréhension.
 
 # Domaine d'application
 
-Le présent document est le profil de la CEN/TS 6614 (NeTEx) pour
-l'échange de données de description des horaires en France et permet de
-décrire les horaires de transports publics et la manière dont ils
+Le présent document est le profil de la CEN/TS 16614 (NeTEx) pour
+l'échange de données de description de l'offre en France et permet de
+décrire les tarifs des transports publics et la manière dont ils
 pourront être structurés pour des échanges entre systèmes d'information
 ainsi que pour leur présentation aux voyageurs.
 
-Ce sont les services de transport et leurs horaires au sens large
-(heures de passage, fréquences, jours d'application) qui sont pris en
-compte dans ce contexte, et non la structure de l'offre de transport
-(voir les profils arrêt et réseau pour cela).
+Ce sont les tarifications des services de transport au sens large
+qui sont pris en compte dans ce contexte, et non la structure de l'offre de transport
+(voir les autres parties du profil pour cela).
 
 # Références normatives
 
