@@ -1091,13 +1091,13 @@ compléments d’objet présentés dans ce chapitre.
 Note : en gris, les éléments non instanciés (abstraits) ou issu des
 autres profils (et donc non décrits dans ce document).
 
-![](media/image3.png) *Éléments du réseau dédié à l’offre tarifaire –
+![](media/image3.png) *Éléments du réseau dédié à l’offre tarifaire et billettique –
 Modèle conceptuel*
 
 NeTEx Partie 1 décrit le concept de ZONE TARIFAIRE, qui peut être
 utilisé pour définir les zones tarifaires permanentes d'un système. Un
 POINT D'ARRÊT PLANIFIÉ donné peut appartenir à une ou plusieurs ZONE
-TARIFAIREs. Le MODÈLE DE ZONE TARIFAIRE NeTEx Partie 3 les complète des
+TARIFAIREs. Le modèle de ZONE BILLETTIQUE NeTEx Partie 3 les complète des
 concepts supplémentaires relatifs au réseau qui peuvent être utilisés en
 plus pour étayer les structures tarifaires.
 
@@ -1125,7 +1125,7 @@ plus pour étayer les structures tarifaires.
   points particuliers. Ils sont principalement utilisés pour le rail et
   peuvent comprendre un ou plusieurs POINTs TARIFAIRES sur PARCOURS.
 
-<div class='table-title'>FareZone (Zone de Prix) – Element</div>
+<div class='table-title'>FareZone (Zone Billettique) – Element</div>
 
 | **Classification** | **Name**                      | **Type**                                                 | **Cardinality** | **Description**                                                                                          |
 |--------------------|-------------------------------|----------------------------------------------------------|-----------------|----------------------------------------------------------------------------------------------------------|
@@ -1140,7 +1140,7 @@ plus pour étayer les structures tarifaires.
 Le tableau suivant fournit les valeurs autorisées pour
 ***ZoneTopology*** (*ZoneTopologyEnumeration*)*.*
 
-<div class='table-title'>ZoneTopology – Allowed values</div>
+<div class='table-title'>ZoneTopology – Valeurs autorisées</div>
 
 | **Value**             | **Description**                                                                                                                                                                                                                            |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
