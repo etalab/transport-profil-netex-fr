@@ -1,9 +1,10 @@
 ---
-title: "NeTEx - Profil France - Description des arrêts"
-date: 2022-01-13T00:00:00+00:01
+title: "NeTEx - Profil France v2.3 - Description des arrêts"
+date: 2024-11-21T00:00:00+00:01
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
+weight: 2
 ---
 
 **Avant-propos**
@@ -676,32 +677,25 @@ L'accès de lieux peut être rattaché uniquement aux Lieux d’arrêt
 monomodaux ou aux Lieux d’arrêt multimodaux (voir sa définition
 ci-dessous).
 
-# Exigences minimum liées à la LOM et la règlementation Européenne
+# Exigences minimales liées au code des transports et la règlementation européenne
 
-La LOI n° 2019-1428 du 24 décembre 2019 d'orientation des mobilités
-(LOM :
-<https://www.legifrance.gouv.fr/dossierlegislatif/JORFDOLE000037646678>)
-et, au niveau Européen, le Règlement Délégué (UE) 2017/1926 De La
-Commission du 31 mai 2017 (complétant la directive 2010/40/UE du
-Parlement européen et du Conseil en ce qui concerne la mise à
-disposition, dans l'ensemble de l'Union, de services d'informations sur
-les déplacements multimodaux) rendent obligatoire la mise à disposition,
-quand elles existent, de certains types de données.
+La mise à disposition des données, quand elles existent, est obligatoire et se conforme aux exigences :
+- Au niveau européen, du règlement délégué (UE) 2017/1926 de la Commission du 31 mai 2017 modifié par le
+  règlement délégué (UE) 2024/490 de la Commission du 29 novembre 2023 (<https://eur-lex.europa.eu/eli/reg_del/2017/1926/2024-03-04>), dit "règlement MMTIS" ;
+- Au niveau français, des articles L. 1115-1 à L. 1115-7 , D. 1115-1, R. 1115-2 à R. 1115-8 et D. 1115-9 à D. 1115-11 du code du transports,
+  notamment créés ou modifiés par les articles 25 et 27 de loi n° 2019-1428 du 24 décembre 2019 d’orientation des mobilités, dites loi « LOM ».
+  Ces mêmes articles de la LOM précise le calendrier de mise à disposition des données.
 
-Le tableau ci-dessous résulte de l’analyse de la LOM et du règlement
-délégué et fournit la liste des concepts concernés dans le présent
-profil. Il sera donc nécessaire de fournir ces données pour être
-conforme à la législation (il s’agit bien de mettre à disposition toutes
+Le tableau ci-dessous résulte de l’analyse du code des transports et du règlement
+MMTIS et fournit la liste des concepts concernés dans le présent
+profil correspondant aux données mentionnées dans l’annexe du règlement. Il sera donc nécessaire de fournir ces données pour être
+conforme au cadre réglementaire (il s’agit bien de mettre à disposition toutes
 les données existantes dans les SI transport, et non de créer des
 données qui n’existeraient pas encore sous forme informatique).
 
-Notez que les concepts présents dans les tableaux sont les ceux qui sont
-directement référencés par l’annexe du règlement européen
-(<https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32017R1926&from=FR>),
-mais que pour beaucoup d’entre eux, cela impliquera d’autres concepts
-(soit par héritage soit par relation, au s sens UML des termes). Ces
-éléments d’héritage et de relations sont présentés dans les profils,
-mais pas dans ce tableau.
+Notez que  beaucoup de concepts dépendent des concepts issus de Transmodel/NeTEx et sont liés entre eux, soit par héritage, 
+soit par relation au sens UML des termes. Par ailleurs, certains concepts additionnels peuvent relever d’autres parties
+du profil France, précisés dans le tableau le cas échéant.
 
 De plus, les noms des catégories (colonnes Catégorie et Détail) ont été
 conservés dans la langue originale du document (l’anglais) pour éviter
@@ -1313,7 +1307,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><em><strong>TransportMode</strong></em></td>
 <td><em>VehicleModeEnum</em></td>
 <td>1:1</td>
-<td>Mode de transport principal pour le LIEU. La liste des modes est présentée en 5.15 dans le Profil Éléments Communs.</td>
+<td>Mode de transport principal pour le LIEU. La liste des modes est présentée en 6.17 dans le Profil Éléments Communs.</td>
 </tr>
 <tr class="odd">
 <td><em>(Choice)</em></td>
