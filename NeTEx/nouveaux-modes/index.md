@@ -15,7 +15,7 @@ Ce document est le fruit de la collaboration entre les différents partenaires d
 
 # Introduction
 
-Le présent format déchange est un profil France de NeTEX
+Le présent format déchange est un profil France de NeTEx
 
 NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des services d'échange de données de description de l'offre de transport planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN 28701). NeTEx permet non seulement d'assurer les échanges pour les systèmes d'information voyageur mais traite aussi l’ensemble des concepts nécessaires en entrée et sortie des systèmes de planification de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à l’Exploitation).
 
