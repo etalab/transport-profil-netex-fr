@@ -111,6 +111,7 @@ activité (en général, initiée par les utilisateurs) en vue de faciliter/perm
 <span style='color:green'>Element de l'annexe 1 PArt 5 NeTEx à synthétiser</span> 
 
 ## Cas d'usage
+Ce paragraphe contient les cas d'usage retenus dans le cadre de ce profil
 
 ### Vélos en libre Service
 
