@@ -104,6 +104,7 @@ activité (en général, initiée par les utilisateurs) en vue de faciliter/perm
 
 # Symboles et abréviations
 
+
 # Description du profil d'échange
 
 ## Elements de contexte
