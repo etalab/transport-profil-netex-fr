@@ -1,4 +1,4 @@
-# Profil France de SIRI
+# Profil France de NeTEx
 
 Ce répertoire regroupe l'ensemble des éléments du profil France de NeTEx tel que publié sur le site : https://normes.transport.data.gouv.fr.
 
