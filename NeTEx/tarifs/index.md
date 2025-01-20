@@ -1146,7 +1146,7 @@ plus pour étayer les structures tarifaires.
 Le tableau suivant fournit les valeurs autorisées pour
 ***ZoneTopology*** (*ZoneTopologyEnumeration*)*.*
 
-<div class='table-title'>ZoneTopology – Valeur autoritsées</div>
+<div class='table-title'>ZoneTopology – Valeurs autorisées</div>
 
 | **Value**             | **Description**                                                                                                                                                                                                                            |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
