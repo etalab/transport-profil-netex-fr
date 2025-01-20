@@ -6,7 +6,7 @@ Ce répertoire regroupe l'ensemble des éléments du profil France de NeTEx tel 
 
 Ce répertoire est composé :
 - d'un dossier `NeTEx` qui comprend le profil France avec un sous-dossier pour chaque partie du profil ; chaque partie comprend le texte en Markdown et un dossier pour les illustrations
-- d'un dossier `originaux` qui comprend l'ensemble des parties du profil France de NeEtex, tesl que publiés par le GT7 après appobation du CN03.
+- d'un dossier `originaux` qui comprend l'ensemble des parties du profil France de NeEtex, tels que publiés par le GT7 après approbation du CN03.
 
 # Gouvernance
 
