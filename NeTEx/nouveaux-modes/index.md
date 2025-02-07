@@ -83,6 +83,33 @@ CEN/prEN 12896-10: 2021, Public transport - Reference data model -Part 10 : Alt
 
 Pour les besoins du présent document, les termes et définitions suivants s'appliquent. Ils sont directement issus de Transmodel et NeTEx. Pour une information complète, il conviendra toutefois de se référer au document nor-matif.
 > NOTE	Les définitions ci-dessus sont des traductions littérales du document normatif. Seules les définitions spécifiques du profil France 'Nouveaux Modes' sont proposées ici, celles relatives aux autres profils sont disponibles dans les profils correspondants. 
+## MODE OF OPERATION (MODE OPERATOIRE)
+## CONVENTIONAL MODE OF OPERATION (MODE OPERATOIRE CONVENTIONNEL)
+## ALTERNATIVE MODE OF OPERATION (MODE OPERATOIRE ALTERNATIF)
+## VEHICLE SHARING (VEHICULE PARTAGE)
+Location de véhicules à court terme où le véhicule peut être pris et garé à différents endroits de la zone urbaine, souvent sans la contrainte de ramener le véhicule à un endroit spécifique dédié.
+
+## VEHICULE SHARING TYPE (TYPE DE VEHICULE PARTAGE)
+## PERSONAL MODE OF OPERATION (MODE OPERATOIRE PERSONEL)
+## MOBILITY SERVICE (SERVICE DE MOBILITE)
+## VEHICLE SHARING SERVICE (SERVICE DE PARTAGE DE VEHICULE)
+## VEHICLE SHARING PARKING AREA (STATION DE PARTAGE DE VEHICLES°)
+## VEHICLE SHARING PARKING BAY (EMPLACEMENT DE VEHICLE DANS UNE STATION)
+## VEHICLE SHARING PLACE ASSIGNEMENT (AFFECTATION DE LIEU DE  PARTAGE DE VEHICULE)
+## MOBILITY SERVICE CONSTRAINT ZONE (ZONE D'UTILISATION DU SERVICE)µ
+## ZONE USE TYPE (TYPE DE CONTRAINTE GEOGRAPHIQUE)
+## VEHICLE TYPE ZONE RESTRICTION (TYPE DE CONTRAINTE SUR ZONE D'UTILISATION°)
+## TARIFF DESCRIPTION GROUP
+<span style='color:red'>***A confirmer ***</span>
+
+## TARIFF ORGANISATION GROUP 
+<span style='color:red'>***A confirmer ***</span>
+
+## MONITORED VEHICLE SHARING PARKING BAY
+## PARKING BAY STATUS
+## PARKING AREA CAPACITY ASSIGNMENT
+
+
 
 ## Covoiturage (car pooling)
 Mode consistant à partager une voiture privée pour un trajet entre un conducteur défini qui est déjà engagé dans le trajet et au moins un autre voyageur.
@@ -96,14 +123,11 @@ la marche est considérée comme un mode d'accès, c'est-à-dire que le voyageur
 ## Mode d'accès (access mode)
 Caractérisation du déplacement du voyageur (par exemple, marche, vélo, etc.) lui permettant de se rendre à un arrêt de transport public ou d'effectuer une étape de son voyage.
 
-## Partage de véhicules (Vehicle Sharing)
-Location de véhicules à court terme où le véhicule peut être pris et garé à différents endroits de la zone urbaine, souvent sans la contrainte de ramener le véhicule à un endroit spécifique dédié.
 ## Service aux voyageurs (traveler service)
 activité (en général, initiée par les utilisateurs) en vue de faciliter/permettre un voyage
 
 
 ## <span style='color:green'>***A compléter ***</span>
-
 
 
 # Symboles et abréviations
@@ -113,38 +137,57 @@ activité (en général, initiée par les utilisateurs) en vue de faciliter/perm
 ## Conventions 
 ### De nommage
 Dans ce profil, l'utilisation de "mode alternatif" ou "nouveau mode" est synonyme.
+### De représentation
+<span style='color:green'>***A compléter ***</span>
 
 ## Elements de contexte
 ### Catégorisation des modes de transport
 Le terme 'mode' désigne tout moyen de transport utilisé ou disponible. Il est divisé en 'mode véhicule' et 'mode d'accès'.
-Le 'mode véhicule' est une caractérisation de l'exploitation du transport public selon le moyen de transport, par exemple, bus, tramway, métro, train, ferry, bateau ou vélo.
-Le 'mode d'accès' (par exemple, la marche, le cyclisme, la conduite de voiture privée, etc.) est une caractérisation du mouvement du voyageur (par exemple, marcher, faire du vélo, etc.) lui permettant d'atteindre le 'mode véhicule' ou de réaliser un voyage complet.
+* Le **'mode véhicule'** est une caractérisation de l'exploitation du transport public selon le moyen de transport, par exemple, bus, tramway, métro, train, ferry, bateau ou vélo.
+* Le **'mode d'accès'** (par exemple, la marche, le cyclisme, la conduite de voiture privée, etc.) est une caractérisation du mouvement du voyageur (par exemple, marcher, faire du vélo, etc.) lui permettant d'atteindre le 'mode véhicule' ou de réaliser un voyage complet.
 
 ### Mode alternatifs
 Les modes et sous-modes définis comme des 'moyens de transport' peuvent être caractérisés en termes de types de fonctionnement, c'est-à-dire des façons dont ils sont opérés.
 Ce document distingue les types suivants de 'mode de fonctionnement' :
-• Mode de fonctionnement conventionnel : le mode de fonctionnement traditionnel qui est proposé sous forme d'une offre de transport public annoncée et/ou flexible, selon un horaire fixe et/ou flexible. Ce mode de fonctionnement suit soit un horaire et des itinéraires fixes, soit est lié à un réseau/horaires fixes mais offre de la flexibilité, afin d'optimiser par exemple le service ou de répondre à la demande des passagers ;
-• Mode alternatif de fonctionnement : tout mode de fonctionnement public annoncé différent du mode de fonctionnement conventionnel, notamment le partage de véhicules, la location de véhicules et le covoiturage ;
-• Mode personnel de fonctionnement : un mode de transport privé excluant toute utilisation publiquement annoncée.
+* **Mode de fonctionnement conventionnel** : le mode de fonctionnement traditionnel qui est proposé sous forme d'une offre de transport public annoncée et/ou flexible, selon un horaire fixe et/ou flexible. Ce mode de fonctionnement suit soit un horaire et des itinéraires fixes, soit est lié à un réseau/horaires fixes mais offre de la flexibilité, afin d'optimiser par exemple le service ou de répondre à la demande des passagers ;
+* **Mode alternatif de fonctionnement** : tout mode de fonctionnement public annoncé différent du mode de fonctionnement conventionnel, notamment le partage de véhicules, la location de véhicules et le covoiturage ;
+* **Mode personnel de fonctionnement** : un mode de transport privé excluant toute utilisation publiquement annoncée.
 La distinction entre les modes de fonctionnement alternatif et conventionnel repose sur le fait qu'un mode conventionnel repose sur un ensemble de caractéristiques : les conducteurs sont des employés, la flotte est détenue par un opérateur ou une autorité, et la topologie du réseau est définie à l'avance et repose sur des lignes et des modèles de trajets ; tandis que les modes alternatifs peuvent ne pas remplir une ou plusieurs de ces caractéristiques.
 Ce profil concerne le mode alternatif de fonctionnement.
 
 
 <span style='color:green'>Element de l'annexe 1 PArt 5 NeTEx à synthétiser</span> 
 
+## Les fonctions spécifiques
+
+### Géorepérage et zones d'utilisation autorisées
+La plupart des systèmes de partage de véhicules (vélo, trottinette, voiture, etc.) ne fonctionnent que dans une zone géographique spécifique. Cette zone peut être indiquée par des cartes ou des informations aux passagers, ou pour les véhicules avec des systèmes d'immobilisation à distance, peut même être imposée électroniquement par détection GPS. En outre, certaines zones de la zone opérationnelle peuvent être restreintes en raison de raisons opérationnelles, de sécurité ou autres, par exemple pour contrôler la pollution environnementale. Des pénalités financières peuvent être associées à la violation des limites restreintes à tout moment ou à un moment donné.
+Les zones autorisées peuvent être décrites à l'aide de zones de contraintes de service de mobilité, chaque zone exprimant une étendue spatiale et les usages autorisés.
+### Réservation
+Les services de partage de vélos offrent une capacité de réservation à court terme, permettant aux utilisateurs de vérifier la station disponible la plus proche, de réserver un vélo et de s'enregistrer dans un délai court. Cependant, il n'y a généralement pas de réservation à l'avance ; l'utilisateur prend l'un des vélos disponibles à la station la plus proche.
+### Tarifs et paiement
+Dans le cadre du partage de vélos, dans la plupart des cas, les utilisateurs ne paient le service qu'une seule fois lors de l'abonnement et chaque fois qu'ils ont utilisé le vélo plus longtemps que la durée de location gratuite.
+
 
 ## Les services disponibles
 
-## Véhicules partagés
+### Véhicules partagés
 
-### Vélo en libre Service
-#### Avec Station
-#### Sans Station
-### Auto Partage
+#### Vélo en libre Service
+Le partage de vélos est un mode d'exploitation dédié à la location de vélos à court terme, dans lequel le vélo peut être pris et garé à différents endroits dans une zone urbaine. L'une des principales différences entre le partage de vélos et la location de vélos réside dans le système sous lequel ils fonctionnent. La location de vélos est généralement ponctuelle. Le partage de vélos repose sur un ensemble d'utilisateurs abonnés qui partagent le service, généralement pour de courtes durées ou pour effectuer de petits trajets, moyennant un abonnement mensuel ou annuel fixe. 
+
+Le tarif dépend d'un certain nombre de paramètres : il peut s'agir d'un simple intervalle de temps, d'un tarif pour excès de temps, ou inclure des réductions pour une utilisation fréquente en fonction d'un "profil de voyageur fréquent". Il convient de noter que, comme pour les services de transport conventionnels, les tarifs reposent sur un contrat qui peut être implicite et anonyme (mais dans de nombreux cas, le contrat est personnel), et ce contrat exprime l'"adhésion" à une communauté d'utilisateurs de services spécifiques
+##### Avec Station
+les vélos sont obtenus à partir d'un emplacement prédéterminé, comme une station de stationnement de vélos, où la station communique la disponibilité du vélo et enregistre quand il a été pris et retourné et par qui. La station de stationnement disposera de systèmes pour libérer un vélo pour le voyageur potentiel. Une station peut en réalité avoir une capacité supérieure au nombre strict de bornes si elle dispose de personnel pour récupérer des véhicules supplémentaires du stockage ou y en ramener afin d'équilibrer la demande – le service « voiturier ». Il peut être tout aussi important pour un utilisateur qu'il y ait une borne libre disponible pour y retourner son vélo à la fin de son trajet, sinon il pourrait faire face à une recherche chronophage et même à une pénalité pour usage prolongé.
+##### Sans Station (Flottant)
+Pour les vélos dans un système de partage de vélos sans station, qui disposent généralement de verrous d'immobilisation intégrés dans leur cadre, aucune station n'est nécessaire. Le vélo peut être laissé à n'importe quel endroit sûr dans la zone du schéma et être immobilisé ou réactivé à l'aide d'un code.
+
+
+#### Auto Partage
+### Representation (Concept & implémentation)
 
 ## CoVoiturage
 
-## Concepts de base pour la description des Nouveaux Modes
 
 
 
