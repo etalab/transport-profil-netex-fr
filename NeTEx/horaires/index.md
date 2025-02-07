@@ -763,7 +763,7 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td colspan="2"><em><strong>DayTypeRef</strong></em></td>
 <td><em>DayTypeRef</em></td>
 <td>1:*</td>
-<td>TYPE DE JOUR correspondant aux jours d'application de la course.</td>
+<td>TYPE DE JOUR correspondant aux jours d'application de la course. Voir Elements communs pour les précisions sur l'utilisation.</td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>

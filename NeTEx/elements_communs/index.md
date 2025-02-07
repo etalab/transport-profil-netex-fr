@@ -3351,9 +3351,14 @@ class="hl">.</span>
 
 ## Type de Jour
 
-Note: si le TYPE DE JOUR n'est valable que pour une période de temps
-limitée, on le précisera grâce au *ValidBetween* (*FromDate*, *ToDate*)
-disponible au travers de son héritage de *DataManagedObject.*
+Lorsqu'un DayType est référencé par un objet, il est recommandé très fortement
+une association du `DayType` à un `DayTypeAssignment` de manière à préciser les bornes 
+d'application. L'utilisation de *ValidBetween* (*FromDate*, *ToDate*) disponible au travers de son héritage de *DataManagedObject*
+à cette fin n'est pas retenue.
+
+L'implémentation standard est donc la déclaration d'un calendrier de circulation avec
+1 DayType, 1 DayTypeAssignement et 1 UicOperatingPeriod.
+
 
 <div class="table-title">DayType – Model Element</div>
 
@@ -3378,8 +3383,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>::></td>
 <td><em>DataManagedObject</em></td>
 <td>::></td>
-<td><p>DAY TYPE hérite de DATA MANAGED OBJECT.</p>
-<p><span class="hl">On utilisera le </span><em><strong><span class="hl">ValidBetween</span></strong></em><span class="hl"> pour une éventuelle limitation de période</span></p></td>
+<td><p>DAY TYPE hérite de DATA MANAGED OBJECT.</p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3403,7 +3407,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>xsd:time</td>
 <td>0:1</td>
 <td><p>Heure de début de validité dans le TYPE DE JOUR.</p>
-<p><span class="hl">Excusif avec </span></p></td>
+<p><span class="hl">Excusif avec *timebands*</span></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -3411,7 +3415,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>xsd:duration</td>
 <td>0:1</td>
 <td><p>Durée du TYPE DE JOUR.</p>
-<p><span class="hl">Excusif avec </span></p></td>
+<p><span class="hl">Excusif avec *timebands*</span></p></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -3420,18 +3424,8 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>0:*</td>
 <td><p>PROPRIÉTÉ du TYPE DE JOUR.</p>
 <p>Note: sous un même PropertyOfDay les caracterisques s'associent par un ET, sinon elles s'associent par un OU.</p>
-<p>Ainsi pour désigner l'été et les samedis:</p>
-<p><netex:PropertyOfDay></p>
-<p><netex:DaysOfWeek>Saturday</netex:DaysOfWeek></p>
-<p></netex:PropertyOfDay></p>
-<p><netex:PropertyOfDay></p>
-<p><netex:Seasons>Summer</netex:Seasons></p>
-<p></netex:PropertyOfDay></p>
-<p>Mais pour désigner les samedis d'été:</p>
-<p><netex:PropertyOfDay></p>
-<p><netex:DaysOfWeek>Saturday</netex:DaysOfWeek></p>
-<p><netex:Seasons>Summer</netex:Seasons></p>
-<p></netex:PropertyOfDay></p></td>
+<p>Ainsi pour désigner l'été et les samedis, on utilise 2 PropertyOfDay. Mais pour désigner les samedis d'été, on utilise 1 PropertyOfDay contenant les 2 critères.</p>
+</td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -3439,7 +3433,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>Timeband</td>
 <td>0:*</td>
 <td><p>TRANCHEs HORAIREs du TYPE DE JOUR</p>
-<p><span class="hl">On utilisera ces TRANCHEs HORAIREs uniquement si elles sont multiples (par exemple "</span><em><span class="hl">de 9h à 12h30 et de 14h à 18h30</span></em><span class="hl">") sinon on utilisera les et . Si l'information alors et ne seront pas remplis.</span></p></td>
+<p><span class="hl">On utilisera ces TRANCHEs HORAIREs uniquement si elles sont multiples (par exemple "</span><em><span class="hl">de 9h à 12h30 et de 14h à 18h30</span></em><span class="hl">") sinon on utilisera les *EarliestTime* et *DayLength*. Si l'information *timebands* est fournie alors *EarliestTime* et *DayLength* ne seront pas remplis.</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -3725,15 +3719,16 @@ nouveau CALENDRIER DE SERVICE).
 
 <div class="table-title">OperatingPeriod – Element</div>
 
-| **Classifi­cation** | **Nom**             |                | **Type**            | **Cardinalité** | **Description**                                     |
-|---------------------|---------------------|----------------|---------------------|-----------------|-----------------------------------------------------|
-| ::>                 | ::>                 |                | *DataManagedObject* | ::>             | OPERATING PERIOD hérite de DATA MANAGED OBJECT.     |
-| «FK»                | ServiceCalendar­Ref |                | CalendarRef         | 0:1             | CALENDRIER DE SERVICE auquel la période appartient. |
-|                     | b                   | ***FromDate*** | dateTime            | 1:1             | Date calendaire de début                            |
-|                     | b                   | ***ToDate***   | dateTime            | 1:1             | Date calendaire de fin                              |
+| **Classifi­cation** | **Nom**             | **Type**            | **Cardinalité** | **Description**                                     |
+|---------------------|--------------------|---------------------|-----------------|-----------------------------------------------------|
+| ::>                 | ::>                | *DataManagedObject* | ::>             | OPERATING PERIOD hérite de DATA MANAGED OBJECT.     |
+| «FK»                | ServiceCalendar­Ref | CalendarRef         | 0:1             | CALENDRIER DE SERVICE auquel la période appartient. |
+|                     | Name               | MultilingualString  |                 | Champ non retenu dans le profil.                    |
+|                     | ShortName          | MultilingualString  |                 | Champ non retenu dans le profil.                    |
+|                     |  ***FromDate***    | dateTime            | 1:1             | Date calendaire de début. Le profil France fait le choix d'utiliser *FromDate* systématiquement. |
+|                     |  ***ToDate***      | dateTime            | 1:1             | Date calendaire de fin. Le profil France fait le choix d'utiliser *ToDate* systématiquement.   |
 
-<span class="hl">Note : </span>***<span class="hl">U</span><span
-class="hl">icOperatingPeriod</span>***<span class="hl"> sera toujours
+<span class="hl">Note : </span>***<span class="hl">UicOperatingPeriod</span>***<span class="hl"> sera toujours
 utilisé dans le contexte du profil, afin de rendre le ValidDayBits
 obligatoire (chaîne de bits, une pour chaque jour de la période: qu'elle
 soit valide ou non le jour).</span>
@@ -3742,9 +3737,18 @@ soit valide ou non le jour).</span>
 
 | **Classification** | **Name**           | **Type**                 | **Cardinality** | **Description**                                                                                                                                                                                                           |
 |--------------------|--------------------|--------------------------|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ::>                | ::>                | *<u>OperatingPeriod</u>* | ::>             | UIC OPERATING PERIOD inherits from OPERATING PERIOD.                                                                                                                                                                      |
-|                    | ***ValidDayBits*** | *xsd:normalizedString*   | 1:1             | String of bits (built of "0" and "1"), one for each day in the period: whether valid or not valid on the day. Normally there will be a bit for every day between start and end date. If bit is missing, assume available. |
-|                    | ***DaysOfWeek***   | *DaysOfWeek*             | 0:1             | Days of week to which correspond. (up to first seven) bits                                                                                                                                                                |
+| ::>                | ::>                | *<u>OperatingPeriod</u>* | ::>             | UIC OPERATING PERIOD hérite de OPERATING PERIOD.                                                                                                                                                                      |
+|                    | ***ValidDayBits*** | *xsd:normalizedString*   | 1:1             | Chaine de bits (caractères "0" et "1"), un caractère pour chaque jour de la periode définie, le premier caractère correspondant au premier jour de la periode. Tous les jours doivent être représentés, en y appliquant les informations spécifiées au niveau du DayType associé par le DayTypeAssignement correspondant. |
+|                    | ***DaysOfWeek***   |                          |                 | Champ non retenu dans le profil                       |
+
+
+**Précisions sur l'utilisation du UicOperatingPeriod :** 
+Comme indiqué plus haut au niveau du DayType, il est fortement recommandé ne n'utiliser que des associations 
+1 DayType, 1 DayTypeAssignement et 1 UicOperatingPeriod.
+Dans le cas où un échange implique plusieurs DayTypeAssignement sur un DayType, les règles suivantes seront utilisées pour la lecture : 
+- Tous les jours indiqués comme "actifs" par les DayTypeAssignement "isAvailable=true" sont ajoutés par des `ET` logiques
+- Sur les jours "actifs" ainsi définis sont ensuite retirés tous les jours correspondants aux DayTypeAssignement "isAvailable=false" afin de gérer les exceptions de circulation (par exemple "sauf le 1er mai")
+
 
 ## Tranche horaire
 
