@@ -72,6 +72,10 @@ Les éléments présentés ci-dessous couvrent donc l’ensemble des concepts pr
 <span style='color:green'>***A rédiger ***</span>
 
 # Références Normatives
+Les documents de référence suivants sont indispensables pour l'application du présent document. Pour les références datées, seule l'édition citée s'applique. Pour les références non datées, la dernière édition du document de référence s'applique (y compris les éventuels amendements).
+
+CEN/TS 16614-1, Network and Timetable Exchange (NeTEx) — Part 5: Alternative modes exchange format
+CEN/prEN 12896-10: 2021, Public transport - Reference data model -Part 10 : Alternative modes
 
 <span style='color:green'>***A rédiger ***</span>
 
@@ -105,28 +109,44 @@ activité (en général, initiée par les utilisateurs) en vue de faciliter/perm
 # Symboles et abréviations
 
 
-# Description du profil d'échange
+# Description du profil d'échange Nouveaux Modes
+## Conventions 
+### De nommage
+Dans ce profil, l'utilisation de "mode alternatif" ou "nouveau mode" est synonyme.
 
 ## Elements de contexte
+### Catégorisation des modes de transport
+Le terme 'mode' désigne tout moyen de transport utilisé ou disponible. Il est divisé en 'mode véhicule' et 'mode d'accès'.
+Le 'mode véhicule' est une caractérisation de l'exploitation du transport public selon le moyen de transport, par exemple, bus, tramway, métro, train, ferry, bateau ou vélo.
+Le 'mode d'accès' (par exemple, la marche, le cyclisme, la conduite de voiture privée, etc.) est une caractérisation du mouvement du voyageur (par exemple, marcher, faire du vélo, etc.) lui permettant d'atteindre le 'mode véhicule' ou de réaliser un voyage complet.
+
+### Mode alternatifs
+Les modes et sous-modes définis comme des 'moyens de transport' peuvent être caractérisés en termes de types de fonctionnement, c'est-à-dire des façons dont ils sont opérés.
+Ce document distingue les types suivants de 'mode de fonctionnement' :
+• Mode de fonctionnement conventionnel : le mode de fonctionnement traditionnel qui est proposé sous forme d'une offre de transport public annoncée et/ou flexible, selon un horaire fixe et/ou flexible. Ce mode de fonctionnement suit soit un horaire et des itinéraires fixes, soit est lié à un réseau/horaires fixes mais offre de la flexibilité, afin d'optimiser par exemple le service ou de répondre à la demande des passagers ;
+• Mode alternatif de fonctionnement : tout mode de fonctionnement public annoncé différent du mode de fonctionnement conventionnel, notamment le partage de véhicules, la location de véhicules et le covoiturage ;
+• Mode personnel de fonctionnement : un mode de transport privé excluant toute utilisation publiquement annoncée.
+La distinction entre les modes de fonctionnement alternatif et conventionnel repose sur le fait qu'un mode conventionnel repose sur un ensemble de caractéristiques : les conducteurs sont des employés, la flotte est détenue par un opérateur ou une autorité, et la topologie du réseau est définie à l'avance et repose sur des lignes et des modèles de trajets ; tandis que les modes alternatifs peuvent ne pas remplir une ou plusieurs de ces caractéristiques.
+Ce profil concerne le mode alternatif de fonctionnement.
+
 
 <span style='color:green'>Element de l'annexe 1 PArt 5 NeTEx à synthétiser</span> 
 
-## Cas d'usage
-Ce paragraphe contient les cas d'usage retenus dans le cadre de ce profil
 
-### Vélos en libre Service
+## Les services disponibles
 
-#### Free floating
+## Véhicules partagés
 
-<span style='color:red'>Traduction_?</span>
+### Vélo en libre Service
+#### Avec Station
+#### Sans Station
+### Auto Partage
 
-#### Docking
+## CoVoiturage
 
-<span style='color:red'>Traduction_?</span>
+## Concepts de base pour la description des Nouveaux Modes
 
-### Covoiturage
 
-<span style='color:green'>***A rédiger ***</span>
 
 # Entêtes NeTEx
 
