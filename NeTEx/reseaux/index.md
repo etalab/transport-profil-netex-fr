@@ -1057,7 +1057,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong><del>RepresentBy­GroupRef</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Le GROUPE DE LIGNE référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</span></td>
+<td><span class="hl">Le GROUPE DE LIGNES référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</span></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1181,10 +1181,10 @@ référencée que par un seul réseau dans un export NeTEx France.
 |                     | ***tariffZones***              | *tariffZoneRefs*           | 0:\*             | ZONEs TARIFAIREs faisant partie du RÉSEAU                                |
 
 
-Afin de permettre une description complète d'un réseau de transport, la notion de groupe de ligne peut êgalement être utilisée
+Afin de permettre une description complète d'un réseau de transport, la notion de groupe de lignes peut êgalement être utilisée
 en complément afin de regrouper par exemple les lignes de nuit du réseau ou les "lignes fortes". Dans ce cas, la ligne est référencée 
 par le (ou les) groupe(s) de lignes dont elle fait partie ET par le réseau global.
-**Recommandation** : une ligne ne devrait pas être présente dans plus d'un groupe de ligne à la fois au sein du réseau sauf situation particluière.
+**Recommandation** : une ligne ne devrait pas être présente dans plus d'un groupe de lignes à la fois au sein du réseau sauf situation particulière.
 
 Exemple : 
 ```xml
@@ -3026,7 +3026,7 @@ description des ITL (Interdiction de trafic local).
 <td><em><strong>GroupOfLinesRef</strong></em></td>
 <td><em>GroupOfLinesRef</em></td>
 <td>0:1</td>
-<td>Groupe de ligne ou réseau concerné par la restriction</td>
+<td>Groupe de lignes ou réseau concerné par la restriction</td>
 </tr>
 </tbody>
 </table>
