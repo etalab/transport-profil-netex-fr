@@ -1386,7 +1386,7 @@ AREA.</td>
 </tr>
 <tr class="odd">
 <td>« cntd »</td>
-<td><em><strong>ParkingPropertiesproperties</strong></em></td>
+<td><em><strong>ParkingProperties</strong></em></td>
 <td><em>ParkingProperties</em></td>
 <td>0:1</td>
 <td>Propriétés détaillée du PARKING AREA.</td>
