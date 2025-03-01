@@ -4868,6 +4868,19 @@ Les noms des fichiers doivent respecter les contraintes suivantes :
 - pas d’accent
 - pas d'espace
 
+Les fichiers attendus dans l'archive sont les suivants : 
+| **Fichier** |  **Description** 
+|--------------------|--------------------------------------------|
+| accessibility.xml  | Fichier regroupant toutes les informations d'accessibilité 
+| network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes
+| stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc.
+| line_XXX.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun 
+(parcours, courses, horaires, etc.). La partie "XXX" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est recommandé d'utiliser des libéllés courts comme les codes des lignes par exemple.
+| fare.xml           | Fichier regroupant les informations sur les tarifs, que ce soit pour les transports en commun, les parkings ou autres.
+| parking.xml        | Fichier regroupant les informations sur les parkings.
+| poi.xml            | Fichier regroupant les points d'intérêts et les informations associées
+| resource.xml       | Fichier contenant toutes les informations qui ne sont pas collectés dans des fichiers thématiques 
+(correspondances, calendriers, commentaires, etc.)
 
 Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
 Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
