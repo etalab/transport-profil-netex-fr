@@ -4849,14 +4849,23 @@ Deux grandes typologies d’échange peuvent être envisagées : par échange
 de fichier (sous quelque forme que ce soit : FTP, mail, etc.) ou au
 travers de web service.
 
-## Fichier
+## Export sous forme de fichier
 
-L’échange par fichier est assez simple : le fichier est un fichier XML
-classique qui ne contiendra qu’un seul élément racine :
-***PublicationDelivery*** (voir 7.1).
+Un export Netex au profil France est une archive ZIP respectant plusieurs contraintes : 
+- le nom du fichier est libre, mais il est recommander de préciser qu'il s'agit d'un fichier netex ;
+- l'archive ne ne contient pas de dossiers, tous les fichiers sont listés à la racine ; 
+- les fichiers binaires, exécutables et sous archives sont interdits ;
+- d'autres fichiers de type texte ou json peuvent figurer dans l’archive mais seront ignorés à l’import ;
+- des mesures de sécurités “propres à chaque consommateur” pourront conduire à des exigences complémentaires.
 
-Le fichier XSD de plus haut niveau à utiliser est
-*NeTEx_publication.xsd*.
+Les noms des fichiers doivent respecter les contraintes suivantes : 
+- pas de majuscule
+- le séparateur est “_”
+- pas d’accent
+- pas d'espace
+
+Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
+Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
 
 ## Web service
 
