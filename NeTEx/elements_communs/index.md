@@ -4849,6 +4849,10 @@ Deux grandes typologies d’échange peuvent être envisagées : par échange
 de fichier (sous quelque forme que ce soit : FTP, mail, etc.) ou au
 travers de web service.
 
+## Règles générales
+- **Pas de duplication de ressources NeTEx** : pas de duplication des données “classe - identifiant - version” ce qui signifie que deux version différentes d’un même objet peuvent coexister
+- **Éviter les sur-informations** : éviter l’introduction de données externes impliquant des dépendances à des sources externes de donnée (ex Code SIREN pour une AOM) ou non utiles pour la définition de l’offre objet de l’archive 
+
 ## Export sous forme de fichier
 
 Un export Netex au profil France est une archive ZIP respectant plusieurs contraintes : 
@@ -4863,6 +4867,7 @@ Les noms des fichiers doivent respecter les contraintes suivantes :
 - le séparateur est “_”
 - pas d’accent
 - pas d'espace
+
 
 Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
 Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
