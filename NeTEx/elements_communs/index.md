@@ -3726,7 +3726,7 @@ nouveau CALENDRIER DE SERVICE).
 |                     | Name               | MultilingualString  |                 | Champ non retenu dans le profil.                    |
 |                     | ShortName          | MultilingualString  |                 | Champ non retenu dans le profil.                    |
 |                     |  ***FromDate***    | dateTime            | 1:1             | Date calendaire de début. Le profil France fait le choix d'utiliser *FromDate* systématiquement. |
-|                     |  ***ToDate***      | dateTime            | 1:1             | Date calendaire de fin. Le profil France fait le choix d'utiliser *ToDate* systématiquement.   |
+|                     |  ***ToDate***      | dateTime            | 1:1             | Date calendaire de fin (date incluse). Le profil France fait le choix d'utiliser *ToDate* systématiquement.   |
 
 <span class="hl">Note : </span>***<span class="hl">UicOperatingPeriod</span>***<span class="hl"> sera toujours
 utilisé dans le contexte du profil, afin de rendre le ValidDayBits
