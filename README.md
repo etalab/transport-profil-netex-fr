@@ -17,10 +17,10 @@ L'équipe du Point d'Accès National aux données de transport (transport.data.g
 
 # Contributions
 ## Généralités
-Cet espace de travail est ouvert à tout contributeur sans besoin d'inscritpion au GT7. Cependant, si vous souhaitez participer aux débats sur les demandes de changement, merci de vous rapprocher de l'animatrice du GT7, [@TuThoThai](https://github.com/TuThoThai).
+Cet espace de travail est ouvert à tout contributeur sans besoin d'inscription au GT7. Cependant, si vous souhaitez participer aux débats sur les demandes de changement, merci de vous rapprocher de l'animatrice du GT7, [@TuThoThai](https://github.com/TuThoThai).
 
 ## Comment contribuer
 Pour toute question, commentaire ou ouvrir une discussion plus large, merci d'ouvrir un ticket dans les `issues`.
 Pour toute demande de changement, merci de bien vouloir noter que :
-- la branche `main` est dédiée à tous les changements liés au `readme.md`, les corrections de fautes de frappe, grammaire ou de syntaxe de la documentation et de l'eensemble des bugs ;
+- la branche `main` est dédiée à tous les changements liés au `readme.md`, les corrections de fautes de frappe, grammaire ou de syntaxe de la documentation et de l'ensemble des bugs ;
 - la branche `next` est dédiée à toutes les évolutions du profil (ex. ajout d'attributs dans un élément, ajout d'une section complète, etc.) et aux ajouts de nouveaux documents (ex. nouvelle partie du profil France, fichiers d'illustrations, etc.)
