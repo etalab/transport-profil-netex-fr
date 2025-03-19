@@ -24,3 +24,11 @@ Pour toute question, commentaire ou ouvrir une discussion plus large, merci d'ou
 Pour toute demande de changement, merci de bien vouloir noter que :
 - la branche `main` est dédiée à tous les changements liés au `readme.md`, les corrections de fautes de frappe, grammaire ou de syntaxe de la documentation et de l'ensemble des bugs ;
 - la branche `next` est dédiée à toutes les évolutions du profil (ex. ajout d'attributs dans un élément, ajout d'une section complète, etc.) et aux ajouts de nouveaux documents (ex. nouvelle partie du profil France, fichiers d'illustrations, etc.)
+
+## Processus de mise à jour des branches
+Dans la mesure où il a été choisi de travailler sur deux branches (voir point précédent), les mise à jour de la branche `next` à partir de `main` se feront comme suit :
+- Fréquence : une fois par mois
+- Responsabilité : Release manager (@TuThoThai)
+- Périmètre : tous les changements liés au readme.md, les corrections de fautes de frappe, grammaire ou de syntaxe de la documentation et de l'ensemble des bugs
+- Date de début : mars 2025
+- Pas de date de fin
