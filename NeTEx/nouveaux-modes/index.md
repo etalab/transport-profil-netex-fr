@@ -15,7 +15,7 @@ Ce document est le fruit de la collaboration entre les différents partenaires d
 
 # Introduction
 
-Le présent format déchange est un profil France de NeTEx
+Le présent format d'échange est un profil France de NeTEx.
 
 NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des services d'échange de données de description de l'offre de transport planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN 28701). NeTEx permet non seulement d'assurer les échanges pour les systèmes d'information voyageur mais traite aussi l’ensemble des concepts nécessaires en entrée et sortie des systèmes de planification de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à l’Exploitation).
 
@@ -69,7 +69,34 @@ Les éléments présentés ci-dessous couvrent donc l’ensemble des concepts pr
 
 
 # Domaine d'application
-<span style='color:green'>***A rédiger ***</span>
+
+Le Profil France NeTex pour les nouveaux modes concerne spécifiquement l'échange de données de référence pour soutenir les “nouveaux” modes alternatifs pour les services de mobilité, en ajoutant certains nouveaux concepts au schéma NeTEx (indiqués comme NeTEx v1.2.2), mais aussi en utilisant dans une large mesure des éléments de schéma existants définis dans les parties 1, 2 et 3 de NeTEx.
+
+La conception de haut niveau pour le soutien aux modes alternatifs est dérivée d’un modèle conceptuel pour les modes alternatifs CEN PT1711 (CEN/TS 17413:2020) préparé par le groupe de travail TC278 WG17 de CEN. Cette spécification technique CEN décrit un modèle conceptuel pour les modes alternatifs comme une extension de Transmodel V6.0 et basé sur un ensemble détaillé de cas d’utilisation tirés de CEN PT1711, fournis en annexe A.
+
+Le format NeTEx concerne un sous-ensemble des cas d'utilisation pour les données de référence (les cas d'utilisation en temps réel sont couverts par des protocoles dynamiques tels que SIRI et DATEX II). En général, il concerne les données pour les objectifs suivants :
+
+* Permettre l'intégration des segments de voyage effectués avec des modes alternatifs avec ceux effectués avec des modes conventionnels dans des plans de voyage sans couture ;
+
+* Décrire les zones de couverture des services de mobilité par modes alternatifs afin que les moteurs de planification de voyages et d’autres systèmes puissent informer les passagers de la possibilité de les utiliser et fournir des liens appropriés pour invoquer les services dynamiques ;
+
+* Localiser les points d'accès pour les services de modes alternatifs, tels que les points de stationnement, les stations de covoiturage, etc., y compris leur relation avec les points d'accès pour les modes conventionnels ;
+
+NeTEx concerne principalement l’échange de données de référence pour permettre l’intégration de nouveaux modes avec d’autres données ; il ne décrit pas les services dynamiques. 
+
+## Modes de transport
+
+Tous les modes de transport public de masse sont pris en compte par NeTEx, y compris le train, le bus, le car, le métro, le tramway, le ferry, l’avion et leurs sous-modes. Ces modes sont fournis par des opérateurs de transport, qui peuvent exploiter un ou plusieurs modes.
+
+Ce profil s'appuie sur la partie 5 de NeTEx qui élargit le concept d'opérateur pour inclure les fournisseurs d'autres formes de transport, et introduit le concept distinct de « mode d’exploitation » pour classer la manière dont les services sont fournis : conventionnel, flexible, covoiturage, partage, etc.
+
+## Produits et prix
+L'approche générale pour la définition des produits pour les modes alternatifs dans la partie 5 de NeTEx (Modes alternatifs) suit l’approche utilisée par Transmodel v6.0 Partie 5 (modèle de données de gestion tarifaire), à savoir à travers la définition des droits d'accès plutôt que des produits en tant que tels. Les prix sont séparés des objets qu’ils tarifient. Le modèle existant permet également de récupérer des prix dynamiques à partir d'un moteur de tarification.
+
+Cette approche d’utilisation des droits d'accès liés au transport public urbain (pour tous les modes urbains) peut être appliquée à n’importe quel mode, y compris le rail à longue distance et les modes alternatifs.
+
+## Protocoles d’échange
+L’échange de données au format NeTEx peut être effectué à l’aide de divers protocoles. Par exemple : via des services web dédiés, par des échanges de fichiers de données par FTP ou autres, ou en utilisant le protocole d’échange SIRI tel que décrit dans la partie 2 de la documentation SIRI. NeTEx ajoute des services supplémentaires utilisant les mécanismes de transport SIRI communs.
 
 # Références Normatives
 Les documents de référence suivants sont indispensables pour l'application du présent document. Pour les références datées, seule l'édition citée s'applique. Pour les références non datées, la dernière édition du document de référence s'applique (y compris les éventuels amendements).
@@ -79,68 +106,19 @@ CEN/prEN 12896-10: 2021, Public transport - Reference data model -Part 10 : Alt
 
 <span style='color:green'>***A rédiger ***</span>
 
-# Termes et Définitions
+# Vocabulaires
 
 Pour les besoins du présent document, les termes et définitions suivants s'appliquent. Ils sont directement issus de Transmodel et NeTEx. Pour une information complète, il conviendra toutefois de se référer au document nor-matif.
 > NOTE	Les définitions ci-dessus sont des traductions littérales du document normatif. Seules les définitions spécifiques du profil France 'Nouveaux Modes' sont proposées ici, celles relatives aux autres profils sont disponibles dans les profils correspondants. 
-## MODE OF OPERATION (MODE OPERATOIRE)
-## CONVENTIONAL MODE OF OPERATION (MODE OPERATOIRE CONVENTIONNEL)
-## ALTERNATIVE MODE OF OPERATION (MODE OPERATOIRE ALTERNATIF)
-## VEHICLE SHARING (VEHICULE PARTAGE)
-Location de véhicules à court terme où le véhicule peut être pris et garé à différents endroits de la zone urbaine, souvent sans la contrainte de ramener le véhicule à un endroit spécifique dédié.
-
-## VEHICULE SHARING TYPE (TYPE DE VEHICULE PARTAGE)
-## PERSONAL MODE OF OPERATION (MODE OPERATOIRE PERSONEL)
-## MOBILITY SERVICE (SERVICE DE MOBILITE)
-## VEHICLE SHARING SERVICE (SERVICE DE PARTAGE DE VEHICULE)
-## VEHICLE SHARING PARKING AREA (STATION DE PARTAGE DE VEHICLES°)
-## VEHICLE SHARING PARKING BAY (EMPLACEMENT DE VEHICLE DANS UNE STATION)
-## VEHICLE SHARING PLACE ASSIGNEMENT (AFFECTATION DE LIEU DE  PARTAGE DE VEHICULE)
-## MOBILITY SERVICE CONSTRAINT ZONE (ZONE D'UTILISATION DU SERVICE)µ
-## ZONE USE TYPE (TYPE DE CONTRAINTE GEOGRAPHIQUE)
-## VEHICLE TYPE ZONE RESTRICTION (TYPE DE CONTRAINTE SUR ZONE D'UTILISATION°)
-## TARIFF DESCRIPTION GROUP
-<span style='color:red'>***A confirmer ***</span>
-
-## TARIFF ORGANISATION GROUP 
-<span style='color:red'>***A confirmer ***</span>
-
-## MONITORED VEHICLE SHARING PARKING BAY
-## PARKING BAY STATUS
-## PARKING AREA CAPACITY ASSIGNMENT
-
-
-
-## Covoiturage (car pooling)
-Mode consistant à partager une voiture privée pour un trajet entre un conducteur défini qui est déjà engagé dans le trajet et au moins un autre voyageur.
-
-## Mode alternatif (alternative mode)
-Mode d'exploitation annoncé publiquement, différent du mode d'exploitation conventionnel, en particulier le partage de véhicules, la location de véhicules et la mise en commun de véhicules.
-
-## Mode de marche (walking mode)
-la marche est considérée comme un mode d'accès, c'est-à-dire que le voyageur marche jusqu'à un point d'arrêt pour accéder aux autres modes de transports.
-
-## Mode d'accès (access mode)
-Caractérisation du déplacement du voyageur (par exemple, marche, vélo, etc.) lui permettant de se rendre à un arrêt de transport public ou d'effectuer une étape de son voyage.
-
-## Service aux voyageurs (traveler service)
-activité (en général, initiée par les utilisateurs) en vue de faciliter/permettre un voyage
-
-
-## <span style='color:green'>***A compléter ***</span>
-
-
-# Symboles et abréviations
-
-
-# Description du profil d'échange Nouveaux Modes
-## Conventions 
-### De nommage
-Dans ce profil, l'utilisation de "mode alternatif" ou "nouveau mode" est synonyme.
-### De représentation
-<span style='color:green'>***A compléter ***</span>
 
 ## Elements de contexte
+
+Préalablement aux définitions des termes utilisés, ce paragraphe introduit les différentes catégorisations de modes de transport et des modes alternatifs.
+
+![Figure Définition du périmètre des modes alternatifs](media/Perimetre_Nouveaux_Modes.jpg)
+
+**Dans ce profil, l'utilisation de "mode alternatif" ou "nouveau mode" est synonyme.**
+
 ### Catégorisation des modes de transport
 Le terme 'mode' désigne tout moyen de transport utilisé ou disponible. Il est divisé en 'mode véhicule' et 'mode d'accès'.
 * Le **'mode véhicule'** est une caractérisation de l'exploitation du transport public selon le moyen de transport, par exemple, bus, tramway, métro, train, ferry, bateau ou vélo.
@@ -149,42 +127,154 @@ Le terme 'mode' désigne tout moyen de transport utilisé ou disponible. Il est 
 ### Mode alternatifs
 Les modes et sous-modes définis comme des 'moyens de transport' peuvent être caractérisés en termes de types de fonctionnement, c'est-à-dire des façons dont ils sont opérés.
 Ce document distingue les types suivants de 'mode de fonctionnement' :
+
 * **Mode de fonctionnement conventionnel** : le mode de fonctionnement traditionnel qui est proposé sous forme d'une offre de transport public annoncée et/ou flexible, selon un horaire fixe et/ou flexible. Ce mode de fonctionnement suit soit un horaire et des itinéraires fixes, soit est lié à un réseau/horaires fixes mais offre de la flexibilité, afin d'optimiser par exemple le service ou de répondre à la demande des passagers ;
+
 * **Mode alternatif de fonctionnement** : tout mode de fonctionnement public annoncé différent du mode de fonctionnement conventionnel, notamment le partage de véhicules, la location de véhicules et le covoiturage ;
+
 * **Mode personnel de fonctionnement** : un mode de transport privé excluant toute utilisation publiquement annoncée.
 La distinction entre les modes de fonctionnement alternatif et conventionnel repose sur le fait qu'un mode conventionnel repose sur un ensemble de caractéristiques : les conducteurs sont des employés, la flotte est détenue par un opérateur ou une autorité, et la topologie du réseau est définie à l'avance et repose sur des lignes et des modèles de trajets ; tandis que les modes alternatifs peuvent ne pas remplir une ou plusieurs de ces caractéristiques.
 Ce profil concerne le mode alternatif de fonctionnement.
 
+### Termes & définitions
 
-<span style='color:green'>Element de l'annexe 1 PArt 5 NeTEx à synthétiser</span> 
+* ACCESS MODE (Mode d'accès)
+
+Caractérisation du déplacement du voyageur (par exemple, marche, vélo, etc.) lui permettant de se rendre à un arrêt de transport public ou d'effectuer une étape de son voyage.
+
+*  ALTERNATIVE MODE (Mode Alternatif)
+
+Mode d'exploitation annoncé publiquement, différent du mode d'exploitation conventionnel, en particulier le partage de véhicules, la location de véhicules et la mise en commun de véhicules.
+
+* VEHICULE POOLING (CO-VOITURAGE)
+
+Un MODE ALTERNATIF D'EXPLOITATION d'un véhicule privé consiste à partager le véhicule pour un trajet entre le conducteur qui effectue en même temps un voyage et au moins un autre voyageur.
+
+* MODE OF OPERATION (MODE OPERATOIRE)
+
+Méthode de mise à disposition des moyens de transport, qui peut être un MODE D’EXPLOITATION CONVENTIONNEL, ALTERNATIF ou PERSONNEL.
+
+* CONVENTIONAL MODE OF OPERATION (MODE OPERATOIRE CONVENTIONNEL)
+
+Un mode d’exploitation hérité qui met à disposition une offre de transport planifiée ou flexible, publiquement promue.
+
+ * ALTERNATIVE MODE OF OPERATION (MODE OPERATOIRE ALTERNATIF)
+
+Toute autre mode d’exploitation qui est publiquement promu et est ni un MODE D’EXPLOITATION CONVENTIONEL. Par exemple : PARTAGE DE VEHICULE, LOCATION DE VEHICULES OU PARTAGE DE TRAJETS
+
+* VEHICLE SHARING (VEHICULE PARTAGE)
+Location de véhicules à court terme où le véhicule peut être pris et garé à différents endroits de la zone urbaine, souvent sans la contrainte de ramener le véhicule à un endroit spécifique dédié.
+
+* PERSONAL MODE OF OPERATION (MODE OPERATOIRE PERSONEL)
+
+Un MODE D’EXPLOITATION en propre de véhicules, qui n’est pas publiquement promu
+
+* VEHICLE SHARING SERVICE (SERVICE DE PARTAGE DE VEHICULE)
+
+Location de véhicule à court terme où le véhicule peut être pris et garé à différents endroits dans la zone urbaine, possiblement sans l'obligation de ramener le véhicule à un endroit spécifique.
+
+* Mode de marche (walking mode)
+
+La marche est considérée comme un mode d'accès, c'est-à-dire que le voyageur marche jusqu'à un point d'arrêt pour accéder aux autres modes de transports.
+
+
+# Symboles & abréviations
+
+* NeTEx
+* ...
+
+# Description du profil d'échange
+
+## Conventions de représentation
+
+NOTE	les choix de conventions présentées ici ont pour vocation d'être cohérents avec celle réalisée dans le cadre du profil SIRI. De plus tous les profils NeTEx partagent les mêmes conventions.
+
+### Tableaux d'attributs
+
+Les messages constituant ce profil d'échange sont décrits ci-dessous selon un double formalisme: une description sous forme de diagrammes XSD (leur compréhension nécessite une connaissance préalable de XSD: XML Schema Definition) et une description sous forme tabulaire. Les tableaux proposent ces colonnes:
+
+![Representation tabulaire](media/ConventionReprésentation1.jpg)
+
+* Classification : permet de catégoriser l'attribut. Les principales catégories sont:
+
+    -  PK (Public Key) que l'on peut interpréter comme Identifiant Unique: il permet à lui seul d'identifier l'o NOTE	les choix de conventions présentées ici ont pour vocation d'être cohérents avec celle réalisée dans le cadre du profil SIRI. De plus tous les profils NeTEx partagent les mêmes conventions.
+
+    -	AK (Alternate Key) est un identifiant secondaire, généralement utilisé pour la communication, mais qui ne sera pas utilisé dans les relations.
+    -	FK (Foreign Key) indique que l'attribut contient l'identifiant unique (PK) d'un autre objet avec lequel il est en relation.
+    -	GROUP est un groupe XML nommé (ensemble d'attributs utilisables dans différents contextes) 
+        (cf: http://www.w3.org/TR/2001/REC-xmlschema-0-20010502/#AttrGroups )
+
+* Nom : nom de l'élément ou attribut XSD
+
+* Type : type de l'élément ou attribut XSD	(pour certains d'entre eux, il conviendra de se référer à la XSD NeTEx)
+
+* Cardinalité : cardinalité de l'élément ou attribut XSD exprimée sous la forme "minimum:maximum" ("0:1" pour au plus une occurrence; "1:*" au moins une occurrence et sans limites de nombre maximal; "1:1" une et une seule occurrence; etc.).
+
+*	Description : texte de description de l'élément ou attribut XSD (seul les attributs retenus par le profil ont un texte en français; les textes surlignés en jaune indiquent une spécificité du profil par rapport à NeTEx).
+
+Les textes surlignés en jaune sont ceux présentant une particularité (spécialisation) par rapport à NeTEx: une codification particulière, une restriction d'usage, etc.
+
+Les textes surlignés en bleu correspondent à des éléments de NeTEx non retenus dans le cadre de ce profil (présentés à titre informatif donc). Dans les diagrammes XSD, les éléments et attributs apparaissant sur fond bleu sont ceux qui ne sont pas retenus par le profil (et ce sont donc systématiquement des éléments ou attributs facultatifs de NeTEx).
+
+Les attributs et éléments rendus obligatoires dans le cadre de ce profil restent facultatifs dans l'XSD (le contrôle de cardinalité devra donc être réalisé applicativement).
+
+### Valeurs de code de profil
+
+Dans la mesure du possible, le profil sélectionne les valeurs de code à utiliser pour caractériser des éléments et les limite à un ensemble de valeurs documentées. NETEX propose plusieurs mécanismes différents pour spéci-fier les valeurs de code autorisées:
+
+* des énumérations fixes définies dans le cadre du schéma XSD NeTEx. Le profil impose alors un sous-ensemble des codes NeTEx.
+
+* des spécialisations de TYPE OF VALUE, utilisées pour définir des ensembles de codes ouverts pouvant être ajoutés au fil du temps sans modifier le schéma, par exemple, pour enregistrer des classifications d'entités héritées. Le profil lui-même utilise le mécanisme TYPE OF VALUE dans quelques cas pour spécifier des codes normalisés supplémentaires : ceux-ci sont affectés à un CODESPACE «FR_IV_metadata» (https://netex-cen.eu/FR_IV) indiqué par un préfixe «FR_IV». (par exemple, «FR_IV: monomodal»).
+
+* des instances TypeOfFrame: le profil utilise plusieurs TYPES DE FRAME pour spécifier l'utilisation de VERSION FRAME dans le profil. 
+
+
+### Indication des classes abstraites
+
+NeTEx, et Transmodel, utilisent largement l'héritage de classe; cela simplifie considérablement la spécification en évitant les répétitions puisque les attributs partagés sont déclarés par une superclasse et que des sous-classes viennent ensuite les spécialiser sans avoir à répéter ces attributs et en n’ajoutant que ceux qui lui sont spécifiques. La plupart des superclasses sont «abstraites» - c’est-à-dire qu’il n’existe aucune instance concrète; seules les sous-classes terminales sont «concrètes».
+
+Un inconvénient de l'héritage est que si l'on veut comprendre les propriétés d'une classe concrète unique, il faut également examiner toutes ses super-classes. Pour cette raison, le profil inclut les classes abstraites néces-saires pour comprendre les classes concrètes, même si ces classes concrètes ne sont jamais directement ins-tanciées dans un document NeTEx.
+
+* Les super-classes sont signalées dans les en-têtes par le suffixe «(abstrait)» 
+
+* Dans les diagrammes UML (comme pour NeTEx et Transmodel), les noms des classes abstraites sont indiqués en italique et les classes abstraites sont de couleur gris clair.
+
+* Certaines super-classes ne sont techniquement pas abstraites dans NeTEx, mais ne sont pas utilisées comme classes concrètes dans le profil : elles sont signalées avec la même convention que les classes abstraites.
+
+![Classe Abstraite](media/ClasseAbstraite.jpg)
+
+## Rappel du modèle de base des autres profils
 
 ## Les fonctions spécifiques
 
 ### Géorepérage et zones d'utilisation autorisées
+
 La plupart des systèmes de partage de véhicules (vélo, trottinette, voiture, etc.) ne fonctionnent que dans une zone géographique spécifique. Cette zone peut être indiquée par des cartes ou des informations aux passagers, ou pour les véhicules avec des systèmes d'immobilisation à distance, peut même être imposée électroniquement par détection GPS. En outre, certaines zones de la zone opérationnelle peuvent être restreintes en raison de raisons opérationnelles, de sécurité ou autres, par exemple pour contrôler la pollution environnementale. Des pénalités financières peuvent être associées à la violation des limites restreintes à tout moment ou à un moment donné.
 Les zones autorisées peuvent être décrites à l'aide de zones de contraintes de service de mobilité, chaque zone exprimant une étendue spatiale et les usages autorisés.
+
 ### Réservation
+
 Les services de partage de vélos offrent une capacité de réservation à court terme, permettant aux utilisateurs de vérifier la station disponible la plus proche, de réserver un vélo et de s'enregistrer dans un délai court. Cependant, il n'y a généralement pas de réservation à l'avance ; l'utilisateur prend l'un des vélos disponibles à la station la plus proche.
 ### Tarifs et paiement
-Dans le cadre du partage de vélos, dans la plupart des cas, les utilisateurs ne paient le service qu'une seule fois lors de l'abonnement et chaque fois qu'ils ont utilisé le vélo plus longtemps que la durée de location gratuite.
 
+Dans le cadre du partage de vélos, dans la plupart des cas, les utilisateurs ne paient le service qu'une seule fois lors de l'abonnement et chaque fois qu'ils ont utilisé le vélo plus longtemps que la durée de location gratuite.
 
 ## Les services disponibles
 
 ### Véhicules partagés
 
 #### Vélo en libre Service
+
 Le partage de vélos est un mode d'exploitation dédié à la location de vélos à court terme, dans lequel le vélo peut être pris et garé à différents endroits dans une zone urbaine. L'une des principales différences entre le partage de vélos et la location de vélos réside dans le système sous lequel ils fonctionnent. La location de vélos est généralement ponctuelle. Le partage de vélos repose sur un ensemble d'utilisateurs abonnés qui partagent le service, généralement pour de courtes durées ou pour effectuer de petits trajets, moyennant un abonnement mensuel ou annuel fixe. 
 
 Le tarif dépend d'un certain nombre de paramètres : il peut s'agir d'un simple intervalle de temps, d'un tarif pour excès de temps, ou inclure des réductions pour une utilisation fréquente en fonction d'un "profil de voyageur fréquent". Il convient de noter que, comme pour les services de transport conventionnels, les tarifs reposent sur un contrat qui peut être implicite et anonyme (mais dans de nombreux cas, le contrat est personnel), et ce contrat exprime l'"adhésion" à une communauté d'utilisateurs de services spécifiques
+
 ##### Avec Station
 les vélos sont obtenus à partir d'un emplacement prédéterminé, comme une station de stationnement de vélos, où la station communique la disponibilité du vélo et enregistre quand il a été pris et retourné et par qui. La station de stationnement disposera de systèmes pour libérer un vélo pour le voyageur potentiel. Une station peut en réalité avoir une capacité supérieure au nombre strict de bornes si elle dispose de personnel pour récupérer des véhicules supplémentaires du stockage ou y en ramener afin d'équilibrer la demande – le service « voiturier ». Il peut être tout aussi important pour un utilisateur qu'il y ait une borne libre disponible pour y retourner son vélo à la fin de son trajet, sinon il pourrait faire face à une recherche chronophage et même à une pénalité pour usage prolongé.
+
 ##### Sans Station (Flottant)
 Pour les vélos dans un système de partage de vélos sans station, qui disposent généralement de verrous d'immobilisation intégrés dans leur cadre, aucune station n'est nécessaire. Le vélo peut être laissé à n'importe quel endroit sûr dans la zone du schéma et être immobilisé ou réactivé à l'aide d'un code.
 
-
-#### Auto Partage
-### Representation (Concept & implémentation)
 
 ## CoVoiturage
 
