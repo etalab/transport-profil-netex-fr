@@ -1,9 +1,10 @@
 ---
-title: "NeTEx - Profil France - Horaires"
-date: 2022-01-13T00:00:00+00:02
+title: "NeTEx - Profil France v2.3 - Horaires"
+date: 2024-11-21T00:00:00+00:02
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
+weight: 5
 ---
 
 **Avant-propos**
@@ -184,7 +185,7 @@ NeTEx sera nécessaire à sa bonne compréhension.
 
 # Domaine d'application
 
-Le présent document est le profil de la CEN/TS  6614 (NeTEx) pour
+Le présent document est le profil de la CEN/TS 16614 (NeTEx) pour
 l'échange de données de description des horaires en France et permet de
 décrire les horaires de transports publics et la manière dont ils
 pourront être structurés pour des échanges entre systèmes d'information
@@ -414,32 +415,25 @@ de transport et de la capacité requise (par exemple bus standard, bus à
 
 * **PMR** : Personne à Mobilité Réduite
 
-# Exigences minimum liées à la LOM et la règlementation Européenne
+# Exigences minimales liées au code des transports et la règlementation européenne
 
-La LOI n° 2019-1428 du 24 décembre 2019 d'orientation des mobilités
-(LOM :
-<https://www.legifrance.gouv.fr/dossierlegislatif/JORFDOLE000037646678>)
-et, au niveau Européen, le Règlement Délégué (UE) 2017/1926 De La
-Commission du 31 mai 2017 (complétant la directive 2010/40/UE du
-Parlement européen et du Conseil en ce qui concerne la mise à
-disposition, dans l'ensemble de l'Union, de services d'informations sur
-les déplacements multimodaux) rendent obligatoire la mise à disposition,
-quand elles existent, de certains types de données.
+La mise à disposition des données, quand elles existent, est obligatoire et se conforme aux exigences :
+- Au niveau européen, du règlement délégué (UE) 2017/1926 de la Commission du 31 mai 2017 modifié par le
+  règlement délégué (UE) 2024/490 de la Commission du 29 novembre 2023 (<https://eur-lex.europa.eu/eli/reg_del/2017/1926/2024-03-04>), dit "règlement MMTIS" ;
+- Au niveau français, des articles L. 1115-1 à L. 1115-7 , D. 1115-1, R. 1115-2 à R. 1115-8 et D. 1115-9 à D. 1115-11 du code du transports,
+  notamment créés ou modifiés par les articles 25 et 27 de loi n° 2019-1428 du 24 décembre 2019 d’orientation des mobilités, dites loi « LOM ».
+  Ces mêmes articles de la LOM précise le calendrier de mise à disposition des données.
 
-Le tableau ci-dessous résulte de l’analyse de la LOM et du règlement
-délégué et fournit la liste des concepts concernés dans le présent
-profil. Il sera donc nécessaire de fournir ces données pour être
-conforme à la législation (il s’agit bien de mettre à disposition toutes
+Le tableau ci-dessous résulte de l’analyse du code des transports et du règlement
+MMTIS et fournit la liste des concepts concernés dans le présent
+profil correspondant aux données mentionnées dans l’annexe du règlement. Il sera donc nécessaire de fournir ces données pour être
+conforme au cadre réglementaire (il s’agit bien de mettre à disposition toutes
 les données existantes dans les SI transport, et non de créer des
 données qui n’existeraient pas encore sous forme informatique).
 
-Notez que les concepts présents dans les tableaux sont les ceux qui sont
-directement référencés par l’annexe du règlement européen
-(<https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32017R1926&from=FR>),
-mais que pour beaucoup d’entre eux, cela impliquera d’autres concepts
-(soit par héritage soit par relation, au s sens UML des termes). Ces
-éléments d’héritage et de relations sont présentés dans les profils,
-mais pas dans ce tableau.
+Notez que  beaucoup de concepts dépendent des concepts issus de Transmodel/NeTEx et sont liés entre eux, soit par héritage, 
+soit par relation au sens UML des termes. Par ailleurs, certains concepts additionnels peuvent relever d’autres parties
+du profil France, précisés dans le tableau le cas échéant.
 
 De plus, les noms des catégories (colonnes Catégorie et Détail) ont été
 conservés dans la langue originale du document (l’anglais) pour éviter
@@ -1694,11 +1688,23 @@ l'identification des voitures est variable d'une course à l'autre.
 <td>0:1</td>
 <td><p>Type de carburant du TYPE DE VEHICULE:</p>
 <ul>
-<li><p><em>petrol :</em> essence</p></li>
+<li><p><em>battery :</em> batterie</p></li>
+<li><p><em>biodiesel :</em> biogazole ou diesel bio</p></li>
 <li><p><em>diesel:</em> diesel</p></li>
-<li><p><em>naturalGas :</em> gaz</p></li>
-<li><p><em>biodiesel :</em> diesel bio</p></li>
+<li><p><em>dieselBatteryHybrid :</em> hybride diesel et batterie</p></li>
+<li><p><em>electricContact :</em> contact électrique</p></li>
 <li><p><em>electricity :</em> électrique</p></li>
+<li><p><em>ethanol :</em> éthanol</p></li>
+<li><p><em>hydrogen :</em> hydrogène</p></li>
+<li><p><em>liquidGas :</em> gaz liquide</p></li>
+<li><p><em>tpg (thermochemical power group) :</em> group thermochimique</p></li>
+<li><p><em>methane :</em> méthane</p></li>
+<li><p><em>naturalGas :</em> gaz</p></li>
+<li><p><em>petrol :</em> essence</p></li>
+<li><p><em>petrolBatteryHybrid :</em> hybride essence et batterie</p></li>
+<li><p><em>petrolLeaded :</em> essence au plomb</p></li>
+<li><p><em>petrolUnleaded :</em> essence sans plomb</p></li>
+<li><p><em>none :</em> aucun</p></li>
 <li><p><em>other :</em> autre</p></li>
 </ul></td>
 </tr>

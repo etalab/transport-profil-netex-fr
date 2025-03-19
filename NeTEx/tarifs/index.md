@@ -1,9 +1,10 @@
 ---
-title: "NeTEx - Profil France - Tarifs"
-date: 2024-04-30T12:00:00+02:00
+title: "NeTEx - Profil France v2.3 - Tarifs"
+date: 2024-11-21T00:00:00+01:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
+weight: 7
 ---
 
 **Avant-propos**
@@ -178,16 +179,15 @@ NeTEx sera nécessaire à sa bonne compréhension.
 
 # Domaine d'application
 
-Le présent document est le profil de la CEN/TS 6614 (NeTEx) pour
-l'échange de données de description des horaires en France et permet de
-décrire les horaires de transports publics et la manière dont ils
+Le présent document est le profil de la CEN/TS 16614 (NeTEx) pour
+l'échange de données de description de l'offre en France et permet de
+décrire les tarifs des transports publics et la manière dont ils
 pourront être structurés pour des échanges entre systèmes d'information
 ainsi que pour leur présentation aux voyageurs.
 
-Ce sont les services de transport et leurs horaires au sens large
-(heures de passage, fréquences, jours d'application) qui sont pris en
-compte dans ce contexte, et non la structure de l'offre de transport
-(voir les profils arrêt et réseau pour cela).
+Ce sont les tarifications des services de transport au sens large
+qui sont pris en compte dans ce contexte, et non la structure de l'offre de transport
+(voir les autres parties du profil pour cela).
 
 # Références normatives
 
@@ -763,31 +763,25 @@ Autorité Organisatrice de Transports
 
 Personne à Mobilité Réduite
 
-# Exigences minimum liées à la LOM et la règlementation Européenne
+# Exigences minimales liées au code des transports et la règlementation européenne
 
-La LOI n° 2019-1428 du 24 décembre 2019 d'orientation des mobilités
-(LOM :
-<https://www.legifrance.gouv.fr/dossierlegislatif/JORFDOLE000037646678>)
-et, au niveau Européen, le Règlement Délégué (UE) 2017/1926 De La
-Commission du 31 mai 2017 (complétant la directive 2010/40/UE du
-Parlement européen et du Conseil en ce qui concerne la mise à
-disposition, dans l'ensemble de l'Union, de services d'informations sur
-les déplacements multimodaux) rendent obligatoire la mise à disposition,
-quand elles existent, de certains types de données.
+La mise à disposition des données, quand elles existent, est obligatoire et se conforme aux exigences :
+- Au niveau européen, du règlement délégué (UE) 2017/1926 de la Commission du 31 mai 2017 modifié par le
+  règlement délégué (UE) 2024/490 de la Commission du 29 novembre 2023 (<https://eur-lex.europa.eu/eli/reg_del/2017/1926/2024-03-04>), dit "règlement MMTIS" ;
+- Au niveau français, des articles L. 1115-1 à L. 1115-7 , D. 1115-1, R. 1115-2 à R. 1115-8 et D. 1115-9 à D. 1115-11 du code du transports,
+  notamment créés ou modifiés par les articles 25 et 27 de loi n° 2019-1428 du 24 décembre 2019 d’orientation des mobilités, dites loi « LOM ».
+  Ces mêmes articles de la LOM précise le calendrier de mise à disposition des données.
 
-Le tableau ci-dessous résulte de l’analyse de la LOM et du Règlement
-Délégué et fournit la liste attentes fonctionnelles relatives à la
-tarification. Il sera donc nécessaire de fournir ces données pour être
-conforme à la législation (il s’agit bien de mettre à disposition toutes
+Le tableau ci-dessous résulte de l’analyse du code des transports et du règlement
+MMTIS et fournit la liste des concepts concernés dans le présent
+profil correspondant aux données mentionnées dans l’annexe du règlement. Il sera donc nécessaire de fournir ces données pour être
+conforme au cadre réglementaire (il s’agit bien de mettre à disposition toutes
 les données existantes dans les SI transport, et non de créer des
 données qui n’existeraient pas encore sous forme informatique).
 
-Notez que les catégories de données présentes dans les tableaux sont
-celles qui sont directement référencées par l’annexe du règlement
-européen
-(<https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32017R1926&from=FR>),
-mais que pour beaucoup d’entre elles, cela impliquera tout un ensemble
-de concepts Transmodel/NeTEx.
+Notez que  beaucoup de concepts dépendent des concepts issus de Transmodel/NeTEx et sont liés entre eux, soit par héritage, 
+soit par relation au sens UML des termes. Par ailleurs, certains concepts additionnels peuvent relever d’autres parties du profil
+France précisés dans le tableau le cas échéant.
 
 De plus, les noms des catégories (colonnes Catégorie et Détail) ont été
 conservés dans la langue originale du document (l’anglais) pour éviter
