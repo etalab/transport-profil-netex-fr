@@ -5569,6 +5569,13 @@ la GRILLE TARIFAIRE.</span>
 | ***cells***      (FareTableGroup)       | *cells*             | 0:1            | Liste d'éléments de la TABLE DES TARIFS. Le profil France restreint le contenu à des objets de type ***Cell*** uniquement, qui associent une ou plusieurs entités tarifaires à un prix. |
 | ***noticeAssignments*** (FareTableGroup)  | *noticeAssignments* | 0:1            | Liste d'objets de type ***NoticeAssignment*** s’appliquant à l’ensemble de la FARE TABLE                                            |
 
+<div class='table-title'>FareTableHeadingsGroup – Group</div>
+
+| **Classification** | **Name**       | **Type**                 | **Cardinality** | **Description**                                                     |
+|--------------------|----------------|--------------------------|-----------------|---------------------------------------------------------------------|
+| « cntd »           | ***columns***  | *FareTableColumnHeading* | 0:\*            | En-têtes de colonnes à utiliser lors de la présentation du tableau. |
+| « cntd »           | ***rows***     | *FareTableRowHeading*    | 0:\*            | En-têtes de ligne à utiliser lors de la présentation du tableau.    |
+| « cntd »           | ***includes*** | *FareTable*              | 0:\*            | FARE TABLEs imbriqués dans ce tableau. Peut être récursif.          |
 
 
 <div class='table-title'>FareTableColumn – Element</div>
