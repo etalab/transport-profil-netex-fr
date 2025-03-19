@@ -5537,40 +5537,31 @@ la GRILLE TARIFAIRE.</span>
 
 <div class='table-title'>FareTable – Element</div>
 
-| **Classification** | **Name**                              | **Type**           | **Cardinality** | **Description**                                                                               |
-|--------------------|---------------------------------------|--------------------|-----------------|-----------------------------------------------------------------------------------------------|
-| ::\>               | ::\>                                  | *PriceGroup*       | ::\>            | FARE TABLE hérite de PRICE GROUP***.***                                                       |
-| « PK »             | ***id***                              | *FareTableIdType*  | 1:1             | Identifiant du FARE TABLE.                                                                    |
-|                    | ***StartDate***                       | *xsd:date*         | 0:1             | Date de début de validité du prix.                                                            |
-|                    | ***EndDate***                         | *xsd:date*         | 0:1             | Date de fin de validité du prix.                                                              |
-| XGRP               | ***FareTableReferencesGroup***        | *xmlGroup*         | 0:\*            | Éléments de structure tarifaire pouvant recevoir un prix et donc associés à cette cellule.    |
-| XGRP               | ***FareTableCommonAssignmentsGroup*** | *xmlGroup*         | 0:1             | Association d'un élément de structure tarifaire pour une cellule.                             |
-| XGRP               | ***FareTableHeadingsGroup***          | *xmlGroup*         | 0:1             | En-têtes de lignes et de colonnes pour le tableau. Les CELL peuvent y faire référence.        |
-|                    | ***EmbargoUntil***                    | *xsd:dateTime*     | 0:1             | Les prix ne seront communiqués qu'à partir de cette date.                                     |
-| « cntd »           | ***cells***                           | *Cell*             | 0:\*            | Un tuple dans une TABLE DES TARIFS qui associe une ou plusieurs entités tarifaires à un prix. |
-| « cntd »           | ***noticeAssignments***               | *NoticeAssignment* | 0:\*            | NOTICEs s’appliquant à l’ensemble de la FARE TABLE                                            |
-
-<div class='table-title'>FareTableReferencesGroup – Group</div>
-
-| **Classification** | **Name**                 |                                        | **Type**                           | **Cardinality** | **Description**                                                                |
-|--------------------|--------------------------|----------------------------------------|------------------------------------|-----------------|--------------------------------------------------------------------------------|
-| « FK »             | ***TypeOfFareTableRef*** |                                        | *TypeOfFareTableRef*               | 0:1             | Classification de la FARE TABLE.                                               |
-| « cntd »           | ***pricesFor***          |                                        | *PriceableObjectRef+*              | 0:\*            | PRICEABLE OBJECT pouvant faire l'objet d'un prix et donc associé à cette CELL. |
-| « cntd »           | ***usedIn***             |                                        | *Choice*                           | 0:1             | Un élément tarifaire associé au FARE TABLE.                                    |
-| « FK »             | ***a***                  | ***TariffRef***                        | *TariffRef*                        | 1:\*            | TARIFF auquel le PRICEs of FARE TABLE s’applique.                              |
-| « FK »             | ***b***                  | ***GroupOfDistanceMatrixElementsRef*** | *GroupOfDistanceMatrixElementsRef* | 1:\*            | GROUP OF DISTANCE MATRIX ELEMENTs associé au FARE TABLE.                       |
-| « FK »             | ***c***                  | ***GroupOfSalesOfferPackagesRef***     | *GroupOfSalesOfferPackagesRef*     | 1:\*            | GROUP OF SALES OFFER PACKAGEs associé au FARE TABLE.                           |
-| « FK »             | ***OrganisationRef***    |                                        | *(OrganisationRef)*                | 0:1             | OPERATOR ou AUTHORITY auquel le FARE PRICEs s’applique.                        |
-
-<div class='table-title'>FareTableCommonAssignmentsGroup – Group</div>
-
-| **Classification** | **Name**                            | **Type**              | **Cardinality** | **Description**                                                                                    |
-|--------------------|-------------------------------------|-----------------------|-----------------|----------------------------------------------------------------------------------------------------|
-| « cntd »           | ***limitations***                   | *UsageParameterRef+*  | 0:\*            | USAGE PARAMETER or PARAMETERs auquel le CELL PRICE s’applique.                                     |
-| XGRP               | ***CellSpecificNetworkGroup***      | ***<u>xmlGroup</u>*** | 0:1             | Combinaison d'éléments liés au réseau pour lesquels la FARE TABLE ou CELL fournit un prix.         |
-| XGRP               | ***CellSpecificRoutingGroup***      | ***<u>xmlGroup</u>*** | 0:1             | Combinaison d'éléments liés à l’itinéraire pour lesquels la FARE TABLE or CELL fournit un prix.    |
-| XGRP               | ***CellSpecificServiceGroup***      | ***<u>xmlGroup</u>*** | 0:1             | Combinaison d'éléments liés aux services pour lesquels la FARE TABLE ou CELL fournit un prix.      |
-| XGRP               | ***CellSpecificDistributionGroup*** | ***<u>xmlGroup</u>*** | 0:1             | Combinaison d'éléments liés à la distribution pour lesquels la FARE TABLE ou CELL fournit un prix. |
+| **Nom** (Source)                             | **Type**           | **Cardinalité** | **Description**                                                                               |
+|---------------------------------------|--------------------|-----------------|-----------------------------------------------------------------------------------------------|
+| ::\>         | *DataManagedObject*       | ::\>            |      |
+| ::\>         | *EntityInVersion*       | ::\>            |      |
+| ***id***                              | *FareTableIdType*  | 1:1             | Identifiant du FARE TABLE.                                                                    |
+| ***Name*** (GroupOfEntitiesGroup)          | *MultilingualString*         | 0:1             |      |
+| ***ShortName*** (GroupOfEntitiesGroup)          | *MultilingualString*         | 0:1             |      |
+| ***Description*** (GroupOfEntitiesGroup)          | *MultilingualString*         | 0:1             |      |
+| ***PurposeOfGroupingRef*** (GroupOfEntitiesGroup)          | *PurposeOfGroupingIdType*         | 0:1             |      |
+| ***infoLinks*** (GroupOfEntitiesGroup)          | *infoLinks*         | 0:1             |   Liste d'objets de type ***InfoLink***   |
+| ***StartDate*** (PriceGroup)          | *xsd:date*         | 0:1             | Date de début de validité du prix.                                                            |
+| ***EndDate***  (PriceGroup)            | *xsd:date*         | 0:1             | Date de fin de validité du prix (date incluse).                                                   |
+| ***RoundingRef***  (PriceGroup)       | *RoundingId*       | 0:1             | Lien vers une description sur la méthode d'arrondie.    |
+| ***TypeOfFareTableRef***  (FareTableReferencesGroup)       | *TypeOfFareTableIdType*       | 0:1             |   Classification de la FARE TABLE  |
+| ***pricesFor***  (FareTableReferencesGroup)       | *priceableObjectRefs*       |              | Combinaison d'éléments pour lesquels ce FareTable fournis les prix. Le profil France ne retient pas ce champ.   |
+| ***usedIn***  (FareTableReferencesGroup)       | *usedInRefs*       |              |  Le profil France ne retient pas ce champ.  |
+| ***OrganisationRef***  (FareTableReferencesGroup)       | *(OrganisationRef)*       | 0:1             |  OPERATOR ou AUTHORITY auquel le FARE PRICEs s’applique. OrganisationRef est ici une référence à un objet générique, un OperatorRef ou un AuthorityRef devant être utilisé.   |
+| ***limitations***  (FareTableCommonAssignmentsGroup)       | *usageParameterRefs*       | 0:1             |  Liste de Paramètres d'utilisation communs à toutes les cellules. Chaque élément contenu est un type hérité de *UsageParameterRef*  |
+| ***specifics***  (FareTableCommonAssignmentsGroup)       | *FareTableSpecifics*       |        |  Propriétés partagées par toutes les cellules. Le profil France ne retient pas ce champ. |
+| ***columns***  (FareTableHeadingsGroup)       | *fareTableColumns*       | 0:1             |  Liste d'objets de type ***FareTableColumn***  |
+| ***rows***  (FareTableHeadingsGroup)       | *fareTableRows*       | 0:1             |  Liste d'objets de type ***FareTableRow***  |
+| ***includes***  (FareTableHeadingsGroup)       | *fareTables*       | 0:1             |  Liste pouvant contenir des *FareTableRef* ou *FareTable*. Cette liste est restreinte par le profil France.  |
+| ***EmbargoUntil***   (FareTableGroup)    | *xsd:dateTime*     | 0:1             | Les prix ne seront communiqués qu'à partir de cette date.                                     |
+| ***cells***      (FareTableGroup)       | *cells*             | 0:1            | Liste d'éléments de la TABLE DES TARIFS. Le profil France restreint le contenu à des objets de type ***Cell*** uniquement, qui associent une ou plusieurs entités tarifaires à un prix. |
+| ***noticeAssignments*** (FareTableGroup)  | *noticeAssignments* | 0:1            | Liste d'objets de type ***NoticeAssignment*** s’appliquant à l’ensemble de la FARE TABLE                                            |
 
 <div class='table-title'>FareTableHeadingsGroup – Group</div>
 
@@ -5579,6 +5570,7 @@ la GRILLE TARIFAIRE.</span>
 | « cntd »           | ***columns***  | *FareTableColumnHeading* | 0:\*            | En-têtes de colonnes à utiliser lors de la présentation du tableau. |
 | « cntd »           | ***rows***     | *FareTableRowHeading*    | 0:\*            | En-têtes de ligne à utiliser lors de la présentation du tableau.    |
 | « cntd »           | ***includes*** | *FareTable*              | 0:\*            | FARE TABLEs imbriqués dans ce tableau. Peut être récursif.          |
+
 
 <div class='table-title'>FareTableColumn – Element</div>
 
