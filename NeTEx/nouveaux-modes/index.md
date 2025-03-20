@@ -115,6 +115,8 @@ Pour les besoins du présent document, les termes et définitions suivants s'app
 
 Préalablement aux définitions des termes utilisés, ce paragraphe introduit les différentes catégorisations de modes de transport et des modes alternatifs.
 
+Les concepts liés aux modes de transport et moyens de transport sont définis par Transmodel. La figure suivante permet de délimiter le périmètre auquel va s'attacher le profil NeTEx France Nouveaux Modes.
+
 ![Figure Définition du périmètre des modes alternatifs](media/Perimetre_Nouveaux_Modes.jpg)
 
 **Dans ce profil, l'utilisation de "mode alternatif" ou "nouveau mode" est synonyme.**
@@ -124,7 +126,7 @@ Le terme 'mode' désigne tout moyen de transport utilisé ou disponible. Il est 
 * Le **'mode véhicule'** est une caractérisation de l'exploitation du transport public selon le moyen de transport, par exemple, bus, tramway, métro, train, ferry, bateau ou vélo.
 * Le **'mode d'accès'** (par exemple, la marche, le cyclisme, la conduite de voiture privée, etc.) est une caractérisation du mouvement du voyageur (par exemple, marcher, faire du vélo, etc.) lui permettant d'atteindre le 'mode véhicule' ou de réaliser un voyage complet.
 
-### Mode alternatifs
+### Modes alternatifs
 Les modes et sous-modes définis comme des 'moyens de transport' peuvent être caractérisés en termes de types de fonctionnement, c'est-à-dire des façons dont ils sont opérés.
 Ce document distingue les types suivants de 'mode de fonctionnement' :
 
@@ -212,9 +214,9 @@ Les messages constituant ce profil d'échange sont décrits ci-dessous selon un 
 
 *	Description : texte de description de l'élément ou attribut XSD (seul les attributs retenus par le profil ont un texte en français; les textes surlignés en jaune indiquent une spécificité du profil par rapport à NeTEx).
 
-Les textes surlignés en jaune sont ceux présentant une particularité (spécialisation) par rapport à NeTEx: une codification particulière, une restriction d'usage, etc.
+Les textes surlignés en <span class="hl">Jaune</span> sont ceux présentant une particularité (spécialisation) par rapport à NeTEx: une codification particulière, une restriction d'usage, etc.
 
-Les textes surlignés en bleu correspondent à des éléments de NeTEx non retenus dans le cadre de ce profil (présentés à titre informatif donc). Dans les diagrammes XSD, les éléments et attributs apparaissant sur fond bleu sont ceux qui ne sont pas retenus par le profil (et ce sont donc systématiquement des éléments ou attributs facultatifs de NeTEx).
+La description XSD utilisée est strictement celle de NeTEx, sans aucunemodification (ceci explique notamment que tous les commentaires soient en anglais).
 
 Les attributs et éléments rendus obligatoires dans le cadre de ce profil restent facultatifs dans l'XSD (le contrôle de cardinalité devra donc être réalisé applicativement).
 
@@ -227,7 +229,6 @@ Dans la mesure du possible, le profil sélectionne les valeurs de code à utilis
 * des spécialisations de TYPE OF VALUE, utilisées pour définir des ensembles de codes ouverts pouvant être ajoutés au fil du temps sans modifier le schéma, par exemple, pour enregistrer des classifications d'entités héritées. Le profil lui-même utilise le mécanisme TYPE OF VALUE dans quelques cas pour spécifier des codes normalisés supplémentaires : ceux-ci sont affectés à un CODESPACE «FR_IV_metadata» (https://netex-cen.eu/FR_IV) indiqué par un préfixe «FR_IV». (par exemple, «FR_IV: monomodal»).
 
 * des instances TypeOfFrame: le profil utilise plusieurs TYPES DE FRAME pour spécifier l'utilisation de VERSION FRAME dans le profil. 
-
 
 ### Indication des classes abstraites
 
@@ -243,8 +244,6 @@ Un inconvénient de l'héritage est que si l'on veut comprendre les propriétés
 
 ![Classe Abstraite](media/ClasseAbstraite.jpg)
 
-## Rappel du modèle de base des autres profils
-
 ## Les fonctions spécifiques
 
 ### Géorepérage et zones d'utilisation autorisées
@@ -255,15 +254,73 @@ Les zones autorisées peuvent être décrites à l'aide de zones de contraintes 
 ### Réservation
 
 Les services de partage de vélos offrent une capacité de réservation à court terme, permettant aux utilisateurs de vérifier la station disponible la plus proche, de réserver un vélo et de s'enregistrer dans un délai court. Cependant, il n'y a généralement pas de réservation à l'avance ; l'utilisateur prend l'un des vélos disponibles à la station la plus proche.
+
 ### Tarifs et paiement
 
 Dans le cadre du partage de vélos, dans la plupart des cas, les utilisateurs ne paient le service qu'une seule fois lors de l'abonnement et chaque fois qu'ils ont utilisé le vélo plus longtemps que la durée de location gratuite.
+
+## Les cas d'usage
+
+Le profil NeTEx pour les modes alternatifs est destiné à inclure l’échange de données de référence pour soutenir l’information intégrée des passagers pour tous les modes. 
+
+Il est supposé que l’échange de données dynamiques, telles que les places disponibles en stations l'état de charge des véhicules électriques, ... seront couverts  pour les fonctions dynamiques des modes alternatifs, hors du périmètre de NeTEx, mais qui sont dans le périmètre de Transmodel,  par SIRI pour l’échange de données. 
+
+Le périmètre de la couverture de NeTEx inclut les cas d’utilisation suivants.
+
+<div class="table-title">Cas d'Usage Profil France Nouveaux Modes</div>
+
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Num</th>
+<th>Cas d'usage</th>
+<th>Description</th>
+<th>Documents Liés</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td> 1</td>
+<td> Recherche de localisation vélo libre service</td>
+<td> Trouver une localisation de vélo en livre service</td>
+<td> Profil NeTex France Parking <td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td> Recherche de localisation d'une Station de vélos en libre Service</td>
+<td> Trouver une localisation de station de vélos en livre service</td>
+<td> Profil NeTex France Elements communs et Arrêts <td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td> Recherche des informations  d'une station</td>
+<td> Connaitre la capcité d'une station par type (électriques / non électriques), les modes de paiement disponibles</td>
+<td> Profil NeTex France Parking <td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td> Principes de tarification</td>
+<td> Connaitre les modalités de tarification d'un service</td>
+<td> Profil NeTex France Tarifs <td>
+</tr>
+</tbody>
+</table>
 
 ## Les services disponibles
 
 ### Véhicules partagés
 
+Dans le cadre du profil France deux services sont distingués : le vélo en libre service et la voiture partagé.
+
 #### Vélo en libre Service
+
+##### Description
 
 Le partage de vélos est un mode d'exploitation dédié à la location de vélos à court terme, dans lequel le vélo peut être pris et garé à différents endroits dans une zone urbaine. L'une des principales différences entre le partage de vélos et la location de vélos réside dans le système sous lequel ils fonctionnent. La location de vélos est généralement ponctuelle. Le partage de vélos repose sur un ensemble d'utilisateurs abonnés qui partagent le service, généralement pour de courtes durées ou pour effectuer de petits trajets, moyennant un abonnement mensuel ou annuel fixe. 
 
@@ -275,8 +332,30 @@ les vélos sont obtenus à partir d'un emplacement prédéterminé, comme une st
 ##### Sans Station (Flottant)
 Pour les vélos dans un système de partage de vélos sans station, qui disposent généralement de verrous d'immobilisation intégrés dans leur cadre, aucune station n'est nécessaire. Le vélo peut être laissé à n'importe quel endroit sûr dans la zone du schéma et être immobilisé ou réactivé à l'aide d'un code.
 
+#### Voitures en libre Service
 
-## CoVoiturage
+##### Description
+
+##### Sans station
+
+## Modèle de données
+
+### Mode d'exploitation
+
+### Localisation
+
+### Capacité
+
+### Type de véhicule
+
+### Principes de tarification
+
+### Mode de Paiement
+
+### Restriction d'usage
+
+
+
 
 
 
