@@ -2770,7 +2770,7 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 |---------------------------------------|--------------------|-----------------|-----------------------------------------------------------------------------------------------|
 | *DataManagedObject*       | ::\>            |      |
 | *EntityInVersion*       | ::\>            |      |
-| ***id***                              | *PointOfInterestIdType*  | 1:1             | Identifiant du FARE TABLE.                                                                    |
+| ***id***                              | *PointOfInterestIdType*  | 1:1             |  |
 | ***Name*** (GroupOfEntitiesGroup)          | *MultilingualString*         | 0:1             |      |
 | ***ShortName*** (GroupOfEntitiesGroup)          | *MultilingualString*         | 0:1             |      |
 | ***Description*** (GroupOfEntitiesGroup)          | *MultilingualString*         | 0:1             |      |
@@ -2799,6 +2799,54 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 | ***spaces*** (PointOfInterestGroup)  |   pointOfInterestSpaces  |  |  Propriété décrite dans PointOfInterestPropertyGroup. Ce champ n'est pas retenu dans le cadre du profil France | 
 | ***nearTopographicPlaces*** (PointOfInterestGroup)  |   topographicPlaceRefs  | 0:1 |  Propriété décrite dans PointOfInterestTopographicGroup. Liste d'objets de type ***TopographicPlaceRef*** | 
 | *SiteAccessGroup* (PointOfInterestGroup)  |   SiteAccessGroup  |  |  Groupe de propriétés décrit dans la partie "Elements communs" | 
+
+<div class="table-title">SiteGroup – Groupe XML</div>
+| **Nom** (Source)                             | **Type**           | **Cardinalité** | **Description**                                                                               |
+|---------------------------------------|--------------------|-----------------|-----------------------------------------------------------------------------------------------|
+| ***TopographicPlaceRef*** ou  ***TopographicPlaceView***  |  *TopographicPlaceRef* ou  *TopographicPlaceView* | 0:1         |    |
+| ***additionalTopographicPlaces***   |  *additionalTopographicPlaces* | 0:1         |   Liste d'objets de type ***TopographicPlaceRef***  |
+| ***SiteType***   |  *SiteTypeEnumeration* | 0:1         |    |
+| ***AtCenter***   |  *xsd:boolean* |   | Si le lieu est au centre du TopographicPlace. Non retenu dans le profil France.  |
+| ***Locale***   |  *Locale* |  0:1 |  Information sur l'heure et la langue locale. Ce type est décrit dans Elements Communs. |
+| choix          |           |  0:1 |   |
+| 1- **OrganisationRef*** ou ses specialisations  |   voir description   |  0:1 | Le profil France restreint les types d'objets possibles à ***AuthorityRef*** et ***OperatorRef***.  |
+| 2- **OperatingOrganisationView***  | Organisation_DerivedViewStricture |  0:1 | Objet inclus permettant la description de l'organisation (et par exemple un numéro de téléphone) |
+| ***ParentSiteRef*** (SiteRelationGroup)   |  *SiteRef* |  0:1 |   |
+| ***adjacentSites*** (SiteRelationGroup)   |  *siteRefs* |  0:1 |  Liste d'objets de type ***SiteRef*** |
+| ***ContainedInPlaceRef*** (SiteRelationGroup)   |  *TopographicPlaceRef* |  0:1 |   |
+| ***levels***    |  *levels* |  0:1 |  Liste d'objets de type ***LevelRef*** ou ***Level*** |
+| ***entrances***    |  *siteEntrances* |  0:1 |  Liste d'objets de type ***EntranceRef*** (et ses specialisations) ou ***Entrance*** (et ses specialisations) |
+| ***siteStructures***    |  *siteEntrances* |  0:1 |  Liste d'objets de type ***EntranceRef*** (et ses specialisations) ou ***Entrance*** (et ses specialisations) |
+| ***equipmentPlaces*** (AllEquipmentGroup)   |  *equipmentPlaces* |  0:1 |  Liste d'objets de type ***EquipmentPlaceRef*** ou ***EquipmentPlace*** |
+| ***placeEquipments*** (AllEquipmentGroup)   |  *placeEquipments* |  0:1 |  Liste d'objets de type ***InstalledEquipmentRef*** (et ses specialisations) ou ***InstalledEquipment*** (et ses specialisations) |
+| ***localServices*** (AllEquipmentGroup)   |  *localServices* |  0:1 |  Liste d'objets de type ***LocalServicesRef*** (et ses specialisations) ou ***LocalServices*** (et ses specialisations) |
+
+
+<div class="table-title">SiteElementPropertiesGroup – Groupe XML</div>
+
+| **Nom** (Source)                             | **Type**           | **Cardinalité** | **Description**                                                                               |
+|---------------------------------------|--------------------|-----------------|-----------------------------------------------------------------------------------------------|
+| ***PublicUse*** (SiteElementPropertiesGroup)  | *PublicUseEnumeration*  | 0:1         |    |
+| ***Covered*** (SiteElementPropertiesGroup)  | *CoveredEnumeration*  | 0:1         |    |
+| ***Gated*** (SiteElementPropertiesGroup)  | *GatedEnumeration*  | 0:1         |    |
+| ***Lighting*** (SiteElementPropertiesGroup)  | *LightingEnumeration*  | 0:1         |    |
+| ***AllAreasWheelchairAccessible*** (SiteElementPropertiesGroup)  | *xsd:boolean*  | 0:1         |    |
+| ***PersonCapacity*** (SiteElementPropertiesGroup)  | *xsd:nonNegativeInteger*  | 0:1         |    |
+| ***Presentation***  | *Presentation*  | 0:1         |  Cette structure est décrite dans Elements communs |
+| ***facilities***  | *Presentation*  | 0:1         |  Liste d'objets de type ***SiteFacilitySet*** qui est décrit dans Elements communs |
+
+<div class="table-title">PointOfInterestClassification – Element</div>
+| **Nom** (Source)                             | **Type**           | **Cardinalité** | **Description**                                                                               |
+|---------------------------------------|--------------------|-----------------|-----------------------------------------------------------------------------------------------|
+| *DataManagedObject*       | ::\>            |      |
+| *EntityInVersion*       | ::\>            |      |
+| ***id***                              | *PointOfInterestClassificationIdType*  | 1:1             |                                                                     |
+| ***Name*** (TypeOfValueGroup)          | *MultilingualString*         | 0:1             |      |
+| ***ShortName*** (TypeOfValueGroup)          | *MultilingualString*         | 0:1             |      |
+| ***Description*** (TypeOfValueGroup)          | *MultilingualString*         | 0:1             |      |
+| ***Image*** (TypeOfValueGroup)          | *xsd:anyURI*         | 0:1             |      |
+| ***Url*** (TypeOfValueGroup)          | *xsd:anyURI*         | 0:1             |      |
+| ***alternativeDescriptors*** (PointOfInterestClassificationGroup) | alternativeDescriptors | 0:1 |   Liste d'objets de type ***ClassificationDescriptor***     |
 
 
 ##### Cheminement
