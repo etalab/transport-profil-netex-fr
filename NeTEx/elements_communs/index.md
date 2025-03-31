@@ -4855,12 +4855,12 @@ travers de web service.
 
 ## Export sous forme de fichier
 
-Un export Netex au profil France est une archive ZIP respectant plusieurs contraintes : 
-- le nom du fichier est libre, mais il est recommandé de préciser qu'il s'agit d'un fichier netex ;
+Un export NeTEx au profil France est une archive ZIP respectant plusieurs contraintes : 
+- le nom du fichier est libre, mais il est recommandé de préciser qu'il s'agit d'un fichier NeTEx ;
 - l'archive ne contient pas de dossiers, tous les fichiers sont listés à la racine ; 
 - les fichiers binaires, exécutables et sous archives sont interdits ;
 - d'autres fichiers de type texte ou json peuvent figurer dans l’archive mais seront ignorés à l’import ;
-- des mesures de sécurités “propres à chaque consommateur” pourront conduire à des exigences complémentaires.
+- des mesures de sécurité “propres à chaque consommateur” pourront conduire à des exigences complémentaires.
 
 Les noms des fichiers doivent respecter les contraintes suivantes : 
 - pas de majuscule
@@ -4872,11 +4872,11 @@ Les noms des fichiers doivent respecter les contraintes suivantes :
 Les fichiers attendus dans l'archive sont les suivants : 
 | **Fichier** |  **Description** 
 |--------------------|--------------------------------------------|
-| accessibility.xml  | Fichier regroupant toutes les informations d'accessibilité 
+| accessibility.xml  | Fichier regroupant toutes les informations d'accessibilité (hors propriétés des Quays et StopPlaces)
 | network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes
 | stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc.
-| line_XXX.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun 
-(parcours, courses, horaires, etc.). La partie "XXX" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est conseillé d'utiliser des libellés courts comme les codes des lignes par exemple.
+| line_xyz.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun 
+(parcours, courses, horaires, etc.). La partie "xyz" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est conseillé d'utiliser des libellés courts comme les codes des lignes par exemple.
 | fare.xml           | Fichier regroupant les informations sur les tarifs, que ce soit pour les transports en commun, les parkings ou autres.
 | parking.xml        | Fichier regroupant les informations sur les parkings.
 | poi.xml            | Fichier regroupant les points d'intérêts et les informations associées
@@ -4885,6 +4885,9 @@ Les fichiers attendus dans l'archive sont les suivants :
 
 Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
 Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
+
+A noter : Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP
+en respectant les critères ci-dessus.
 
 ## Web service
 
