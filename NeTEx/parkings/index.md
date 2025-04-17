@@ -1378,11 +1378,10 @@ héritage.</p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>NumberOfBaysWithWIthRecharging</strong></em></td>
+<td><em><strong>NumberOfBaysWithRecharging</strong></em></td>
 <td><em>NumberOfSpaces</em></td>
 <td>0:1</td>
-<td>Nombre de place disposant d’une borne de recharge électrique PARKING
-AREA.</td>
+<td>Nombre de places disposant d’une borne de recharge électrique dans le PARKING AREA.</td>
 </tr>
 <tr class="odd">
 <td>« cntd »</td>
@@ -5809,9 +5808,8 @@ conventionelle) … complété par un AccessibilityAssesment</td>
 d’une infrastructure de recharge opérationnelle.</td>
 <td class="red">3</td>
 <td>Valeur optionnelle</td>
-<td>ParkingArea.NumberOfBaysWithWIthRecharging</td>
-<td>Est-ce que cela veut bien dire: "place équipée d'une boren de
-recharge" ?</td>
+<td>ParkingArea.NumberOfBaysWithRecharging</td>
+<td>Est-ce que cela veut bien dire : "place équipée d'une borne de recharge" ?</td>
 </tr>
 <tr class="odd">
 <td>nb_velo</td>
@@ -5835,7 +5833,7 @@ prise <span class="red">électrique</span> dédiée.</td>
 <td>Valeur optionnelle</td>
 <td>ParkingArea.TotalCapacity + ParkingArea.ParkingVehicleType
 (pedalCycle, moped, etc.) +
-ParkingArea.NumberOfBaysWithWIthRecharging</td>
+ParkingArea.NumberOfBaysWithRecharging</td>
 <td> </td>
 </tr>
 <tr class="odd">
