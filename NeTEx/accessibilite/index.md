@@ -3314,121 +3314,30 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 | **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
 | *::>*               | *::>*                       | *PlaceAccessEquipment* | *::>*            | QUEUING EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
-| «PK»                | id                          | QueuingEqupmentIdType  | 0:1              | Identifiant du QUEUING EQUIPMENT.                                                          |
-|                     | RailedQueue                 | xsd:boolean            | 0:1              | Indique que la queue est guidée par une barrière ou une rampe                              |
-|                     | TicketedQueue               | xsd:boolean            | 0:1              | Indique que l’ordre dans la queue est géré par un système de tickets                           |
+| «PK»                | *id*                        | QueuingEqupmentIdType  | 0:1              | Identifiant du QUEUING EQUIPMENT.                                                          |
+|                     | *RailedQueue*               | xsd:boolean            | 0:1              | Indique que la queue est guidée par une barrière ou une rampe                              |
+|                     | *TicketedQueue*             | xsd:boolean            | 0:1              | Indique que l’ordre dans la queue est géré par un système de tickets                       |
 |                     | ***DisabledPriority***      | xsd:boolean            | 0:1              | Indique une priorité d’accès aux personnes handicapées (et généralement femmes enceintes). |
 |                     | ***QueuingSeatedPossible*** | xsd:boolean            | 0:1              | Indique la possibilité d’être assis en faisant la queue                                    |
 
 <div class="table-title">RampEquipment (rampes) – Élément</div>
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 19%" />
-<col style="width: 20%" />
-<col style="width: 8%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>PlaceAccessEquipment</em></td>
-<td><em>::></em></td>
-<td>RAMP hérite de ACCESS EQUIPMENT</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td><em>id</em></td>
-<td>RampIdType</td>
-<td>0:1</td>
-<td>Identifiant du RAMP.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>Length</em></td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Longueur de la rampe</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Gradient</em></td>
-<td>xsd:integer</td>
-<td>0:1</td>
-<td>Inclinaison de la rampe</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>GradientType</em></td>
-<td><em>GradientType</em></td>
-<td>0:1</td>
-<td><p>Inclinaison de la rampe en valeurs codées :</p>
-<ul>
-<li><p><em>verySteep</em> (très pentu)</p></li>
-<li><p><em>steep</em> (pentu)</p></li>
-<li><p><em>medium</em> (pente moyenne)</p></li>
-<li><p><em>gentle</em> (pente légère)</p></li>
-<li><p><em>level</em> (plat)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Pedestal</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si la rampe repose sur un pied central</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>HandrailHeight</em></td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Hauteur de la main courante</td>
-</tr>
-<tr class="even">
-<td>«FK»</td>
-<td><em>HandrailType</em></td>
-<td><em>HandrailEnumeration</em></td>
-<td>0:1</td>
-<td><p>Type de main courante :</p>
-<ul>
-<li><p><em>none</em> (aucune)</p></li>
-<li><p><em>oneSide</em> (d’un côté uniquement)</p></li>
-<li><p><em>bothSides</em> (des deux côtés)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>TactileGuidance­Strips</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si la rampe dispose d’une bande de guidage podotactile</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>VisualGuidance­Bands</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si la rampe dispose de bandes de guidage visuelles</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Temporary</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale que la rampe est temporaire</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
+| *::>*               | *::>*                       | *PlaceAccessEquipment*       | *::>*            | RAMP EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
+| «PK»                | *id*                        | RamptIdType                  | 0:1              | Identifiant du RAMP EQUIPMENT                                                           |
+|                     | *Length*                    | LengthType                   | 0:1              | Longueur de la rampe                                                                    |
+|                     | *Gradient*                  | xsd:integer                  | 0:1              | Inclinaison de la rampe                                                                 |
+| «enum»              | *GradientType*              | GradientType                 | 0:1              | Inclinaison de la rampe en valeurs codées : <br><ul><li><em>verySteep</em> (très pentu)</li><li><em>steep</em> (pentu)</li><li><em>medium</em> (pente moyenne)</li><li><em>gentle</em> (pente légère)</li><li><em>level</em> (plat)</li></ul>                                             |
+|                     | *Pedestal*                  | LengthType                   | 0:1              | Indique si la rampe repose sur un pied central                                          |
+|                     | *HandrailHeight*            | xsd:boolean                  | 0:1              | Hauteur de la main courante                                                             |
+| «enum»              | *HandrailType*              | HandrailEnumeration          | 0:1              | Type de main courante : <br><ul><li><p><em>none</em> (aucune)</p></li><li><p><em>oneSide</em> (d’un côté uniquement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li></ul>                          |
+|                     | *TactileGuidance­Strips*     | xsd:boolean                  | 0:1              | Indique si la rampe dispose d’une bande de guidage podotactile                          |
+|                     | *VisualGuidance­Bands*       | xsd:boolean                  | 0:1              | Indique si la rampe dispose de bandes de guidage visuelles                              |
+|                     | *Temporary*                 | xsd:boolean                  | 0:1              | Signale que la rampe est temporaire                                                     |
+|                     | *RestStopDistance*          | xsd:boolean                  | 0:1              | Distance maximale entre deux paliers de repos <br><span class="hl">Il est recommandé d'implanter un palier de repos en bas et en haut de chaque rampe, ainsi que tous les 10 mètres en cas de longue rampe.</span>  |
+| «enum»              | *SafetyEdge*                | SafetyEdgeEnum               | 0:1              | Indique la présence d'une bordure chasse-roue. Il s'agit d'une bordure latérale visant à bloquer la roue du fauteuil roulant pour éviter les chutes. <br><ul><li><em>oneSide </em>(d’un côté uniquement)</li><li><em>bothSides </em>(des deux côtés)</li><li><em>none </em>(pas de chasse-roue)</li></ul>   |
+| «enum»              | *TurningSpace*              | RampTurningSpacePositionEnum | 0:1              | Indique la présence d'une aire de rotation (ou espace de manœuvre) UFR en bas et/ou en haut de la rampe : <br><ul><li><em>bottom </em>(en bas uniquement)</li><li><em>top </em>(en haut uniquement)</li><li><em>topAndBottom </em>(en haut et en bas)</li><li><em>none</em> (pas d'aire de rotation)</li><li><em>level</em> (plat)</li></ul>      |
 
 <div class="table-title">PlaceLighting (éclairage) – Élément</div>
 
