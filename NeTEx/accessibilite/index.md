@@ -3027,7 +3027,7 @@ Voir la table ci-après pour la description de cet élément.</span>
 <td>Identifiant du CROSSING.</td>
 </tr>
 <tr class="even">
-<td></td>
+<td>enum</td>
 <td><em>CrossingType</em></td>
 <td>CrossingTypeEnum</td>
 <td>0:1</td>
@@ -3092,7 +3092,7 @@ Voir la table ci-après pour la description de cet élément.</span>
 <td>Signale la présence de bateaux (abaissement du trottoir) des deux côtés.</td>
 </tr>
 <tr class="even">
-<td></td>
+<td>enum</td>
 <td><em>MarkingStatus</em></td>
 <td>MarkingStatusEnumeration</td>
 <td>0:1</td>
@@ -3121,7 +3121,7 @@ Voir la table ci-après pour la description de cet élément.</span>
 <td>Indique si la traversée est convexe ou bombée (elle monte puis descend).</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td>enum</td>
 <td><em>VisualObstacle</em></td>
 <td>VisualObstacleEnumeration</td>
 <td>0:1</td>
@@ -3137,7 +3137,7 @@ Voir la table ci-après pour la description de cet élément.</span>
 </td>
 </tr>
 <tr class="odd">
-<td></td>
+<td>enum</td>
 <td><em>TactileWarningStrip</em></td>
 <td><em>TactileWarningEnum</em></td>
 <td>0:1</td>
