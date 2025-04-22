@@ -3027,7 +3027,7 @@ Voir la table ci-après pour la description de cet élément.</span>
 <td>Identifiant du CROSSING.</td>
 </tr>
 <tr class="even">
-<td></td>
+<td>enum</td>
 <td><em>CrossingType</em></td>
 <td>CrossingTypeEnum</td>
 <td>0:1</td>
@@ -3091,8 +3091,53 @@ Voir la table ci-après pour la description de cet élément.</span>
 <td>0:1</td>
 <td>Signale la présence de bateaux (abaissement du trottoir) des deux côtés.</td>
 </tr>
+<tr class="even">
+<td>enum</td>
+<td><em>MarkingStatus</em></td>
+<td>MarkingStatusEnumeration</td>
+<td>0:1</td>
+<td>État du marquage au sol de la traversée piétonne
+<ul>
+<li><p><em>good</em> (bon état)</p></li>
+<li><p><em>worn</em> (dégradation sans gravité)</p></li>
+<li><p><em>hazardous</em> (dégradation entraînant un problème de sécurité immédiat)</p></li>
+<li><p><em>none</em> (pas de marquage au sol)</p></li>
+<li><p><em>unknown</em> (inconnu)</p></li>
+</ul>
+</td>
+</tr>
 <tr class="odd">
 <td></td>
+<td><em>VibratingCrossingAids</em></td>
+<td>xsd:boolean</td>
+<td>0:1</td>
+<td>Signale la présence d'un équipement délivrant des vibrations lorsque la traversée est permise.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><em>BumpCrossing</em></td>
+<td>xsd:boolean</td>
+<td>0:1</td>
+<td>Indique si la traversée est convexe ou bombée (elle monte puis descend).</td>
+</tr>
+<tr class="odd">
+<td>enum</td>
+<td><em>VisualObstacle</em></td>
+<td>VisualObstacleEnumeration</td>
+<td>0:1</td>
+<td> Indique la présence et le type de masque visuel. Il s'agit d'un élément, positionné jusqu'à 5 mètres en amont de la traversée, et qui gêne le piéton pour voir et être vu au moment de traverser
+<ul>
+<li><p><em>carParking</em> (stationnement voiture)</p></li>
+<li><p><em>vegetation</em> (végétation)</p></li>
+<li><p><em>building</em> (bâti)</p></li>
+<li><p><em>streetFurniture</em> (mobilier urbain)</p></li>
+<li><p><em>other</em> (autre)</p></li>
+<li><p><em>none</em> (aucun)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="odd">
+<td>enum</td>
 <td><em>TactileWarningStrip</em></td>
 <td><em>TactileWarningEnum</em></td>
 <td>0:1</td>
