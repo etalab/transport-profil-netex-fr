@@ -3325,7 +3325,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 | **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
 | *::>*               | *::>*                       | *PlaceAccessEquipment*       | *::>*            | RAMP EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
-| «PK»                | *id*                        | RamptIdType                  | 0:1              | Identifiant du RAMP EQUIPMENT                                                           |
+| «PK»                | *id*                        | RampIdType                  | 0:1              | Identifiant du RAMP EQUIPMENT                                                           |
 |                     | *Length*                    | LengthType                   | 0:1              | Longueur de la rampe                                                                    |
 |                     | *Gradient*                  | xsd:integer                  | 0:1              | Inclinaison de la rampe                                                                 |
 | «enum»              | *GradientType*              | GradientType                 | 0:1              | Inclinaison de la rampe en valeurs codées : <br><ul><li><em>verySteep</em> (très pentu)</li><li><em>steep</em> (pentu)</li><li><em>medium</em> (pente moyenne)</li><li><em>gentle</em> (pente légère)</li><li><em>level</em> (plat)</li></ul>                                             |
