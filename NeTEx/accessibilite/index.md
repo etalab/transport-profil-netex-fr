@@ -2696,118 +2696,23 @@ passagers)* *–* Élément
 
 <div class="table-title">SanitaryEquipment (sanitaires) – Élément</div>
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 17%" />
-<col style="width: 22%" />
-<col style="width: 8%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>PassengerEquipment</em></td>
-<td><em>::></em></td>
-<td>SANITARY EQUIPMENT hérite de PASSENGER EQUIPMENT.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td>id</td>
-<td>SanitaryEquipmentIdType</td>
-<td>1:1</td>
-<td>Identifiant du SANITARY EQUIPMENT.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>AccessibilityAssessment</strong></em></td>
-<td><em>AccessibilityAssessment</em></td>
-<td>0:1</td>
-<td><p>Caractéristiques d’accessibilité des sanitaires.</p>
-<p>Voir le détail en Annexe.</p></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Gender</td>
-<td>GenderLimitationEnum</td>
-<td>0:1</td>
-<td>Limitation de genre (homme/femme) pour l’utilisation des sanitaires.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>SanitaryFacilityList</td>
-<td>SanitaryFacilityEnum</td>
-<td>0:*</td>
-<td><p>Type de sanitaire</p>
-<ul>
-<li><p><em>toilet</em> (toilettes)</p></li>
-<li><p><em>wheelChairAccessToilet</em> (toilettes accessibles en fauteuil roulant)</p></li>
-<li><p><em>shower</em> (douche)</p></li>
-<li><p><em>washingAndChangeFacilities</em> (espace pour se nettoyer et se changer)</p></li>
-<li><p><em>babyChange</em> (espace bébé)</p></li>
-<li><p><em>wheelchairBabyChange</em> (espace bébé accessible en fauteuil roulant)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Wheelchair­TurningCircle</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Rayon de braquage pour les fauteuils roulants</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>SharpsDisposal</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Disponibilité d’une poubelle pour objets tranchants</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Staffing</td>
-<td>StaffingEnum</td>
-<td>0:1</td>
-<td>Présence de personnel</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>KeyScheme</strong></em></td>
-<td>xsd:normalizedString</td>
-<td>0:1</td>
-<td><span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br />
-<span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>CallButtonAvailable</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Présence d’un bouton d’appel</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>SupportBarHeigth</strong></em></td>
-<td>xsd:decimal</td>
-<td>0:1</td>
-<td>Hauteur de la barre de support (quand il y en a une)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>LockedAccess</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si les toilettes peuvent être verrouillées et donc une clé (ou un outil équivalent) est nécessaire pour y accéder.</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
+| *::>*               | *::>*                       | *PassengerEquipment*   | *::>*            | SANITARY EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
+| «PK»                | id                          | SanitaryEquipmentIdType| 0:1              | Identifiant du SANITARY EQUIPMENT.                                                          |
+|                     | **AccessibilityAssessment** | *AccessibilityAssessment*| 0:1            | <p>Caractéristiques d’accessibilité des sanitaires.</p><p>Voir le détail en Annexe.</p>     |
+|                     | Gender                      | GenderLimitationEnum   | 0:1              | Limitation de genre (homme/femme) pour l’utilisation des sanitaires.                        |
+|                     | SanitaryFacilityList        | SanitaryFacilityEnum   | 0:*              | <p>Type de sanitaire</p><ul><li><p><em>toilet</em> (toilettes)</p></li><li><p><em>wheelChairAccessToilet</em>(toilettes accessibles en fauteuil roulant)</p></li><li><p><em>shower</em> (douche)</p></li><li><p><em>washingAndChangeFacilities</em> (espace pour se nettoyer et se changer)</p></li><li><p><em>babyChange</em>(espace bébé)</p></li><li><p><em>wheelchairBabyChange</em> (espace bébé accessible en fauteuil roulant)</p></li></ul>                                                          |
+|                     | Wheelchair­TurningCircle     | LengthType             | 0:1              | Rayon de braquage pour les fauteuils roulants                                              |
+|                     | ***SharpsDisposal***        | xsd:boolean            | 0:1              | Disponibilité d’une poubelle pour objets tranchants                                        |
+|                     | Staffing                    | StaffingEnum           | 0:1              | Présence de personnel                                                                      |
+|                     | ***KeyScheme***             | xsd:normalizedString   | 0:1              | <span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br /><span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span>         |
+|                     | ***CallButtonAvailable***   | xsd:boolean            | 0:1              | Présence d’un bouton d’appel                                                               |
+|                     | ***SupportBarHeigth***      | xsd:decimal            | 0:1              | Hauteur de la barre de support (quand il y en a une)                                       |
+|                     | ***LockedAccess***          | xsd:boolean            | 0:1              | Indique si les toilettes peuvent être verrouillées et donc une clé (ou un outil équivalent) est nécessaire pour y accéder.                                       |
+|                     | HandWashing                 | xsd:boolean            | 0:1              | Indique s'il y a le nécessaire pour se laver les mains avec du savon                       |
+|                     | DrinkingWater               | xsd:boolean            | 0:1              | Indique si de l'eau potable est disponible                                                 |
+|                     | ToiletsType                 | ToiletsTypeEnumeration | 0:1              | Indique le type de toilettes.<ul><li><em>seated</em> (position assise sur un siège avec une cuvette)</li><li><em>urinal</em> (urinoir utilisable uniquement debout)</li><li><em>squat</em> (position accroupie, sans siège ni cuvette)</li><li><em>seatedAndUrinal</em> (des sièges avec cuvette et des urinoirs sont disponibles)</li></ul>                                                 |
 
 <div class="table-title">RubbishDisposalEquipment (poubelles) – Élément</div>
 
