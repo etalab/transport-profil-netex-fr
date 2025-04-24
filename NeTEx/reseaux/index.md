@@ -1051,7 +1051,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong><del>RepresentBy­GroupRef</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Le GROUPE DE LIGNE référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</span></td>
+<td><span class="hl">Le GROUPE DE LIGNES référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</span></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1156,6 +1156,15 @@ de nuit, etc.).
 
 ### Les réseaux
 
+La notion de "réseau" correspond à un regroupement de lignes mis en avant sur le terrain et visible des voyageurs.
+Par exemple pour des réseaux urbains, le réseau TCL pour Lyon et les alentours, TBM pour le réseau de Bordeaux ou 
+Bibus pour le réseau urbain de Brest.
+
+Cette notion de réseau n'est pas obligatoire, mais très fortement recommandée pour des exports de structures de réseau ou
+d'offre horaires. De plus, pour éviter des différences d'interprétation et de communication, une ligne ne peut être 
+référencée que par un seul réseau dans un export NeTEx France.
+
+
 <div class="table-title">Network – Element</div>
 
 | **Classifi­cation** | **Name**                       | **Type**                   | **Cardin­ality** | **Description**                                                          |
@@ -1164,6 +1173,32 @@ de nuit, etc.).
 |                     | ***TransportOrganisationRef*** | *OrganisationRefStructure* | 0:1              | INSTITUTION (autorité organisatrice ou transporteur) en charge du RÉSEAU |
 |                     | ***groupsOfLines***            | *groupsOfLinesInFrame*     | 0:\*             | GROUPE DE LIGNES faisant partie du RÉSEAU                                |
 |                     | ***tariffZones***              | *tariffZoneRefs*           | 0:\*             | ZONEs TARIFAIREs faisant partie du RÉSEAU                                |
+
+
+Afin de permettre une description complète d'un réseau de transport, la notion de groupe de lignes peut êgalement être utilisée
+en complément afin de regrouper par exemple les lignes de nuit du réseau ou les "lignes fortes". Dans ce cas, la ligne est référencée 
+par le (ou les) groupe(s) de lignes dont elle fait partie ET par le réseau global.
+**Recommandation** : une ligne ne devrait pas être présente dans plus d'un groupe de lignes à la fois au sein du réseau sauf situation particulière.
+
+Exemple : 
+```xml
+<Network id="sample-with-lines">
+  <Name>Mon Réseau</Name>
+  <members>
+    <LineRef ref="L1" version="any"/>
+    <LineRef ref="L2" version="any"/>
+    <LineRef ref="L3" version="any"/>
+  </members>
+  <groupsOfLines>
+    <GroupOfLinesRef ref="G1" version="any"/> 
+    <GroupOfLinesRef ref="G2" version="any"/>
+  </groupsOfLines>  
+</Network>
+<!-- avec le groupe de lignes G1 qui contient des références aux lignes L1 et L2, et le groupe de lignes G2 qui contient une référence à la ligne L3. -->
+```
+
+
+
 
 ## Zone tarifaire
 
@@ -2985,7 +3020,7 @@ description des ITL (Interdiction de trafic local).
 <td><em><strong>GroupOfLinesRef</strong></em></td>
 <td><em>GroupOfLinesRef</em></td>
 <td>0:1</td>
-<td>Groupe de ligne ou réseau concerné par la restriction</td>
+<td>Groupe de lignes ou réseau concerné par la restriction</td>
 </tr>
 </tbody>
 </table>
