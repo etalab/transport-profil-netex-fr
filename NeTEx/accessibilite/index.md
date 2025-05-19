@@ -3777,214 +3777,36 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 
 <div class="table-title">LiftEquipment (ascenseur) – Élément</div>
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 23%" />
-<col style="width: 18%" />
-<col style="width: 6%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>PlaceAccessEquipment</em></td>
-<td><em>::></em></td>
-<td>LIFT hérite de ACCESS EQUIPMENT.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td>id</td>
-<td>LiftIdType</td>
-<td>1:1</td>
-<td>Identifiant du LIFT.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Depth</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td><p>Profondeur de l’ascenseur</p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</span></p>   
-</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>MaximumLoad</td>
-<td>WeightType</td>
-<td>0:1</td>
-<td>Charge maximale</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>WheelchairPassable</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si l’utilisation en fauteuil roulant est possible</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>WheelchairTurningCircle</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Rayon de braquage pour les fauteuils roulants dans l’ascenseur</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>InternalWidth</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Profondeur à l’intérieur</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>HandrailType</td>
-<td><em>Handrail­Enum</em></td>
-<td>0:1</td>
-<td><p>Type de main courante</p>
-<ul>
-<li><p><em>none</em> (aucun)</p></li>
-<li><p><em>oneSide</em> (d’un côté seulement)</p></li>
-<li><p><em>bothSides</em> (des deux côtés)</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>HandrailHeight</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Hauteur de la main courante</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>CallButtonHeight</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Hauteur du bouton d’appel de l’ascenseur (à partir du sol)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>DirectionButtonHeight</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Hauteur des boutons d’appel directionels de l’ascenseur (à partir du sol), <span class="hl">valeur la plus haute</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>LowerHandrailHeight</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Hauteur de la main courante (à partir du sol)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>RaisedButtons</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si les boutons sont en relief</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>BrailleButtons</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td><p>Signale si les boutons sont marqués en braille</p>
-<p><span class="hl">A utiliser aussi pour les marques tactiles (non braille)</span></p></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>MirrorOnOppositeSide</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’un miroir en face de l’ascenseur</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Attendant</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale s’il y a un préposé à l’ascenseur</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Automatic</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale s’il s’agit d’un ascenseur automatique</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>AlarmButton</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si l’ascenseur dispose d’un bouton d’alarme</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>TactileActuators</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si l'ascenseur a des actionneurs tactiles.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>AcousticAnnouncements</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si l'ascenseur dispose d’un mécanisme d’annonces sonores</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>SignageToLift</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si l’accès à l'ascenseur est fléché/signalé</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>MagneticInductionLoop</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la presence d’une boucle d’induction magnétique</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>TactileGroundFloorButton</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la presence d’une marque tactile spécifique sur le bouton du rez-de-chaussée</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>ExternalFloorSelection</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale que la sélection de l’étage de destination se fait à l’extérieur de l’ascenseur</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>ButtonsHeigt</em></td>
-<td><em>LengthType</em></td>
-<td>0:1</td>
-<td>Hauteur (taille) des boutons (en cm)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>GroundMarkalignedWithButton</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence de marquage podotactile pour repérer les boutons</td>
-</tr>
-</tbody>
-</table>
+| **Classification** | **Nom**                     | **Type**             | **Cardinalité** | **Description**                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------ | --------------------------- | -------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| *::>*              | *::>*                       | PlaceAccessEquipment | *::>*           | LIFT hérite de ACCESS EQUIPMENT                                                                                                                                                                                                                                                                                                                                                                       |
+| «PK»               | id                          | LiftIdType           | 1:1             | identifiant du LiftEquipement                                                                                                                                                                                                                                                                                                                                                                         |
+|                    | Depth                       | LengthType           | 0:1             | Profondeur de l’ascenseur      <br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</span>                                                                                                                                                                                                                                                         |
+|                    | MaximumLoad                 | WeightType           | 0:1             | Charge maximale                                                                                                                                                                                                                                                                                                                                                                                       |
+|                    | WheelchairPassable          | xsd:boolean          | 0:1             | Signale si l’utilisation en fauteuil roulant est possible                                                                                                                                                                                                                                                                                                                                             |
+|                    | WheelchairTurningCircle     | LengthType           | 0:1             | Rayon de braquage pour les fauteuils roulants dans l’ascenseur                                                                                                                                                                                                                                                                                                                                        |
+|                    | InternalWidth               | LengthType           | 0:1             | Profondeur à l’intérieur                                                                                                                                                                                                                                                                                                                                                                              |
+|                    | HandrailType                | HandrailEnum         | 0:1             | Type de main courante <li><p><em>none</em> (aucun)</p></li> <li><p><em>oneSide</em> (d’un côté seulement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li>                                                                                                                                                                                                                                 |
+|                    | HandrailHeight              | LengthType           | 0:1             | Hauteur de la main courante                                                                                                                                                                                                                                                                                                                                                                           |
+|                    | CallButtonHeight            | LengthType           | 0:1             | Hauteur du bouton d’appel de l’ascenseur (à partir du sol                                                                                                                                                                                                                                                                                                                                             |
+|                    | DirectionButtonHeight       | LengthType           | 0:1             | Hauteur des boutons d’appel directionels de l’ascenseur (à partir du sol), valeur la plus haute                                                                                                                                                                                                                                                                                                       |
+|                    | LowerHandrailHeight         | LengthType           | 0:1             | Hauteur de la main courante (à partir du sol)                                                                                                                                                                                                                                                                                                                                                         |
+|                    | RaisedButtons               | xsd:boolean          | 0:1             | Signale si les boutons sont en relief                                                                                                                                                                                                                                                                                                                                                                 |
+|                    | BrailleButtons              | xsd:boolean          | 0:1             | Signale si les boutons sont marqués en braille. À utiliser aussi pour les marques tactiles (non braille)                                                                                                                                                                                                                                                                                              |
+|                    | MirrorOnOppositeSide        | xsd:boolean          | 0:1             | Signale la présence d’un miroir en face de l’ascenseur                                                                                                                                                                                                                                                                                                                                                |
+|                    | Attendant                   | xsd:boolean          | 0:1             | Signale s’il y a un préposé à l’ascenseur                                                                                                                                                                                                                                                                                                                                                             |
+|                    | Automatic                   | xsd:boolean          | 0:1             | Signale s’il s’agit d’un ascenseur automatique                                                                                                                                                                                                                                                                                                                                                        |
+|                    | AlarmButton                 | xsd:boolean          | 0:1             | Signale si l’ascenseur dispose d’un bouton d’alarme                                                                                                                                                                                                                                                                                                                                                   |
+|                    | TactileActuators            | xsd:boolean          | 0:1             | Signale si l'ascenseur a des actionneurs tactiles                                                                                                                                                                                                                                                                                                                                                     |
+|                    | AudioAnnouncements          | xsd:boolean          | 0:1             | Signale si l'ascenseur dispose d’un mécanisme d’annonces sonores                                                                                                                                                                                                                                                                                                                                      |
+|                    | ReachedFloorAnnouncement    | xsd:boolean          | 0:1             | Signale si l'ascenseur est équipé d'un système d'annonce sonore et/ou d'affichage visuel de l'étage atteint (il peut s'agir soit d'un numéro de niveau, soit de l'indication des services à cet étage) <li><em>visual</em> (affichage visuel)</li><li><em>audio</em> (annonce sonore)</li><li><em>visualAndAudio</em> (annonce sonore et affichage visuel)</li><li><em>none</em> (aucun système)</li> |
+|                    | MagneticInductionLoop       | xsd:boolean          | 0:1             | Signale la presence d’une boucle d’induction magnétique                                                                                                                                                                                                                                                                                                                                               |
+|                    | SignageToLift               | xsd:boolean          | 0:1             | Signale si l’accès à l'ascenseur est fléché/signalé                                                                                                                                                                                                                                                                                                                                                   |
+|                    | TactileGroundFloorButton    | xsd:boolean          | 0:1             | Signale la presence d’une marque tactile spécifique sur le bouton du rez-de-chaussée                                                                                                                                                                                                                                                                                                                  |
+|                    | ExternalFloorSelection      | xsd:boolean          | 0:1             | Signale que la sélection de l’étage de destination se fait à l’extérieur de l’ascenseur                                                                                                                                                                                                                                                                                                               |
+|                    | ButtonsHeigt                | LengthType           | 0:1             | Hauteur (taille) des boutons (en cm)                                                                                                                                                                                                                                                                                                                                                                  |
+|                    | GroundMarkalignedWithButton | xsd:boolean          | 0:1             | Signale la présence de marquage podotactile pour repérer les boutons                                                                                                                                                                                                                                                                                                                                  |
+
 
 ## Sign Equipment
 
