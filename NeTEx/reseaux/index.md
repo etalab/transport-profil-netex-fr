@@ -1225,9 +1225,19 @@ de nuit, etc.).
 |---------------------|--------------------|-----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*              | *Link*          | *::>*            | ROUTE LINK hérite de LINK <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 |                     | Distance           | DistanceType    | 1:1              | Longueur du ROUTE LINK. Les unités sont telles que spécifiées pour la FRAME (la valeur par défaut est SI mètres).                                                                         |
+| «cntd»              | LineString         | gmlLineString   | 0:1              | Géométrie du TRONÇON sous forme d’une linestring GML (la géométrie d’un TRONÇON n’est donc pas limitée à un simple couple de point, mais est décrite par une séquence de points).  |
 | «FK»                | ***FromPointRef*** | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de début de <span class="hl">TRONÇON</span>.                                                                                                                         |
 | «FK»                | ***ToPointRef***   | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de fin de <span class="hl">TRONÇON</span>.                                                                                                                           |
 |                     |                    |                 |                  |                                                                                                                                                                                           |
+
+Exemple de LineString pour décrire un tracé : 
+```xml
+<gml:LineString srsName="WGS84" gml:id="AB2o"> 
+    <gml:pos>53.00 1.00</gml:pos> 
+    <gml:pos>53.10 1.10</gml:pos> 
+    <gml:pos>53.20 1.20</gml:pos> 
+</gml:LineString>
+```
 
 ## Les affichages de destination
 
