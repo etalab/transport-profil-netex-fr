@@ -1184,6 +1184,7 @@ de nuit, etc.).
 |                     | ***DirectionType***    | *TypeOfDirectionEnum* | 0:1              | Type de direction de la ROUTE (***outbound***, ***inbound***, pour aller Retrour et éventuellement ***clockwise*** ou ***anticlockwise*** pour les boucles)                                   |
 | «FK»                | ***DirectionRef***     | *DirectionRef*        | 0:1              | Référence la DIRECTION de l'ITINÉRAIRE.                                                                                                                                                       |
 | «cntd»              | ***pointsInSequence*** | *PointOnRoute*        | 2:\*             | Liste des points de l'ITINÉRAIRE.                                                                                                                                                             |
+| «cntd»              | ***sectionsInSequence*** | *SectionLink*        | 0:\*             | Liste des sections de l'ITINÉRAIRE.                                                                                                                                                             |
 |                     | ***InverseRouteRef***  | *RouteRef*            | 0:1              | Référence l'éventuel ITINÉRAIRE en sens opposé.                                                                                                                                               |
 
 ### Les Point d'itinéraire
@@ -1818,13 +1819,6 @@ flexibilité.
 <td>0:1</td>
 <td>AFFICHAGE DE DESTINATION associée à la MISSION COMMERCIALE <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-
-
-
-
-
-
-
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>pointsInSequence</strong></em></td>
@@ -1832,7 +1826,14 @@ flexibilité.
 <td>0:*</td>
 <td>Liste ordonnées des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
 </tr>
-
+<tr class="even">
+<td>«cntd»</td>
+<td><em><strong>linksInSequence</strong></em></td>
+<td><em>ServiceLink</em></td>
+<td>0:*</td>
+<td>
+Liste ordonnées des sections de la MISSION COMMERCIALE (SERVICE LINK). Chaque section décrit la géométrie entre deux points consécutifs (ScheduleStopPoint).</td>
+</tr>
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>ServiceJourneyPatternType</strong></em></td>
@@ -3590,6 +3591,10 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 </ul>
 <ul>
 <li><p><span class="hl">POINT IN JOURNEY PATTERN</span></p></li>
+</ul>
+</ul>
+<ul>
+<li><p><span class="hl">SERVICE LINK</span></p></li>
 </ul>
 <ul>
 <li><p><span class="hl">SCHEDULED STOP POINT</span></p></li>
