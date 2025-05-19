@@ -2949,12 +2949,13 @@ passagers)* *–* Élément
 
 <div class="table-title">SeatingEquipment (sièges) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
-| --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*           | *::>*         | *WaitingEquipment*     | *::>*        | SEATING EQUIPMENT hérite de WAITING EQUIPMENT |
-| «PK»            | id            | SeatingEquipmentIdType | 1:1          | Identifiant du SEATING EQUIPMENT.             |
-|                 | Armrest       | xsd:boolean            | 0:1          | Signale si le siège dispose d’un accoudoir    |
-|                 | SeatingHeight | xsd:decimal            | 0:1          | Hauteur de l’assise en cm                     |
+| **Classification** | **Nom**       | **Type**               | **Cardinalité** | **Description**                               |
+| ------------------ | ------------- | ---------------------- | --------------- | --------------------------------------------- |
+| *::>*              | *::>*         | *WaitingEquipment*     | *::>*           | SEATING EQUIPMENT hérite de WAITING EQUIPMENT |
+| «PK»               | id            | SeatingEquipmentIdType | 1:1             | Identifiant du SEATING EQUIPMENT.             |
+|                    | Armrest       | xsd:boolean            | 0:1             | Signale si le siège dispose d’un accoudoir    |
+|                    | Backrest      | xsd:boolean            | 0:1             | Signale si le siège dispose d’un dossier      |
+|                    | SeatingHeight | xsd:decimal            | 0:1             | Hauteur de l’assise en cm                     |
 
 <div class="table-title">ShelterEquipment (abris) – Élément</div>
 
