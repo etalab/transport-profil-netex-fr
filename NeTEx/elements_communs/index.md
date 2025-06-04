@@ -4872,7 +4872,7 @@ Les noms des fichiers doivent respecter les contraintes suivantes :
 Les fichiers attendus dans l'archive sont les suivants : 
 | **Fichier** |  **Description** 
 |--------------------|--------------------------------------------|
-| accessibility.xml  | Fichier regroupant toutes les informations d'accessibilité (hors propriétés des Quays et StopPlaces)
+| accessibility.xml  | Fichier regroupant les équipements et les informations de cheminement, incluant leur caractéristiques d'accessibilité
 | network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes
 | stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc.
 | line_xyz.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun 
