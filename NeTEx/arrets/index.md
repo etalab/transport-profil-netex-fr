@@ -1338,10 +1338,12 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 </tr>
 <tr class="even">
 <td><em><strong>tariffZones</strong></em></td>
-<td><em>TariffZoneRef</em></td>
+<td><em>FareZoneRef</em></td>
 <td>0:*</td>
-<td><p>Identifiant de la zone tarifaire (ou section selon les cas). <span class="hl">Cet identifiant est, dans le cadre de ce profil, le code ou nom de la zone (typiquement "1", "2", etc.)</span></p>
-<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>tarrifZone</strong></em>, alors la zone tarifaire du <em><strong>StopPlace</strong></em> parent s'applique.</p></td>
+<td><p>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`.</p>
+<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>FareZone</strong></em>, alors la zone tarifaire du <em><strong>StopPlace</strong></em> parent s'applique.</p>
+<p>Le profil France fait une restriction de la norme NeTEx en demandant explicitement une FareZoneRef, alors que NeTEx indique TariffZone (dont FareZone est une spécialisation).</p>
+</td>
 </tr>
 <tr class="odd">
 <td>STOP PLACE PROPERTY GROUP</td>
@@ -1945,7 +1947,7 @@ Français de NETEx: éléments communs**:
 
 -   SiteElement: 7.2.8
 
-<div class="table-title">Quay (traduit pas ZONE D'EMBARQUEMENT en français) –</div>
+<div class="table-title">Quay (traduit par ZONE D'EMBARQUEMENT en français) –</div>
 Element
 
 <table>
@@ -2139,9 +2141,10 @@ Element
 <tr class="odd">
 <td></td>
 <td><em><strong>tariffZones</strong></em></td>
-<td><em>TariffZoneRef</em></td>
+<td><em>FareZoneRef</em></td>
 <td>0:*</td>
-<td>Identifiant de la zone tarifaire (ou section selon les cas). <span class="hl">Cet identifiant est, dans le cadre de ce profil, le code ou nom de la zone (typiquement "1", "2", etc.)</span></td>
+<td>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`. Voir la desciption du champ `tariffZones` de l'objet StopPlace pour les précisions sur l'héritage.
+</td>
 </tr>
 </tbody>
 </table>
