@@ -2508,7 +2508,11 @@ faut l'interprété "trainTram").
 | ***nationalCoach***      | Car national      |
 | ***shuttleCoach***       | Navette           |
 | ***regionalCoach***      | Car régional      |
-| ***touristCoach***       | Car touristique   |
+| ***specialCoach***       | Car spécial       |
+| ***schoolCoach***        | Car scolaire      |
+| ***sightseeingCoach***   | Car touristique avec circuit |
+| ***touristCoach***       | Car touristique général  |
+| ***commuterCoach***      | Car pour trajets pendulaires |
 
 <div class="table-title">MetroSubmodeEnum</div>
 
