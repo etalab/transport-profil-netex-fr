@@ -4095,8 +4095,8 @@ CALENDRIER** et **NeTEx TARIF***.
 |                     | ***DefaultLocale***                | *Locale*               | 0:1 | Valeur de LOCALE par défaut (pour tous les éléments qui ne le précisent pas)                     |
 |                     | ***Default­LocationSystem***       | *xsd:normalizedString* | 0:1 | Système de localisation par défaut (pour tous les éléments qui ne le précisent pas)              |
 
-<span class="hl">Dans le cadre du profil les distance sont par défaut
-exprimées en système métrique et les sommes d’argent en Euros.</span>
+<span class="hl">Dans le cadre du profil les distances et les longueurs sont par défaut
+exprimées en mètres (*SystemOfUnits* ayant une valeur *SiMetres*) et les sommes d’argent en Euros.</span>
 
 ## CODESPACE et codification des identifiants
 
