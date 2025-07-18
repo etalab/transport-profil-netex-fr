@@ -4501,13 +4501,13 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 Notez que les parkings automobiles sont décrits en tant que tels et
 indépendament des équipements.
 
-<div class="table-title">CycleParkingEquipment (parcs à vélos) – Élément</div>
+<div class="table-title">CycleStorageEquipment (parcs à vélos) – Élément</div>
 
 | **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*          | *PlaceEquipment*   | *::>*            | CYCLE PARKING EQUIPMENT hérite de PLACE EQUIPMENT. |
-| «PK»                | id             | CycleParkingIdType | 1:1              | Identifiant du CYCLE PARKING EQUIPMENT.            |
-|                     | NumberOfSpaces | xsd:integer        | 0:1              | Nombre de places maximal disponible                |
+| *::>*               | *::>*          | *PlaceEquipment*   | *::>*            | CYCLE STORAGE EQUIPMENT hérite de PLACE EQUIPMENT. |
+| «PK»                | id             | CycleStorageIdType | 1:1              | Identifiant du CYCLE STORAGE EQUIPMENT.            |
+|                     | NumberOfSpaces | xsd:integer        | 0:1              | Nombre maximal de places disponibles             |
 
 # Annexe (informative) - Détail des évaluations d'accessibilité (AccessibilityAssessment)
 
