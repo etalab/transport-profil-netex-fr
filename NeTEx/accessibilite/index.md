@@ -3633,7 +3633,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>Identifiant du STAIRCASE.</td>
 </tr>
 <tr class="even">
-<td rowspan="7">StairGroup</td>
+<td rowspan="13">StairGroup</td>
 <td>Depth</td>
 <td>LengthType</td>
 <td>0:1</td>
@@ -3652,11 +3652,29 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>Hauteur des marches (individuellement)</td>
 </tr>
 <tr class="odd">
+<td>StepLength</td>
+<td>LengthType</td>
+<td>0:1</td>
+<td>Profondeur de la marche</td>
+</tr>
+<tr class="even">
 <td>StepColourContrast</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td><p>Indique la présence d'une bande visuellement contrastée permettant de bien distinguer le bord des marches.</p>
 <p><span class="hl">Les bandes doivent être présentes sur chaque marche, sur l'intégralité de la largeur des marches et d'une profondeur de 2 cm.</span></p>
+</td>
+</tr>
+<tr class="odd">
+<td>StepCondition</td>
+<td>StepConditionEnumeration</td>
+<td>0:1</td>
+<td><p>Indique la régularité des marches</p><p>Valeurs possibles : </p>
+<ul>
+<li><p><em>even</em> (l'escalier dispose de marches régulières, toutes de même hauteur et profondeur)</p></li>
+<li><p><em>uneven</em> (les marches ne sont pas toutes de même taille, certaines peuvent être légèrement en pente)</p></li>
+<li><p><em>rough</em> (les marches sont de taille très différentes, certaines peuvent être manquantes ou fortement en pente)</p></li>
+</ul>
 </td>
 </tr>
 <tr class="even">
@@ -3683,7 +3701,25 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>Hauteur d’une éventuelle seconde main courante abaissée</td>
 </tr>
 <tr class="odd">
-<td>«cntd»</td>
+<td>TactileWriting</td>
+<td>xsd:boolean</td>
+<td>0:1</td>
+<td>Indique si du texte peut être lu de manière tactile sur la main courante de l'escalier</td>
+</tr>
+<tr class="even">
+<td>StairRamp</td>
+<td>StairRampEnumeration</td>
+<td>0:1</td>
+<td><p>Indique la présence d'une rampe (à vélo, à bagage, etc) au sein de l'escalier</p><p>Valeurs possibles : </p>
+<ul>
+<li><p><em>bicycle</em> (goulotte ou rampe sur le côté des marches, qui peut être utilisée pour pousser un vélo)</p></li>
+<li><p><em>luggage</em> (rampe à valise, permettant de pousser des bagages)</p></li>
+<li><p><em>stroller</em> (rampe à poussette : une paire de rampes peu larges, avec des petites marches entre les deux)</p></li>
+<li><p><em>other</em> (un autre type de rampe dans l'escalier)</p></li>
+<li><p><em>none</em> (pas de rampe dans l'escalier)</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
 <td>TopEnd</td>
 <td>StairEnd</td>
 <td>0:1</td>
@@ -3692,42 +3728,37 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 </td>
 </tr>
 <tr class="even">
-<td>«cntd»</td>
 <td>BottomEnd</td>
 <td>StairEnd</td>
 <td>0:1</td>
 <td>Caractérisation de l’extrémité basse de l’escalier</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td rowspan="5">StaircaseGroup</td>
 <td>Continuous­Handrail</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Indique si la main courante est continue et sans rupture sur toute la longueur de l’escalier, y compris entre les volées de marches</td>
 </tr>
 <tr class="even">
-<td></td>
 <td>WithoutRiser</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale des marches ouvertes (pas de contremarches)</td>
 </tr>
 <tr class="odd">
-<td></td>
 <td>SpiralStair</td>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td>Signale un escalier en spirale</td>
 </tr>
 <tr class="even">
-<td></td>
 <td>NumberOfFlights</td>
 <td>xsd:integer</td>
 <td>0:1</td>
 <td>Nombre de volées de marches</td>
 </tr>
 <tr class="odd">
-<td>«cntd»</td>
 <td>flights</td>
 <td>StairFlight</td>
 <td>0:\*</td>
