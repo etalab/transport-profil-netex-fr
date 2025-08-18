@@ -2150,6 +2150,9 @@ dans les éléments ***members*** du ***GeneralFrame***.
 <li><p><span class="hl">SERVICE JOURNEY</span></p></li>
 </ul>
 <ul>
+<li><p><span class="hl">SERVICE LINK</span></p></li>
+</ul>
+<ul>
 <li><p><span class="hl">FLEXIBLE SERVICE PROPERTIES</span></p></li>
 </ul>
 <ul>
