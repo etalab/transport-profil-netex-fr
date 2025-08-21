@@ -3417,23 +3417,23 @@ disponible au travers de son héritage de *DataManagedObject.*
 <p>Note: sous un même PropertyOfDay les caractéristiques s'associent par un ET, sinon elles s'associent par un OU.</p>
 <p>Ainsi pour désigner l'été et les samedis:</p>
 
-`
+```xml
 <netex:PropertyOfDay>
     <netex:DaysOfWeek>Saturday</netex:DaysOfWeek>
 </netex:PropertyOfDay>
 <netex:PropertyOfDay>
     <netex:Seasons>Summer</netex:Seasons>
 </netex:PropertyOfDay>
-`
+```
 
 <p>Mais pour désigner les samedis d'été:</p>
 
-`
+```xml
 <netex:PropertyOfDay>
     <netex:DaysOfWeek>Saturday</netex:DaysOfWeek>
     <netex:Seasons>Summer</netex:Seasons>
 </netex:PropertyOfDay>
-`
+```
 
 </td>
 </tr>
