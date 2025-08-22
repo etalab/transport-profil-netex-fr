@@ -3162,197 +3162,36 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 
 <div class="table-title">EntranceEquipment (entrées) – Élément</div>
 
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 23%" />
-<col style="width: 18%" />
-<col style="width: 6%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>PlaceAccess­Equipment</em></td>
-<td><em>::></em></td>
-<td>ENTRANCE EQUIPMENT hérite de ACCESS EQUIPMENT.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td><em>id</em></td>
-<td>EntranceEquipment­IdType</td>
-<td>1:1</td>
-<td>Identifiant du ENTRANCE EQUIPMENT.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>Door</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’une porte (<em>false</em> indique qu’il n’y a pas de porte)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>KeptOpen</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si la porte est conservée en position ouverte (pendant les heures d’ouverture)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>RevolvingDoor</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale une porte tambour (en complément de <em><strong>Door</strong></em>)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Barrier</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’une barrière physique pour le franchissement de la porte</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>NumberOfGates</em></td>
-<td>xsd:integer</td>
-<td>0:1</td>
-<td>Nombre de portes (ou passages)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Staffing</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’agents du personnel à l’entrée</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>EntranceRequires­Staffing</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale que le passage requiert la présence d’agents du personnel</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>EntranceRequiresTicket</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale que le passage requiert un ticket</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>AcousticSensor</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence de capteurs acoustiques</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>AutomaticDoor</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td><p>Signale que la porte est à ouverture/fermeture automatique</p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span></p>
-</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>DropKerbOutside</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>GlassDoor</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’une porte vitrée</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>WheelchairPassable</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la possibilité de franchissement en fauteuil roulant.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>WheelchairUnaided</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la possibilité de franchissement en fauteuil roulant sans aide.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>EntranceAttention</td>
-<td>EntranceAttention­Enum</td>
-<td>0:1</td>
-<td><p>Nature de la sonnette ou du signal d’appel</p>
-<ul>
-<li><p><em>doorbell</em> (sonnette)</p></li>
-<li><p><em>helpPoint</em> (point d’aide)</p></li>
-<li><p><em>intercom</em> (intercom)</p></li>
-<li><p><em>none</em> (aucun)</p></li>
-<li><p><em>other</em> (autre)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>AudioOrVideoIntercom</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la necessité d’une communication audio ou vidéo pour pouvoir entrer</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>Airlock</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’un sas</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>DoorstepMark</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présente d’une marque de seuil (de franchissement) podotactile.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>AudioPassthroughIndicator</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présente d’un signal sonore de franchissement.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>NecessaryForceToOpen</em></td>
-<td>NecessaryForceEnum</td>
-<td>0:1</td>
-<td><p>Force nécessaire pour l’ouverture de la porte</p>
-<ul>
-<li><p><em>noForce</em> (aucune force nécessaire)</p></li>
-<li><p><em>lightForce</em> (force légère)</p></li>
-<li><p><em>mediumForce</em> (force moyenne)</p></li>
-<li><p><em>heavyForce</em> (force importante)</p></li>
-<li><p><em>unknown</em> (inconnu)</p></li>
-</ul>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span></p> 
-</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation**  | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
+| ------------------- | --------------------------- | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| *::>*               | *::>*                       | PlaceAccessEquipment   | *::>*            | ENTRANCE EQUIPMENT hérite de ACCESS EQUIPMENT                                              |
+| «PK»                | id                          | EntranceEquipmentIdType| 1:1              | Identifiant du ENTRANCE EQUIPMENT                                                          |
+|                     | Door                        | xsd:boolean            | 0:1              | Signale la présence d’une porte (*false* indique qu’il n’y a pas de porte)                 |
+|                     | KeptOpen                    | xsd:boolean            | 0:1              | Signale si la porte est conservée en position ouverte (pendant les heures d’ouverture)     |
+|                     | RevolvingDoor               | xsd:boolean            | 0:1              | Signale une porte tambour (en complément de **Door**)                                      |
+|                     | Barrier                     | xsd:boolean            | 0:1              | Signale la présence d’une barrière physique pour le franchissement de la porte             |
+|                     | NumberOfGates               | xsd:integer            | 0:1              | Nombre de portes (ou passages)                                                             |
+|                     | Staffing                    | xsd:boolean            | 0:1              | Signale la présence d’agents du personnel à l’entrée                                       |
+|                     | EntranceRequires­Staffing    | xsd:boolean            | 0:1              | Signale que le passage requiert la présence d’agents du personnel                          |
+|                     | EntranceRequiresTicket      | xsd:boolean            | 0:1              | Signale que le passage requiert un ticket                                                  |
+|                     | AcousticSensor              | xsd:boolean            | 0:1              | Signale la présence de capteurs acoustiques                                                |
+|                     | AutomaticDoor               | xsd:boolean            | 0:1              | Signale que la porte est à ouverture/fermeture automatique<br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | DropKerbOutside             | xsd:boolean            | 0:1              | Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage      |
+|                     | GlassDoor                   | xsd:boolean            | 0:1              | Signale la présence d’une porte vitrée                                                     |
+|                     | WheelchairPassable          | xsd:boolean            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant.                              |
+|                     | WheelchairUnaided           | xsd:boolean            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant sans aide.                    |
+|                     | EntranceAttention           | EntranceAttention­Enum  | 0:1              | Nature de la sonnette ou du signal d’appel <li><p><em>doorbell</em> (sonnette)</p></li> <li><p><em>helpPoint</em> (point d'aide)</p></li><li><p><em>intercom</em> (intercom)</p></li><li><p><em>none</em> (aucun)</p></li><li><p><em>other</em> (autre)</p></li>                 |
+|                     | AudioOrVideoIntercom        | xsd:boolean            | 0:1              | Signale la necessité d’une communication audio ou vidéo pour pouvoir entrer                |
+|                     | Airlock                     | xsd:boolean            | 0:1              | Signale la présence d’un sas                                                               |
+|                     | DoorstepMark                | xsd:boolean            | 0:1              | Signale la présente d’une marque de seuil (de franchissement) podotactile.                 |
+|                     | AudioPassthroughIndicator   | xsd:boolean            | 0:1              | Signale la présente d’un signal sonore de franchissement.                                  |
+|                     | NecessaryForceToOpen        | NecessaryForceEnum     | 0:1              | Force nécessaire pour l’ouverture de la porte <li><p><em>noForce</em> (aucune force nécessaire)</p></li> <li><p><em>lightForce</em> (force légère)</p></li><li><p><em>mediumForce</em> (force moyenne)</p></li><li><p><em>heavyForce</em> (force importante)</p></li><li><p><em>unknown</em> (inconnu)</p></li><br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | DoorHandleOutside           | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'extérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
+|                     | DoorHandleInside            | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'intérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
+|                     | RampDoorbell                | xsd:boolean            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
+|                     | Recognizable                | xsd:boolean            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *false* lorsque l'entrée est difficile à repérer.                              |
+|                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
+|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Rayon de braquage pour les fauteuils roulants <br><span class="hl">On considèrera le rayon du plus petit espace de manœuvre (intérieur ou extérieur).</span>                                 |
 
 <div class="table-title">QueueingEquipment (gestion de queue) – Élément</div>
 
