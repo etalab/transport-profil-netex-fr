@@ -749,13 +749,13 @@ proposent ces colonnes:
     
     Seuls les attributs retenus par le profil ont un texte en français.
 
-    Les textes surlignés en <span class="hl">Jaune</span> sont ceux
-    présentant une particularité (spécialisation) par rapport à NeTEx: une
-    codification particulière, une restriction d'usage, etc.
-
     La description XSD utilisée est strictement celle de NeTEx, sans aucune
     modification (ceci explique notamment que tous les commentaires soient
     en anglais).
+
+Les textes surlignés en <span class="hl">jaune</span> sont ceux
+présentant une particularité (spécialisation du profil France) par rapport à NeTEx : une
+codification particulière, une restriction d'usage, un changement de cardinalité, etc.
 
 **Les attributs et éléments rendus obligatoires dans le cadre de ce profil restent facultatifs dans l'XSD (le contrôle de cardinalité devra donc être réalisé applicativement).**
 
