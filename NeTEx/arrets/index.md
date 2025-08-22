@@ -1341,7 +1341,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><em>FareZoneRef</em></td>
 <td>0:*</td>
 <td><p>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`.</p>
-<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>FareZone</strong></em>, alors la zone tarifaire du <em><strong>StopPlace</strong></em> parent s'applique.</p>
+<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>FareZone</strong></em>, alors la ou les zones tarifaires du <em><strong>StopPlace</strong></em> parent s'appliquent.</p>
 <p>Le profil France fait une restriction de la norme NeTEx en demandant explicitement une FareZoneRef, alors que NeTEx indique TariffZone (dont FareZone est une spécialisation).</p>
 </td>
 </tr>
