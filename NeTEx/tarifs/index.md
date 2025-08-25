@@ -2849,7 +2849,7 @@ conceptuel*
 
 | **Classification** | **Name**            | **Type**                   | **Cardinality** | **Description**                                                                     |
 |--------------------|---------------------|----------------------------|-----------------|-------------------------------------------------------------------------------------|
-| ::\>               | ::\>                | *<u>PriceableObject</u>*   | ::\>            | SERVICE ACCESS RIGHT hérite de PRICEABLE OBJECT***.***                              |
+| ::\>               | ::\>                | *<u>PriceableObject</u>*   | ::\>            | SERVICE ACCESS RIGHT hérite de PRICEABLE OBJECT.                                    |
 | « PK »             | ***id***            | *ServiceAccessRightIdType* | 1:1             | Identifiant du SERVICE ACCESS RIGHT.                                                |
 | « AK »             | ***PrivateCode***   | *PrivateCodeType*          | 0:1             | Identifiant alternatif; peut être utilisé pour s'associer à des systèmes existants. |
 |                    | ***InfoUrl***       | *xsd:anyURI*               | 0:1             | Lien ver les informations sur le produit.                                           |
@@ -2857,50 +2857,12 @@ conceptuel*
 
 <div class='table-title'>FareProduct – Element (abstrait)</div>
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classification</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em><u>PriceableObject</u></em></td>
-<td>::&gt;</td>
-<td><p>FARE PRODUCT hérite de SERVICE ACCESS
-RIGHT<em><strong>.</strong></em></p>
-<p><mark>Note : cet héritage fournit entre autres un attribut
-<em><strong>noticeAssignments</strong></em> ; dans le contexte de ce
-profil, c’est au niveau des <em><strong>SalesOfferPackage</strong></em>
-et <em><strong>FareProducts</strong></em> que l’on placera les
-Notices.</mark></p></td>
-</tr>
-<tr class="even">
-<td>« PK »</td>
-<td><em><strong>id</strong></em></td>
-<td><em>FareProductIdType</em></td>
-<td>0:1</td>
-<td>Identifiant du FARE PRODUCT.</td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>ChargingMomentRef</strong></em></td>
-<td><em>ChargingMomentRef</em></td>
-<td>0:1</td>
-<td>Référence à CHARGING MOMENT associé au produit.</td>
-</tr>
-<tr class="even">
-<td>« enum »</td>
-<td><em><strong>ChargingMomentType</strong></em></td>
-<td><em>ChargingMomentTypeEnum</em></td>
-<td>0:1</td>
-<td><p>Énumération des valeurs normalisées du moment de paiement.</p>
+| **Classification** | **Name**            | **Type**                   | **Cardinality** | **Description**                                                                     |
+|--------------------|---------------------|----------------------------|-----------------|-------------------------------------------------------------------------------------|
+| ::\>               | ::\>                | <em><u>PriceableObject</u></em>   | ::\>            | FARE PRODUCT hérite de SERVICE ACCESS RIGHT. <br><span class="hl">Note : cet héritage fournit entre autres un attribut <em><strong>noticeAssignments</strong></em> ; dans le contexte de ce profil, c’est au niveau des <em><strong>SalesOfferPackage</strong></em> et <em><strong>FareProducts</strong></em> que l’on placera les Notices.</span>                                     | 
+| « PK »             | <em><strong>id</strong></em>                | <em>FareProductIdType</em>   | 0:1            | Identifiant du FARE PRODUCT.                             |
+| « FK »               | <em><strong>ChargingMomentRef</strong></em>                | <em>ChargingMomentRef</em>   | 0:1            | Référence à CHARGING MOMENT associé au produit.  |
+| « enum »               | <em><strong>ChargingMomentType</strong></em>                | <em>ChargingMomentTypeEnum</em>   | 0:1            | <p>Énumération des valeurs normalisées du moment de paiement.</p>
 <blockquote>
 <p><em>beforeTravel (avant le voyage)</em></p>
 <p><em>onStartOfTravel (au départ du voyage)</em></p>
@@ -2917,42 +2879,12 @@ en fin de période tarifaire)</em></p>
 <p><em>free (gratuit)</em></p>
 <p><em>anyTime (à n’importe quel moment)</em></p>
 <p><em>other (autre)</em></p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>typesOfFareProductRef</strong></em></td>
-<td><em>TypeOfFareProductRef</em></td>
-<td>0:*</td>
-<td>Classifications du FARE PRODUCT.</td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>TransportOrganisationRef</strong></em></td>
-<td><em>(TransportOrganisationRef) OperatorRef | AuthorityRef</em></td>
-<td>0:1</td>
-<td>OPERATOR ou AUTHORITY en charge du FARE PRODUCT.</td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>ConditionSummary</strong></em></td>
-<td><em><u>ConditionSummary</u></em></td>
-<td>0:1</td>
-<td><p>Résumé des conditions associées au FARE PRODUCT.</p>
-<p><mark>Note : dans le cadre du profil, seuls certains attributs des
-<em><strong>ConditionSummary</strong></em> sont acceptés pour le
-<em><strong>FareProduct</strong></em> (voir description des
-<em><strong>ConditionSummary</strong></em> plus haut).</mark></p></td>
-</tr>
-<tr class="even">
-<td>XGRP</td>
-<td><em><strong>FareProductValidityGroup</strong></em></td>
-<td><em>FareProductRef</em></td>
-<td>0:1</td>
-<td>Informations de validité relatives au FARE PRODUCT.</td>
-</tr>
-</tbody>
-</table>
+</blockquote>  |
+| « FK »               | <em><strong>typesOfFareProductRef</strong></em>                | <em>TypeOfFareProductRef</em>   | 0:*            | Classifications du FARE PRODUCT.  |
+| « FK »               | <em><strong>TransportOrganisationRef</strong></em>                | <em>	(TransportOrganisationRef) OperatorRef / AuthorityRef</em>   | 0:1            | OPERATOR ou AUTHORITY en charge du FARE PRODUCT.  |
+| « cntd »               | <em><strong>ConditionSummary</strong></em>                | <em><u>ConditionSummary</u></em>   | 0:1            | <p>Résumé des conditions associées au FARE PRODUCT.</p>
+<p><span class="hl">Note : dans le cadre du profil, seuls certains attributs des <em><strong>ConditionSummary</strong></em> sont acceptés pour le <em><strong>FareProduct</strong></em> (voir description des <em><strong>ConditionSummary</strong></em>).</span></p>  |
+| XGRP               | <em><strong>FareProductValidityGroup</strong></em>                | <em>FareProductRef</em>   | 0:1            | 	Informations de validité relatives au FARE PRODUCT.  |
 
 <div class='table-title'>FareProductValidityGroup – Group</div>
 
@@ -5280,7 +5212,7 @@ REQUIS.
   qu’accompagnateur d'un autre PROFIL UTILISATEUR ;
 
 - QUALIFICATION RÉSIDENTIELLE, catégorisant les utilisateurs en fonction
-  de leurs lieu de résidence ;
+  de leur lieu de résidence ;
 
 - POLITIQUE DE CHANGEMENT D'ÉLIGIBILITÉ, spécifiant l'action à
   entreprendre si l'éligibilité d'un utilisateur pour un profil donné
@@ -5290,7 +5222,7 @@ Les CONDITIONS D’UTILISATION des droits peuvent préciser les droits
 préalablement requis pour un produit, ou les droits donnés par un
 produit.
 
-- DROIT REQUIS, indiquant si un PRODUIT requis pour pouvoir utiliser le
+- DROIT REQUIS, indiquant si un PRODUIT est requis pour pouvoir utiliser le
   droit d'accès (carte famille nombreuse par exemple) ;
 
 - DROIT DONNÉ, indiquant si un produit permet d’en utiliser d’autres.
@@ -5351,10 +5283,10 @@ PÉNALITÉ.
 |                    | ***Url***                     | *xsd:anyUri*              | 0:1             | Url associé au parameter.                         |
 | « FK »             | ***TypeOfUsageParameterRef*** | *TypeOfUsageParameterRef* | 0:1             | Type de USAGE PARAMETER (***TypeofValue***).      |
 
-Les figures ci-dessous présente les modèles de données pour l’ensemble
-des conditions d’utilisation. Ces conditions sont à prendre tel-quel et
-il n’y a pas de véritable intérêt à leur applique un travail de profil,
-les tableaux d’attributs qui leur correspondent on don été placés en
+Les figures ci-dessous présentent les modèles de données pour l’ensemble
+des conditions d’utilisation. Ces conditions sont à prendre telles quelles et
+il n’y a pas de véritable intérêt à leur appliquer un travail de profil,
+les tableaux d’attributs qui leur correspondent ont donc été placés en
 annexe (en anglais) pour référence (ceci afin de ne pas surcharger
 inutilement la partie principale de ce document).
 
