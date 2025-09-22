@@ -1085,6 +1085,7 @@ les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) :
  est disponible
 - *VisualSignsAvailable* : une information visuelle ou une signalétique visuelle
  est disponible
+- *TactileGuidanceAvailable* : il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile
 
 
 Les valeurs potentiellement portées par chacun de ces indicateurs sont:
@@ -4121,6 +4122,11 @@ si **AudibleSignalsAvailable** vaut *true*, et *false* si **AudibleSignalsAvaila
 
 **CrossingEquipment/ZebraCrossing** vaudra *true* si **VisualSignsAvailable** vaut *true*, 
 et *false* si **VisualSignsAvailable** est *false*.
+
+**TactileGuidanceAvailable** : il y a des bandes de guidage, ou il y a un élément linéaire 
+au sol qui peut être détecté et suivi avec une canne (mur, caniveau, etc).
+
+S'il y a des bandes de guidage podotactile, on renseignera également l'attribut **TactileGuidingStrip**.
 
 ## Définition des AccessibilityLimitation retenus pour les sanitaires (SANITARY EQUIPMENT)
 
