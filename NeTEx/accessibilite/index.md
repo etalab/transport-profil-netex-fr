@@ -2696,118 +2696,23 @@ passagers)* *–* Élément
 
 <div class="table-title">SanitaryEquipment (sanitaires) – Élément</div>
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 17%" />
-<col style="width: 22%" />
-<col style="width: 8%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>PassengerEquipment</em></td>
-<td><em>::></em></td>
-<td>SANITARY EQUIPMENT hérite de PASSENGER EQUIPMENT.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td>id</td>
-<td>SanitaryEquipmentIdType</td>
-<td>1:1</td>
-<td>Identifiant du SANITARY EQUIPMENT.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>AccessibilityAssessment</strong></em></td>
-<td><em>AccessibilityAssessment</em></td>
-<td>0:1</td>
-<td><p>Caractéristiques d’accessibilité des sanitaires.</p>
-<p>Voir le détail en Annexe.</p></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Gender</td>
-<td>GenderLimitationEnum</td>
-<td>0:1</td>
-<td>Limitation de genre (homme/femme) pour l’utilisation des sanitaires.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>SanitaryFacilityList</td>
-<td>SanitaryFacilityEnum</td>
-<td>0:*</td>
-<td><p>Type de sanitaire</p>
-<ul>
-<li><p><em>toilet</em> (toilettes)</p></li>
-<li><p><em>wheelChairAccessToilet</em> (toilettes accessibles en fauteuil roulant)</p></li>
-<li><p><em>shower</em> (douche)</p></li>
-<li><p><em>washingAndChangeFacilities</em> (espace pour se nettoyer et se changer)</p></li>
-<li><p><em>babyChange</em> (espace bébé)</p></li>
-<li><p><em>wheelchairBabyChange</em> (espace bébé accessible en fauteuil roulant)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Wheelchair­TurningCircle</td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Rayon de braquage pour les fauteuils roulants</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>SharpsDisposal</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Disponibilité d’une poubelle pour objets tranchants</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Staffing</td>
-<td>StaffingEnum</td>
-<td>0:1</td>
-<td>Présence de personnel</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>KeyScheme</strong></em></td>
-<td>xsd:normalizedString</td>
-<td>0:1</td>
-<td><span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br />
-<span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>CallButtonAvailable</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Présence d’un bouton d’appel</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>SupportBarHeigth</strong></em></td>
-<td>xsd:decimal</td>
-<td>0:1</td>
-<td>Hauteur de la barre de support (quand il y en a une)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>LockedAccess</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si les toilettes peuvent être verrouillées et donc une clé (ou un outil équivalent) est nécessaire pour y accéder.</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
+| *::>*               | *::>*                       | *PassengerEquipment*   | *::>*            | SANITARY EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
+| «PK»                | id                          | SanitaryEquipmentIdType| 0:1              | Identifiant du SANITARY EQUIPMENT.                                                          |
+|                     | **AccessibilityAssessment** | *AccessibilityAssessment*| 0:1            | <p>Caractéristiques d’accessibilité des sanitaires.</p><p>Voir le détail en Annexe.</p>     |
+|                     | Gender                      | GenderLimitationEnum   | 0:1              | Limitation de genre (homme/femme) pour l’utilisation des sanitaires.                        |
+|                     | SanitaryFacilityList        | SanitaryFacilityEnum   | 0:*              | <p>Type de sanitaire</p><ul><li><p><em>toilet</em> (toilettes)</p></li><li><p><em>wheelChairAccessToilet</em>(toilettes accessibles en fauteuil roulant)</p></li><li><p><em>shower</em> (douche)</p></li><li><p><em>washingAndChangeFacilities</em> (espace pour se nettoyer et se changer)</p></li><li><p><em>babyChange</em>(espace bébé)</p></li><li><p><em>wheelchairBabyChange</em> (espace bébé accessible en fauteuil roulant)</p></li></ul>                                                          |
+|                     | Wheelchair­TurningCircle     | LengthType             | 0:1              | Rayon de braquage pour les fauteuils roulants                                              |
+|                     | SharpsDisposal              | xsd:boolean            | 0:1              | Disponibilité d’une poubelle pour objets tranchants                                        |
+|                     | Staffing                    | StaffingEnum           | 0:1              | Présence de personnel                                                                      |
+|                     | KeyScheme                   | xsd:normalizedString   | 0:1              | <span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br /><span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span>         |
+|                     | CallButtonAvailable         | xsd:boolean            | 0:1              | Présence d’un bouton d’appel                                                               |
+|                     | SupportBarHeigth            | xsd:decimal            | 0:1              | Hauteur de la barre de support (quand il y en a une)                                       |
+|                     | LockedAccess                | xsd:boolean            | 0:1              | Indique si les toilettes peuvent être verrouillées et donc une clé (ou un outil équivalent) est nécessaire pour y accéder. |
+|                     | HandWashing                 | xsd:boolean            | 0:1              | Indique s'il y a le nécessaire pour se laver les mains avec du savon                       |
+|                     | DrinkingWater               | xsd:boolean            | 0:1              | Indique si de l'eau potable est disponible                                                 |
+|                     | ToiletsType                 | ToiletsTypeEnumeration | 0:1              | Indique le type de toilettes.<ul><li><em>seated</em> (position assise sur un siège avec une cuvette)</li><li><em>urinal</em> (urinoir utilisable uniquement debout)</li><li><em>squat</em> (position accroupie, sans siège ni cuvette)</li><li><em>seatedAndUrinal</em> (des sièges avec cuvette et des urinoirs sont disponibles)</li></ul> |
 
 <div class="table-title">RubbishDisposalEquipment (poubelles) – Élément</div>
 
@@ -2949,12 +2854,13 @@ passagers)* *–* Élément
 
 <div class="table-title">SeatingEquipment (sièges) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
-| --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*           | *::>*         | *WaitingEquipment*     | *::>*        | SEATING EQUIPMENT hérite de WAITING EQUIPMENT |
-| «PK»            | id            | SeatingEquipmentIdType | 1:1          | Identifiant du SEATING EQUIPMENT.             |
-|                 | Armrest       | xsd:boolean            | 0:1          | Signale si le siège dispose d’un accoudoir    |
-|                 | SeatingHeight | xsd:decimal            | 0:1          | Hauteur de l’assise en cm                     |
+| **Classification** | **Nom**       | **Type**               | **Cardinalité** | **Description**                               |
+| ------------------ | ------------- | ---------------------- | --------------- | --------------------------------------------- |
+| *::>*              | *::>*         | *WaitingEquipment*     | *::>*           | SEATING EQUIPMENT hérite de WAITING EQUIPMENT |
+| «PK»               | id            | SeatingEquipmentIdType | 1:1             | Identifiant du SEATING EQUIPMENT.             |
+|                    | Armrest       | xsd:boolean            | 0:1             | Signale si le siège dispose d’un accoudoir    |
+|                    | Backrest      | xsd:boolean            | 0:1             | Signale si le siège dispose d’un dossier      |
+|                    | SeatingHeight | xsd:decimal            | 0:1             | Hauteur de l’assise en cm                     |
 
 <div class="table-title">ShelterEquipment (abris) – Élément</div>
 
@@ -3162,318 +3068,66 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 
 <div class="table-title">EntranceEquipment (entrées) – Élément</div>
 
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 23%" />
-<col style="width: 18%" />
-<col style="width: 6%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>PlaceAccess­Equipment</em></td>
-<td><em>::></em></td>
-<td>ENTRANCE EQUIPMENT hérite de ACCESS EQUIPMENT.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td><em>id</em></td>
-<td>EntranceEquipment­IdType</td>
-<td>1:1</td>
-<td>Identifiant du ENTRANCE EQUIPMENT.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>Door</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’une porte (<em>false</em> indique qu’il n’y a pas de porte)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>KeptOpen</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale si la porte est conservée en position ouverte (pendant les heures d’ouverture)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>RevolvingDoor</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale une porte tambour (en complément de <em><strong>Door</strong></em>)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Barrier</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’une barrière physique pour le franchissement de la porte</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>NumberOfGates</em></td>
-<td>xsd:integer</td>
-<td>0:1</td>
-<td>Nombre de portes (ou passages)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Staffing</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’agents du personnel à l’entrée</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>EntranceRequires­Staffing</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale que le passage requiert la présence d’agents du personnel</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>EntranceRequiresTicket</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale que le passage requiert un ticket</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>AcousticSensor</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence de capteurs acoustiques</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>AutomaticDoor</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td><p>Signale que la porte est à ouverture/fermeture automatique</p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span></p>
-</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>DropKerbOutside</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>GlassDoor</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’une porte vitrée</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>WheelchairPassable</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la possibilité de franchissement en fauteuil roulant.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>WheelchairUnaided</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la possibilité de franchissement en fauteuil roulant sans aide.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>EntranceAttention</td>
-<td>EntranceAttention­Enum</td>
-<td>0:1</td>
-<td><p>Nature de la sonnette ou du signal d’appel</p>
-<ul>
-<li><p><em>doorbell</em> (sonnette)</p></li>
-<li><p><em>helpPoint</em> (point d’aide)</p></li>
-<li><p><em>intercom</em> (intercom)</p></li>
-<li><p><em>none</em> (aucun)</p></li>
-<li><p><em>other</em> (autre)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>AudioOrVideoIntercom</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la necessité d’une communication audio ou vidéo pour pouvoir entrer</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>Airlock</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présence d’un sas</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>DoorstepMark</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présente d’une marque de seuil (de franchissement) podotactile.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>AudioPassthroughIndicator</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale la présente d’un signal sonore de franchissement.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>NecessaryForceToOpen</em></td>
-<td>NecessaryForceEnum</td>
-<td>0:1</td>
-<td><p>Force nécessaire pour l’ouverture de la porte</p>
-<ul>
-<li><p><em>noForce</em> (aucune force nécessaire)</p></li>
-<li><p><em>lightForce</em> (force légère)</p></li>
-<li><p><em>mediumForce</em> (force moyenne)</p></li>
-<li><p><em>heavyForce</em> (force importante)</p></li>
-<li><p><em>unknown</em> (inconnu)</p></li>
-</ul>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span></p> 
-</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation**  | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
+| ------------------- | --------------------------- | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| *::>*               | *::>*                       | PlaceAccessEquipment   | *::>*            | ENTRANCE EQUIPMENT hérite de ACCESS EQUIPMENT                                              |
+| «PK»                | id                          | EntranceEquipmentIdType| 1:1              | Identifiant du ENTRANCE EQUIPMENT                                                          |
+|                     | Door                        | xsd:boolean            | 0:1              | Signale la présence d’une porte (*false* indique qu’il n’y a pas de porte)                 |
+|                     | KeptOpen                    | xsd:boolean            | 0:1              | Signale si la porte est conservée en position ouverte (pendant les heures d’ouverture)     |
+|                     | RevolvingDoor               | xsd:boolean            | 0:1              | Signale une porte tambour (en complément de **Door**)                                      |
+|                     | Barrier                     | xsd:boolean            | 0:1              | Signale la présence d’une barrière physique pour le franchissement de la porte             |
+|                     | NumberOfGates               | xsd:integer            | 0:1              | Nombre de portes (ou passages)                                                             |
+|                     | Staffing                    | xsd:boolean            | 0:1              | Signale la présence d’agents du personnel à l’entrée                                       |
+|                     | EntranceRequires­Staffing    | xsd:boolean            | 0:1              | Signale que le passage requiert la présence d’agents du personnel                          |
+|                     | EntranceRequiresTicket      | xsd:boolean            | 0:1              | Signale que le passage requiert un ticket                                                  |
+|                     | AcousticSensor              | xsd:boolean            | 0:1              | Signale la présence de capteurs acoustiques                                                |
+|                     | AutomaticDoor               | xsd:boolean            | 0:1              | Signale que la porte est à ouverture/fermeture automatique<br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | DropKerbOutside             | xsd:boolean            | 0:1              | Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage      |
+|                     | GlassDoor                   | xsd:boolean            | 0:1              | Signale la présence d’une porte vitrée                                                     |
+|                     | WheelchairPassable          | xsd:boolean            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant.                              |
+|                     | WheelchairUnaided           | xsd:boolean            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant sans aide.                    |
+|                     | EntranceAttention           | EntranceAttention­Enum  | 0:1              | Nature de la sonnette ou du signal d’appel <li><p><em>doorbell</em> (sonnette)</p></li> <li><p><em>helpPoint</em> (point d'aide)</p></li><li><p><em>intercom</em> (intercom)</p></li><li><p><em>none</em> (aucun)</p></li><li><p><em>other</em> (autre)</p></li>                 |
+|                     | AudioOrVideoIntercom        | xsd:boolean            | 0:1              | Signale la necessité d’une communication audio ou vidéo pour pouvoir entrer                |
+|                     | Airlock                     | xsd:boolean            | 0:1              | Signale la présence d’un sas                                                               |
+|                     | DoorstepMark                | xsd:boolean            | 0:1              | Signale la présente d’une marque de seuil (de franchissement) podotactile.                 |
+|                     | AudioPassthroughIndicator   | xsd:boolean            | 0:1              | Signale la présente d’un signal sonore de franchissement.                                  |
+|                     | NecessaryForceToOpen        | NecessaryForceEnum     | 0:1              | Force nécessaire pour l’ouverture de la porte <li><p><em>noForce</em> (aucune force nécessaire)</p></li> <li><p><em>lightForce</em> (force légère)</p></li><li><p><em>mediumForce</em> (force moyenne)</p></li><li><p><em>heavyForce</em> (force importante)</p></li><li><p><em>unknown</em> (inconnu)</p></li><br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | DoorHandleOutside           | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'extérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
+|                     | DoorHandleInside            | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'intérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
+|                     | RampDoorbell                | xsd:boolean            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
+|                     | Recognizable                | xsd:boolean            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *false* lorsque l'entrée est difficile à repérer.                              |
+|                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
+|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Rayon de braquage pour les fauteuils roulants <br><span class="hl">On considèrera le rayon du plus petit espace de manœuvre (intérieur ou extérieur).</span>                                 |
 
 <div class="table-title">QueueingEquipment (gestion de queue) – Élément</div>
 
 | **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
 | *::>*               | *::>*                       | *PlaceAccessEquipment* | *::>*            | QUEUING EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
-| «PK»                | id                          | QueuingEqupmentIdType  | 0:1              | Identifiant du QUEUING EQUIPMENT.                                                          |
-|                     | RailedQueue                 | xsd:boolean            | 0:1              | Indique que la queue est guidée par une barrière ou une rampe                              |
-|                     | TicketedQueue               | xsd:boolean            | 0:1              | Indique que l’ordre dans la queue est géré par un système de tickets                           |
+| «PK»                | *id*                        | QueuingEqupmentIdType  | 0:1              | Identifiant du QUEUING EQUIPMENT.                                                          |
+|                     | *RailedQueue*               | xsd:boolean            | 0:1              | Indique que la queue est guidée par une barrière ou une rampe                              |
+|                     | *TicketedQueue*             | xsd:boolean            | 0:1              | Indique que l’ordre dans la queue est géré par un système de tickets                       |
 |                     | ***DisabledPriority***      | xsd:boolean            | 0:1              | Indique une priorité d’accès aux personnes handicapées (et généralement femmes enceintes). |
 |                     | ***QueuingSeatedPossible*** | xsd:boolean            | 0:1              | Indique la possibilité d’être assis en faisant la queue                                    |
 
 <div class="table-title">RampEquipment (rampes) – Élément</div>
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 19%" />
-<col style="width: 20%" />
-<col style="width: 8%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>PlaceAccessEquipment</em></td>
-<td><em>::></em></td>
-<td>RAMP hérite de ACCESS EQUIPMENT</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td><em>id</em></td>
-<td>RampIdType</td>
-<td>0:1</td>
-<td>Identifiant du RAMP.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>Length</em></td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Longueur de la rampe</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Gradient</em></td>
-<td>xsd:integer</td>
-<td>0:1</td>
-<td>Inclinaison de la rampe</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>GradientType</em></td>
-<td><em>GradientType</em></td>
-<td>0:1</td>
-<td><p>Inclinaison de la rampe en valeurs codées :</p>
-<ul>
-<li><p><em>verySteep</em> (très pentu)</p></li>
-<li><p><em>steep</em> (pentu)</p></li>
-<li><p><em>medium</em> (pente moyenne)</p></li>
-<li><p><em>gentle</em> (pente légère)</p></li>
-<li><p><em>level</em> (plat)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Pedestal</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si la rampe repose sur un pied central</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>HandrailHeight</em></td>
-<td>LengthType</td>
-<td>0:1</td>
-<td>Hauteur de la main courante</td>
-</tr>
-<tr class="even">
-<td>«FK»</td>
-<td><em>HandrailType</em></td>
-<td><em>HandrailEnumeration</em></td>
-<td>0:1</td>
-<td><p>Type de main courante :</p>
-<ul>
-<li><p><em>none</em> (aucune)</p></li>
-<li><p><em>oneSide</em> (d’un côté uniquement)</p></li>
-<li><p><em>bothSides</em> (des deux côtés)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>TactileGuidance­Strips</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si la rampe dispose d’une bande de guidage podotactile</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>VisualGuidance­Bands</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Indique si la rampe dispose de bandes de guidage visuelles</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>Temporary</em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Signale que la rampe est temporaire</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
+| *::>*               | *::>*                       | *PlaceAccessEquipment*       | *::>*            | RAMP EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
+| «PK»                | *id*                        | RampIdType                  | 0:1              | Identifiant du RAMP EQUIPMENT                                                           |
+|                     | *Length*                    | LengthType                   | 0:1              | Longueur de la rampe                                                                    |
+|                     | *Gradient*                  | xsd:integer                  | 0:1              | Inclinaison de la rampe                                                                 |
+| «enum»              | *GradientType*              | GradientType                 | 0:1              | Inclinaison de la rampe en valeurs codées : <br><ul><li><em>verySteep</em> (très pentu)</li><li><em>steep</em> (pentu)</li><li><em>medium</em> (pente moyenne)</li><li><em>gentle</em> (pente légère)</li><li><em>level</em> (plat)</li></ul>                                             |
+|                     | *Pedestal*                  | LengthType                   | 0:1              | Indique si la rampe repose sur un pied central                                          |
+|                     | *HandrailHeight*            | xsd:boolean                  | 0:1              | Hauteur de la main courante                                                             |
+| «enum»              | *HandrailType*              | HandrailEnumeration          | 0:1              | Type de main courante : <br><ul><li><p><em>none</em> (aucune)</p></li><li><p><em>oneSide</em> (d’un côté uniquement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li></ul>                          |
+|                     | *TactileGuidance­Strips*     | xsd:boolean                  | 0:1              | Indique si la rampe dispose d’une bande de guidage podotactile                          |
+|                     | *VisualGuidance­Bands*       | xsd:boolean                  | 0:1              | Indique si la rampe dispose de bandes de guidage visuelles                              |
+|                     | *Temporary*                 | xsd:boolean                  | 0:1              | Signale que la rampe est temporaire                                                     |
+|                     | *RestStopDistance*          | xsd:boolean                  | 0:1              | Distance maximale entre deux paliers de repos <br><span class="hl">Il est recommandé d'implanter un palier de repos en bas et en haut de chaque rampe, ainsi que tous les 10 mètres en cas de longue rampe.</span>  |
+| «enum»              | *SafetyEdge*                | SafetyEdgeEnum               | 0:1              | Indique la présence d'une bordure chasse-roue. Il s'agit d'une bordure latérale visant à bloquer la roue du fauteuil roulant pour éviter les chutes. <br><ul><li><em>oneSide </em>(d’un côté uniquement)</li><li><em>bothSides </em>(des deux côtés)</li><li><em>none </em>(pas de chasse-roue)</li></ul>   |
+| «enum»              | *TurningSpace*              | RampTurningSpacePositionEnum | 0:1              | Indique la présence d'une aire de rotation (ou espace de manœuvre) UFR en bas et/ou en haut de la rampe : <br><ul><li><em>bottom </em>(en bas uniquement)</li><li><em>top </em>(en haut uniquement)</li><li><em>topAndBottom </em>(en haut et en bas)</li><li><em>none</em> (pas d'aire de rotation)</li><li><em>level</em> (plat)</li></ul>      |
 
 <div class="table-title">PlaceLighting (éclairage) – Élément</div>
 
@@ -3753,14 +3407,15 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 
 <div class="table-title">EscalatorEquipment (escalator) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                                                                                                              |
-| ------------------- | -------------------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| *::>*               | *::>*                | *StairEquipment* | *::>*            | ESCALATOR hérite de STAIR EQUIPMENT                                                                                          |
-| «PK»                | id                   | EscalatorIdtype  | 1:1              | Identifiant de l'ESCALATOR.                                                                                                  |
-|                     | TactileActuators     | xsd:boolean      | 0:1              | Signale une mise en marche par détecteur (tactile ou autre)                                                                  |
-|                     | EnergySaving         | xsd:boolean      | 0:1              | Signale un escalator à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé)                               |
-|                     | DogsMustBeCarried    | xsd:boolean      | 0:1              | Signale si les chiens doivent être pris dans les bras (ou transportés d’une autre manière) pour pouvoir franchir l’escalator |
-|                     | EscalatorWithLanding | xsd:boolean      | 0:1              | Signale un escalator avec une zone plate au début ou à la fin                                                                |
+| **Classification** | **Nom**                 | **Type**         | **Cardinalité** | **Description**                                                                                                              |
+| ------------------ | ----------------------- | ---------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| *::>*              | *::>*                   | *StairEquipment* | *::>*           | ESCALATOR hérite de STAIR EQUIPMENT                                                                                          |
+| «PK»               | id                      | EscalatorIdtype  | 1:1             | Identifiant de l'ESCALATOR.                                                                                                  |
+|                    | TactileActuators        | xsd:boolean      | 0:1             | Signale une mise en marche par détecteur (tactile ou autre)                                                                  |
+|                    | EnergySaving            | xsd:boolean      | 0:1             | Signale un escalator à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé)                               |
+|                    | DogsMustBeCarried       | xsd:boolean      | 0:1             | Signale si les chiens doivent être pris dans les bras (ou transportés d’une autre manière) pour pouvoir franchir l’escalator |
+|                    | EscalatorWithLanding    | xsd:boolean      | 0:1             | Signale un escalator avec une zone plate au début ou à la fin                                                                |
+|                    | MonitoringRemoteControl | xsd:boolean      | 0:1             | Signale la présence d'un système de contrôle à distance du fonctionnement de l'équipement                                    |
 
 <div class="table-title">TravelatorEquipment (tapis roulant) – Élément</div>
 
