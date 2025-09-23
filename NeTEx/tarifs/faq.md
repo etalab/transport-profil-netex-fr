@@ -3,7 +3,6 @@ Ce document explicite certains points du profil France, mais n'a pas vocation à
 En cas de différence entre ce document et le texte du profil France, c'est ce dernier qui fait foi.
 
 ## Quelle structuration donner à mon export de tarifs en Netex France ?
-<!-- A confirmer: utilisation du SalesOfferPackagePrice -->
 
 Le profil France a fait le choix de passer par la notion de `FareTable` et ses cellules (`Cell`) pour exposer
 les données. Chaque `Cell` du tableau tarifaire fait le lien entre un `SalesOfferPackage`, un profil utilisateur `UserProfile` et le prix `SalesOfferPackagePrice` associé au `SalesOfferPackage`.
@@ -52,8 +51,8 @@ Voici un exemple avec un profile enfant donnant une réduction de 50% pour les e
 
 Il est important pour un `SalesOfferPackage` de présenter :
 - un nom décrivant le ou les titres couverts par l'offre à la vente
-- un résumé des principales propriétés (la liste est renseignée au niveau du profile) <!-- a confirmer -->
-- les cannaux de distribution (optionnel)
+- un résumé des principales propriétés (la liste est renseignée au niveau du profil)
+- les cannaux de distribution (requis dans le profil France)
 - les éléments de l'offre (`SalesOfferPackageElement`), contenant en particulier le produit tarifaire (`FareProduct`) et le support du titre (`TypeOfTravelDocument`)
 
 ```xml
