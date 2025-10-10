@@ -4141,7 +4141,7 @@ En particulier :
 
 **AudibleSignalsAvailable** : il y a des annonces sonores, en général des prochains passages, indiquant au moins les lignes desservies ainsi que leur direction.
 
-**VisualSignsAvailable** : il y a au moins le nom de l'arrêt, les lignes desservies ainsi que leur direction, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, de la ligne ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+**VisualSignsAvailable** : il y a au moins le nom de l'arrêt, les lignes desservies ainsi que leur direction, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
 
 **TactileGuidanceAvailable** : il y a des bandes de guidage podotactile menant à la porte permettant d'embarquer dans le véhicule, et elle sont connectées à des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne (mur, bandes de guidage, etc).
 
@@ -4162,6 +4162,30 @@ En particulier, ça sera :
 - false s’il y a une marche de plus de 4 cm
 
 **TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette entrée.
+
+## Définition des *AccessibilityLimitation* retenus pour les lieux d'arrêts (STOP PLACE)
+
+**WheelchairAccess** : chaque quai est pratiquable en fauteuil roulant et il existe un cheminement pratiquable en fauteuil roulant entre chaque zone d'embarquement et au moins un accès.
+
+Se référer aux définitions plus précises de *WheelchairAccess* pour les zones d'embarquement (Quay), les accès de lieu d'arrêt (StopPlaceEntrance) et les cheminements (SitePathLink).
+
+**StepFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans franchir de marche.
+
+En particulier, ça sera :
+
+- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- partial s’il y a une marche de moins de 4 cm
+- false s’il y a une marche de plus de 4 cm
+
+**EscalatorFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un escalator.
+
+**LiftFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un ascenseur.
+
+**AudibleSignalsAvailable** : il y a des annonces sonores.
+
+**VisualSignsAvailable** : il y a au moins le nom du lieu d'arrêt, les lignes desservies, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+
+**TactileGuidanceAvailable** : il y a un réseau de bandes de guidage podotactile qui relient chaque zone d'embarquement à au moins un accès.
 
 # Annexe (informative) - Structure des Parkings
 
