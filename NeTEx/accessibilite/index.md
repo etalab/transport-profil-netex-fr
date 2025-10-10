@@ -4129,6 +4129,21 @@ et atteindre et utiliser tous les équipements (lumière, lave-main, etc.)
 Cela signifie notamment qu’il faut un espace d’au moins 1,50 m à côté de la cuvette, 
 une barre d’appui, un lave-main accessible, etc.
 
+## Définition des *AccessibilityLimitation* retenus pour les zones d'embarquement (QUAY)
+
+**WheelchairAccess** : le sol est plat, de revêtement lisse et stable, assez large pour faire demi-tour en fauteuil (1,50m) et sans obstacle permanent bloquant
+
+En particulier :
+
+- lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer
+- on utilisera les valeurs de références suivantes pour la valeur true : dévers de moins de 2%, pente de moins de 5%
+- si le dévers est de moins de 5%, ou la pente de moins de 8%, ou la largeur d’au moins 90 cm, on pourra utiliser partial
+
+**AudibleSignalsAvailable** : il y a des annonces sonores, en général des prochains passages, indiquant au moins les lignes desservies ainsi que leur direction.
+
+**VisualSignsAvailable** : il y a au moins le nom de l'arrêt, les lignes desservies ainsi que leur direction, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, de la ligne ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+
+**TactileGuidanceAvailable** : il y a des bandes de guidage podotactile menant à la porte permettant d'embarquer dans le véhicule, et elle sont connectées à des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne (mur, bandes de guidage, etc).
 
 # Annexe (informative) - Structure des Parkings
 
