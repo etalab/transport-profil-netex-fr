@@ -26,24 +26,24 @@ Voici un extrait de fichier XML reprenant les informations ci-dessus:
 </FareTable>
 ```
 ## Que contient un UserProfile ?
-Le document du profil France présente plusieurs exemples.
-Voici un exemple avec un profile enfant donnant une réduction de 50% pour les enfants de 4 à 10 ans :
+Le document du profil France présente plusieurs exemples. Le profil France ne retient pas la notion de réduction au niveau du UserProfile. 
+Le fait qu'un voyageur doive être accompagné est indiqué au travers d'une notice.
+
+Voici un exemple avec un profile moins de 26 ans :
 ```xml
 <UserProfile id="FR-Tarif-Example:UserProfile:003:LOC" version="any">
-  <!--50% pour les enfants entre 4 et 10 ans -->
-  <Name>Tarif Enfant</Name>
-  <Description>50%de r&#xE9;duction pour les enfants entre 4 et 10 ans </Description>
-  <prices>
-    <UsageParameterPrice>
-      <LimitingRule>
-        <DiscountAsPercentage>0.50</DiscountAsPercentage>
-        <CanBeCumulative>false</CanBeCumulative>
-      </LimitingRule>
-    </UsageParameterPrice>
-  </prices>
-  <MinimumAge>4</MinimumAge>
-  <MaximumAge>10</MaximumAge>
-  <DiscountBasis>discount</DiscountBasis>
+    <!--50% pour les enfants entre 4 et 10 ans -->
+    <Name>Tarif -26 ans</Name>
+    <UserType>YoungPerson</UserType>  
+    <Description>Profil jeune adulte (moinsde 26 ans)</Description>
+    <MinimumAge>4</MinimumAge>
+    <MaximumAge>10</MaximumAge>
+    <ProofRequired>IdentityDocument</ProofRequired>
+    <noticeAssignments>
+        <NoticeAssignment id="fr:niticeassignement:template:01" version="any">
+            <NoticeRef ref="fr:notice:template:01" version="any" />
+        </NoticeAssignment>
+    </noticeAssignments>
 </UserProfile>
 ```
 
@@ -52,7 +52,7 @@ Voici un exemple avec un profile enfant donnant une réduction de 50% pour les e
 Il est important pour un `SalesOfferPackage` de présenter :
 - un nom décrivant le ou les titres couverts par l'offre à la vente
 - un résumé des principales propriétés (la liste est renseignée au niveau du profil)
-- les cannaux de distribution (requis dans le profil France)
+- les canaux de distribution (requis dans le profil France)
 - les éléments de l'offre (`SalesOfferPackageElement`), contenant en particulier le produit tarifaire (`FareProduct`) et le support du titre (`TypeOfTravelDocument`)
 
 ```xml
@@ -89,6 +89,7 @@ Le sujet de la variation du prix en fonction de la durée n'est pas traité dans
 
 ### Disponibilité des titres (= période de vente)
 Afin d'indiquer une periode de vente, il convient d'utiliser `ValidityConditions/AvailabilityConditions` sur l'offre à la vente (`SalesOfferPackage`).
+Cette information  permet d'indiquer qu'un titre mensuel est mis à la vente à partir du 15 septembre.
 
 Exemple :
 ```xml
@@ -102,10 +103,15 @@ Exemple :
     <!-- autres informations -->
 </SalesOfferPackage>
 ```
-### Periode d'utilisation autorisée des titres
-Afin d'indiquer une periode d'utilisation, il convient d'utiliser `ValidityConditions/ValidBetween` sur l'offre à la vente (`SalesOfferPackage`).
 
-**QUESTION : uniquement sur SalesOfferPackage ? ou sur PreassignedFareProduct ? ou les deux ?**
+### Periode d'utilisation autorisée des titres
+Afin d'indiquer une periode d'utilisation, le profile France fait le choix d'utiliser `ValidityConditions/ValidBetween` sur l'offre à la vente (`SalesOfferPackage`).
+Cette information est portée par le SalesOfferPackage, car la periode d'utilisation peut varier en fonction du support ou du canal de distribution.
+Par exemple, le produit vendu à bord à consommation immédiate ou le produit mensuel qui commence le mois suivant l'achat.
+Cette information ne doit pas être indiquée sur le FareProduct.
+
+- ticket dans la durée : Periode d'utilisation d'un titre (ex : scolaire valable du lindi au vendredi)
+- ticket unitaire : Periode pendant laquelle le titre peut être consommé
 
 Exemple :
 ```xml
@@ -120,22 +126,15 @@ Exemple :
 </SalesOfferPackage>
 ```
 
-### Durée de validité du titre une fois validé
-**A TRAVAILLER, rentre en conflit avec le cas ci-dessous :**
-- l'utilisation de `UsageValidityPeriod` a été discuté en réunion
-- FareStructureElement/TimeInterval a été indiqué dans `FareStructureElement - List`
-
-Question :
-- TimeInterval semble pouvoir indiquer une durée de validité de titre, une durée de validité de carte de réduction.
-- UsageValidityPeriod semble permettre d'être plus précis, en indiquant des débuts (par date ou à validation)
-=> comment choisir quoi dans quelle situation?
-
 ### Période pendant laquelle le titre peut être utilisé (ou "consommé") après l’achat
-Cette information est associée au produit tarifaire (`PreassignedFareProduct`) contenu dans l'offre à la vente (`SalesOfferPackage`). Pour indiquer cette information, il convient d'utiliser `ValidableElement/FareStructureElement` (ex. time Interval)
+=> Ici, vérifier l'utilisation d'un UsageValidityPeriod avec un type particulier (probablement à créer)
+
+Cette information est associée au produit tarifaire (`PreassignedFareProduct`) contenu dans l'offre à la vente (`SalesOfferPackage`). Pour indiquer cette information, il convient d'utiliser `ValidableElement/FareStructureElement` (ex. time Interval).
+
 ```xml
 <TimeInterval id="fr:timeinterval:template:01" version="any">
     <Description>2h de trajet sur l'ensemble de la zone</Description>
-    <Duration>PT2H</Duration> <!-- Si confirmé, modifier la durée pour indiquer un nombre de mois ou 1 an -->
+    <Duration>PT12M</Duration> <!-- Si confirmé, modifier la durée pour indiquer un nombre de mois ou 1 an -->
 </TimeInterval>
 <FareStructureElement id="fr:farestructureelement:template:01" version="any">
     <TimeIntervalRef ref="fr:timeinterval:template:01"/>
@@ -152,6 +151,13 @@ Cette information est associée au produit tarifaire (`PreassignedFareProduct`) 
 <!-- -->
 </PreassignedFareProduct>
 ```
+
+### Durée de validité du titre une fois validé (cas du ticket unitaire)
+=> indiquer l'utilisation de TimeInterval (exemple : 90 min)
+
+### Durée de validité du titre dans les autres cas (semaine, mensuel, etc.)
+=> l'utilisation de `UsageValidityPeriod` 
+
 
 ### Date de validité du tarif
 Dans la cellule (`Cell`), le prix est porté par l'objet `SalesOfferPackagePrice`. La plage de validité du tarif peut être indiquée sur l'objet (voir l'exemple ci-dessous). Une cellule ne pouvant comporter qu'un seul prix, il conviendra de
