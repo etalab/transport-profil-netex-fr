@@ -4122,13 +4122,41 @@ si **AudibleSignalsAvailable** vaut *true*, et *false* si **AudibleSignalsAvaila
 **CrossingEquipment/ZebraCrossing** vaudra *true* si **VisualSignsAvailable** vaut *true*, 
 et *false* si **VisualSignsAvailable** est *false*.
 
-## Définition des AccessibilityLimitation retenus pour les sanitaires (SANITARY EQUIPMENT)
+## Définition des *AccessibilityLimitation* retenus pour les sanitaires (SANITARY EQUIPMENT)
 
 **WheelchairAccess** : un usager en fauteuil roulant peut se positionner sur la cuvette 
 et atteindre et utiliser tous les équipements (lumière, lave-main, etc.)
 Cela signifie notamment qu’il faut un espace d’au moins 1,50 m à côté de la cuvette, 
 une barre d’appui, un lave-main accessible, etc.
 
+## Définition des *AccessibilityLimitation* retenus pour les places de stationnement (PARKING BAY)
+
+**WheelchairAccess** : le sol est plat, de revêtement lisse et stable ; la largeur est d'au moins 3.30m et on peut rejoindre la place depuis le trottoir sans franchir de marche.
+
+En particulier :
+
+- lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer ;
+- plat signifie dévers de moins de 2% et pente de moins de 2%
+
+**StepFreeAccess** : il est possible de rejoindre la place directement depuis le trottoir sans rencontrer de marche infranchissable.
+
+En particulier, ça sera :
+
+- *true* s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- *partial* s’il y a une marche de moins de 4 cm
+- *false* s’il y a une marche de plus de 4cm
+
+**VisualSignsAvailable** : 
+- dans le cas général : la place de stationnement est délimitée par un marquage au sol
+- dans le cas d'un stationnement réservé aux PMR : un marquage au sol et une signalisation verticale conformes à la réglementation indiquent la place de stationnement
+
+En particulier, ça sera :
+
+- *true* s'il y a un panneau de signalisation (panneaux B6d et M6h) et un pictogramme UFR blanc peint au sol sur les limites ou le long de l'emplacement. Voir l'arrêté du 7 juin 1977 modifié et l'instruction interministérielle sur la signalisation routière pour plus de détails.
+- *partial* s'il y a un panneau ou un pictogramme
+- *false* si les deux sont absents
+
+**TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
 
 # Annexe (informative) - Structure des Parkings
 
