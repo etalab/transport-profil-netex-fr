@@ -4145,6 +4145,24 @@ En particulier :
 
 **TactileGuidanceAvailable** : il y a des bandes de guidage podotactile menant à la porte permettant d'embarquer dans le véhicule, et elle sont connectées à des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne (mur, bandes de guidage, etc).
 
+## Définition des *AccessibilityLimitation* retenus pour les entrées (ENTRANCE)
+
+Ces définitions concernent tous les éléments qui héritent de ENTRANCE : accès de lieu d'arrêt (STOP PLACE ENTRANCE), accès piéton d'un parking (PARKING PASSENGER ENTRANCE), accès de point d'intérêt (POINT OF INTEREST ENTRANCE), etc.
+
+**WheelchairAccess** : il y a une largeur de passage d’au moins 80 cm et pas de marche infranchissable. S’il y a une porte, elle s’ouvre sans forcer (moins de 50 Newton).
+
+On utilisera les mêmes valeurs de référence pour la hauteur de la marche éventuelle que pour StepFreeAccess (voir ci-après).
+
+**StepFreeAccess** : il n’y a pas de marche infranchissable.
+
+En particulier, ça sera :
+
+- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- partial s’il y a une marche de moins de 4 cm
+- false s’il y a une marche de plus de 4 cm
+
+**TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette entrée.
+
 # Annexe (informative) - Structure des Parkings
 
 *<span class="hl"><p>Les informations sur les parkings sont fournies ici à

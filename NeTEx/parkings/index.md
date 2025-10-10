@@ -1939,7 +1939,8 @@ pour les piétons (incluant les accès type fauteils roulant, etc.).
 <p>Voir <em><strong>A.2.6-Entrée</strong></em></p>
 <p><mark>Note : Les caractéristiques d’accessibilité des entrées de
 parking peuvent être détaillées par les classiques ACCESSIBILITY
-ASSESMENTs et il est aussi possible d’y associer des FACILITY SET
+ASSESMENTs (voir annexe 9 du profil Accessibilité) et il est aussi 
+possible d’y associer des FACILITY SET
 (services et équipement disponibles)</mark></p>
 <p><mark>Note : dans la chaine d’héritage
 <em><strong>Centroid.Location.Longitude / Latitude</strong></em> sont
