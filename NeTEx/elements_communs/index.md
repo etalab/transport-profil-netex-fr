@@ -2089,7 +2089,7 @@ les informations nécessaire quand aucune adresse n'existe (par exemple un arrê
 |--------------------|-------------------|----------------------|-----|-----------------------------------------|
 |       ::>           | ::>  | *Address*        | 	::> | POSTAL ADDRESS hérite de ADDRESS. |
 |                     | ***AddressLine1***  | *xsd:normalizedString*        | 0:1 | Numéro et rue de l'adresse. Le num du batiment peut également être précisé.
- <span class="hl">Ce champ retenu dans le profile France comme porteur de l'information de l'adresse (voir explication ci-dessus) </span> |
+ <span class="hl">Ce champ retenu dans le profil France comme porteur de l'information de l'adresse (voir explication ci-dessus) </span> |
 |                     | ***HouseNumber***   | *xsd:normalizedString*        | 0:1 | Numéro du bâtiment sur la voie. Ce champ vient compléter le champ `AddressLine1` |
 |                     | ***Street***        | *xsd:normalizedString*        | 0:1 | Nom et type de voie. Ce champ vient compléter le champ `AddressLine1` |
 |                     | ***BuildingName***  | *xsd:normalizedString*        | 0:1 | Nom du bâtiment. Ce champ vient compléter le champ `AddressLine1` |
@@ -2099,7 +2099,7 @@ les informations nécessaire quand aucune adresse n'existe (par exemple un arrê
 |                     | ***PostalRegion***  | *MultilingualString* | 0:1 | Code INSEE. <span class="hl">NOTE : le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span> |
 
 
-**Exemple de fourniture d'adresse dans le profile France :**
+**Exemple de fourniture d'adresse dans le profil France :**
 L'adresse postale suivant : 
 > Bâtiment B  
 > 5 Allée des Pirouettes  
