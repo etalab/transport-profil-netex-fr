@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../../Documents/GitHub/CEN/NeTEx-next/xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2025-08-17T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>TT</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame id="FR-Tarif-Example:CompositeFrame:myFrame01:LOC" version="1">
+			<frames>
+				<GeneralFrame id="FR-Tarif-Example:CompositeFrame:myFrame01:LOC" version="1">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF" />
+					<members>
+						<TimeInterval id="FR-Tarif:SMTAML:Colibri:TimeInterval:001:LOC" version="any">
+							<Description>2h de trajet sur l'ensemble de la zone</Description>
+							<Duration>PT2H</Duration>
+							<timeStructureFactors>
+								<TimeStructureFactor id="FR-Tarif:SMTAML:Colibri:001:LOC" version="any">
+									<Name>Entre première et dernière validation</Name>
+									<!--A présenter pour l'IV-->
+									<Description>Time Structure Factor pour "entre première et dernière validation"</Description>
+									<TypeOfFareStructureFactorRef ref="BetweenFirstAndLastValidation"/>
+								</TimeStructureFactor>
+							</timeStructureFactors>
+						</TimeInterval>
+						<FareStructureElement id="FR-Tarif:SMTAML:Colibri:FareStructureElement:001:LOC" version="any">
+							<TimeIntervalRef ref="FR-Tarif:SMTAML:Colibri:TimeInterval:001:LOC"/>
+							<GenericParameterAssignment id="FR-Tarif:SMTAML:Colibri:GenericParameter:001:LOC" version="any">
+								<LimitationGroupingType>AND</LimitationGroupingType>
+								<limitations>
+									<UsageValidityPeriod id="FR-Tarif:SMTAML:Colibri:UsageValidityPeriod:001:LOC" version="any">
+										<Name>Mensuel</Name>
+										<ValidityPeriodType>monthlyPass</ValidityPeriodType>
+										<StandardDuration>P30D</StandardDuration>
+									</UsageValidityPeriod>
+									<Transferability id="FR-Tarif:SMTAML:Colibri:Transferability:001:LOC" version="any">
+										<Name>Abonnement non transf&#xE9;rable</Name>
+										<CanTransfer>false</CanTransfer>
+									</Transferability>
+									<FrequencyOfUse id="FR-Tarif:SMTAML:Colibri:Frequency:001:LOC" version="any">
+										<FrequencyOfUseType>unlimited</FrequencyOfUseType>
+									</FrequencyOfUse>
+									<Interchanging id="FR-Tarif:SMTAML:Colibri:Interchanging:001:LOC" version="any">
+										<CanInterchange>true</CanInterchange>
+									</Interchanging>
+								</limitations>
+								<validityParameters>
+										<TransportModes>bus metro intercityRail urbanRail</TransportModes>
+										<FareClass>secondClass</FareClass>
+								</validityParameters>
+							</GenericParameterAssignment>
+						</FareStructureElement>
+						<UserProfile id="FR-Tarif:SMTAML:Colibri:UserProfile:001:LOC" version="any">
+							<Name>Adulte - Plein tarif</Name>
+							<Description>Plein tarif adulte sans r&#xE9;duction</Description>
+							<MinimumAge>18</MinimumAge>
+						</UserProfile>
+						<ValidableElement id="FR-Tarif:SMTAML:Colibri:ValidableElement:001:LOC" version="any">
+							<Name>Carte Abonnement mensuel T-Libr</Name>
+							<fareStructureElements>
+								<FareStructureElementRef ref="FR-Tarif:SMTAML:Colibri:FareStructureElement:001:LOC" version="any"/>
+							</fareStructureElements>							
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="FR-Tarif:SMTAML:Colibri:GenericParameter:002:LOC" version="any">
+									<IncludesGroupingType>AND</IncludesGroupingType>
+									<includes>
+										<GenericParameterAssignment id="FR-Tarif:SMTAML:Colibri:GenericParameter:003:LOC" version="any">
+											<IsAllowed>true</IsAllowed>
+											<validityParameters>
+												<FareZoneRef ref="FR-Tarif:SMTAML:Colibri:FareZone:002:LOC"></FareZoneRef>
+												<!-- Selon les tableaux fournis par SMT AML, cette zone correspondarait à celle nommée TCL et couvrant les réseaux TER et TCL -->
+												<FareZoneRef ref="FR-Tarif:SMTAML:Colibri:FareZone:005:LOC"></FareZoneRef>
+												<!-- Selon les tableaux fournis par SMT AML, cette zone correspondarait à celle nommée Côtière et couvrant les réseaux TER ; Colibri ; Cars Région Ain ; ST 3CM -->
+											</validityParameters>
+										</GenericParameterAssignment>
+									</includes>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</ValidableElement>
+						<FareTable id="FR-Tarif:SMTAML:Colibri:FareTable:001:LOC" version="any">
+							<Name />
+							<cells>
+								<Cell id="FR-Tarif:SMTAML:Colibri:FareTableCell:001:LOC" version="any">									
+									<FareProductPrice id="FR-Tarif:SMTAML:Colibri:FareProductPrice:001:LOC" version="any">
+										<Amount>108.30</Amount>
+										<Currency>EUR</Currency>
+									</FareProductPrice>
+									<UserProfileRef ref="FR-Tarif:SMTAML:Colibri:UserProfile:001:LOC"></UserProfileRef>													
+									<ValidableElementRef ref="FR-Tarif:SMTAML:Colibri:ValidableElement:001:LOC"></ValidableElementRef>
+								</Cell>
+							</cells>
+						</FareTable>
+					</members>
+				</GeneralFrame>
+			</frames>		
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
