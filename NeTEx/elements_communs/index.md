@@ -4850,8 +4850,8 @@ de fichier (sous quelque forme que ce soit : FTP, mail, etc.) ou au
 travers de web service.
 
 ## Règles générales
-- **Pas de duplication de ressources NeTEx** : pas de duplication des données “classe - identifiant - version” ce qui signifie que deux version différentes d’un même objet peuvent coexister
-- **Éviter les sur-informations** : éviter l’introduction de données externes impliquant des dépendances à des sources externes de donnée (ex Code SIREN pour une AOM) ou non utiles pour la définition de l’offre objet de l’archive 
+- **Pas de duplication de ressources NeTEx** : pas de duplication des données “classe - identifiant - version” ce qui signifie que deux versions différentes d’un même objet peuvent coexister
+- **Éviter les sur-informations** : Eviter l'ajout d'informations dont l'utilité n'est pas clairement identifiée.  
 
 ## Export sous forme de fichier
 
@@ -4886,7 +4886,7 @@ Les fichiers attendus dans l'archive sont les suivants :
 Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
 Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
 
-A noter : Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP
+À noter : Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP
 en respectant les critères ci-dessus.
 
 ## Web service
