@@ -2074,25 +2074,56 @@ prendre la forme ci-dessous
 
 <div class="table-title">PostalAddress – Element (objet inclus)</div>
 
-L'objet PostalAddress de NeTEx contient beaucoup d'attribut, mais le profil France n'en retient que quelques uns
+L'objet PostalAddress de NeTEx contient de nombreux attributs mais le profil France choisit de n'en prioriser que certains
 afin de trouver le juste équilibre entre les 3 axes suivants :
-* production des données par ceux n'ayant pas nécessairement une donnée structurée (exemple de OTP lisant du OSM),
+* production des données par ceux n'ayant pas nécessairement une donnée structurée (exemple de Open Trip Planner (OTP) lisant des données OpenStreetMap (OSM)),
 * consommation des données de manière uniforme et si possible structurée,
 * besoin de rester cohérent avec les modèles utilisés par les autres pays.
 
-Pour cette raison, les champs `HouseNumber`, `Street` et `BuildingName` ne sont pas retenus dans le profil France.
-Il est donc recommandé d'utiliser uniquement le champ `AddressLine1` en n'indiquant si possible que les numéros et le nom
+Pour cette raison, les champs `HouseNumber`, `Street` et `BuildingName` ne sont pas priorisés dans le profil France. Ils peuvent être utilisés quand l'information existe, elle sera alors considérée comme venant compléter les attributs priorisés.
+Il est donc recommandé d'utiliser en priorité le champ `AddressLine1` en n'indiquant si possible que les numéros et le nom
 de la rue, en évitant d'inclure les noms ou codes des batiments. Ce champ libre permettra dans certains cas d'indiquer
 les informations nécessaire quand aucune adresse n'existe (par exemple un arrêt à un croisement de routes en inter-urbain).
 
 | **Classifi­cation** | **Nom**           | **Type**             |     | **Description**                         |
 |--------------------|-------------------|----------------------|-----|-----------------------------------------|
 |       ::>           | ::>  | *Address*        | 	::> | POSTAL ADDRESS hérite de ADDRESS. |
-|                     | ***AddressLine1***  | *xsd:normalizedString*        | 0:1 | Numéro et rue de l'adresse |
-|                     | ***Town*** | *MultilingualString* | 0:1 | Nom de la ville                             |
-|                     | ***PostCode*** | *PostCodeType* | 0:1 | Code Postal                             |
+|                     | ***AddressLine1***  | *xsd:normalizedString*        | 0:1 | Numéro et rue de l'adresse. Le num du batiment peut également être précisé.
+ <span class="hl">Ce champ retenu dans le profile France comme porteur de l'information de l'adresse (voir explication ci-dessus) </span> |
+|                     | ***HouseNumber***   | *xsd:normalizedString*        | 0:1 | Numéro du bâtiment sur la voie. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***Street***        | *xsd:normalizedString*        | 0:1 | Nom et type de voie. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***BuildingName***  | *xsd:normalizedString*        | 0:1 | Nom du bâtiment. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***Town***          | *MultilingualString* | 0:1 | Nom de la ville                             |
+|                     | ***PostCode***      | *PostCodeType* | 0:1 | Code Postal                             |
 |                     | ***PostCode­Extension*** | *xsd:normalizedString* | 0:1 | Extension du code postal (avec éventuel cedex ou boite postale)                           |
-|                     | ***PostalRegion*** | *MultilingualString* | 0:1 | Code INSEE. <span class="hl">NOTE : le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span> |
+|                     | ***PostalRegion***  | *MultilingualString* | 0:1 | Code INSEE. <span class="hl">NOTE : le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span> |
+
+
+**Exemple de fourniture d'adresse dans le profile France :**
+L'adresse postale suivant : 
+> Bâtiment B  
+> 5 Allée des Pirouettes  
+> 31420 Bouzin  
+
+Peut s'exporter de la manière suivante :
+```xml
+<PostalAddress>
+    <AddressLine1>5 Allée des Pirouettes</AddressLine1>
+    <PostCode>31420</PostCode>
+    <Town>Bouzin</Town>
+</PostalAddress>
+```
+ou dans une version plus complète :
+```xml
+<PostalAddress>
+    <AddressLine1>Bâtiment B, 5 Allée des Pirouettes</AddressLine1>
+    <BuildingName>Bâtiment B</BuildingName>
+    <HouseNumber>5</HouseNumber>
+    <Street>Allée des Pirouettes</Street>
+    <PostCode>31420</PostCode>
+    <Town>Bouzin</Town>
+</PostalAddress>
+```
 
 
 <div class="table-title">RoadAddress – Element (objet inclus)</div>
