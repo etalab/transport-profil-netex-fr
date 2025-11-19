@@ -1,0 +1,442 @@
+<?xml version="any" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/New%20Modes/PT%200303/XSD/1.2.2r/xsd/NeTEx_publication.xsd" version="1.1">
+  <PublicationTimestamp>2025-19-19T09:30:47.0Z</PublicationTimestamp>
+  <ParticipantRef>CTW</ParticipantRef>
+  <dataObjects>
+    <CompositeFrame version="1" created="2025-09-19T09:30:47.0Z" id="CTW:CompositeFrame:001:LOC">
+      <frames>
+        <GeneralFrame version="001" id="CTW:TypeOfFrame:NETEX_TARIF-Example1:LOC">
+        <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF">version="1.01:FR-NETEX_TARIF-1.0"</TypeOfFrameRef>
+        <members modificationSet="all">
+		
+			<Notices>
+				<Notice id="CTW-Tarif-Example:Notice:001:LOC" version="any">
+					<Name>descripton du pass</Name>
+					<Text>Ce titre permet la libre circulation, pendant un mois calendaire, sans limitation du nombre de trajets : sur une Origine-Destination définie sur le réseau BreizhGo Car et en libre circulation sur le réseau urbain de Rennes Métropole (réseau STAR)</Text>
+					<CanBeAdvertised>true</CanBeAdvertised>
+				</Notice>
+				<Notice id="CTW-Tarif-Example:Notice:002:LOC" version="any">
+					<Name>descripton détaillée</Name>
+					<Text>L abonnement mensuel est délivré sur un trajet donné. Les correspondances entre lignes au sein du réseau BreizhGo ne sont pas permises L’abonnement mensuel est disponible à la vente 2 mois avant, à compter du 20 du mois. L’abonnement est valable sur un mois calendaire (du 1er au dernier jour du mois</Text>
+					<CanBeAdvertised>true</CanBeAdvertised>
+				</Notice>
+			</Notices>
+			<UserProfile id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+             			 <Name>Plein tarif</Name>
+             			 <Description>Plein tarif adulte sans réduction</Description>
+             			 <MinimumAge>26</MinimumAge>
+             			 <MaximumAge>65</MaximumAge>
+			<UserType>Adult</UserType>
+            		</UserProfile>
+            		<UserProfile id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+            			<Name>jeune moins de 26 ans</Name>
+             			 <Description>tarif réduit moins de 26 ans</Description>
+             			 <MaximumAge>26</MaximumAge>
+			  	<UserType>YoungPerson</UserType>
+			 		 <ProofRequired>IdentityDocument</ProofRequired>
+            		</UserProfile>
+			<TypeOfTravelDocument version="any" id="CTW-Tarif-Example:TypeOfTravelDocument:001:LOC">
+            			  <Name>carte Korrigo</Name>
+           			   <IsSmartCard>true</IsSmartCard>
+            			  <MediaType>smartCard</MediaType>
+           		   <MachineReadable>nfc</MachineReadable>
+          		 </TypeOfTravelDocument>
+			<DistributionChannels>
+				<DistributionChannel id="CTW-Tarif-Example:DistributionChannel:001:LOC" version="any">
+					<Name>site web breizgo.bzh</Name>
+					<DistributionChannelType>online</DistributionChannelType>
+					<AuthorityRef ref="ILLENOO2:Authority:ILLENOO2:LOC" versionRef="any"/>
+					<PaymentMethods>creditCard</PaymentMethods>
+					<DistributionRights>sell</DistributionRights>
+				</DistributionChannel>
+				<DistributionChannel id="CTW-Tarif-Example:DistributionChannel:002:LOC" version="any">
+					<Name>point de vente agrees</Name>
+					<DistributionChannelType>agency</DistributionChannelType>
+					<AuthorityRef ref="ILLENOO2:Authority:ILLENOO2:LOC" versionRef="any"/>
+					<PaymentMethods> creditCard cash cheque</PaymentMethods>
+					<DistributionRights>sell exchange refund</DistributionRights>
+				</DistributionChannel>
+			</DistributionChannels>
+			
+			<PreassignedFareProduct id="CTW-Tarif-Example:PreassignedFareProduct:Breizgo+star-001:LOC" version="any">
+				<Name>abonnement mensuelBreizgo+ star</Name>
+				<AuthorityRef ref="ILLENOO2:Authority:ILLENOO2:LOC" versionRef="any"/>
+				<ProductType>PeriodPass</ProductType>
+				<ConditionSummary>
+					<FareStructureType>zoneToZoneFare</FareStructureType>
+					<TariffBasis>zoneToZone</TariffBasis>
+					<HasNotices>True</HasNotices>
+					<IsSupplement>False</IsSupplement>
+					<RequiresEntitlement>False</RequiresEntitlement>
+					<GivesEntitlement>False</GivesEntitlement>
+					<HasTravelTimeRestrictions>False</HasTravelTimeRestrictions>
+					<HasZoneRestrictions>False</HasTravelTimeRestrictions>
+				</ConditionSummary>
+				<ValidableElements>
+					<ValidableElement id="CTW-Tarif-Example:ValidableElement:001:LOC" version="any" >
+						<FareStructureElements>
+							<FareStructureElementRef Ref="CTW-Tarif-Example:FSE:001.LOC" version="any"/>
+						</FareStructureElements>
+					</ValidableElement>
+				</ValidableElements> 
+			</PreassignedFareProduct>
+				
+			<SalesOfferPackageElement id="CTW-Tarif-Example:SalesOfferPackageElement:001:LOC" version="any">
+				<RequiresValidation>true</RequiresValidation>
+				<TypeOfTravelDocumentRef ref="CTW-Tarif-Example:TypeOfTravelDocument:001:LOC"/>
+				<PreassignedFareProductRef ref="CTW-Tarif-Example:PreassignedFareProduct:Breizgo+star-001:LOC"/>
+			</SalesOfferPackageElement>
+				
+			<SalesOfferPackage id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+				<Name>Abonnement menseul breizgo+ star</Name>
+				<NoticeRef version="any" ref="CTW-Tarif-Example:Notice:001:LOC"/>
+				<NoticeRef version="any" ref="CTW-Tarif-Example:Notice:002:LOC"/>
+				<ConditionSummary>
+					<HasNotices>True</HasNotices>
+					<GoesOnCard>true</GoesOnCard>
+					<IsPersonal>True</IsPersonal>
+					<RequiresPhoto>False</RequiresPhoto>
+					<IsRefundable>False</IsRefundable>
+					<IsExchangeable>False</IsExchangeable>
+					<RequiresAccount>True</RequiresAccount>
+					<MustCarry>True</MustCarry>
+					<AvailableOnSubscription>True<AvailableOnSubscription>
+				</ConditionSummary>
+				<salesOfferPackageElements>
+					<SalesOfferPackageElementRef ref="CTW-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+				</salesOfferPackageElements>
+				<DistributionAssignments>
+					<DistributionAssignment id ="CTW-Tarif-Example:DistributionAssignment:001:LOC version="any">
+						<DistributionChannelRef id="CTW-Tarif-Example:DistributionChannel:001:LOC" version="any">
+						<DistributionChannelRef id="CTW-Tarif-Example:DistributionChannel:002:LOC" version="any">
+					</DistributionAssignment>
+				</DistributionAssignments>
+			</SalesOfferPackage>
+			<FareStructureElements>
+				<FareStructureElement id="CTW-Tarif-Example:FSE:001.LOC" version="any">
+					<Name>zones du produit et combinatoires possibles </Name>
+					<GenericParameterAssignment version="any" id="CTW-Tarif-Example:GPA:001.LOC">
+						<ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+						<validityParameters>
+						<FareZoneRef versionRef="any" ref="CTW-Tarif-Example:FareZone:001>
+						<FareZoneRef versionRef="any" ref="CTW-Tarif-Example:FareZone:002>
+						<FareZoneRef versionRef="any" ref="CTW-Tarif-Example:FareZone:003>
+						<FareZoneRef versionRef="any" ref="CTW-Tarif-Example:FareZone:004>
+						</validityParameters>
+					</GenericParameterAssignment>
+					<distanceMatrixElements>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME11">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:001"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:001"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME22">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:002"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:002"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME33">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:003"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:003"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME44">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:004"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:004"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME12">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:001"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:002"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME23">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:002"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:003"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME34">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:003"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:004"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME13">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:001"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:003"/>
+						</DistanceMatrixElement>
+							<DistanceMatrixElement version="any" id="fr:breiz:DME24">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:002"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:004"/>
+						</DistanceMatrixElement>
+						<DistanceMatrixElement version="any" id="fr:breiz:DME14">
+							<StartTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:001"/>
+							<EndTariffZoneRef version="any" ref="CTW-Tarif-Example:FareZone:004"/>
+						</DistanceMatrixElement>
+					</distanceMatrixElements>
+				</FareStructureElement>
+				</FareStructureElement>
+			<FareStructureElements>
+			<FareTable version="any" id="CTW-Tarif-Example:FareTable:001.LOC">
+				<Name>grille tarifaire définie par matrice de distance</Name>
+				<StartDate>2025-09-10T00:00:00Z</StartDate>
+				<EndDate>2026-07-05T00:00:00Z</EndDate>
+				<cells>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:001.LOC">
+						<Name>tarif zone 1 profil -26</Name>
+						<Amount>25.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME11">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:002.LOC" order="1">
+						<Name>tarif zone 1 profil tout public</Name>
+						<Amount>50.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME11">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:003.LOC" order="1">
+						<Name>tarif zone 2 profil -26</Name>
+						<Amount>25.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME22">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:004.LOC" order="1">
+						<Name>tarif zone 2 profil tout public</Name>
+						<Amount>50.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME22">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:005.LOC" order="1">
+						<Name>tarif zone 3 profil -26</Name>
+						<Amount>25.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME33">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:006.LOC" order="1">
+						<Name>tarif zone 3 profil tout public</Name>
+						<Amount>50.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME33">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:007.LOC" order="1">
+						<Name>tarif zone 4 profil -26</Name>
+						<Amount>25.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME44">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:008.LOC" order="1">
+						<Name>tarif zone 4 profil tout public</Name>
+						<Amount>50.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME44">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:009.LOC" order="1">
+						<Name>tarif zones 1 à 2 profil -26</Name>
+						<Amount>30.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME12">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:010.LOC" order="1">
+						<Name>tarif zones 1 à 2 profil tout public</Name>
+						<Amount>65.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME12">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:011.LOC" order="1">
+						<Name>tarif zones 2 à 3 profil -26</Name>
+						<Amount>30.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME23">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:012.LOC" order="1">
+						<Name>tarif zones 2 à 3 profil tout public</Name>
+						<Amount>65.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME23">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:013.LOC" order="1">
+						<Name>tarif zones 3 à  4 profil -26</Name>
+						<Amount>30.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME34">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:014.LOC" order="1">
+						<Name>tarif zones 3 à  4 profil tout public</Name>
+						<Amount>65.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME34">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:015.LOC" order="1">
+						<Name>tarif zones 1 à 3 profil -26</Name>
+						<Amount>35.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME13">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:016.LOC" order="1">
+						<Name>tarif zones 1 à 3 profil tout public</Name>
+						<Amount>80.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME13">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:017.LOC" order="1">
+						<Name>tarif zones 2 à 4 profil -26</Name>
+						<Amount>35.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME24">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:018.LOC" order="1">
+						<Name>tarif zones 2 à 4 profil tout public</Name>
+						<Amount>80.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME24">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:019.LOC" order="1">
+						<Name>tarif zones 1 à 4 profil -26</Name>
+						<Amount>40.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME14">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:002:LOC" version="any">
+					</cell>
+					<Cell version="any" id="CTW-Tarif-Example:FareTableCell:020.LOC" order="1">
+						<Name>tarif zones 1 à 4 profil tout public</Name>
+						<Amount>85.00</Amount>
+						<Currency>EUR</Currency>
+						<DistanceMatrixElementRef version "any" ref="fr:breiz:DME14">
+						<SalesOfferPackageRef id="CTW-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+						<UserProfileRef id="CTW-Tarif-Example:UserProfile:001:LOC" version="any">
+					</cell>
+				</cells>
+			</fareTable>
+			<fareZones>
+				<FareZone version="1.0" id="CTW-Tarif-Example:FareZone:001">
+					<Name>zone n°1 du produit breizgo et star</Name>
+					<members>
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1015:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1016:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1017:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1018:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1019:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:12:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:13:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:14:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:15:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:16:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:17:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:18:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:19:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:20:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:21:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:22:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:23:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:24:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:25:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:26:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:27:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:28:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:29:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:30:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:31:LOC">
+						<NetworkRef version="1.0" ref="STAR:Network:1:LOC">
+						<LineRef ref="ILLENOO2:Line:515:LOC" versionRef="1"/>
+						<LineRef ref="ILLENOO2:Line:516:LOC" versionRef="1"/>
+						<LineRef ref="ILLENOO2:Line:518:LOC" versionRef="1"/>
+					</members>
+					<ZoneTopology>tiled</ZoneTopology>
+				</FareZone>
+				<FareZone version="1.0" id="CTW-Tarif-Example:FareZone:002">
+				<Name>zone n°2 du produit breizgo et star</Name>
+					<members>
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:2:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:3:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:4:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:5:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:6:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:7:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:8:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:9:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:10:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:11:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:32:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:33:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:34:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:35:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:36:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:37:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:38:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:39:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:40:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:41:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:42:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:43:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:44:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:45:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:46:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:47:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:48:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:49:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:50:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:51:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1020:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1021:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1022:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1013:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1014:LOC">
+					</members>
+					<ZoneTopology>tiled</ZoneTopology>
+				</FareZone>
+				<FareZone version="1.0" id="CTW-Tarif-Example:FareZone:003">
+					<Name>zone n°3 du produit breizgo et star</Name>
+					<members>
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1010:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1011:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1012:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1023:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1024:LOC">
+					</members>
+					<ZoneTopology>tiled</ZoneTopology>
+				</FareZone>
+				<FareZone version="1.0" id="CTW-Tarif-Example:FareZone:004">
+					<Name>zone n°4 du produit breizgo et star</Name>
+					<members>
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1009:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1025:LOC">
+						<ScheduledStopPointRef version="1.0" ref="ILLENOO2:ScheduledStopPoint:1026:LOC">
+					</members>
+				<ZoneTopology>tiled</ZoneTopology>
+			</FareZones>	
+		</members>
+		</GeneralFrame>
+	</frames>
+	</CompositeFrame>
+</dataObjects>
+</PublicationDelivery>
