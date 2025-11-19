@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../Documents/GitHub/CEN/NeTEx-next/xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>TT</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+			<frames>
+				<GeneralFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members>
+						
+					<!-- Liste des FareStructureElement de type fr:usage_conditions -->
+						<FareStructureElement id="fr:usage_conditions:01" version="any">
+							<Name>Abonnement 30 jours</Name>
+							<TypeOfFareStructureElementRef ref="fr:usage_conditions:usage_period" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:usage_conditions:01-01" version="any">
+									<limitations>
+										<UsageValidityPeriod id="fr:usage_conditions:01-02" version="any">
+											<Name>30 jours</Name>
+											<ValidityPeriodType>monthlyPass</ValidityPeriodType>
+											<StandardDuration>P30D</StandardDuration>
+										</UsageValidityPeriod>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<!-- Rajouter les triggers de début -->
+						</FareStructureElement>
+						
+						<!-- TO DO : mois calendaire -->
+												
+						<FareStructureElement id="fr:usage_conditions:02" version="any">
+							<Name>2e classe</Name>
+							<TypeOfFareStructureElementRef ref="fr:usage_conditions:class" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:usage_conditions:02-01" version="any">
+									<validityParameters>
+										<FareClass>secondClass</FareClass>
+									</validityParameters>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+						<FareStructureElement id="fr:usage_conditions:03" version="any">
+							<Name>Bus et Tram</Name>
+							<TypeOfFareStructureElementRef ref="fr:usage_conditions:modes" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:usage_conditions:03-01" version="any">
+									<validityParameters>
+										<TransportModes>bus tram shuttle</TransportModes>
+									</validityParameters>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+						<FareStructureElement id="fr:usage_conditions:04" version="any">
+							<Name>Usage illimté</Name>
+							<TypeOfFareStructureElementRef ref="fr:usage_conditions:frequency" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:usage_conditions:04-01" version="any">
+									<limitations>
+										<FrequencyOfUse id="fr:usage_conditions:04-02" version="any">
+											<FrequencyOfUseType>unlimited</FrequencyOfUseType>
+										</FrequencyOfUse>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+						<FareStructureElement id="fr:usage_conditions:05" version="any">
+							<Name>Possibilité de suspension après 3 mois</Name>
+							<TypeOfFareStructureElementRef ref="fr:usage_conditions:suspending" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:usage_conditions:05-01" version="any">
+									<limitations>
+										<Suspending id="fr:usage_conditions:05-02" version="any">
+											<QualificationPeriod>P3M</QualificationPeriod>
+											<MinimumSuspensionPeriod>P1M</MinimumSuspensionPeriod>
+										</Suspending>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="fr:usage_conditions:06" version="any">
+							<Name>Au moins 24h à destination</Name>
+							<TypeOfFareStructureElementRef ref="fr:usage_conditions:stay" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:usage_conditions:06-01" version="any">
+									<limitations>
+										<MinimumStay id="fr:usage_conditions:06-01" version="any">
+											<MinimumStayType>countNightsAway</MinimumStayType>
+											<MinimumNumberOfNightsAway>1</MinimumNumberOfNightsAway>
+										</MinimumStay>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>

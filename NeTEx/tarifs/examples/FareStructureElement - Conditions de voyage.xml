@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../Documents/GitHub/CEN/NeTEx-next/xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>TT</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+			<frames>
+				<GeneralFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members>
+						
+					<!-- Liste des FareStructureElement de type fr:travel_conditions -->
+						<FareStructureElement id="fr:travel_conditions:02" version="any">
+							<Name>Trajets avec correspondance</Name>
+							<TypeOfFareStructureElementRef ref="fr:travel_conditions:interchange" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:travel_conditions:02-01" version="any">
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<Interchanging id="fr:travel_conditions:02-02" version="any">
+											<CanInterchange>true</CanInterchange>
+											<MaximumNumberOfInterchanges>3</MaximumNumberOfInterchanges> <!-- Optionel -->
+											<MaximumTimeToMakeATransfer>PT30M</MaximumTimeToMakeATransfer>  <!-- Optionel -->
+											<!-- Proposition de ne pas conserver les balises 
+												FromMode
+												ToMode
+												CanBreakJourney
+												CrossBorder
+												RegisterBreakOfJourney
+											-->
+										</Interchanging>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="fr:travel_conditions:03" version="any">
+							<Name>Non transférable</Name>
+							<TypeOfFareStructureElementRef ref="fr:travel_conditions:transfer" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:travel_conditions:03-01" version="any">
+									<limitations>
+										<Transferability id="fr:travel_conditions:03-02" version="any">
+											<CanTransfer>false</CanTransfer>
+											<HasTransferFee>false</HasTransferFee> <!-- Optionnel -->
+											<!-- proposition de ne pas conserver les champs 
+											<MaximumNumberOfNamedTransferees>
+											<SharedUsage>
+											-->
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="fr:travel_conditions:04" version="any">
+							<Name>Permet de faire des trajets multiples</Name>
+							<TypeOfFareStructureElementRef ref="fr:travel_conditions:rounding" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:travel_conditions:04-01" version="any">
+									<limitations>
+										<RoundTrip id="fr:travel_conditions:04-02" version="any">
+											<TripType>multiple</TripType>
+											<IsRequired>false</IsRequired> <!-- optionnel -->
+											<!-- proposition de ne pas conserver les champs 
+											DoubleSingleFare
+											ShortTrip
+											-->
+										</RoundTrip>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="fr:travel_conditions:05" version="any">
+							<Name>Ne permet pas des trajets frontaliers (TITRE A CONFIRMER)</Name> <!-- semble une simple indication, pas une interdiction -->
+							<TypeOfFareStructureElementRef ref="fr:travel_conditions:routing" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:travel_conditions:05-01" version="any">
+									<limitations>
+										<Routing id="fr:travel_conditions:05-02" version="any">
+											<CrossBorder>false</CrossBorder>
+											<ReturnRouteIdentical>false<ReturnRouteIdentical> <!-- optionnel -->
+											<ForwardsOnly>true</ForwardsOnly><!-- optionnel -->
+											<!-- proposition de balises non retenues
+											IsRestricted
+											-->
+										</Routing>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="fr:travel_conditions:06" version="any">
+							<Name>Minimum 2 arrêts</Name>
+							<TypeOfFareStructureElementRef ref="fr:travel_conditions:step" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:travel_conditions:06-01" version="any">
+									<limitations>
+										<StepLimit id="fr:travel_conditions:06-02" version="any">
+											<AdjustmentUnits>stops</AdjustmentUnits>
+											<MinimumNumberOfSteps>2</MinimumNumberOfSteps>
+											<Restricted>false</Restricted> <!-- optionnel -->
+											<!-- autres balises possibles
+											<MaximumNumberOfSteps></MaximumNumberOfSteps>
+											-->
+											<!-- proposition de balises non retenues
+											<MaximumNumberOfTrips></MaximumNumberOfTrips>
+											-->
+										</StepLimit>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="fr:travel_conditions:07" version="any">
+							<Name>Permet uniquement un trajet unique</Name>
+							<TypeOfFareStructureElementRef ref="fr:travel_conditions:rounding" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="fr:travel_conditions:07-01" version="any">
+									<limitations>
+										<RoundTrip id="fr:travel_conditions:07-02" version="any">
+											<TripType>single</TripType>
+											<!-- déjà traité plus haut -->
+										</RoundTrip>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
