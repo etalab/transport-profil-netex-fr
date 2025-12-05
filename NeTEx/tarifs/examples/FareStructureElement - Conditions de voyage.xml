@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../Documents/GitHub/CEN/NeTEx-next/xsd/NeTEx_publication.xsd">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../NeTEx/xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>TT</ParticipantRef>
 	<dataObjects>
@@ -8,16 +10,16 @@
 				<GeneralFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
 					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
 					<members>
-						
+								
 					<!-- Liste des FareStructureElement de type fr:travel_conditions -->
-						<FareStructureElement id="fr:travel_conditions:02" version="any">
+						<FareStructureElement id="codespace:FareStructureElement:Interchanging-01" version="any">
 							<Name>Trajets avec correspondance</Name>
-							<TypeOfFareStructureElementRef ref="fr:travel_conditions:interchange" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:Interchanging" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:travel_conditions:02-01" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:Interchanging-01" version="any">
 									<LimitationGroupingType>AND</LimitationGroupingType>
 									<limitations>
-										<Interchanging id="fr:travel_conditions:02-02" version="any">
+										<Interchanging id="codespace:Interchanging:01" version="any">
 											<CanInterchange>true</CanInterchange>
 											<MaximumNumberOfInterchanges>3</MaximumNumberOfInterchanges> <!-- Optionel -->
 											<MaximumTimeToMakeATransfer>PT30M</MaximumTimeToMakeATransfer>  <!-- Optionel -->
@@ -34,18 +36,18 @@
 							</validityParameterAssignments>
 						</FareStructureElement>
 
-						<FareStructureElement id="fr:travel_conditions:03" version="any">
+						<FareStructureElement id="codespace:FareStructureElement:Transferability-01" version="any">
 							<Name>Non transférable</Name>
-							<TypeOfFareStructureElementRef ref="fr:travel_conditions:transfer" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:Transferability" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:travel_conditions:03-01" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:Transferability-01" version="any">
 									<limitations>
-										<Transferability id="fr:travel_conditions:03-02" version="any">
+										<Transferability id="codespace:Transferability:01" version="any">
 											<CanTransfer>false</CanTransfer>
 											<HasTransferFee>false</HasTransferFee> <!-- Optionnel -->
 											<!-- proposition de ne pas conserver les champs 
 											<MaximumNumberOfNamedTransferees>
-											<SharedUsage>
+											<SharedUsage> <- A reprendre
 											-->
 										</Transferability>
 									</limitations>
@@ -53,13 +55,13 @@
 							</validityParameterAssignments>
 						</FareStructureElement>
 
-						<FareStructureElement id="fr:travel_conditions:04" version="any">
+						<FareStructureElement id="codespace:FareStructureElement:RoundTrip-01" version="any">
 							<Name>Permet de faire des trajets multiples</Name>
-							<TypeOfFareStructureElementRef ref="fr:travel_conditions:rounding" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:RoundTrip" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:travel_conditions:04-01" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:RoundTrip-01" version="any">
 									<limitations>
-										<RoundTrip id="fr:travel_conditions:04-02" version="any">
+										<RoundTrip id="codespace:RoundTrip:01" version="any">
 											<TripType>multiple</TripType>
 											<IsRequired>false</IsRequired> <!-- optionnel -->
 											<!-- proposition de ne pas conserver les champs 
@@ -72,16 +74,16 @@
 							</validityParameterAssignments>
 						</FareStructureElement>
 
-						<FareStructureElement id="fr:travel_conditions:05" version="any">
+						<FareStructureElement id="codespace:FareStructureElement:Routing-01" version="any">
 							<Name>Ne permet pas des trajets frontaliers (TITRE A CONFIRMER)</Name> <!-- semble une simple indication, pas une interdiction -->
-							<TypeOfFareStructureElementRef ref="fr:travel_conditions:routing" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:Routing" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:travel_conditions:05-01" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:Routing-01" version="any">
 									<limitations>
-										<Routing id="fr:travel_conditions:05-02" version="any">
-											<CrossBorder>false</CrossBorder>
-											<ReturnRouteIdentical>false<ReturnRouteIdentical> <!-- optionnel -->
+										<Routing id="codespace:Routing:01" version="any">
+											<ReturnRouteIdentical>false</ReturnRouteIdentical> <!-- optionnel -->
 											<ForwardsOnly>true</ForwardsOnly><!-- optionnel -->
+											<CrossBorder>false</CrossBorder>
 											<!-- proposition de balises non retenues
 											IsRestricted
 											-->
@@ -91,16 +93,16 @@
 							</validityParameterAssignments>
 						</FareStructureElement>
 
-						<FareStructureElement id="fr:travel_conditions:06" version="any">
+						<FareStructureElement id="codespace:FareStructureElement:StepLimit-01" version="any">
 							<Name>Minimum 2 arrêts</Name>
-							<TypeOfFareStructureElementRef ref="fr:travel_conditions:step" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:StepLimit" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:travel_conditions:06-01" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:StepLimit-01" version="any">
 									<limitations>
 										<StepLimit id="fr:travel_conditions:06-02" version="any">
+											<Restricted>false</Restricted> <!-- optionnel -->
 											<AdjustmentUnits>stops</AdjustmentUnits>
 											<MinimumNumberOfSteps>2</MinimumNumberOfSteps>
-											<Restricted>false</Restricted> <!-- optionnel -->
 											<!-- autres balises possibles
 											<MaximumNumberOfSteps></MaximumNumberOfSteps>
 											-->
@@ -108,21 +110,6 @@
 											<MaximumNumberOfTrips></MaximumNumberOfTrips>
 											-->
 										</StepLimit>
-									</limitations>
-								</GenericParameterAssignment>
-							</validityParameterAssignments>
-						</FareStructureElement>
-
-						<FareStructureElement id="fr:travel_conditions:07" version="any">
-							<Name>Permet uniquement un trajet unique</Name>
-							<TypeOfFareStructureElementRef ref="fr:travel_conditions:rounding" versionRef="any" />
-							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:travel_conditions:07-01" version="any">
-									<limitations>
-										<RoundTrip id="fr:travel_conditions:07-02" version="any">
-											<TripType>single</TripType>
-											<!-- déjà traité plus haut -->
-										</RoundTrip>
 									</limitations>
 								</GenericParameterAssignment>
 							</validityParameterAssignments>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../Documents/GitHub/CEN/NeTEx-next/xsd/NeTEx_publication.xsd">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../NeTEx/xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>TT</ParticipantRef>
 	<dataObjects>

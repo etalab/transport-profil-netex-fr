@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../Documents/GitHub/CEN/NeTEx-next/xsd/NeTEx_publication.xsd">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../NeTEx/xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>TT</ParticipantRef>
 	<dataObjects>
@@ -11,13 +13,13 @@
 						
 						
 					<!-- Liste des FareStructureElement de type fr:sale_conditions -->
-						<FareStructureElement id="fr:sale_conditions:01" version="any">
+						<FareStructureElement id="codespace:FareStructureElement:Exchanging-01" version="any">
 							<Name>Ne peut être échangé</Name>
-							<TypeOfFareStructureElementRef ref="fr:sale_conditions:exchange" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:Exchanging" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:sale_conditions:01-01" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:Exchanging-01" version="any">
 									<limitations>
-										<Exchanging id="fr:sale_conditions:01-02" version="any">
+										<Exchanging id="codespace:Exchanging:01" version="any">
 											<Allowed>none</Allowed>
 										</Exchanging>
 									</limitations>
@@ -25,13 +27,13 @@
 							</validityParameterAssignments>
 						</FareStructureElement>
 
-						<FareStructureElement id="fr:sale_conditions:02" version="any">
+						<FareStructureElement id="codespace:FareStructureElement:Refunding-01" version="any">
 							<Name>Ne peut être remboursé</Name>
-							<TypeOfFareStructureElementRef ref="fr:sale_conditions:refund" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:Refunding" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:sale_conditions:02-01" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:Refunding-01" version="any">
 									<limitations>
-										<Refunding id="fr:sale_conditions:02-02" version="any">
+										<Refunding id="codespace:Refunding:01" version="any">
 											<Allowed>none</Allowed>
 										</Refunding>
 									</limitations>
@@ -39,28 +41,66 @@
 							</validityParameterAssignments>
 						</FareStructureElement>
 
-						<FareStructureElement id="fr:sale_conditions:03" version="any">
+						<!-- Alternative n°1 permettant la gestion des carnets de ticket -->
+						<!-- Utilisation de la règle "un seul type d'objet par FSE" -->
+						
+						<FareStructureElement id="codespace:FareStructureElement:QualityStructureFactor-01" version="any">
 							<Name>Carnet de 20</Name>
-							<TypeOfFareStructureElementRef ref="fr:carnet" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:QualityStructureFactor" versionRef="any" />
 							<qualityStructureFactors>
-								<QualityStructureFactor id="fr:sale_conditions:03-01" version="any">
+								<QualityStructureFactor id="codespace:QualityStructureFactor:01-01" version="any">
 									<Value>20</Value>
-									<!-- proposition d'ajouter un TypeOfFareStructureFactorRef indiquant 
-									un nombre de ticket dans un carnet 
-									et de décoreller le QualityStructureFactor du UsageValidityPeriod
-									-->
+								</QualityStructureFactor>
+							</qualityStructureFactors>
+						</FareStructureElement>
+						
+						<FareStructureElement id="codespace:FareStructureElement:UsageValidityPeriod-01" version="any">
+							<TypeOfFareStructureElementRef ref="FR:UsageValidityPeriod" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:UsageValidityPeriod-01" version="any">
+									<limitations>
+										<UsageValidityPeriod id="fr:sale_conditions:03-03" version="any">
+											<ValidityPeriodType>carnet</ValidityPeriodType>
+											<EndDate>2025-01-28</EndDate>
+										</UsageValidityPeriod>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<!-- Alternative n°2  pour les carnets de tickets -->
+						<!-- Utilisation d'un type spécifique "FR:CarnetDeTicket", avec 2ème FSE complémentaire avec un objet de même type -->
+						<FareStructureElement id="codespace:FareStructureElement:CarnetDeTicket:01" version="any">
+							<TypeOfFareStructureElementRef ref="FR:CarnetDeTicket" versionRef="any" />
+							<qualityStructureFactors>
+								<QualityStructureFactor id="codespace:QualityStructureFactor:01-0X" version="any">
+									<Value>20</Value>
 								</QualityStructureFactor>
 							</qualityStructureFactors>
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="fr:sale_conditions:03-02" version="any">
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:UsageValidityPeriod-XX" version="any">
 									<limitations>
-										<UsageValidityPeriod id="fr:sale_conditions:03-03" version="any">
+										<UsageValidityPeriod id="fr:sale_conditions:03-0X" version="any">
 											<ValidityPeriodType>carnet</ValidityPeriodType>
 										</UsageValidityPeriod>
 									</limitations>
 								</GenericParameterAssignment>
 							</validityParameterAssignments>
 						</FareStructureElement>
+
+						<FareStructureElement id="codespace:FareStructureElement:UsageValidityPeriod-02" version="any">
+							<TypeOfFareStructureElementRef ref="FR:UsageValidityPeriod" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="codespace:GenericParameterAssignment:UsageValidityPeriod-02" version="any">
+									<limitations>
+										<UsageValidityPeriod id="fr:sale_conditions:06-03" version="any">
+											<EndDate>2025-01-28</EndDate>
+										</UsageValidityPeriod>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
 
 					</members>
 				</GeneralFrame>
