@@ -265,3 +265,39 @@ un `RuleStepResult`.
 </SalesOfferPackagePrice>
 ```
 
+## Comment indiquer que la validation d'un titre est obligatoire ?
+La validation obligatoire est à indiquer par la propriété `ActivationMeans` dans un `FareStructureElement` contenant un `GenericParameterAssignment/UsageValidityPeriod`.
+
+```xml
+<FareStructureElement id="Exemple:FareStructureElement:009:LOC" version="any">
+    <Name>Validation sur valideur</Name>
+    <TypeOfFareStructureElementRef ref="fr:id_en_cours_de_definition_en_GT7" versionRef="any" />
+    <validityParameterAssignments>
+        <GenericParameterAssignment id="Exemple:GenericParameterAssignment:008:LOC" version="any">						
+            <limitations>
+                <UsageValidityPeriod id="Exemple:UsageValidityPeriod:002:LOC" version="any">
+                    <Name>Activation sur valideur</Name>
+                    <ActivationMeans>useOfValidator</ActivationMeans>
+                </UsageValidityPeriod>
+            </limitations>
+        </GenericParameterAssignment>
+    </validityParameterAssignments>		
+</FareStructureElement>
+```
+
+Pour préciser que l'absence de validation peut entraine une verbalisation : 
+```xml
+<FareStructureElement id="Exemple:FareStructureElement:008:LOC" version="any"> 
+    <Name>Verbalisation en cas de non validation</Name>
+    <TypeOfFareStructureElementRef ref="fr:id_en_cours_de_definition_en_GT7" versionRef="any" />
+    <validityParameterAssignments>
+        <GenericParameterAssignment id="Exemple:GenericParameterAssignment:007:LOC" version="any">
+            <limitations>
+                <PenaltyPolicy id="Exemple:PenaltyPolicy:001:LOC" version="any">
+                    <PenaltyPolicyType>noValidation</PenaltyPolicyType>
+                </PenaltyPolicy>
+            </limitations>
+        </GenericParameterAssignment>
+    </validityParameterAssignments>
+</FareStructureElement>
+```
