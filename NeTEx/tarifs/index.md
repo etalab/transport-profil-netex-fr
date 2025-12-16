@@ -1449,234 +1449,42 @@ construction des structures tarifaires.
 
 <div class='table-title'>FareStructureElement – Element</div>
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classification</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em><u>PriceableObject</u></em></td>
-<td>::&gt;</td>
-<td>FARE STRUCTURE ELEMENT hérite de PRICEABLE
-OBJECT<em><strong>.</strong></em></td>
-</tr>
-<tr class="even">
-<td>« PK »</td>
-<td><em><strong>id</strong></em></td>
-<td><em>FareStructureElementIdType</em></td>
-<td>1:1</td>
-<td>Identifiant de FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« enum »</td>
-<td><em><strong>TariffBasis</strong></em></td>
-<td><em>TariffBasisEnum</em></td>
-<td>0:1</td>
-<td><p>Base tarifaire à utiliser pour cet élément</p>
-<blockquote>
-<p><em>Flat (constant)</em></p>
-<p><em>Distance (distance)</em></p>
-<p><em>unitSection (section)</em></p>
-<p><em>zone (zonal)</em></p>
-<p><em>zoneToZone (zone à zone)</em></p>
-<p><em>pointToPoint (point à point)</em></p>
-<p><em>route (itinéraire)</em></p>
-<p><em>tour (tour)</em></p>
-<p><em>group (group)</em></p>
-<p><em>discount (rabais)</em></p>
-<p><em>period (période)</em></p>
-<p><em>free (gratuit)</em></p>
-<p><em>other (autre)</em></p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>TypeOfFareStructureElementRef</strong></em></td>
-<td><em>TypeOfFareStructureElementRef</em></td>
-<td>0:1</td>
-<td>Type ouvert associé à l’élément .</td>
-</tr>
-<tr class="odd">
-<td>XGRP</td>
-<td><em><strong>FareStructureElementFactorGroup</strong></em></td>
-<td><em>xmlGroup</em></td>
-<td>0:1</td>
-<td>FARE STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>XGRP</td>
-<td><em><strong>FareStructureComponentGroup</strong></em></td>
-<td><em>xmlGroup</em></td>
-<td>0:1</td>
-<td>FARE STRUCTURE COMPONENTs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation**  | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
+| ------------------- | --------------------------- | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| ::&gt; | ::&gt; | <u>*PriceableObject*</u> | ::&gt; | FARE STRUCTURE ELEMENT hérite de PRICEABLE OBJECT |
+| « PK » | ***id*** | *FareStructureElementIdType* | 1:1 | Identifiant de FARE STRUCTURE ELEMENT |
+| « enum » | ***TariffBasis*** | *TariffBasisEnum* | 0:1 | <p>Base tarifaire à utiliser pour cet élément</p><p><ul><li>Flat (constant)</li><li>Distance (distance)</li><li>unitSection (section)</li><li>zone (zonal)</li><li>zoneToZone (zone à zone)</li><li>pointToPoint (point à point)</li><li>route (itinéraire)</li><li>tour (tour)</li><li>group (group)</li><li>discount (rabais)</li><li>period (période)</li><li>free (gratuit)</li><li>other (autre)</li></ul></p> |
+| | ***TypeOfFareStructureElementRef*** | *TypeOfFareStructureElementRef* | 0:1 | Type ouvert associé à l’élément |
+| XGRP | ***FareStructureElementFactorGroup*** | *xmlGroup* | 0:1 | FARE STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| XGRP | ***FareStructureComponentGroup*** | *xmlGroup* | 0:1 | FARE STRUCTURE COMPONENTs associé au FARE STRUCTURE ELEMENT |
 
 <div class='table-title'>FareStructureElementFactorGroup – Group</div>
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classification</strong></th>
-<th colspan="2"><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td colspan="3"></td>
-<td><em>Choice</em></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>GeographicalIntervalRef</strong></em></td>
-<td><em>GeographicalIntervalRef</em></td>
-<td>0:1</td>
-<td><p>Reference au GEOGRAPHICAL INTERVAL associé au FARE STRUCTURE
-ELEMENT.</p>
-<p><mark>Note : de façon générale on n’utilisera les références que s’il y
-a effectivement réutilisation (donc ici on préférera
-<em><strong>geographicalIntervals</strong> à
-<strong>GeographicalIntervalRef</strong> sauf si les mêmes
-<strong>GeographicalInterval</strong> sont utilisés à plusieurs
-reprises)</em></mark></p></td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>geographicalIntervals</strong></em></td>
-<td><em><u>GeographicalInterval</u></em> |
-<em>GeographicalIntervalRef</em></td>
-<td>0:*</td>
-<td>GEOGRAPHICAL INTERVALs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>c</strong></em></td>
-<td><em><strong>geographicalStructureFactors</strong></em></td>
-<td><em><u>GeographicalStructureFactor</u> |
-GeographicalStructureFactorRef</em></td>
-<td>0:*</td>
-<td>GEOGRAPHICAL STRUCTURE FACTORs associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td><em>Choice</em></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>TimeIntervalRef</strong></em></td>
-<td><em>TimeIntervalRef</em></td>
-<td>0:1</td>
-<td>Référence au TIME INTERVAL ass associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>timeIntervals</strong></em></td>
-<td><em><u>TimeInterval</u> | TimeIntervalRef</em></td>
-<td>0:*</td>
-<td>TIME STRUCTURE INTERVALs associé au the FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>c</strong></em></td>
-<td><em><strong>timeStructureFactors</strong></em></td>
-<td><em><u>TimeStructureFactor</u> | TimeStructureFactorRef</em></td>
-<td>0:*</td>
-<td>TIME STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td><em>Choice</em></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>QualityStructureFactorRef</strong></em></td>
-<td><em>QualityStructureFactorRef</em></td>
-<td>0:1</td>
-<td>Référence au QUALITY STRUCTURE FACTOR associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>qualityStructureFactors</strong></em></td>
-<td><em><u>QualityStructureFactor</u> | QualityStructureFactor</em></td>
-<td>0:*</td>
-<td>QUALITY STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td><em>Choice</em></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>DistanceMatrixElementRef</strong></em></td>
-<td><em>DistanceMatrixElementRef</em></td>
-<td>0:1</td>
-<td>Référence au DISTANCE MATRIX ELEMENT associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>distanceMatrixElements</strong></em></td>
-<td><em><u>DistanceMatrixElement</u> |
-DistanceMatrixElementRef</em></td>
-<td>0:*</td>
-<td>DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>c</strong></em></td>
-<td><em><strong>GroupOfDistanceMatrixElementsRef</strong></em></td>
-<td><em>GroupOfDistanceMatrixElementsRef</em></td>
-<td>0:1</td>
-<td>Référence au GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE
-STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>d</strong></em></td>
-<td><em><strong>GroupOfDistanceMatrixElements</strong></em></td>
-<td><em>GroupOfDistanceMatrixElements</em></td>
-<td>0:1</td>
-<td>GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation**  | | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
+| ------------------- | --- | ------------------------ | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***GeographicalIntervalRef*** | *GeographicalIntervalRef* | 0:1 | <p>Référence au GEOGRAPHICAL INTERVAL associé au FARE STRUCTURE ELEMENT.</p><p><span class="hl">Note : de façon générale on n’utilisera les références que s’il y a effectivement réutilisation (donc ici on préférera **geographicalIntervals** à **GeographicalIntervalRef** sauf si les mêmes **GeographicalInterval** sont utilisés à plusieurs reprises)</span></p> |
+| « cntd » | ***b*** | ***geographicalIntervals*** | <u>*GeographicalInterval*</u> / *GeographicalIntervalRef* | 0:\* | GEOGRAPHICAL INTERVALs associé au FARE STRUCTURE ELEMENT |
+| « cntd » | ***c*** | ***geographicalStructureFactors*** | <u>*GeographicalStructureFactor*</u> / *GeographicalStructureFactorRef*</td> | 0:\* | GEOGRAPHICAL STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***TimeIntervalRef*** | *TimeIntervalRef* | 0:1 | Référence au TIME INTERVAL associé au FARE STRUCTURE ELEMENT |
+| « cntd » | ***b*** | ***timeIntervals***  | <u>*TimeInterval*</u> / *TimeIntervalRef* | 0:\* | TIME STRUCTURE INTERVALs associé au FARE STRUCTURE ELEMENT. |
+| « cntd » | ***c*** | ***timeStructureFactors*** | <u>*TimeStructureFactor*</u> / *TimeStructureFactorRef* | 0:\* | TIME STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***QualityStructureFactorRef*** | *QualityStructureFactorRef* | 0:1 | Référence au QUALITY STRUCTURE FACTOR associé au FARE STRUCTURE ELEMENT |
+| « cntd » | ***b*** | ***qualityStructureFactors*** | <u>*QualityStructureFactor*</u> / *QualityStructureFactor* | 0:\* | QUALITY STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***DistanceMatrixElementRef*** | *DistanceMatrixElementRef* | 0:1 | Référence au DISTANCE MATRIX ELEMENT associé au FARE STRUCTURE ELEMENT |
+| « FK » | ***b*** | ***distanceMatrixElements*** | <u>*DistanceMatrixElement*</u> / *DistanceMatrixElementRef* | 0:\* | DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT |
+| « FK » | ***c*** | ***GroupOfDistanceMatrixElementsRef*** | *GroupOfDistanceMatrixElementsRef* | 0:1 | Référence au GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT |
+| « FK » | ***d*** | ***GroupOfDistanceMatrixElements*** | *GroupOfDistanceMatrixElements* | 0:1 | GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT |
 
 <div class='table-title'>FareStructureComponentGroup – Group</div>
 
 | **Classification** | **Name**                              |                                           | **Type**                         | **Cardinality** | **Description**                                                                                                                                              |
 |--------------------|---------------------------------------|-------------------------------------------|----------------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | « cntd »           | ***fareStructureElementsInSequence*** |                                           | *FareStructureElementInSequence* | 0:\*            | Ensemble de FARE STRUCTURE ELEMENTS IN SEQUENCE constituant FARE STRUCTURE ELEMENT.                                                                          |
-|                    |                                       |                                           | *Choice*                         |                 | Soit plusieurs paramètres enveloppés dans une balise, soit un seul paramètre (une optimisation).                                                             |
+|                                       | *Choice*                         |  Soit plusieurs paramètres enveloppés dans une balise, soit un seul paramètre (une optimisation).                                                             | | |
 | « cntd »           | ***a***                               | ***validityParameterAssignments***        | *AccessRightParameterAssignment* | 0:\*            | GENERIC PARAMETER ASSIGNMENTs associés au FARE STRUCTURE ELEMENT.                                                                                            |
 | « cntd »           | ***b***                               | ***GenericParameterAssignment***          | *GenericParameterAssignment*     | 0:1             | GENERIC PARAMETER ASSIGNMENT unique associé au FARE STRUCTURE ELEMENT.                                                                                       |
 | « cntd »           | ***c***                               | ***GenericParameterAssignmentInContext*** | *GenericParameterAssignment*     | 0:1             | GENERIC PARAMETER ASSIGNMENT unique associé au FARE STRUCTURE ELEMENT. Aucun ID ne doit être fourni - sera déduit des valeurs d'affectation. (OPTIMISATION). |
