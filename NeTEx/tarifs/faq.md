@@ -10,17 +10,17 @@ Le profil France fait le choix d'utiliser le `SalesOfferPackage` et non pas dire
 
 Voici un extrait de fichier XML reprenant les informations ci-dessus:
 ```xml
-<FareTable id="fr:faretable:template:01" version="any">
+<FareTable id="exemple:FareTable:template:01" version="any">
     <Name>FareTable name</Name>
     <cells>
-        <Cell id="fr:faretablecell:template:01" version="any">
+        <Cell id="exemple:Cell:01" version="any">
             <Name>Nom du titre mis à la vente</Name>
-            <SalesOfferPackagePrice id="fr:salesofferpackageprice:template:01" version="any">
+            <SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
                 <Amount>38.80</Amount>
                 <Currency>EUR</Currency>
             </SalesOfferPackagePrice>
-            <SalesOfferPackageRef ref="fr:salesofferpackage:template:01" />
-            <UserProfileRef ref="fr:userprofile:template:01" version="any" />
+            <SalesOfferPackageRef ref="exemple:SalesOfferPackageRef:01" />
+            <UserProfileRef ref="exemple:UserProfile:01" version="any" />
         </Cell>
     <cells>
 </FareTable>
@@ -31,7 +31,7 @@ Le fait qu'un voyageur doive être accompagné est indiqué au travers d'une not
 
 Voici un exemple avec un profile moins de 26 ans :
 ```xml
-<UserProfile id="FR-Tarif-Example:UserProfile:003:LOC" version="any">
+<UserProfile id="exemple:UserProfile:01" version="any">
     <!--50% pour les enfants entre 4 et 10 ans -->
     <Name>Tarif -26 ans</Name>
     <UserType>YoungPerson</UserType>  
@@ -40,8 +40,8 @@ Voici un exemple avec un profile moins de 26 ans :
     <MaximumAge>10</MaximumAge>
     <ProofRequired>IdentityDocument</ProofRequired>
     <noticeAssignments>
-        <NoticeAssignment id="fr:niticeassignement:template:01" version="any">
-            <NoticeRef ref="fr:notice:template:01" version="any" />
+        <NoticeAssignment id="exemple:NoticeAssignment:01" version="any">
+            <NoticeRef ref="exemple:Notice:01" version="any" />
         </NoticeAssignment>
     </noticeAssignments>
 </UserProfile>
@@ -56,11 +56,11 @@ Il est important pour un `SalesOfferPackage` de présenter :
 - les éléments de l'offre (`SalesOfferPackageElement`), contenant en particulier le produit tarifaire (`FareProduct`) et le support du titre (`TypeOfTravelDocument`)
 
 ```xml
-<SalesOfferPackage id="fr:salesofferpackage:SMTAML:01" version="any">
-    <Name>T-Libr S - Côtière</Name>
+<SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
+    <Name>Nom de l'offre mise à la vente</Name>
     <noticeAssignments>
-        <NoticeAssignment id="fr:fareproduct:SMTAML:01-02" version="any">
-            <NoticeRef ref="fr:notice:SMTAML:01" version="any" />
+        <NoticeAssignment id="exemple:NoticeAssignment:01" version="any">
+            <NoticeRef ref="exemple:Notice:01" version="any" />
         </NoticeAssignment>
     </noticeAssignments>
     <ConditionSummary>
@@ -74,12 +74,12 @@ Il est important pour un `SalesOfferPackage` de présenter :
         <AvailableOnSubscription>true</AvailableOnSubscription>
     </ConditionSummary>
     <distributionAssignments>
-        <DistributionAssignment id="fr:fareproduct:SMTAML:01-03" version="any">
-            <DistributionChannelRef ref="fr:distributionchannel:SMTAML:01" />
+        <DistributionAssignment id="exemple:DistributionAssignment:01" version="any">
+            <DistributionChannelRef ref="exemple:DistributionChannel:01" />
         </DistributionAssignment>
     </distributionAssignments>
     <salesOfferPackageElements>
-        <SalesOfferPackageElementRef ref="fr:salesofferpackageelement:SMTAML:01" />
+        <SalesOfferPackageElementRef ref="exemple:SalesOfferPackageElement:01" />
     </salesOfferPackageElements>
 </SalesOfferPackage>
 ```
@@ -93,9 +93,9 @@ Cette information  permet d'indiquer qu'un titre mensuel est mis à la vente à 
 
 Exemple :
 ```xml
-<SalesOfferPackage id="fr:salesofferpackage:template:01" version="any">
+<SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
     <validityConditions>
-        <AvailabilityCondition id="fr:availabilityconditions:template:01">
+        <AvailabilityCondition id="exemple:AvailabilityCondition:01">
             <FromDate>2025-01-01</FromDate>
             <ToDate>2025-12-31</ToDate>
         </AvailabilityCondition>
@@ -115,7 +115,7 @@ Cette information ne doit pas être indiquée sur le FareProduct.
 
 Exemple :
 ```xml
-<SalesOfferPackage id="fr:salesofferpackage:template:01" version="any">
+<SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
     <validityConditions>
         <ValidBetween>
             <FromDate>2025-01-01</FromDate>
@@ -131,19 +131,19 @@ Exemple :
 Cette information est associée au produit tarifaire (`PreassignedFareProduct`) contenu dans l'offre à la vente (`SalesOfferPackage`). Pour indiquer cette information, il convient d'utiliser `ValidableElement/FareStructureElement` (ex. time Interval).
 
 ```xml
-<TimeInterval id="fr:timeinterval:template:01" version="any">
+<TimeInterval id="exemple:TimeInterval:template:01" version="any">
     <Description>2h de trajet sur l'ensemble de la zone</Description>
     <Duration>PT2H</Duration> 
 </TimeInterval>
-<FareStructureElement id="fr:farestructureelement:template:01" version="any">
-    <TimeIntervalRef ref="fr:timeinterval:template:01"/>
+<FareStructureElement id="exemple:FareStructureElement:01" version="any">
+    <TimeIntervalRef ref="exemple:TimeInterval:01"/>
 </FareStructureElement>
-<PreassignedFareProduct id="fr:fareproduct:template:01" version="any">
+<PreassignedFareProduct id="exemple:PreassignedFareProduct:01" version="any">
 <!-- -->
     <validableElements>
-        <ValidableElement id="fr:validableelement:template:01" version="any">
+        <ValidableElement id="exemple:ValidableElement:01" version="any">
             <fareStructureElements>
-                <FareStructureElementRef ref="fr:farestructureelement:template:01" version="any" />
+                <FareStructureElementRef ref="exemple:FareStructureElement:01" version="any" />
             </fareStructureElements>
         </ValidableElement>
     </validableElements>
@@ -154,13 +154,13 @@ Cette information est associée au produit tarifaire (`PreassignedFareProduct`) 
 ### Durée de validité du titre dans les autres cas (semaine, mensuel, etc.)
 
 ```xml
-<FareStructureElement id="fr:usage_conditions:01" version="any">
+<FareStructureElement id="exemple:FareStructureElement:01" version="any">
     <Name>Abonnement 30 jours</Name>
-    <TypeOfFareStructureElementRef ref="fr:usage_conditions:usage_period" versionRef="any" />
+    <TypeOfFareStructureElementRef ref="exemple:TypeOfFareStructureElement:usage_period" versionRef="any" />
     <validityParameterAssignments>
-        <GenericParameterAssignment id="fr:usage_conditions:01-01" version="any">
+        <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
             <limitations>
-                <UsageValidityPeriod id="fr:usage_conditions:01-02" version="any">
+                <UsageValidityPeriod id="exemple:UsageValidityPeriod:01" version="any">
                     <UsageTrigger>startOfPeriod</UsageTrigger>
                     <ValidityPeriodType>monthlyPass</ValidityPeriodType>
                     <StandardDuration>PT1M</StandardDuration>
@@ -176,7 +176,7 @@ Dans la cellule (`Cell`), le prix est porté par l'objet `SalesOfferPackagePrice
 créer des cellules différentes pour les différents prix des associations entre `SalesOfferPackage` et `UserProfile`.
 
 ```xml
-<SalesOfferPackagePrice id="fr:faretable:SMTAML:01-02" version="any">
+<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
     <ValidBetween>
         <FromDate>2025-01-01</FromDate>
         <ToDate>2025-12-31</ToDate>
@@ -240,20 +240,18 @@ La notion de carnet de tickets est représentée par un object `FareStructureEle
 
 Voici un exemple :
 ```xml
-<FareStructureElement version="1.0" id="idfm:t_plus_carnet@conditions_of_sale">
+<FareStructureElement version="1.0" id="exemple:FareStructureElement:01">
     <Name>Carnet de 10 Ticket</Name>
-    <TypeOfFareStructureElementRef versionRef="efp:v1.0" ref="efp:conditions_of_sale"/>
+    <TypeOfFareStructureElementRef ref="exemple:TypeOfFareStructureElement" versionRef="any"/>
     <qualityStructureFactors>
-        <QualityStructureFactor version="1.0" id="idfm:t_plus_carnet@10_units">
-            <Name>10 T+ tickets</Name>
-            <Url>https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/ticket-t-sur-passe-navigo-easy-et-sur-telephone</Url>
+        <QualityStructureFactor version="1.0" id="exemple:QualityStructureFactor:01">
             <Value>10</Value>
         </QualityStructureFactor>
     </qualityStructureFactors>
     <validityParameterAssignments>
-        <GenericParameterAssignment id="FR-Tarif-Example:GenericParameterAssignment:002:LOC" version="any" order="1">
+        <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any" order="1">
             <limitations>
-                <UsageValidityPeriod id="FR-Tarif-Example:UsageValidityPeriod:001:LOC" version="any">
+                <UsageValidityPeriod id="exemple:UsageValidityPeriod:01" version="any">
                     <ValidityPeriodType>carnet</ValidityPeriodType>
                 </UsageValidityPeriod>
             </limitations>
@@ -268,14 +266,14 @@ Les exemples ci-dessous n'indiquent que l'autorisation de la correspondance, les
 
 Cas d'un ticket autorisant les correspondances, avec une durée maximale (par exemple 1h) : 
 ```xml
-<FareStructureElement id="codespace:FareStructureElement:Interchanging-01" version="any">
+<FareStructureElement id="exemple:FareStructureElement:01" version="any">
     <Name>Trajets avec correspondance</Name>
     <TypeOfFareStructureElementRef ref="FR:Interchanging" versionRef="any" />
     <validityParameterAssignments>
-        <GenericParameterAssignment id="codespace:GenericParameterAssignment:Interchanging-01" version="any">
+        <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
             <LimitationGroupingType>AND</LimitationGroupingType>
             <limitations>
-                <Interchanging id="codespace:Interchanging:01" version="any">
+                <Interchanging id="exemple:Interchanging:01" version="any">
                     <CanInterchange>true</CanInterchange>
                     <MaximumNumberOfInterchanges>3</MaximumNumberOfInterchanges> <!-- Optionel -->
                     <MaximumTimeToMakeATransfer>PT30M</MaximumTimeToMakeATransfer>  <!-- Optionel -->
@@ -288,13 +286,13 @@ Cas d'un ticket autorisant les correspondances, avec une durée maximale (par ex
 
 Cas d'un ticket de type "journée" permettant autant de trajet que souhaité durant une periode :
 ```xml
-<FareStructureElement id="fr:usage_conditions:04" version="any">
+<FareStructureElement id="exemple:FareStructureElement:01" version="any">
     <Name>Usage illimté</Name>
-    <TypeOfFareStructureElementRef ref="fr:usage_conditions:frequency" versionRef="any" />
+    <TypeOfFareStructureElementRef ref="FR:TypeOfFareStructureElement:01" versionRef="any" />
     <validityParameterAssignments>
-        <GenericParameterAssignment id="fr:usage_conditions:04-01" version="any">
+        <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
             <limitations>
-                <FrequencyOfUse id="fr:usage_conditions:04-02" version="any">
+                <FrequencyOfUse id="exemple:FrequencyOfUse:01" version="any">
                     <FrequencyOfUseType>unlimited</FrequencyOfUseType>
                 </FrequencyOfUse>
             </limitations>
@@ -306,21 +304,22 @@ Cas d'un ticket de type "journée" permettant autant de trajet que souhaité dur
 ## Comment indiquer la TVA ?
 
 Le profil France propose des tarifs TTC. La communication sur les informations de TVA peut 
-entrainer des risques de mauvaise comprehension sur les informations financières. Les inforamtions 
+entrainer des risques de mauvaise comprehension sur les informations financières. Les informations 
 de TVA ne sont donc pas requises par le profil France.
 
 Dans le cas du choix de commniquer tout de même sur le taux de TVA,  il est possible d'utiliser dans un `SalesOfferPackagePrice`
-un `RuleStepResult`. Le pourcentage est direct (sans le signe % et san signe négatif) et il est fortement recommandé 
+un `RuleStepResult`. Le pourcentage est direct (sans le signe % et sans signe négatif) et il est fortement recommandé 
 de communiquer sur la valorisation du montant de la TVA.
+Ce principe est commun sur tout les types de taxes. 
 
 ```xml
-<TypeOfPricingRule id="FR:TypeOfPricingRule:TVA" /> <!-- commun au profil France pour identifier les taux de TVA -->
-<DiscountingRule version="any" id="fr:discountingrule:template:01">
+<TypeOfPricingRule id="FR:TypeOfPricingRule:TVA" version="any"/> <!-- Cette valeur sera à uniformiser dans le profil France pour identifier les taux de TVA -->
+<DiscountingRule version="any" id="exemple:DiscountingRule:01">
     <Name>TVA 10%</Name>
     <DiscountAsPercentage>10</DiscountAsPercentage>
-    <DiscountAsValue>1.3<DiscountAsValue>
+    <DiscountAsValue>1.3</DiscountAsValue>
 </DiscountingRule>
-<SalesOfferPackagePrice id="fr:faretable:SMTAML:01-02" version="any">
+<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:012" version="any">
     <ValidBetween>
         <FromDate>2025-01-01</FromDate>
         <ToDate>2025-12-31</ToDate>
@@ -331,7 +330,7 @@ de communiquer sur la valorisation du montant de la TVA.
     <ruleStepResults>
         <RuleStepResult>
             <Amount>4.00</Amount>
-            <DiscountingRuleRef ref="fr:discountingrule:template:01"/>
+            <DiscountingRuleRef ref="exemple:DiscountingRuleRef:01"/>
         </RuleStepResult>
     </ruleStepResults>
 </SalesOfferPackagePrice>
@@ -341,13 +340,13 @@ de communiquer sur la valorisation du montant de la TVA.
 La validation obligatoire est à indiquer par la propriété `ActivationMeans` dans un `FareStructureElement` contenant un `GenericParameterAssignment/UsageValidityPeriod`.
 
 ```xml
-<FareStructureElement id="Exemple:FareStructureElement:009:LOC" version="any">
+<FareStructureElement id="exemple:FareStructureElement:01" version="any">
     <Name>Validation sur valideur</Name>
     <TypeOfFareStructureElementRef ref="fr:id_en_cours_de_definition_en_GT7" versionRef="any" />
     <validityParameterAssignments>
-        <GenericParameterAssignment id="Exemple:GenericParameterAssignment:008:LOC" version="any">						
+        <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">						
             <limitations>
-                <UsageValidityPeriod id="Exemple:UsageValidityPeriod:002:LOC" version="any">
+                <UsageValidityPeriod id="exemple:UsageValidityPeriod:01" version="any">
                     <Name>Activation sur valideur</Name>
                     <ActivationMeans>useOfValidator</ActivationMeans>
                 </UsageValidityPeriod>
@@ -359,13 +358,13 @@ La validation obligatoire est à indiquer par la propriété `ActivationMeans` d
 
 Pour préciser que l'absence de validation peut entraine une verbalisation : 
 ```xml
-<FareStructureElement id="Exemple:FareStructureElement:008:LOC" version="any"> 
+<FareStructureElement id="exemple:FareStructureElement:01" version="any"> 
     <Name>Verbalisation en cas de non validation</Name>
     <TypeOfFareStructureElementRef ref="fr:id_en_cours_de_definition_en_GT7" versionRef="any" />
     <validityParameterAssignments>
-        <GenericParameterAssignment id="Exemple:GenericParameterAssignment:007:LOC" version="any">
+        <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
             <limitations>
-                <PenaltyPolicy id="Exemple:PenaltyPolicy:001:LOC" version="any">
+                <PenaltyPolicy id="exemple:PenaltyPolicy:01" version="any">
                     <PenaltyPolicyType>noValidation</PenaltyPolicyType>
                 </PenaltyPolicy>
             </limitations>
