@@ -210,12 +210,6 @@ L'exemple ci-dessous est extrait des exemples de NeTEx, et n'est pas nécessaire
 </SaleDiscountRight>
 ```
 
-**Information complémentaire :**
-Le champ `ValidDayBits` a été rendu obligatoire au niveau européen, afin d'éviter toute difficulté de compréhention des periodes
-d'application. En effet, des periodes de type "vacances" ou "jours feriés" peuvent être locales et sont inexploitables par les systèmes informatiques.
-Il est possible que ce champ `ValidDayBits` devienne obligtaoire en France pour des questions d'interopérabilité, il est donc recommandé de préciser cette
- information dans les exports.
-
 ## Comment modéliser un prix qui varie en fonction de la durée ?
 
 La durée est rattachée à un `FARE STRUCTURE ELEMENT`.
