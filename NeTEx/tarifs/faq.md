@@ -1,6 +1,7 @@
 # Foire aux Questions NeTEx France partie tarifaire
 Ce document explicite certains points du profil France, mais n'a pas vocation à le remplacer.
 En cas de différence entre ce document et le texte du profil France, c'est ce dernier qui fait foi.
+Cette FAQ est en cours d'enrichissement par les membres du GT7.
 
 ## Quelle structuration donner à mon export de tarifs en Netex France ?
 
