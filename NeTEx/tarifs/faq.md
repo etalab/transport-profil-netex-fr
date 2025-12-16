@@ -210,10 +210,34 @@ L'exemple ci-dessous est extrait des exemples de NeTEx, et n'est pas nécessaire
 </SaleDiscountRight>
 ```
 
-## Comment modéliser un prix qui varie en fonction de la durée ?
+## Comment modéliser un prix qui varie ?
+### Pour les prix qui dépendent de la durée 
+La durée est rattachée à un `FareStructureElement` en utilisant un `TimeStructureFactor`, c'est par exemple le cas des Taxi.
+Pour le moment, la partie nouveaux modes du profil France n'est pas encore publiée, la FAQ ne décrit pas encore ces tarifs.
 
-La durée est rattachée à un `FARE STRUCTURE ELEMENT`.
+### Pour les prix qui dépendent de la distance (en transport en communs)
+Dans ce cas des transports en communs, il est recommandé de fournir les tarifs sur une OD.
 
+```xml
+<DistanceMatrixElement id="exemple:DistanceMatrixElement:01" version="any"> 
+    <InverseAllowed>true</InverseAllowed>
+    <!--Exemple d'OD Arrêt vers Zone -->
+    <StartStopPointRef versionRef="any" ref="exemple:ScheduledStopPoint:01"/>
+    <EndTariffZoneRef versionRef="any" ref="exemple:TariffZone:Zone01"/>
+</DistanceMatrixElement>
+
+<FareStructureElement id="exemple:FareStructureElement:01" version="any">
+    <DistanceMatrixElementRef ref="exemple:DistanceMatrixElement:01"/>
+    <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any" order="1"> 
+        <limitations>
+            <UsageValidityPeriod id="exemple:UsageValidityPeriod:01" version="any"> 							
+                <UsageTrigger>purchase</UsageTrigger> 		
+                <StandardDuration>PT180M</StandardDuration>
+            </UsageValidityPeriod>
+        </limitations> 
+    </GenericParameterAssignment> 
+</FareStructureElement>
+```
 
 ## Est-ce que la zone tarifaire décrit deux fois la situation ?
 La zone tarifaire `FareZone` peut contenir :
