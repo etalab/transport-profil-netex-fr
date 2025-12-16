@@ -110,7 +110,7 @@ Cette information est portée par le SalesOfferPackage, car la periode d'utilisa
 Par exemple, le produit vendu à bord à consommation immédiate ou le produit mensuel qui commence le mois suivant l'achat.
 Cette information ne doit pas être indiquée sur le FareProduct.
 
-- ticket dans la durée : Periode d'utilisation d'un titre (ex : scolaire valable du lindi au vendredi)
+- ticket dans la durée : Periode d'utilisation d'un titre (ex : scolaire valable du lundi au vendredi)
 - ticket unitaire : Periode pendant laquelle le titre peut être consommé
 
 Exemple :
@@ -127,14 +127,13 @@ Exemple :
 ```
 
 ### Période pendant laquelle le titre peut être utilisé (ou "consommé") après l’achat
-=> Ici, vérifier l'utilisation d'un UsageValidityPeriod avec un type particulier (probablement à créer)
 
 Cette information est associée au produit tarifaire (`PreassignedFareProduct`) contenu dans l'offre à la vente (`SalesOfferPackage`). Pour indiquer cette information, il convient d'utiliser `ValidableElement/FareStructureElement` (ex. time Interval).
 
 ```xml
 <TimeInterval id="fr:timeinterval:template:01" version="any">
     <Description>2h de trajet sur l'ensemble de la zone</Description>
-    <Duration>PT12M</Duration> <!-- Si confirmé, modifier la durée pour indiquer un nombre de mois ou 1 an -->
+    <Duration>PT2H</Duration> 
 </TimeInterval>
 <FareStructureElement id="fr:farestructureelement:template:01" version="any">
     <TimeIntervalRef ref="fr:timeinterval:template:01"/>
@@ -152,12 +151,25 @@ Cette information est associée au produit tarifaire (`PreassignedFareProduct`) 
 </PreassignedFareProduct>
 ```
 
-### Durée de validité du titre une fois validé (cas du ticket unitaire)
-=> indiquer l'utilisation de TimeInterval (exemple : 90 min)
-
 ### Durée de validité du titre dans les autres cas (semaine, mensuel, etc.)
-=> l'utilisation de `UsageValidityPeriod` 
 
+```xml
+<FareStructureElement id="fr:usage_conditions:01" version="any">
+    <Name>Abonnement 30 jours</Name>
+    <TypeOfFareStructureElementRef ref="fr:usage_conditions:usage_period" versionRef="any" />
+    <validityParameterAssignments>
+        <GenericParameterAssignment id="fr:usage_conditions:01-01" version="any">
+            <limitations>
+                <UsageValidityPeriod id="fr:usage_conditions:01-02" version="any">
+                    <UsageTrigger>startOfPeriod</UsageTrigger>
+                    <ValidityPeriodType>monthlyPass</ValidityPeriodType>
+                    <StandardDuration>PT1M</StandardDuration>
+                </UsageValidityPeriod>
+            </limitations>
+        </GenericParameterAssignment>
+    </validityParameterAssignments>
+</FareStructureElement>
+```
 
 ### Date de validité du tarif
 Dans la cellule (`Cell`), le prix est porté par l'objet `SalesOfferPackagePrice`. La plage de validité du tarif peut être indiquée sur l'objet (voir l'exemple ci-dessous). Une cellule ne pouvant comporter qu'un seul prix, il conviendra de
@@ -175,8 +187,8 @@ créer des cellules différentes pour les différents prix des associations entr
 ```
 
 ### Date de validité d'un bon d'achat
-[A COMPLETER : comment modéliser un bon d'achat ? Utiliser des TypeOfProduct avec une liste spécifiée dans le profil France ?]
-
+Un bon d'achat est décrit par un objet `SaleDiscountRight` qui hérite de `FareProduct`. 
+La date de validité du bon d'achat se représente comme la date de validité d'un produit tarifaire (voir ci-dessus).
 
 **Information complémentaire :**
 Le champ `ValidDayBits` a été rendu obligatoire au niveau européen, afin d'éviter toute difficulté de compréhention des periodes
@@ -208,52 +220,92 @@ La notion de carnet de tickets est représentée par un object `FareStructureEle
 
 Voici un exemple :
 ```xml
-    <FareStructureElement version="1.0" id="idfm:t_plus_carnet@conditions_of_sale">
-        <Name>Carnet de 10 Ticket</Name>
-        <TypeOfFareStructureElementRef versionRef="efp:v1.0" ref="efp:conditions_of_sale"/>
-        <qualityStructureFactors>
-            <QualityStructureFactor version="1.0" id="idfm:t_plus_carnet@10_units">
-                <Name>10 T+ tickets</Name>
-                <Url>https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/ticket-t-sur-passe-navigo-easy-et-sur-telephone</Url>
-                <Value>10</Value>
-            </QualityStructureFactor>
-        </qualityStructureFactors>
-        <validityParameterAssignments>
-            <GenericParameterAssignment id="FR-Tarif-Example:GenericParameterAssignment:002:LOC" version="any" order="1">
-                <limitations>
-                    <UsageValidityPeriod id="FR-Tarif-Example:UsageValidityPeriod:001:LOC" version="any">
-                        <ValidityPeriodType>carnet</ValidityPeriodType>
-                    </UsageValidityPeriod>
-                </limitations>
-            </GenericParameterAssignment>
-        </validityParameterAssignments>
-    </FareStructureElement>
+<FareStructureElement version="1.0" id="idfm:t_plus_carnet@conditions_of_sale">
+    <Name>Carnet de 10 Ticket</Name>
+    <TypeOfFareStructureElementRef versionRef="efp:v1.0" ref="efp:conditions_of_sale"/>
+    <qualityStructureFactors>
+        <QualityStructureFactor version="1.0" id="idfm:t_plus_carnet@10_units">
+            <Name>10 T+ tickets</Name>
+            <Url>https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/ticket-t-sur-passe-navigo-easy-et-sur-telephone</Url>
+            <Value>10</Value>
+        </QualityStructureFactor>
+    </qualityStructureFactors>
+    <validityParameterAssignments>
+        <GenericParameterAssignment id="FR-Tarif-Example:GenericParameterAssignment:002:LOC" version="any" order="1">
+            <limitations>
+                <UsageValidityPeriod id="FR-Tarif-Example:UsageValidityPeriod:001:LOC" version="any">
+                    <ValidityPeriodType>carnet</ValidityPeriodType>
+                </UsageValidityPeriod>
+            </limitations>
+        </GenericParameterAssignment>
+    </validityParameterAssignments>
+</FareStructureElement>
 ```
 
 ## Comment modéliser la validité d'un titre pour plusieurs déplacements ?
 Cette situation se rencontre dans le cas d'un ticket autorisant les correspondances avec une durée maximale.
-Deux cas de figures sont possibles :
-- un ticket autorisant les correspondances, avec une durée maximale (par exemple 1h)
-- un ticket de type "journée" permettant autant de trajet que souhaité durant une periode
+Les exemples ci-dessous n'indiquent que l'autorisation de la correspondance, les informations temporelles sont décrites plus haut.
 
-**A COMPLETER**
+Cas d'un ticket autorisant les correspondances, avec une durée maximale (par exemple 1h) : 
+```xml
+<FareStructureElement id="codespace:FareStructureElement:Interchanging-01" version="any">
+    <Name>Trajets avec correspondance</Name>
+    <TypeOfFareStructureElementRef ref="FR:Interchanging" versionRef="any" />
+    <validityParameterAssignments>
+        <GenericParameterAssignment id="codespace:GenericParameterAssignment:Interchanging-01" version="any">
+            <LimitationGroupingType>AND</LimitationGroupingType>
+            <limitations>
+                <Interchanging id="codespace:Interchanging:01" version="any">
+                    <CanInterchange>true</CanInterchange>
+                    <MaximumNumberOfInterchanges>3</MaximumNumberOfInterchanges> <!-- Optionel -->
+                    <MaximumTimeToMakeATransfer>PT30M</MaximumTimeToMakeATransfer>  <!-- Optionel -->
+                </Interchanging>
+            </limitations>
+        </GenericParameterAssignment>
+    </validityParameterAssignments>
+</FareStructureElement>
+```
+
+Cas d'un ticket de type "journée" permettant autant de trajet que souhaité durant une periode :
+```xml
+<FareStructureElement id="fr:usage_conditions:04" version="any">
+    <Name>Usage illimté</Name>
+    <TypeOfFareStructureElementRef ref="fr:usage_conditions:frequency" versionRef="any" />
+    <validityParameterAssignments>
+        <GenericParameterAssignment id="fr:usage_conditions:04-01" version="any">
+            <limitations>
+                <FrequencyOfUse id="fr:usage_conditions:04-02" version="any">
+                    <FrequencyOfUseType>unlimited</FrequencyOfUseType>
+                </FrequencyOfUse>
+            </limitations>
+        </GenericParameterAssignment>
+    </validityParameterAssignments>
+</FareStructureElement>
+```
 
 ## Comment indiquer la TVA ?
 
-Le profil France propose des tarifs TTC. Pour indiquer la TVA, il est possible d'utiliser dans un `SalesOfferPackagePrice`
-un `RuleStepResult`.
+Le profil France propose des tarifs TTC. La communication sur les informations de TVA peut 
+entrainer des risques de mauvaise comprehension sur les informations financières. Les inforamtions 
+de TVA ne sont donc pas requises par le profil France.
 
-[Note : il faut ajouter DiscountingRule à la Frame]
+Dans le cas du choix de commniquer tout de même sur le taux de TVA,  il est possible d'utiliser dans un `SalesOfferPackagePrice`
+un `RuleStepResult`. Le pourcentage est direct (sans le signe % et san signe négatif) et il est fortement recommandé 
+de communiquer sur la valorisation du montant de la TVA.
+
 ```xml
+<TypeOfPricingRule id="FR:TypeOfPricingRule:TVA" /> <!-- commun au profil France pour identifier les taux de TVA -->
 <DiscountingRule version="any" id="fr:discountingrule:template:01">
     <Name>TVA 10%</Name>
-    <DiscountAsPercentage>0.10</DiscountAsPercentage>
+    <DiscountAsPercentage>10</DiscountAsPercentage>
+    <DiscountAsValue>1.3<DiscountAsValue>
 </DiscountingRule>
 <SalesOfferPackagePrice id="fr:faretable:SMTAML:01-02" version="any">
     <ValidBetween>
         <FromDate>2025-01-01</FromDate>
         <ToDate>2025-12-31</ToDate>
     </ValidBetween>
+    <TypeOfPricingRuleRef ref="FR:TypeOfPricingRule:TVA" />
     <Amount>40.00</Amount>
     <Currency>EUR</Currency>
     <ruleStepResults>
