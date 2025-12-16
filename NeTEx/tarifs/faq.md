@@ -189,6 +189,26 @@ créer des cellules différentes pour les différents prix des associations entr
 ### Date de validité d'un bon d'achat
 Un bon d'achat est décrit par un objet `SaleDiscountRight` qui hérite de `FareProduct`. 
 La date de validité du bon d'achat se représente comme la date de validité d'un produit tarifaire (voir ci-dessus).
+Le profil France ne retient pas pour le moment ce type d'informations. 
+L'exemple ci-dessous est extrait des exemples de NeTEx, et n'est pas nécessairement compatible avec le profil France.
+
+```xml
+<SaleDiscountRight id="atc:ATOC@Products@Pass@Photocard" version="01">
+    <Name>Rail Photocard</Name>
+    <Url>https://public.greenrailtravel.co.uk/scholars/photocard-information.html</Url>
+    <OperatorRef ref="uic:1170" version="any">ATOC</OperatorRef>
+    <ConditionSummary>
+        <FareStructureType>networkFlatFare</FareStructureType>
+        <TariffBasis>flat</TariffBasis>
+        <RequiresPhoto>true</RequiresPhoto>
+        <MustCarry>true</MustCarry>
+        <GivesEntitlement>true</GivesEntitlement>
+    </ConditionSummary>
+    <validableElements>
+        <ValidableElementRef ref="atc:ATOC@Products@Pass@Photocard@holder"/>
+    </validableElements>
+</SaleDiscountRight>
+```
 
 **Information complémentaire :**
 Le champ `ValidDayBits` a été rendu obligatoire au niveau européen, afin d'éviter toute difficulté de compréhention des periodes
