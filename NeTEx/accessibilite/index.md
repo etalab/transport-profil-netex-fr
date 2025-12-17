@@ -4222,6 +4222,16 @@ En particulier, ça sera :
 
 **TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
 
+## Mesure du dimaètre de giration pour les entrées (ENTRANCE EQUIPMENT)
+
+Le schéma ci-dessous illustre un diamètre de giration. Il doit être d'au minimum 1,50 m.
+
+![Diamètre de giration](./media/image18.jpg)
+
+Dans le cas d'une entrée, on prendra toujours la mesure la plus petite de l'ensemble des espaces de chaque côté de l'entrée. L'illustration ci-après délimite les différents espaces à mesurer pour une entrée afin d'en déterminer le plus petit diamètre de giration.
+
+![Espaces à mesurer pour une entrée](./media/image19.jpg)
+
 # Bibliographie
 
 EN 15531-1, Public transport - Service interface for real-time
