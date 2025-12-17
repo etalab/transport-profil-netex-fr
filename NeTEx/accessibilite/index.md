@@ -1071,9 +1071,9 @@ traduit) car c'est sous cette dénomination que les objets présentés se
 retrouveront dans le modèle XSD et donc dans les tags XML utilisés dans
 l'implémentation et les échanges.
 
-## Éléments d'accessibilité de base partagés par tous les profils
+## Éléments d'accessibilité de base partagés par toutes les parties du profil France
 
-Les profils précédents (Éléments Communs, Arrêts, Réseaux et Horaires)
+Les autres parties du profil France (Éléments Communs, Arrêts, Réseaux, Horaires, Tarifs et Parking)
 proposent déjà une information de base sur l'accessibilité en utilisant 
 les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) :
 
@@ -1107,7 +1107,7 @@ gare, accès possibles pour les UFR uniquement sur certains quais)
 signalétique auditive en cas de perturbations mais pas d'annonces pour
 les prochains passages)
 
-<span class="hl">Dans le cadre du profil il est convenu, lorsque
+<span class="hl">Dans le cadre du profil France il est convenu, lorsque
 "</span>***<span class="hl">Partiel</span>***<span class="hl">" est
 utilisé, de systématiquement remplir le champ "</span>***<span
 class="hl">ValidityCondition->Description</span>***<span class="hl">"
@@ -1118,7 +1118,7 @@ texte libre susceptible d'être présenté au public en complément des
 indicateurs ci-dessus.</span>
 
 ![image](media/image8.svg)
-*Accessibilité des profils précédents*
+*Accessibilité des autres parties du profil France*
 
 Toutefois, cela correspond à une information globale et synthétique,
 mais qui dans de nombreuses situations manquera de précisions, d'une
