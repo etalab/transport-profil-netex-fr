@@ -4135,6 +4135,16 @@ et atteindre et utiliser tous les équipements (lumière, lave-main, etc.)
 Cela signifie notamment qu’il faut un espace d’au moins 1,50 m à côté de la cuvette, 
 une barre d’appui, un lave-main accessible, etc.
 
+## Mesure du dimaètre de giration pour les entrées (ENTRANCE EQUIPMENT)
+
+Le schéma ci-dessous illustre un diamètre de giration. Il doit être d'au minimum 1,50 m.
+
+![Diamètre de giration](./media/image18.jpg)
+
+Dans le cas d'une entrée, on prendra toujours la mesure la plus petite de l'ensemble des espaces de chaque côté de l'entrée. L'illustration ci-après délimite les différents espaces à mesurer pour une entrée afin d'en déterminer le plus petit diamètre de giration.
+
+![Espaces à mesurer pour une entrée](./media/image19.jpg)
+
 
 # Annexe (informative) - Structure des Parkings
 
