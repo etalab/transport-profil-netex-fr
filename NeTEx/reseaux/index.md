@@ -1268,7 +1268,7 @@ Exemple :
 
 Exemple de LineString pour décrire un tracé : 
 ```xml
-<gml:LineString srsName="WGS84" gml:id="AB2o"> 
+<gml:LineString gml:id="AB2o"> 
     <gml:pos>53.00 1.00</gml:pos> 
     <gml:pos>53.10 1.10</gml:pos> 
     <gml:pos>53.20 1.20</gml:pos> 
