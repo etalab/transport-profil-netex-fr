@@ -4135,6 +4135,64 @@ et atteindre et utiliser tous les équipements (lumière, lave-main, etc.)
 Cela signifie notamment qu’il faut un espace d’au moins 1,50 m à côté de la cuvette, 
 une barre d’appui, un lave-main accessible, etc.
 
+## Définition des *AccessibilityLimitation* retenus pour les zones d'embarquement (QUAY)
+
+**WheelchairAccess** : le sol est plat, de revêtement lisse et stable, assez large pour faire demi-tour en fauteuil (1,50m) et sans obstacle permanent bloquant
+
+En particulier :
+
+- lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer
+- on utilisera les valeurs de références suivantes pour la valeur true : dévers de moins de 2%, pente de moins de 5%
+- si le dévers est de moins de 5%, ou la pente de moins de 8%, ou la largeur d’au moins 90 cm, on pourra utiliser partial
+
+**AudibleSignalsAvailable** : il y a des annonces sonores, en général des prochains passages, indiquant au moins les lignes desservies ainsi que leur direction.
+
+**VisualSignsAvailable** : il y a au moins le nom de l'arrêt, les lignes desservies ainsi que leur direction, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+
+**TactileGuidanceAvailable** : il y a des bandes de guidage podotactile menant à la porte permettant d'embarquer dans le véhicule, et elle sont connectées à des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne (mur, bandes de guidage, etc).
+
+## Définition des *AccessibilityLimitation* retenus pour les entrées (ENTRANCE)
+
+Ces définitions concernent tous les éléments qui héritent de ENTRANCE : accès de lieu d'arrêt (STOP PLACE ENTRANCE), accès piéton d'un parking (PARKING PASSENGER ENTRANCE), accès de point d'intérêt (POINT OF INTEREST ENTRANCE), etc.
+
+**WheelchairAccess** : il y a une largeur de passage d’au moins 80 cm et pas de marche infranchissable. S’il y a une porte, elle s’ouvre sans forcer (moins de 50 Newton).
+
+On utilisera les mêmes valeurs de référence pour la hauteur de la marche éventuelle que pour StepFreeAccess (voir ci-après).
+
+**StepFreeAccess** : il n’y a pas de marche infranchissable.
+
+En particulier, ça sera :
+
+- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- partial s’il y a une marche de moins de 4 cm
+- false s’il y a une marche de plus de 4 cm
+
+**TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette entrée.
+
+## Définition des *AccessibilityLimitation* retenus pour les lieux d'arrêts (STOP PLACE)
+
+**WheelchairAccess** : chaque quai est pratiquable en fauteuil roulant et il existe un cheminement pratiquable en fauteuil roulant entre chaque zone d'embarquement et au moins un accès.
+
+Se référer aux définitions plus précises de *WheelchairAccess* pour les zones d'embarquement (Quay), les accès de lieu d'arrêt (StopPlaceEntrance) et les cheminements (SitePathLink).
+
+**StepFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans franchir de marche.
+
+En particulier, ça sera :
+
+- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- partial s’il y a une marche de moins de 4 cm
+- false s’il y a une marche de plus de 4 cm
+
+**EscalatorFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un escalator.
+
+**LiftFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un ascenseur.
+
+**AudibleSignalsAvailable** : il y a des annonces sonores.
+
+**VisualSignsAvailable** : il y a au moins le nom du lieu d'arrêt, les lignes desservies, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+
+**TactileGuidanceAvailable** : il y a un réseau de bandes de guidage podotactile qui relient chaque zone d'embarquement à au moins un accès.
+
 ## Définition des *AccessibilityLimitation* retenus pour les places de stationnement (PARKING BAY)
 
 **WheelchairAccess** : le sol est plat, de revêtement lisse et stable ; la largeur est d'au moins 3.30m et on peut rejoindre la place depuis le trottoir sans franchir de marche.
