@@ -834,6 +834,13 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td>0:*</td>
 <td>Heures de passages planifiées aux arrêts (<em><strong>scheduledStopPoint</strong>)</em>.</td>
 </tr>
+<tr class="even">
+<td>«cntd»</td>
+<td colspan="2"><em><strong>passengerAtStopTimes</strong></em></td>
+<td><em>passengerAtStopTimes_RelStructure</em></td>
+<td>0:*</td>
+<td>Heures auxquelles les passagers doivent être présents avant le départ</td>
+</tr>
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>parts</strong></em></td>
@@ -845,12 +852,20 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 </tr>
 <tr class="odd">
 <td></td>
+<td colspan="2"><em><strong>calls</strong></em></td>
+<td><em>calls_RelStructure</em></td>
+<td>0:*</td>
+<td><p>La notion de Call est une vue agrégée de différentes propriétés lors d'un évènement (souvent le passage à un arrêt)</p>
+<p><span class="hl">Cette notion est héritée de SIRI et ne correspond pas à la modélisation des passages aux arrêts. La notion de Call n'est donc pas retenue dans le profil France.</span></p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
 <td colspan="2"><em><strong>facilities</strong></em></td>
 <td><em>serviceFacilitySets_RelStructure</em></td>
 <td>0:*</td>
 <td>Services disponibles pour cette course (voir le profil accessibilité pour plus de détails).</td>
 </tr>
-
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>TrainSize</strong></em></td>
