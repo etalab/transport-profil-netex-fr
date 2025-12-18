@@ -1085,6 +1085,7 @@ les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) :
  est disponible
 - *VisualSignsAvailable* : une information visuelle ou une signalétique visuelle
  est disponible
+- *TactileGuidanceAvailable* : il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile
 
 
 Les valeurs potentiellement portées par chacun de ces indicateurs sont:
@@ -1603,7 +1604,7 @@ assurer un rôle dans l'accessibilité.
 | Place­Equipment   | Access­Equipment    | ***RoughSurface** (surface accidentée)*                                    | Type de surface                                                                                            |
 |                   |                     | ***EntranceEquipment** (entrée)*                                           | Dimensions, franchissable en fauteuil roulant, modes d’ouverture, capteur acoustique, automatique.         |
 |                   |                     | ***StairEquipment** (escalier)*                                            | Rampe, hauteur de la rampe, hauteur des marches, nombre de marches.                                        |
-|                   |                     | ***LiftEquipment** (ascenseur)*                                            | Dimensions, accessible en fauteuil roulant, rayon de braquage (pour fauteuil roulant).                    |
+|                   |                     | ***LiftEquipment** (ascenseur)*                                            | Dimensions, accessible en fauteuil roulant, diamètre de giration (pour fauteuil roulant).                    |
 |                   |                     | ***EscalatorEquipment** (escalator)*                                       | Largeur, dénivelé                                                                                          |
 |                   |                     | ***TravelatorEquipment** (tapis roulant)*                                  | Largeur, longueur.                                                                                         |
 |                   |                     | ***RampEquipment** (rampe)*                                                | Dimensions, pente, rampe et main courante, bande de guidage/interception.                                  |
@@ -1620,7 +1621,7 @@ assurer un rôle dans l'accessibilité.
 |                   |                     | ***WaitingRoomEquipment** (salle d’attente)*                               | Nombre de sièges, dimensions, présence de marches, largeur et profondeur de l’espace pour fauteuil roulant. |
 |                   | Passenger­Equipment | ***PassengerInfoEquipment** (équipement d’information voyageur)*           | Informations d’accessibilité                                                                               |
 |                   |                     | ***PassengerSafetyEquipment** (équipement pour la sécurité des voyageurs)* | Caméras, bouton d’urgence, téléphone d’ugence, hauteur des appareils d’urgence, annonces sonores.          |
-|                   |                     | ***SanitaryEquipment** (sanitaires)*                                       | Genre, type de sanitaires, rayon de braquage pour fauteuil roulant.                                        |
+|                   |                     | ***SanitaryEquipment** (sanitaires)*                                       | Genre, type de sanitaires, diamètre de giration pour fauteuil roulant.                                        |
 | **Local Service** | Customer            | ***AssistanceService** (service d’assistance)*                             | Aide à l’embarquement et autres aides disponibles.                                                          |
 |                   |                     | ***MeetingpointService** (point de rendez-vous)*                           |                                                                                                            |
 
@@ -2703,7 +2704,7 @@ passagers)* *–* Élément
 |                     | **AccessibilityAssessment** | *AccessibilityAssessment*| 0:1            | <p>Caractéristiques d’accessibilité des sanitaires.</p><p>Voir le détail en Annexe.</p>     |
 |                     | Gender                      | GenderLimitationEnum   | 0:1              | Limitation de genre (homme/femme) pour l’utilisation des sanitaires.                        |
 |                     | SanitaryFacilityList        | SanitaryFacilityEnum   | 0:*              | <p>Type de sanitaire</p><ul><li><p><em>toilet</em> (toilettes)</p></li><li><p><em>wheelChairAccessToilet</em>(toilettes accessibles en fauteuil roulant)</p></li><li><p><em>shower</em> (douche)</p></li><li><p><em>washingAndChangeFacilities</em> (espace pour se nettoyer et se changer)</p></li><li><p><em>babyChange</em>(espace bébé)</p></li><li><p><em>wheelchairBabyChange</em> (espace bébé accessible en fauteuil roulant)</p></li></ul>                                                          |
-|                     | Wheelchair­TurningCircle     | LengthType             | 0:1              | Rayon de braquage pour les fauteuils roulants                                              |
+|                     | Wheelchair­TurningCircle     | LengthType             | 0:1              | Diamètre de giration pour les fauteuils roulants                                           |
 |                     | SharpsDisposal              | xsd:boolean            | 0:1              | Disponibilité d’une poubelle pour objets tranchants                                        |
 |                     | Staffing                    | StaffingEnum           | 0:1              | Présence de personnel                                                                      |
 |                     | KeyScheme                   | xsd:normalizedString   | 0:1              | <span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br /><span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span>         |
@@ -2860,7 +2861,7 @@ passagers)* *–* Élément
 | «PK»               | id            | SeatingEquipmentIdType | 1:1             | Identifiant du SEATING EQUIPMENT.             |
 |                    | Armrest       | xsd:boolean            | 0:1             | Signale si le siège dispose d’un accoudoir    |
 |                    | Backrest      | xsd:boolean            | 0:1             | Signale si le siège dispose d’un dossier      |
-|                    | SeatingHeight | xsd:decimal            | 0:1             | Hauteur de l’assise en cm                     |
+|                    | SeatingHeight | xsd:decimal            | 0:1             | Hauteur de l’assise                           |
 
 <div class="table-title">ShelterEquipment (abris) – Élément</div>
 
@@ -3097,7 +3098,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                     | RampDoorbell                | xsd:boolean            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
 |                     | Recognizable                | xsd:boolean            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *false* lorsque l'entrée est difficile à repérer.                              |
 |                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
-|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Rayon de braquage pour les fauteuils roulants <br><span class="hl">On considèrera le rayon du plus petit espace de manœuvre (intérieur ou extérieur).</span>                                 |
+|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considèrera le rayon du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
 
 <div class="table-title">QueueingEquipment (gestion de queue) – Élément</div>
 
@@ -3470,7 +3471,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                    | Depth                       | LengthType           | 0:1             | Profondeur de l’ascenseur      <br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</span>                                                                                                                                                                                                                                                         |
 |                    | MaximumLoad                 | WeightType           | 0:1             | Charge maximale                                                                                                                                                                                                                                                                                                                                                                                       |
 |                    | WheelchairPassable          | xsd:boolean          | 0:1             | Signale si l’utilisation en fauteuil roulant est possible                                                                                                                                                                                                                                                                                                                                             |
-|                    | WheelchairTurningCircle     | LengthType           | 0:1             | Rayon de braquage pour les fauteuils roulants dans l’ascenseur                                                                                                                                                                                                                                                                                                                                        |
+|                    | WheelchairTurningCircle     | LengthType           | 0:1             | Diamètre de giration pour les fauteuils roulants dans l’ascenseur                                                                                                                                                                                                                                                                                                                                     |
 |                    | InternalWidth               | LengthType           | 0:1             | Largeur à l'intérieur de la cabine                                                                                                                                                                                                                                                                                                                                                                    |
 |                    | HandrailType                | HandrailEnum         | 0:1             | Type de main courante <li><p><em>none</em> (aucun)</p></li> <li><p><em>oneSide</em> (d’un côté seulement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li>                                                                                                                                                                                                                                 |
 |                    | HandrailHeight              | LengthType           | 0:1             | Hauteur de la main courante                                                                                                                                                                                                                                                                                                                                                                           |
@@ -3490,7 +3491,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                    | SignageToLift               | xsd:boolean          | 0:1             | Signale si l’accès à l'ascenseur est fléché/signalé                                                                                                                                                                                                                                                                                                                                                   |
 |                    | TactileGroundFloorButton    | xsd:boolean          | 0:1             | Signale la presence d’une marque tactile spécifique sur le bouton du rez-de-chaussée                                                                                                                                                                                                                                                                                                                  |
 |                    | ExternalFloorSelection      | xsd:boolean          | 0:1             | Signale que la sélection de l’étage de destination se fait à l’extérieur de l’ascenseur                                                                                                                                                                                                                                                                                                               |
-|                    | ButtonsHeigt                | LengthType           | 0:1             | Hauteur (taille) des boutons (en cm)                                                                                                                                                                                                                                                                                                                                                                  |
+|                    | ButtonsHeight               | LengthType           | 0:1             | Hauteur (taille) des boutons                                                                                                                                                                                                                                                                                                                                                                          |
 |                    | GroundMarkalignedWithButton | xsd:boolean          | 0:1             | Signale la présence de marquage podotactile pour repérer les boutons                                                                                                                                                                                                                                                                                                                                  |
 
 
@@ -4122,7 +4123,12 @@ si **AudibleSignalsAvailable** vaut *true*, et *false* si **AudibleSignalsAvaila
 **CrossingEquipment/ZebraCrossing** vaudra *true* si **VisualSignsAvailable** vaut *true*, 
 et *false* si **VisualSignsAvailable** est *false*.
 
-## Définition des *AccessibilityLimitation* retenus pour les sanitaires (SANITARY EQUIPMENT)
+**TactileGuidanceAvailable** : il y a des bandes de guidage, ou il y a un élément linéaire 
+au sol qui peut être détecté et suivi avec une canne (mur, caniveau, etc).
+
+S'il y a des bandes de guidage podotactile, on renseignera également l'attribut **TactileGuidingStrip**.
+
+## Définition des AccessibilityLimitation retenus pour les sanitaires (SANITARY EQUIPMENT)
 
 **WheelchairAccess** : un usager en fauteuil roulant peut se positionner sur la cuvette 
 et atteindre et utiliser tous les équipements (lumière, lave-main, etc.)
@@ -4157,434 +4163,6 @@ En particulier, ça sera :
 - *false* si les deux sont absents
 
 **TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
-
-# Annexe (informative) - Structure des Parkings
-
-*<span class="hl"><p>Les informations sur les parkings sont fournies ici à
-titre indicatif, mais des travaux de rapprochement entre les modèles
-Transmodel/NeTEx et DATEX-II, impliquant aussi la FNMS (Féderation
-Nationale des Metiers de Stationnement) et APDS (Alliance for Parking
-Data Standards). L'issue de ces travaux sera à considérer pour toute
-utilisation des informations relatives aux parkings.</p>
-<p>En complément, la loi d’orientation des mobilités impose la fourniture 
-d’information sur les caractéristiques des places équipées de bornes 
-de recharge électrique (localisation, puissance, accessibilité…).</p></span>*
-
-*La section ci-desous n’est volontairement pas traduite et donc
-disponible en anglais.*
-
-Designated locations for leaving vehicles such as cars, motorcycles and
-bicycles.
-
-NOTE : en tant que SiteComponent les parkings et leurs composants disposent
-d'information d**'AccessibilityAssessment**.
-
-<div class="table-title">Parking – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 26%" />
-<col style="width: 20%" />
-<col style="width: 8%" />
-<col style="width: 37%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classification</strong></td>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardinality</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>Site</em></td>
-<td><em>::></em></td>
-<td>PARKING hérite de SITE.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td>id</td>
-<td>ParkingIdType</td>
-<td>1:1</td>
-<td>Identifiant du PARKING.</td>
-</tr>
-<tr class="even">
-<td>«cntd»</td>
-<td>(<em>SiteAccessGroup</em>)</td>
-<td><em>SiteAccessGroup</em></td>
-<td>0:1</td>
-<td>See 0:1</td>
-</tr>
-<tr class="odd">
-<td>«AK»</td>
-<td>PublicCode</td>
-<td>StopPlaceCodeType</td>
-<td>0:1</td>
-<td>Public Code of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Label</strong></em></td>
-<td>MultilingualString</td>
-<td></td>
-<td>Additional Label of PARKING.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>ParkingType</td>
-<td>ParkingTypeEnum</td>
-<td>0:*</td>
-<td>Nature of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingVehicleTypes</td>
-<td>VehicleTypeList</td>
-<td>0:*</td>
-<td><p>Types of Vehicle allowed in PARKING.</p>
-<ul>
-<li><p><em>pedalCycle</em></p></li>
-<li><p><em>moped</em></p></li>
-<li><p><em>motorcycle</em></p></li>
-<li><p><em>motorcycleWithSidecar</em></p></li>
-<li><p><em>motorScooter</em></p></li>
-<li><p><em>twoWheeledVehicle</em></p></li>
-<li><p><em>threeWheeledVehicle</em></p></li>
-<li><p><em>car</em></p></li>
-<li><p><em>smallCar</em></p></li>
-<li><p><em>passengerCar</em></p></li>
-<li><p><em>largeCar</em></p></li>
-<li><p><em>fourWheelDrive</em></p></li>
-<li><p><em>taxi</em></p></li>
-<li><p><em>camperCar</em></p></li>
-<li><p><em>carWithTrailer</em></p></li>
-<li><p><em>carWithCaravan</em></p></li>
-<li><p><em>minibus</em></p></li>
-<li><p><em>bus</em></p></li>
-<li><p><em>van</em></p></li>
-<li><p><em>largeVan</em></p></li>
-<li><p><em>highSidedVehicle</em></p></li>
-<li><p><em>lightGoodsVehicle</em></p></li>
-<li><p><em>heavyGoodsVehicle</em></p></li>
-<li><p><em>agriculturalVehicle</em></p></li>
-<li><p><em>tanker</em></p></li>
-<li><p><em>truck</em></p></li>
-<li><p><em>tram</em></p></li>
-<li><p><em>articulatedVehicle</em></p></li>
-<li><p><em>vehicleWithTrailer</em></p></li>
-<li><p><em>lightGoodsVehicleWithTrailer</em></p></li>
-<li><p><em>heavyGoodsVehicleWithTrailer</em></p></li>
-<li><p><em>undefined</em></p></li>
-<li><p><em>other</em></p></li>
-<li><p><em>allPassengerVehicles</em></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>ParkingLayout</td>
-<td>ParkingLayoutEnum</td>
-<td>0:1</td>
-<td><p>Layout type of PARKING.</p>
-<ul>
-<li><p><em>covered</em></p></li>
-<li><p><em>openSpace</em></p></li>
-<li><p><em>multistorey</em></p></li>
-<li><p><em>underground</em></p></li>
-<li><p><em>roadside</em></p></li>
-<li><p><em>undefined</em></p></li>
-<li><p><em>other</em></p></li>
-<li><p><em>cycleHire</em></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>NumberOfParkingLevels</strong></em></td>
-<td>xsd:nonNegativeInteger</td>
-<td>0:1</td>
-<td>Total number of levels.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>PrincipalCapacity</td>
-<td>NumberOfSpaces</td>
-<td>0:1</td>
-<td>Principal Capacity of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>TotalCapacity</td>
-<td>NumberOfSpaces</td>
-<td>0:1</td>
-<td>Total Capacity of PARKING.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>OvernightParkingPermitted</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether overnight PARKING is allowed.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ProhibitedForHazardousMaterials</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether PARKING is prohibited for any Hazardous material.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>RechargingAvailable</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether car park has recharging points.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Secure</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether Parking is offered as secure.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>RealTimeOccupancyAvailable</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether there is real-time occupancy data for PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingPaymentProcess</td>
-<td>PaymentProcessEnum</td>
-<td>0:1</td>
-<td>How to pay for PARKING.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>PaymentMethods</strong></em></td>
-<td><em>PaymentMethodList</em></td>
-<td>0:1</td>
-<td>Method of Payment for use of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>DefaultCurrency</strong></em></td>
-<td><em>CurrencyType</em></td>
-<td>0:1</td>
-<td>Default Currency for payment.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>CurrenciesAccepted</strong></em></td>
-<td><em>CurrencyList</em></td>
-<td>0:1</td>
-<td>Currencies accepted.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>CardsAccepted</strong></em></td>
-<td>xsd:NMTOKENS</td>
-<td>0:1</td>
-<td>Payment Cards that are accepted</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>ParkingReservations</td>
-<td>ParkingReservationEnum</td>
-<td>0:1</td>
-<td>How to reserve for PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>BookingUrl</strong></em></td>
-<td><em>xsd:anUri</em></td>
-<td></td>
-<td>URL to make booking.</td>
-</tr>
-<tr class="odd">
-<td>ntd»</td>
-<td><em><strong>PaymentByMobile</strong></em></td>
-<td><em>PaymentByMobile</em></td>
-<td>0:1</td>
-<td>How to make payment by phone.</td>
-</tr>
-<tr class="even">
-<td>« »</td>
-<td><em><strong>FreeParkingOutOfHours</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>hether there is free parking out of hours..</td>
-</tr>
-<tr class="odd">
-<td>«cntd»</td>
-<td>parkingProperties</td>
-<td>ParkingProperties</td>
-<td>0:*</td>
-<td>PARKING PROPERTies of PARKING.</td>
-</tr>
-<tr class="even">
-<td>«cntd»</td>
-<td>parkingAreas</td>
-<td>ParkingArea</td>
-<td>0:*</td>
-<td>PARKING AREAs within PARKING.</td>
-</tr>
-<tr class="odd">
-<td>«cntd»</td>
-<td>entrances</td>
-<td>StopPlaceEntrance</td>
-<td>0:*</td>
-<td>Pedestrian Entrances for PARKING.</td>
-</tr>
-</tbody>
-</table>
-
-<div class="table-title">ParkingArea – Element</div>
-
-| **Classification** | **Name**                             | **Type**             | **Cardinality** | **Description**                                                     |
-|--------------------|--------------------------------------|----------------------|-----------------|---------------------------------------------------------------------|
-| *::>*              | *::>*                                | *SiteComponentGroup* | *::>*           | PARKING AREA hérite de SITE COMPONENT.                              |
-| «PK»               | id                                   | ParkingAreaIdType    | 1:1             | Identifiant du PARKING AREA.                                        |
-|                    | TotalCapacity                        | NumberOfSpaces       | 0:1             | Total Capacity of PARKING AREA.                                     |
-|                    | ***NumberOfBaysWithWIthRecharging*** | NumberOfSpaces       | 0:1             | Total number of bays with electric charging points in PARKING AREA. |
-| «cntd»             | **ParkingPropertiesproperties**      | ParkingProperties    | 0:1             | Properties of PARKING AREA.                                         |
-| «cntd»             | bays                                 | ParkingBay           | 0:\*            | Bays within PARKING AREA.                                           |
-| «cntd»             | entrances                            | SiteEntrance         | 0:\*            | ENTRANCEs of PARKING COMPONENT.                                     |
-
-A place to park an individual vehicle.
-
-<div class="table-title">ParkingBay – Element</div>
-
-| **Classification** | **Name**           | **Type**           | **Cardinality** | **Description**                                 |
-|--------------------|--------------------|--------------------|-----------------|-------------------------------------------------|
-| *::>*              | *::>*              | *SiteComponent*    | *::>*           | PARKING BAY hérite de SITE COMPONENT.           |
-| «PK»               | id                 | ParkingBayIdType   | 1:1             | Identifiant du PARKING BAY.                     |
-| «FK»               | ParkingAreaRef     | ParkingAreaRef     | 0:1             | PARKING AREA within which PARKING BAY is found. |
-|                    | ParkingVehicleType | ParkingVehicleEnum | 0:1             | TYPEs of VEHICLE that may use PARKING BAY.      |
-
-An entrance for vehicles to the PARKING from the road.
-
-<div class="table-title">ParkingEntranceForVehicle – Element</div>
-
-| **Classification** | **Name**       | **Type**                | **Cardinality** | **Description**                                           |
-|--------------------|----------------|-------------------------|-----------------|-----------------------------------------------------------|
-| *::>*              | *::>*          | *SiteEntrance*          | *::>*           | PARKING VEHICLE ENTRANCE hérite de ENTRANCE.              |
-| «PK»               | id             | *VehicleEntranceIdType* | 1:1             | Identifiant du PARKING VEHICLE ENTRANCE.                  |
-| «FK»               | ParkingAreaRef | ParkingAreaRef          | 0:1             | PARKING AREA of which this is a PARKING VEHICLE ENTRANCE. |
-
-An entrance to the PARKING for passengers on foot or other
-out-of-vehicle mode, such as wheelchair.
-
-<div class="table-title">ParkingPassengerEntrance – Element</div>
-
-| **Classification** | **Name**       | **Type**                  | **Cardinality** | **Description**                                             |
-|--------------------|----------------|---------------------------|-----------------|-------------------------------------------------------------|
-| *::>*              | *::>*          | *Entrance*                | *::>*           | PARKING PASSENGER ENTRANCE hérite de ENTRANCE.              |
-| «PK»               | id             | *PassengerEntranceIdType* | 1:1             | Identifiant du PARKING PASSENGER ENTRANCE.                  |
-| «FK»               | ParkingAreaRef | ParkingAreaRef            | 0:1             | PARKING AREA of which this is a PARKING PASSENGER ENTRANCE. |
-
-PARKING specific properties other than its CAPACITY.
-
-<div class="table-title">ParkingProperties – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 17%" />
-<col style="width: 22%" />
-<col style="width: 8%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classification</strong></td>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardinality</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>VersionedChild</em></td>
-<td><em>::></em></td>
-<td>PARKING PROPERTies hérite de VERSIONED CHILD.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td>id</td>
-<td>ParkingPropertiesIdType</td>
-<td>1:1</td>
-<td>Identifiant du PARKING PROPERTies.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingUserType</td>
-<td>ParkingUserEnum</td>
-<td>0:1</td>
-<td><p>Types of users of PARKING PROPERTies.</p>
-<ul>
-<li><p><em>allUsers</em></p></li>
-<li><p><em>staff</em></p></li>
-<li><p><em>visitors</em></p></li>
-<li><p><em>registeredDisabled</em></p></li>
-<li><p><em>registered</em></p></li>
-<li><p><em>rental</em></p></li>
-<li><p><em>doctors</em></p></li>
-<li><p><em>residentsWithPermits</em></p></li>
-<li><p><em>reservationHolders</em></p></li>
-<li><p><em>emergencyServices</em></p></li>
-<li><p><em>other</em></p></li>
-<li><p><em>all</em></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>MaximumStay</td>
-<td>xsd:duration</td>
-<td>0:1</td>
-<td>Maximum stay specified by this PARKING PROPERTies.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingStayType</td>
-<td>ParkingTermEnum</td>
-<td>0:1</td>
-<td>Type of stay specified by this PARKING PROPERTies.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>PaymentMethod</td>
-<td>PaymentMethodEnum</td>
-<td>0:*</td>
-<td>Payment method for PARKING.</td>
-</tr>
-<tr class="even">
-<td>«FK»</td>
-<td>ParentRef</td>
-<td>SiteElementRef</td>
-<td>0:1</td>
-<td>PARKING or PARKING component associated with PARKING PROPERTies.</td>
-</tr>
-<tr class="odd">
-<td>«contents»</td>
-<td>spaces</td>
-<td>ParkingCapacity</td>
-<td>0:*</td>
-<td>Number of spaces specified by this PARKING PROPERTies.</td>
-</tr>
-<tr class="even">
-<td>«contents»</td>
-<td>charges</td>
-<td>ParkingTariff</td>
-<td>0:*</td>
-<td>PARKING TARIFF specified by this PARKING PROPERTies.</td>
-</tr>
-</tbody>
-</table>
 
 # Bibliographie
 

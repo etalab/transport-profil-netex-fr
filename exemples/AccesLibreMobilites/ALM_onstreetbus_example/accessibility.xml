@@ -1,0 +1,2766 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+  <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
+  <ParticipantRef>ALM_wdm2netex</ParticipantRef>
+  <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement</Description>
+  <dataObjects>
+    <GeneralFrame id="FR:GeneralFrame:NETEX_ACCESSIBILITY:LOC" version="1.09:FR-NETEX-2.3-0.0">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ACCESSIBILITY:"/>
+      <FrameDefaults>
+        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
+      </FrameDefaults>
+      <members>
+        <SitePathLink id="ALM:SitePathLink:w32_n26_n37:LOC" version="2">
+          <Distance>1083.43</Distance>
+          <gml:LineString gml:id="w32_n26_n37">
+            <gml:pos>2.6499866 48.8388332</gml:pos>
+            <gml:pos>2.6499873 48.8388083</gml:pos>
+            <gml:pos>2.649993 48.8387712</gml:pos>
+            <gml:pos>2.6500346 48.8384997</gml:pos>
+            <gml:pos>2.6500865 48.8381615</gml:pos>
+            <gml:pos>2.6501997 48.8376265</gml:pos>
+            <gml:pos>2.6502777 48.8375139</gml:pos>
+            <gml:pos>2.6514955 48.8369876</gml:pos>
+            <gml:pos>2.6519487 48.8367917</gml:pos>
+            <gml:pos>2.6523939 48.8365902</gml:pos>
+            <gml:pos>2.6528748 48.8363726</gml:pos>
+            <gml:pos>2.653285 48.836371</gml:pos>
+            <gml:pos>2.6536499 48.8362832</gml:pos>
+            <gml:pos>2.6538663 48.8361557</gml:pos>
+            <gml:pos>2.6540751 48.8359503</gml:pos>
+            <gml:pos>2.6541842 48.835854</gml:pos>
+            <gml:pos>2.6543545 48.8357035</gml:pos>
+            <gml:pos>2.6545155 48.8356422</gml:pos>
+            <gml:pos>2.6545363 48.835648</gml:pos>
+            <gml:pos>2.6547302 48.8357016</gml:pos>
+            <gml:pos>2.6549161 48.8358105</gml:pos>
+            <gml:pos>2.6556716 48.8362768</gml:pos>
+            <gml:pos>2.6556605 48.8365207</gml:pos>
+            <gml:pos>2.6554794 48.8369739</gml:pos>
+            <gml:pos>2.65519 48.8372306</gml:pos>
+            <gml:pos>2.6532924 48.838082</gml:pos>
+            <gml:pos>2.6522909 48.8385508</gml:pos>
+            <gml:pos>2.6520695 48.838665</gml:pos>
+            <gml:pos>2.6517902 48.8388969</gml:pos>
+            <gml:pos>2.6516844 48.8389974</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n26:LOC" version="2"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n37:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:10:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>false</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <NumberOfSteps>0</NumberOfSteps>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w145_n117_n832:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>8.59</Distance>
+          <gml:LineString gml:id="w145_n117_n832">
+            <gml:pos>2.6545379 48.835577</gml:pos>
+            <gml:pos>2.6545608037 48.83556530151</gml:pos>
+            <gml:pos>2.65464775665 48.83557574592</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n117:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n832:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:11:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w146_n825_n843:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>3.2</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>26.47</Distance>
+          <gml:LineString gml:id="w146_n825_n843">
+            <gml:pos>2.65303730696 48.83456690843</gml:pos>
+            <gml:pos>2.65290319651 48.83448922527</gml:pos>
+            <gml:pos>2.6530185315 48.83439565222</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n825:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n843:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:12:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>3.20</MinimumWidth>
+          <Gradient>3</Gradient>
+          <GradientType>medium</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w149_n882_n847:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>10</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>15.44</Distance>
+          <gml:LineString gml:id="w149_n882_n847">
+            <gml:pos>2.65630625121 48.83611613128</gml:pos>
+            <gml:pos>2.65646199243 48.83602246212</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n882:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:Entrance:n847:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n847:LOC" versionRef="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:13:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>10.00</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>openSpace</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>concrete</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w150_n839_n120:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>7.84</Distance>
+          <gml:LineString gml:id="w150_n839_n120">
+            <gml:pos>2.65574298732 48.83622691442</gml:pos>
+            <gml:pos>2.65577718548 48.83625030685</gml:pos>
+            <gml:pos>2.6558197 48.8362245</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n839:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n120:LOC" version="3"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:14:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtEnd</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w151_n813_n833:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualGuidanceBands</Key>
+              <Value>No</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>18.26</Distance>
+          <gml:LineString gml:id="w151_n813_n833">
+            <gml:pos>2.65592711678 48.83663726109</gml:pos>
+            <gml:pos>2.65614464812 48.83671771169</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n813:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n833:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:15:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w151_n813_n833:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w152_n122_n878:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Discomfortable</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>113.10</Distance>
+          <gml:LineString gml:id="w152_n122_n878">
+            <gml:pos>2.6547723 48.83548</gml:pos>
+            <gml:pos>2.65485015199 48.8355229844</gml:pos>
+            <gml:pos>2.65565746015 48.83596872112</gml:pos>
+            <gml:pos>2.65595622228 48.83613367478</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n122:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n878:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:16:" version="any">
+            <validityConditions>
+              <ValidityCondition id="ALM:ValidityCondition:16:" version="any">
+                <Description>Secousses du fait de la présence de racine sous le revêtement</Description>
+              </ValidityCondition>
+            </validityConditions>
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>partial</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w153_n840_n824:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>26.12</Distance>
+          <gml:LineString gml:id="w153_n840_n824">
+            <gml:pos>2.65371590585 48.83508420457</gml:pos>
+            <gml:pos>2.65399485558 48.83523074141</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n840:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n824:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:17:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w154_n868_n114:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>2</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>39.88</Distance>
+          <gml:LineString gml:id="w154_n868_n114">
+            <gml:pos>2.6545608037 48.83556530151</gml:pos>
+            <gml:pos>2.6549343013 48.83579349054</gml:pos>
+            <gml:pos>2.6549329602 48.83580364206</gml:pos>
+            <gml:pos>2.6549161 48.8358105</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n868:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n114:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:18:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>2.00</MinimumWidth>
+          <Gradient>3</Gradient>
+          <GradientType>gentle</GradientType>
+          <AccessFeatureType>ramp</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <placeEquipments>
+            <RampEquipmentRef ref="ALM:RampEquipment:w154_n868_n114:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w155_n880_n825:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>6</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Place Gaston Deffere</Name>
+          <Distance>75.71</Distance>
+          <gml:LineString gml:id="w155_n880_n825">
+            <gml:pos>2.65385538071 48.83498357058</gml:pos>
+            <gml:pos>2.65381425727 48.83496262563</gml:pos>
+            <gml:pos>2.65333090281 48.83471644337</gml:pos>
+            <gml:pos>2.65303730696 48.83456690843</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n880:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n825:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:19:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>6.00</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>openSpace</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>concrete</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w156_n122_n880:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>86.90</Distance>
+          <gml:LineString gml:id="w156_n122_n880">
+            <gml:pos>2.6547723 48.83548</gml:pos>
+            <gml:pos>2.65462481473 48.83540029175</gml:pos>
+            <gml:pos>2.65407010436 48.83509934589</gml:pos>
+            <gml:pos>2.6539412114 48.83502947383</gml:pos>
+            <gml:pos>2.65385538071 48.83498357058</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n122:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n880:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:20:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBeginning</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w157_n846_n794:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>28.01</Distance>
+          <gml:LineString gml:id="w157_n846_n794">
+            <gml:pos>2.65342391902 48.83517540352</gml:pos>
+            <gml:pos>2.65346646041 48.83514423176</gml:pos>
+            <gml:pos>2.65348523587 48.83517071432</gml:pos>
+            <gml:pos>2.65366226166 48.83510009412</gml:pos>
+            <gml:pos>2.65369981259 48.83513716974</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:Entrance:n846:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n846:LOC" versionRef="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:ParkingBay:n794:LOC" versionRef="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:21:" version="any">
+            <MobilityImpairedAccess>true</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>true</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <TactileGuidingStrip>true</TactileGuidingStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w158_n856_n841:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>37.43</Distance>
+          <gml:LineString gml:id="w158_n856_n841">
+            <gml:pos>2.65407010436 48.83509934589</gml:pos>
+            <gml:pos>2.65448936481 48.83490667093</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n856:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:Entrance:n841:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n841:LOC" versionRef="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:22:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w159_n823_n813:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>4.48</Distance>
+          <gml:LineString gml:id="w159_n823_n813">
+            <gml:pos>2.65587374501 48.83661752235</gml:pos>
+            <gml:pos>2.65592711678 48.83663726109</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n823:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n813:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:23:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtEnd</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w160_n858_n868:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>48.32</Distance>
+          <gml:LineString gml:id="w160_n858_n868">
+            <gml:pos>2.65406727523 48.83527664443</gml:pos>
+            <gml:pos>2.6545608037 48.83556530151</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n858:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n868:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:24:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w161_n122_n121:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualGuidanceBands</Key>
+              <Value>No</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>11.59</Distance>
+          <gml:LineString gml:id="w161_n122_n121">
+            <gml:pos>2.6547723 48.83548</gml:pos>
+            <gml:pos>2.654666 48.8355572</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n122:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n121:LOC" version="3"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:25:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w161_n122_n121:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w162_n855_n801:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualGuidanceBands</Key>
+              <Value>No</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>9.50</Distance>
+          <gml:LineString gml:id="w162_n855_n801">
+            <gml:pos>2.65303194255 48.83494649485</gml:pos>
+            <gml:pos>2.65311240882 48.83501358425</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n855:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n801:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:26:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w162_n855_n801:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w163_n833_n817:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>71.13</Distance>
+          <gml:LineString gml:id="w163_n833_n817">
+            <gml:pos>2.65614464812 48.83671771169</gml:pos>
+            <gml:pos>2.65637867086 48.83665018321</gml:pos>
+            <gml:pos>2.65658654206 48.83652571872</gml:pos>
+            <gml:pos>2.65668444268 48.83639684028</gml:pos>
+            <gml:pos>2.65677295558 48.83632887001</gml:pos>
+            <gml:pos>2.65672132306 48.83628826434</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n833:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n817:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:27:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w164_n840_n870:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>10</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Place Gaston Deffere</Name>
+          <Distance>5.53</Distance>
+          <gml:LineString gml:id="w164_n840_n870">
+            <gml:pos>2.65371590585 48.83508420457</gml:pos>
+            <gml:pos>2.65373736352 48.83503653586</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n840:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n870:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:28:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>10.00</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>openSpace</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>concrete</FlooringType>
+          <TactileWarningStrip>tactileStripAtEnd</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w165_n824_n808:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>4.52</Distance>
+          <gml:LineString gml:id="w165_n824_n808">
+            <gml:pos>2.65399485558 48.83523074141</gml:pos>
+            <gml:pos>2.65394389361 48.83525369292</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n824:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:ParkingBay:n808:LOC" versionRef="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:29:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w167_n73_n839:LOC" version="1">
+          <Distance>7.62</Distance>
+          <gml:LineString gml:id="w167_n73_n839">
+            <gml:pos>2.6556716 48.8362768</gml:pos>
+            <gml:pos>2.65574298732 48.83622691442</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n73:LOC" version="2"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n839:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:30:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>false</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Transition>up</Transition>
+          <AccessFeatureType>stairs</AccessFeatureType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <placeEquipments>
+            <StaircaseEquipmentRef ref="ALM:StaircaseEquipment:w167_n73_n839:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w168_n800_n878:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>10</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>60.31</Distance>
+          <gml:LineString gml:id="w168_n800_n878">
+            <gml:pos>2.65667237274 48.83623838995</gml:pos>
+            <gml:pos>2.65660196476 48.83615938529</gml:pos>
+            <gml:pos>2.65648864143 48.83618145364</gml:pos>
+            <gml:pos>2.65630625121 48.83611613128</gml:pos>
+            <gml:pos>2.65602864258 48.83615011657</gml:pos>
+            <gml:pos>2.65595622228 48.83613367478</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n800:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n878:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:31:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>10.00</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>openSpace</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>concrete</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w169_n815_n798:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>10</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Place Gaston Deffere</Name>
+          <Distance>3.48</Distance>
+          <gml:LineString gml:id="w169_n815_n798">
+            <gml:pos>2.65378832549 48.83498886711</gml:pos>
+            <gml:pos>2.65381425727 48.83496262563</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n815:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n798:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:32:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>10.00</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>openSpace</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>concrete</FlooringType>
+          <TactileWarningStrip>tactileStripAtBeginning</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w170_n118_n117:LOC" version="1">
+          <Distance>7.90</Distance>
+          <gml:LineString gml:id="w170_n118_n117">
+            <gml:pos>2.6545363 48.835648</gml:pos>
+            <gml:pos>2.6545379 48.835577</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n118:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n117:LOC" version="3"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:33:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>false</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <NumberOfSteps>8</NumberOfSteps>
+          <Transition>up</Transition>
+          <AccessFeatureType>stairs</AccessFeatureType>
+          <TactileWarningStrip>noTactileStrip</TactileWarningStrip>
+          <placeEquipments>
+            <StaircaseEquipmentRef ref="ALM:StaircaseEquipment:w170_n118_n117:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w171_n811_n859:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Bicycle</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>3.2</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>159.36</Distance>
+          <gml:LineString gml:id="w171_n811_n859">
+            <gml:pos>2.65485015199 48.8355229844</gml:pos>
+            <gml:pos>2.65497386187 48.83537551233</gml:pos>
+            <gml:pos>2.65515625209 48.83508067355</gml:pos>
+            <gml:pos>2.65524476498 48.83481584683</gml:pos>
+            <gml:pos>2.65527426928 48.83452806687</gml:pos>
+            <gml:pos>2.65529036254 48.83414141512</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n811:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n859:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:34:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>3.20</MinimumWidth>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w174_n74_n823:LOC" version="1">
+          <Distance>18.96</Distance>
+          <gml:LineString gml:id="w174_n74_n823">
+            <gml:pos>2.6556605 48.8365207</gml:pos>
+            <gml:pos>2.65587374501 48.83661752235</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n74:LOC" version="2"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n823:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:35:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>false</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Transition>up</Transition>
+          <AccessFeatureType>stairs</AccessFeatureType>
+          <TactileWarningStrip>noTactileStrip</TactileWarningStrip>
+          <placeEquipments>
+            <StaircaseEquipmentRef ref="ALM:StaircaseEquipment:w174_n74_n823:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w175_n120_n823:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>44.81</Distance>
+          <gml:LineString gml:id="w175_n120_n823">
+            <gml:pos>2.6558197 48.8362245</gml:pos>
+            <gml:pos>2.65584088795 48.83623838995</gml:pos>
+            <gml:pos>2.65582412414 48.83638359932</gml:pos>
+            <gml:pos>2.65587642722 48.83653940101</gml:pos>
+            <gml:pos>2.65587374501 48.83661752235</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n120:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n823:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:36:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBeginning</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w176_n824_n858:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualGuidanceBands</Key>
+              <Value>No</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>7.36</Distance>
+          <gml:LineString gml:id="w176_n824_n858">
+            <gml:pos>2.65399485558 48.83523074141</gml:pos>
+            <gml:pos>2.65406727523 48.83527664443</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n824:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n858:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:37:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>false</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>noTactileStrip</TactileWarningStrip>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w176_n824_n858:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w177_n121_n120:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>114.53</Distance>
+          <gml:LineString gml:id="w177_n121_n120">
+            <gml:pos>2.654666 48.8355572</gml:pos>
+            <gml:pos>2.65464775665 48.83557574592</gml:pos>
+            <gml:pos>2.65543949937 48.83601309759</gml:pos>
+            <gml:pos>2.6558197 48.8362245</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n121:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n120:LOC" version="3"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:38:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>pavement</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <equipmentPlaces>
+            <EquipmentPlace id="ALM:EquipmentPlace:380" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n803_38_0:LOC" version="any">
+                  <EquipmentRef ref="ALM:ShelterEquipment:n803:LOC" version="1"/>
+                  <Location id="n803">
+                    <Longitude>2.65543949937</Longitude>
+                    <Latitude>48.83601309759</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+            <EquipmentPlace id="ALM:EquipmentPlace:381" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n803_38_1:LOC" version="any">
+                  <EquipmentRef ref="ALM:RubbishDisposalEquipment:n803:LOC" version="1"/>
+                  <Location id="n803">
+                    <Longitude>2.65543949937</Longitude>
+                    <Latitude>48.83601309759</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+            <EquipmentPlace id="ALM:EquipmentPlace:382" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n803_38_2:LOC" version="any">
+                  <EquipmentRef ref="ALM:SeatingEquipment:n803:LOC" version="1"/>
+                  <Location id="n803">
+                    <Longitude>2.65543949937</Longitude>
+                    <Latitude>48.83601309759</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+          </equipmentPlaces>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w178_n827_n855:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Bicycle</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>42.73</Distance>
+          <gml:LineString gml:id="w178_n827_n855">
+            <gml:pos>2.65333090281 48.83471644337</gml:pos>
+            <gml:pos>2.65294879407 48.83488999845</gml:pos>
+            <gml:pos>2.65303194255 48.83494649485</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n827:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n855:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:39:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtEnd</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w179_n120_n878:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualGuidanceBands</Key>
+              <Value>No</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>14.21</Distance>
+          <gml:LineString gml:id="w179_n120_n878">
+            <gml:pos>2.6558197 48.8362245</gml:pos>
+            <gml:pos>2.65595622228 48.83613367478</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n120:LOC" version="3"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n878:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:40:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>2</Gradient>
+          <GradientType>gentle</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w179_n120_n878:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w180_n801_n840:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>13</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Place Gaston Deffere</Name>
+          <Distance>46.44</Distance>
+          <gml:LineString gml:id="w180_n801_n840">
+            <gml:pos>2.65311240882 48.83501358425</gml:pos>
+            <gml:pos>2.65315800637 48.83504183239</gml:pos>
+            <gml:pos>2.65338867635 48.83502594281</gml:pos>
+            <gml:pos>2.65357643098 48.83505065993</gml:pos>
+            <gml:pos>2.65371590585 48.83508420457</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n801:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n840:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:41:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>13.00</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>openSpace</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>concrete</FlooringType>
+          <TactileWarningStrip>tactileStripAtBeginning</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w181_n831_n805:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>13</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Place Gaston Deffere</Name>
+          <Distance>13.15</Distance>
+          <gml:LineString gml:id="w181_n831_n805">
+            <gml:pos>2.65346646041 48.83514423176</gml:pos>
+            <gml:pos>2.65357643098 48.83505065993</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n831:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n805:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:42:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>13.00</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>openSpace</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>concrete</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w182_n877_n816:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>34.26</Distance>
+          <gml:LineString gml:id="w182_n877_n816">
+            <gml:pos>2.65462481473 48.83540029175</gml:pos>
+            <gml:pos>2.65480784715 48.83527275441</gml:pos>
+            <gml:pos>2.65472843088 48.83522337452</gml:pos>
+            <gml:pos>2.6547919455 48.83517932255</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n877:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:Entrance:n816:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n816:LOC" versionRef="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:43:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w183_n884_n867:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1.5</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>13.18</Distance>
+          <gml:LineString gml:id="w183_n884_n867">
+            <gml:pos>2.654018469 48.83580755582</gml:pos>
+            <gml:pos>2.6541842 48.835854</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:Entrance:n884:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n884:LOC" versionRef="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n867:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:44:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <MinimumWidth>1.50</MinimumWidth>
+          <Gradient>0</Gradient>
+          <GradientType>level</GradientType>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w184_n817_n800:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualGuidanceBands</Key>
+              <Value>No</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>6.60</Distance>
+          <gml:LineString gml:id="w184_n817_n800">
+            <gml:pos>2.65672132306 48.83628826434</gml:pos>
+            <gml:pos>2.65667237274 48.83623838995</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n817:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n800:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:45:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w184_n817_n800:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w185_n870_n815:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualGuidanceBands</Key>
+              <Value>No</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>6.48</Distance>
+          <gml:LineString gml:id="w185_n870_n815">
+            <gml:pos>2.65373736352 48.83503653586</gml:pos>
+            <gml:pos>2.65378832549 48.83498886711</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n870:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n815:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:46:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
+          <NumberOfSteps>0</NumberOfSteps>
+          <TiltAngle>0</TiltAngle>
+          <TiltType>nearlyFlat</TiltType>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <FlooringType>asphalt</FlooringType>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w185_n870_n815:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <EntranceEquipment id="ALM:EntranceEquipment:n816:LOC" version="1">
+          <Width>1.00</Width>
+          <Door>true</Door>
+          <DoorHandleOutside>knob</DoorHandleOutside>
+          <DoorHandleInside>crashBar</DoorHandleInside>
+          <RevolvingDoor>false</RevolvingDoor>
+          <DropKerbOutside>false</DropKerbOutside>
+          <WheelchairPassable>true</WheelchairPassable>
+          <DoorstepMark>false</DoorstepMark>
+          <NecessaryForceToOpen>unknown</NecessaryForceToOpen>
+          <RampDoorbell>true</RampDoorbell>
+          <Recognizable>false</Recognizable>
+          <TurningSpacePosition>outside</TurningSpacePosition>
+          <WheelchairTurningCircle>1.00</WheelchairTurningCircle>
+        </EntranceEquipment>
+        <EntranceEquipment id="ALM:EntranceEquipment:n841:LOC" version="1">
+          <Width>1.00</Width>
+          <Door>true</Door>
+          <RevolvingDoor>false</RevolvingDoor>
+          <DropKerbOutside>false</DropKerbOutside>
+          <WheelchairPassable>true</WheelchairPassable>
+          <DoorstepMark>false</DoorstepMark>
+          <NecessaryForceToOpen>unknown</NecessaryForceToOpen>
+        </EntranceEquipment>
+        <EntranceEquipment id="ALM:EntranceEquipment:n846:LOC" version="1">
+          <Width>1.00</Width>
+          <Door>true</Door>
+          <RevolvingDoor>false</RevolvingDoor>
+          <DropKerbOutside>false</DropKerbOutside>
+          <AutomaticDoor>true</AutomaticDoor>
+          <WheelchairPassable>true</WheelchairPassable>
+          <DoorstepMark>false</DoorstepMark>
+          <NecessaryForceToOpen>noForce</NecessaryForceToOpen>
+        </EntranceEquipment>
+        <EntranceEquipment id="ALM:EntranceEquipment:n847:LOC" version="1">
+          <Width>2.00</Width>
+          <DropKerbOutside>false</DropKerbOutside>
+          <WheelchairPassable>false</WheelchairPassable>
+          <DoorstepMark>false</DoorstepMark>
+          <NecessaryForceToOpen>unknown</NecessaryForceToOpen>
+        </EntranceEquipment>
+        <EntranceEquipment id="ALM:EntranceEquipment:n884:LOC" version="1">
+          <Width>1.00</Width>
+          <Door>true</Door>
+          <RevolvingDoor>false</RevolvingDoor>
+          <DropKerbOutside>false</DropKerbOutside>
+          <WheelchairPassable>true</WheelchairPassable>
+          <DoorstepMark>false</DoorstepMark>
+          <NecessaryForceToOpen>unknown</NecessaryForceToOpen>
+        </EntranceEquipment>
+        <ShelterEquipment id="ALM:ShelterEquipment:n803:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AudibleSignals</Key>
+              <Value>No</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Name</Key>
+              <Value>Lycée Jean Moulin</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Quay</Key>
+              <Value>Bus</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>RubbishDisposal</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Seating</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Shelter</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualSigns</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+          </keyList>
+        </ShelterEquipment>
+        <SeatingEquipment id="ALM:SeatingEquipment:n803:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AudibleSignals</Key>
+              <Value>No</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Name</Key>
+              <Value>Lycée Jean Moulin</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Quay</Key>
+              <Value>Bus</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>RubbishDisposal</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Seating</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Shelter</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualSigns</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+          </keyList>
+        </SeatingEquipment>
+        <RubbishDisposalEquipment id="ALM:RubbishDisposalEquipment:n803:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AudibleSignals</Key>
+              <Value>No</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Name</Key>
+              <Value>Lycée Jean Moulin</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Quay</Key>
+              <Value>Bus</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>RubbishDisposal</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Seating</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Shelter</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualSigns</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+          </keyList>
+        </RubbishDisposalEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w151_n813_n833:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>roadCrossingWithIsland</CrossingType>
+          <ZebraCrossing>true</ZebraCrossing>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <VisualGuidanceBands>false</VisualGuidanceBands>
+          <DroppedKerb>true</DroppedKerb>
+          <MarkingStatus>good</MarkingStatus>
+        </CrossingEquipment>
+        <RampEquipment id="ALM:RampEquipment:w154_n868_n114:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+          </keyList>
+          <Width>2.00</Width>
+          <Length>39.88</Length>
+          <MaximumLoad>200</MaximumLoad>
+          <Gradient>3</Gradient>
+          <GradientType>gentle</GradientType>
+          <HandrailType>none</HandrailType>
+          <Temporary>false</Temporary>
+          <RestStopDistance>1</RestStopDistance>
+          <SafetyEdge>oneSide</SafetyEdge>
+        </RampEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w161_n122_n121:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>roadCrossing</CrossingType>
+          <ZebraCrossing>true</ZebraCrossing>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <VisualGuidanceBands>false</VisualGuidanceBands>
+          <DroppedKerb>true</DroppedKerb>
+          <MarkingStatus>good</MarkingStatus>
+        </CrossingEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w162_n855_n801:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>roadCrossing</CrossingType>
+          <ZebraCrossing>true</ZebraCrossing>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <VisualGuidanceBands>false</VisualGuidanceBands>
+          <DroppedKerb>true</DroppedKerb>
+          <MarkingStatus>good</MarkingStatus>
+        </CrossingEquipment>
+        <StaircaseEquipment id="ALM:StaircaseEquipment:w167_n73_n839:LOC" version="1">
+          <DirectionOfUse>both</DirectionOfUse>
+          <HandrailType>none</HandrailType>
+          <TopEnd>
+            <TexturedSurface>false</TexturedSurface>
+          </TopEnd>
+        </StaircaseEquipment>
+        <StaircaseEquipment id="ALM:StaircaseEquipment:w170_n118_n117:LOC" version="1">
+          <DirectionOfUse>both</DirectionOfUse>
+          <NumberOfSteps>8</NumberOfSteps>
+          <StepColourContrast>false</StepColourContrast>
+          <HandrailType>none</HandrailType>
+          <TopEnd>
+            <TexturedSurface>false</TexturedSurface>
+          </TopEnd>
+          <BottomEnd>
+            <TexturedSurface>false</TexturedSurface>
+          </BottomEnd>
+        </StaircaseEquipment>
+        <StaircaseEquipment id="ALM:StaircaseEquipment:w174_n74_n823:LOC" version="1">
+          <DirectionOfUse>both</DirectionOfUse>
+          <HandrailType>none</HandrailType>
+          <TopEnd>
+            <TexturedSurface>false</TexturedSurface>
+          </TopEnd>
+          <BottomEnd>
+            <TexturedSurface>false</TexturedSurface>
+          </BottomEnd>
+        </StaircaseEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w176_n824_n858:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>roadCrossing</CrossingType>
+          <ZebraCrossing>true</ZebraCrossing>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>noTactileStrip</TactileWarningStrip>
+          <VisualGuidanceBands>false</VisualGuidanceBands>
+          <DroppedKerb>false</DroppedKerb>
+          <MarkingStatus>good</MarkingStatus>
+        </CrossingEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w179_n120_n878:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+          </keyList>
+          <Width>1.50</Width>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>roadCrossing</CrossingType>
+          <ZebraCrossing>true</ZebraCrossing>
+          <PedestrianLights>false</PedestrianLights>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <VisualGuidanceBands>false</VisualGuidanceBands>
+          <DroppedKerb>true</DroppedKerb>
+          <MarkingStatus>good</MarkingStatus>
+        </CrossingEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w184_n817_n800:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>roadCrossing</CrossingType>
+          <ZebraCrossing>true</ZebraCrossing>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <VisualGuidanceBands>false</VisualGuidanceBands>
+          <DroppedKerb>true</DroppedKerb>
+          <MarkingStatus>good</MarkingStatus>
+        </CrossingEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w185_n870_n815:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AcousticCrossingAids</Key>
+              <Value>None</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>roadCrossing</CrossingType>
+          <ZebraCrossing>true</ZebraCrossing>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>tactileStripAtBothEnds</TactileWarningStrip>
+          <VisualGuidanceBands>false</VisualGuidanceBands>
+          <DroppedKerb>true</DroppedKerb>
+          <MarkingStatus>good</MarkingStatus>
+        </CrossingEquipment>
+        <PathJunction id="ALM:PathJunction:n26:LOC" version="2">
+          <Location id="n26">
+            <Longitude>2.6499866</Longitude>
+            <Latitude>48.8388332</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n73:LOC" version="2">
+          <Location id="n73">
+            <Longitude>2.6556716</Longitude>
+            <Latitude>48.8362768</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n74:LOC" version="2">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n74">
+            <Longitude>2.6556605</Longitude>
+            <Latitude>48.8365207</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n80:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>CycleBarrier</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Pass</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n80">
+            <Longitude>2.649993</Longitude>
+            <Latitude>48.8387712</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n117:LOC" version="3">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n117">
+            <Longitude>2.6545379</Longitude>
+            <Latitude>48.835577</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n118:LOC" version="3">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n118">
+            <Longitude>2.6545363</Longitude>
+            <Latitude>48.835648</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n120:LOC" version="3">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n120">
+            <Longitude>2.6558197</Longitude>
+            <Latitude>48.8362245</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n121:LOC" version="3">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n121">
+            <Longitude>2.654666</Longitude>
+            <Latitude>48.8355572</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n122:LOC" version="3">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n122">
+            <Longitude>2.6547723</Longitude>
+            <Latitude>48.83548</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n800:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n800">
+            <Longitude>2.65667237274</Longitude>
+            <Latitude>48.83623838995</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n801:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n801">
+            <Longitude>2.65311240882</Longitude>
+            <Latitude>48.83501358425</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n813:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n813">
+            <Longitude>2.65592711678</Longitude>
+            <Latitude>48.83663726109</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n815:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Good</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n815">
+            <Longitude>2.65378832549</Longitude>
+            <Latitude>48.83498886711</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n817:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n817">
+            <Longitude>2.65672132306</Longitude>
+            <Latitude>48.83628826434</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n823:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n823">
+            <Longitude>2.65587374501</Longitude>
+            <Latitude>48.83661752235</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n824:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Raised</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbHeight</Key>
+              <Value>0.2</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n824">
+            <Longitude>2.65399485558</Longitude>
+            <Latitude>48.83523074141</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n833:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n833">
+            <Longitude>2.65614464812</Longitude>
+            <Latitude>48.83671771169</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n839:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n839">
+            <Longitude>2.65574298732</Longitude>
+            <Latitude>48.83622691442</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n855:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n855">
+            <Longitude>2.65303194255</Longitude>
+            <Latitude>48.83494649485</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n858:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Raised</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbHeight</Key>
+              <Value>0.2</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n858">
+            <Longitude>2.65406727523</Longitude>
+            <Latitude>48.83527664443</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n870:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Good</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n870">
+            <Longitude>2.65373736352</Longitude>
+            <Latitude>48.83503653586</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n878:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbDesign</Key>
+              <Value>Lowered</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Worn</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n878">
+            <Longitude>2.65595622228</Longitude>
+            <Latitude>48.83613367478</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n37:LOC" version="1">
+          <Location id="n37">
+            <Longitude>2.6516844</Longitude>
+            <Latitude>48.8389974</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n832:LOC" version="1">
+          <Location id="n832">
+            <Longitude>2.65464775665</Longitude>
+            <Latitude>48.83557574592</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n825:LOC" version="1">
+          <Location id="n825">
+            <Longitude>2.65303730696</Longitude>
+            <Latitude>48.83456690843</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n843:LOC" version="1">
+          <Location id="n843">
+            <Longitude>2.6530185315</Longitude>
+            <Latitude>48.83439565222</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n882:LOC" version="1">
+          <Location id="n882">
+            <Longitude>2.65630625121</Longitude>
+            <Latitude>48.83611613128</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n840:LOC" version="1">
+          <Location id="n840">
+            <Longitude>2.65371590585</Longitude>
+            <Latitude>48.83508420457</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n868:LOC" version="1">
+          <Location id="n868">
+            <Longitude>2.6545608037</Longitude>
+            <Latitude>48.83556530151</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n114:LOC" version="1">
+          <Location id="n114">
+            <Longitude>2.6549161</Longitude>
+            <Latitude>48.8358105</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n880:LOC" version="1">
+          <Location id="n880">
+            <Longitude>2.65385538071</Longitude>
+            <Latitude>48.83498357058</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n856:LOC" version="1">
+          <Location id="n856">
+            <Longitude>2.65407010436</Longitude>
+            <Latitude>48.83509934589</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n798:LOC" version="1">
+          <Location id="n798">
+            <Longitude>2.65381425727</Longitude>
+            <Latitude>48.83496262563</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n811:LOC" version="1">
+          <Location id="n811">
+            <Longitude>2.65485015199</Longitude>
+            <Latitude>48.8355229844</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n859:LOC" version="1">
+          <Location id="n859">
+            <Longitude>2.65529036254</Longitude>
+            <Latitude>48.83414141512</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n827:LOC" version="1">
+          <Location id="n827">
+            <Longitude>2.65333090281</Longitude>
+            <Latitude>48.83471644337</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n831:LOC" version="1">
+          <Location id="n831">
+            <Longitude>2.65346646041</Longitude>
+            <Latitude>48.83514423176</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n805:LOC" version="1">
+          <Location id="n805">
+            <Longitude>2.65357643098</Longitude>
+            <Latitude>48.83505065993</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n877:LOC" version="1">
+          <Location id="n877">
+            <Longitude>2.65462481473</Longitude>
+            <Latitude>48.83540029175</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n867:LOC" version="1">
+          <Location id="n867">
+            <Longitude>2.6541842</Longitude>
+            <Latitude>48.835854</Latitude>
+          </Location>
+        </PathJunction>
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>

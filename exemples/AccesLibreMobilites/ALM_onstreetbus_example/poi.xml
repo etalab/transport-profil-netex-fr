@@ -1,0 +1,433 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+  <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
+  <ParticipantRef>ALM_wdm2netex</ParticipantRef>
+  <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement</Description>
+  <dataObjects>
+    <GeneralFrame id="FR:GeneralFrame:NETEX_COMMUN:LOC" version="1.09:FR-NETEX-2.3-0.0">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN:"/>
+      <FrameDefaults>
+        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
+      </FrameDefaults>
+      <members>
+        <PointOfInterest id="ALM:PointOfInterest:w147:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PointOfInterest</Key>
+              <Value>Healthcare</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Centre de test covid de Seine-et-Marne</Name>
+          <gml:Polygon gml:id="w147">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65374970755 48.8356534071</gml:pos>
+                <gml:pos>2.65388261488 48.83559292887</gml:pos>
+                <gml:pos>2.65407907107 48.83577997951</gml:pos>
+                <gml:pos>2.654018469 48.83580755582</gml:pos>
+                <gml:pos>2.65394616375 48.83584045752</gml:pos>
+                <gml:pos>2.65374970755 48.8356534071</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:48:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <facilities>
+            <SiteFacilitySet id="ALM:SiteFacilitySet:48:" version="any">
+              <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+              <SanitaryFacilityList>toilet wheelchairAccessToilet babyChange wheelchairBabyChange</SanitaryFacilityList>
+            </SiteFacilitySet>
+          </facilities>
+          <entrances>
+            <EntranceRef ref="ALM:Entrance:n884:LOC" version="1"/>
+          </entrances>
+        </PointOfInterest>
+        <PointOfInterest id="ALM:PointOfInterest:w148:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PointOfInterest</Key>
+              <Value>Religion</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Religion</Key>
+              <Value>Muslim</Value>
+            </KeyValue>
+          </keyList>
+          <gml:Polygon gml:id="w148">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65476346535 48.83514928022</gml:pos>
+                <gml:pos>2.65498935442 48.83505649979</gml:pos>
+                <gml:pos>2.65505783581 48.83512873762</gml:pos>
+                <gml:pos>2.65483194675 48.83522151792</gml:pos>
+                <gml:pos>2.6547919455 48.83517932255</gml:pos>
+                <gml:pos>2.65476346535 48.83514928022</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:49:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>false</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <facilities>
+            <SiteFacilitySet id="ALM:SiteFacilitySet:49:" version="any">
+              <MobilityFacilityList>unknown</MobilityFacilityList>
+              <SanitaryFacilityList>none</SanitaryFacilityList>
+            </SiteFacilitySet>
+          </facilities>
+          <entrances>
+            <EntranceRef ref="ALM:Entrance:n816:LOC" version="1"/>
+          </entrances>
+        </PointOfInterest>
+        <PointOfInterest id="ALM:PointOfInterest:w166:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Education</Key>
+              <Value>HighSchool</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PointOfInterest</Key>
+              <Value>Education</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Lycée Jean Moulin</Name>
+          <gml:Polygon gml:id="w166">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65660464495 48.83612584269</gml:pos>
+                <gml:pos>2.65646199243 48.83602246212</gml:pos>
+                <gml:pos>2.65633910626 48.83593340609</gml:pos>
+                <gml:pos>2.65693187445 48.83533490589</gml:pos>
+                <gml:pos>2.65729397267 48.8350435979</gml:pos>
+                <gml:pos>2.65760242671 48.83476817787</gml:pos>
+                <gml:pos>2.65916347235 48.83527134793</gml:pos>
+                <gml:pos>2.65869676799 48.83576215455</gml:pos>
+                <gml:pos>2.65797525376 48.83601285248</gml:pos>
+                <gml:pos>2.65714645118 48.83604816195</gml:pos>
+                <gml:pos>2.65660464495 48.83612584269</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:50:" version="any">
+            <validityConditions>
+              <ValidityCondition id="ALM:ValidityCondition:50:" version="any">
+                <Description>forte pente entre l'entrée et les bâtiments où sont dispensés les cours</Description>
+              </ValidityCondition>
+            </validityConditions>
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>partial</WheelchairAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>false</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <facilities>
+            <SiteFacilitySet id="ALM:SiteFacilitySet:50:" version="any">
+              <MobilityFacilityList>unknown</MobilityFacilityList>
+              <SanitaryFacilityList>toilet wheelchairAccessToilet</SanitaryFacilityList>
+            </SiteFacilitySet>
+          </facilities>
+          <entrances>
+            <EntranceRef ref="ALM:Entrance:n847:LOC" version="1"/>
+          </entrances>
+        </PointOfInterest>
+        <PointOfInterest id="ALM:PointOfInterest:w172:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Government</Key>
+              <Value>SocialWelfare</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PointOfInterest</Key>
+              <Value>Government</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Caf de Seine-et-Marne</Name>
+          <gml:Polygon gml:id="w172">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65323621152 48.83519334604</gml:pos>
+                <gml:pos>2.6533680739 48.83512718229</gml:pos>
+                <gml:pos>2.65342391902 48.83517540352</gml:pos>
+                <gml:pos>2.65351700129 48.83525577824</gml:pos>
+                <gml:pos>2.65338513891 48.83532194182</gml:pos>
+                <gml:pos>2.65323621152 48.83519334604</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:51:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <facilities>
+            <SiteFacilitySet id="ALM:SiteFacilitySet:51:" version="any">
+              <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+              <SanitaryFacilityList>toilet wheelchairAccessToilet babyChange wheelchairBabyChange</SanitaryFacilityList>
+            </SiteFacilitySet>
+          </facilities>
+          <entrances>
+            <EntranceRef ref="ALM:Entrance:n846:LOC" version="1"/>
+          </entrances>
+        </PointOfInterest>
+        <PointOfInterest id="ALM:PointOfInterest:w173:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PointOfInterest</Key>
+              <Value>Sport</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Sport</Key>
+              <Value>FitnessCenter</Value>
+            </KeyValue>
+          </keyList>
+          <Name>Gymnase de la Fraternité</Name>
+          <gml:Polygon gml:id="w173">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65468224845 48.83508808579</gml:pos>
+                <gml:pos>2.65448936481 48.83490667093</gml:pos>
+                <gml:pos>2.65443554904 48.8348560549</gml:pos>
+                <gml:pos>2.65492404966 48.83463102262</gml:pos>
+                <gml:pos>2.65511875959 48.8348141562</gml:pos>
+                <gml:pos>2.65485260646 48.83493676176</gml:pos>
+                <gml:pos>2.65490459593 48.83498565999</gml:pos>
+                <gml:pos>2.65468224845 48.83508808579</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:52:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <AudibleSignalsAvailable>false</AudibleSignalsAvailable>
+                <VisualSignsAvailable>false</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <facilities>
+            <SiteFacilitySet id="ALM:SiteFacilitySet:52:" version="any">
+              <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+              <SanitaryFacilityList>toilet wheelchairAccessToilet shower washingAndChangeFacilities</SanitaryFacilityList>
+            </SiteFacilitySet>
+          </facilities>
+          <entrances>
+            <EntranceRef ref="ALM:Entrance:n841:LOC" version="1"/>
+          </entrances>
+        </PointOfInterest>
+        <PointOfInterestEntrance id="ALM:Entrance:n816:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Door</Key>
+              <Value>Hinged</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>EntrancePassage</Key>
+              <Value>Door</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n816">
+              <Longitude>2.6547919455</Longitude>
+              <Latitude>48.83517932255</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:0:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>unknown</StepFreeAccess>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:PointOfInterest:w148:LOC" version="1"/>
+          <placeEquipments>
+            <EntranceEquipmentRef ref="ALM:EntranceEquipment:n816:LOC"/>
+          </placeEquipments>
+          <EntranceType>door</EntranceType>
+          <Width>1.00</Width>
+        </PointOfInterestEntrance>
+        <PointOfInterestEntrance id="ALM:Entrance:n841:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Door</Key>
+              <Value>Hinged</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>EntrancePassage</Key>
+              <Value>Door</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n841">
+              <Longitude>2.65448936481</Longitude>
+              <Latitude>48.83490667093</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:1:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>unknown</StepFreeAccess>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:PointOfInterest:w173:LOC" version="1"/>
+          <placeEquipments>
+            <EntranceEquipmentRef ref="ALM:EntranceEquipment:n841:LOC"/>
+          </placeEquipments>
+          <EntranceType>door</EntranceType>
+          <Width>1.00</Width>
+        </PointOfInterestEntrance>
+        <PointOfInterestEntrance id="ALM:Entrance:n846:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AutomaticDoor</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Door</Key>
+              <Value>Sliding</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>EntrancePassage</Key>
+              <Value>Door</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n846">
+              <Longitude>2.65342391902</Longitude>
+              <Latitude>48.83517540352</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:2:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>unknown</StepFreeAccess>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:PointOfInterest:w172:LOC" version="1"/>
+          <placeEquipments>
+            <EntranceEquipmentRef ref="ALM:EntranceEquipment:n846:LOC"/>
+          </placeEquipments>
+          <EntranceType>automaticDoor</EntranceType>
+          <Width>1.00</Width>
+        </PointOfInterestEntrance>
+        <PointOfInterestEntrance id="ALM:Entrance:n847:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>EntrancePassage</Key>
+              <Value>Gate</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n847">
+              <Longitude>2.65646199243</Longitude>
+              <Latitude>48.83602246212</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:3:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>unknown</StepFreeAccess>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:PointOfInterest:w166:LOC" version="1"/>
+          <placeEquipments>
+            <EntranceEquipmentRef ref="ALM:EntranceEquipment:n847:LOC"/>
+          </placeEquipments>
+          <EntranceType>gate</EntranceType>
+          <Width>2.00</Width>
+        </PointOfInterestEntrance>
+        <PointOfInterestEntrance id="ALM:Entrance:n884:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Door</Key>
+              <Value>Hinged</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>EntrancePassage</Key>
+              <Value>Door</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>None</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n884">
+              <Longitude>2.654018469</Longitude>
+              <Latitude>48.83580755582</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:4:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>unknown</StepFreeAccess>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:PointOfInterest:w147:LOC" version="1"/>
+          <placeEquipments>
+            <EntranceEquipmentRef ref="ALM:EntranceEquipment:n884:LOC"/>
+          </placeEquipments>
+          <EntranceType>door</EntranceType>
+          <Width>1.00</Width>
+        </PointOfInterestEntrance>
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
