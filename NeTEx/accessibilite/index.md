@@ -3098,7 +3098,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                     | RampDoorbell                | xsd:boolean            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
 |                     | Recognizable                | xsd:boolean            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *false* lorsque l'entrée est difficile à repérer.                              |
 |                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
-|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considèrera le rayon du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
+|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considèrera le diamètre du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
 
 <div class="table-title">QueueingEquipment (gestion de queue) – Élément</div>
 
@@ -4221,6 +4221,13 @@ En particulier, ça sera :
 - *false* si les deux sont absents
 
 **TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
+
+## Espace de manœuvre pour les entrées (ENTRANCE EQUIPMENT)
+
+L'espace de manœuvre (ou aire de rotation) désigne à un espace situé juste devant la porte, permettant de la manœuvrer correctement et de faire demi-tour en fauteuil roulant afin de l'emprunter. Un diamètre d'1,50 m est attendu et on peut en retrouver de chaque côté de la porte (attribut **TurningSpacePosition**).
+
+![Diamètre de giration](./media/image18.jpg)
+
 
 # Bibliographie
 
