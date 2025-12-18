@@ -1222,7 +1222,7 @@ Exemple :
 | «cntd»              | ***sectionsInSequence*** | *SectionLink*        | 0:\*             | Liste des sections de l'ITINÉRAIRE.                                                                                                                                                             |
 |                     | ***InverseRouteRef***  | *RouteRef*            | 0:1              | Référence l'éventuel ITINÉRAIRE en sens opposé.                                                                                                                                               |
 
-### Les Point d'itinéraire
+### Les Points d'itinéraire
 
 <div class="table-title">RoutePoint – Element</div>
 
@@ -1859,7 +1859,7 @@ flexibilité.
 <td><em><strong>pointsInSequence</strong></em></td>
 <td><em>PointInJourneyPattern</em></td>
 <td>0:*</td>
-<td>Liste ordonnées des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
+<td>Liste ordonnée des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1867,7 +1867,7 @@ flexibilité.
 <td><em>ServiceLink</em></td>
 <td>0:*</td>
 <td>
-Liste ordonnées des sections de la MISSION COMMERCIALE (SERVICE LINK). Chaque section décrit la géométrie entre deux points consécutifs (ScheduleStopPoint).</td>
+Liste ordonnée des sections de la MISSION COMMERCIALE (SERVICE LINK). Chaque section décrit la géométrie entre deux points consécutifs (ScheduleStopPoint).</td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
