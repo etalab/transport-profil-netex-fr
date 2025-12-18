@@ -2074,94 +2074,56 @@ prendre la forme ci-dessous
 
 <div class="table-title">PostalAddress – Element (objet inclus)</div>
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 18%" />
-<col style="width: 23%" />
-<col style="width: 5%" />
-<col style="width: 44%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td>::></td>
-<td>::></td>
-<td><em>Address</em></td>
-<td>::></td>
-<td><p>POSTAL ADDRESS hérite de ADDRESS.</p>
-<p>NOTE : les éléments hérités au dessus d’ADDRESS ne sont pas à prendre en compte dans le profil (en particulier le nom hérité de GroupOfEntities n’est pas obligatoire)</p></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>HouseNumber</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Numéro du bâtiment sur la voie</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>BuildingName</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Nom du bâtiment</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>AddressLine1</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Complément d'adresse hors numéro, type et nom de voie.</td>
-</tr>
+L'objet PostalAddress de NeTEx contient de nombreux attributs mais le profil France choisit de n'en prioriser que certains
+afin de trouver le juste équilibre entre les 3 axes suivants :
+* production des données par ceux n'ayant pas nécessairement une donnée structurée (exemple de Open Trip Planner (OTP) lisant des données OpenStreetMap (OSM)),
+* consommation des données de manière uniforme et si possible structurée,
+* besoin de rester cohérent avec les modèles utilisés par les autres pays.
 
-<tr class="odd">
-<td></td>
-<td><em><strong>Street</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Nom et type de voie</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Town</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Nom de la ville.</td>
-</tr>
+Pour cette raison, les champs `HouseNumber`, `Street` et `BuildingName` ne sont pas priorisés dans le profil France. Ils peuvent être utilisés quand l'information existe, elle sera alors considérée comme venant compléter les attributs priorisés.
+Il est donc recommandé d'utiliser en priorité le champ `AddressLine1` en n'indiquant si possible que les numéros et le nom
+de la rue, en évitant d'inclure les noms ou codes des batiments. Ce champ libre permettra dans certains cas d'indiquer
+les informations nécessaire quand aucune adresse n'existe (par exemple un arrêt à un croisement de routes en inter-urbain).
 
-<tr class="even">
-<td></td>
-<td><em><strong>PostCode</strong></em></td>
-<td><em>PostCodeType</em></td>
-<td>0:1</td>
-<td>Code Postal</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>PostCode­Extension</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Extension du code postal (avec éventuel cedex ou boite postale)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>PostalRegion</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td><p><span class="hl">Code INSEE</span></p>
-<p>NOTE <span class="hl">le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span></p>
-<p>NOTE <span class="hl">si l'on souhaite mieux formaliser la relation à la commune, l'Adresse Postale, la ZONE NeTEx dispose du "ParentZoneRef" que l'on peut utiliser à cet effet.</span></p></td>
-</tr>
+| **Classifi­cation** | **Nom**           | **Type**             |     | **Description**                         |
+|--------------------|-------------------|----------------------|-----|-----------------------------------------|
+|       ::>           | ::>  | *Address*        | 	::> | POSTAL ADDRESS hérite de ADDRESS. |
+|                     | ***AddressLine1***  | *xsd:normalizedString*        | 0:1 | Numéro et rue de l'adresse. Le num du batiment peut également être précisé.  <span class="hl">Ce champ retenu dans le profil France comme porteur de l'information de l'adresse (voir explication ci-dessus) </span> |
+|                     | ***HouseNumber***   | *xsd:normalizedString*        | 0:1 | Numéro du bâtiment sur la voie. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***Street***        | *xsd:normalizedString*        | 0:1 | Nom et type de voie. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***BuildingName***  | *xsd:normalizedString*        | 0:1 | Nom du bâtiment. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***Town***          | *MultilingualString* | 0:1 | Nom de la ville                             |
+|                     | ***PostCode***      | *PostCodeType* | 0:1 | Code Postal                             |
+|                     | ***PostCode­Extension*** | *xsd:normalizedString* | 0:1 | Extension du code postal (avec éventuel cedex ou boite postale)                           |
+|                     | ***PostalRegion***  | *MultilingualString* | 0:1 | Code INSEE. <span class="hl">NOTE : le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span> |
 
 
-</tbody>
-</table>
+**Exemple de fourniture d'adresse dans le profil France :**
+L'adresse postale suivant : 
+> Bâtiment B  
+> 5 Allée des Pirouettes  
+> 31420 Bouzin  
+
+Peut s'exporter de la manière suivante :
+```xml
+<PostalAddress>
+    <AddressLine1>5 Allée des Pirouettes</AddressLine1>
+    <PostCode>31420</PostCode>
+    <Town>Bouzin</Town>
+</PostalAddress>
+```
+ou dans une version plus complète :
+```xml
+<PostalAddress>
+    <AddressLine1>Bâtiment B, 5 Allée des Pirouettes</AddressLine1>
+    <BuildingName>Bâtiment B</BuildingName>
+    <HouseNumber>5</HouseNumber>
+    <Street>Allée des Pirouettes</Street>
+    <PostCode>31420</PostCode>
+    <Town>Bouzin</Town>
+</PostalAddress>
+```
+
 
 <div class="table-title">RoadAddress – Element (objet inclus)</div>
 
