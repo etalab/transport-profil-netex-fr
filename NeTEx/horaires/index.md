@@ -834,6 +834,13 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td>0:*</td>
 <td>Heures de passages planifiées aux arrêts (<em><strong>scheduledStopPoint</strong>)</em>.</td>
 </tr>
+<tr class="even">
+<td>«cntd»</td>
+<td colspan="2"><em><strong>passengerAtStopTimes</strong></em></td>
+<td><em>passengerAtStopTimes_RelStructure</em></td>
+<td>0:*</td>
+<td>Heures auxquelles les passagers doivent être présents avant le départ</td>
+</tr>
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>parts</strong></em></td>
@@ -845,12 +852,20 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 </tr>
 <tr class="odd">
 <td></td>
+<td colspan="2"><em><strong>calls</strong></em></td>
+<td><em>calls_RelStructure</em></td>
+<td>0:*</td>
+<td><p>La notion de Call est une vue agrégée de différentes propriétés lors d'un évènement (souvent le passage à un arrêt)</p>
+<p><span class="hl">Cette notion est héritée de SIRI et ne correspond pas à la modélisation des passages aux arrêts. La notion de Call n'est donc pas retenue dans le profil France.</span></p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
 <td colspan="2"><em><strong>facilities</strong></em></td>
 <td><em>serviceFacilitySets_RelStructure</em></td>
 <td>0:*</td>
 <td>Services disponibles pour cette course (voir le profil accessibilité pour plus de détails).</td>
 </tr>
-
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>TrainSize</strong></em></td>
@@ -951,19 +966,16 @@ Pour ***TrainSize*** voir *6.10.1-Train.*
 
 <div class="table-title">PassingTime – Element (objet inclus)</div>
 
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
-|---------------------|---------------------------|------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**                  | **Type**               | **Cardin­ality** | **Description**                                                                                                                                                                                                                                                                                                 |
-| *::>*               | *::>*                     | *VersionedChild*       | *::>*            | PASSING TIME hérite de VERSIONED CHILD <span class="hl">(non utilisé dans le profil)</span>                                                                                                                                                                                                                   |
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
-| «FK»                | PointInJourney­PatternRef | PointInLinkSequenceRef | 0:1              | Référence les POINT D'ARRÊT PLANIFIÉ pour lequel on fournit les heures de passage. Ce point peut aussi, de façon plus exceptionnel être un POINT HORAIRE uniquement.                                                                                                                                            |
-|                     | ***DayOffset***           | *xsd:integer*          | 0:1              | Nombre de jour de décalage par rapport au jour de début de course (permet de gérer les courses à cheval sur plusieurs jours).                                                                                                                                                                                   |
+| **Classifi­cation**  | **Name**                  | **Type**               | **Cardin­ality**  | **Description**       |
+|---------------------|---------------------------|------------------------|------------------| ----------------------|
+| *::>*               | *::>*                     | *VersionedChild*       | *::>*            | PASSING TIME hérite de VERSIONED CHILD <span class="hl">(non utilisé dans le profil)</span>                                                                                                                                                                                                                     |
+| «FK»                | PointInJourney­PatternRef  | PointInLinkSequenceRef | 0:1              | Référence les POINT D'ARRÊT PLANIFIÉ pour lequel on fournit les heures de passage. Ce point peut aussi, de façon plus exceptionnel être un POINT HORAIRE uniquement.                                                                                                                                            |
 |                     | ArrivalTime               | xsd:time               | 0:1              | Heure d'arrivée.                                                                                                                                                                                                                                                                                                |
+|                     | ***ArrivalDayOffset***    | *xsd:integer*          | 0:1              | Nombre de jours de décalage par rapport au jour de début de course (permet de gérer les courses à cheval sur plusieurs jours).                                                                                                                                                                                   |
 |                     | DepartureTime             | xsd:time               | 0:1              | Heure de départ.                                                                                                                                                                                                                                                                                                |
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
+|                     | ***DepartureDayOffset***  | *xsd:integer*          | 0:1              | Nombre de jours de décalage par rapport au jour de début de course (permet de gérer les courses à cheval sur plusieurs jours).                                                                                                                                                                                   |
 |                     | Headway                   | HeadwayInterval        | 0:1              | Temps d'attente moyen avant le prochain passage d'une COURSE empruntant le même PARCOURS.                                                                                                                                                                                                                       |
-|                     | EarliestDeparture­Time    | xsd:time               | 0:1              | Heure de départ au plus tôt <span class="hl">(il s'agit là de l'engagement de service du transporteur ou de l'AOT; il permettra notamment de sécuriser les correspondances; il permet aussi d'indiquer la précision de l'heure de passage, en particuliers aux points ou l'horaire est interpolé).</span>     |
+|                     | EarliestDeparture­Time     | xsd:time               | 0:1              | Heure de départ au plus tôt <span class="hl">(il s'agit là de l'engagement de service du transporteur ou de l'AOT; il permettra notamment de sécuriser les correspondances; il permet aussi d'indiquer la précision de l'heure de passage, en particuliers aux points ou l'horaire est interpolé).</span>     |
 |                     | LatestArrivalTime         | xsd:time               | 0:1              | Heure de d'arrivée au plus tard <span class="hl">(il s'agit là de l'engagement de service du transporteur ou de l'AOT; il permettra notamment de sécuriser les correspondances; il permet aussi d'indiquer la précision de l'heure de passage, en particuliers aux points ou l'horaire est interpolé).</span> |
 
 *<span class="hl">Note: pour les courses en fréquence, les nécessaires
@@ -2148,6 +2160,9 @@ dans les éléments ***members*** du ***GeneralFrame***.
 <p><span class="hl">La liste est fixe pour NETEX_ HORAIRE:</span></p>
 <ul>
 <li><p><span class="hl">SERVICE JOURNEY</span></p></li>
+</ul>
+<ul>
+<li><p><span class="hl">SERVICE LINK</span></p></li>
 </ul>
 <ul>
 <li><p><span class="hl">FLEXIBLE SERVICE PROPERTIES</span></p></li>

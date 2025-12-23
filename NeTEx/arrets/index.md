@@ -1521,7 +1521,7 @@ la façon suivante:
 <td><em>AccessibilityAssessment</em></td>
 <td>0:1</td>
 <td><p>Information globale précisant le niveau d'accessibilité du <span class="hl">LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</span>.</p>
-<p>Voir le détail ci-dessous.</p></td>
+<p>Voir le détail dans l'annexe 9 du profil Accessibilité.</p></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>

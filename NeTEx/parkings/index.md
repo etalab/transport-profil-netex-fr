@@ -1488,7 +1488,7 @@ PMR.</mark></p></td>
 
 La ***ParkingBay*** correspond à l’emplacement pour garer un véhicule.
 
-<div class='table-title'>ParkingBay – Element</div>
+<div class='table-title'>ParkingBay – Élement</div>
 
 <table class="attributes">
 <thead>
@@ -1507,9 +1507,9 @@ La ***ParkingBay*** correspond à l’emplacement pour garer un véhicule.
 <td><em>SiteComponent</em></td>
 <td><em>::&gt;</em></td>
 <td><p>PARKING BAY hérite de SITE COMPONENT.</p>
-<p>Note : beaucoups d’éléments important comme la gestion des version,
+<p>Note : beaucoups d’éléments importants comme la gestion des versions,
 les conditions de validité ou encore la géométrie, la position et
-l’accessibilité de la place sont issu de cet héritage.</p></td>
+l’accessibilité de la place sont issus de cet héritage. Pour les détails sur l'accessibilité, voir l'annexe 9 du profil accessibilité.</p></td>
 </tr>
 <tr class="even">
 <td>« PK »</td>
@@ -1939,7 +1939,8 @@ pour les piétons (incluant les accès type fauteils roulant, etc.).
 <p>Voir <em><strong>A.2.6-Entrée</strong></em></p>
 <p><mark>Note : Les caractéristiques d’accessibilité des entrées de
 parking peuvent être détaillées par les classiques ACCESSIBILITY
-ASSESMENTs et il est aussi possible d’y associer des FACILITY SET
+ASSESMENTs (voir annexe 9 du profil Accessibilité) et il est aussi 
+possible d’y associer des FACILITY SET
 (services et équipement disponibles)</mark></p>
 <p><mark>Note : dans la chaine d’héritage
 <em><strong>Centroid.Location.Longitude / Latitude</strong></em> sont
