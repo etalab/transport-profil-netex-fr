@@ -3191,8 +3191,9 @@ une association du `DayType` à un `DayTypeAssignment` de manière à préciser 
 d'application. L'utilisation de *ValidBetween* (*FromDate*, *ToDate*) disponible au travers de son héritage de *DataManagedObject*
 à cette fin n'est pas retenue.
 
-L'implémentation standard est donc la déclaration d'un calendrier de circulation avec
+L'implémentation standard dans un cas simple est donc la déclaration d'un calendrier de circulation avec
 1 DayType, 1 DayTypeAssignement et 1 UicOperatingPeriod.
+La gestion des cas complexe est explicitée après la description de UicOperatingPeriod.
 
 
 <div class="table-title">DayType – Model Element</div>
@@ -3603,6 +3604,61 @@ Dans le cas où un échange implique plusieurs DayTypeAssignement sur un DayType
 - Tous les jours indiqués comme "actifs" par les DayTypeAssignement "isAvailable=true" sont ajoutés par des `ET` logiques
 - Sur les jours "actifs" ainsi définis sont ensuite retirés tous les jours correspondants aux DayTypeAssignement "isAvailable=false" afin de gérer les exceptions de circulation (par exemple "sauf le 1er mai")
 
+**Exemples de représentations**
+Exemple 1 : 
+Calendirer du lundi au vendredi sauf jour ferié sur la semaine du 5 au 11 mai 2025 (le 8 mai est un jeudi)
+```xml
+<DayType version="any" id="exemple:DayType:Exemple1">
+    <properties>
+        <PropertyOfDay>
+            <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
+        </PropertyOfDay>
+    </properties>
+</DayType>
+
+<DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple1-1">
+    <OperatingPeriodRef ref="exemple:UicOperatingPeriod:Exemple1" version="any"></OperatingPeriodRef>
+    <DayTypeRef ref="exemple:DayType:Exemple1" version="any"></DayTypeRef>
+    <isAvailable>true</isAvailable> <!-- optionnel, true est la valeur par défaut-->
+</DayTypeAssignment>
+
+<DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple1-2">
+    <Date>2025-05-08</Date>
+    <DayTypeRef ref="exemple:DayType:Exemple1" version="any"></DayTypeRef>
+    <isAvailable>false</isAvailable>
+</DayTypeAssignment>
+
+<UicOperatingPeriod version="any" id="exemple:UicOperatingPeriod:Exemple1">
+    <FromDate>2025-05-05T00:00:00</FromDate>
+    <ToDate>2025-05-11T23:59:59</ToDate>
+    <ValidDayBits>1110100</ValidDayBits>
+</UicOperatingPeriod>
+```
+
+Exemple 2 : 
+Calendrier uniquement sur le 1er novembre et le 11 novembre 2025
+```xml
+<DayType version="any" id="exemple:DayType:Exemple2">
+</DayType>
+
+<DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple2-1">
+    <Date>2025-11-01</Date>
+    <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
+    <isAvailable>true</isAvailable>
+</DayTypeAssignment>
+
+<DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple2-2">
+    <Date>2025-11-11</Date>
+    <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
+    <isAvailable>true</isAvailable>
+</DayTypeAssignment>
+
+<UicOperatingPeriod version="any" id="exemple:UicOperatingPeriod:Exemple2">
+    <FromDate>2025-11-01T00:00:00</FromDate>
+    <ToDate>2025-11-11T23:59:59</ToDate>
+    <ValidDayBits>10000000001</ValidDayBits>
+</UicOperatingPeriod>
+```
 
 ## Tranche horaire
 
