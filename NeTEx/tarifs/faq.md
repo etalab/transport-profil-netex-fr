@@ -92,13 +92,13 @@ Le sujet de la variation du prix en fonction de la durée n'est pas traité dans
 Afin d'indiquer une periode de vente, il convient d'utiliser `ValidityConditions/AvailabilityConditions` sur l'offre à la vente (`SalesOfferPackage`).
 Cette information  permet d'indiquer qu'un titre mensuel est mis à la vente à partir du 15 septembre.
 
-Exemple :
+Exemple pour une periode de vente du 15/09/2025 au 30/10/2025 :
 ```xml
 <SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
     <validityConditions>
         <AvailabilityCondition id="exemple:AvailabilityCondition:01">
-            <FromDate>2025-01-01</FromDate>
-            <ToDate>2025-12-31</ToDate>
+            <FromDate>2025-09-15</FromDate>
+            <ToDate>2025-10-30</ToDate>
         </AvailabilityCondition>
     </validityConditions>
     <!-- autres informations -->
@@ -129,7 +129,7 @@ Exemple :
 
 ### Période pendant laquelle le titre peut être utilisé (ou "consommé") après l’achat
 
-Cette information est associée au produit tarifaire (`PreassignedFareProduct`) contenu dans l'offre à la vente (`SalesOfferPackage`). Pour indiquer cette information, il convient d'utiliser `ValidableElement/FareStructureElement` (ex. time Interval).
+Cette information est associée au produit tarifaire (`PreassignedFareProduct`) contenu dans l'offre à la vente (`SalesOfferPackage`). Pour indiquer cette information, il convient d'utiliser `ValidableElement/FareStructureElement` (ex. TimeInterval).
 
 ```xml
 <TimeInterval id="exemple:TimeInterval:template:01" version="any">
@@ -283,7 +283,7 @@ Voici un exemple :
 Cette situation se rencontre dans le cas d'un ticket autorisant les correspondances avec une durée maximale.
 Les exemples ci-dessous n'indiquent que l'autorisation de la correspondance, les informations temporelles sont décrites plus haut.
 
-Cas d'un ticket autorisant les correspondances, avec une durée maximale (par exemple 1h) : 
+Cas d'un ticket autorisant les correspondances, avec une durée maximale (par exemple 30min) : 
 ```xml
 <FareStructureElement id="exemple:FareStructureElement:01" version="any">
     <Name>Trajets avec correspondance</Name>
