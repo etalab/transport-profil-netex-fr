@@ -3617,7 +3617,7 @@ Calendirer du lundi au vendredi sauf jour ferié sur la semaine du 5 au 11 mai 2
 </DayType>
 
 <DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple1-1">
-    <OperatingPeriodRef ref="exemple:UicOperatingPeriod:Exemple1" version="any"></OperatingPeriodRef>
+    <UicOperatingPeriod ref="exemple:UicOperatingPeriod:Exemple1" version="any"></UicOperatingPeriod>
     <DayTypeRef ref="exemple:DayType:Exemple1" version="any"></DayTypeRef>
     <isAvailable>true</isAvailable> <!-- optionnel, true est la valeur par défaut-->
 </DayTypeAssignment>
@@ -3680,7 +3680,7 @@ Calendrier sur le 1er novembre avec l'utilisation de DayOfYear
 </DayType>
 
 <DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple3">
-    <OperatingPeriodRef ref="exemple:UicOperatingPeriod:Exemple3" version="any"></OperatingPeriodRef>
+    <UicOperatingPeriod ref="exemple:UicOperatingPeriod:Exemple3" version="any"></UicOperatingPeriod>
     <DayTypeRef ref="exemple:DayType:Exemple3" version="any"></DayTypeRef>
 </DayTypeAssignment>
 
