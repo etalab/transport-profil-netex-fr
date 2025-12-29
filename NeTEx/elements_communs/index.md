@@ -3623,7 +3623,7 @@ Calendirer du lundi au vendredi sauf jour ferié sur la semaine du 5 au 11 mai 2
 </DayTypeAssignment>
 
 <DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple1-2">
-    <Date>2025-05-08</Date>
+    <Date>2025-05-08</Date> <!-- L'activation de la date empêche de spécifier OperatingPeriodRef, mais il est tout de même appliqué dans ValidDayBits -->
     <DayTypeRef ref="exemple:DayType:Exemple1" version="any"></DayTypeRef>
     <isAvailable>false</isAvailable>
 </DayTypeAssignment>
@@ -3641,13 +3641,20 @@ Calendrier uniquement sur le 1er novembre et le 11 novembre 2025
 <DayType version="any" id="exemple:DayType:Exemple2">
 </DayType>
 
+<!-- 1er DayTypeAssignment pour associer le DayType et la periode d'application sans activer aucun jour -->
+<DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple2-3">
+    <UicOperatingPeriodRef ref="exemple:UicOperatingPeriod:Exemple2"></UicOperatingPeriodRef>
+    <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
+    <isAvailable>false</isAvailable>
+</DayTypeAssignment>                        
+
 <DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple2-1">
     <Date>2025-11-01</Date>
     <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
     <isAvailable>true</isAvailable>
 </DayTypeAssignment>
 
-<DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple2-2">
+<DayTypeAssignment order="3" version="any" id="exemple:DayTypeAssignment:Exemple2-2">
     <Date>2025-11-11</Date>
     <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
     <isAvailable>true</isAvailable>
@@ -3659,6 +3666,31 @@ Calendrier uniquement sur le 1er novembre et le 11 novembre 2025
     <ValidDayBits>10000000001</ValidDayBits>
 </UicOperatingPeriod>
 ```
+
+
+Exemple 3 :
+Calendrier sur le 1er novembre avec l'utilisation de DayOfYear
+```xml
+<DayType version="any" id="exemple:DayType:Exemple3">
+    <properties>
+        <PropertyOfDay>
+            <DayOfYear>--11-01</DayOfYear>
+        </PropertyOfDay>
+    </properties>
+</DayType>
+
+<DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple3">
+    <OperatingPeriodRef ref="exemple:UicOperatingPeriod:Exemple3" version="any"></OperatingPeriodRef>
+    <DayTypeRef ref="exemple:DayType:Exemple3" version="any"></DayTypeRef>
+</DayTypeAssignment>
+
+<UicOperatingPeriod version="any" id="exemple:UicOperatingPeriod:Exemple3">
+    <FromDate>2025-11-01T00:00:00</FromDate>
+    <ToDate>2025-11-30T23:59:59</ToDate>
+    <ValidDayBits>100000000000000000000000000000</ValidDayBits>
+</UicOperatingPeriod>
+```
+
 
 ## Tranche horaire
 
