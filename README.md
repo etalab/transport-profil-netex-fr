@@ -4,9 +4,9 @@ Cet espace de travail regroupe l'ensemble des éléments du profil France de NeT
 
 # Structure
 
-Cet espace de travail est composé :
-- d'un dossier `NeTEx` qui comprend le profil France avec un sous-dossier pour chaque partie du profil ; chaque partie comprend le texte en Markdown et un dossier pour les illustrations
-- d'un dossier `originaux` qui comprend l'ensemble des parties du profil France de NeTEx, tels que publiés par le GT7 après approbation du CN03.
+Dans le dossier `NeTEx` de cet espace de travail, on trouve un sous-dossier pour chaque partie du profil France. Chaque sous-dossier comprend : 
+- Un fichier `index.md` qui comprend le texte de la partie du profil,
+- Un dossier `media` pour toutes les illustrations.
 
 # Gouvernance
 
@@ -23,7 +23,7 @@ Cet espace de travail est ouvert à tout contributeur sans besoin d'inscription 
 Pour toute question, commentaire ou ouvrir une discussion plus large, merci d'ouvrir un ticket dans les `issues`.
 Pour toute demande de changement, merci de bien vouloir noter que :
 - la branche `main` est dédiée à tous les changements liés au `readme.md`, les corrections de fautes de frappe, grammaire ou de syntaxe de la documentation et de l'ensemble des bugs ;
-- la branche `next` est dédiée à toutes les évolutions du profil (ex. ajout d'attributs dans un élément, ajout d'une section complète, etc.) et aux ajouts de nouveaux documents (ex. nouvelle partie du profil France, fichiers d'illustrations, etc.)
+- la branche `next` est dédiée à toutes les évolutions du profil (ex. ajout d'attributs dans un élément, ajout d'une section complète, etc.) et aux ajouts de nouveaux documents (ex. nouvelle partie du profil France, fichiers d'illustrations, etc.).
 
 ## Processus de mise à jour des branches
 Dans la mesure où il a été choisi de travailler sur deux branches (voir point précédent), les mises à jour de la branche `next` à partir de `main` se feront comme suit :
