@@ -1194,17 +1194,17 @@ recommandé (pour des raisons de cohérence) que sa valeur soit:
 
 -   ***unknow*** dans tous les autres cas
 
-<div class="table-title">AccessibilityLimitation – Element (objet inclus)</div>
+<div class="table-title">AccessibilityLimitation – Élément (objet inclus)</div>
 
-|                     |                             |                        |     |                                                                                                                                                 |
-|---------------------|-----------------------------|------------------------|-----|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Nom**                     | **Type**               |     | **Description**                                                                                                                                 |
-|                     | ***WheelchairAccess***      | *LimitationStatusEnum* | 1:1 | Indique si l'accès est possible sans fauteuil roulant (codification: ***true***/***false***/***unknow***/***partial***).                        |
-|                     | ***StepFreeAccess***        | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans franchissement de marche ou d'escalier (codification: ***true***/***false***/ ***unknow***/***partial***). |
-|                     | ***EscalatorFreeAccess***   | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans utiliser d'escalator (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
-|                     | ***LiftFreeAccess***        | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans utiliser d'ascenseur (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
-|                     | ***AudibleSignsAvailable*** | *LimitationStatusEnum* | 0:1 | Indique si une signalétique auditive est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
-|                     | ***VisualSignsAvailable***  | *LimitationStatusEnum* | 0:1 | Indique si une signalétique visuelle est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
+| **Classification** | **Nom**                        | **Type**               |     | **Description**                                                                                                                                                                                                          |
+| ------------------ | ------------------------------ | ---------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                    | ***WheelchairAccess***         | *LimitationStatusEnum* | 1:1 | Indique si on peut s’y déplacer en fauteuil roulant.                                                                                                 |
+|                    | ***StepFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans franchir de marche ou d’escalier.                                                                          |
+|                    | ***EscalatorFreeAccess***      | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’escalator.                                                                                            |
+|                    | ***LiftFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’ascenseur.                                                                                            |
+|                    | ***AudibleSignsAvailable***    | *LimitationStatusEnum* | 0:1 | Indique si une information sonore ou une signalétique auditive est disponible.                                                                                                   |
+|                    | ***VisualSignsAvailable***     | *LimitationStatusEnum* | 0:1 | Indique si une information visuelle ou une signalétique visuelle est disponible.                                                                                                   |
+|                    | ***TactileGuidanceAvailable*** | *LimitationStatusEnum* | 0:1 | Indique s'il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile. |
 
 ## Adéquation aux besoins
 
