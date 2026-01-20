@@ -1117,7 +1117,7 @@ texte libre susceptible d'être présenté au public en complément des
 indicateurs ci-dessus.</span>
 
 ![image](media/image8.svg)
-*Accessibilité des autres parties du profil France*
+*Accessibilité dans les autres parties du profil France*
 
 Toutefois, cela correspond à une information globale et synthétique,
 mais qui dans de nombreuses situations manquera de précisions, d'une

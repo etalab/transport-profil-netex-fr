@@ -1058,7 +1058,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong>Accessibility­Assessment</strong></em></td>
 <td><em>Accessibility­Assessment</em></td>
 <td>0:1</td>
-<td>Information concernant l'accessibilité de la ligne <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong>, ainsi que la partie Accessibilité du profil France</em><span class="hl">).</span></td>
+<td>Information concernant l'accessibilité de la ligne <span class="hl">(<em>voir la partie Accessibilité du profil France</em>).</span></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -2638,7 +2638,7 @@ D'EMBARQUEMENT (QUAY).
 <td><em>navigationPaths</em></td>
 <td>0:1</td>
 <td><p>Description du cheminement utilisé pour cette correspondance.</p>
-<p><span class="hl">Dans le cadre du Profil Réseau, le NAVIGATION PATH n'est utilisé que pour indiquer de façon générale les contraintes d'accessibilité du cheminement (champs AccessFeatureList et NavigationType). La description complète et détaillée du NAVIGATION PATH est dans la partie Accessibilité du profil France.</span></p></td>
+<p>(voir la partie accessibilité du profil pour plus de détails)</p></td>
 </tr>
 </tbody>
 </table>
