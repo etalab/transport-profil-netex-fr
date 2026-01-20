@@ -1124,7 +1124,7 @@ mais qui dans de nombreuses situations manquera de précisions, d'une
 part vis-à-vis des besoins d'accessibilité et d'autre part en terme de
 précision sur les équipements et cheminements rencontrés.
 
-<div class="table-title">AccessibilityAssessment – Element (objet inclus)</div>
+<div class="table-title">AccessibilityAssessment – Élément (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -2265,7 +2265,7 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 | «FK»                | LevelRef    | LevelRef           | 0:1              | Niveau auquel le PATH LINKse connecte.                  |
 | «FK»                | EntranceRef | EntranceRef        | 0:1              | Entrée (ou sortie) associée à l’extrémité du PATH LINK. |
 
-<div class="table-title">PathJunction (croisement/jonction de cheminement) – Element</div>
+<div class="table-title">PathJunction (croisement/jonction de cheminement) – Élément</div>
 
 <table>
 <colgroup>
