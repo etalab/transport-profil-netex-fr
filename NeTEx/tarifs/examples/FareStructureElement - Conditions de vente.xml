@@ -25,7 +25,7 @@
 											<HasFee>true</HasFee> <!-- Requis --> 
 											<ExchangableTo>anyProduct</ExchangableTo> <!-- Optionnel -->
 											<!-- Balises non retenues (liste non exhaustive)
-											les balises du ResellingPeriodGroup sauf ReselWhen
+											les balises du ResellingPeriodGroup sauf ResellWhen
 											<NumberOfExchangesAllowed></NumberOfExchangesAllowed>
 											<PaymentMethods></PaymentMethods>
 											<RefundBasis></RefundBasis>
@@ -52,7 +52,7 @@
 											<HasFee>true</HasFee> <!-- Requis --> 
 											<RefundType>unused</RefundType> <!-- Optionnel -->
 											<!-- Balises non retenues (liste non exhaustive)
-											les balises du ResellingPeriodGroup sauf ReselWhen
+											les balises du ResellingPeriodGroup sauf ResellWhen
 											<RefundBasis></RefundBasis>
 											<RefundPolicy></RefundPolicy>
 											<PartialRefundBasis></PartialRefundBasis>

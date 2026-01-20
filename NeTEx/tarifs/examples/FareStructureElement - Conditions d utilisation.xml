@@ -18,15 +18,15 @@
 								<GenericParameterAssignment id="exemple:GenericParameterAssignment:UsageValidityPeriod-01" version="any">
 									<limitations>
 										<UsageValidityPeriod id="exemple:usagUsageValidityPeriode:UsageValidityPeriod-01" version="any">
-											<ValidityPeriodType>monthlyPass</ValidityPeriodType> <!-- Requis, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<UsageTrigger>specifiedStartDate</UsageTrigger><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<UsageEnd>endOfCalendarPeriod</UsageEnd> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<StandardDuration>P1M</StandardDuration> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<ActivationMeans>useOfValidator</ActivationMeans> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<StartDate>2025-11-18</StartDate><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<StartTime>11:25:00</StartTime><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<EndDate>2025-11-18</EndDate><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
-											<EndTime>11:25:00</EndTime><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE -->
+											<ValidityPeriodType>monthlyPass</ValidityPeriodType> <!-- Requis, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<UsageTrigger>specifiedStartDate</UsageTrigger><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<UsageEnd>endOfCalendarPeriod</UsageEnd> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<StandardDuration>P1M</StandardDuration> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<ActivationMeans>useOfValidator</ActivationMeans> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<StartDate>2025-11-18</StartDate><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<StartTime>11:25:00</StartTime><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<EndDate>2025-11-18</EndDate><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<EndTime>11:25:00</EndTime><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
 											<!-- Balises non retenues
 											<UsageStartConstraintType></UsageStartConstraintType>
 											<startOnlyOn></startOnlyOn>
@@ -44,7 +44,7 @@
 							<validityParameterAssignments>
 								<GenericParameterAssignment id="exemple:GenericParameterAssignment:validityParameters-01" version="any">
 									<validityParameters>
-										<!-- TODO à compléter -->
+										<!-- Liste qui ne retient pour le moment que les deux attributs les plus usuels. Des rajouts seront faits par la suite -->
 										<FareClass>secondClass</FareClass> <!-- Optionnel -->
 										<TransportModes>bus tram shuttle</TransportModes>
 									</validityParameters>
