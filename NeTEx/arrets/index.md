@@ -1499,11 +1499,7 @@ la façon suivante:
 <td><em>AccessibilityAssessment</em></td>
 <td>0:1</td>
 <td><p>Information globale précisant le niveau d'accessibilité du <span class="hl">LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</span>.</p>
-<<<<<<< HEAD
-<p>Voir le détail dans l'annexe 9 du profil Accessibilité.</p></td>
-=======
 <p>Voir le détail dans la section 'Éléments d’accessibilité de base partagés par toutes les parties du profil France' de la partie Accessibilité.</p></td>
->>>>>>> 4512922 (Changements de la mention à la partie accessibilité)
 </tr>
 <tr class="even">
 <td>«cntd»</td>
