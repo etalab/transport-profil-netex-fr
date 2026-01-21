@@ -1458,7 +1458,7 @@ d'objets plus complexes comme les ITINÉRAIREs (voir Profil Réseau).
 | ::>                 | ::>            | *DataManagedObject*  | ::>              | LINK SEQUENCE hérite de ***DataManagedObject***.      |
 |                     | ***Name***     | *MultilingualString* | 0:1              | Nom de la SÉQUENCE DE TRONÇON.                        |
 |                     | ***Distance*** | *DistanceType*       | 0:1              | Longueur totale (en mètre) de la SÉQUENCE DE TRONÇON. |
-|                     | ***sectionsInSequence*** | *SectionInSequence*       | 0:*              | Liste de TRONÇON. |
+|                     | ***sectionsInSequence*** | *SectionInSequence*       | 0:*              | Liste ordonnée de TRONÇONs. |
 
 ## Attributs des Points d’une Séquence de Tronçons
 
