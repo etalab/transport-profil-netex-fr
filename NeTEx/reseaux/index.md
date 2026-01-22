@@ -3033,6 +3033,13 @@ description des ITL (Interdiction de trafic local).
 <td>0:1</td>
 <td>Groupe de lignes ou réseau concerné par la restriction</td>
 </tr>
+<tr class="even">
+<td></td>
+<td><em><strong>pointsInPattern</strong></em></td>
+<td><em>pointsInPattern</em></td>
+<td></td>
+<td><span class="hl">Cette propriété n'est pas retenue dans le profil France. Le champ <em>member</em> est utilisé, comme indiqué ci-dessus dans l'héritage de Zone.</span></td>
+</tr>
 </tbody>
 </table>
 
