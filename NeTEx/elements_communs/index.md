@@ -65,23 +65,26 @@ concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-
-
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-
-
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
+
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
 
 NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
 la France. Les parties 1 et 2 ont été publiées en tant que spécification
@@ -149,40 +152,11 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et le
-STIF. Ces deux profils ont une vocation nationale.
+Ce document présente la partie Éléments communs du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-Il est envisagé de produire différents profils de NeTEx avec des
-objectif métiers et fonctionnels spécialisés. Il est en particulier
-prévu :
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseau, horaire, tarif, accessibilité, parking). Ils
+sont tous complémentaires les uns des autres (sans recouvrement) et s'appuient tous sur cette partie.
 
--   un profil pour les arrêts,
-
-
-
--   un profil pour les réseaux et leur topologie,
-
-
-
--   un profil pour les horaires (distinguant horaires et calendriers),
-
-
-
--   un profil pour les tarifs,
-
-
-
--   un profil complémentaire pour les arrêts (parking, cheminements,
-    équipements, détail de l’accessibilité),
-
-Tous ces profils utiliseront toutefois tous certains concepts génériques
-mis à disposition par NeTEx (ENTITÉ, VERSION, etc.). Ce document a pour
-vocation de regrouper tous ces éléments communs afin d’en éviter de
-multiples descriptions.
-
-Ce document sera donc naturellement référencé par tous les autres
-profils.
 
 **NOTE** : Ce document étant un profil d'échange de NeTEx, il ne se substitue
 en aucun cas à NeTEx, et un minimum de connaissance de NeTEx sera
@@ -1701,108 +1675,7 @@ etc.)
 
 ## Accessibilité
 
-Les informations concernant l'ACCESSIBILITÉ sont utilisées de la même
-façon pour les LIEUx D'ARRÊT, les LIGNEs et les COURSEs. L’information
-d’accessibilité présentée correspond à une information minimale : le
-profil NeTEx pour l’accessibilité propose une version beaucoup plus
-détaillée de cette information (incluant les cheminements, les
-équipements, etc.).
-
-<div class="table-title">AccessibilityAssessment – Element (objet inclus)</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 8%" />
-<col style="width: 41%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardinalité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td>ACCESSIBILITY ASSESSMENT hérite de DATA MANAGED OBJECT.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>MobilityImpaired­Access</td>
-<td><em>Accessibility­Enumeration</em></td>
-<td>1:1</td>
-<td><p>Indication globale d'accessibilité (de la LIGNE ou du LIEU).</p>
-<p>Il peut valoir <em>true</em> (accessible), <em>false</em> (non accessible), <em>partial</em> ou <em>unknown</em></p></td>
-</tr>
-<tr class="even">
-<td>«cntd»</td>
-<td>limitations</td>
-<td>AccessibilityLimitation</td>
-<td>0:1</td>
-<td>Limitations d'accessibilité</td>
-</tr>
-
-<tr class="even">
-<td></td>
-<td><em><strong>Comment</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>0:1</td>
-<td><p>Commentaire complémentaire sur l'accessibilité.</p>
-<p><span class="hl">Ce champ a pour vocation à compléter, en termes d'information voyageur, l'information générale de la structure. Il a donc pour vocation à être affiché avec les informations d'accessibilité.</span></p></td>
-</tr>
-</tbody>
-</table>
-
-**NOTE** : L'attribut ***MobilityImpairedAccess*** n'a pas été retenu dans le
-cadre des travaux sur le modèle d'arrêt partagé (car considéré comme
-trop générique). Toutefois, ce champ étant obligatoire dans NeTEx, il
-devra être présent dans les échanges. Les valeurs qu'il peut prendre
-étant ***true***/***false***/***unknow***/***partial***, il est
-recommandé (pour des raisons de cohérence) que sa valeur soit:
-
--   ***true*** si tous les champs de ***AccessibilityLimitation*** sont
-    à ***true***
-
--   ***false*** si tous les champs de ***AccessibilityLimitation*** sont
-    à ***false***
-
--   ***partial*** si seulement certains champs de
-    ***AccessibilityLimitation*** sont à ***true***
-
--   ***unknow*** dans tous les autres cas
-
-<div class="table-title">AccessibilityLimitation – Élément (objet inclus)</div>
-
-| **Classification** | **Nom**                        | **Type**               |     | **Description**                                                                                                                                                                                                          |
-| ------------------ | ------------------------------ | ---------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|                    | ***WheelchairAccess***         | *LimitationStatusEnum* | 1:1 | Indique si on peut s’y déplacer en fauteuil roulant.                                                                                                 |
-|                    | ***StepFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans franchir de marche ou d’escalier.                                                                          |
-|                    | ***EscalatorFreeAccess***      | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’escalator.                                                                                            |
-|                    | ***LiftFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’ascenseur.                                                                                            |
-|                    | ***AudibleSignsAvailable***    | *LimitationStatusEnum* | 0:1 | Indique si une information sonore ou une signalétique auditive est disponible.                                                                                                   |
-|                    | ***VisualSignsAvailable***     | *LimitationStatusEnum* | 0:1 | Indique si une information visuelle ou une signalétique visuelle est disponible.                                                                                                   |
-|                    | ***TactileGuidanceAvailable*** | *LimitationStatusEnum* | 0:1 | Indique s'il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile. |
-
-<span class="hl">Chaque fois que pour </span>***<span
-class="hl">LimitationStatus</span>***<span class="hl"> la valeur
-"partial" est utilisée, une "</span>***<span
-class="hl">ValidityCondition-> Description</span>***<span class="hl">"
-(dans l’objet </span>***<span
-class="hl">AccessibilityAssessment</span>***<span class="hl">) doit
-être fournie en conséquence pour expliquer pourquoi l'accessibilité
-n'est que partielle (notez que seule la </span>***<span
-class="hl">Description</span>***<span class="hl"> de la
-</span>***<span class="hl">ValidityCondition</span>***<span
-class="hl"> peut être remplie). Les informations textuelles contenues
-doivent pouvoir être présentées au public sans autre
-modification.</span>
+Les informations concernant l'ACCESSIBILITÉ sont utilisées de la même façon pour les LIEUx D'ARRÊT, les LIGNEs,  les COURSEs, etc. L’information d’accessibilité présentée correspond à une information minimale lorsque les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) sont utilisées. Pour plus d'information sur les éléments retenus dans le profil France, se référer à la partie Accessibilité du profil France de NeTEx. Cette dernière propose, en outre, des éléments de description d'accessibilité plus détaillés, ainsi que l'identification des attributs obligatoires pour se conformer à la réglementation en vigueur.
 
 ## Nom alternatif
 
