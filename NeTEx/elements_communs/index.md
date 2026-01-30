@@ -3600,9 +3600,29 @@ soit valide ou non le jour).</span>
 **Précisions sur l'utilisation du UicOperatingPeriod :** 
 Comme indiqué plus haut au niveau du DayType, il est fortement recommandé ne n'utiliser que des associations 
 1 DayType, 1 DayTypeAssignement et 1 UicOperatingPeriod.
-Dans le cas où un échange implique plusieurs DayTypeAssignement sur un DayType, les règles suivantes seront utilisées pour la lecture : 
-- Tous les jours indiqués comme "actifs" par les DayTypeAssignement "isAvailable=true" sont ajoutés par des `ET` logiques
-- Sur les jours "actifs" ainsi définis sont ensuite retirés tous les jours correspondants aux DayTypeAssignement "isAvailable=false" afin de gérer les exceptions de circulation (par exemple "sauf le 1er mai")
+Dans le cas où un échange implique plusieurs DayTypeAssignement sur un DayType, les règles suivantes seront utilisées pour la fourniture : 
+- Le `DayTypeAssignement` d'ordre 1 doit être associé à un UicOperatingPeriod qui couvre toute la periode, y compris les exceptions ci-après. Le champ `ValidDayBits` contient la représentation de l'intégralité du `DayType` (exceptions incluses) ;
+- Ensuite sont précisées les exceptions par rapport au modèle de base par des `DayTypeAssignement` indiquant des jours en précisant dans l'ordre : 
+  - Les exceptions "positives" (ajout de jours de circulation) en précisant l'attribut "isAvailable=true"
+  - Les exceptions "négatives" (désactivation de jours de circulation) en précisant l'attribut "isAvailable=false"
+
+Une exception positive ne devrait pas être supprimée par une exception négative afin de conserver la meilleur lisibilité possible. En cas de différence entre la modélisation et le résultat obtenu dans le champ `ValidDayBits`, c'est ce dernier qui fait foi.
+
+Cas limite : Ajout d'un jour particulier hors de la periode d'application du `DayType`
+Par exemple, "circulation du lundi au vendredi du 1er au 30 novembre et le 14 décembre 2025".
+Dans ce cas, il est possible :
+- Modélisation 1 : 
+  - initialiser un `DayType` du lundi au vendredi 
+  - associer un `UicOperatingPeriod` sur une periode du 01/11/2025 au 14/12/2025, avec un `ValidDayBits` correspondant au résultat 
+  - ajouter le 14/12/2025 (dimanche)
+  - retirer les lundi au vendredi un par un (01 au 05 et 08 au 12)
+- Modélisation 2 : 
+  - initialiser un `DayType` ne contenant aucun type de jours actif
+  - associer un `UicOperatingPeriod` sur une periode du 01/11/2025 au 14/12/2025, avec un `ValidDayBits` correspondant au résultat 
+  - ajouter tous les jours actifs un par un 
+
+Dans les deux cas, le `ValidDayBits` a pour valeur (avec des espaces pour faciliter la lecture): 
+00 1111100 1111100 1111100 1111100 0000000 0000001
 
 **Exemples de représentations**
 Exemple 1 : 
