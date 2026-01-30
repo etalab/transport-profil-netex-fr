@@ -3389,368 +3389,144 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profil NETEX_RESEAU sont présentées
+communs. Seules les spécificités de la partie "description du réseau" sont présentées
 ici.*
 
-Deux FRAMEs distincts peuvent être utilisés pour échanger la description
-des réseaux: l'un pour n'échanger qu'une description de haut niveau des
-lignes (**NETEX_LIGNE**) et l'autre pour échanger l'ensemble de la
-description du réseau (**NETEX_RESEAU**). Le FRAME **NETEX_RESEAU** peut
-naturellement contenir le FRAME **NETEX_LIGNE**.
+Deux FRAMEs distincts sont utilisées pour échanger la description des réseaux : 
+- Une FRAME de type **NETEX_RESEAU**, utilisée dans le fichier "network.xml" 
+- Une FRAME de type **NETEX_LIGNE**, utilisée dans le fichier "line_xyz.xml" 
+  l'un pour n'échanger qu'une description de haut niveau des
 
-## TypeOfFrame : type spécifique *NETEX_LIGNE*
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Elements Communs.
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_LIGNE***
+## TypeOfFrame : type spécifique *NETEX_RESEAU*
 
-<div class="table-title">TypeOfFrame – Element (objet inclus)</div>
+Le losqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seules les objets de premier niveau suivants sont autorisés : 
+- Network
+- GroupOfLines
+- RoutingContraintZone
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">LIGNE</span></p></td>
-</tr>
+Voici un exemple de cadre du fichier `network.xml` :
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.09:FR-NETEX-2.1-1.0">
+  <PublicationTimestamp>2025-02-27T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_RESEAU_1" version="1.09:FR-NETEX-2.1-1.0">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_RESEAU:" />
+      <members>
+        <!--
+          NETWORK
+          GROUP OF LINES
+          ROUTING CONSTRAINT ZONE
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>                  
+</PublicationDelivery>
+```
 
+## TypeOfFrame : type spécifique *NETEX_LINE* et *NETEX_LIGNE_STRUCTURE*
 
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ RESEAU:</span></p>
-<ul>
-<li><p><span class="hl">LINE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DIRECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">GROUP OF LINE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETWORK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTE POINT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">POINT ON ROUTE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTE LINK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">GROUPE OF ENTITIES (sous ligne)</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE LINE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE ROUTE</span></p></li>
-</ul></td>
-</tr>
+Le losqu'une FRAME a pour TypeOfFrame la valeur `NETEX_LINE`, il s'agit un objet `CompositeFrame`, lui-même composé de :
+- Une GeneralFrame de type `NETEX_LIGNE_STRUCTURE` (voir ci-dessous)
+- Une GeneralFrame de type `NETEX_HORAIRE`, décrit dans la partie Horaires du profil
 
+La Frame de type `NETEX_LIGNE_STRUCTURE` ne contient que les objets de premier niveau suivants (et les objets qui en héritent) : 
+- Pour la partie de description générale des lignes
+  - Line
+  - Direction
+  - Route
+  - RoutePoint
+  - PointOnRoute
+  - RouteLink
+  - FlexibleLine
+  - FlexibleRoute
+  - Route
+- Pour la partie plus précise de la ligne : 
+  - DestinationDisplay
+  - FlexiblePointProperties
+  - ServiceJourneyPattern
+  - PointInJourneyPattern
+  - ScheduledStopPoint
+  - TimingPoint
+  - TransferRestriction
+  - PassengerStopAssignement
+  - FlexibleStopAssignment
+  - TrainStopAssignment
+  - SchematicMap
 
-</tbody>
-</table>
+Voici un exemple de cadre du fichier `line_xyz.xml` :
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.09:FR-NETEX-2.1-1.0">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <CompositeFrame id="FR:CompositeFrame:NETEX_LIGNE-line_xyz:LOC" version="any">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE:" />
+      <frames>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_RESEAU-line_xyz:LOC" version="1.09:FR-NETEX-2.1-1.0">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE_STRUCTURE:" />
+          <members>
+            <Line id="sample" version="any">
+              <Name>Ligne d'exemple</Name>
+            </Line>
+            <!--  Partie Ligne
+              Peut contenir (chaque objet contiendra ses objets sous-jacents, les éléments listés ici pourront être référencés dans les autres objets)
+              LINE 
+              DIRECTION
+              ROUTE
+              ROUTE POINT
+              POINT ON ROUTE
+              ROUTE LINK
+              FLEXIBLE LINE
+              FLEXIBLE ROUTE
+            -->
 
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ LIGNE) – Element</div>
+            <!--  Partie Reseau
+              DESTINATION DISPLAY
+              FLEXIBLE POINT PROPERTIES
+              FLEXIBLE LINK PROPERTIES
+              SERVICE JOURNEY PATTERN
+              POINT IN JOURNEY PATTERN
+              SCHEDULED STOP POINT
+              TIMING POINT
+              TRANSFER RESTRICTION
+              PASSENGER STOP ASSIGNMENT
+              FLEXIBLE STOP ASSIGNMENT
+              TRAIN STOP ASSIGNMENT
+              SCHEMATIC MAP  
+            -->
+          </members>
+        </GeneralFrame>
 
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de <em><strong>DataManagedObject</strong></em>.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span>.</p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_ LIGNE</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX LIGNE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX LIGNE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-## TypeOfFrame : type spécifique *NETEX\_ RESEAU*
-
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_RESEAU***.
-
-<div class="table-title">TypeOfFrame – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">RESEAU</span></p></td>
-</tr>
-
-
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ RESEAU:</span></p>
-<ul>
-<li><p><span class="hl">GENERAL FRAME de type NETEX_LIGNE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TARIFF ZONE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DESTINATION DISPLAY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE POINT PROPERTIES</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE LINK PROPERTIES</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE JOURNEY PATTERN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">POINT IN JOURNEY PATTERN</span></p></li>
-</ul>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE LINK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SCHEDULED STOP POINT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TIMING POINT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">CONNECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DEFAULT CONNECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SITE CONNECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTING CONSTRAINT ZONE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRANSFER RESTRICTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">PASSENGER STOP ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN STOP ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SCHEMATIC MAP</span></p></li>
-</ul></td>
-</tr>
-
-
-</tbody>
-</table>
-
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ RESEAU) – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de <em><strong>DataManagedObject</strong></em>.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span>.</p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_RESEAU</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX RESEAU»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX RESEAU»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_HORAIRE-line_xyz:LOC" version="1.09:FR-NETEX-2.1-1.0">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_HORAIRE:" />
+          <members>
+            <!-- 
+              Peut contenir
+              SERVICE JOURNEY
+              SERVICE LINK
+              FLEXIBLE SERVICE PROPERTIES
+              TEMPLATE SERVICE JOURNEY
+              HEADWAY JOURNEY GROUP
+              RHYTHMICAL JOURNEY GROUP
+              COUPLED JOURNEY
+              JOURNEY PART COUPLE
+              JOURNEY PART
+              TRAIN
+              TRAIN COMPONENT
+              COMPOUND TRAIN
+              TRAIN NUMBER
+              TRAIN COMPONENT LABEL ASSIGNMENT
+            -->
+          </members>
+        </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 Bibliographie
 
