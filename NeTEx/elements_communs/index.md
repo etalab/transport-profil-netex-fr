@@ -3519,7 +3519,7 @@ correspondants.
 <td>OperatingPeriodRef</td>
 <td>OperatingDayRef</td>
 <td>1:1</td>
-<td>Référence à une PÉRIODE D'EXPLOITATION assignée: noter que tous les jours de la période s'applique (de ce fait on l'utilisera le plus souvent pour les exclusions de périodes en combinaison avec le champ <em><strong>isAvailable=false</strong></em>)</td>
+<td>Référence à une PÉRIODE D'EXPLOITATION assignée: noter que tous les jours de la période s'applique (de ce fait on l'utilisera le plus souvent pour les exclusions de périodes en combinaison avec le champ <em><strong>isAvailable=false</strong></em>). Le profil France requiert l'utilisation de UicOperatingPeriod (voir ci-dessous), donc ce champ utilise la spécialisation <em><strong>UicOperatingPeriodRef</strong></em>.</td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
