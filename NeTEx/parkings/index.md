@@ -1378,11 +1378,10 @@ héritage.</p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>NumberOfBaysWithWIthRecharging</strong></em></td>
+<td><em><strong>NumberOfBaysWithRecharging</strong></em></td>
 <td><em>NumberOfSpaces</em></td>
 <td>0:1</td>
-<td>Nombre de place disposant d’une borne de recharge électrique PARKING
-AREA.</td>
+<td>Nombre de places disposant d’une borne de recharge électrique dans le PARKING AREA.</td>
 </tr>
 <tr class="odd">
 <td>« cntd »</td>
@@ -1488,7 +1487,7 @@ PMR.</mark></p></td>
 
 La ***ParkingBay*** correspond à l’emplacement pour garer un véhicule.
 
-<div class='table-title'>ParkingBay – Element</div>
+<div class='table-title'>ParkingBay – Élement</div>
 
 <table class="attributes">
 <thead>
@@ -1507,9 +1506,9 @@ La ***ParkingBay*** correspond à l’emplacement pour garer un véhicule.
 <td><em>SiteComponent</em></td>
 <td><em>::&gt;</em></td>
 <td><p>PARKING BAY hérite de SITE COMPONENT.</p>
-<p>Note : beaucoups d’éléments important comme la gestion des version,
+<p>Note : beaucoups d’éléments importants comme la gestion des versions,
 les conditions de validité ou encore la géométrie, la position et
-l’accessibilité de la place sont issu de cet héritage.</p></td>
+l’accessibilité de la place sont issus de cet héritage. Pour les détails sur l'accessibilité, voir l'annexe 9 du profil accessibilité.</p></td>
 </tr>
 <tr class="even">
 <td>« PK »</td>
@@ -1939,7 +1938,8 @@ pour les piétons (incluant les accès type fauteils roulant, etc.).
 <p>Voir <em><strong>A.2.6-Entrée</strong></em></p>
 <p><mark>Note : Les caractéristiques d’accessibilité des entrées de
 parking peuvent être détaillées par les classiques ACCESSIBILITY
-ASSESMENTs et il est aussi possible d’y associer des FACILITY SET
+ASSESMENTs (voir annexe 9 du profil Accessibilité) et il est aussi 
+possible d’y associer des FACILITY SET
 (services et équipement disponibles)</mark></p>
 <p><mark>Note : dans la chaine d’héritage
 <em><strong>Centroid.Location.Longitude / Latitude</strong></em> sont
@@ -5809,9 +5809,8 @@ conventionelle) … complété par un AccessibilityAssesment</td>
 d’une infrastructure de recharge opérationnelle.</td>
 <td class="red">3</td>
 <td>Valeur optionnelle</td>
-<td>ParkingArea.NumberOfBaysWithWIthRecharging</td>
-<td>Est-ce que cela veut bien dire: "place équipée d'une boren de
-recharge" ?</td>
+<td>ParkingArea.NumberOfBaysWithRecharging</td>
+<td>Est-ce que cela veut bien dire : "place équipée d'une borne de recharge" ?</td>
 </tr>
 <tr class="odd">
 <td>nb_velo</td>
@@ -5835,7 +5834,7 @@ prise <span class="red">électrique</span> dédiée.</td>
 <td>Valeur optionnelle</td>
 <td>ParkingArea.TotalCapacity + ParkingArea.ParkingVehicleType
 (pedalCycle, moped, etc.) +
-ParkingArea.NumberOfBaysWithWIthRecharging</td>
+ParkingArea.NumberOfBaysWithRecharging</td>
 <td> </td>
 </tr>
 <tr class="odd">

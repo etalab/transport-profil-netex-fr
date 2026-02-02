@@ -1071,11 +1071,10 @@ traduit) car c'est sous cette dénomination que les objets présentés se
 retrouveront dans le modèle XSD et donc dans les tags XML utilisés dans
 l'implémentation et les échanges.
 
-## Éléments d'accessibilité de base partagés par tous les profils
+## Éléments d'accessibilité de base partagés par toutes les parties du profil France
 
-Les profils précédents (Éléments Communs, Arrêts, Réseaux et Horaires)
-proposent déjà une information de base sur l'accessibilité en utilisant 
-les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) :
+Tous les objets contenus dans les autres parties du profil France (Éléments Communs, Arrêts, Réseaux, Horaires, Tarifs et Parking) proposent une information de base sur l'accessibilité en utilisant les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT).
+Celles retenues dans le profil France sont :
 
 - *WheelchairAccess* : on peut s’y déplacer en fauteuil roulant
 - *StepFreeAccess* : on peut s’y déplacer sans franchir de marche ou d'escalier
@@ -1107,7 +1106,7 @@ gare, accès possibles pour les UFR uniquement sur certains quais)
 signalétique auditive en cas de perturbations mais pas d'annonces pour
 les prochains passages)
 
-<span class="hl">Dans le cadre du profil il est convenu, lorsque
+<span class="hl">Dans le cadre du profil France il est convenu, lorsque
 "</span>***<span class="hl">Partiel</span>***<span class="hl">" est
 utilisé, de systématiquement remplir le champ "</span>***<span
 class="hl">ValidityCondition->Description</span>***<span class="hl">"
@@ -1118,12 +1117,94 @@ texte libre susceptible d'être présenté au public en complément des
 indicateurs ci-dessus.</span>
 
 ![image](media/image8.svg)
-*Accessibilité des profils précédents*
+*Accessibilité dans les autres parties du profil France*
 
 Toutefois, cela correspond à une information globale et synthétique,
 mais qui dans de nombreuses situations manquera de précisions, d'une
 part vis-à-vis des besoins d'accessibilité et d'autre part en terme de
 précision sur les équipements et cheminements rencontrés.
+
+<div class="table-title">AccessibilityAssessment – Élément (objet inclus)</div>
+
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 8%" />
+<col style="width: 41%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Classifi­cation</strong></td>
+<td><strong>Nom</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Cardinalité</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td>::></td>
+<td>::></td>
+<td><em>DataManagedObject</em></td>
+<td>::></td>
+<td>ACCESSIBILITY ASSESSMENT hérite de DATA MANAGED OBJECT.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>MobilityImpaired­Access</td>
+<td><em>Accessibility­Enumeration</em></td>
+<td>1:1</td>
+<td><p>Indication globale d'accessibilité (de la LIGNE ou du LIEU).</p>
+<p>Il peut valoir <em>true</em> (accessible), <em>false</em> (non accessible), <em>partial</em> ou <em>unknown</em></p></td>
+</tr>
+<tr class="even">
+<td>«cntd»</td>
+<td>limitations</td>
+<td>AccessibilityLimitation</td>
+<td>0:1</td>
+<td>Limitations d'accessibilité</td>
+</tr>
+
+<tr class="even">
+<td></td>
+<td><em><strong>Comment</strong></em></td>
+<td><em>MultilingualString</em></td>
+<td>0:1</td>
+<td><p>Commentaire complémentaire sur l'accessibilité.</p>
+<p><span class="hl">Ce champ a pour vocation à compléter, en termes d'information voyageur, l'information générale de la structure. Il a donc pour vocation à être affiché avec les informations d'accessibilité.</span></p></td>
+</tr>
+</tbody>
+</table>
+
+**NOTE** : L'attribut ***MobilityImpairedAccess*** n'a pas été retenu dans le
+cadre des travaux sur le modèle d'arrêt partagé (car considéré comme
+trop générique). Toutefois, ce champ étant obligatoire dans NeTEx, il
+devra être présent dans les échanges. Les valeurs qu'il peut prendre
+étant ***true***/***false***/***unknow***/***partial***, il est
+recommandé (pour des raisons de cohérence) que sa valeur soit:
+
+-   ***true*** si tous les champs de ***AccessibilityLimitation*** sont
+    à ***true***
+
+-   ***false*** si tous les champs de ***AccessibilityLimitation*** sont
+    à ***false***
+
+-   ***partial*** si seulement certains champs de
+    ***AccessibilityLimitation*** sont à ***true***
+
+-   ***unknow*** dans tous les autres cas
+
+<div class="table-title">AccessibilityLimitation – Élément (objet inclus)</div>
+
+| **Classification** | **Nom**                        | **Type**               |     | **Description**                                                                                                                                                                                                          |
+| ------------------ | ------------------------------ | ---------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                    | ***WheelchairAccess***         | *LimitationStatusEnum* | 1:1 | Indique si on peut s’y déplacer en fauteuil roulant.                                                                                                 |
+|                    | ***StepFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans franchir de marche ou d’escalier.                                                                          |
+|                    | ***EscalatorFreeAccess***      | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’escalator.                                                                                            |
+|                    | ***LiftFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’ascenseur.                                                                                            |
+|                    | ***AudibleSignsAvailable***    | *LimitationStatusEnum* | 0:1 | Indique si une information sonore ou une signalétique auditive est disponible.                                                                                                   |
+|                    | ***VisualSignsAvailable***     | *LimitationStatusEnum* | 0:1 | Indique si une information visuelle ou une signalétique visuelle est disponible.                                                                                                   |
+|                    | ***TactileGuidanceAvailable*** | *LimitationStatusEnum* | 0:1 | Indique s'il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile. |
 
 ## Adéquation aux besoins
 
@@ -2184,7 +2265,7 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 | «FK»                | LevelRef    | LevelRef           | 0:1              | Niveau auquel le PATH LINKse connecte.                  |
 | «FK»                | EntranceRef | EntranceRef        | 0:1              | Entrée (ou sortie) associée à l’extrémité du PATH LINK. |
 
-<div class="table-title">PathJunction (croisement/jonction de cheminement) – Element</div>
+<div class="table-title">PathJunction (croisement/jonction de cheminement) – Élément</div>
 
 <table>
 <colgroup>
@@ -3098,7 +3179,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                     | RampDoorbell                | xsd:boolean            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
 |                     | Recognizable                | xsd:boolean            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *false* lorsque l'entrée est difficile à repérer.                              |
 |                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
-|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considèrera le rayon du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
+|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considèrera le diamètre du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
 
 <div class="table-title">QueueingEquipment (gestion de queue) – Élément</div>
 
@@ -4135,434 +4216,99 @@ et atteindre et utiliser tous les équipements (lumière, lave-main, etc.)
 Cela signifie notamment qu’il faut un espace d’au moins 1,50 m à côté de la cuvette, 
 une barre d’appui, un lave-main accessible, etc.
 
+## Définition des *AccessibilityLimitation* retenus pour les zones d'embarquement (QUAY)
 
-# Annexe (informative) - Structure des Parkings
+**WheelchairAccess** : le sol est plat, de revêtement lisse et stable, assez large pour faire demi-tour en fauteuil (1,50m) et sans obstacle permanent bloquant
 
-*<span class="hl"><p>Les informations sur les parkings sont fournies ici à
-titre indicatif, mais des travaux de rapprochement entre les modèles
-Transmodel/NeTEx et DATEX-II, impliquant aussi la FNMS (Féderation
-Nationale des Metiers de Stationnement) et APDS (Alliance for Parking
-Data Standards). L'issue de ces travaux sera à considérer pour toute
-utilisation des informations relatives aux parkings.</p>
-<p>En complément, la loi d’orientation des mobilités impose la fourniture 
-d’information sur les caractéristiques des places équipées de bornes 
-de recharge électrique (localisation, puissance, accessibilité…).</p></span>*
+En particulier :
 
-*La section ci-desous n’est volontairement pas traduite et donc
-disponible en anglais.*
+- lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer
+- on utilisera les valeurs de références suivantes pour la valeur true : dévers de moins de 2%, pente de moins de 5%
+- si le dévers est de moins de 5%, ou la pente de moins de 8%, ou la largeur d’au moins 90 cm, on pourra utiliser partial
 
-Designated locations for leaving vehicles such as cars, motorcycles and
-bicycles.
+**AudibleSignalsAvailable** : il y a des annonces sonores, en général des prochains passages, indiquant au moins les lignes desservies ainsi que leur direction.
 
-NOTE : en tant que SiteComponent les parkings et leurs composants disposent
-d'information d**'AccessibilityAssessment**.
+**VisualSignsAvailable** : il y a au moins le nom de l'arrêt, les lignes desservies ainsi que leur direction, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
 
-<div class="table-title">Parking – Element</div>
+**TactileGuidanceAvailable** : il y a des bandes de guidage podotactile menant à la porte permettant d'embarquer dans le véhicule, et elle sont connectées à des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne (mur, bandes de guidage, etc).
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 26%" />
-<col style="width: 20%" />
-<col style="width: 8%" />
-<col style="width: 37%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classification</strong></td>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardinality</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>Site</em></td>
-<td><em>::></em></td>
-<td>PARKING hérite de SITE.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td>id</td>
-<td>ParkingIdType</td>
-<td>1:1</td>
-<td>Identifiant du PARKING.</td>
-</tr>
-<tr class="even">
-<td>«cntd»</td>
-<td>(<em>SiteAccessGroup</em>)</td>
-<td><em>SiteAccessGroup</em></td>
-<td>0:1</td>
-<td>See 0:1</td>
-</tr>
-<tr class="odd">
-<td>«AK»</td>
-<td>PublicCode</td>
-<td>StopPlaceCodeType</td>
-<td>0:1</td>
-<td>Public Code of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Label</strong></em></td>
-<td>MultilingualString</td>
-<td></td>
-<td>Additional Label of PARKING.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>ParkingType</td>
-<td>ParkingTypeEnum</td>
-<td>0:*</td>
-<td>Nature of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingVehicleTypes</td>
-<td>VehicleTypeList</td>
-<td>0:*</td>
-<td><p>Types of Vehicle allowed in PARKING.</p>
-<ul>
-<li><p><em>pedalCycle</em></p></li>
-<li><p><em>moped</em></p></li>
-<li><p><em>motorcycle</em></p></li>
-<li><p><em>motorcycleWithSidecar</em></p></li>
-<li><p><em>motorScooter</em></p></li>
-<li><p><em>twoWheeledVehicle</em></p></li>
-<li><p><em>threeWheeledVehicle</em></p></li>
-<li><p><em>car</em></p></li>
-<li><p><em>smallCar</em></p></li>
-<li><p><em>passengerCar</em></p></li>
-<li><p><em>largeCar</em></p></li>
-<li><p><em>fourWheelDrive</em></p></li>
-<li><p><em>taxi</em></p></li>
-<li><p><em>camperCar</em></p></li>
-<li><p><em>carWithTrailer</em></p></li>
-<li><p><em>carWithCaravan</em></p></li>
-<li><p><em>minibus</em></p></li>
-<li><p><em>bus</em></p></li>
-<li><p><em>van</em></p></li>
-<li><p><em>largeVan</em></p></li>
-<li><p><em>highSidedVehicle</em></p></li>
-<li><p><em>lightGoodsVehicle</em></p></li>
-<li><p><em>heavyGoodsVehicle</em></p></li>
-<li><p><em>agriculturalVehicle</em></p></li>
-<li><p><em>tanker</em></p></li>
-<li><p><em>truck</em></p></li>
-<li><p><em>tram</em></p></li>
-<li><p><em>articulatedVehicle</em></p></li>
-<li><p><em>vehicleWithTrailer</em></p></li>
-<li><p><em>lightGoodsVehicleWithTrailer</em></p></li>
-<li><p><em>heavyGoodsVehicleWithTrailer</em></p></li>
-<li><p><em>undefined</em></p></li>
-<li><p><em>other</em></p></li>
-<li><p><em>allPassengerVehicles</em></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>ParkingLayout</td>
-<td>ParkingLayoutEnum</td>
-<td>0:1</td>
-<td><p>Layout type of PARKING.</p>
-<ul>
-<li><p><em>covered</em></p></li>
-<li><p><em>openSpace</em></p></li>
-<li><p><em>multistorey</em></p></li>
-<li><p><em>underground</em></p></li>
-<li><p><em>roadside</em></p></li>
-<li><p><em>undefined</em></p></li>
-<li><p><em>other</em></p></li>
-<li><p><em>cycleHire</em></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>NumberOfParkingLevels</strong></em></td>
-<td>xsd:nonNegativeInteger</td>
-<td>0:1</td>
-<td>Total number of levels.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>PrincipalCapacity</td>
-<td>NumberOfSpaces</td>
-<td>0:1</td>
-<td>Principal Capacity of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>TotalCapacity</td>
-<td>NumberOfSpaces</td>
-<td>0:1</td>
-<td>Total Capacity of PARKING.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>OvernightParkingPermitted</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether overnight PARKING is allowed.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ProhibitedForHazardousMaterials</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether PARKING is prohibited for any Hazardous material.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>RechargingAvailable</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether car park has recharging points.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Secure</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether Parking is offered as secure.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>RealTimeOccupancyAvailable</td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>Whether there is real-time occupancy data for PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingPaymentProcess</td>
-<td>PaymentProcessEnum</td>
-<td>0:1</td>
-<td>How to pay for PARKING.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>PaymentMethods</strong></em></td>
-<td><em>PaymentMethodList</em></td>
-<td>0:1</td>
-<td>Method of Payment for use of PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>DefaultCurrency</strong></em></td>
-<td><em>CurrencyType</em></td>
-<td>0:1</td>
-<td>Default Currency for payment.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>CurrenciesAccepted</strong></em></td>
-<td><em>CurrencyList</em></td>
-<td>0:1</td>
-<td>Currencies accepted.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>CardsAccepted</strong></em></td>
-<td>xsd:NMTOKENS</td>
-<td>0:1</td>
-<td>Payment Cards that are accepted</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>ParkingReservations</td>
-<td>ParkingReservationEnum</td>
-<td>0:1</td>
-<td>How to reserve for PARKING.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>BookingUrl</strong></em></td>
-<td><em>xsd:anUri</em></td>
-<td></td>
-<td>URL to make booking.</td>
-</tr>
-<tr class="odd">
-<td>ntd»</td>
-<td><em><strong>PaymentByMobile</strong></em></td>
-<td><em>PaymentByMobile</em></td>
-<td>0:1</td>
-<td>How to make payment by phone.</td>
-</tr>
-<tr class="even">
-<td>« »</td>
-<td><em><strong>FreeParkingOutOfHours</strong></em></td>
-<td>xsd:boolean</td>
-<td>0:1</td>
-<td>hether there is free parking out of hours..</td>
-</tr>
-<tr class="odd">
-<td>«cntd»</td>
-<td>parkingProperties</td>
-<td>ParkingProperties</td>
-<td>0:*</td>
-<td>PARKING PROPERTies of PARKING.</td>
-</tr>
-<tr class="even">
-<td>«cntd»</td>
-<td>parkingAreas</td>
-<td>ParkingArea</td>
-<td>0:*</td>
-<td>PARKING AREAs within PARKING.</td>
-</tr>
-<tr class="odd">
-<td>«cntd»</td>
-<td>entrances</td>
-<td>StopPlaceEntrance</td>
-<td>0:*</td>
-<td>Pedestrian Entrances for PARKING.</td>
-</tr>
-</tbody>
-</table>
+## Définition des *AccessibilityLimitation* retenus pour les entrées (ENTRANCE)
 
-<div class="table-title">ParkingArea – Element</div>
+Ces définitions concernent tous les éléments qui héritent de ENTRANCE : accès de lieu d'arrêt (STOP PLACE ENTRANCE), accès piéton d'un parking (PARKING PASSENGER ENTRANCE), accès de point d'intérêt (POINT OF INTEREST ENTRANCE), etc.
 
-| **Classification** | **Name**                             | **Type**             | **Cardinality** | **Description**                                                     |
-|--------------------|--------------------------------------|----------------------|-----------------|---------------------------------------------------------------------|
-| *::>*              | *::>*                                | *SiteComponentGroup* | *::>*           | PARKING AREA hérite de SITE COMPONENT.                              |
-| «PK»               | id                                   | ParkingAreaIdType    | 1:1             | Identifiant du PARKING AREA.                                        |
-|                    | TotalCapacity                        | NumberOfSpaces       | 0:1             | Total Capacity of PARKING AREA.                                     |
-|                    | ***NumberOfBaysWithWIthRecharging*** | NumberOfSpaces       | 0:1             | Total number of bays with electric charging points in PARKING AREA. |
-| «cntd»             | **ParkingPropertiesproperties**      | ParkingProperties    | 0:1             | Properties of PARKING AREA.                                         |
-| «cntd»             | bays                                 | ParkingBay           | 0:\*            | Bays within PARKING AREA.                                           |
-| «cntd»             | entrances                            | SiteEntrance         | 0:\*            | ENTRANCEs of PARKING COMPONENT.                                     |
+**WheelchairAccess** : il y a une largeur de passage d’au moins 80 cm et pas de marche infranchissable. S’il y a une porte, elle s’ouvre sans forcer (moins de 50 Newton).
 
-A place to park an individual vehicle.
+On utilisera les mêmes valeurs de référence pour la hauteur de la marche éventuelle que pour StepFreeAccess (voir ci-après).
 
-<div class="table-title">ParkingBay – Element</div>
+**StepFreeAccess** : il n’y a pas de marche infranchissable.
 
-| **Classification** | **Name**           | **Type**           | **Cardinality** | **Description**                                 |
-|--------------------|--------------------|--------------------|-----------------|-------------------------------------------------|
-| *::>*              | *::>*              | *SiteComponent*    | *::>*           | PARKING BAY hérite de SITE COMPONENT.           |
-| «PK»               | id                 | ParkingBayIdType   | 1:1             | Identifiant du PARKING BAY.                     |
-| «FK»               | ParkingAreaRef     | ParkingAreaRef     | 0:1             | PARKING AREA within which PARKING BAY is found. |
-|                    | ParkingVehicleType | ParkingVehicleEnum | 0:1             | TYPEs of VEHICLE that may use PARKING BAY.      |
+En particulier, ça sera :
 
-An entrance for vehicles to the PARKING from the road.
+- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- partial s’il y a une marche de moins de 4 cm
+- false s’il y a une marche de plus de 4 cm
 
-<div class="table-title">ParkingEntranceForVehicle – Element</div>
+**TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette entrée.
 
-| **Classification** | **Name**       | **Type**                | **Cardinality** | **Description**                                           |
-|--------------------|----------------|-------------------------|-----------------|-----------------------------------------------------------|
-| *::>*              | *::>*          | *SiteEntrance*          | *::>*           | PARKING VEHICLE ENTRANCE hérite de ENTRANCE.              |
-| «PK»               | id             | *VehicleEntranceIdType* | 1:1             | Identifiant du PARKING VEHICLE ENTRANCE.                  |
-| «FK»               | ParkingAreaRef | ParkingAreaRef          | 0:1             | PARKING AREA of which this is a PARKING VEHICLE ENTRANCE. |
+## Définition des *AccessibilityLimitation* retenus pour les lieux d'arrêts (STOP PLACE)
 
-An entrance to the PARKING for passengers on foot or other
-out-of-vehicle mode, such as wheelchair.
+**WheelchairAccess** : chaque quai est pratiquable en fauteuil roulant et il existe un cheminement pratiquable en fauteuil roulant entre chaque zone d'embarquement et au moins un accès.
 
-<div class="table-title">ParkingPassengerEntrance – Element</div>
+Se référer aux définitions plus précises de *WheelchairAccess* pour les zones d'embarquement (Quay), les accès de lieu d'arrêt (StopPlaceEntrance) et les cheminements (SitePathLink).
 
-| **Classification** | **Name**       | **Type**                  | **Cardinality** | **Description**                                             |
-|--------------------|----------------|---------------------------|-----------------|-------------------------------------------------------------|
-| *::>*              | *::>*          | *Entrance*                | *::>*           | PARKING PASSENGER ENTRANCE hérite de ENTRANCE.              |
-| «PK»               | id             | *PassengerEntranceIdType* | 1:1             | Identifiant du PARKING PASSENGER ENTRANCE.                  |
-| «FK»               | ParkingAreaRef | ParkingAreaRef            | 0:1             | PARKING AREA of which this is a PARKING PASSENGER ENTRANCE. |
+**StepFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans franchir de marche.
 
-PARKING specific properties other than its CAPACITY.
+En particulier, ça sera :
 
-<div class="table-title">ParkingProperties – Element</div>
+- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- partial s’il y a une marche de moins de 4 cm
+- false s’il y a une marche de plus de 4 cm
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 17%" />
-<col style="width: 22%" />
-<col style="width: 8%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classification</strong></td>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardinality</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>VersionedChild</em></td>
-<td><em>::></em></td>
-<td>PARKING PROPERTies hérite de VERSIONED CHILD.</td>
-</tr>
-<tr class="odd">
-<td>«PK»</td>
-<td>id</td>
-<td>ParkingPropertiesIdType</td>
-<td>1:1</td>
-<td>Identifiant du PARKING PROPERTies.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingUserType</td>
-<td>ParkingUserEnum</td>
-<td>0:1</td>
-<td><p>Types of users of PARKING PROPERTies.</p>
-<ul>
-<li><p><em>allUsers</em></p></li>
-<li><p><em>staff</em></p></li>
-<li><p><em>visitors</em></p></li>
-<li><p><em>registeredDisabled</em></p></li>
-<li><p><em>registered</em></p></li>
-<li><p><em>rental</em></p></li>
-<li><p><em>doctors</em></p></li>
-<li><p><em>residentsWithPermits</em></p></li>
-<li><p><em>reservationHolders</em></p></li>
-<li><p><em>emergencyServices</em></p></li>
-<li><p><em>other</em></p></li>
-<li><p><em>all</em></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>MaximumStay</td>
-<td>xsd:duration</td>
-<td>0:1</td>
-<td>Maximum stay specified by this PARKING PROPERTies.</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>ParkingStayType</td>
-<td>ParkingTermEnum</td>
-<td>0:1</td>
-<td>Type of stay specified by this PARKING PROPERTies.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>PaymentMethod</td>
-<td>PaymentMethodEnum</td>
-<td>0:*</td>
-<td>Payment method for PARKING.</td>
-</tr>
-<tr class="even">
-<td>«FK»</td>
-<td>ParentRef</td>
-<td>SiteElementRef</td>
-<td>0:1</td>
-<td>PARKING or PARKING component associated with PARKING PROPERTies.</td>
-</tr>
-<tr class="odd">
-<td>«contents»</td>
-<td>spaces</td>
-<td>ParkingCapacity</td>
-<td>0:*</td>
-<td>Number of spaces specified by this PARKING PROPERTies.</td>
-</tr>
-<tr class="even">
-<td>«contents»</td>
-<td>charges</td>
-<td>ParkingTariff</td>
-<td>0:*</td>
-<td>PARKING TARIFF specified by this PARKING PROPERTies.</td>
-</tr>
-</tbody>
-</table>
+**EscalatorFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un escalator.
+
+**LiftFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un ascenseur.
+
+**AudibleSignalsAvailable** : il y a des annonces sonores.
+
+**VisualSignsAvailable** : il y a au moins le nom du lieu d'arrêt, les lignes desservies, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+
+**TactileGuidanceAvailable** : il y a un réseau de bandes de guidage podotactile qui relient chaque zone d'embarquement à au moins un accès.
+
+## Définition des *AccessibilityLimitation* retenus pour les places de stationnement (PARKING BAY)
+
+**WheelchairAccess** : le sol est plat, de revêtement lisse et stable ; la largeur est d'au moins 3.30m et on peut rejoindre la place depuis le trottoir sans franchir de marche.
+
+En particulier :
+
+- lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer ;
+- plat signifie dévers de moins de 2% et pente de moins de 2%
+
+**StepFreeAccess** : il est possible de rejoindre la place directement depuis le trottoir sans rencontrer de marche infranchissable.
+
+En particulier, ça sera :
+
+- *true* s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- *partial* s’il y a une marche de moins de 4 cm
+- *false* s’il y a une marche de plus de 4cm
+
+**VisualSignsAvailable** : 
+- dans le cas général : la place de stationnement est délimitée par un marquage au sol
+- dans le cas d'un stationnement réservé aux PMR : un marquage au sol et une signalisation verticale conformes à la réglementation indiquent la place de stationnement
+
+En particulier, ça sera :
+
+- *true* s'il y a un panneau de signalisation (panneaux B6d et M6h) et un pictogramme UFR blanc peint au sol sur les limites ou le long de l'emplacement. Voir l'arrêté du 7 juin 1977 modifié et l'instruction interministérielle sur la signalisation routière pour plus de détails.
+- *partial* s'il y a un panneau ou un pictogramme
+- *false* si les deux sont absents
+
+**TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
+
+## Espace de manœuvre pour les entrées (ENTRANCE EQUIPMENT)
+
+L'espace de manœuvre (ou aire de rotation) désigne à un espace situé juste devant la porte, permettant de la manœuvrer correctement et de faire demi-tour en fauteuil roulant afin de l'emprunter. Un diamètre d'1,50 m est attendu et on peut en retrouver de chaque côté de la porte (attribut **TurningSpacePosition**).
+
+![Diamètre de giration](./media/image18.jpg)
+
 
 # Bibliographie
 
