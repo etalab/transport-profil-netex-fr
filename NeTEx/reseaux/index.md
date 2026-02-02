@@ -3392,16 +3392,15 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 communs. Seules les spécificités de la partie "description du réseau" sont présentées
 ici.*
 
-Deux FRAMEs distincts sont utilisées pour échanger la description des réseaux : 
+Deux FRAMEs distinctes sont utilisées pour échanger la description des réseaux : 
 - Une FRAME de type **NETEX_RESEAU**, utilisée dans le fichier "network.xml" 
 - Une FRAME de type **NETEX_LIGNE**, utilisée dans le fichier "line_xyz.xml" 
-  l'un pour n'échanger qu'une description de haut niveau des
 
-Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Elements Communs.
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
 
 ## TypeOfFrame : type spécifique *NETEX_RESEAU*
 
-Le losqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seules les objets de premier niveau suivants sont autorisés : 
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seules les objets de premier niveau suivants sont autorisés : 
 - Network
 - GroupOfLines
 - RoutingContraintZone
@@ -3409,11 +3408,11 @@ Le losqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seules les objet
 Voici un exemple de cadre du fichier `network.xml` :
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.09:FR-NETEX-2.1-1.0">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
   <PublicationTimestamp>2025-02-27T00:00:00.0Z</PublicationTimestamp>
   <ParticipantRef>Exemple</ParticipantRef>
   <dataObjects>
-    <GeneralFrame id="exemple:GeneralFrame:NETEX_RESEAU_1" version="1.09:FR-NETEX-2.1-1.0">
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_RESEAU_1" version="2.0:FR-NETEX-2.4">
       <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_RESEAU:" />
       <members>
         <!--
@@ -3429,7 +3428,7 @@ Voici un exemple de cadre du fichier `network.xml` :
 
 ## TypeOfFrame : type spécifique *NETEX_LINE* et *NETEX_LIGNE_STRUCTURE*
 
-Le losqu'une FRAME a pour TypeOfFrame la valeur `NETEX_LINE`, il s'agit un objet `CompositeFrame`, lui-même composé de :
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_LINE`, il s'agit un objet `CompositeFrame`, lui-même composé de :
 - Une GeneralFrame de type `NETEX_LIGNE_STRUCTURE` (voir ci-dessous)
 - Une GeneralFrame de type `NETEX_HORAIRE`, décrit dans la partie Horaires du profil
 
@@ -3460,14 +3459,14 @@ La Frame de type `NETEX_LIGNE_STRUCTURE` ne contient que les objets de premier n
 Voici un exemple de cadre du fichier `line_xyz.xml` :
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.09:FR-NETEX-2.1-1.0">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
   <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
   <ParticipantRef>Exemple</ParticipantRef>
   <dataObjects>
     <CompositeFrame id="FR:CompositeFrame:NETEX_LIGNE-line_xyz:LOC" version="any">
       <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE:" />
       <frames>
-        <GeneralFrame id="FR:GeneralFrame:NETEX_RESEAU-line_xyz:LOC" version="1.09:FR-NETEX-2.1-1.0">
+        <GeneralFrame id="FR:GeneralFrame:NETEX_RESEAU-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
           <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE_STRUCTURE:" />
           <members>
             <Line id="sample" version="any">
@@ -3502,7 +3501,7 @@ Voici un exemple de cadre du fichier `line_xyz.xml` :
           </members>
         </GeneralFrame>
 
-        <GeneralFrame id="FR:GeneralFrame:NETEX_HORAIRE-line_xyz:LOC" version="1.09:FR-NETEX-2.1-1.0">
+        <GeneralFrame id="FR:GeneralFrame:NETEX_HORAIRE-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
           <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_HORAIRE:" />
           <members>
             <!-- 
