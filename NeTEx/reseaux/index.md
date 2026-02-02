@@ -3400,7 +3400,7 @@ Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite 
 
 ## TypeOfFrame : type spécifique *NETEX_RESEAU*
 
-Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seules les objets de premier niveau suivants sont autorisés : 
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seuls les objets de premier niveau suivants sont autorisés : 
 - Network
 - GroupOfLines
 - RoutingContraintZone
