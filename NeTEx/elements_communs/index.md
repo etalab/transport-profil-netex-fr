@@ -3949,6 +3949,50 @@ CALENDRIER** et **NeTEx TARIF***.
 <span class="hl">Dans le cadre du profil les distances et les longueurs sont par défaut
 exprimées en mètres (*SystemOfUnits* ayant une valeur *SiMetres*) et les sommes d’argent en Euros.</span>
 
+<div class="table-title">TypeOfFrame – Élément</div>
+
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 12%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Classifi­cation</strong></th>
+<th><strong>Nom</strong></th>
+<th><strong>Type</strong></th>
+<th></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>::></td>
+<td>::></td>
+<td><em>TypeOfValueDataManagedObject</em></td>
+<td><em>::>::></em></td>
+<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
+<p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">RESEAU</span></p></td>
+</tr>
+
+
+<tr class="even">
+<td>«cntd»</td>
+<td><em><strong>classes</strong></em></td>
+<td><em>ClassInContextRef</em></td>
+<td>0:*</td>
+<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+Chaque partie du profil France décrit les frames associées et la valeur spécifique du type de Frame à utiliser, et 
+le chapitre 7.4 du présent document rappelle les différentes valeurs.
+
 ## CODESPACE et codification des identifiants
 
 NeTEx propose un mécanisme de CODESPACE (à mettre en parallèle avec les
@@ -4208,241 +4252,104 @@ le cadre d’un échange et que l’identifiant utilisé et unique au niveau
 national et pérenne, on conservera naturellement son identifiant et la
 codification ci-dessus ne s’applique plus.</span>
 
-## TypeOfFrame : types spécifiques
-
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***<span class="hl">NETEX_COMMUN, NETEX_ARRET</span>, <span
-class="hl">NETEX_RESEAU, NETEX_HORAIRE, NETEX_CALENDRIER,
-NETEX_TARIF</span>***. Il apparaitra systématiquement et explicitement
-dans les éléments ***members*** du ***GeneralFrame***.
-
-Le présent document ne présente que les *TypeOfFrame* ***<span
-class="hl">NETEX_COMMUN</span>** et **<span
-class="hl">NETEX_CALENDRIER</span>***. Les autres seront présentés par
-les documents spécifiques de chacun des profils.
-
-Dans la majorité des cas on aura besoin de plusieurs CADREs DE VERSION
-pour un échange complet (par exemple ***<span
-class="hl">NETEX_COMMUN</span>** et **<span
-class="hl">NETEX_ARRET</span>***): on utilisera donc un
-***CompositeFrame*** pour les grouper au sein d'un unique échange.
-
-Trois types spécifiques sont attribués à ces ***CompositeFrame**:*
-
--   ***<span class="hl">NETEX_FRANCE</span>*** peut contenir n'importe
-    quelles autres Frames et n'importe quel jeu de données
-
--   ***<span class="hl">NETEX_LIGNE</span>*** contient des
-    ***GeneralFrame*** de type ***<span class="hl">NETEX_COMMUN</span>, 
-    <span class="hl">NETEX_RESEAU, NETEX_HORAIRE</span>** et **<span
-    class="hl">NETEX_CALENDRIER</span>*** permettant la description
-    complète d'une unique ligne (une et une seule, avec toutes les
-    informations nécessaires à l'information voyageur). Le champ
-    ***Name*** des ***CompositeFrame*** de type ***<span
-    class="hl">NETEX_LIGNE</span>*** contient le nom de la ligne.
-
--   ***<span class="hl">NETEX_N\_LIGNES</span>*** contient des
-    ***GeneralFrame*** de type ***<span class="hl">NETEX_COMMUN</span>, 
-    <span class="hl">NETEX_RESEAU, NETEX_HORAIRE</span>** et **<span
-    class="hl">NETEX_CALENDRIER</span>*** permettant la description
-    complète d'un ensemble de lignes (toutes les informations
-    nécessaires à l'information voyageur pour les lignes concernées). Le
-    champ ***Name*** des ***CompositeFrame*** de type ***<span
-    class="hl">NETEX_N\_LIGNE</span>*** contient le nom des lignes
-    concernées, séparés par des virgules.
-
-<div class="table-title">TypeOfFrame pour NETEX_COMMUN et NETEX_CALENDRIER – Element (objet inclus)</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à </span><em><span class="hl">NETEX_COMMUN</span></em><span class="hl"> </span><span class="hl">ou </span><em><span class="hl">NETEX_CALENDRIER</span></em></p></td>
-</tr>
+## TypeOfFrame : types spécifiques 
 
 
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_COMMUN:</span></p>
-<ul>
-<li><p><span class="hl">VALIDITY CONDITION (AVAILABILITY CONDITION et VALIDITY TRIGGER)</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ALTERNATIVE NAME</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NOTICE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NOTICE ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">RESPONSIBILITY ROLE ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ORGANISATION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">POINT PROJECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ZONE PROJECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TYPE OF FRAME</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TYPE OF VALUE spécifiques</span></p></li>
-</ul>
-<p><span class="hl">La liste est fixe pour NETEX_CALENDRIER:</span></p>
-<ul>
-<li><p><span class="hl">DAY TYPE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">OPERATING DAY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE CALENDAR</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DAY TYPE ASSIGNMENT</span></p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Le présent profil utilise des valeurs précises de *TypeOfFrame* pour spécifier le contenu de chaque fichier : 
+- accessibility.xml : TypeOfFrame NETEX_ACCESSIBILITY, décrit dans la partie accessibilité du profil
+- network.xml : TypeOfFrame NETEX_RESEAU décrit dans la partie "Description du réseau" du profil
+- stop.xml : TypeOfFrame NETEX_ARRET, décrit dans la partie "Description des arrêts" du profil
+- line_xyz.xml : TypeOfFrame NETEX_LIGNE et NETEX_LIGNE_STRUCTURE dans la partie "Description des réseaux" et NETEX_HORAIRE dans la partie Horaires du profil
+- fare.xml : TypeOfFrame NETEX_TARIF dans la partie Tarifs du profil
+- parking.xml : À venir dans la partie Parking du profil
+- poi.xml : TypeOfFrame NETEX_POI, décrit dans la partie Éléments Communs du profil
+- resource.xml : TypeOfFrame NETEX_FRANCE, NETEX_COMMUN et NETEX_CALENDRIER décrits dans la partie Éléments Communs du profil
 
-<div class="table-title">TypeOfFrame pour NETEX_FRANCE, NETEX_LIGNE et NETEX_N_LIGNES – Element (objet inclus) </div>
+Attention : les identifiants sont construits selon les recommandations du présent profil. Par exemple, `NETEX_LIGNE` sera présent dans un fichier
+avec la valeur complète `FR:TypeOfFrame:NETEX_LIGNE:`.
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à </span><em><span class="hl">NETEX_FRANCE, NETEX_LIGNE ou NETEX_N_LIGNES</span></em></p></td>
-</tr>
-<tr class="odd">
-<td>FK</td>
-<td><em><strong>typesOfFrame</strong></em></td>
-<td><em>TypeOfFrameRef</em></td>
-<td>0:*</td>
-<td><p>TYPES OF FRAME contenu dans ce TYPE OF FRAME. Ne dois pas être récursif.</p>
-<p>On trouve ici les TYPES OF FRAME autorisés au sein de la <em><strong>CompositeFrame</strong></em> <em><span class="hl">NETEX_FRANCE</span></em>, à savoir:</p>
-<ul>
-<li><p><span class="hl">NETEX_COMMUN, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_ARRET, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_RESEAU, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_HORAIRE,</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_CALENDRIER, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_TARIF</span></p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Le fichier `resource.xml` contient une CompositeFrame de type `NETEX_FRANCE`, elle-même composée de :
+- Une GeneralFrame de type `NETEX_COMMUN`
+- Une GeneralFrame de type `NETEX_CALENDRIER`
+Les objets de premiers niveaux possibles dans ces frames sont indiqués dans les exemples XML ci-dessous sous forme de commentaires.
 
-<div class="table-title">TypeOfValue (pour le TypeOfFrame) – Element (objet inclus) </div>
+Le fichier `poi.xml` contient une GeneralFrame de type `NETEX_POI`.
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</p>
-<p><span class="hl">L’attribut version portera la version du profil.</span></p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_COMMUN ou NETEX_CALENDRIER ou NETEX_FRANCE, NETEX_LIGNE ou NETEX_N_LIGNES</span></p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX_COMMUN», « NETEX_CALENDRIER» ou « NETEX_FRANCE», «NETEX_LIGNE» ou «NETEX_N_LIGNES»</span></p></td>
-</tr>
+Voici un exemple de cadre du fichier `resource.xml` :
 
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX_COMMUN», « Profil d’échange français NETEX_CALENDRIER». Ou « Profil d’échange français «NETEX_FRANCE», «NETEX_LIGNE» ou «NETEX_N_LIGNES».</span></p></td>
-</tr>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <CompositeFrame id="exemple:CompositeFrame:NETEX_FRANCE-1:LOC" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_FRANCE:" />
+      <frames>
+        <GeneralFrame id="exemple:GeneralFrame:NETEX_COMMUN-1:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN:" />
+          <members>
+            <!--
+              VALIDITY CONDITION (AVAILABILITY CONDITION et VALIDITY TRIGGER)
+              ALTERNATIVE NAME
+              NOTICE
+              NOTICE ASSIGNMENT
+              RESPONSIBILITY ROLE ASSIGNMENT
+              ORGANISATION
+              POINT PROJECTION
+              ZONE PROJECTION
+              TYPE OF VALUE spécifiques
+              DATA SOURCE
+              SITE CONNECTION
+              VEHICLE TYPE
+              CONNECTION 
+              JOURNEY INTERCHANGE
+              DEFAULT CONNECTION
+              BOOKING ARRANGEMENT
+              SERVICE FACILITY SET
+              -->
+          </members>
+        </GeneralFrame>
+        <GeneralFrame id="exemple:GeneralFrame:NETEX_CALENDRIER-1:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_CALENDRIER:" />
+          <members>
+            <!--
+              DAY TYPE
+              OPERATING PERIOD
+              SERVICE CALENDAR
+              DAY TYPE ASSIGNMENT
+              -->
+          </members>
+        </GeneralFrame>
+      </frames>
+    </CompositeFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
+Voici un exemple de cadre du fichier `poi.xml` :
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_POI-1:LOC" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_POI:" />
+      <members>
+        <!--
+          POINT OF INTEREST
+          POINT OF INTEREST CLASSIFICATION
+          POINT OF INTEREST ENTRANCE
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
-</tbody>
-</table>
+ 
 
 ## Version des objets et références
 
