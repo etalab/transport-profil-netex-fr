@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../NeTEx/xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>GT7</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+			<frames>
+				<GeneralFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members>
+						
+						<FareStructureElement id="exemple:FareStructureElement:UsageValidityPeriod-01" version="any">
+							<Name>Abonnement 30 jours</Name>
+							<TypeOfFareStructureElementRef ref="FR:UsageValidityPeriod" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:UsageValidityPeriod-01" version="any">
+									<limitations>
+										<UsageValidityPeriod id="exemple:usagUsageValidityPeriode:UsageValidityPeriod-01" version="any">
+											<ValidityPeriodType>monthlyPass</ValidityPeriodType> <!-- Requis, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<UsageTrigger>specifiedStartDate</UsageTrigger><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<UsageEnd>endOfCalendarPeriod</UsageEnd> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<StandardDuration>P1M</StandardDuration> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<ActivationMeans>useOfValidator</ActivationMeans> <!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<StartDate>2025-11-18</StartDate><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<StartTime>11:25:00</StartTime><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<EndDate>2025-11-18</EndDate><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<EndTime>11:25:00</EndTime><!-- Optionnel, sauf dans le cas d'un carnet où il est interdit (géré par un autre FSE) -->
+											<!-- Balises non retenues
+											<UsageStartConstraintType></UsageStartConstraintType>
+											<startOnlyOn></startOnlyOn>
+											<FixedStartWindow></FixedStartWindow>
+											<BlackoutUse></BlackoutUse>
+											-->
+										</UsageValidityPeriod>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+						<FareStructureElement id="exemple:FareStructureElement:validityParameters-01" version="any">
+							<TypeOfFareStructureElementRef ref="FR:validityParameters" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:validityParameters-01" version="any">
+									<validityParameters>
+										<!-- Liste qui ne retient pour le moment que les deux attributs les plus usuels. Des rajouts seront faits par la suite -->
+										<FareClass>secondClass</FareClass> <!-- Optionnel -->
+										<TransportModes>bus tram shuttle</TransportModes>
+									</validityParameters>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+						
+						<FareStructureElement id="exemple:FareStructureElement:FrequencyOfUse-01" version="any">
+						<!-- Le FrequencyOfUse ne peut pas être utilisé sur les tickets "trajet simple" 
+							au niveau du ProductType du PreassignedFareProduct
+						-->
+							<Name>Usage illimté</Name>
+							<TypeOfFareStructureElementRef ref="FR:FrequencyOfUse" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:FrequencyOfUse-01" version="any">
+									<limitations>
+										<FrequencyOfUse id="exemple:FrequencyOfUse:01" version="any">
+											<FrequencyOfUseType>unlimited</FrequencyOfUseType> <!-- Obligatoire -->
+											<MinimalFrequency>1</MinimalFrequency> <!-- Optionnel -->
+											<MaximalFrequency>10</MaximalFrequency> <!-- Optionnel -->
+											<FrequencyInterval>PT24H</FrequencyInterval> <!-- Optionnel -->
+											<!-- Les balises ci-dessous ne sont pas retenues
+											<TimeInterval></TimeInterval>
+											<DiscountBasis></DiscountBasis>
+											-->
+										</FrequencyOfUse>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+						<FareStructureElement id="exemple:FareStructureElement:Suspending-01" version="any">
+							<Name>Possibilité de suspension après 3 mois</Name>
+							<TypeOfFareStructureElementRef ref="FR:Suspending" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:Suspending-01" version="any">
+									<limitations>
+										<!-- Il est recommandé de passer par une Notice plutôt que par l'objet Suspending -->
+										<Suspending id="exemple:Suspending:01" version="any">
+											<SuspensionPolicy>forAnyReason</SuspensionPolicy> <!-- Requis -->
+											<QualificationPeriod>P3M</QualificationPeriod> <!-- Optionnel -->
+											<MinimumSuspensionPeriod>P1M</MinimumSuspensionPeriod> <!-- Requis -->
+											<MaximumSuspensionPeriod>P3M</MaximumSuspensionPeriod> <!-- Optionnel -->
+											<MaximumNumberOfSuspensionsPerTerm>1</MaximumNumberOfSuspensionsPerTerm> <!-- Optionnel -->
+											<!-- Balises non retenues
+											<QualificationPercent></QualificationPercent>
+											 -->
+										</Suspending>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="exemple:FareStructureElement:MinimumStay-01" version="any">
+							<Name>Au moins 24h à destination</Name>
+							<TypeOfFareStructureElementRef ref="FR:MinimumStay" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:FareStructureElement:MinimumStay-01" version="any">
+									<limitations>
+										<MinimumStay id="exemple:MinimumStay:01" version="any">
+											<MinimumStayType>countNightsAway</MinimumStayType> <!-- Requis -->
+											<RequiresNightsAway>Friday Saturday</RequiresNightsAway> <!-- Optionnel -->
+											<MinimumNumberOfNightsAway>1</MinimumNumberOfNightsAway> <!-- Optionnel -->
+											<MaximumNumberOfNightsAway>3</MaximumNumberOfNightsAway> <!-- Optionnel -->
+										</MinimumStay>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
