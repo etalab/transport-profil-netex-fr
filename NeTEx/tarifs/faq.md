@@ -92,7 +92,7 @@ Le sujet de la variation du prix en fonction de la durée n'est pas traité dans
 Afin d'indiquer une periode de vente, il convient d'utiliser `ValidityConditions/AvailabilityConditions` sur l'offre à la vente (`SalesOfferPackage`).
 Cette information  permet d'indiquer qu'un titre mensuel est mis à la vente à partir du 15 septembre.
 
-Exemple pour une periode de vente du 15/09/2025 au 30/10/2025 :
+Exemple pour une période de vente du 15/09/2025 au 30/10/2025 :
 ```xml
 <SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
     <validityConditions>
