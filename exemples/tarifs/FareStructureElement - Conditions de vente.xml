@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../NeTEx/xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>TT</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+			<frames>
+				<GeneralFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members>
+						
+						
+					<!-- Liste des FareStructureElement de type fr:sale_conditions -->
+						<FareStructureElement id="exemple:FareStructureElement:Exchanging-01" version="any">
+							<Name>Ne peut être échangé</Name>
+							<TypeOfFareStructureElementRef ref="FR:Exchanging" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:Exchanging-01" version="any">
+									<limitations>
+										<Exchanging id="exemple:Exchanging:01" version="any">
+											<Allowed>none</Allowed> <!-- Requis -->
+											<ResellWhen>beforeFirstUse</ResellWhen> <!-- Optionnel -->
+											<HasFee>true</HasFee> <!-- Requis --> 
+											<ExchangableTo>anyProduct</ExchangableTo> <!-- Optionnel -->
+											<!-- Balises non retenues (liste non exhaustive)
+											les balises du ResellingPeriodGroup sauf ResellWhen
+											<NumberOfExchangesAllowed></NumberOfExchangesAllowed>
+											<PaymentMethods></PaymentMethods>
+											<RefundBasis></RefundBasis>
+											-->
+										</Exchanging>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="exemple:FareStructureElement:Refunding-01" version="any">
+							<!-- Ce FareStructureElement est utilisable dans le cas où une seule politique de remboursement 
+							est applicable sur le titre.
+							Si un titre a besoin d'être associé à plusieurs Refunding, un nouveau TypeOfFareStructureElementRef
+							devra être défini, celui-ci ne pouvant en contenir qu'un seul.
+							-->
+							<TypeOfFareStructureElementRef ref="FR:Refunding" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:Refunding-01" version="any">
+									<limitations>
+										<Refunding id="exemple:Refunding:01" version="any">
+											<Allowed>full</Allowed> <!-- Requis -->
+											<ResellWhen>beforeFirstUse</ResellWhen> <!-- Optionnel -->
+											<HasFee>true</HasFee> <!-- Requis --> 
+											<RefundType>unused</RefundType> <!-- Optionnel -->
+											<!-- Balises non retenues (liste non exhaustive)
+											les balises du ResellingPeriodGroup sauf ResellWhen
+											<RefundBasis></RefundBasis>
+											<RefundPolicy></RefundPolicy>
+											<PartialRefundBasis></PartialRefundBasis>
+											<PaymentMethod></PaymentMethod>
+											-->
+										</Refunding>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<!-- Utilisation d'un type spécifique "FR:CarnetDeTicket" -->
+						<!-- Les balises Value et ValidityPeriodType sont obligatoires, et aucune autre
+						balise n'est autorisée -->
+						<FareStructureElement id="exemple:FareStructureElement:CarnetDeTicket:01" version="any">
+							<TypeOfFareStructureElementRef ref="FR:CarnetDeTicket" versionRef="any" />
+							<qualityStructureFactors>
+								<QualityStructureFactor id="exemple:QualityStructureFactor:01-0X" version="any">
+									<Value>20</Value>
+								</QualityStructureFactor>
+							</qualityStructureFactors>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:UsageValidityPeriod-01" version="any">
+									<limitations>
+										<UsageValidityPeriod id="exemple:UsageValidityPeriod:01" version="any">
+											<ValidityPeriodType>carnet</ValidityPeriodType>
+										</UsageValidityPeriod>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+			
+
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>

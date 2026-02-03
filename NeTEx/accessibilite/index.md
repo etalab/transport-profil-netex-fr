@@ -1071,11 +1071,10 @@ traduit) car c'est sous cette dénomination que les objets présentés se
 retrouveront dans le modèle XSD et donc dans les tags XML utilisés dans
 l'implémentation et les échanges.
 
-## Éléments d'accessibilité de base partagés par tous les profils
+## Éléments d'accessibilité de base partagés par toutes les parties du profil France
 
-Les profils précédents (Éléments Communs, Arrêts, Réseaux et Horaires)
-proposent déjà une information de base sur l'accessibilité en utilisant 
-les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) :
+Tous les objets contenus dans les autres parties du profil France (Éléments Communs, Arrêts, Réseaux, Horaires, Tarifs et Parking) proposent une information de base sur l'accessibilité en utilisant les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT).
+Celles retenues dans le profil France sont :
 
 - *WheelchairAccess* : on peut s’y déplacer en fauteuil roulant
 - *StepFreeAccess* : on peut s’y déplacer sans franchir de marche ou d'escalier
@@ -1107,7 +1106,7 @@ gare, accès possibles pour les UFR uniquement sur certains quais)
 signalétique auditive en cas de perturbations mais pas d'annonces pour
 les prochains passages)
 
-<span class="hl">Dans le cadre du profil il est convenu, lorsque
+<span class="hl">Dans le cadre du profil France il est convenu, lorsque
 "</span>***<span class="hl">Partiel</span>***<span class="hl">" est
 utilisé, de systématiquement remplir le champ "</span>***<span
 class="hl">ValidityCondition->Description</span>***<span class="hl">"
@@ -1118,12 +1117,94 @@ texte libre susceptible d'être présenté au public en complément des
 indicateurs ci-dessus.</span>
 
 ![image](media/image8.svg)
-*Accessibilité des profils précédents*
+*Accessibilité dans les autres parties du profil France*
 
 Toutefois, cela correspond à une information globale et synthétique,
 mais qui dans de nombreuses situations manquera de précisions, d'une
 part vis-à-vis des besoins d'accessibilité et d'autre part en terme de
 précision sur les équipements et cheminements rencontrés.
+
+<div class="table-title">AccessibilityAssessment – Élément (objet inclus)</div>
+
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 8%" />
+<col style="width: 41%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Classifi­cation</strong></td>
+<td><strong>Nom</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Cardinalité</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td>::></td>
+<td>::></td>
+<td><em>DataManagedObject</em></td>
+<td>::></td>
+<td>ACCESSIBILITY ASSESSMENT hérite de DATA MANAGED OBJECT.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>MobilityImpaired­Access</td>
+<td><em>Accessibility­Enumeration</em></td>
+<td>1:1</td>
+<td><p>Indication globale d'accessibilité (de la LIGNE ou du LIEU).</p>
+<p>Il peut valoir <em>true</em> (accessible), <em>false</em> (non accessible), <em>partial</em> ou <em>unknown</em></p></td>
+</tr>
+<tr class="even">
+<td>«cntd»</td>
+<td>limitations</td>
+<td>AccessibilityLimitation</td>
+<td>0:1</td>
+<td>Limitations d'accessibilité</td>
+</tr>
+
+<tr class="even">
+<td></td>
+<td><em><strong>Comment</strong></em></td>
+<td><em>MultilingualString</em></td>
+<td>0:1</td>
+<td><p>Commentaire complémentaire sur l'accessibilité.</p>
+<p><span class="hl">Ce champ a pour vocation à compléter, en termes d'information voyageur, l'information générale de la structure. Il a donc pour vocation à être affiché avec les informations d'accessibilité.</span></p></td>
+</tr>
+</tbody>
+</table>
+
+**NOTE** : L'attribut ***MobilityImpairedAccess*** n'a pas été retenu dans le
+cadre des travaux sur le modèle d'arrêt partagé (car considéré comme
+trop générique). Toutefois, ce champ étant obligatoire dans NeTEx, il
+devra être présent dans les échanges. Les valeurs qu'il peut prendre
+étant ***true***/***false***/***unknow***/***partial***, il est
+recommandé (pour des raisons de cohérence) que sa valeur soit:
+
+-   ***true*** si tous les champs de ***AccessibilityLimitation*** sont
+    à ***true***
+
+-   ***false*** si tous les champs de ***AccessibilityLimitation*** sont
+    à ***false***
+
+-   ***partial*** si seulement certains champs de
+    ***AccessibilityLimitation*** sont à ***true***
+
+-   ***unknow*** dans tous les autres cas
+
+<div class="table-title">AccessibilityLimitation – Élément (objet inclus)</div>
+
+| **Classification** | **Nom**                        | **Type**               |     | **Description**                                                                                                                                                                                                          |
+| ------------------ | ------------------------------ | ---------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                    | ***WheelchairAccess***         | *LimitationStatusEnum* | 1:1 | Indique si on peut s’y déplacer en fauteuil roulant.                                                                                                 |
+|                    | ***StepFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans franchir de marche ou d’escalier.                                                                          |
+|                    | ***EscalatorFreeAccess***      | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’escalator.                                                                                            |
+|                    | ***LiftFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’ascenseur.                                                                                            |
+|                    | ***AudibleSignsAvailable***    | *LimitationStatusEnum* | 0:1 | Indique si une information sonore ou une signalétique auditive est disponible.                                                                                                   |
+|                    | ***VisualSignsAvailable***     | *LimitationStatusEnum* | 0:1 | Indique si une information visuelle ou une signalétique visuelle est disponible.                                                                                                   |
+|                    | ***TactileGuidanceAvailable*** | *LimitationStatusEnum* | 0:1 | Indique s'il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile. |
 
 ## Adéquation aux besoins
 
@@ -2184,7 +2265,7 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 | «FK»                | LevelRef    | LevelRef           | 0:1              | Niveau auquel le PATH LINKse connecte.                  |
 | «FK»                | EntranceRef | EntranceRef        | 0:1              | Entrée (ou sortie) associée à l’extrémité du PATH LINK. |
 
-<div class="table-title">PathJunction (croisement/jonction de cheminement) – Element</div>
+<div class="table-title">PathJunction (croisement/jonction de cheminement) – Élément</div>
 
 <table>
 <colgroup>

@@ -62,25 +62,25 @@ concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en cinq parties :
+NeTEx se décompose en six parties:
 
-- Partie 1 : topologie des réseaux (les réseaux, les lignes, les
-  parcours commerciaux les missions commerciales, les arrêts et lieux
-  d’arrêts, les correspondances et les éléments géographiques en se
-  limitant au strict minimum pour l’information voyageur)
+-   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
+    parcours commerciaux les missions commerciales, les arrêts et lieux
+    d’arrêts, les correspondances et les éléments géographiques en se
+    limitant au strict minimum pour l’information voyageur)
 
-- Partie 2 : horaires théoriques (les courses commerciales, les heures
-  de passage graphiquées, les jours types associés ainsi que les
-  versions des horaires)
+-   Partie 2 : horaires théoriques (les courses commerciales, les heures
+    de passage graphiquées, les jours types associés ainsi que les
+    versions des horaires)
 
-- Partie 3 : information tarifaire (uniquement à vocation d’information
-  voyageur)
+-   Partie 3 : information tarifaire (uniquement à vocation
+    d’information voyageur)
 
-- Partie 4 : Profil Européen pour l’information voyageur (EPIP :
-  European Passenger Information Profile)
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
 
-- Partie 5 : NeTEx New Modes extension (vehicle sharing, vehicle
-  pooling, etc.)
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
 
 NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
 la France. Les parties 1 et 2 ont été publiées en tant que spécification
@@ -138,21 +138,14 @@ des informations comme :
 
 - etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et
-Île-de-France Mobilités (un profil SIRI Frane, qui en découle, est en
-cours d’élaboration). Ces deux profils ont une vocation nationale. Le
-groupe de travail GT7 (AFNOR BNTRA/CN 03/GT 7) a élaboré une sélection
-des concepts Transmodel nécessaire à la description des horaires en
-France (à vocation d'information voyageur essentiellement). C'est sur la
-base de cette sélection qu'est élaboré le présent profil.
+Ce document présente la partie Tarifs du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-D'autre profils de NeTEx sont disponibles (arrêt, réseau, horaire). Ils
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseau, horaire, accessibilité, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur un document partagé: **NeTEx - Profil Français de
-NETEx: éléments communs.** Il conviendra de se référer à ce document
-pour tous les éléments utilisés dans le présent document, et dont la
-structure n'est pas détaillée.
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
+les éléments utilisés dans le présent document, et dont la structure
+n'est pas détaillée.
+
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
