@@ -2508,7 +2508,14 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_ACCESSIBILITY`, seuls les o
 - PathJunction
 - NavigationPath
 - FacilitySet
-- PassengerEquipment
+- AccessEquipment, et tous les équipements qui en héritent
+- PlaceEquipment, et tous les équipements qui en héritent
+- SignEquipment, et tous les équipements qui en héritent
+- PassengerEquipment, et tous les équipements qui en héritent
+- SiteEquipment, et tous les équipements qui en héritent
+- LocalService, et tous les équipements qui en héritent
+
+Les équipements sont précisés dans l'annexe 8 de ce document.
 
 Voici un exemple de cadre du fichier `accessibility.xml` :
 
@@ -2522,13 +2529,17 @@ Voici un exemple de cadre du fichier `accessibility.xml` :
       <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ACCESSIBILITY:" />
       <members>
         <!--
-          SITE PATH LINK
-          PATH LINK
-          PATH JUNCTION
-          NAVIGATION PATH
-          FACILITY SET
-          PLACE EQUIPMENT
-          PASSENGER EQUIPMENT
+          SitePathLink
+          PathLink
+          PathJunction
+          NavigationPath
+          FacilitySet
+          AccessEquipment, et tous les équipements qui en héritent
+          PlaceEquipment, et tous les équipements qui en héritent
+          SignEquipment, et tous les équipements qui en héritent
+          PassengerEquipment, et tous les équipements qui en héritent
+          SiteEquipment, et tous les équipements qui en héritent
+          LocalService, et tous les équipements qui en héritent
           -->
       </members>
     </GeneralFrame>
