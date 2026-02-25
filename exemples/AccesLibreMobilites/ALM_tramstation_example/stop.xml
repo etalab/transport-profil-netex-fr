@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="2.0:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
   <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
   <ParticipantRef>ALM_wdm2netex</ParticipantRef>
   <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement - Cet export contient des données issues d'OpenStreetMap (© contributeurs OpenStreetMap).</Description>
   <dataObjects>
-    <GeneralFrame id="FR:GeneralFrame:NETEX_ARRET:LOC" version="1.09:FR-NETEX-2.3-0.0">
+    <GeneralFrame id="FR:GeneralFrame:NETEX_ARRET:LOC" version="2.0:FR-NETEX-2.3-0.0">
       <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ARRET:"/>
       <FrameDefaults>
         <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
@@ -386,10 +386,10 @@
             <QuayRef version="+1" ref="FR::Quay:481074:FR1"/>
           </quays>
           <pathLinks>
-            <PathLinkRef ref="ALM:SitePathLink:w136_n762_n768:LOC" versionRef="1"/>
-            <PathLinkRef ref="ALM:SitePathLink:w137_n780_n761:LOC" versionRef="1"/>
-            <PathLinkRef ref="ALM:SitePathLink:w138_n761_n762:LOC" versionRef="1"/>
-            <PathLinkRef ref="ALM:SitePathLink:w141_n776_n784:LOC" versionRef="1"/>
+            <SitePathLinkRef ref="ALM:SitePathLink:w136_n762_n768:LOC" versionRef="1"/>
+            <SitePathLinkRef ref="ALM:SitePathLink:w137_n780_n761:LOC" versionRef="1"/>
+            <SitePathLinkRef ref="ALM:SitePathLink:w138_n761_n762:LOC" versionRef="1"/>
+            <SitePathLinkRef ref="ALM:SitePathLink:w141_n776_n784:LOC" versionRef="1"/>
           </pathLinks>
         </StopPlace>
         <Entrance id="ALM:Entrance:n792:LOC" version="1">

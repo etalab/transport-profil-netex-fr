@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="2.0:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
   <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
   <ParticipantRef>ALM_wdm2netex</ParticipantRef>
   <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement</Description>
   <dataObjects>
-    <GeneralFrame id="FR:GeneralFrame:NETEX_ACCESSIBILITY:LOC" version="1.09:FR-NETEX-2.3-0.0">
+    <GeneralFrame id="FR:GeneralFrame:NETEX_ACCESSIBILITY:LOC" version="2.0:FR-NETEX-2.3-0.0">
       <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ACCESSIBILITY:"/>
       <FrameDefaults>
         <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
@@ -1172,6 +1172,162 @@
             <VisualContrast>true</VisualContrast>
           </BottomEnd>
         </StaircaseEquipment>
+        <PathJunction id="ALM:PathJunction:n-144056:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AudioAnnouncements</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AutomaticDoor</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Depth</Key>
+              <Value>1.6</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Handrail</Key>
+              <Value>Left</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Level</Key>
+              <Value>-1;0;1</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Lighting</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>MirrorOnOppositeSide</Key>
+              <Value>No</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>SitePathLink</Key>
+              <Value>Elevator</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualDisplays</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144056">
+            <Longitude>2.65451054706</Longitude>
+            <Latitude>48.83951416699</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n-144057:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AudioAnnouncements</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AutomaticDoor</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Depth</Key>
+              <Value>1.6</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Handrail</Key>
+              <Value>Left</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Level</Key>
+              <Value>1;-1</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Lighting</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>MirrorOnOppositeSide</Key>
+              <Value>No</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>SitePathLink</Key>
+              <Value>Elevator</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualDisplays</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144057">
+            <Longitude>2.65436001859</Longitude>
+            <Latitude>48.83963206919</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n-144058:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AudioAnnouncements</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AutomaticDoor</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Depth</Key>
+              <Value>1.6</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Handrail</Key>
+              <Value>Left</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Level</Key>
+              <Value>0;-1</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Lighting</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>MirrorOnOppositeSide</Key>
+              <Value>No</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>SitePathLink</Key>
+              <Value>Elevator</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>VisualDisplays</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144058">
+            <Longitude>2.65427926781</Longitude>
+            <Latitude>48.83973126874</Latitude>
+          </Location>
+        </PathJunction>
         <PathJunction id="ALM:PathJunction:n-144062:LOC" version="any">
           <keyList>
             <KeyValue typeOfKey="WDM_tag">
@@ -1308,6 +1464,90 @@
             <Latitude>48.83965065787</Latitude>
           </Location>
         </PathJunction>
+        <PathJunction id="ALM:PathJunction:n-144075:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketOffice</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144075">
+            <Longitude>2.65474587545</Longitude>
+            <Latitude>48.83944305009</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n-144076:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketVendingMachine</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144076">
+            <Longitude>2.65478074417</Longitude>
+            <Latitude>48.83936978788</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n-144077:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>Defibrillator</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144077">
+            <Longitude>2.65446022019</Longitude>
+            <Latitude>48.83940597766</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n-144078:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketValidator</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Turnstile</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Pass</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144078">
+            <Longitude>2.65457973384</Longitude>
+            <Latitude>48.83937503016</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n-144081:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketValidator</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Turnstile</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Pass</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Width</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n-144081">
+            <Longitude>2.65412500627</Longitude>
+            <Latitude>48.83974215344</Latitude>
+          </Location>
+        </PathJunction>
         <PathJunction id="ALM:PathJunction:n-144082:LOC" version="any">
           <keyList>
             <KeyValue typeOfKey="WDM_tag">
@@ -1334,58 +1574,6 @@
             <Latitude>48.83952650301</Latitude>
           </Location>
         </PathJunction>
-        <PathJunction id="ALM:PathJunction:n-144056:LOC" version="any">
-          <keyList>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>AudioAnnouncements</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>AutomaticDoor</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Depth</Key>
-              <Value>1.6</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Handrail</Key>
-              <Value>Left</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Level</Key>
-              <Value>-1;0;1</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Lighting</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>MirrorOnOppositeSide</Key>
-              <Value>No</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>SitePathLink</Key>
-              <Value>Elevator</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>VisualDisplays</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>WheelchairAccess</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Width</Key>
-              <Value>1</Value>
-            </KeyValue>
-          </keyList>
-          <Location id="n-144056">
-            <Longitude>2.65451054706</Longitude>
-            <Latitude>48.83951416699</Latitude>
-          </Location>
-        </PathJunction>
         <PathJunction id="ALM:PathJunction:n-144070:LOC" version="any">
           <Location id="n-144070">
             <Longitude>2.65441209744</Longitude>
@@ -1404,114 +1592,10 @@
             <Latitude>48.83977934872</Latitude>
           </Location>
         </PathJunction>
-        <PathJunction id="ALM:PathJunction:n-144058:LOC" version="any">
-          <keyList>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>AudioAnnouncements</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>AutomaticDoor</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Depth</Key>
-              <Value>1.6</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Handrail</Key>
-              <Value>Left</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Level</Key>
-              <Value>0;-1</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Lighting</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>MirrorOnOppositeSide</Key>
-              <Value>No</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>SitePathLink</Key>
-              <Value>Elevator</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>VisualDisplays</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>WheelchairAccess</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Width</Key>
-              <Value>1</Value>
-            </KeyValue>
-          </keyList>
-          <Location id="n-144058">
-            <Longitude>2.65427926781</Longitude>
-            <Latitude>48.83973126874</Latitude>
-          </Location>
-        </PathJunction>
         <PathJunction id="ALM:PathJunction:n-144080:LOC" version="any">
           <Location id="n-144080">
             <Longitude>2.6543876969</Longitude>
             <Latitude>48.8397421965</Latitude>
-          </Location>
-        </PathJunction>
-        <PathJunction id="ALM:PathJunction:n-144057:LOC" version="any">
-          <keyList>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>AudioAnnouncements</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>AutomaticDoor</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Depth</Key>
-              <Value>1.6</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Handrail</Key>
-              <Value>Left</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Level</Key>
-              <Value>1;-1</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Lighting</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>MirrorOnOppositeSide</Key>
-              <Value>No</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>SitePathLink</Key>
-              <Value>Elevator</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>VisualDisplays</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>WheelchairAccess</Key>
-              <Value>Yes</Value>
-            </KeyValue>
-            <KeyValue typeOfKey="WDM_tag">
-              <Key>Width</Key>
-              <Value>1</Value>
-            </KeyValue>
-          </keyList>
-          <Location id="n-144057">
-            <Longitude>2.65436001859</Longitude>
-            <Latitude>48.83963206919</Latitude>
           </Location>
         </PathJunction>
       </members>
