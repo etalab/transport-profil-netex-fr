@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/New%20Modes/PT%200303/XSD/1.2.2r/xsd/NeTEx_publication.xsd" version="1.1">
+<!--
+	Exemple de tarif Kilométrique TER sur la base des données de https://ressources.data.sncf.com/explore/dataset/bareme-de-prix-national-ter/table/?sort=-km
+	ATTENTION: cet exemple explique comment représenter ce tableau Kilométrique, mais ne définit pas les produits tarifaire correspondant, ni les offres à la vente: ces éléments doivent être ajoutés et intégrés à la Fare Table!
+-->
+	<!--- =============== ENTETE =========== -->
+	<PublicationTimestamp>2019-06-12T09:30:47.0Z</PublicationTimestamp>
+	<ParticipantRef>AURIGE001</ParticipantRef>
+	<!-- ========== DONNEES =========== -->
+	<dataObjects>
+		<!-- =========================================== -->
+		<!-- CompositeFrame.de type NETEX_FRANCE -->
+		<CompositeFrame version="1" created="2019-06-12T09:30:47.0Z" id="AURIGE:CompositeFrame:myFrame01:LOC">
+			<frames>
+				<!-- =========================================== -->
+				<!-- Frame NETEX_TARIF -->
+				<GeneralFrame version="001" id="AURIGE:TypeOfFrame:NETEX_TARIF-Example1:LOC">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF">version="1.01:FR-NETEX_TARIF-1.0"</TypeOfFrameRef>
+					<members modificationSet="all">
+						<!-- ===================================================================================================================== -->
+						<!-- STRUCTURE TARIFAIRE ET DROITS DE BASE -->
+						
+<!--	======== Représentation des éléments du tableau lui même -->
+
+						<GeographicalUnit version="any" id="SNCF:GeographicalUnit:TER-Unité-de-distance:LOC">
+							<Name>Unité de distance arbitraire (peut-être des kilométre, ou une unité de distance tarifaire)</Name>
+						</GeographicalUnit>
+
+						<GeographicalInterval version="001" id="SNCF:GeographicalInterval:TER-1km:LOC">
+							<StartGeographicalValue>0.0</StartGeographicalValue>
+							<EndGeographicalValue>1.0</EndGeographicalValue>
+							<IntervalType>distance</IntervalType>
+<!--						<GeographicalUnitRef version="any" ref="SNCF:GeographicalUnit:TER-Unité-de-distance:LOC"/> Facultatif, aussi fourni via le GeographicalStructureFactor -->
+						</GeographicalInterval>
+						
+						<!--etc...-->
+
+						<GeographicalInterval version="001" id="SNCF:GeographicalInterval:TER-3km:LOC">
+							<StartGeographicalValue>1.0</StartGeographicalValue>
+							<EndGeographicalValue>2.0</EndGeographicalValue>
+							<IntervalType>distance</IntervalType>
+						</GeographicalInterval>
+						
+						<!--etc...-->
+						
+						<!--Association Interval - Unités-->
+						<GeographicalStructureFactor version="001" id="SNCF:GeographicalStructureFactor:AtoB:LOC">
+							<GeographicalIntervalRef version="001" ref="SNCF:GeographicalInterval:TER-3km:LOC"/>
+							<GeographicalUnitRef ref="SNCF:GeographicalUnit:TER-Unité-de-distance:LOC"/>
+						</GeographicalStructureFactor>
+						
+						<!--etc...-->
+
+<!-- ========= Et les distances pour les origines / destination -->
+
+						<DistanceMatrixElement id="FR-Tarif-Example:DistanceMatrixElement:AtoB:LOC" version="any">
+							<Distance>43</Distance>
+							<IsDirect>true</IsDirect>
+							<InverseAllowed>true</InverseAllowed>
+							<StartStopPointRef versionRef="any" ref="SNCF:ScheduledStopPoint:GareA:LOC"/>
+							<EndStopPointRef versionRef="any" ref="SNCF:ScheduledStopPoint:GareB:LOC"/>
+							<!--Note On pourrait insérer ici une CONTRAINTE de SERIE si plusieurs itinéraires étaient concernés si pluisieurs itinéraires sont possible -->
+							<structureFactors>
+									<GeographicalStructureFactorRef version="001" ref="SNCF:GeographicalInterval:TER-43km:LOC"/>
+							</structureFactors>
+						</DistanceMatrixElement>
+						
+						<!--etc...-->
+						
+						<!--LE FareStructureElement référence tous les DistanceMatrixElement ... Il sera lui même référencé par les PreassignedFareProduct->ValidableElements-->
+						<FareStructureElement id="FR-Tarif-Example:FareStructureElement:DM-001:LOC" version="any">
+						
+							<distanceMatrixElements> <!--... QUESTION RECURENTE DU TRAITEMENT EN "OU" OU EN "ET" DE CES SEQUENCES (ici on cible OU) -->
+								<DistanceMatrixElementRef ref="FR-Tarif-Example:DistanceMatrixElement:AtoB:LOC"></DistanceMatrixElementRef>
+								<DistanceMatrixElementRef ref="FR-Tarif-Example:DistanceMatrixElement:AtoC:LOC"></DistanceMatrixElementRef>
+								<DistanceMatrixElementRef ref="FR-Tarif-Example:DistanceMatrixElement:BtoC:LOC"></DistanceMatrixElementRef>
+								<!--etc...-->
+
+							</distanceMatrixElements>
+							
+						</FareStructureElement>
+						
+<!--	======== Tableau tarifaire simplifié, pour l'exemple (sans les FareProduct et SalesOfferPackage) -->
+<!-- Cette table est purement un exemple ... on peut s'interroger sur le fait de donner le prix des GeographicalIntervalRef, qui implique un calcul ou directement celui du DistanceMatrixElement -->
+
+						<!--ces limites nous permettent de ne mettre que le prix de la 1ere colonne du tableau (la limite s'appliquera opur les réductions)-->
+						<LimitingRule  version="001" id="SNCF:LimitingRule:001:LOC"><MinimumPrice>1.8</MinimumPrice></LimitingRule>
+						<LimitingRule  version="001" id="SNCF:LimitingRule:002:LOC"><MinimumPrice>1.2</MinimumPrice></LimitingRule>
+
+						<FareTable id="SNCF:StandardFareTable:TER-1km:LOC" version="1.0">
+							<Name>TER-Tarification kilomètrique </Name>
+							<pricesFor>
+								<FareStructureElementRef ref="FR-Tarif-Example:FareStructureElement:DM-001:LOC" version="any"/> <!--a remplace par FareProduct et SalesOfferPackage en final-->
+							</pricesFor>
+							<cells>
+								<Cell version="any" id="SNCF:Cel:001:LOC" order="1">
+									<CellPrice>
+											<Amount>1.8</Amount>
+											<LimitingRuleRef ref="SNCF:LimitingRule:001:LOC"/>
+									</CellPrice>
+									<GeographicalIntervalRef ref="SNCF:GeographicalInterval:TER-1km:LOC"/>
+									<FareClass>firstClass</FareClass>
+								</Cell>
+								
+								<Cell  version="any" id="SNCF:Cel:002:LOC" order="2">
+									<CellPrice>
+											<Amount>1.2</Amount>
+											<LimitingRuleRef ref="SNCF:LimitingRule:001:LOC"/>
+									</CellPrice>
+									<GeographicalIntervalRef ref="SNCF:GeographicalInterval:TER-1km:LOC"/>
+									<FareClass>secondClass </FareClass>
+								</Cell>
+								
+								<!--etc...-->
+								<Cell version="any" id="SNCF:Cel:010:LOC" order="10">
+									<CellPrice>
+											<Amount>2.1</Amount>
+											<LimitingRuleRef ref="SNCF:LimitingRule:001:LOC"/>
+									</CellPrice>
+									<GeographicalIntervalRef ref="SNCF:GeographicalInterval:TER-3km:LOC"/>
+									<FareClass>firstClass</FareClass>
+								</Cell>
+								
+								<Cell  version="any" id="SNCF:Cel:011:LOC" order="11">
+									<CellPrice>
+											<Amount>1.4</Amount>
+											<LimitingRuleRef ref="SNCF:LimitingRule:001:LOC"/>
+									</CellPrice>
+									<GeographicalIntervalRef ref="SNCF:GeographicalInterval:TER-3km:LOC"/>
+									<FareClass>secondClass </FareClass>
+								</Cell>
+
+							</cells>
+									
+						</FareTable>
+						<!-- ===================================================================================================================== -->						
+						
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>

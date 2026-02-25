@@ -65,23 +65,25 @@ concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-
-
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-
-
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
+
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
 
 NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
 la France. Les parties 1 et 2 ont été publiées en tant que spécification
@@ -149,23 +151,14 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et
-Île-de-France Mobilités. Ces deux profils ont une vocation nationale. Le
-présent document décrit le profil Français de NeTEx pour l’échange des
-données de description des réseaux de transport public.
+Ce document présente la partie Réseaux du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-Le groupe de travail GT7 (AFNOR BNTRA/CN03/GT7) a élaboré une sélection
-des concepts Transmodel nécessaire à la description des réseaux en
-France (à vocation d'information voyageur essentiellement). C'est sur la
-base de cette sélection qu'est élaboré le présent profil.
-
-D'autre profils de NeTEx sont disponibles (arrêt, horaire, tarif). Ils
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, horaire, tarif, accessibilité, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur un document partagé: **NeTEx - Profil Français de
-NETEx: éléments communs.** Il conviendra de se référer à ce document
-pour tous les éléments utilisés dans le présent document, et dont la
-structure n'est pas détaillée.
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
+les éléments utilisés dans le présent document, et dont la structure
+n'est pas détaillée.
+
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
@@ -728,7 +721,7 @@ ACCESS RIGHT PARAMETER ASSIGNMENT</strong></p></td>
 CONNECTION</strong> <em>et</em> <strong>SITE CONNECTION<br />
 </strong></p>
 <p><strong>ROUTE LINK</strong> <em>(donc ROUTE)</em> <em>ou</em> <strong>SERVICE LINK</strong> <em>en alternative</em></p></td>
-<td><p><em>(profil accessibilité)</em></p>
+<td><p><em>(partie accessibilité)</em></p>
 <p><strong>NAVIGATION PATH</strong></p></td>
 <td>Les SERVICE LINKs ou ROUTE LINKs impliquent naturellement les POINTs (POINT IN JOURNEY PATTERN, ROUTE POINT, POINT ON ROUTE, etc.) correspondant. Ils permettront d’évaluer la distance parcourue par le véhicule.</td>
 </tr>
@@ -1051,7 +1044,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong><del>RepresentBy­GroupRef</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Le GROUPE DE LIGNE référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</span></td>
+<td><span class="hl">Le GROUPE DE LIGNES référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</span></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1065,7 +1058,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong>Accessibility­Assessment</strong></em></td>
 <td><em>Accessibility­Assessment</em></td>
 <td>0:1</td>
-<td>Information concernant l'accessibilité de la ligne <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
+<td>Information concernant l'accessibilité de la ligne <span class="hl">(<em>voir la partie Accessibilité du profil France</em>).</span></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1156,6 +1149,15 @@ de nuit, etc.).
 
 ### Les réseaux
 
+La notion de "réseau" correspond à un regroupement de lignes mis en avant sur le terrain et visible des voyageurs.
+Par exemple pour des réseaux urbains, le réseau TCL pour Lyon et les alentours, TBM pour le réseau de Bordeaux ou 
+Bibus pour le réseau urbain de Brest.
+
+Cette notion de réseau n'est pas obligatoire, mais très fortement recommandée pour des exports de structures de réseau ou
+d'offre horaires. De plus, pour éviter des différences d'interprétation et de communication, une ligne ne peut être 
+référencée que par un seul réseau dans un export NeTEx France.
+
+
 <div class="table-title">Network – Element</div>
 
 | **Classifi­cation** | **Name**                       | **Type**                   | **Cardin­ality** | **Description**                                                          |
@@ -1164,6 +1166,32 @@ de nuit, etc.).
 |                     | ***TransportOrganisationRef*** | *OrganisationRefStructure* | 0:1              | INSTITUTION (autorité organisatrice ou transporteur) en charge du RÉSEAU |
 |                     | ***groupsOfLines***            | *groupsOfLinesInFrame*     | 0:\*             | GROUPE DE LIGNES faisant partie du RÉSEAU                                |
 |                     | ***tariffZones***              | *tariffZoneRefs*           | 0:\*             | ZONEs TARIFAIREs faisant partie du RÉSEAU                                |
+
+
+Afin de permettre une description complète d'un réseau de transport, la notion de groupe de lignes peut êgalement être utilisée
+en complément afin de regrouper par exemple les lignes de nuit du réseau ou les "lignes fortes". Dans ce cas, la ligne est référencée 
+par le (ou les) groupe(s) de lignes dont elle fait partie ET par le réseau global.
+**Recommandation** : une ligne ne devrait pas être présente dans plus d'un groupe de lignes à la fois au sein du réseau sauf situation particulière.
+
+Exemple : 
+```xml
+<Network id="sample-with-lines">
+  <Name>Mon Réseau</Name>
+  <members>
+    <LineRef ref="L1" version="any"/>
+    <LineRef ref="L2" version="any"/>
+    <LineRef ref="L3" version="any"/>
+  </members>
+  <groupsOfLines>
+    <GroupOfLinesRef ref="G1" version="any"/> 
+    <GroupOfLinesRef ref="G2" version="any"/>
+  </groupsOfLines>  
+</Network>
+<!-- avec le groupe de lignes G1 qui contient des références aux lignes L1 et L2, et le groupe de lignes G2 qui contient une référence à la ligne L3. -->
+```
+
+
+
 
 ## Zone tarifaire
 
@@ -1184,9 +1212,10 @@ de nuit, etc.).
 |                     | ***DirectionType***    | *TypeOfDirectionEnum* | 0:1              | Type de direction de la ROUTE (***outbound***, ***inbound***, pour aller Retrour et éventuellement ***clockwise*** ou ***anticlockwise*** pour les boucles)                                   |
 | «FK»                | ***DirectionRef***     | *DirectionRef*        | 0:1              | Référence la DIRECTION de l'ITINÉRAIRE.                                                                                                                                                       |
 | «cntd»              | ***pointsInSequence*** | *PointOnRoute*        | 2:\*             | Liste des points de l'ITINÉRAIRE.                                                                                                                                                             |
+| «cntd»              | ***sectionsInSequence*** | *SectionLink*        | 0:\*             | Liste des sections de l'ITINÉRAIRE.                                                                                                                                                             |
 |                     | ***InverseRouteRef***  | *RouteRef*            | 0:1              | Référence l'éventuel ITINÉRAIRE en sens opposé.                                                                                                                                               |
 
-### Les Point d'itinéraire
+### Les Points d'itinéraire
 
 <div class="table-title">RoutePoint – Element</div>
 
@@ -1225,9 +1254,19 @@ de nuit, etc.).
 |---------------------|--------------------|-----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*              | *Link*          | *::>*            | ROUTE LINK hérite de LINK <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 |                     | Distance           | DistanceType    | 1:1              | Longueur du ROUTE LINK. Les unités sont telles que spécifiées pour la FRAME (la valeur par défaut est SI mètres).                                                                         |
+| «cntd»              | LineString         | gmlLineString   | 0:1              | Géométrie du TRONÇON sous forme d’une linestring GML (la géométrie d’un TRONÇON n’est donc pas limitée à un simple couple de point, mais est décrite par une séquence de points).  |
 | «FK»                | ***FromPointRef*** | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de début de <span class="hl">TRONÇON</span>.                                                                                                                         |
 | «FK»                | ***ToPointRef***   | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de fin de <span class="hl">TRONÇON</span>.                                                                                                                           |
 |                     |                    |                 |                  |                                                                                                                                                                                           |
+
+Exemple de LineString pour décrire un tracé : 
+```xml
+<gml:LineString gml:id="AB2o"> 
+    <gml:pos>53.00 1.00</gml:pos> 
+    <gml:pos>53.10 1.10</gml:pos> 
+    <gml:pos>53.20 1.20</gml:pos> 
+</gml:LineString>
+```
 
 ## Les affichages de destination
 
@@ -1808,21 +1847,21 @@ flexibilité.
 <td>0:1</td>
 <td>AFFICHAGE DE DESTINATION associée à la MISSION COMMERCIALE <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-
-
-
-
-
-
-
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>pointsInSequence</strong></em></td>
 <td><em>PointInJourneyPattern</em></td>
 <td>0:*</td>
-<td>Liste ordonnées des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
+<td>Liste ordonnée des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
 </tr>
-
+<tr class="even">
+<td>«cntd»</td>
+<td><em><strong>linksInSequence</strong></em></td>
+<td><em>ServiceLink</em></td>
+<td>0:*</td>
+<td>
+Liste ordonnée des sections de la MISSION COMMERCIALE (SERVICE LINK). Chaque section décrit la géométrie entre deux points consécutifs (ScheduleStopPoint).</td>
+</tr>
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>ServiceJourneyPatternType</strong></em></td>
@@ -2599,7 +2638,7 @@ D'EMBARQUEMENT (QUAY).
 <td><em>navigationPaths</em></td>
 <td>0:1</td>
 <td><p>Description du cheminement utilisé pour cette correspondance.</p>
-<p><span class="hl">Dans le cadre du Profil Réseau, le NAVIGATION PATH n'est utilisé que pour indiquer de façon générale les contraintes d'accessibilité du cheminement (champs AccessFeatureList et NavigationType). La description complète et détaillée du NAVIGATION PATH n'interviendra que dans un profil dédié.</span></p></td>
+<p>(voir la partie accessibilité du profil pour plus de détails)</p></td>
 </tr>
 </tbody>
 </table>
@@ -2821,7 +2860,7 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 La description du cheminement est ici limitée à ses caractéristiques
 principales (en particulier pour l'accessibilité).
 
-<span class="hl">Note : le profil NeTEx pour l’accessibilité fournit
+<span class="hl">Note : la partie Accessibilité du profil France fournit
 une vue beaucoup plus détaillée du NavigationPath.</span>
 
 <div class="table-title">NavigationPath – Element</div>
@@ -2985,7 +3024,14 @@ description des ITL (Interdiction de trafic local).
 <td><em><strong>GroupOfLinesRef</strong></em></td>
 <td><em>GroupOfLinesRef</em></td>
 <td>0:1</td>
-<td>Groupe de ligne ou réseau concerné par la restriction</td>
+<td>Groupe de lignes ou réseau concerné par la restriction</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><em><strong>pointsInPattern</strong></em></td>
+<td><em>pointsInPattern</em></td>
+<td></td>
+<td><span class="hl">Cette propriété n'est pas retenue dans le profil France. Le champ <em>member</em> est utilisé, comme indiqué ci-dessus dans l'héritage de Zone.</span></td>
 </tr>
 </tbody>
 </table>
@@ -3580,6 +3626,10 @@ Le présent profil utilise un *TypeOfFrame* spécifique, identifié
 </ul>
 <ul>
 <li><p><span class="hl">POINT IN JOURNEY PATTERN</span></p></li>
+</ul>
+</ul>
+<ul>
+<li><p><span class="hl">SERVICE LINK</span></p></li>
 </ul>
 <ul>
 <li><p><span class="hl">SCHEDULED STOP POINT</span></p></li>

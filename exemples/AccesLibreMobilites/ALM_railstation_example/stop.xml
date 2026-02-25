@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+  <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
+  <ParticipantRef>ALM_wdm2netex</ParticipantRef>
+  <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement</Description>
+  <dataObjects>
+    <GeneralFrame id="FR:GeneralFrame:NETEX_ARRET:LOC" version="1.09:FR-NETEX-2.3-0.0">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ARRET:"/>
+      <FrameDefaults>
+        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
+      </FrameDefaults>
+      <members>
+        <Quay id="ALM:Quay:w-116868:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>InsideSpace</Key>
+              <Value>Quay</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Level</Key>
+              <Value>1</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Good</Value>
+            </KeyValue>
+          </keyList>
+          <gml:Polygon gml:id="w-116868">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65371665587 48.83942267257</gml:pos>
+                <gml:pos>2.65370547749 48.83946468085</gml:pos>
+                <gml:pos>2.65676714447 48.83981760239</gml:pos>
+                <gml:pos>2.65677832285 48.83977559441</gml:pos>
+                <gml:pos>2.65504209126 48.83957545732</gml:pos>
+                <gml:pos>2.6545744625 48.83952155317</gml:pos>
+                <gml:pos>2.65451054706 48.83951416699</gml:pos>
+                <gml:pos>2.65426997737 48.83948645475</gml:pos>
+                <gml:pos>2.65371665587 48.83942267257</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:2:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <AudibleSignalsAvailable>true</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:StopPlace_rail:w-116867:LOC" version="any"/>
+          <TransportMode>rail</TransportMode>
+        </Quay>
+        <Quay id="ALM:Quay:w-116869:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>InsideSpace</Key>
+              <Value>Quay</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Level</Key>
+              <Value>1</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>TactileWarningStrip</Key>
+              <Value>Good</Value>
+            </KeyValue>
+          </keyList>
+          <gml:Polygon gml:id="w-116869">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65673528216 48.83992846433</gml:pos>
+                <gml:pos>2.6567491377 48.83987638607</gml:pos>
+                <gml:pos>2.65368668116 48.83952343977</gml:pos>
+                <gml:pos>2.65367282562 48.83957551839</gml:pos>
+                <gml:pos>2.65673528216 48.83992846433</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:3:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <AudibleSignalsAvailable>true</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:StopPlace_rail:w-116867:LOC" version="any"/>
+          <TransportMode>rail</TransportMode>
+        </Quay>
+        <StopPlace id="ALM:StopPlace_rail:w-116867:LOC" version="any">
+          <Name>Torcy Marne-la-Vallée</Name>
+          <gml:Polygon gml:id="w-116867_1">
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:pos>2.65366494387 48.8395984018</gml:pos>
+                <gml:pos>2.65367282562 48.83957551839</gml:pos>
+                <gml:pos>2.65368668116 48.83952343977</gml:pos>
+                <gml:pos>2.65370547749 48.83946468085</gml:pos>
+                <gml:pos>2.65371665587 48.83942267257</gml:pos>
+                <gml:pos>2.65428185195 48.83947835802</gml:pos>
+                <gml:pos>2.6545805386 48.83930885125</gml:pos>
+                <gml:pos>2.65471100539 48.83923473887</gml:pos>
+                <gml:pos>2.65505164593 48.83957192158</gml:pos>
+                <gml:pos>2.65677832285 48.83977559441</gml:pos>
+                <gml:pos>2.65676714447 48.83981760239</gml:pos>
+                <gml:pos>2.6567491377 48.83987638607</gml:pos>
+                <gml:pos>2.65673528216 48.83992846433</gml:pos>
+                <gml:pos>2.65671997994 48.8399779501</gml:pos>
+                <gml:pos>2.65443742007 48.83971667995</gml:pos>
+                <gml:pos>2.65441864461 48.8398384885</gml:pos>
+                <gml:pos>2.65408764898 48.83979159193</gml:pos>
+                <gml:pos>2.6539707157 48.83977493625</gml:pos>
+                <gml:pos>2.65394925803 48.83965312755</gml:pos>
+                <gml:pos>2.65366494387 48.8395984018</gml:pos>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+          <placeTypes>
+            <TypeOfPlaceRef ref="monomodalStopPlace"/>
+          </placeTypes>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:23:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>true</AudibleSignalsAvailable>
+                <VisualSignsAvailable>true</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <facilities>
+            <SiteFacilitySet id="ALM:SiteFacilitySet:23:" version="any">
+              <AccessibilityInfoFacilityList>audioInformation audioForHearingImpaired visualDisplays displaysForVisuallyImpaired</AccessibilityInfoFacilityList>
+              <MedicalFacilityList>defibrillator</MedicalFacilityList>
+              <MobilityFacilityList>suitableForWheelchairs tactilePlatformEdges</MobilityFacilityList>
+              <PassengerCommsFacilityList>publicWifi internet</PassengerCommsFacilityList>
+              <PassengerInformationEquipmentList>informationDesk realTimeDepartures</PassengerInformationEquipmentList>
+              <SanitaryFacilityList>none</SanitaryFacilityList>
+              <TicketingFacilityList>ticketMachines ticketOffice mobileTicketing</TicketingFacilityList>
+              <ParkingFacilityList>carPark cyclePark</ParkingFacilityList>
+              <Staffing>partTime</Staffing>
+            </SiteFacilitySet>
+          </facilities>
+          <entrances>
+            <EntranceRef ref="ALM:Entrance:n-144059:LOC" version="any"/>
+            <EntranceRef ref="ALM:Entrance:n-144060:LOC" version="any"/>
+          </entrances>
+          <equipmentPlaces>
+            <EquipmentPlace id="ALM:EquipmentPlace:230" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n-144076_23_0:LOC" version="any">
+                  <EquipmentRef ref="ALM:TicketingEquipment:n-144076:LOC" version="any"/>
+                  <Location id="n-144076">
+                    <Longitude>2.65478074417</Longitude>
+                    <Latitude>48.83936978788</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+            <EquipmentPlace id="ALM:EquipmentPlace:231" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n-144075_23_1:LOC" version="any">
+                  <EquipmentRef ref="ALM:TicketingEquipment:n-144075:LOC" version="any"/>
+                  <Location id="n-144075">
+                    <Longitude>2.65474587545</Longitude>
+                    <Latitude>48.83944305009</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+            <EquipmentPlace id="ALM:EquipmentPlace:232" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n-144078_23_2:LOC" version="any">
+                  <EquipmentRef ref="ALM:TicketValidatorEquipment:n-144078:LOC" version="any"/>
+                  <Location id="n-144078">
+                    <Longitude>2.65457973384</Longitude>
+                    <Latitude>48.83937503016</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+            <EquipmentPlace id="ALM:EquipmentPlace:233" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n-144081_23_3:LOC" version="any">
+                  <EquipmentRef ref="ALM:TicketValidatorEquipment:n-144081:LOC" version="any"/>
+                  <Location id="n-144081">
+                    <Longitude>2.65412500627</Longitude>
+                    <Latitude>48.83974215344</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+            <EquipmentPlace id="ALM:EquipmentPlace:234" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n-144075_23_4:LOC" version="any">
+                  <EquipmentRef ref="ALM:AssistanceService:n-144075:LOC" version="any"/>
+                  <Location id="n-144075">
+                    <Longitude>2.65474587545</Longitude>
+                    <Latitude>48.83944305009</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+          </equipmentPlaces>
+          <placeEquipments>
+            <StaircaseEquipmentRef ref="ALM:StaircaseEquipment:w-116873_n-144065_n-144062:LOC"/>
+            <StaircaseEquipmentRef ref="ALM:StaircaseEquipment:w-116874_n-144066_n-144063:LOC"/>
+            <StaircaseEquipmentRef ref="ALM:StaircaseEquipment:w-116876_n-144068_n-144069:LOC"/>
+            <EscalatorEquipmentRef ref="ALM:EscalatorEquipment:w-116880_n-144072_n-144073:LOC"/>
+            <StaircaseEquipmentRef ref="ALM:StaircaseEquipment:w-116981_n-144082_n-144071:LOC"/>
+          </placeEquipments>
+          <TransportMode>rail</TransportMode>
+          <StopPlaceType>railStation</StopPlaceType>
+          <quays>
+            <QuayRef version="any" ref="ALM:Quay:w-116868:LOC"/>
+            <QuayRef version="any" ref="ALM:Quay:w-116869:LOC"/>
+          </quays>
+          <pathLinks>
+            <PathLinkRef ref="ALM:SitePathLink:n-144056_level-1_level0:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:n-144056_level0_level1:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:n-144057_level-1_level1:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:n-144058_level-1_level0:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116870_n-144060_n-144065:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116871_n-144062_n-144066:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116872_n-144063_n-144059:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116873_n-144065_n-144062:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116874_n-144066_n-144063:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116875_n-144084_n-144056:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116876_n-144068_n-144069:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116877_n-144070_n-144082:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116878_n-144062_n-144072:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116879_n-144073_n-144058:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116880_n-144072_n-144073:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116881_n-144080_n-144058:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116882_n-144057_n-144070:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116887_n-144056_n-144068:LOC" versionRef="any"/>
+            <PathLinkRef ref="ALM:SitePathLink:w-116981_n-144082_n-144071:LOC" versionRef="any"/>
+          </pathLinks>
+        </StopPlace>
+        <Entrance id="ALM:Entrance:n-144059:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AutomaticDoor</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>EntrancePassage</Key>
+              <Value>Door</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbHeight</Key>
+              <Value>0</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n-144059">
+              <Longitude>2.6545805386</Longitude>
+              <Latitude>48.83930885125</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:0:" version="any">
+            <MobilityImpairedAccess>true</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:StopPlace_rail:w-116867:LOC" version="any"/>
+          <placeEquipments>
+            <EntranceEquipmentRef ref="ALM:EntranceEquipment:n-144059:LOC"/>
+          </placeEquipments>
+          <PublicCode>1</PublicCode>
+          <Label>Gare routière</Label>
+          <EntranceType>automaticDoor</EntranceType>
+          <IsEntry>true</IsEntry>
+          <IsExit>true</IsExit>
+          <Width>2.00</Width>
+        </Entrance>
+        <Entrance id="ALM:Entrance:n-144060:LOC" version="any">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>AutomaticDoor</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>EntrancePassage</Key>
+              <Value>Door</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>KerbHeight</Key>
+              <Value>0</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n-144060">
+              <Longitude>2.65408764898</Longitude>
+              <Latitude>48.83979159193</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:1:" version="any">
+            <MobilityImpairedAccess>true</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <SiteRef ref="ALM:StopPlace_rail:w-116867:LOC" version="any"/>
+          <placeEquipments>
+            <EntranceEquipmentRef ref="ALM:EntranceEquipment:n-144060:LOC"/>
+          </placeEquipments>
+          <PublicCode>2</PublicCode>
+          <Label>Rue Léon Blum</Label>
+          <EntranceType>automaticDoor</EntranceType>
+          <IsEntry>true</IsEntry>
+          <IsExit>true</IsExit>
+          <Width>2.00</Width>
+        </Entrance>
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>

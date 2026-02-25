@@ -63,23 +63,25 @@ traite aussi l’ensemble des concepts nécessaires en entrée et sortie des
 systèmes de planification de l'offre (graphiquage, etc.) et des SAE
 (Systèmes d’Aide à l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-
-
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-
-
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
+
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
 
 NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
 France. Les parties 1 et 2 ont été publiées en tant que spécification
@@ -146,39 +148,15 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et le
-STIF. Ces deux profils ont une vocation nationale.
+Ce document présente la partie Arrêts du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-Le groupe de travail Qualité des données de l’AFIMB (Agence Française
-pour l’Information Multimodale et la Billettique) a engagé une démarche
-pour définir, sous la forme d’un « référentiel », les caractéristiques
-et exigences de qualité des données transport à recommander. Ces travaux
-ont, entre autres, permis d’élaborer un modèle d’arrêt partagé à partir
-du cadre fixé par les documents de normalisation (Transmodel et NeTEx).
-Ce modèle permet notamment de :
-
--   Proposer une structuration et une hiérarchisation des arrêts
-    (clarifier les concepts de lieu d’arrêt, arrêt physique, arrêt
-    commercial, etc.) ;
-
-
-
--   Décrire les caractéristiques souhaitées pour les arrêts de ce modèle
-    et les exigences de qualité pour ces caractéristiques ;
-
-Le profil présenté dans ce document permet d’échanger l’intégralité des
-informations qui ont été retenues dans le cadre de ce modèle d’arrêt
-partagé.
-
-D'autre profils de NeTEx sont disponibles (réseau, horaire, tarif). Ils
+D'autres parties du profil France de NeTEx sont disponibles (réseau, horaire, tarif, accessibilité, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur le document: **NeTEx - Profil Français de NETEx:
-éléments communs.** Il conviendra de se référer à ce document pour tous
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
 les éléments utilisés dans le présent document, et dont la structure
 n'est pas détaillée.
 
-Ce profil d’échange a pour objectif de décrire et de structurer
+Cette partie du profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
 description des arrêts de transport public de façon :
 
@@ -200,7 +178,7 @@ NeTEx sera nécessaire à sa bonne compréhension.
 
 # Domaine d'application
 
-Le présent document constitue le profil de la CEN/TS 16614 (NeTEx) pour
+Le présent document constitue la partie du profil France de la CEN/TS 16614 (NeTEx) pour
 l'échange de données de description d'arrêt en France. Il permet de
 décrire les arrêts de transports publics et la manière dont ils pourront
 être structurés pour des échanges entre systèmes d'information ainsi que
@@ -779,7 +757,7 @@ Au-delà du Profil Arrêt, les informations d’adresse sont donc attendues pour
 <td><strong>STOP PLACE</strong></td>
 <td><p><strong>QUAY<br />
 </strong></p>
-<p><em>(profil réseau)</em></p>
+<p><em>(partie réseau)</em></p>
 <p><strong>SCHEDULED STOP POINT<br />
 PASSENGER STOP ASSIGNMENT</strong></p></td>
 <td></td>
@@ -797,7 +775,7 @@ PASSENGER STOP ASSIGNMENT</strong></p></td>
 <td><em><strong>Trip plan computation — scheduled modes transport</strong></em></td>
 <td>Stop facilities access nodes (including platform information, help desks/information points, ticket booths, lifts/stairs, entrances and exit locations)</td>
 <td><strong>STOP PLACE's FACILITIES</strong></td>
-<td><p>(profil Accessibilité)</p>
+<td><p>(partie Accessibilité)</p>
 <p><strong>EQUIPMENT</strong></p></td>
 <td></td>
 </tr>
@@ -806,7 +784,7 @@ PASSENGER STOP ASSIGNMENT</strong></p></td>
 <td><em><strong>Trip plan computation — scheduled modes transport</strong></em></td>
 <td>Accessibility of access nodes, and paths within an interchange (such as existence of lifts, escalators)</td>
 <td><strong>STOP PLACE's FACILITIES</strong></td>
-<td><p><em>(profil Accessibilité)</em></p>
+<td><p><em>(partie Accessibilité)</em></p>
 <p><strong>EQUIPMENT<br />
 NAVIGATION PATH<br />
 </strong></p></td>
@@ -817,7 +795,7 @@ NAVIGATION PATH<br />
 <td><em><strong>Trip plan computation — scheduled modes transport</strong></em></td>
 <td>Existence of assistance services (such as existence of on-site assistance)</td>
 <td><strong>STOP PLACE's FACILITIES</strong></td>
-<td><p>(profil Accessibilité)</p>
+<td><p>(partie Accessibilité)</p>
 <p><strong>LOCAL SERVICE</strong></p></td>
 <td></td>
 </tr>
@@ -1338,10 +1316,12 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 </tr>
 <tr class="even">
 <td><em><strong>tariffZones</strong></em></td>
-<td><em>TariffZoneRef</em></td>
+<td><em>FareZoneRef</em></td>
 <td>0:*</td>
-<td><p>Identifiant de la zone tarifaire (ou section selon les cas). <span class="hl">Cet identifiant est, dans le cadre de ce profil, le code ou nom de la zone (typiquement "1", "2", etc.)</span></p>
-<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>tarrifZone</strong></em>, alors la zone tarifaire du <em><strong>StopPlace</strong></em> parent s'applique.</p></td>
+<td><p>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`.</p>
+<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>FareZone</strong></em>, alors la ou les zones tarifaires du <em><strong>StopPlace</strong></em> parent s'appliquent.</p>
+<p>Le profil France fait une restriction de la norme NeTEx en demandant explicitement une FareZoneRef, alors que NeTEx indique TariffZone (dont FareZone est une spécialisation).</p>
+</td>
 </tr>
 <tr class="odd">
 <td>STOP PLACE PROPERTY GROUP</td>
@@ -1519,7 +1499,7 @@ la façon suivante:
 <td><em>AccessibilityAssessment</em></td>
 <td>0:1</td>
 <td><p>Information globale précisant le niveau d'accessibilité du <span class="hl">LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</span>.</p>
-<p>Voir le détail ci-dessous.</p></td>
+<p>Voir le détail dans l'annexe 9 du profil Accessibilité.</p></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1945,7 +1925,7 @@ Français de NETEx: éléments communs**:
 
 -   SiteElement: 7.2.8
 
-<div class="table-title">Quay (traduit pas ZONE D'EMBARQUEMENT en français) –</div>
+<div class="table-title">Quay (traduit par ZONE D'EMBARQUEMENT en français) –</div>
 Element
 
 <table>
@@ -2139,9 +2119,10 @@ Element
 <tr class="odd">
 <td></td>
 <td><em><strong>tariffZones</strong></em></td>
-<td><em>TariffZoneRef</em></td>
+<td><em>FareZoneRef</em></td>
 <td>0:*</td>
-<td>Identifiant de la zone tarifaire (ou section selon les cas). <span class="hl">Cet identifiant est, dans le cadre de ce profil, le code ou nom de la zone (typiquement "1", "2", etc.)</span></td>
+<td>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`. Voir la desciption du champ `tariffZones` de l'objet StopPlace pour les précisions sur l'héritage.
+</td>
 </tr>
 </tbody>
 </table>

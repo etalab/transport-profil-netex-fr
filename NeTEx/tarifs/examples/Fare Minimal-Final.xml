@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/New%20Modes/PT%200303/XSD/1.2.2r/xsd/NeTEx_publication.xsd" version="1.1">
+	<!--- =============== ENTETE =========== -->
+	<PublicationTimestamp>2019-06-12T09:30:47.0Z</PublicationTimestamp>
+	<ParticipantRef>AURIGE001</ParticipantRef>
+	<!-- ========== DONNEES =========== -->
+	<dataObjects>
+		<!-- =========================================== -->
+		<!-- CompositeFrame.de type NETEX_FRANCE -->
+		<CompositeFrame version="1" created="2019-06-12T09:30:47.0Z" id="FR-Tarif-Example:CompositeFrame:myFrame01:LOC">
+			<frames>
+				<!-- =========================================== -->
+				<!-- Frame NETEX_TARIF -->
+				<GeneralFrame version="001" id="FR-Tarif-Example:TypeOfFrame:NETEX_TARIF-Example1:LOC">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF">version="1.01:FR-NETEX_TARIF-1.0"</TypeOfFrameRef>
+					<members modificationSet="all">
+					
+						<!-- ===================================================================================================================== -->
+						<!-- STRUCTURE TARIFAIRE ET DROITS DE BASE -->
+						<TimeInterval id="FR-Tarif-Example:TimeInterval:001:LOC" version="any">
+							<Description>1h30 de validité</Description>
+							<Duration>PT90M</Duration>
+						</TimeInterval>
+						
+						<ValidableElement id="FR-Tarif-Example:ValidableElement:001:LOC" version="any">
+							<noticeAssignments>
+								<NoticeAssignment id="FR-Tarif-Example:NoticeAssignment:001:LOC" version="any" order="1">
+									<NoticeRef ref="FR-Tarif-Example:Notice:001:LOC"/>
+								</NoticeAssignment>
+							</noticeAssignments>
+							<fareStructureElements>
+								<FareStructureElementRef ref="FR-Tarif-Example:FareStructureElement:001:LOC" version="any"/>
+							</fareStructureElements>
+						</ValidableElement>
+						
+						<FareStructureElement id="FR-Tarif-Example:FareStructureElement:001:LOC" version="any">
+							<TimeIntervalRef ref="FR-Tarif-Example:TimeInterval:001:LOC" version="any"/>
+						</FareStructureElement>
+
+						<!-- ===================================================================================================================== -->
+						<!-- LE TITRE -->
+						<PreassignedFareProduct id="FR-Tarif-Example:PreassignedFareProduct:T+001:LOC" version="any">
+							<Name>Ticket 1h30</Name>
+							<AuthorityRef ref="FR-Tarif-Example:Authority:IDFM:"/>
+							<ConditionSummary>
+								<TariffBasis>period</TariffBasis>
+								<CanBreakJourney>false</CanBreakJourney>
+								<IsRefundable>false</IsRefundable>
+								<IsExchangable>false</IsExchangable>
+							</ConditionSummary>
+							
+							<validableElements>
+								<ValidableElementRef ref="FR-Tarif-Example:ValidableElement:001:LOC" version="any"/>
+							</validableElements>
+							<ProductType>singleTrip</ProductType>
+						</PreassignedFareProduct>
+
+						<!-- ======================================================== -->
+						<!-- Offre à la vente -->
+						<SalesOfferPackageElement id="FR-Tarif-Example:SalesOfferPackageElement:001:LOC" version="any" order="1">
+							<RequiresValidation>true</RequiresValidation>
+							<TypeOfTravelDocumentRef ref="FR-Tarif-Example:TypeOfTravelDocument:001:LOC"/>
+							<PreassignedFareProductRef ref="FR-Tarif-Example:PreassignedFareProduct:T+001:LOC" version="any"/>
+						</SalesOfferPackageElement>
+						
+						<TypeOfTravelDocument id="FR-Tarif-Example:TypeOfTravelDocument:001:LOC" version="any">
+							<Name>Ticket T+ carton a bande magnétique</Name>
+							<Url>http://www.navigo.fr/wp-content/uploads/2018/11/127099_Ticket-T_carnet-de-10-300x136.png</Url>
+							<MediaType>paperTicket</MediaType>
+							<MachineReadable>magneticStrip</MachineReadable>
+						</TypeOfTravelDocument>
+						
+						<SalesOfferPackage id="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+							<Name>Ticket à l'unité</Name>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC" version="any"/>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						
+						<!-- ===================================================================================================================== -->
+						<!-- FARE TABLE avec affectation des prix -->
+						<!-- Pour chaque cellule: Prix / UserProfile ou Entitlement / SalesOfferPackage (le lien avec les FareProduct est fait par le SalesOfferPackage) -->
+						<FareTable version="any" id="lFR-Tarif-Example:TickeT+FareTable:001:LOC">
+							<Name> Bus Fare Prices - 18+Student </Name>
+							<cells>
+								<Cell version="any" id="FR-Tarif-Example:Cell:001:LOC" order="1">
+									<SalesOfferPackagePrice version="any" id="lFR-Tarif-Example:SalesOfferPackagePrice:001:LOC">
+										<Name>Ticket 1h30</Name>
+										<Amount>1.90</Amount>
+									</SalesOfferPackagePrice>
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+									<NetworkRef ref="FR-Tarif-Example:Network:001:"/> <!--Réseau concerné-->
+									<noticeAssignments>
+										<NoticeAssignmentView>
+											<Text>Ticket 1h30 - a l'unité plein tarif - aAller retour interdit, gratuit pour le moins de 4 ans, ticket disponible en agence uniquement</Text>
+											<CanBeAdvertised>true</CanBeAdvertised>
+										</NoticeAssignmentView>
+									</noticeAssignments>
+								</Cell>
+								<!-- etc. -->
+							</cells>
+						</FareTable>
+						<!-- ===================================================================================================================== -->
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
