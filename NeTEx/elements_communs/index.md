@@ -162,6 +162,10 @@ sont tous complémentaires les uns des autres (sans recouvrement) et s'appuient 
 en aucun cas à NeTEx, et un minimum de connaissance de NeTEx sera
 nécessaire à sa bonne compréhension.
 
+**NOTE IMPORTANTE** : Le profil France est un sous-ensemble de la norme NeTEx et ne possède pas de schéma XML (XSD) dédié. Pour toute validation de fichiers, se référer à la XSD de NeTEx dans sa version v1.3.2 disponible sur [GitHub](https://github.com/NeTEx-CEN/NeTEx/releases/tag/v1.3.2).
+
+
+
 # Domaine d'application
 
 Le profil français de la CEN/ TS 16614 (NeTEx) pour les éléments communs
@@ -3830,9 +3834,9 @@ utilisée pour identifier le profil).
 
 La figure ci-dessous présente l’ensemble des CADREs DE VERSION prédéfini
 dans NeTEx ainsi que le *GeneralFrame* qui est utilisé ici avec un type
-de CADRE spécifique pour les profils NeTEx utilisés en France: ***NeTEx
-COMMUN, NeTEx ARRET, NeTEx LIGNE, NeTEx RESEAU, NeTEx HORAIRE, NeTEx
-CALENDRIER** et **NeTEx TARIF***.
+de CADRE spécifique pour chaque partie du profil France (voir plus bas).
+
+**NOTE IMPORTANTE** : Pour chaque export, les identifiants des CADREs de VERSION (FRAME) doivent être uniques.
 
 ![image](media/image8.svg)
 *predefined Frames– XSD*
@@ -4621,24 +4625,23 @@ Les noms des fichiers doivent respecter les contraintes suivantes :
 - une taille maximale de 250 caractères hors extension
 
 Les fichiers attendus dans l'archive sont les suivants : 
-| **Fichier** |  **Description** 
+| **Fichier** |  **Description** |
 |--------------------|--------------------------------------------|
-| accessibility.xml  | Fichier regroupant les équipements et les informations de cheminement, incluant leur caractéristiques d'accessibilité
-| network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes
-| stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc.
-| line_xyz.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun 
-(parcours, courses, horaires, etc.). La partie "xyz" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est conseillé d'utiliser des libellés courts comme les codes des lignes par exemple.
-| fare.xml           | Fichier regroupant les informations sur les tarifs, que ce soit pour les transports en commun, les parkings ou autres.
-| parking.xml        | Fichier regroupant les informations sur les parkings.
-| poi.xml            | Fichier regroupant les points d'intérêts et les informations associées
-| resource.xml       | Fichier contenant toutes les informations qui ne sont pas collectés dans des fichiers thématiques 
-(correspondances, calendriers, commentaires, etc.)
+| accessibility.xml  | Fichier regroupant les équipements et les informations de cheminement, incluant leur caractéristiques d'accessibilité |
+| network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes |
+| stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc. |
+| line_xyz.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun (parcours, courses, horaires, etc.). La partie "xyz" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est conseillé d'utiliser des libellés courts comme les codes des lignes par exemple. |
+| fare.xml           | Fichier regroupant les informations sur les tarifs, que ce soit pour les transports en commun, les parkings ou autres |
+| parking.xml        | Fichier regroupant les informations sur les parkings |
+| poi.xml            | Fichier regroupant les points d'intérêts et les informations associées |
+| resource.xml       | Fichier contenant toutes les informations qui ne sont pas collectés dans des fichiers thématiques (correspondances, calendriers, commentaires, etc.) |
 
 Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
 Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
 
-À noter : Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP
-en respectant les critères ci-dessus.
+Notes : 
+- Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP en respectant les critères ci-dessus.
+- Pour tout échange de fichier en dehors d'un dépôt sur le [Point d'Accès National](https://transport.data.gouv.fr/), les parties sont libres d'éventuellement s'accorder sur un autre format d'archive et/ou de noms de fichiers.
 
 ## Web service
 

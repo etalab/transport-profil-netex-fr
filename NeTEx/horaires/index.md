@@ -2107,183 +2107,101 @@ l'identification des voitures est variable d'une course à l'autre.
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profil NETEX_HORAIRE sont présentées
+communs. Seules les spécificités de la partie "horaires" sont présentées
 ici.*
+
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
+
+Une GeneralFrame de type **NETEX_HORAIRE** est utilisée pour échanger la description des horaires d'une ligne dans le fichier "line_xyz.xml". 
 
 ## TypeOfFrame : type spécifique *NETEX_HORAIRE*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_HORAIRE***. Il apparaitra systématiquement et explicitement
-dans les éléments ***members*** du ***GeneralFrame***.
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_HORAIRES`, seuls les objets de premier niveau suivants sont autorisés : 
+- SERVICE JOURNEY
+- SERVICE LINK
+- FLEXIBLE SERVICE PROPERTIES
+- TEMPLATE SERVICE JOURNEY
+- HEADWAY JOURNEY GROUP
+- RHYTHMICAL JOURNEY GROUP
+- COUPLED JOURNEY
+- JOURNEY PART COUPLE
+- JOURNEY PART
+- TRAIN
+- TRAIN COMPONENT
+- COMPOUND TRAIN
+- TRAIN NUMBER
+- TRAIN COMPONENT LABEL ASSIGNMENT
 
-<div class="table-title">TypeOfFrame – Element</div>
+Voici un exemple de cadre du fichier `line_xyz.xml` :
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <CompositeFrame id="FR:CompositeFrame:NETEX_LIGNE-line_xyz:LOC" version="any">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE:" />
+      <frames>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_RESEAU-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE_STRUCTURE:" />
+          <members>
+            <Line id="sample" version="any">
+              <Name>Ligne d'exemple</Name>
+            </Line>
+            <!--  Partie Ligne
+              Peut contenir (chaque objet contiendra ses objets sous-jacents, les éléments listés ici pourront être référencés dans les autres objets)
+              LINE 
+              DIRECTION
+              ROUTE
+              ROUTE POINT
+              POINT ON ROUTE
+              ROUTE LINK
+              FLEXIBLE LINE
+              FLEXIBLE ROUTE
+            -->
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à NETEX_HORAIRE</span></p></td>
-</tr>
+            <!--  Partie Reseau
+              DESTINATION DISPLAY
+              FLEXIBLE POINT PROPERTIES
+              FLEXIBLE LINK PROPERTIES
+              SERVICE JOURNEY PATTERN
+              POINT IN JOURNEY PATTERN
+              SCHEDULED STOP POINT
+              TIMING POINT
+              TRANSFER RESTRICTION
+              PASSENGER STOP ASSIGNMENT
+              FLEXIBLE STOP ASSIGNMENT
+              TRAIN STOP ASSIGNMENT
+              SCHEMATIC MAP  
+            -->
+          </members>
+        </GeneralFrame>
 
-
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ HORAIRE:</span></p>
-<ul>
-<li><p><span class="hl">SERVICE JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE LINK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE SERVICE PROPERTIES</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TEMPLATE SERVICE JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">HEADWAY JOURNEY GROUP</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">RHYTHMICAL JOURNEY GROUP</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE JOURNEY INTERCHANGE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">VEHICLE TYPE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COUPLED JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART COUPLE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COMPOUND TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN NUMBER</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT LABEL ASSIGNMENT</span></p>
-<p><span class="hl">Il faut noter que certains éléments ne seront utilisés que pour les descriptions des services ferrés (généralement longue distance, sauf pour TRAIN NUMBER et TRAIN). Il s'agit de :</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COUPLED JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART COUPLE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COMPOUND TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN NUMBER</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT LABEL ASSIGNMENT</span></p></li>
-</ul></td>
-</tr>
-
-
-</tbody>
-</table>
-
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE) – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span>.</p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_ HORAIRE</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX HORAIRE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX HORAIRE»</span>.</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_HORAIRE-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_HORAIRE:" />
+          <members>
+            <!-- 
+              Peut contenir
+              SERVICE JOURNEY
+              SERVICE LINK
+              FLEXIBLE SERVICE PROPERTIES
+              TEMPLATE SERVICE JOURNEY
+              HEADWAY JOURNEY GROUP
+              RHYTHMICAL JOURNEY GROUP
+              COUPLED JOURNEY
+              JOURNEY PART COUPLE
+              JOURNEY PART
+              TRAIN
+              TRAIN COMPONENT
+              COMPOUND TRAIN
+              TRAIN NUMBER
+              TRAIN COMPONENT LABEL ASSIGNMENT
+            -->
+          </members>
+        </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 Bibliographie
 

@@ -6036,6 +6036,7 @@ Voici un exemple de cadre du fichier `fare.xml` :
           DiscountingRule
           FareTable 
           DistanceMatrixElement
+          ParkingTariff
           -->
       </members>
     </GeneralFrame>

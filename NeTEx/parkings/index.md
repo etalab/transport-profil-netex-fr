@@ -2375,107 +2375,38 @@ n’est pas décrit ici.</span>
 
 # Entêtes NeTEx
 
-*Note: les FRAMEs et entêtes NeTEx sont présentés dans le document
-éléments communs. Seules les spécificités du profil NETEX_PARKING sont
-présentées ici.*
+*Note: les FRAMEs et entêtes NeTEx sont présentés dans le document éléments communs. Seules les spécificités de la partie "Parkings" sont présentées ici.*
+
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
+
+Une GeneralFrame de type **NETEX_PARKING** est utilisée pour échanger la description des parkings dans le fichier "parking.xml". À noter que la tarification des parkings dépend de le partie "Tarifs" du profil France et est attendue dans le fichier "fare.xml". Les objets partagés du profil (par exemple Branding ou VehicleType) sont regroupés dans le fichier "resource.xml".
 
 ## TypeOfFrame : type spécifique *NETEX_PARKING*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_PARKING*** . Il apparaitra systématiquement et explicitement
-dans les éléments ***members*** du ***GeneralFrame***.
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_PARKING`, seuls les objets de premier niveau suivants sont autorisés : 
+- PARKING (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
+- PARKING BAY
 
-<div class='table-title'>TypeOfFrame – Element (objet inclus)</div>
+Voici un exemple de cadre du fichier `parking.xml` :
 
-<table class='attributes'>
-<thead>
-<tr class="header">
-<th><strong>Class.</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Card.</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::&gt;::&gt;</em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><mark>L'Id est imposé à NETEX_</mark>PARKING</p></td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><mark>La liste est fixe pour NETEX_PARKING :</mark></p>
-<ul>
-<li><mark>PARKING (contiendra par includion tous les autres objest comme
-PARKING AREAs, VEHICLE ENTRANCEs, etc.)</mark></li>
-<li><mark>GENERAL ORGANISATION</mark></li>
-<li><mark>RESPONSIBILITY SET</mark></li>
-<li><mark>BRANDING</mark></li>
-<li><mark>VEHICLE TYPE</mark></li>
-<li><mark>PARKING TARIFF</mark></li>
-<li><mark>USER PROFILE</mark></li>
-<li><mark>USAGE VALIDITY PERIOD</mark></li>
-<li><mark>FARE TABLE</mark></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
-<div class='table-title'>TypeOfValue (pour le TypeOfFrame NETEX_PARKING) – Element</div>
-
-<table class='attributes'>
-<thead>
-<tr class="header">
-<th><strong>Class.</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Card.</strong></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>DataManagedObject</em></td>
-<td>::&gt;</td>
-<td><p><mark>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</mark></p>
-<p><mark>L’attribut <em><strong>version</strong></em> portera la version
-du profil</mark></p>
-<p><mark>L'Identifiant du TYPE OF VALUE est imposé à
-NETEX_PARKING</mark></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p><mark>Nom du TYPE OF VALUE.</mark></p>
-<p><mark>Imposé à « NETEX PARKING ».</mark></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><mark>Imposé à « Profil d’échange français NETEX
-ARRET »</mark>.</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2026-02-17T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_Parking-sample" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_PARKING" />
+      <members>
+        <!--
+          Parking (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
+          ParkingBay
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 # Modalités d’échange
 
