@@ -2491,164 +2491,61 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 # Entêtes NeTEx
 
 *Note : les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profile NETEX_ACCESSIBILITY sont
+communs. Seules les spécificités de la partie "accessibilité" du profil sont
 présentées ici.*
 
-Une unique FRAME est proposée ici pour échanger la description de
-l'accessibilité: la FRAME **NETEX_ACCESSIBILITY**.
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
 
-## TypeOfFrame : type spécifique *NETEX\_ ACCESSIBILITE*
-
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX\_* *ACCESSIBILITE***.
-
-<div class="table-title">TypeOfFrame – Élément</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à </span><span class="hl">NETEX_</span><span class="hl"> </span><span class="hl">ACCESSIBILITE</span></p></td>
-</tr>
+Une GeneralFrame de type **NETEX_ACCESSIBILITY** est utilisée pour échanger la description l'accessibilité 
+dans le fichier `accessibility.xml`. 
 
 
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ ACCESSIBILITE:</span></p>
-<ul>
-<li><p><span class="hl">L'ensemble se classe du TYPE OF FRAME NETEX_ARRET (STOP PLACE, QUAY, TOPOGRAPHIC PLACE, STOP PLACE ENTRANCE, GENERAL GROUP OF ENTITIES)</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">PATH LINK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NAVIGATION PATH</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">PATH JUNCTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SITE FACILITY SET</span></p></li>
-</ul>
-<p><span class="hl">Notez que les EQUIPMENTs sont sous la hiérarchie de STOP PLACE.</span></p></td>
-</tr>
+## TypeOfFrame : type spécifique *NETEX_ACCESSIBILITY*
 
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_ACCESSIBILITY`, seuls les objets de premier niveau suivants sont autorisés : 
+- SitePathLink
+- PathLink
+- PathJunction
+- NavigationPath
+- FacilitySet
+- AccessEquipment, et tous les équipements qui en héritent
+- PlaceEquipment, et tous les équipements qui en héritent
+- SignEquipment, et tous les équipements qui en héritent
+- PassengerEquipment, et tous les équipements qui en héritent
+- SiteEquipment, et tous les équipements qui en héritent
+- LocalService, et tous les équipements qui en héritent
 
-</tbody>
-</table>
+Les équipements sont précisés dans l'annexe 8 de ce document.
 
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ ACCESSIBILITE) –</div>
-Élément
+Voici un exemple de cadre du fichier `accessibility.xml` :
 
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de <em><strong>DataManagedObject</strong></em>.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span></p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à </span><span class="hl">NETEX_</span><em><strong><span class="hl"> </span></strong></em><span class="hl">ACCESSIBILITE</span></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX_</span><em><strong><span class="hl"> </span></strong></em><span class="hl">ACCESSIBILITE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé </span><span class="hl">à « Profil d’échange français NETEX ACCESSIBILITY »</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-![image](media/image17.svg)
-*TypeOfFrame – XSD*
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_ACCESSIBILITY:" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ACCESSIBILITY:" />
+      <members>
+        <!--
+          SitePathLink
+          PathLink
+          PathJunction
+          NavigationPath
+          FacilitySet
+          AccessEquipment, et tous les équipements qui en héritent
+          PlaceEquipment, et tous les équipements qui en héritent
+          SignEquipment, et tous les équipements qui en héritent
+          PassengerEquipment, et tous les équipements qui en héritent
+          SiteEquipment, et tous les équipements qui en héritent
+          LocalService, et tous les équipements qui en héritent
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>                  
+</PublicationDelivery> 
+```
 
 # Annexe (normative) - Détail des équipements
 
