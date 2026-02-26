@@ -900,7 +900,7 @@ spécifier les valeurs de code autorisées :
     mécanisme TYPE OF VALUE dans quelques cas pour spécifier des codes
     normalisés supplémentaires : ceux-ci sont affectés à un CODESPACE
     «FR_IV_metadata» (https://netex-cen.eu/FR_IV) indiqué par un préfixe
-    «FR_IV». (par exemple, «FR_IV: monomodal».
+    «FR_IV». (par exemple, «FR_IV: monomodal».)
 
 -   des instances TypeOfFrame: le profil utilise plusieurs TYPES DE
     FRAME pour spécifier l'utilisation de VERSION FRAME dans le profil.
@@ -2490,6 +2490,7 @@ dans le fichier `stop.xml`.
 
 Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_ARRET`, seuls les objets de premier niveau suivants sont autorisés : 
 - StopPlace
+- FlexibleStopPlace
 - Quay
 - TopographicPlace
 - StopPlaceEntrance
@@ -2508,6 +2509,7 @@ Voici un exemple de cadre du fichier `stop.xml` :
       <members>
         <!--
           STOP PLACE
+          FLEXIBLE STOP PLACE
           QUAY
           TOPOGRAPHIC PLACE
           STOP PLACE ENTRANCE
