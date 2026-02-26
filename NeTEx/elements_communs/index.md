@@ -4625,7 +4625,7 @@ Les noms des fichiers doivent respecter les contraintes suivantes :
 - une taille maximale de 250 caractères hors extension
 
 Les fichiers attendus dans l'archive sont les suivants : 
-| **Fichier** |  **Description** 
+| **Fichier** |  **Description** |
 |--------------------|--------------------------------------------|
 | accessibility.xml  | Fichier regroupant les équipements et les informations de cheminement, incluant leur caractéristiques d'accessibilité |
 | network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes |
