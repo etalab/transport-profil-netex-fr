@@ -162,7 +162,7 @@ sont tous complémentaires les uns des autres (sans recouvrement) et s'appuient 
 en aucun cas à NeTEx, et un minimum de connaissance de NeTEx sera
 nécessaire à sa bonne compréhension.
 
-**NOTE IMPORTANTE** : Dans la mesure où le profil France n'est qu'un sous-ensemble de la norme NeTEx, elle ne possède pas de Schéma XML (XSD) dédié. Pour toute validation de fichiers, se référer à la XSD de NeTEx dans sa version 1.3.2 disponible sur [GitHub](https://github.com/NeTEx-CEN/NeTEx/releases/tag/v1.3.2).
+**NOTE IMPORTANTE** : Le profil France est un sous-ensemble de la norme NeTEx et ne possède pas de schéma XML (XSD) dédié. Pour toute validation de fichiers, se référer à la XSD de NeTEx dans sa version v1.3.2 disponible sur [GitHub](https://github.com/NeTEx-CEN/NeTEx/releases/tag/v1.3.2).
 
 
 
@@ -4641,7 +4641,7 @@ Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
 
 Notes : 
 - Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP en respectant les critères ci-dessus.
-- Pour tout échange de fichier en dehors d'un dépôt sur le [Point d'Accès National](https://transport.data.gouv.fr/), les parties sont libres de s'accorder sur un autre format d'archive et/ou de noms de fichiers.
+- Pour tout échange de fichier en dehors d'un dépôt sur le [Point d'Accès National](https://transport.data.gouv.fr/), les parties sont libres d'éventuellement s'accorder sur un autre format d'archive et/ou de noms de fichiers.
 
 ## Web service
 
