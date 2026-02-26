@@ -2400,6 +2400,7 @@ Voici un exemple de cadre du fichier `parking.xml` :
       <members>
         <!--
           Parking (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
+          ParkingBay
           -->
       </members>
     </GeneralFrame>
