@@ -2379,17 +2379,12 @@ n’est pas décrit ici.</span>
 
 Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
 
-Une GeneralFrame de type **NeTEx_PARKING** est utilisée pour échanger la description des parkings dans le fichier `parking.xml`. À noter que la tarification des parkings dépend de le partie "Tarifs" du prifil France et est attendue dans le fichier `fare.xml`.
+Une GeneralFrame de type **NeTEx_PARKING** est utilisée pour échanger la description des parkings dans le fichier `parking.xml`. À noter que la tarification des parkings dépend de le partie "Tarifs" du profil France et est attendue dans le fichier `fare.xml`. Les objets partagés du profil (par exemple Branding ou VehicleType) sont regroupés dans le fichier `resource.xml`.
 
 ## TypeOfFrame : type spécifique *NETEX_PARKING*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié ***NETEX_PARKING*** . Il apparaitra systématiquement et explicitement dans les éléments ***members*** du ***GeneralFrame***.
-
 Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_PARKING`, seuls les objets de premier niveau suivants sont autorisés : 
 - PARKING (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
-- GENERAL ORGANISATION
-- BRANDING
-- VEHICLE TYPE
 
 Voici un exemple de cadre du fichier `parking.xml` :
 
@@ -2404,9 +2399,6 @@ Voici un exemple de cadre du fichier `parking.xml` :
       <members>
         <!--
           Parking (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
-          GeneralOrganisation
-          Branding
-          VehicleType
           -->
       </members>
     </GeneralFrame>
