@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France v2.4.0 - Description des arrêts"
-date: 2024-11-21T00:00:00+00:01
+title: "NeTEx - Profil France v2.4 - Description des arrêts"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true

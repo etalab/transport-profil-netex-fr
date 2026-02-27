@@ -1,6 +1,6 @@
 ---
-title: "Profil NeTEx accessibilité France - v2.4.0"
-date: 2024-11-21T00:00:00+00:05
+title: "Profil NeTEx accessibilité France - v2.4"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
