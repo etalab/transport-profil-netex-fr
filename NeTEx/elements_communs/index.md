@@ -1,5 +1,5 @@
 ---
-title: "NeTEx - Profil France v2.3 - Éléments communs"
+title: "NeTEx - Profil France v2.4.0 - Éléments communs"
 date: 2024-11-21T00:00:00+00:00
 draft: false
 tags: ["NeTEx"]
