@@ -1,5 +1,5 @@
 ---
-title: "NeTEx - Profil France v2.3 - Description des réseaux"
+title: "NeTEx - Profil France v2.4.0 - Description des réseaux"
 date: 2024-11-21T00:00:00+00:04
 draft: false
 tags: ["NeTEx"]
