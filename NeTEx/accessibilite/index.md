@@ -144,7 +144,7 @@ des informations comme :
 
 -   etc.
 
-Ce document présente la partie Réseaux du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
+Ce document présente la partie Accessibilité du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
 D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseaux, horaire, tarif, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
