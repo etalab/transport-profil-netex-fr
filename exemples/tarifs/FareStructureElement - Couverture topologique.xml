@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../NeTEx/xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>Exemple</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame id="exemple:CompositeFrame:01" version="any">
+			<frames>
+				<GeneralFrame id="exemple:GeneralFrame:01" version="any">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members>
+
+						<!-- Cas 1 : Ajout d'objets pour définir un périmètre -->
+						<FareStructureElement id="exemple:FareStructureElement:01" version="any">
+							<Name>Réseau ABC + ligne complémentaire</Name>
+							<TypeOfFareStructureElementRef ref="FR:SimpleTopology" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
+									<IsAllowed>true</IsAllowed> <!-- optionnel, "true" par défaut, fixé à "true" dans ce FSE -->
+									<validityParameters>
+										<NetworkRef ref="exemple:Network:001:LOC" />
+										<LineRef ref="exemple:Line:001:LOC" />
+										<!-- Possibilisé de mixer les types d'objets, mais ils seront tous ajoutés :
+											- NetworkRef
+											- GroupOfLinesRef
+											- LineRef
+											- FareZoneRef
+											- FareSectionRef
+											
+											Les arrêts ne sont pas ajoutés pour éviter les risques d'autorisation de lignes externes 
+											sur les agrégations de données
+										-->
+									</validityParameters>
+									<IncludesGroupingType>OR</IncludesGroupingType> <!-- optionnel, "OR" par défaut, fixé à "OR" dans ce FSE -->
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+
+						<!--
+							Cas 2 : Ajout de morceaux de lignes à un périmètre simple (on reste dans une modélisation type "Cas 1")
+								- Utilisation de ScheduledStopPoint pour rester sur une modélisation simple 
+								- Alternative possible sur des morceaux de JourneyPattern, peut être complexe si beaucoup de Patterns
+							
+							Note : Les FareSection ne peuvent être déclarées que dans des FareFrame. Dans des GeneralFrame, 
+							il est nécessaire de les déclarer dans des FareZone. 
+						-->
+						<FareZone id="exemple:FareZone:01"  version="any">
+							<Description>liste des morceaux de lignes inter-urbaines "en zone 1"</Description>
+							<fareSections>
+								<FareSection id="exemple:FareSection:01" version="any">
+									<Description>Section de la ligne n°1</Description>
+									<projections>
+										<PointProjection id="exemple:RoutePointProjection:L1-01" version="any"> 
+											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L1-01" version="any" />
+										</PointProjection>
+										<PointProjection id="exemple:RoutePointProjection:L1-02" version="any"> 
+											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L1-02" version="any" />
+										</PointProjection>
+										<PointProjection id="exemple:RoutePointProjection:L1-03" version="any"> 
+											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L1-03" version="any" />
+										</PointProjection>
+									</projections> 
+								</FareSection>
+								<FareSection id="exemple:FareSection:02" version="any">
+									<Description>Section de la ligne n°2</Description>
+									<projections>
+										<PointProjection id="exemple:RoutePointProjection:L2-01" version="any"> 
+											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L2-01" version="any" />
+										</PointProjection>
+										<PointProjection id="exemple:RoutePointProjection:L2-02" version="any"> 
+											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L2-02" version="any" />
+										</PointProjection>
+										<PointProjection id="exemple:RoutePointProjection:L2-03" version="any"> 
+											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L2-03" version="any" />
+										</PointProjection>
+									</projections> 
+								</FareSection>								
+							</fareSections>
+						</FareZone>
+						<FareStructureElement id="exemple:FareStructureElement:02" version="any">
+							<Name>Réseau ABC + morceaux de lignes interurbaines</Name>
+							<TypeOfFareStructureElementRef ref="FR:SimpleTopology" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:02" version="any">
+									<IsAllowed>true</IsAllowed>
+									<validityParameters>
+										<NetworkRef ref="exemple:Network:001:LOC" />
+										<FareZoneRef ref="exemple:FareZone:01" />
+									</validityParameters>
+									<IncludesGroupingType>OR</IncludesGroupingType>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+
+						<!--  Cas 3 : Groupe de lignes en retirant certains arrêts (ex: Aéroports)
+						 - Solution 1 : 
+							   - Définir un groupe de ligne qui retire les lignes passant par les arrêts interdits
+							   - Redéfinir des "FareSection" pour toutes les lignes passant par les arrêts interdits dans une FareZone
+							   - Définir un FSE qui ajoute le groupe et la FareZone => équivalent au Cas 2 donc non explicité
+					     - Solution 2 : Générer un type de FSE complexe
+					     	  - 1 premier GenericParameterAssignment pour le périmètre global => mêmes objets que le cas 1
+					     	  - 1 deuxième GenericParameterAssignment pour retirer les arrêts interdits (allowed = false) => uniquement 
+					     	    Quay et StopPlace
+						-->
+						<FareStructureElement id="exemple:FareStructureElement:03" version="any">
+							<Name>Groupe de lignes sauf certains arrêts (StopPlaces ou Quays)</Name>
+							<TypeOfFareStructureElementRef ref="FR:TopologyWithStopExclusion" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:03" version="any">
+									<IncludesGroupingType>AND</IncludesGroupingType> <!-- optionnel -->
+									<includes>
+										<GenericParameterAssignment id="exemple:GenericParameterAssignment:03-01" version="any">
+											<IsAllowed>true</IsAllowed>
+											<validityParameters>
+												<GroupOfLinesRef ref="exemple:GroupOfLinesRef:001:LOC" />
+											</validityParameters>
+										</GenericParameterAssignment>
+										<GenericParameterAssignment id="exemple:GenericParameterAssignment:03-02" version="any">
+											<IsAllowed>false</IsAllowed>
+											<validityParameters>
+												<StopPlaceRef ref="exemple:StopPlace:01" />
+												<StopPlaceRef ref="exemple:StopPlace:02" />
+												<QuayRef ref="exemple:Quay:01" /> 
+											</validityParameters>
+										</GenericParameterAssignment>
+									</includes>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
