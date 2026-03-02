@@ -4,7 +4,7 @@ date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
-weight: 6
+weight: 5
 aliases:
 - /normes/netex/accessibilité/
 ---
@@ -52,20 +52,25 @@ des réseaux de transport en commun" (issu des travaux *NeTEx* et
 *Transmodel)* qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
@@ -79,10 +84,14 @@ NeTEx se décompose en trois parties:
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
 
-NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, sont 
-terminés en 2016.
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
+NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
+France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferroviaire, en particulier grâce à la
@@ -135,24 +144,17 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et
-Île-de-France Mobilités. Ces deux profils ont une vocation nationale. Le
-groupe de travail GT7 (AFNOR BNTRA/CN 03/GT 7) a élaboré une sélection
-des concepts Transmodel nécessaire à la description des horaires en
-France (à vocation d'information voyageur essentiellement). C'est sur la
-base de cette sélection qu'est élaboré le présent profil.
+Ce document présente la partie Réseaux du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-D'autres profils de NeTEx sont disponibles (arrêt, réseau, tarif). Ils
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseaux, horaire, tarif, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur un document partagé: **NeTEx - Profil Français de
-NETEx: éléments communs.** Il conviendra de se référer à ce document
-pour tous les éléments utilisés dans le présent document, et dont la
-structure n'est pas détaillée.
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
+les éléments utilisés dans le présent document, et dont la structure
+n'est pas détaillée.
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
-description des horaires de transport public de façon :
+l'accessibilité des services de transport public de façon :
 
 -   à pouvoir les présenter d’une manière homogène et compréhensible à
     l’usager des transports publics sur des supports différents (papier
@@ -164,7 +166,7 @@ description des horaires de transport public de façon :
     systèmes billettiques, etc.).
 
 Les éléments présentés ci-dessous couvrent donc l’ensemble des concepts
-propres à la description des horaires.
+propres à la description de l'accessibilité.
 
 **NOTE IMPORTANTE** Ce document étant un profil d'échange de NeTEx, il
 ne se substitue en aucun cas à NeTEx, et un minimum de connaissance de
