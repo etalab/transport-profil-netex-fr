@@ -1358,7 +1358,7 @@ accompagnés)*
 * *suitableForHeavilyDisabled (adapté aux handicaps lourds ; <span class="hl">
 note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
 
-* *suitableForPushchairs (adapté aux pousettes)*
+* *suitableForPushchairs (adapté aux poussettes)*
 
 * *boardingAssistance (assistance à l’embarquement)*
 
