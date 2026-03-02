@@ -1311,7 +1311,7 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td><em>Location</em></td>
 <td><p>0:1</p>
 <p><strong><span class="hl">1 :1</span></strong></p></td>
-<td>Localisation du POINT <span class="hl">(obligatoire dans le profil)</span></td>
+<td>Localisation du POINT <span class="hl">(Obligatoire dans le profil, sauf si les structures héritées ont des références explicites à des points/zones géographiques)</span></td>
 </tr>
 <tr class="odd">
 <td>«»</td>
