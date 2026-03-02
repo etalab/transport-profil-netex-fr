@@ -1371,7 +1371,7 @@ note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
 * *tactileGuidingStrips (bandes de guidage podotactiles)*
 
 * *raisedKerb (trottoir surélevé)*
-
+* raisedKerb (quai surélevé)
 ***<u>-Loisir</u>***
 
 * *freeWifi (Wifi gratuit)*
