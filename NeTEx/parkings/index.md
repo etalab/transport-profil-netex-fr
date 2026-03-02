@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France v2.3 - Parkings"
-date: 2024-11-21T00:00:00+00:02
+title: "NeTEx - Profil France v2.4 - Parkings"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
