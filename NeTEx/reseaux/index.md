@@ -2220,6 +2220,8 @@ manœuvre de retournement).
 </tbody>
 </table>
 
+<span class="h1"><strong>NOTE IMPORTANTE</strong> : Le profil France ne retient pas l'attribut <em>Location</em> du SCHEDULED STOP POINT, l'information est portée par les objets QUAY ou STOP PLACE.</span>
+
 ### Parcours horaire
 
 Le profil étant dédié à l'information voyageur, on se limitera, pour la
