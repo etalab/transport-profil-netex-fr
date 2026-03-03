@@ -1311,7 +1311,7 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td><em>Location</em></td>
 <td>0:1
 <p><strong><span class="hl">1 :1</span></strong></p></td>
-<td>Localisation du POINT <span class="hl">(Obligatoire dans le profil France, uniquement pour les objets de type QUAY et STOP PLACE - L'attribut n'est pas attendu dans les SCHEDULED STOP POINT)</span></td>
+<td>Localisation du POINT <span class="hl">(Obligatoire dans le profil France, notamment pour les objets de type QUAY et STOP PLACE. Attention, l'attribut n'est pas attendu dans les SCHEDULED STOP POINT)</span></td>
 </tr>
 <tr class="odd">
 <td>«»</td>
