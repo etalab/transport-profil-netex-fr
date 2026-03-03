@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France v2.3 - Éléments communs"
-date: 2024-11-21T00:00:00+00:00
+title: "NeTEx - Profil France v2.4 - Éléments communs"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
@@ -52,13 +52,18 @@ l'échange de données de description des arrêts" (issu des travaux
 groupes de normalisation (CN03/GT7 – Transport public / information
 voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN/TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
@@ -86,10 +91,8 @@ NeTEx se décompose en six parties:
 -   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
 
 
-NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
+France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC 278/WG 3 avec le secteur ferroviaire, en particulier grâce à la
