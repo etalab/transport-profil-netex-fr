@@ -1375,6 +1375,8 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 </tbody>
 </table>
 
+<span class="h1"><strong>NOTE IMPORTANTE</strong> : Le profil France rend obligatoire l'attribut <em>Location</em> du STOP PLACE</span>
+
 ### Attributs de Place
 
 <div class="table-title">Place – Element (abstrait)</div>
@@ -1928,8 +1930,7 @@ Français de NETEx: éléments communs**:
 
 -   SiteElement: 7.2.8
 
-<div class="table-title">Quay (traduit par ZONE D'EMBARQUEMENT en français) –</div>
-Element
+<div class="table-title">Quay (traduit par ZONE D'EMBARQUEMENT en français) – Element</div>
 
 <table>
 <colgroup>
@@ -2012,6 +2013,8 @@ Element
 
 </tbody>
 </table>
+
+<span class="h1"><strong>NOTE IMPORTANTE</strong> : Le profil France rend obligatoire l'attribut <em>Location</em> du QUAY</span>
 
 <div class="table-title">Espace de Lieu d’Arrêt – Element (abstrait)</div>
 
