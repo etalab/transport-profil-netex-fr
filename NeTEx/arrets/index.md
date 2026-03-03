@@ -353,6 +353,20 @@ COMPOSANTs DE SITES auxquels il correspond, incluant l’ACCESSIBILITÉ.
 </div>
 
 
+## ESPACE D'ACCÈS (ACCESS SPACE)
+<div class="Definition">
+
+*(Transmodel)*
+
+</div>
+
+<div class="Definition">
+
+Zone située à l'intérieur d'un LIEU D'ARRÊT qui ne donne pas directement accès aux véhicules de transport. Peut être reliée aux ZONEs D'EMBARQUEMENT par des TRONÇONs.
+
+</div>
+
+
 ## ESPACE DE LIEU D'ARRÊT (STOP PLACE SPACE)
 <div class="Definition">
 
@@ -1912,9 +1926,9 @@ Cette possibilité n’est valable que pour les données produite en
 
 ## Zone d'embarquement
 
-La ZONE D'EMBARQUEMENT, présenté si dessous, est en partie bâtie sur la
+La ZONE D'EMBARQUEMENT, présenté ci-dessous, est en partie bâtie sur la
 base de groupes XSD déjà présentés dans le document: **NeTEx - Profil
-Français de NETEx: éléments communs**:
+France - Éléments communs**:
 
 -   DataManagedObject
 
@@ -2008,6 +2022,102 @@ Element
 <td><em>QuayRef</em></td>
 <td>0:1</td>
 <td>Référence au parent de QUAY qui le contient entièrement. (permet de subdiviser les quais et de gérer les relations quai-voies à quai par exemple).</td>
+</tr>
+
+</tbody>
+</table>
+
+## Espace d'accès
+
+L'ESPACE D'ACCÈS, présenté ci-dessous, est en partie bâti sur la
+base de groupes XSD déjà présentés dans le document: **NeTEx - Profil
+France - Éléments communs**:
+
+-   DataManagedObject
+
+-   GroupOfEntities
+
+-   Zone
+
+    Et d'autres présenté dans les paragraphes précédents
+
+-   Place: 7.2.6
+
+-   SiteElement: 7.2.8
+
+<div class="table-title">AccessSpace (ESPACE D'ACCÈS) -  Élément</div>
+
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 17%" />
+<col style="width: 22%" />
+<col style="width: 4%" />
+<col style="width: 47%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Classifi­cation</strong></td>
+<td><strong>Nom</strong></td>
+<td><strong>Type</strong></td>
+<td></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><em>::></em></td>
+<td><em>::></em></td>
+<td><em>AccessSpace</em></td>
+<td><em>::></em></td>
+<td><p>ACCESS SPACE hérite de STOP PLACE SPACE.</td>
+</tr>
+<tr class="odd">
+<td>ACCESS SPACE DESCRIPTOR GROUP</td>
+<td><em><strong>AccessSpaceType</strong></em></td>
+<td><em>AccessSpaceTypeEnumeration</em></td>
+<td>0:1</td>
+<td><p>Type d'ESPACE D'ACCÈS.</p>
+<ul>
+<li><p><em><strong>concourse</strong></em>: Hall</p></li>
+<li><p><em><strong>bookingHall</strong></em>: Salle de réservation</p></li>
+<li><p><em><strong>forecourt</strong></em>: Paris</p></li>
+<li><p><em><strong>underpass</strong></em>: Souterrain</p></li>
+<li><p><em><strong>overpass</strong></em>: Passerelle</p></li>
+<li><p><em><strong>passage</strong></em>: Passage</p></li>
+<li><p><em><strong>passageSection</strong></em>: Section de passage</p></li>
+<li><p><em><strong>lift</strong></em>: Ascenseur</p></li>
+<li><p><em><strong>gallery</strong></em>: Galerie</p></li>
+<li><p><em><strong>garage</strong></em>: garage</p></li>
+<li><p><em><strong>waitingRoom</strong></em>: Salle d'attente</p></li>
+<li><p><em><strong>restaurant</strong></em>: Restaurant</p></li>
+<li><p><em><strong>other</strong></em>: Autre</p></li>
+<li><p><em><strong>staircase</strong></em>: Escalier</p></li>
+<li><p><em><strong>wc</strong></em>: Toilettes</p></li>
+</ul>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><em><strong>PassageType</strong></em></td>
+<td><em>PassageTypeEnumeration</em></td>
+<td>0:1</td>
+<td><p>Type codifié de TRONÇON associé avec un ESPACE D'ACCÈs</p>
+<ul>
+<li><p><em><strong>none</strong></em>: Aucune</p></li>
+<li><p><em><strong>pathway</strong></em>: Chemin</p></li>
+<li><p><em><strong>corridor</strong></em>: Couloir</p></li>
+<li><p><em><strong>overpass</strong></em>: Quai de métro</p></li>
+<li><p><em><strong>underpass</strong></em>: Souterrain</p></li>
+<li><p><em><strong>tunnel</strong></em>: Tunnel</p></li>
+<li><p><em><strong>other</strong></em>: Autre</p></li>
+</ul>
+</td>
+</tr>
+<tr class="odd">
+<td>«FK»</td>
+<td><em><strong>ParentAccessSpaceRef</strong></em></td>
+<td><em>AccessSpaceRefStructure</em></td>
+<td>0:1</td>
+<td>Référence au parent de ACCESS SPACE qui le contient entièrement. (permet de subdiviser les accès d'espace et de les sub-diviser, par exemple au sein d'une grande salle d'attente).</td>
 </tr>
 
 </tbody>
