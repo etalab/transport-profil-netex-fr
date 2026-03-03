@@ -1539,7 +1539,20 @@ façon détaillée. C’est, autant que possible, la version simplifiée du
 <p><span class="hl">L’héritage reste naturellement valable, mais aucun des attributs qu’il apporte ne sera utilisé.</span></p></td>
 </tr>
 
-
+<tr class="odd">
+<td></td>
+<td><em><strong>Name</strong></em></td>
+<td>MultilingualString</td>
+<td>0:1</td>
+<td>Nom de la VALIDITY CONDITION</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><em><strong>Description</strong></em></td>
+<td>MultilingualString</td>
+<td>0:1</td>
+<td>Description de la VALIDITY CONDITION</td>
+</tr>
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>ConditionedObjectRef</strong></em></td>
