@@ -2079,7 +2079,7 @@ France - Éléments communs**:
 <ul>
 <li><p><em><strong>concourse</strong></em>: Hall</p></li>
 <li><p><em><strong>bookingHall</strong></em>: Salle de réservation</p></li>
-<li><p><em><strong>forecourt</strong></em>: Paris</p></li>
+<li><p><em><strong>forecourt</strong></em>: Parvis</p></li>
 <li><p><em><strong>underpass</strong></em>: Souterrain</p></li>
 <li><p><em><strong>overpass</strong></em>: Passerelle</p></li>
 <li><p><em><strong>passage</strong></em>: Passage</p></li>
@@ -2105,7 +2105,7 @@ France - Éléments communs**:
 <li><p><em><strong>none</strong></em>: Aucune</p></li>
 <li><p><em><strong>pathway</strong></em>: Chemin</p></li>
 <li><p><em><strong>corridor</strong></em>: Couloir</p></li>
-<li><p><em><strong>overpass</strong></em>: Quai de métro</p></li>
+<li><p><em><strong>overpass</strong></em>: Passerelle</p></li>
 <li><p><em><strong>underpass</strong></em>: Souterrain</p></li>
 <li><p><em><strong>tunnel</strong></em>: Tunnel</p></li>
 <li><p><em><strong>other</strong></em>: Autre</p></li>
@@ -2117,7 +2117,7 @@ France - Éléments communs**:
 <td><em><strong>ParentAccessSpaceRef</strong></em></td>
 <td><em>AccessSpaceRefStructure</em></td>
 <td>0:1</td>
-<td>Référence au parent de ACCESS SPACE qui le contient entièrement. (permet de subdiviser les accès d'espace et de les sub-diviser, par exemple au sein d'une grande salle d'attente).</td>
+<td>Référence au parent de ACCESS SPACE qui le contient entièrement. (permet de subdiviser les accès d'espace et de les subdiviser, par exemple au sein d'une grande salle d'attente).</td>
 </tr>
 
 </tbody>
