@@ -279,6 +279,8 @@ Le 'mode d'accès' (par exemple, la marche, le cyclisme, la conduite de voiture 
 
 Figure 1 : Catégorisation des modes de transport
 
+
+
 Une distinction est faite entre le 'mode véhicule' et le 'type de véhicule'. Chaque 'mode véhicule' peut correspondre à une gamme de 'types de véhicules' (par exemple, pour le 'mode véhicule' 'autobus', on peut avoir des types comme 'standard', 'articulé', 'minibus', 'à deux étages').
 
 Une catégorisation plus fine des modes de transport est fournie par le concept de 'sous-mode', qui est une variante d'un 'mode'. Par exemple, pour le mode 'rail', les sous-modes possibles sont 'rail international' ou 'rail domestique' ; pour le mode 'autobus', l'exemple de sous-mode est 'autobus régional', pour le mode 'voiture', les exemples de sous-modes sont 'voiture électrique', 'voiture conventionnelle', 'voiture autonome'.
@@ -578,6 +580,215 @@ Plusieurs modèles de paiement existent pour ce service :
 
 Le présent profil ne décrit pas les modalités de tarification. Le Profil NeTex France Tarif s'applique pour ces cas d'utilisation.
 
+## Covoiturage
+
+### Introduction
+
+Le covoiturage consiste &agrave; partager des voitures particulières (ou &&eacute;ventuellement d’autres types de v&eacute;hicules ou modes de transport) entre des voyageurs pour des trajets particuliers ou des portions de trajets (le plus souvent, le conducteur et les passagers ne partagent pas la même origine ni la même destination).
+
+Dans le pr&eacute;sent document, le covoiturage est consid&eacute;r&eacute; comme planifi&&eacute; et organis&&eacute;, et non informel.
+
+Le covoiturage n’est pas toujours organis&&eacute; sur l’int&&eacute;gralit&eacute; d’un trajet. En particulier pour les longs trajets, il est courant que les passagers ne participent qu’&agrave; une partie du parcours et versent une contribution proportionnelle &agrave; la distance parcourue.
+
+### Covoiturage g&eacute;n&eacute;rique
+
+Les conducteurs proposent une place pour des trajets sp&eacute;cifiques, &agrave; une date et une heure donn&eacute;es, via un service en ligne (g&eacute;n&eacute;ralement un site web ou une application). Les passagers consultent ces offres et s&eacute;lectionnent celle qui leur convient.
+
+Diff&eacute;rents algorithmes de mise en relation offre-demande sont disponibles. Une fois qu’un passager a trouv&eacute; une offre appropri&eacute;e (qui peut concerner une partie du trajet propos&eacute; ou n&eacute;cessiter une l&eacute;gère modification du parcours), un contact est &eacute;tabli entre le conducteur et le passager afin de convenir des d&eacute;tails du trajet.
+
+La r&eacute;servation finale (une fois tous les d&eacute;tails convenus) et le paiement peuvent varier selon le service de covoiturage utilis&eacute;.
+
+### Covoiturage dynamique
+
+\[Non retenu dans le cadre du profil France : Pas retenu pour L’instant 15/01/26\]. Ce n’est pas du planif&eacute;
+
+Le covoiturage dynamique est similaire au covoiturage conventionnel, mais permet la mise en relation une fois le trajet commenc&eacute;. Il est principalement adapt&eacute; au contexte urbain (par opposition aux longues distances, g&eacute;n&eacute;ralement interurbaines et planifi&eacute;es &agrave; l’avance).
+
+### Fonctions du covoiturage
+
+Les paragraphes suivants d&eacute;crivent les fonctions du covoiturage
+
+#### Tarification
+
+\[Description A confirmer dans le profil FR\] 15/01/26 renvoyer vers le profil Tarif\] Permet de failre les abn
+
+Le prix que le passager doit payer pour son trajet en covoiturage est cens&eacute; couvrir une partie des coûts du conducteur (carburant, coûts du v&eacute;hicule, etc.), mais ne constitue jamais un moyen pour le conducteur de r&eacute;aliser un b&eacute;n&eacute;fice (contrairement aux taxis et aux voitures avec chauffeur).
+
+Le principe de base de la tarification consiste &agrave; calculer le prix en divisant la somme du carburant, des p&eacute;ages &eacute;ventuels, de la d&eacute;pr&eacute;ciation li&eacute;e &agrave; l’achat et &agrave; l’entretien du v&eacute;hicule, de l’assurance et des taxes pay&eacute;es par le conducteur, r&eacute;partie entre les voyageurs proportionnellement &agrave; la distance parcourue par le passager et au nombre de personnes ayant partag&eacute; le v&eacute;hicule.
+
+Une tarification bas&eacute;e sur la distance a &eacute;galement &eacute;t&eacute; propos&eacute;e par certains services de covoiturage (ind&eacute;pendamment du nombre de voyageurs, sur la base du nombre maximal de voyageurs).
+
+Il est &agrave; noter que la tarification n&eacute;cessite presque toujours un accord sur la distance du trajet avant le d&eacute;part (la dur&eacute;e du trajet n’entre pas dans le calcul du prix). Le d&eacute;tour effectu&eacute; par un conducteur pour prendre un passager doit &eacute;galement être pris en compte.
+
+Il convient &eacute;galement de noter que la tarification n’a pas toujours lieu : dans certains cas, il peut s’agir d’un &eacute;change de services ou d’un accord pour être conducteur lors d’un trajet futur.
+
+#### Preuve de covoiturage
+
+\[Pas de preuve de port&eacute;e par NeTex\] Int&eacute;rêt
+
+Pour être pay&eacute; ou pour pouvoir b&eacute;n&eacute;ficier de certains avantages r&eacute;serv&eacute;s aux conducteurs en covoiturage (par exemple le stationnement gratuit ou l’accès aux voies r&eacute;serv&eacute;es aux v&eacute;hicules &agrave; occupation multiple), le conducteur peut avoir besoin d’une preuve de covoiturage.
+
+Cette preuve peut &eacute;galement être requise &agrave; des fins fiscales pour le conducteur (contrôle des revenus) ou pour le voyageur (preuve d’achat lorsqu’un remboursement est possible, par exemple pour les employ&eacute;s d’une entreprise).
+
+Il n’est pas toujours possible d’obtenir une preuve de covoiturage et il n’existe pas de m&eacute;thode totalement fiable pour l’obtenir. En pratique, cette preuve peut être une d&eacute;claration personnelle, dans laquelle le covoitureur atteste avoir effectivement pratiqu&eacute; le covoiturage ce jour-l&agrave;. Cette d&eacute;claration peut être v&eacute;rifi&&eacute;e, par exemple en contrôlant les plaques d’immatriculation ou, sur des voies d&&eacute;di&&eacute;es, en v&&eacute;rifiant le nombre de personnes &agrave; l’int&&eacute;rieur du v&&eacute;hicule.
+
+#### Inscription
+
+- Valable pour Partage & Covoiturage – Description de service Usage Parameter – Vehicle Sharing Service \[A int&&eacute;grer dans le Profil\] -VehicleAccessCredential.
+
+&&eacute;tant donn&&eacute; que le covoiturage est une activit&&eacute; de personne &agrave; personne, les services sont cens&&eacute;s offrir un très haut niveau de confiance et de s&&eacute;curit&&eacute; (s&&eacute;curit&&eacute; personnelle, en plus de la s&&eacute;curit&&eacute; financière).
+
+Par cons&&eacute;quent, l’inscription implique le plus souvent plusieurs niveaux de v&&eacute;rification et de validation de l’identit&&eacute;, notamment :
+
+- L’adresse e-mail (fournie pour mettre en relation deux utilisateurs) ;
+- Le num&&eacute;ro de t&&eacute;l&&eacute;phone (fourni pour mettre en relation deux utilisateurs) ;
+- Le lien vers un r&&eacute;seau social (afin que les utilisateurs puissent consulter le type d’activit&&eacute; sur un compte Facebook, par exemple) ;
+- Le num&&eacute;ro de carte d’identit&&eacute; ou de passeport (seul le fait que la v&&eacute;rification a &&eacute;t&&eacute; effectu&&eacute;e est communiqu&&eacute; aux autres utilisateurs) ;
+- Le permis de conduire et l’assurance.
+
+#### M&&eacute;canismes de mise en relation et de r&&eacute;servation des trajets
+
+\[Pr&&eacute;ciser si via Site ou Num Tel\] Laisser la partie explicative / Seule info n&&eacute;cessaire a l’echange cf Booking Arrangement
+
+Les m&&eacute;canismes de mise en relation des trajets peuvent être très simples (correspondance origine/destination et fenêtre temporelle) ou assez complexes, pouvant int&&eacute;grer des fonctionnalit&&eacute;s telles que :
+
+- L’utilisation d’un algorithme r&&eacute;el de planification de trajets bas&&eacute; sur le r&&eacute;seau routier (d’autres peuvent se contenter de « corridors » g&&eacute;ographiques, de simples points de passage ou de villes) ;
+- L’&&eacute;largissement possible de la zone autour des lieux de d&&eacute;part et d’arriv&&eacute;e ;
+- L’int&&eacute;gration possible de trajets multimodaux ;
+- L’int&&eacute;gration de zones de covoiturage (et &&eacute;ventuellement une aide &agrave; leur localisation) ;
+- L’int&&eacute;gration de d&&eacute;tours possibles ;
+- L’int&&eacute;gration de la correspondance des profils utilisateurs ;
+- L’int&&eacute;gration de connexions possibles avec les transports publics (en proposant aux voyageurs de commencer ou de terminer leur trajet en transport public ou, dans certains cas, de basculer vers le covoiturage en cas de perturbation des transports publics) ;
+- L’enregistrement des demandes et la r&&eacute;ception d’alertes lorsqu’une offre correspondante est disponible (par exemple alertes SMS, e-mails, notifications dans les applications et autres formats de messagerie).
+
+#### Paiement
+
+Pas trait&&eacute; dans ce Profil : Cf Profil FR Tarification
+
+Les services de covoiturage intègrent un m&&eacute;canisme de paiement s&&eacute;curis&&eacute;, jouant le rôle d’interm&&eacute;diaire entre le conducteur et le voyageur. Les moyens de paiement les plus courants, tels que la carte de cr&&eacute;dit, PayPal, le virement bancaire (pour les conducteurs), etc., sont g&&eacute;n&&eacute;ralement accept&&eacute;s.
+
+Diff&&eacute;rents sc&&eacute;narios et caract&&eacute;ristiques peuvent exister :
+
+- Il n’y a pas de paiement direct du voyageur au conducteur ;
+- Le voyageur paie via le service en ligne (site web ou application) au moment de la r&&eacute;servation du trajet ;
+- Le paiement inclut g&&eacute;n&&eacute;ralement le coût du trajet, les frais de service et les taxes &&eacute;ventuelles ;
+- Une fois le trajet termin&&eacute; et si aucun &&eacute;v&&eacute;nement particulier n’a &&eacute;t&&eacute; signal&&eacute;, le conducteur est g&&eacute;n&&eacute;ralement pay&&eacute; quelques jours après le voyage, afin de laisser au voyageur le temps de signaler d’&&eacute;ventuels problèmes ;
+- En cas de problème ou si, pour une raison quelconque, le trajet n’a pas &&eacute;t&&eacute; effectu&&eacute;, le voyageur peut être rembours&&eacute; (g&&eacute;n&&eacute;ralement sous conditions et pas toujours &agrave; 100 % ; les frais de service ne sont en g&&eacute;n&&eacute;ral pas rembours&&eacute;s).
+
+#### Accessibilit&&eacute; pour les personnes &agrave; mobilit&&eacute; r&&eacute;duite
+
+Certains services de covoiturage fournissent une description du v&&eacute;hicule et indiquent la capacit&&eacute; du conducteur &agrave; transporter des voyageurs en situation de handicap, notamment en fauteuil roulant ; toutefois, ce n’est pas la situation la plus courante et cela reste g&&eacute;n&&eacute;ralement sp&&eacute;cifique &agrave; certains services de covoiturage.
+
+#### Infrastructures
+
+En plus du r&&eacute;seau routier lui-même, certaines infrastructures plus sp&&eacute;cifiques peuvent être utilis&&eacute;es pour le covoiturage.
+
+Les aires de covoiturage sont des zones signal&&eacute;es où un conducteur peut prendre ou d&&eacute;poser un passager pour commencer ou terminer un trajet en covoiturage. Il n’existe pas de structure pr&&eacute;d&&eacute;finie pour une aire de covoiturage :
+
+- Il peut s’agir simplement d’une zone signal&&eacute;e accessible depuis le r&&eacute;seau routier ;
+- Elle peut faire partie d’une aire de stationnement ;
+- Elle peut être une zone d&&eacute;di&&eacute;e ;
+- Elle peut être ferm&&eacute;e ou ouverte ;
+- L’accès &agrave; la zone peut être gratuit, contrôl&&eacute; ou r&&eacute;glement&&eacute; ;
+
+L’accès pour les passagers peut se faire uniquement &agrave; pied, mais la zone peut aussi offrir des places de stationnement (sous conditions convenues) permettant aux passagers de laisser leur propre voiture ou leur v&&eacute;lo et de commencer un trajet en covoiturage ; ou encore, une aire de covoiturage signal&&eacute;e peut être utilis&&eacute;e &agrave; d’autres fins (aire de repos, etc.).
+
+Les aires de covoiturage ne sont pas obligatoires pour pratiquer le covoiturage ; elles visent principalement &agrave; le faciliter, &agrave; le promouvoir et &agrave; garantir une prise en charge et une d&&eacute;pose en toute s&&eacute;curit&&eacute;. Dans certains pays, il peut exister des r&&eacute;glementations concernant la signalisation et la gestion des aires de covoiturage.
+
+### Utilisateurs du covoiturage
+
+#### G&&eacute;n&&eacute;ralit&&eacute;s
+
+Les profils des utilisateurs du covoiturage sont essentiels pour instaurer la confiance dans le service. Il existe deux principaux types de profils utilisateurs :
+
+- Le profil du conducteur ;
+- Le profil du voyageur.
+
+Afin d’offrir un niveau de confiance suffisant, les utilisateurs (et donc les services de covoiturage) attendent la fourniture d’un maximum d’informations, ce qui soulève n&&eacute;anmoins des questions potentielles de protection de la vie priv&&eacute;e qui doivent être g&&eacute;r&&eacute;es par les services de covoiturage.
+
+#### Conducteurs
+
+En g&&eacute;n&&eacute;ral, davantage de donn&&eacute;es sont collect&&eacute;es pour le conducteur que pour le voyageur. Le niveau de d&&eacute;tail fourni varie selon l’&&eacute;tape du processus de r&&eacute;servation :
+
+- Phase initiale de mise en relation (liste des trajets disponibles) : niveau minimal d’information ;
+- S&&eacute;lection d’un trajet : informations un peu plus d&&eacute;taill&&eacute;es (le nom et les coordonn&&eacute;es du conducteur ne sont pas fournis, la communication se fait g&&eacute;n&&eacute;ralement via le service) ;
+- Acceptation de la demande par le conducteur : informations complètes.
+
+Les informations suivantes concernant le conducteur sont g&&eacute;n&&eacute;ralement requises :
+
+- **Nom** (g&&eacute;n&&eacute;ralement partiellement masqu&&eacute; lors des premières &&eacute;tapes de la r&&eacute;servation) ;
+- Permis de conduire et assurance valides ;
+- Âge ;
+- Niveau de v&&eacute;rification du compte du conducteur (adresse e-mail, num&&eacute;ro de t&&eacute;l&&eacute;phone, carte d’identit&&eacute;, etc.) ;
+- Statistiques du compte du conducteur : nombre de trajets propos&&eacute;s, nombre de personnes transport&&eacute;es, date de première inscription, date du dernier trajet propos&&eacute;, etc. ;
+- Style de conduite du conducteur, selon les voyageurs ;
+- Caractère bavard ou r&&eacute;serv&&eacute; du conducteur ;
+- Statut fumeur ou non-fumeur ;
+- Pr&&eacute;sence &&eacute;ventuelle d’un animal dans le v&&eacute;hicule, même s’il n’est pas pr&&eacute;sent lors du trajet concern&&eacute; ;
+- &&eacute;valuations des voyageurs : note moyenne, nombre d’&&eacute;valuations, etc. ;
+- Commentaires des voyageurs ;
+- Type de v&&eacute;hicule, incluant &&eacute;ventuellement des d&&eacute;tails sur celui-ci ;
+- Int&&eacute;gration aux r&&eacute;seaux sociaux : nombre d’amis sur Facebook, etc.
+
+Exigences accept&&eacute;es concernant les passagers :
+
+- Possibilit&&eacute; de transporter des bagages, avec indication des dimensions ;
+- Possibilit&&eacute; de d&&eacute;tours (y compris en termes de temps et de distance) ;
+- Possibilit&&eacute; de transporter un animal ;
+- &&eacute;quipements pour les voyageurs en situation de handicap ;
+- Accompagnateurs pour les voyageurs en situation de handicap.
+
+#### Voyageurs
+
+Le profil du voyageur est transmis au conducteur, qui peut alors accepter la demande, engager une discussion avec le voyageur demandeur ou rejeter la demande.
+
+Le profil du voyageur est g&&eacute;n&&eacute;ralement similaire &agrave; celui du conducteur, &agrave; l’exception des informations sp&&eacute;cifiques au conducteur (type de v&&eacute;hicule, etc.).
+
+Les conducteurs peuvent &&eacute;valuer les voyageurs, tout comme les voyageurs peuvent &&eacute;valuer les conducteurs (ils sont g&&eacute;n&&eacute;ralement tous deux inform&&eacute;s de toute &&eacute;valuation ou commentaire, comme sur tout r&&eacute;seau social).
+
+#### Priorit&&eacute;
+
+Le covoiturage peut b&&eacute;n&&eacute;ficier d’une priorit&&eacute; pour l’utilisation des voies de transport public ou d’une priorit&&eacute; aux feux de circulation, avec l’autorisation des autorit&&eacute;s locales de gestion du trafic. Une information par signalisation sur ces priorit&&eacute;s est n&&eacute;cessaire, ainsi qu’un moyen robuste de d&&eacute;terminer quels v&&eacute;hicules pratiquent effectivement le covoiturage &agrave; un instant donn&&eacute;.
+
+\[Pas dans le profil &agrave; date : Cf travaux en cours sur les infrastructure velo\]
+
+# Modèle de donn&&eacute;es
+
+## Les modes Alternatifs (nouveaux modes)
+
+### Modèle ConceptuelModèle de donn&&eacute;es
+
+#### MODE OF OPERATION (Mode d’exploitation)
+
+Table 4 — Mode d’op&&eacute;ration
+
+#### Alternative Mode OfOperation (Mode d’exploitation Alternatif)
+
+Il s’agit d’un mode de transport public, diff&&eacute;rent des modes conventionnels, par exemple l’auto Table 5 — Mode d’op&&eacute;ration alternatif
+
+##### COVOITURAGE
+
+A r&&eacute;diger ult&&eacute;rieurement
+
+##### VEHICLE SHARING (Partage de v&&eacute;hicule)
+
+Location de v&&eacute;hicule &agrave; court terme où le v&&eacute;hicule peut être pris et stationn&&eacute; &agrave; diff&&eacute;rents endroits dans la zone urbaine, &&eacute;ventuellement sans l'obligation de ramener le v&&eacute;hicule &agrave; un lieu sp&&eacute;cifique.
+
+Table 6 — Paratage de v&&eacute;hicule
+
+###### VEHICULE SHARING TYPE (Type de partage de v&&eacute;hicule)
+
+Table 7 — Type de Partage de v&&eacute;hicule
+
+###### TypeOfModeOfOperation
+
+Classification de MODE OF OPERATION.
+
+Table 8 — Type de mode d’op&&eacute;ration
+
+## Flotte de v&&eacute;hicule
+
+**Statut impl&&eacute;mentation : OBLIGATOIRE** : Cette partie du profil peut être impl&&eacute;ment&&eacute;e en en fonction du contexte.
 # Modèle de données
 
 ## Les modes Alternatifs (nouveaux modes)
