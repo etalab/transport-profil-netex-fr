@@ -152,7 +152,7 @@ n'est pas détaillée.
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
-description des horaires de transport public de façon :
+description des tarifs de transport public de façon :
 
 - à pouvoir les présenter d’une manière homogène et compréhensible à
   l’usager des transports publics sur des supports différents (papier ou
@@ -198,6 +198,8 @@ transport network topology exchange format
 
 CEN/TS 16614-2, Network and Timetable Exchange (NeTEx) — Part 2: Public
 transport scheduled timetables exchange format
+
+CEN/TS 16614-3, Network and Timetable Exchange (NeTEx) — Part 3: Public transport fares exchange format
 
 EN 12896, Road transport and traffic telematics - Public transport -
 Reference data model (Transmodel)
