@@ -1253,8 +1253,10 @@ etc.) et POSSIBILITÉ DE RESTER À BORD (ONBOARD STAY).
 |--|--|--|--|--|
 | ::> | ::> | *DataManagedObject* | ::> | FACILITY SET hérite de DATA MANAGED OBJECT. |
 | «PK» | id | FacilitySetIdType | 1:1 | Identifiant du FACILITY SET. |
-| | ***ProvidedByRef*** | OrganisationRef | 1:0 | ORGANISATIOMN en charge de proposer le FACILITY SET. |
+| | ***ProvidedByRef*** | OrganisationRef | 0:1 | ORGANISATION en charge de proposer le FACILITY SET. |
 | | Description | MultilingualString | 0:1 | Description du FACILITY SET. |
+| «FK» | TypeOfFacilityRef | *TypeOfFacilityRef* | 0:1 | Classification du FACILITY SET. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
+| «cntd» | otherFacilities | _*TypeOfEquipment*_ / *TypeTypeOfEquipmentRef* | 0:\* | Types de FACILITY arbitraires définis par l'utilisateur dans FACILITY SET, leur définition renvoie à des TYPES OF EQUIPMENT. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
 | «cntd» | (CommonFacilityGroup) | xxxFacilitList | 0:\* | FACILITIEs sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les FACILITY SETs. Il existe d'autres FACILITIEs spécifiques aux SERVICE FACILITY SET et SITE FACILITY SET. |
 
 <div class="table-title">ServiceFacilitySet – Élément</div>
@@ -1333,11 +1335,19 @@ accompagnés)*
 
 * *umbrella (parapluies disponibles)*
 
+* *buggy (voiturettes disponibles)*
+
 ***<u>-Famille</u>***
 
 * *servicesForChildren (services et activités pour les enfants)*
 
 * *nurseryService (service de garderie)*
+
+***<u>-Médical</u>***
+
+* *defibrillator (défibrillateur)*
+
+* *alcoholTest (test d'alcoolémie)*
 
 ***<u>-Mobilité/Accessibilité</u>***
 
@@ -1350,14 +1360,20 @@ accompagnés)*
 * *suitableForHeavilyDisabled (adapté aux handicaps lourds ; <span class="hl">
 note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
 
+* *suitableForPushchairs (adapté aux poussettes)*
+
 * *boardingAssistance (assistance à l’embarquement)*
 
 * *onboardAssistance (assistance à bord)*
+
+* *unaccompaniedMinorAssistance (assistance pour les mineurs non accompagnés)*
 
 * *tactilePlatformEdges (marquage podotactile sur le bord des quais)*
 
 * *tactileGuidingStrips (bandes de guidage podotactiles)*
 
+* *raisedKerb (trottoir surélevé)*
+* raisedKerb (quai surélevé)
 ***<u>-Loisir</u>***
 
 * *freeWifi (Wifi gratuit)*
@@ -1365,6 +1381,8 @@ note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
 * *publicWifi (Wifi public)*
 
 * *internet (accès Internet disponible)*
+
+* *powerSupplySockets (prises de courant)*
 
 ***<u>-Information Voyageur</u>***
 
