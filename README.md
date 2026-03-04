@@ -35,6 +35,3 @@ Cet espace de travail est ouvert à tout contributeur sans besoin d'inscription 
 ## Comment contribuer
 Pour toute question, commentaire ou ouvrir une discussion plus large, merci d'ouvrir un ticket dans les `Issues`.
 Pour toute demande de changement, merci de faire une `Pull Request` qui vise la branche `v2.5-wip`. Elle est la seule branche de travail du profil France de NeTEx.
-
-## Processus de mise à jour des branches
-Dans la mesure où seuls les bugs seront corrigés sur la branche `v2.4`, ils feront l'objet d'une évaluation au cas par cas pour leur reprise dans la branche `v2.5-wip`. Cette dernière apportant de nombreuses nouvelles fonctionalités, améliorations et articulation du profil France, il est probable que le nombre de reports soit très faible.
