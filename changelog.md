@@ -1,6 +1,6 @@
 # Changelog - Historique des changements
 
-## v2.4
+## v2.4.0
 
 ### Généralités
 La version 2.4 du profil France de NeTEx est la **dernière version basée sur la [XSD de NeTEx v1.3](https://github.com/NeTEx-CEN/NeTEx/blob/v1.3.2/xsd/NeTEx_publication.xsd)**.
