@@ -3,7 +3,7 @@
 ## v2.4
 
 ### Généralités
-La version 2.4 du profil France de NeTEx est la **dernière version basée sur la XSD de NeTEx v1.3**.
+La version 2.4 du profil France de NeTEx est la **dernière version basée sur la [XSD de NeTEx v1.3](https://github.com/NeTEx-CEN/NeTEx/blob/v1.3.2/xsd/NeTEx_publication.xsd)**.
 Cette version a été officiellement validée en session plénière du GT7 (Groupe de Travail sur l’information voyageur et l’exploitation des services de mobilités, au sein de la Commission de normalisation Transport Public de l'AFNOR) en date du 20 novembre 2025, puis en session plénière de la CN03 (Commission de normalisation Transport Public) en date du 19 décembre 2025.
 Sa publication effective sur le site [normes.transport.data.gouv.fr](https://normes.transport.data.gouv.fr/) a été faite en date du 6 mars 2026.
 
