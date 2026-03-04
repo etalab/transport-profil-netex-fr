@@ -1,10 +1,10 @@
 ---
-title: "Profil NeTEx accessibilité France - v2.3"
-date: 2024-11-21T00:00:00+00:05
+title: "Profil NeTEx accessibilité France - v2.4"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
-weight: 6
+weight: 5
 aliases:
 - /normes/netex/accessibilité/
 ---
@@ -52,20 +52,25 @@ des réseaux de transport en commun" (issu des travaux *NeTEx* et
 *Transmodel)* qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
@@ -79,10 +84,14 @@ NeTEx se décompose en trois parties:
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
 
-NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, sont 
-terminés en 2016.
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
+NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
+France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferroviaire, en particulier grâce à la
@@ -135,24 +144,17 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et
-Île-de-France Mobilités. Ces deux profils ont une vocation nationale. Le
-groupe de travail GT7 (AFNOR BNTRA/CN 03/GT 7) a élaboré une sélection
-des concepts Transmodel nécessaire à la description des horaires en
-France (à vocation d'information voyageur essentiellement). C'est sur la
-base de cette sélection qu'est élaboré le présent profil.
+Ce document présente la partie Accessibilité du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-D'autres profils de NeTEx sont disponibles (arrêt, réseau, tarif). Ils
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseaux, horaire, tarif, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur un document partagé: **NeTEx - Profil Français de
-NETEx: éléments communs.** Il conviendra de se référer à ce document
-pour tous les éléments utilisés dans le présent document, et dont la
-structure n'est pas détaillée.
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
+les éléments utilisés dans le présent document, et dont la structure
+n'est pas détaillée.
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
-description des horaires de transport public de façon :
+l'accessibilité des services de transport public de façon :
 
 -   à pouvoir les présenter d’une manière homogène et compréhensible à
     l’usager des transports publics sur des supports différents (papier
@@ -164,7 +166,7 @@ description des horaires de transport public de façon :
     systèmes billettiques, etc.).
 
 Les éléments présentés ci-dessous couvrent donc l’ensemble des concepts
-propres à la description des horaires.
+propres à la description de l'accessibilité.
 
 **NOTE IMPORTANTE** Ce document étant un profil d'échange de NeTEx, il
 ne se substitue en aucun cas à NeTEx, et un minimum de connaissance de
@@ -1251,8 +1253,10 @@ etc.) et POSSIBILITÉ DE RESTER À BORD (ONBOARD STAY).
 |--|--|--|--|--|
 | ::> | ::> | *DataManagedObject* | ::> | FACILITY SET hérite de DATA MANAGED OBJECT. |
 | «PK» | id | FacilitySetIdType | 1:1 | Identifiant du FACILITY SET. |
-| | ***ProvidedByRef*** | OrganisationRef | 1:0 | ORGANISATIOMN en charge de proposer le FACILITY SET. |
+| | ***ProvidedByRef*** | OrganisationRef | 0:1 | ORGANISATION en charge de proposer le FACILITY SET. |
 | | Description | MultilingualString | 0:1 | Description du FACILITY SET. |
+| «FK» | TypeOfFacilityRef | *TypeOfFacilityRef* | 0:1 | Classification du FACILITY SET. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
+| «cntd» | otherFacilities | _*TypeOfEquipment*_ / *TypeTypeOfEquipmentRef* | 0:\* | Types de FACILITY arbitraires définis par l'utilisateur dans FACILITY SET, leur définition renvoie à des TYPES OF EQUIPMENT. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
 | «cntd» | (CommonFacilityGroup) | xxxFacilitList | 0:\* | FACILITIEs sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les FACILITY SETs. Il existe d'autres FACILITIEs spécifiques aux SERVICE FACILITY SET et SITE FACILITY SET. |
 
 <div class="table-title">ServiceFacilitySet – Élément</div>
@@ -1331,11 +1335,19 @@ accompagnés)*
 
 * *umbrella (parapluies disponibles)*
 
+* *buggy (voiturettes disponibles)*
+
 ***<u>-Famille</u>***
 
 * *servicesForChildren (services et activités pour les enfants)*
 
 * *nurseryService (service de garderie)*
+
+***<u>-Médical</u>***
+
+* *defibrillator (défibrillateur)*
+
+* *alcoholTest (test d'alcoolémie)*
 
 ***<u>-Mobilité/Accessibilité</u>***
 
@@ -1348,14 +1360,20 @@ accompagnés)*
 * *suitableForHeavilyDisabled (adapté aux handicaps lourds ; <span class="hl">
 note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
 
+* *suitableForPushchairs (adapté aux poussettes)*
+
 * *boardingAssistance (assistance à l’embarquement)*
 
 * *onboardAssistance (assistance à bord)*
+
+* *unaccompaniedMinorAssistance (assistance pour les mineurs non accompagnés)*
 
 * *tactilePlatformEdges (marquage podotactile sur le bord des quais)*
 
 * *tactileGuidingStrips (bandes de guidage podotactiles)*
 
+* *raisedKerb (trottoir surélevé)*
+* raisedKerb (quai surélevé)
 ***<u>-Loisir</u>***
 
 * *freeWifi (Wifi gratuit)*
@@ -1363,6 +1381,8 @@ note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
 * *publicWifi (Wifi public)*
 
 * *internet (accès Internet disponible)*
+
+* *powerSupplySockets (prises de courant)*
 
 ***<u>-Information Voyageur</u>***
 
@@ -2491,164 +2511,61 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 # Entêtes NeTEx
 
 *Note : les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profile NETEX_ACCESSIBILITY sont
+communs. Seules les spécificités de la partie "accessibilité" du profil sont
 présentées ici.*
 
-Une unique FRAME est proposée ici pour échanger la description de
-l'accessibilité: la FRAME **NETEX_ACCESSIBILITY**.
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
 
-## TypeOfFrame : type spécifique *NETEX\_ ACCESSIBILITE*
-
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX\_* *ACCESSIBILITE***.
-
-<div class="table-title">TypeOfFrame – Élément</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à </span><span class="hl">NETEX_</span><span class="hl"> </span><span class="hl">ACCESSIBILITE</span></p></td>
-</tr>
+Une GeneralFrame de type **NETEX_ACCESSIBILITY** est utilisée pour échanger la description l'accessibilité 
+dans le fichier `accessibility.xml`. 
 
 
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ ACCESSIBILITE:</span></p>
-<ul>
-<li><p><span class="hl">L'ensemble se classe du TYPE OF FRAME NETEX_ARRET (STOP PLACE, QUAY, TOPOGRAPHIC PLACE, STOP PLACE ENTRANCE, GENERAL GROUP OF ENTITIES)</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">PATH LINK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NAVIGATION PATH</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">PATH JUNCTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SITE FACILITY SET</span></p></li>
-</ul>
-<p><span class="hl">Notez que les EQUIPMENTs sont sous la hiérarchie de STOP PLACE.</span></p></td>
-</tr>
+## TypeOfFrame : type spécifique *NETEX_ACCESSIBILITY*
 
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_ACCESSIBILITY`, seuls les objets de premier niveau suivants sont autorisés : 
+- SitePathLink
+- PathLink
+- PathJunction
+- NavigationPath
+- FacilitySet
+- AccessEquipment, et tous les équipements qui en héritent
+- PlaceEquipment, et tous les équipements qui en héritent
+- SignEquipment, et tous les équipements qui en héritent
+- PassengerEquipment, et tous les équipements qui en héritent
+- SiteEquipment, et tous les équipements qui en héritent
+- LocalService, et tous les équipements qui en héritent
 
-</tbody>
-</table>
+Les équipements sont précisés dans l'annexe 8 de ce document.
 
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ ACCESSIBILITE) –</div>
-Élément
+Voici un exemple de cadre du fichier `accessibility.xml` :
 
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de <em><strong>DataManagedObject</strong></em>.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span></p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à </span><span class="hl">NETEX_</span><em><strong><span class="hl"> </span></strong></em><span class="hl">ACCESSIBILITE</span></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX_</span><em><strong><span class="hl"> </span></strong></em><span class="hl">ACCESSIBILITE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé </span><span class="hl">à « Profil d’échange français NETEX ACCESSIBILITY »</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-![image](media/image17.svg)
-*TypeOfFrame – XSD*
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_ACCESSIBILITY:" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ACCESSIBILITY:" />
+      <members>
+        <!--
+          SitePathLink
+          PathLink
+          PathJunction
+          NavigationPath
+          FacilitySet
+          AccessEquipment, et tous les équipements qui en héritent
+          PlaceEquipment, et tous les équipements qui en héritent
+          SignEquipment, et tous les équipements qui en héritent
+          PassengerEquipment, et tous les équipements qui en héritent
+          SiteEquipment, et tous les équipements qui en héritent
+          LocalService, et tous les équipements qui en héritent
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>                  
+</PublicationDelivery> 
+```
 
 # Annexe (normative) - Détail des équipements
 

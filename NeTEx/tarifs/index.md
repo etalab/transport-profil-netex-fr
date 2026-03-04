@@ -1,10 +1,10 @@
 ---
-title: "NeTEx - Profil France v2.3 - Tarifs"
-date: 2024-11-21T00:00:00+01:00
+title: "NeTEx - Profil France v2.4 - Tarifs"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
-weight: 7
+weight: 6
 ---
 
 **Avant-propos**
@@ -49,13 +49,18 @@ données de description des offres tarifaires" (issu des travaux NeTEx,
 et Transmodel) qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
@@ -83,9 +88,7 @@ NeTEx se décompose en six parties:
 -   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
 
 NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+la France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferrovaire, en particulier grâce à la
@@ -149,7 +152,7 @@ n'est pas détaillée.
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
-description des horaires de transport public de façon :
+description des tarifs de transport public de façon :
 
 - à pouvoir les présenter d’une manière homogène et compréhensible à
   l’usager des transports publics sur des supports différents (papier ou
@@ -195,6 +198,8 @@ transport network topology exchange format
 
 CEN/TS 16614-2, Network and Timetable Exchange (NeTEx) — Part 2: Public
 transport scheduled timetables exchange format
+
+CEN/TS 16614-3, Network and Timetable Exchange (NeTEx) — Part 3: Public transport fares exchange format
 
 EN 12896, Road transport and traffic telematics - Public transport -
 Reference data model (Transmodel)
@@ -5980,137 +5985,69 @@ d’itinéraire).
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profil NETEX_TARIF sont présentées
-ici.*
+communs. Seules les spécificités de la partie "Tarifs" sont présentées ici.*
+
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
+
+Une GeneralFrame de type **NETEX_TARIF** est utilisée pour échanger la description des données tarifaires 
+dans le fichier `fare.xml`. 
 
 ## TypeOfFrame : type spécifique *NETEX_TARIF*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_TARIF***. Il apparaitra systématiquement et explicitement dans
-les éléments ***members*** du ***GeneralFrame***.
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_TARIF`, seuls les objets de premier niveau suivants sont autorisés : 
+- StopPlace
+- FareZone (l'objet TarifZone doit être spécialisé dans le profil France)
+- FareStructureElement
+- UserProfile
+- DistributionChannel
+- FareProduct qui est un objet abstrait décliné en : 
+  - PreassignedFareProduct 
+  - SaleDiscountRight pour les bons de réduction
+  - UsageDiscountRight pour les cartes de réduction
+  - AmountOfPriceUnit pour l'achat de support, comme la carte Navigo Liberté+
+- SalesOfferPackageElement
+- SalesOfferPackage
+- TypeOfTravelDocument
+- TypeOfPricingRule (permet de préciser la TVA, mais n'est pas requis par le profil France. Voir la FAQ à ce sujet.)
+- DiscountingRule
+- FareTable (les SalesOfferPackagePrice sont inclus dans les Cell de la FareTable)
+- DistanceMatrixElement
 
-<div class='table-title'>TypeOfFrame – Element</div>
+Voici un exemple de cadre du fichier `fare.xml` :
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::&gt;::&gt;</em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><mark>L'Id est imposé à NETEX_TARIF</mark></p></td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
-<p><mark>La liste est fixe pour NETEX_TARIF:</mark></p>
-<ul>
-<li><p><mark>FARE STRUCTURE ELEMENT</mark></p></li>
-<li><p><mark>FARE STRUCTURE ELEMENT IN SEQUENCE</mark></p></li>
-<li><p><mark>QUALITY STRUCTURE FACTOR</mark></p></li>
-<li><p><mark>FARE DEMAND FACTOR</mark></p></li>
-<li><p><mark>TIME DEMAND TYPE</mark></p></li>
-<li><p><mark>FARE QUOTA FACTOR</mark></p></li>
-<li><p><mark>TARIFF</mark></p></li>
-<li><p><mark>TIME INTERVAL</mark></p></li>
-<li><p><mark>TIME STRUCTURE FACTOR</mark></p></li>
-<li><p><mark>TIME UNIT</mark></p></li>
-<li><p><mark>GEOGRAPHICAL INTERVAL</mark></p></li>
-<li><p><mark>GEOGRAPHICAL UNIT</mark></p></li>
-<li><p><mark>GEOGRAPHICAL STRUCTURE FACTOR</mark></p></li>
-<li><p><mark>DISTANCE MATRIX ELEMENT</mark></p></li>
-<li><p><mark>GROUP OF DISTANCE MATRIX ELEMENTS</mark></p></li>
-<li><p><mark>VALIDABLE ELEMENT</mark></p></li>
-<li><p><mark>CONTROLLABLE ELEMENT</mark></p></li>
-<li><p><mark>PREASSIGNED FARE PRODUCT</mark></p></li>
-<li><p><mark>SALE DISCOUNT RIGHT</mark></p></li>
-<li><p><mark>CAPPED DISCOUNT RIGHT</mark></p></li>
-<li><p><mark>SUPPLEMENT PRODUCT</mark></p></li>
-<li><p><mark>USAGE DISCOUNT RIGHT</mark></p></li>
-<li><p><mark>THIRD PARTY PRODUCT</mark></p></li>
-<li><p><mark>SALES OFFER PACKAGE</mark></p></li>
-<li><p><mark>GROUP OF SALES OFFER PACKAGES</mark></p></li>
-<li><p><mark>TYPE OF TRAVEL DOCUMENT</mark></p></li>
-<li><p><mark>DISTRIBUTION CHANNEL</mark></p></li>
-<li><p><mark>DISTRIBUTION ASSIGNMENT</mark></p></li>
-<li><p><mark>ACCESS RIGHT PARAMETER ASSIGNMENT</mark></p></li>
-<li><p><mark>USAGE VALIDITY PARAMETER</mark></p></li>
-<li><p><mark>VALIDITY PARAMETER ASSIGNMENT</mark></p></li>
-<li><p><mark>GENERIC PARAMETER ASSIGNMENT</mark></p></li>
-<li><p><mark>SCOPING VALIDITY PARAMETERS</mark></p></li>
-<li><p><mark>USAGE PARAMETER (and all inheriting
-objects)</mark></p></li>
-<li><p><mark>FARE TABLE (and associated object, cell,
-etc.)</mark></p></li>
-<li><p><mark>SALES OFFER PACKAGE PRICE</mark></p></li>
-<li><blockquote>
-<p><mark>PRICING SERVICE</mark></p>
-</blockquote></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
-<div class='table-title'>TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE) – Element</div>
-
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>DataManagedObject</em></td>
-<td>::&gt;</td>
-<td><p>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</p>
-<p><mark>L’attribut <em><strong>version</strong></em> portera la version
-du profil.</mark></p>
-<p><mark>L'Identifiant du TYPE OF VALUE est imposé à
-NETEX_TARIF.</mark></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><mark>Imposé à « NETEX TARIF ».</mark></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><mark>Imposé à « Profil d’échange français NETEX
-TARIF ».</mark></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_Tarif-sample" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF" />
+      <members>
+        <!--
+          FareZone
+          FareStructureElement
+          UserProfile
+          DistributionChannel
+          FareProduct qui est un objet abstrait décliné en : 
+             - PreassignedFareProduct 
+             - SaleDiscountRight pour les bons de réduction
+             - UsageDiscountRight pour les cartes de réduction
+             - AmountOfPriceUnit pour l'achat de support, comme la carte Navigo Liberté+
+          SalesOfferPackageElement
+          SalesOfferPackage
+          TypeOfTravelDocument
+          TypeOfPricingRule 
+          DiscountingRule
+          FareTable 
+          DistanceMatrixElement
+          ParkingTariff
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 <div class="annexes">
 
