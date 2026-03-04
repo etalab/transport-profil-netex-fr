@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France v2.3 - Éléments communs"
-date: 2024-11-21T00:00:00+00:00
+title: "NeTEx - Profil France v2.4 - Éléments communs"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
@@ -52,13 +52,18 @@ l'échange de données de description des arrêts" (issu des travaux
 groupes de normalisation (CN03/GT7 – Transport public / information
 voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN/TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
@@ -86,10 +91,8 @@ NeTEx se décompose en six parties:
 -   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
 
 
-NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
+France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC 278/WG 3 avec le secteur ferroviaire, en particulier grâce à la
@@ -161,6 +164,10 @@ sont tous complémentaires les uns des autres (sans recouvrement) et s'appuient 
 **NOTE** : Ce document étant un profil d'échange de NeTEx, il ne se substitue
 en aucun cas à NeTEx, et un minimum de connaissance de NeTEx sera
 nécessaire à sa bonne compréhension.
+
+**NOTE IMPORTANTE** : Le profil France est un sous-ensemble de la norme NeTEx et ne possède pas de schéma XML (XSD) dédié. Pour toute validation de fichiers, se référer à la XSD de NeTEx dans sa version v1.3.2 disponible sur [GitHub](https://github.com/NeTEx-CEN/NeTEx/releases/tag/v1.3.2).
+
+
 
 # Domaine d'application
 
@@ -1302,9 +1309,9 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td></td>
 <td><em><strong>Location</strong></em></td>
 <td><em>Location</em></td>
-<td><p>0:1</p>
+<td>0:1
 <p><strong><span class="hl">1 :1</span></strong></p></td>
-<td>Localisation du POINT <span class="hl">(obligatoire dans le profil)</span></td>
+<td>Localisation du POINT <span class="hl">(Obligatoire dans le profil France, notamment pour les objets de type QUAY et STOP PLACE. Attention, l'attribut n'est pas attendu dans les SCHEDULED STOP POINT)</span></td>
 </tr>
 <tr class="odd">
 <td>«»</td>
@@ -1532,7 +1539,20 @@ façon détaillée. C’est, autant que possible, la version simplifiée du
 <p><span class="hl">L’héritage reste naturellement valable, mais aucun des attributs qu’il apporte ne sera utilisé.</span></p></td>
 </tr>
 
-
+<tr class="odd">
+<td></td>
+<td><em><strong>Name</strong></em></td>
+<td>MultilingualString</td>
+<td>0:1</td>
+<td>Nom de la VALIDITY CONDITION</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><em><strong>Description</strong></em></td>
+<td>MultilingualString</td>
+<td>0:1</td>
+<td>Description de la VALIDITY CONDITION</td>
+</tr>
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>ConditionedObjectRef</strong></em></td>
@@ -3830,9 +3850,9 @@ utilisée pour identifier le profil).
 
 La figure ci-dessous présente l’ensemble des CADREs DE VERSION prédéfini
 dans NeTEx ainsi que le *GeneralFrame* qui est utilisé ici avec un type
-de CADRE spécifique pour les profils NeTEx utilisés en France: ***NeTEx
-COMMUN, NeTEx ARRET, NeTEx LIGNE, NeTEx RESEAU, NeTEx HORAIRE, NeTEx
-CALENDRIER** et **NeTEx TARIF***.
+de CADRE spécifique pour chaque partie du profil France (voir plus bas).
+
+**NOTE IMPORTANTE** : Pour chaque export, les identifiants des CADREs de VERSION (FRAME) doivent être uniques.
 
 ![image](media/image8.svg)
 *predefined Frames– XSD*
@@ -4621,24 +4641,23 @@ Les noms des fichiers doivent respecter les contraintes suivantes :
 - une taille maximale de 250 caractères hors extension
 
 Les fichiers attendus dans l'archive sont les suivants : 
-| **Fichier** |  **Description** 
+| **Fichier** |  **Description** |
 |--------------------|--------------------------------------------|
-| accessibility.xml  | Fichier regroupant les équipements et les informations de cheminement, incluant leur caractéristiques d'accessibilité
-| network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes
-| stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc.
-| line_xyz.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun 
-(parcours, courses, horaires, etc.). La partie "xyz" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est conseillé d'utiliser des libellés courts comme les codes des lignes par exemple.
-| fare.xml           | Fichier regroupant les informations sur les tarifs, que ce soit pour les transports en commun, les parkings ou autres.
-| parking.xml        | Fichier regroupant les informations sur les parkings.
-| poi.xml            | Fichier regroupant les points d'intérêts et les informations associées
-| resource.xml       | Fichier contenant toutes les informations qui ne sont pas collectés dans des fichiers thématiques 
-(correspondances, calendriers, commentaires, etc.)
+| accessibility.xml  | Fichier regroupant les équipements et les informations de cheminement, incluant leur caractéristiques d'accessibilité |
+| network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes |
+| stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc. |
+| line_xyz.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun (parcours, courses, horaires, etc.). La partie "xyz" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est conseillé d'utiliser des libellés courts comme les codes des lignes par exemple. |
+| fare.xml           | Fichier regroupant les informations sur les tarifs, que ce soit pour les transports en commun, les parkings ou autres |
+| parking.xml        | Fichier regroupant les informations sur les parkings |
+| poi.xml            | Fichier regroupant les points d'intérêts et les informations associées |
+| resource.xml       | Fichier contenant toutes les informations qui ne sont pas collectés dans des fichiers thématiques (correspondances, calendriers, commentaires, etc.) |
 
 Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
 Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
 
-À noter : Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP
-en respectant les critères ci-dessus.
+Notes : 
+- Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP en respectant les critères ci-dessus.
+- Pour tout échange de fichier en dehors d'un dépôt sur le [Point d'Accès National](https://transport.data.gouv.fr/), les parties sont libres d'éventuellement s'accorder sur un autre format d'archive et/ou de noms de fichiers.
 
 ## Web service
 
