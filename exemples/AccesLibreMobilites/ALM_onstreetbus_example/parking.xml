@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+  <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
+  <ParticipantRef>ALM_wdm2netex</ParticipantRef>
+  <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement</Description>
+  <dataObjects>
+    <GeneralFrame id="FR:GeneralFrame:NETEX_PARKING:LOC" version="1.09:FR-NETEX-2.3-0.0">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_PARKING:"/>
+      <FrameDefaults>
+        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
+      </FrameDefaults>
+      <members>
+        <ParkingBay id="ALM:ParkingBay:n794:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>FlooringMaterial</Key>
+              <Value>Asphalt</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Slope</Key>
+              <Value>0</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Tilt</Key>
+              <Value>0</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n794">
+              <Longitude>2.65369981259</Longitude>
+              <Latitude>48.83513716974</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:5:" version="any">
+            <validityConditions>
+              <ValidityCondition id="ALM:ValidityCondition:5:" version="any">
+                <Description>Marquage au sol et signalétiques non conformes</Description>
+              </ValidityCondition>
+            </validityConditions>
+            <MobilityImpairedAccess>partial</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <VisualSignsAvailable>partial</VisualSignsAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>disabledPublicOnly</PublicUse>
+          <ParkingVehicleType>car</ParkingVehicleType>
+          <BayGeometry>orthogonal</BayGeometry>
+          <ParkingVisibility>demarcated</ParkingVisibility>
+          <Width>3.40</Width>
+          <RechargingAvailable>false</RechargingAvailable>
+        </ParkingBay>
+        <ParkingBay id="ALM:ParkingBay:n808:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Flooring</Key>
+              <Value>Good</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>FlooringMaterial</Key>
+              <Value>Asphalt</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Slope</Key>
+              <Value>0</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Tilt</Key>
+              <Value>0</Value>
+            </KeyValue>
+          </keyList>
+          <Centroid>
+            <Location id="n808">
+              <Longitude>2.65394389361</Longitude>
+              <Latitude>48.83525369292</Latitude>
+            </Location>
+          </Centroid>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:6:" version="any">
+            <validityConditions>
+              <ValidityCondition id="ALM:ValidityCondition:6:" version="any">
+                <Description>Marquage au sol présent mais signalétique non conforme</Description>
+              </ValidityCondition>
+            </validityConditions>
+            <MobilityImpairedAccess>partial</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>false</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <VisualSignsAvailable>partial</VisualSignsAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>disabledPublicOnly</PublicUse>
+          <ParkingVehicleType>car</ParkingVehicleType>
+          <BayGeometry>orthogonal</BayGeometry>
+          <ParkingVisibility>demarcated</ParkingVisibility>
+          <Width>3.00</Width>
+          <RechargingAvailable>false</RechargingAvailable>
+        </ParkingBay>
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>

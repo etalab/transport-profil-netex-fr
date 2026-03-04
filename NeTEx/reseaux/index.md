@@ -1,10 +1,10 @@
 ---
-title: "NeTEx - Profil France v2.3 - Description des réseaux"
-date: 2024-11-21T00:00:00+00:04
+title: "NeTEx - Profil France v2.4 - Description des réseaux"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
-weight: 4
+weight: 3
 ---
 
 **Avant-propos**
@@ -52,41 +52,46 @@ travaux *NeTEx, Transmodel et IFOPT)* qui aujourd’hui fait consensus
 dans les groupes de normalisation (CN03/GT7 – Transport public /
 information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN/TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi de l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-
-
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-
-
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
 
-NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
+NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
+France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferrovaire, en particulier grâce à la
@@ -149,23 +154,14 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et
-Île-de-France Mobilités. Ces deux profils ont une vocation nationale. Le
-présent document décrit le profil Français de NeTEx pour l’échange des
-données de description des réseaux de transport public.
+Ce document présente la partie Réseaux du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-Le groupe de travail GT7 (AFNOR BNTRA/CN03/GT7) a élaboré une sélection
-des concepts Transmodel nécessaire à la description des réseaux en
-France (à vocation d'information voyageur essentiellement). C'est sur la
-base de cette sélection qu'est élaboré le présent profil.
-
-D'autre profils de NeTEx sont disponibles (arrêt, horaire, tarif). Ils
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, horaire, tarif, accessibilité, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur un document partagé: **NeTEx - Profil Français de
-NETEx: éléments communs.** Il conviendra de se référer à ce document
-pour tous les éléments utilisés dans le présent document, et dont la
-structure n'est pas détaillée.
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
+les éléments utilisés dans le présent document, et dont la structure
+n'est pas détaillée.
+
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
@@ -728,7 +724,7 @@ ACCESS RIGHT PARAMETER ASSIGNMENT</strong></p></td>
 CONNECTION</strong> <em>et</em> <strong>SITE CONNECTION<br />
 </strong></p>
 <p><strong>ROUTE LINK</strong> <em>(donc ROUTE)</em> <em>ou</em> <strong>SERVICE LINK</strong> <em>en alternative</em></p></td>
-<td><p><em>(profil accessibilité)</em></p>
+<td><p><em>(partie accessibilité)</em></p>
 <p><strong>NAVIGATION PATH</strong></p></td>
 <td>Les SERVICE LINKs ou ROUTE LINKs impliquent naturellement les POINTs (POINT IN JOURNEY PATTERN, ROUTE POINT, POINT ON ROUTE, etc.) correspondant. Ils permettront d’évaluer la distance parcourue par le véhicule.</td>
 </tr>
@@ -1065,7 +1061,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong>Accessibility­Assessment</strong></em></td>
 <td><em>Accessibility­Assessment</em></td>
 <td>0:1</td>
-<td>Information concernant l'accessibilité de la ligne <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
+<td>Information concernant l'accessibilité de la ligne <span class="hl">(<em>voir la partie Accessibilité du profil France</em>).</span></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1219,9 +1215,10 @@ Exemple :
 |                     | ***DirectionType***    | *TypeOfDirectionEnum* | 0:1              | Type de direction de la ROUTE (***outbound***, ***inbound***, pour aller Retrour et éventuellement ***clockwise*** ou ***anticlockwise*** pour les boucles)                                   |
 | «FK»                | ***DirectionRef***     | *DirectionRef*        | 0:1              | Référence la DIRECTION de l'ITINÉRAIRE.                                                                                                                                                       |
 | «cntd»              | ***pointsInSequence*** | *PointOnRoute*        | 2:\*             | Liste des points de l'ITINÉRAIRE.                                                                                                                                                             |
+| «cntd»              | ***sectionsInSequence*** | *SectionLink*        | 0:\*             | Liste des sections de l'ITINÉRAIRE.                                                                                                                                                             |
 |                     | ***InverseRouteRef***  | *RouteRef*            | 0:1              | Référence l'éventuel ITINÉRAIRE en sens opposé.                                                                                                                                               |
 
-### Les Point d'itinéraire
+### Les Points d'itinéraire
 
 <div class="table-title">RoutePoint – Element</div>
 
@@ -1260,9 +1257,19 @@ Exemple :
 |---------------------|--------------------|-----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *::>*               | *::>*              | *Link*          | *::>*            | ROUTE LINK hérite de LINK <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
 |                     | Distance           | DistanceType    | 1:1              | Longueur du ROUTE LINK. Les unités sont telles que spécifiées pour la FRAME (la valeur par défaut est SI mètres).                                                                         |
+| «cntd»              | LineString         | gmlLineString   | 0:1              | Géométrie du TRONÇON sous forme d’une linestring GML (la géométrie d’un TRONÇON n’est donc pas limitée à un simple couple de point, mais est décrite par une séquence de points).  |
 | «FK»                | ***FromPointRef*** | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de début de <span class="hl">TRONÇON</span>.                                                                                                                         |
 | «FK»                | ***ToPointRef***   | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de fin de <span class="hl">TRONÇON</span>.                                                                                                                           |
 |                     |                    |                 |                  |                                                                                                                                                                                           |
+
+Exemple de LineString pour décrire un tracé : 
+```xml
+<gml:LineString gml:id="AB2o"> 
+    <gml:pos>53.00 1.00</gml:pos> 
+    <gml:pos>53.10 1.10</gml:pos> 
+    <gml:pos>53.20 1.20</gml:pos> 
+</gml:LineString>
+```
 
 ## Les affichages de destination
 
@@ -1843,21 +1850,21 @@ flexibilité.
 <td>0:1</td>
 <td>AFFICHAGE DE DESTINATION associée à la MISSION COMMERCIALE <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
 </tr>
-
-
-
-
-
-
-
 <tr class="even">
 <td>«cntd»</td>
 <td><em><strong>pointsInSequence</strong></em></td>
 <td><em>PointInJourneyPattern</em></td>
 <td>0:*</td>
-<td>Liste ordonnées des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
+<td>Liste ordonnée des points sur la MISSION COMMERCIALE (POINT D'ARRÊT SUR PARCOURS, POINT HORAIRE ou POINT SUR PARCOURS).</td>
 </tr>
-
+<tr class="even">
+<td>«cntd»</td>
+<td><em><strong>linksInSequence</strong></em></td>
+<td><em>ServiceLink</em></td>
+<td>0:*</td>
+<td>
+Liste ordonnée des sections de la MISSION COMMERCIALE (SERVICE LINK). Chaque section décrit la géométrie entre deux points consécutifs (ScheduleStopPoint).</td>
+</tr>
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>ServiceJourneyPatternType</strong></em></td>
@@ -2212,6 +2219,8 @@ manœuvre de retournement).
 
 </tbody>
 </table>
+
+<span class="h1"><strong>NOTE IMPORTANTE</strong> : Le profil France ne retient pas l'attribut <em>Location</em> du SCHEDULED STOP POINT, l'information est portée par les objets QUAY ou STOP PLACE.</span>
 
 ### Parcours horaire
 
@@ -2634,7 +2643,7 @@ D'EMBARQUEMENT (QUAY).
 <td><em>navigationPaths</em></td>
 <td>0:1</td>
 <td><p>Description du cheminement utilisé pour cette correspondance.</p>
-<p><span class="hl">Dans le cadre du Profil Réseau, le NAVIGATION PATH n'est utilisé que pour indiquer de façon générale les contraintes d'accessibilité du cheminement (champs AccessFeatureList et NavigationType). La description complète et détaillée du NAVIGATION PATH n'interviendra que dans un profil dédié.</span></p></td>
+<p>(voir la partie accessibilité du profil pour plus de détails)</p></td>
 </tr>
 </tbody>
 </table>
@@ -2856,7 +2865,7 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 La description du cheminement est ici limitée à ses caractéristiques
 principales (en particulier pour l'accessibilité).
 
-<span class="hl">Note : le profil NeTEx pour l’accessibilité fournit
+<span class="hl">Note : la partie Accessibilité du profil France fournit
 une vue beaucoup plus détaillée du NavigationPath.</span>
 
 <div class="table-title">NavigationPath – Element</div>
@@ -3021,6 +3030,13 @@ description des ITL (Interdiction de trafic local).
 <td><em>GroupOfLinesRef</em></td>
 <td>0:1</td>
 <td>Groupe de lignes ou réseau concerné par la restriction</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><em><strong>pointsInPattern</strong></em></td>
+<td><em>pointsInPattern</em></td>
+<td></td>
+<td><span class="hl">Cette propriété n'est pas retenue dans le profil France. Le champ <em>member</em> est utilisé, comme indiqué ci-dessus dans l'héritage de Zone.</span></td>
 </tr>
 </tbody>
 </table>
@@ -3378,364 +3394,143 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profil NETEX_RESEAU sont présentées
+communs. Seules les spécificités de la partie "description du réseau" sont présentées
 ici.*
 
-Deux FRAMEs distincts peuvent être utilisés pour échanger la description
-des réseaux: l'un pour n'échanger qu'une description de haut niveau des
-lignes (**NETEX_LIGNE**) et l'autre pour échanger l'ensemble de la
-description du réseau (**NETEX_RESEAU**). Le FRAME **NETEX_RESEAU** peut
-naturellement contenir le FRAME **NETEX_LIGNE**.
+Deux FRAMEs distinctes sont utilisées pour échanger la description des réseaux : 
+- Une FRAME de type **NETEX_RESEAU**, utilisée dans le fichier "network.xml" 
+- Une FRAME de type **NETEX_LIGNE**, utilisée dans le fichier "line_xyz.xml" 
 
-## TypeOfFrame : type spécifique *NETEX_LIGNE*
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_LIGNE***
+## TypeOfFrame : type spécifique *NETEX_RESEAU*
 
-<div class="table-title">TypeOfFrame – Element (objet inclus)</div>
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seuls les objets de premier niveau suivants sont autorisés : 
+- Network
+- GroupOfLines
+- RoutingContraintZone
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">LIGNE</span></p></td>
-</tr>
+Voici un exemple de cadre du fichier `network.xml` :
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2025-02-27T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_RESEAU_1" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_RESEAU:" />
+      <members>
+        <!--
+          NETWORK
+          GROUP OF LINES
+          ROUTING CONSTRAINT ZONE
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>                  
+</PublicationDelivery>
+```
 
+## TypeOfFrame : type spécifique *NETEX_LINE* et *NETEX_LIGNE_STRUCTURE*
 
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ RESEAU:</span></p>
-<ul>
-<li><p><span class="hl">LINE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DIRECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">GROUP OF LINE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETWORK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTE POINT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">POINT ON ROUTE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTE LINK</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">GROUPE OF ENTITIES (sous ligne)</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE LINE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE ROUTE</span></p></li>
-</ul></td>
-</tr>
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_LINE`, il s'agit un objet `CompositeFrame`, lui-même composé de :
+- Une GeneralFrame de type `NETEX_LIGNE_STRUCTURE` (voir ci-dessous)
+- Une GeneralFrame de type `NETEX_HORAIRE`, décrit dans la partie Horaires du profil
 
+La Frame de type `NETEX_LIGNE_STRUCTURE` ne contient que les objets de premier niveau suivants (et les objets qui en héritent) : 
+- Pour la partie de description générale des lignes
+  - Line
+  - Direction
+  - Route
+  - RoutePoint
+  - PointOnRoute
+  - RouteLink
+  - FlexibleLine
+  - FlexibleRoute
+  - Route
+- Pour la partie plus précise de la ligne : 
+  - DestinationDisplay
+  - FlexiblePointProperties
+  - ServiceJourneyPattern
+  - PointInJourneyPattern
+  - ScheduledStopPoint
+  - TimingPoint
+  - TransferRestriction
+  - PassengerStopAssignement
+  - FlexibleStopAssignment
+  - TrainStopAssignment
+  - SchematicMap
 
-</tbody>
-</table>
+Voici un exemple de cadre du fichier `line_xyz.xml` :
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <CompositeFrame id="FR:CompositeFrame:NETEX_LIGNE-line_xyz:LOC" version="any">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE:" />
+      <frames>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_RESEAU-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE_STRUCTURE:" />
+          <members>
+            <Line id="sample" version="any">
+              <Name>Ligne d'exemple</Name>
+            </Line>
+            <!--  Partie Ligne
+              Peut contenir (chaque objet contiendra ses objets sous-jacents, les éléments listés ici pourront être référencés dans les autres objets)
+              LINE 
+              DIRECTION
+              ROUTE
+              ROUTE POINT
+              POINT ON ROUTE
+              ROUTE LINK
+              FLEXIBLE LINE
+              FLEXIBLE ROUTE
+            -->
 
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ LIGNE) – Element</div>
+            <!--  Partie Reseau
+              DESTINATION DISPLAY
+              FLEXIBLE POINT PROPERTIES
+              FLEXIBLE LINK PROPERTIES
+              SERVICE JOURNEY PATTERN
+              POINT IN JOURNEY PATTERN
+              SCHEDULED STOP POINT
+              TIMING POINT
+              TRANSFER RESTRICTION
+              PASSENGER STOP ASSIGNMENT
+              FLEXIBLE STOP ASSIGNMENT
+              TRAIN STOP ASSIGNMENT
+              SCHEMATIC MAP  
+            -->
+          </members>
+        </GeneralFrame>
 
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de <em><strong>DataManagedObject</strong></em>.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span>.</p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_ LIGNE</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX LIGNE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX LIGNE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-## TypeOfFrame : type spécifique *NETEX\_ RESEAU*
-
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_RESEAU***.
-
-<div class="table-title">TypeOfFrame – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">RESEAU</span></p></td>
-</tr>
-
-
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ RESEAU:</span></p>
-<ul>
-<li><p><span class="hl">GENERAL FRAME de type NETEX_LIGNE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TARIFF ZONE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DESTINATION DISPLAY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE POINT PROPERTIES</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE LINK PROPERTIES</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE JOURNEY PATTERN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">POINT IN JOURNEY PATTERN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SCHEDULED STOP POINT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TIMING POINT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">CONNECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DEFAULT CONNECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SITE CONNECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ROUTING CONSTRAINT ZONE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRANSFER RESTRICTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">PASSENGER STOP ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN STOP ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SCHEMATIC MAP</span></p></li>
-</ul></td>
-</tr>
-
-
-</tbody>
-</table>
-
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ RESEAU) – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de <em><strong>DataManagedObject</strong></em>.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span>.</p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_RESEAU</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX RESEAU»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX RESEAU»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_HORAIRE-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_HORAIRE:" />
+          <members>
+            <!-- 
+              Peut contenir
+              SERVICE JOURNEY
+              SERVICE LINK
+              FLEXIBLE SERVICE PROPERTIES
+              TEMPLATE SERVICE JOURNEY
+              HEADWAY JOURNEY GROUP
+              RHYTHMICAL JOURNEY GROUP
+              COUPLED JOURNEY
+              JOURNEY PART COUPLE
+              JOURNEY PART
+              TRAIN
+              TRAIN COMPONENT
+              COMPOUND TRAIN
+              TRAIN NUMBER
+              TRAIN COMPONENT LABEL ASSIGNMENT
+            -->
+          </members>
+        </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 Bibliographie
 

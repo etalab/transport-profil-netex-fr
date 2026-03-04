@@ -1,10 +1,10 @@
 ---
-title: "NeTEx - Profil France v2.3 - Parkings"
-date: 2024-11-21T00:00:00+00:02
+title: "NeTEx - Profil France v2.4 - Parkings"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
-weight: 3
+weight: 7
 ---
 
 **Avant-propos**
@@ -48,41 +48,46 @@ des travaux *NeTEx, Transmodel)* qui aujourd’hui fait consensus dans les
 groupes de normalisation (CN03/GT9 – Parking, et CN03/GT7 – Transport
 public / information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896). NeTEx permet non seulement
-d'assurer les échanges pour les systèmes d'information voyageur mais
-traite aussi l’ensemble des concepts nécessaires en entrée et sortie des
-systèmes de planification de l'offre (graphiquage, etc.) et des SAE
-(Systèmes d’Aide à l’Exploitation). NeTEx traite aussi l’ensemble des
-concepts constituant un point de départ, d’arrivé ou une étape au sein
-d’un déplacement (POI, Parkings, etc.). Enfin la récente Partie 5 de
-NeTEx traite des Nouveaux modes de transport (Autopartage, Vélopartage,
-Covoiturage, VTC, etc.).
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
+28701). NeTEx permet non seulement d'assurer les échanges pour les
+systèmes d'information voyageur mais traite aussi l’ensemble des
+concepts nécessaires en entrée et sortie des systèmes de planification
+de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
+l’Exploitation).
 
-NeTEx se décompose en 5 parties:
+NeTEx se décompose en six parties:
 
-- Partie 1 : topologie des réseaux (les réseaux, les lignes, les
-  parcours commerciaux les missions commerciales, les arrêts et lieux
-  d’arrêts, les correspondances et les éléments géographiques en se
-  limitant au strict minimum pour l’information voyageur)
-- Partie 2 : horaires théoriques (les courses commerciales, les heures
-  de passage graphiquées, les jours types associés ainsi que les
-  versions des horaires)
-- Partie 3 : information tarifaire (uniquement à vocation d’information
-  voyageur)
-- Partie 4 : profil Européen pour l’information voyageur (EPIP)
-- Partie 5 : nouveaux modes de transport (Autopartage, Vélopartage,
-  Covoiturage, VTC, etc.).
+-   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
+    parcours commerciaux les missions commerciales, les arrêts et lieux
+    d’arrêts, les correspondances et les éléments géographiques en se
+    limitant au strict minimum pour l’information voyageur)
 
-NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
-France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+-   Partie 2 : horaires théoriques (les courses commerciales, les heures
+    de passage graphiquées, les jours types associés ainsi que les
+    versions des horaires)
+
+-   Partie 3 : information tarifaire (uniquement à vocation
+    d’information voyageur)
+
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
+NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
+la France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferrovaire, en particulier grâce à la
@@ -165,7 +170,7 @@ NeTEx sera nécessaire à sa bonne compréhension.
 # Domaine d'application
 
 Le présent document constitue le profil de la CEN/TS 16614 (NeTEx) pour
-l'échange de données de description d'arrêt en France. Il permet de
+l'échange de données de description des parkings en France. Il permet de
 décrire les parkings et la manière dont ils pourront être structurés
 pour des échanges entre systèmes d'information ainsi que pour leur
 présentation aux voyageurs.
@@ -1378,11 +1383,10 @@ héritage.</p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>NumberOfBaysWithWIthRecharging</strong></em></td>
+<td><em><strong>NumberOfBaysWithRecharging</strong></em></td>
 <td><em>NumberOfSpaces</em></td>
 <td>0:1</td>
-<td>Nombre de place disposant d’une borne de recharge électrique PARKING
-AREA.</td>
+<td>Nombre de places disposant d’une borne de recharge électrique dans le PARKING AREA.</td>
 </tr>
 <tr class="odd">
 <td>« cntd »</td>
@@ -1488,7 +1492,7 @@ PMR.</mark></p></td>
 
 La ***ParkingBay*** correspond à l’emplacement pour garer un véhicule.
 
-<div class='table-title'>ParkingBay – Element</div>
+<div class='table-title'>ParkingBay – Élement</div>
 
 <table class="attributes">
 <thead>
@@ -1507,9 +1511,9 @@ La ***ParkingBay*** correspond à l’emplacement pour garer un véhicule.
 <td><em>SiteComponent</em></td>
 <td><em>::&gt;</em></td>
 <td><p>PARKING BAY hérite de SITE COMPONENT.</p>
-<p>Note : beaucoups d’éléments important comme la gestion des version,
+<p>Note : beaucoups d’éléments importants comme la gestion des versions,
 les conditions de validité ou encore la géométrie, la position et
-l’accessibilité de la place sont issu de cet héritage.</p></td>
+l’accessibilité de la place sont issus de cet héritage. Pour les détails sur l'accessibilité, voir l'annexe 9 du profil accessibilité.</p></td>
 </tr>
 <tr class="even">
 <td>« PK »</td>
@@ -1939,7 +1943,8 @@ pour les piétons (incluant les accès type fauteils roulant, etc.).
 <p>Voir <em><strong>A.2.6-Entrée</strong></em></p>
 <p><mark>Note : Les caractéristiques d’accessibilité des entrées de
 parking peuvent être détaillées par les classiques ACCESSIBILITY
-ASSESMENTs et il est aussi possible d’y associer des FACILITY SET
+ASSESMENTs (voir annexe 9 du profil Accessibilité) et il est aussi 
+possible d’y associer des FACILITY SET
 (services et équipement disponibles)</mark></p>
 <p><mark>Note : dans la chaine d’héritage
 <em><strong>Centroid.Location.Longitude / Latitude</strong></em> sont
@@ -2375,107 +2380,38 @@ n’est pas décrit ici.</span>
 
 # Entêtes NeTEx
 
-*Note: les FRAMEs et entêtes NeTEx sont présentés dans le document
-éléments communs. Seules les spécificités du profil NETEX_PARKING sont
-présentées ici.*
+*Note: les FRAMEs et entêtes NeTEx sont présentés dans le document éléments communs. Seules les spécificités de la partie "Parkings" sont présentées ici.*
+
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
+
+Une GeneralFrame de type **NETEX_PARKING** est utilisée pour échanger la description des parkings dans le fichier "parking.xml". À noter que la tarification des parkings dépend de le partie "Tarifs" du profil France et est attendue dans le fichier "fare.xml". Les objets partagés du profil (par exemple Branding ou VehicleType) sont regroupés dans le fichier "resource.xml".
 
 ## TypeOfFrame : type spécifique *NETEX_PARKING*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_PARKING*** . Il apparaitra systématiquement et explicitement
-dans les éléments ***members*** du ***GeneralFrame***.
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_PARKING`, seuls les objets de premier niveau suivants sont autorisés : 
+- PARKING (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
+- PARKING BAY
 
-<div class='table-title'>TypeOfFrame – Element (objet inclus)</div>
+Voici un exemple de cadre du fichier `parking.xml` :
 
-<table class='attributes'>
-<thead>
-<tr class="header">
-<th><strong>Class.</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Card.</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::&gt;::&gt;</em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><mark>L'Id est imposé à NETEX_</mark>PARKING</p></td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><mark>La liste est fixe pour NETEX_PARKING :</mark></p>
-<ul>
-<li><mark>PARKING (contiendra par includion tous les autres objest comme
-PARKING AREAs, VEHICLE ENTRANCEs, etc.)</mark></li>
-<li><mark>GENERAL ORGANISATION</mark></li>
-<li><mark>RESPONSIBILITY SET</mark></li>
-<li><mark>BRANDING</mark></li>
-<li><mark>VEHICLE TYPE</mark></li>
-<li><mark>PARKING TARIFF</mark></li>
-<li><mark>USER PROFILE</mark></li>
-<li><mark>USAGE VALIDITY PERIOD</mark></li>
-<li><mark>FARE TABLE</mark></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
-<div class='table-title'>TypeOfValue (pour le TypeOfFrame NETEX_PARKING) – Element</div>
-
-<table class='attributes'>
-<thead>
-<tr class="header">
-<th><strong>Class.</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Card.</strong></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>DataManagedObject</em></td>
-<td>::&gt;</td>
-<td><p><mark>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</mark></p>
-<p><mark>L’attribut <em><strong>version</strong></em> portera la version
-du profil</mark></p>
-<p><mark>L'Identifiant du TYPE OF VALUE est imposé à
-NETEX_PARKING</mark></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p><mark>Nom du TYPE OF VALUE.</mark></p>
-<p><mark>Imposé à « NETEX PARKING ».</mark></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><mark>Imposé à « Profil d’échange français NETEX
-ARRET »</mark>.</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2026-02-17T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_Parking-sample" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_PARKING" />
+      <members>
+        <!--
+          Parking (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
+          ParkingBay
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 # Modalités d’échange
 
@@ -5809,9 +5745,8 @@ conventionelle) … complété par un AccessibilityAssesment</td>
 d’une infrastructure de recharge opérationnelle.</td>
 <td class="red">3</td>
 <td>Valeur optionnelle</td>
-<td>ParkingArea.NumberOfBaysWithWIthRecharging</td>
-<td>Est-ce que cela veut bien dire: "place équipée d'une boren de
-recharge" ?</td>
+<td>ParkingArea.NumberOfBaysWithRecharging</td>
+<td>Est-ce que cela veut bien dire : "place équipée d'une borne de recharge" ?</td>
 </tr>
 <tr class="odd">
 <td>nb_velo</td>
@@ -5835,7 +5770,7 @@ prise <span class="red">électrique</span> dédiée.</td>
 <td>Valeur optionnelle</td>
 <td>ParkingArea.TotalCapacity + ParkingArea.ParkingVehicleType
 (pedalCycle, moped, etc.) +
-ParkingArea.NumberOfBaysWithWIthRecharging</td>
+ParkingArea.NumberOfBaysWithRecharging</td>
 <td> </td>
 </tr>
 <tr class="odd">

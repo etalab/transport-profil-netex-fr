@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../NeTEx/xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2025-08-19T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>TT</ParticipantRef>
+	<dataObjects>
+		<CompositeFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+			<frames>
+				<GeneralFrame id="FR-Tarif-FareStructureElement:CompositeFrame:myFrame01" version="1">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members>
+								
+					<!-- Liste des FareStructureElement de type fr:travel_conditions -->
+						<FareStructureElement id="exemple:FareStructureElement:Interchanging-01" version="any">
+							<Name>Trajets avec correspondance</Name>
+							<TypeOfFareStructureElementRef ref="FR:Interchanging" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:Interchanging-01" version="any">
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<Interchanging id="exemple:Interchanging:01" version="any">
+											<CanInterchange>true</CanInterchange> <!-- Requis -->
+											<MaximumNumberOfInterchanges>3</MaximumNumberOfInterchanges> <!-- Optionel -->
+											<MaximumTimeToMakeATransfer>PT30M</MaximumTimeToMakeATransfer>  <!-- Optionel -->
+											<!-- Proposition de ne pas conserver les balises. Certains cas complexes 
+												   pourront être décrits avec une Notice.
+												FromMode
+												ToMode
+												CanBreakJourney
+												CrossBorder
+												RegisterBreakOfJourney
+											-->
+										</Interchanging>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="exemple:FareStructureElement:Transferability-01" version="any">
+							<Name>Non transférable</Name>
+							<TypeOfFareStructureElementRef ref="FR:Transferability" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:Transferability-01" version="any">
+									<limitations>
+										<Transferability id="exemple:Transferability:01" version="any">
+											<CanTransfer>true</CanTransfer> <!-- Requis, une utilisation multiple d'un titre est considérée comme un transfert -->
+											<HasTransferFee>false</HasTransferFee> <!-- Optionnel -->
+											<SharedUsage>concurrentUsers</SharedUsage> <!-- Optionnel -->
+											<!-- proposition de ne pas conserver les champs 
+											<MaximumNumberOfNamedTransferees>
+											-->
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="exemple:FareStructureElement:RoundTrip-01" version="any">
+							<Name>Permet de faire des trajets multiples</Name>
+							<TypeOfFareStructureElementRef ref="FR:RoundTrip" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:RoundTrip-01" version="any">
+									<limitations>
+										<RoundTrip id="exemple:RoundTrip:01" version="any">
+											<TripType>multiple</TripType>
+											<IsRequired>false</IsRequired> <!-- optionnel -->
+											<!-- proposition de ne pas conserver les champs 
+											DoubleSingleFare
+											ShortTrip
+											-->
+										</RoundTrip>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="exemple:FareStructureElement:Routing-01" version="any">
+							<Name>Ne permet pas des trajets frontaliers (TITRE A CONFIRMER)</Name> <!-- semble une simple indication, pas une interdiction -->
+							<TypeOfFareStructureElementRef ref="FR:Routing" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:Routing-01" version="any">
+									<limitations>
+										<Routing id="exemple:Routing:01" version="any">
+											<ReturnRouteIdentical>false</ReturnRouteIdentical> <!-- optionnel -->
+											<ForwardsOnly>true</ForwardsOnly><!-- optionnel -->
+											<CrossBorder>false</CrossBorder>
+											<!-- proposition de balises non retenues
+											IsRestricted
+											-->
+										</Routing>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="exemple:FareStructureElement:StepLimit-01" version="any">
+							<Name>Minimum 2 arrêts</Name>
+							<TypeOfFareStructureElementRef ref="FR:StepLimit" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:StepLimit-01" version="any">
+									<limitations>
+										<StepLimit id="exemple:StepLimit:01" version="any">
+											<Restricted>false</Restricted> <!-- optionnel -->
+											<AdjustmentUnits>stops</AdjustmentUnits>
+											<MinimumNumberOfSteps>2</MinimumNumberOfSteps>
+											<!-- autres balises possibles
+											<MaximumNumberOfSteps></MaximumNumberOfSteps>
+											-->
+											<!-- proposition de balises non retenues
+											<MaximumNumberOfTrips></MaximumNumberOfTrips>
+											-->
+										</StepLimit>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<FareStructureElement id="exemple:FareStructureElement:eligibility-01" version="any">
+							<Name>Groupe de 2 à 5</Name>
+							<TypeOfFareStructureElementRef ref="FR:Eligibility" versionRef="any" />
+							<GenericParameterAssignment id="exemple:GenericParameterAssignment:eligibility-01" version="any">
+									<limitations>
+										<GroupTicket id="exemple:Eligibility:01" version="any">
+											<MinimumNumberOfPersons>2</MinimumNumberOfPersons> <!-- Requis -->
+											<MaximumNumberOfPersons>5</MaximumNumberOfPersons> <!-- Requis -->
+											<PricingBasis>perOffer</PricingBasis>  <!-- Optionnel -->
+											<GroupSizeChanges>free</GroupSizeChanges> <!-- Optionnel -->
+											<JointCheckIn>required</JointCheckIn> <!-- Requis -->
+
+											<!-- Les balises ci-dessous ne sont pas retenues dans le profil France. 
+											Une Notice décrivant ces informations devra être ajoutée.
+											
+											<MinimumNumberOfCardHolders>1</MinimumNumberOfCardHolders>
+											<MaximumPersonsFree>1</MaximumPersonsFree>
+											<MaximumPersonsDiscounted>3</MaximumPersonsDiscounted>
+											<DiscountOnlyForFirstPerson>false</DiscountOnlyForFirstPerson>
+											-->
+										</GroupTicket>
+									</limitations>
+							</GenericParameterAssignment>
+						</FareStructureElement>
+
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>

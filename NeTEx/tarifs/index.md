@@ -1,10 +1,10 @@
 ---
-title: "NeTEx - Profil France v2.3 - Tarifs"
-date: 2024-11-21T00:00:00+01:00
+title: "NeTEx - Profil France v2.4 - Tarifs"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
-weight: 7
+weight: 6
 ---
 
 **Avant-propos**
@@ -49,43 +49,46 @@ données de description des offres tarifaires" (issu des travaux NeTEx,
 et Transmodel) qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en cinq parties :
+NeTEx se décompose en six parties:
 
-- Partie 1 : topologie des réseaux (les réseaux, les lignes, les
-  parcours commerciaux les missions commerciales, les arrêts et lieux
-  d’arrêts, les correspondances et les éléments géographiques en se
-  limitant au strict minimum pour l’information voyageur)
+-   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
+    parcours commerciaux les missions commerciales, les arrêts et lieux
+    d’arrêts, les correspondances et les éléments géographiques en se
+    limitant au strict minimum pour l’information voyageur)
 
-- Partie 2 : horaires théoriques (les courses commerciales, les heures
-  de passage graphiquées, les jours types associés ainsi que les
-  versions des horaires)
+-   Partie 2 : horaires théoriques (les courses commerciales, les heures
+    de passage graphiquées, les jours types associés ainsi que les
+    versions des horaires)
 
-- Partie 3 : information tarifaire (uniquement à vocation d’information
-  voyageur)
+-   Partie 3 : information tarifaire (uniquement à vocation
+    d’information voyageur)
 
-- Partie 4 : Profil Européen pour l’information voyageur (EPIP :
-  European Passenger Information Profile)
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
 
-- Partie 5 : NeTEx New Modes extension (vehicle sharing, vehicle
-  pooling, etc.)
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
 
 NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+la France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferrovaire, en particulier grâce à la
@@ -138,25 +141,18 @@ des informations comme :
 
 - etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et
-Île-de-France Mobilités (un profil SIRI Frane, qui en découle, est en
-cours d’élaboration). Ces deux profils ont une vocation nationale. Le
-groupe de travail GT7 (AFNOR BNTRA/CN 03/GT 7) a élaboré une sélection
-des concepts Transmodel nécessaire à la description des horaires en
-France (à vocation d'information voyageur essentiellement). C'est sur la
-base de cette sélection qu'est élaboré le présent profil.
+Ce document présente la partie Tarifs du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-D'autre profils de NeTEx sont disponibles (arrêt, réseau, horaire). Ils
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseau, horaire, accessibilité, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur un document partagé: **NeTEx - Profil Français de
-NETEx: éléments communs.** Il conviendra de se référer à ce document
-pour tous les éléments utilisés dans le présent document, et dont la
-structure n'est pas détaillée.
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
+les éléments utilisés dans le présent document, et dont la structure
+n'est pas détaillée.
+
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
-description des horaires de transport public de façon :
+description des tarifs de transport public de façon :
 
 - à pouvoir les présenter d’une manière homogène et compréhensible à
   l’usager des transports publics sur des supports différents (papier ou
@@ -202,6 +198,8 @@ transport network topology exchange format
 
 CEN/TS 16614-2, Network and Timetable Exchange (NeTEx) — Part 2: Public
 transport scheduled timetables exchange format
+
+CEN/TS 16614-3, Network and Timetable Exchange (NeTEx) — Part 3: Public transport fares exchange format
 
 EN 12896, Road transport and traffic telematics - Public transport -
 Reference data model (Transmodel)
@@ -1449,234 +1447,42 @@ construction des structures tarifaires.
 
 <div class='table-title'>FareStructureElement – Element</div>
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classification</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em><u>PriceableObject</u></em></td>
-<td>::&gt;</td>
-<td>FARE STRUCTURE ELEMENT hérite de PRICEABLE
-OBJECT<em><strong>.</strong></em></td>
-</tr>
-<tr class="even">
-<td>« PK »</td>
-<td><em><strong>id</strong></em></td>
-<td><em>FareStructureElementIdType</em></td>
-<td>1:1</td>
-<td>Identifiant de FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« enum »</td>
-<td><em><strong>TariffBasis</strong></em></td>
-<td><em>TariffBasisEnum</em></td>
-<td>0:1</td>
-<td><p>Base tarifaire à utiliser pour cet élément</p>
-<blockquote>
-<p><em>Flat (constant)</em></p>
-<p><em>Distance (distance)</em></p>
-<p><em>unitSection (section)</em></p>
-<p><em>zone (zonal)</em></p>
-<p><em>zoneToZone (zone à zone)</em></p>
-<p><em>pointToPoint (point à point)</em></p>
-<p><em>route (itinéraire)</em></p>
-<p><em>tour (tour)</em></p>
-<p><em>group (group)</em></p>
-<p><em>discount (rabais)</em></p>
-<p><em>period (période)</em></p>
-<p><em>free (gratuit)</em></p>
-<p><em>other (autre)</em></p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>TypeOfFareStructureElementRef</strong></em></td>
-<td><em>TypeOfFareStructureElementRef</em></td>
-<td>0:1</td>
-<td>Type ouvert associé à l’élément .</td>
-</tr>
-<tr class="odd">
-<td>XGRP</td>
-<td><em><strong>FareStructureElementFactorGroup</strong></em></td>
-<td><em>xmlGroup</em></td>
-<td>0:1</td>
-<td>FARE STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>XGRP</td>
-<td><em><strong>FareStructureComponentGroup</strong></em></td>
-<td><em>xmlGroup</em></td>
-<td>0:1</td>
-<td>FARE STRUCTURE COMPONENTs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation**  | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
+| ------------------- | --------------------------- | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| ::&gt; | ::&gt; | <u>*PriceableObject*</u> | ::&gt; | FARE STRUCTURE ELEMENT hérite de PRICEABLE OBJECT |
+| « PK » | ***id*** | *FareStructureElementIdType* | 1:1 | Identifiant de FARE STRUCTURE ELEMENT |
+| « enum » | ***TariffBasis*** | *TariffBasisEnum* | 0:1 | <p>Base tarifaire à utiliser pour cet élément</p><p><ul><li>Flat (constant)</li><li>Distance (distance)</li><li>unitSection (section)</li><li>zone (zonal)</li><li>zoneToZone (zone à zone)</li><li>pointToPoint (point à point)</li><li>route (itinéraire)</li><li>tour (tour)</li><li>group (group)</li><li>discount (rabais)</li><li>period (période)</li><li>free (gratuit)</li><li>other (autre)</li></ul></p> |
+| | ***TypeOfFareStructureElementRef*** | *TypeOfFareStructureElementRef* | 0:1 | Type ouvert associé à l’élément |
+| XGRP | ***FareStructureElementFactorGroup*** | *xmlGroup* | 0:1 | FARE STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| XGRP | ***FareStructureComponentGroup*** | *xmlGroup* | 0:1 | FARE STRUCTURE COMPONENTs associé au FARE STRUCTURE ELEMENT |
 
 <div class='table-title'>FareStructureElementFactorGroup – Group</div>
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classification</strong></th>
-<th colspan="2"><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td colspan="3"></td>
-<td><em>Choice</em></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>GeographicalIntervalRef</strong></em></td>
-<td><em>GeographicalIntervalRef</em></td>
-<td>0:1</td>
-<td><p>Reference au GEOGRAPHICAL INTERVAL associé au FARE STRUCTURE
-ELEMENT.</p>
-<p><mark>Note : de façon générale on n’utilisera les références que s’il y
-a effectivement réutilisation (donc ici on préférera
-<em><strong>geographicalIntervals</strong> à
-<strong>GeographicalIntervalRef</strong> sauf si les mêmes
-<strong>GeographicalInterval</strong> sont utilisés à plusieurs
-reprises)</em></mark></p></td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>geographicalIntervals</strong></em></td>
-<td><em><u>GeographicalInterval</u></em> |
-<em>GeographicalIntervalRef</em></td>
-<td>0:*</td>
-<td>GEOGRAPHICAL INTERVALs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>c</strong></em></td>
-<td><em><strong>geographicalStructureFactors</strong></em></td>
-<td><em><u>GeographicalStructureFactor</u> |
-GeographicalStructureFactorRef</em></td>
-<td>0:*</td>
-<td>GEOGRAPHICAL STRUCTURE FACTORs associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td colspan="3"></td>
-<td><em>Choice</em></td>
-<td colspan="2"></td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>TimeIntervalRef</strong></em></td>
-<td><em>TimeIntervalRef</em></td>
-<td>0:1</td>
-<td>Référence au TIME INTERVAL ass associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>timeIntervals</strong></em></td>
-<td><em><u>TimeInterval</u> | TimeIntervalRef</em></td>
-<td>0:*</td>
-<td>TIME STRUCTURE INTERVALs associé au the FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>c</strong></em></td>
-<td><em><strong>timeStructureFactors</strong></em></td>
-<td><em><u>TimeStructureFactor</u> | TimeStructureFactorRef</em></td>
-<td>0:*</td>
-<td>TIME STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td><em>Choice</em></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>QualityStructureFactorRef</strong></em></td>
-<td><em>QualityStructureFactorRef</em></td>
-<td>0:1</td>
-<td>Référence au QUALITY STRUCTURE FACTOR associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>qualityStructureFactors</strong></em></td>
-<td><em><u>QualityStructureFactor</u> | QualityStructureFactor</em></td>
-<td>0:*</td>
-<td>QUALITY STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td colspan="3"></td>
-<td><em>Choice</em></td>
-<td colspan="2"></td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>a</strong></em></td>
-<td><em><strong>DistanceMatrixElementRef</strong></em></td>
-<td><em>DistanceMatrixElementRef</em></td>
-<td>0:1</td>
-<td>Référence au DISTANCE MATRIX ELEMENT associé au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>b</strong></em></td>
-<td><em><strong>distanceMatrixElements</strong></em></td>
-<td><em><u>DistanceMatrixElement</u> |
-DistanceMatrixElementRef</em></td>
-<td>0:*</td>
-<td>DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>c</strong></em></td>
-<td><em><strong>GroupOfDistanceMatrixElementsRef</strong></em></td>
-<td><em>GroupOfDistanceMatrixElementsRef</em></td>
-<td>0:1</td>
-<td>Référence au GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE
-STRUCTURE ELEMENT.</td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>d</strong></em></td>
-<td><em><strong>GroupOfDistanceMatrixElements</strong></em></td>
-<td><em>GroupOfDistanceMatrixElements</em></td>
-<td>0:1</td>
-<td>GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE
-ELEMENT.</td>
-</tr>
-</tbody>
-</table>
+| **Classifi­cation**  | | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
+| ------------------- | --- | ------------------------ | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***GeographicalIntervalRef*** | *GeographicalIntervalRef* | 0:1 | <p>Référence au GEOGRAPHICAL INTERVAL associé au FARE STRUCTURE ELEMENT.</p><p><span class="hl">Note : de façon générale on n’utilisera les références que s’il y a effectivement réutilisation (donc ici on préférera **geographicalIntervals** à **GeographicalIntervalRef** sauf si les mêmes **GeographicalInterval** sont utilisés à plusieurs reprises)</span></p> |
+| « cntd » | ***b*** | ***geographicalIntervals*** | <u>*GeographicalInterval*</u> / *GeographicalIntervalRef* | 0:\* | GEOGRAPHICAL INTERVALs associé au FARE STRUCTURE ELEMENT |
+| « cntd » | ***c*** | ***geographicalStructureFactors*** | <u>*GeographicalStructureFactor*</u> / *GeographicalStructureFactorRef*</td> | 0:\* | GEOGRAPHICAL STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***TimeIntervalRef*** | *TimeIntervalRef* | 0:1 | Référence au TIME INTERVAL associé au FARE STRUCTURE ELEMENT |
+| « cntd » | ***b*** | ***timeIntervals***  | <u>*TimeInterval*</u> / *TimeIntervalRef* | 0:\* | TIME STRUCTURE INTERVALs associé au FARE STRUCTURE ELEMENT. |
+| « cntd » | ***c*** | ***timeStructureFactors*** | <u>*TimeStructureFactor*</u> / *TimeStructureFactorRef* | 0:\* | TIME STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***QualityStructureFactorRef*** | *QualityStructureFactorRef* | 0:1 | Référence au QUALITY STRUCTURE FACTOR associé au FARE STRUCTURE ELEMENT |
+| « cntd » | ***b*** | ***qualityStructureFactors*** | <u>*QualityStructureFactor*</u> / *QualityStructureFactor* | 0:\* | QUALITY STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
+| | ***Choice*** | | | | |
+| « FK » | ***a*** | ***DistanceMatrixElementRef*** | *DistanceMatrixElementRef* | 0:1 | Référence au DISTANCE MATRIX ELEMENT associé au FARE STRUCTURE ELEMENT |
+| « FK » | ***b*** | ***distanceMatrixElements*** | <u>*DistanceMatrixElement*</u> / *DistanceMatrixElementRef* | 0:\* | DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT |
+| « FK » | ***c*** | ***GroupOfDistanceMatrixElementsRef*** | *GroupOfDistanceMatrixElementsRef* | 0:1 | Référence au GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT |
+| « FK » | ***d*** | ***GroupOfDistanceMatrixElements*** | *GroupOfDistanceMatrixElements* | 0:1 | GROUP OF DISTANCE MATRIX ELEMENTs associés au FARE STRUCTURE ELEMENT |
 
 <div class='table-title'>FareStructureComponentGroup – Group</div>
 
 | **Classification** | **Name**                              |                                           | **Type**                         | **Cardinality** | **Description**                                                                                                                                              |
 |--------------------|---------------------------------------|-------------------------------------------|----------------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | « cntd »           | ***fareStructureElementsInSequence*** |                                           | *FareStructureElementInSequence* | 0:\*            | Ensemble de FARE STRUCTURE ELEMENTS IN SEQUENCE constituant FARE STRUCTURE ELEMENT.                                                                          |
-|                    |                                       |                                           | *Choice*                         |                 | Soit plusieurs paramètres enveloppés dans une balise, soit un seul paramètre (une optimisation).                                                             |
+|                                       | *Choice*                         |  Soit plusieurs paramètres enveloppés dans une balise, soit un seul paramètre (une optimisation).                                                             | | |
 | « cntd »           | ***a***                               | ***validityParameterAssignments***        | *AccessRightParameterAssignment* | 0:\*            | GENERIC PARAMETER ASSIGNMENTs associés au FARE STRUCTURE ELEMENT.                                                                                            |
 | « cntd »           | ***b***                               | ***GenericParameterAssignment***          | *GenericParameterAssignment*     | 0:1             | GENERIC PARAMETER ASSIGNMENT unique associé au FARE STRUCTURE ELEMENT.                                                                                       |
 | « cntd »           | ***c***                               | ***GenericParameterAssignmentInContext*** | *GenericParameterAssignment*     | 0:1             | GENERIC PARAMETER ASSIGNMENT unique associé au FARE STRUCTURE ELEMENT. Aucun ID ne doit être fourni - sera déduit des valeurs d'affectation. (OPTIMISATION). |
@@ -2852,7 +2658,7 @@ conceptuel*
 
 | **Classification** | **Name**            | **Type**                   | **Cardinality** | **Description**                                                                     |
 |--------------------|---------------------|----------------------------|-----------------|-------------------------------------------------------------------------------------|
-| ::\>               | ::\>                | *<u>PriceableObject</u>*   | ::\>            | SERVICE ACCESS RIGHT hérite de PRICEABLE OBJECT***.***                              |
+| ::\>               | ::\>                | *<u>PriceableObject</u>*   | ::\>            | SERVICE ACCESS RIGHT hérite de PRICEABLE OBJECT.                             |
 | « PK »             | ***id***            | *ServiceAccessRightIdType* | 1:1             | Identifiant du SERVICE ACCESS RIGHT.                                                |
 | « AK »             | ***PrivateCode***   | *PrivateCodeType*          | 0:1             | Identifiant alternatif; peut être utilisé pour s'associer à des systèmes existants. |
 |                    | ***InfoUrl***       | *xsd:anyURI*               | 0:1             | Lien ver les informations sur le produit.                                           |
@@ -2860,102 +2666,16 @@ conceptuel*
 
 <div class='table-title'>FareProduct – Element (abstrait)</div>
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classification</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Cardinality</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em><u>PriceableObject</u></em></td>
-<td>::&gt;</td>
-<td><p>FARE PRODUCT hérite de SERVICE ACCESS
-RIGHT<em><strong>.</strong></em></p>
-<p><mark>Note : cet héritage fournit entre autres un attribut
-<em><strong>noticeAssignments</strong></em> ; dans le contexte de ce
-profil, c’est au niveau des <em><strong>SalesOfferPackage</strong></em>
-et <em><strong>FareProducts</strong></em> que l’on placera les
-Notices.</mark></p></td>
-</tr>
-<tr class="even">
-<td>« PK »</td>
-<td><em><strong>id</strong></em></td>
-<td><em>FareProductIdType</em></td>
-<td>0:1</td>
-<td>Identifiant du FARE PRODUCT.</td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>ChargingMomentRef</strong></em></td>
-<td><em>ChargingMomentRef</em></td>
-<td>0:1</td>
-<td>Référence à CHARGING MOMENT associé au produit.</td>
-</tr>
-<tr class="even">
-<td>« enum »</td>
-<td><em><strong>ChargingMomentType</strong></em></td>
-<td><em>ChargingMomentTypeEnum</em></td>
-<td>0:1</td>
-<td><p>Énumération des valeurs normalisées du moment de paiement.</p>
-<blockquote>
-<p><em>beforeTravel (avant le voyage)</em></p>
-<p><em>onStartOfTravel (au départ du voyage)</em></p>
-<p><em>beforeEndOfTravel (avant la fin du voyage)</em></p>
-<p><em>onStartThenAdjustAtEndOfTravel (au départ avec ajustement à la
-fin du voyage)</em></p>
-<p><em>onStarThenAdjustAtEndOfFareDay (au départ avec ajustement en fin
-de journée)</em></p>
-<p><em>onStartThenAdjustAtEndOfChargePeriod (au départ avec ajustement
-en fin de période tarifaire)</em></p>
-<p><em>atEndOfTravel (à la fin du voyage)</em></p>
-<p><em>atEndOfFareDay (à la fin de la journée tarifaire)</em></p>
-<p><em>atEndOfChargePeriod (à la fin de la période tarifaire)</em></p>
-<p><em>free (gratuit)</em></p>
-<p><em>anyTime (à n’importe quel moment)</em></p>
-<p><em>other (autre)</em></p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td>« FK »</td>
-<td><em><strong>typesOfFareProductRef</strong></em></td>
-<td><em>TypeOfFareProductRef</em></td>
-<td>0:*</td>
-<td>Classifications du FARE PRODUCT.</td>
-</tr>
-<tr class="even">
-<td>« FK »</td>
-<td><em><strong>TransportOrganisationRef</strong></em></td>
-<td><em>(TransportOrganisationRef) OperatorRef | AuthorityRef</em></td>
-<td>0:1</td>
-<td>OPERATOR ou AUTHORITY en charge du FARE PRODUCT.</td>
-</tr>
-<tr class="odd">
-<td>« cntd »</td>
-<td><em><strong>ConditionSummary</strong></em></td>
-<td><em><u>ConditionSummary</u></em></td>
-<td>0:1</td>
-<td><p>Résumé des conditions associées au FARE PRODUCT.</p>
-<p><mark>Note : dans le cadre du profil, seuls certains attributs des
-<em><strong>ConditionSummary</strong></em> sont acceptés pour le
-<em><strong>FareProduct</strong></em> (voir description des
-<em><strong>ConditionSummary</strong></em> plus haut).</mark></p></td>
-</tr>
-<tr class="even">
-<td>XGRP</td>
-<td><em><strong>FareProductValidityGroup</strong></em></td>
-<td><em>FareProductRef</em></td>
-<td>0:1</td>
-<td>Informations de validité relatives au FARE PRODUCT.</td>
-</tr>
-</tbody>
-</table>
+| **Classification** | **Name**            | **Type**                   | **Cardinality** | **Description**                                                                     |
+|--------------------|---------------------|----------------------------|-----------------|-------------------------------------------------------------------------------------|
+| ::\>               | ::\>                | *<u>PriceableObject</u>*  | ::\>            | FARE PRODUCT hérite de SERVICE ACCESS RIGHT. <br><span class="hl">Note : cet héritage fournit entre autres un attribut ***noticeAssignments*** ; dans le contexte de ce profil, c’est au niveau des ***SalesOfferPackage*** et ***FareProducts*** que l’on placera les Notices.</span>                                     | 
+| « PK »             | ***id***                | *FareProductIdType*   | 0:1            | Identifiant du FARE PRODUCT.                             |
+| « FK »               | ***ChargingMomentRef***                | *ChargingMomentRef*   | 0:1            | Référence à CHARGING MOMENT associé au produit.  |
+| « enum »               | ***ChargingMomentType***                | *ChargingMomentTypeEnum*   | 0:1            | <p>Énumération des valeurs normalisées du moment de paiement.</p><p><ul><li>beforeTravel (avant le voyage)</li><li>onStartOfTravel (au départ du voyage)</li><li>beforeEndOfTravel (avant la fin du voyage)</li><li>onStartThenAdjustAtEndOfTravel (au départ avec ajustement à la fin du voyage)</li><li>onStarThenAdjustAtEndOfFareDay (au départ avec ajustement en fin de journée)</li><li>onStartThenAdjustAtEndOfChargePeriod (au départ avec ajustement en fin de période tarifaire)</li><li>atEndOfTravel (à la fin du voyage)</li><li>atEndOfFareDay (à la fin de la journée tarifaire)</li><li>atEndOfChargePeriod (à la fin de la période tarifaire)</li><li>free (gratuit)</li><li>anyTime (à n’importe quel moment)</li><li>other (autre)</li></ul></p> |
+| « FK »               | ***typesOfFareProductRef***                | *TypeOfFareProductRef*   | 0:\*            | Classifications du FARE PRODUCT.  |
+| « FK »               | ***TransportOrganisationRef***                | *(TransportOrganisationRef) OperatorRef / AuthorityRef*  | 0:1            | OPERATOR ou AUTHORITY en charge du FARE PRODUCT.  |
+| « cntd »               | ***ConditionSummary***                | *<u>ConditionSummary</u>*   | 0:1            | <p>Résumé des conditions associées au FARE PRODUCT.</p> <p><span class="hl">Note : dans le cadre du profil, seuls certains attributs des ***ConditionSummary*** sont acceptés pour le ***FareProduct*** (voir description des ***ConditionSummary***).</span></p>  |
+| XGRP               | ***FareProductValidityGroup***                | *FareProductRef*</em>*   | 0:1            | 	Informations de validité relatives au FARE PRODUCT.  |
 
 <div class='table-title'>FareProductValidityGroup – Group</div>
 
@@ -5283,7 +5003,7 @@ REQUIS.
   qu’accompagnateur d'un autre PROFIL UTILISATEUR ;
 
 - QUALIFICATION RÉSIDENTIELLE, catégorisant les utilisateurs en fonction
-  de leurs lieu de résidence ;
+  de leur lieu de résidence ;
 
 - POLITIQUE DE CHANGEMENT D'ÉLIGIBILITÉ, spécifiant l'action à
   entreprendre si l'éligibilité d'un utilisateur pour un profil donné
@@ -5293,7 +5013,7 @@ Les CONDITIONS D’UTILISATION des droits peuvent préciser les droits
 préalablement requis pour un produit, ou les droits donnés par un
 produit.
 
-- DROIT REQUIS, indiquant si un PRODUIT requis pour pouvoir utiliser le
+- DROIT REQUIS, indiquant si un PRODUIT est requis pour pouvoir utiliser le
   droit d'accès (carte famille nombreuse par exemple) ;
 
 - DROIT DONNÉ, indiquant si un produit permet d’en utiliser d’autres.
@@ -5354,10 +5074,10 @@ PÉNALITÉ.
 |                    | ***Url***                     | *xsd:anyUri*              | 0:1             | Url associé au parameter.                         |
 | « FK »             | ***TypeOfUsageParameterRef*** | *TypeOfUsageParameterRef* | 0:1             | Type de USAGE PARAMETER (***TypeofValue***).      |
 
-Les figures ci-dessous présente les modèles de données pour l’ensemble
-des conditions d’utilisation. Ces conditions sont à prendre tel-quel et
-il n’y a pas de véritable intérêt à leur applique un travail de profil,
-les tableaux d’attributs qui leur correspondent on don été placés en
+Les figures ci-dessous présentent les modèles de données pour l’ensemble
+des conditions d’utilisation. Ces conditions sont à prendre telles quelles et
+il n’y a pas de véritable intérêt à leur appliquee un travail de profil,
+les tableaux d’attributs qui leur correspondent ont donc été placés en
 annexe (en anglais) pour référence (ceci afin de ne pas surcharger
 inutilement la partie principale de ce document).
 
@@ -6265,137 +5985,69 @@ d’itinéraire).
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profil NETEX_TARIF sont présentées
-ici.*
+communs. Seules les spécificités de la partie "Tarifs" sont présentées ici.*
+
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
+
+Une GeneralFrame de type **NETEX_TARIF** est utilisée pour échanger la description des données tarifaires 
+dans le fichier `fare.xml`. 
 
 ## TypeOfFrame : type spécifique *NETEX_TARIF*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_TARIF***. Il apparaitra systématiquement et explicitement dans
-les éléments ***members*** du ***GeneralFrame***.
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_TARIF`, seuls les objets de premier niveau suivants sont autorisés : 
+- StopPlace
+- FareZone (l'objet TarifZone doit être spécialisé dans le profil France)
+- FareStructureElement
+- UserProfile
+- DistributionChannel
+- FareProduct qui est un objet abstrait décliné en : 
+  - PreassignedFareProduct 
+  - SaleDiscountRight pour les bons de réduction
+  - UsageDiscountRight pour les cartes de réduction
+  - AmountOfPriceUnit pour l'achat de support, comme la carte Navigo Liberté+
+- SalesOfferPackageElement
+- SalesOfferPackage
+- TypeOfTravelDocument
+- TypeOfPricingRule (permet de préciser la TVA, mais n'est pas requis par le profil France. Voir la FAQ à ce sujet.)
+- DiscountingRule
+- FareTable (les SalesOfferPackagePrice sont inclus dans les Cell de la FareTable)
+- DistanceMatrixElement
 
-<div class='table-title'>TypeOfFrame – Element</div>
+Voici un exemple de cadre du fichier `fare.xml` :
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::&gt;::&gt;</em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><mark>L'Id est imposé à NETEX_TARIF</mark></p></td>
-</tr>
-<tr class="even">
-<td>« cntd »</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
-<p><mark>La liste est fixe pour NETEX_TARIF:</mark></p>
-<ul>
-<li><p><mark>FARE STRUCTURE ELEMENT</mark></p></li>
-<li><p><mark>FARE STRUCTURE ELEMENT IN SEQUENCE</mark></p></li>
-<li><p><mark>QUALITY STRUCTURE FACTOR</mark></p></li>
-<li><p><mark>FARE DEMAND FACTOR</mark></p></li>
-<li><p><mark>TIME DEMAND TYPE</mark></p></li>
-<li><p><mark>FARE QUOTA FACTOR</mark></p></li>
-<li><p><mark>TARIFF</mark></p></li>
-<li><p><mark>TIME INTERVAL</mark></p></li>
-<li><p><mark>TIME STRUCTURE FACTOR</mark></p></li>
-<li><p><mark>TIME UNIT</mark></p></li>
-<li><p><mark>GEOGRAPHICAL INTERVAL</mark></p></li>
-<li><p><mark>GEOGRAPHICAL UNIT</mark></p></li>
-<li><p><mark>GEOGRAPHICAL STRUCTURE FACTOR</mark></p></li>
-<li><p><mark>DISTANCE MATRIX ELEMENT</mark></p></li>
-<li><p><mark>GROUP OF DISTANCE MATRIX ELEMENTS</mark></p></li>
-<li><p><mark>VALIDABLE ELEMENT</mark></p></li>
-<li><p><mark>CONTROLLABLE ELEMENT</mark></p></li>
-<li><p><mark>PREASSIGNED FARE PRODUCT</mark></p></li>
-<li><p><mark>SALE DISCOUNT RIGHT</mark></p></li>
-<li><p><mark>CAPPED DISCOUNT RIGHT</mark></p></li>
-<li><p><mark>SUPPLEMENT PRODUCT</mark></p></li>
-<li><p><mark>USAGE DISCOUNT RIGHT</mark></p></li>
-<li><p><mark>THIRD PARTY PRODUCT</mark></p></li>
-<li><p><mark>SALES OFFER PACKAGE</mark></p></li>
-<li><p><mark>GROUP OF SALES OFFER PACKAGES</mark></p></li>
-<li><p><mark>TYPE OF TRAVEL DOCUMENT</mark></p></li>
-<li><p><mark>DISTRIBUTION CHANNEL</mark></p></li>
-<li><p><mark>DISTRIBUTION ASSIGNMENT</mark></p></li>
-<li><p><mark>ACCESS RIGHT PARAMETER ASSIGNMENT</mark></p></li>
-<li><p><mark>USAGE VALIDITY PARAMETER</mark></p></li>
-<li><p><mark>VALIDITY PARAMETER ASSIGNMENT</mark></p></li>
-<li><p><mark>GENERIC PARAMETER ASSIGNMENT</mark></p></li>
-<li><p><mark>SCOPING VALIDITY PARAMETERS</mark></p></li>
-<li><p><mark>USAGE PARAMETER (and all inheriting
-objects)</mark></p></li>
-<li><p><mark>FARE TABLE (and associated object, cell,
-etc.)</mark></p></li>
-<li><p><mark>SALES OFFER PACKAGE PRICE</mark></p></li>
-<li><blockquote>
-<p><mark>PRICING SERVICE</mark></p>
-</blockquote></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
-<div class='table-title'>TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE) – Element</div>
-
-<table>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::&gt;</td>
-<td>::&gt;</td>
-<td><em>DataManagedObject</em></td>
-<td>::&gt;</td>
-<td><p>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</p>
-<p><mark>L’attribut <em><strong>version</strong></em> portera la version
-du profil.</mark></p>
-<p><mark>L'Identifiant du TYPE OF VALUE est imposé à
-NETEX_TARIF.</mark></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><mark>Imposé à « NETEX TARIF ».</mark></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><mark>Imposé à « Profil d’échange français NETEX
-TARIF ».</mark></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_Tarif-sample" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF" />
+      <members>
+        <!--
+          FareZone
+          FareStructureElement
+          UserProfile
+          DistributionChannel
+          FareProduct qui est un objet abstrait décliné en : 
+             - PreassignedFareProduct 
+             - SaleDiscountRight pour les bons de réduction
+             - UsageDiscountRight pour les cartes de réduction
+             - AmountOfPriceUnit pour l'achat de support, comme la carte Navigo Liberté+
+          SalesOfferPackageElement
+          SalesOfferPackage
+          TypeOfTravelDocument
+          TypeOfPricingRule 
+          DiscountingRule
+          FareTable 
+          DistanceMatrixElement
+          ParkingTariff
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 <div class="annexes">
 

@@ -1,10 +1,10 @@
 ---
-title: "NeTEx - Profil France v2.3 - Horaires"
-date: 2024-11-21T00:00:00+00:02
+title: "NeTEx - Profil France v2.4 - Horaires"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
-weight: 5
+weight: 4
 ---
 
 **Avant-propos**
@@ -51,41 +51,46 @@ données de description des horaires" (issu des travaux *NeTEx,
 Transmodel et IFOPT)* qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-
-
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-
-
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
 
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
 NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se
-termineront courant 2014sont terminés en 2016.
+la France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferrovaire, en particulier grâce à la
@@ -148,20 +153,13 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et
-Île-de-France Mobilités. Ces deux profils ont une vocation nationale. Le
-groupe de travail GT7 (AFNOR BNTRA/CN 03/GT 7) a élaboré une sélection
-des concepts Transmodel nécessaire à la description des horaires en
-France (à vocation d'information voyageur essentiellement). C'est sur la
-base de cette sélection qu'est élaboré le présent profil.
+Ce document présente la partie Horaires du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-D'autre profils de NeTEx sont disponibles (arrêt, réseau, tarif). Ils
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseau, tarif, accessibilité, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur un document partagé: **NeTEx - Profil Français de
-NETEx: éléments communs.** Il conviendra de se référer à ce document
-pour tous les éléments utilisés dans le présent document, et dont la
-structure n'est pas détaillée.
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
+les éléments utilisés dans le présent document, et dont la structure
+n'est pas détaillée.
 
 Ce profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
@@ -522,7 +520,7 @@ TEMPLATE SERVICE JOURNEY</strong></td>
 <td><em><strong>Trip plan computation — scheduled modes transport</strong></em></td>
 <td>Vehicles (low floor; wheelchair accessible.)</td>
 <td><strong>VEHICLE TYPE et FACILITIES associées</strong></td>
-<td><p><em>(profil Accessibilité)</em></p>
+<td><p><em>(partie Accessibilité)</em></p>
 <p><strong>EQUIPMENT</strong></p></td>
 <td></td>
 </tr>
@@ -834,6 +832,13 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td>0:*</td>
 <td>Heures de passages planifiées aux arrêts (<em><strong>scheduledStopPoint</strong>)</em>.</td>
 </tr>
+<tr class="even">
+<td>«cntd»</td>
+<td colspan="2"><em><strong>passengerAtStopTimes</strong></em></td>
+<td><em>passengerAtStopTimes_RelStructure</em></td>
+<td>0:*</td>
+<td>Heures auxquelles les passagers doivent être présents avant le départ</td>
+</tr>
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>parts</strong></em></td>
@@ -845,12 +850,20 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 </tr>
 <tr class="odd">
 <td></td>
+<td colspan="2"><em><strong>calls</strong></em></td>
+<td><em>calls_RelStructure</em></td>
+<td>0:*</td>
+<td><p>La notion de Call est une vue agrégée de différentes propriétés lors d'un évènement (souvent le passage à un arrêt)</p>
+<p><span class="hl">Cette notion est héritée de SIRI et ne correspond pas à la modélisation des passages aux arrêts. La notion de Call n'est donc pas retenue dans le profil France.</span></p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
 <td colspan="2"><em><strong>facilities</strong></em></td>
 <td><em>serviceFacilitySets_RelStructure</em></td>
 <td>0:*</td>
-<td>Services disponibles pour cette course (voir le profil accessibilité pour plus de détails).</td>
+<td>Services disponibles pour cette course (voir la partie accessibilité du profil pour plus de détails).</td>
 </tr>
-
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>TrainSize</strong></em></td>
@@ -951,19 +964,16 @@ Pour ***TrainSize*** voir *6.10.1-Train.*
 
 <div class="table-title">PassingTime – Element (objet inclus)</div>
 
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
-|---------------------|---------------------------|------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Name**                  | **Type**               | **Cardin­ality** | **Description**                                                                                                                                                                                                                                                                                                 |
-| *::>*               | *::>*                     | *VersionedChild*       | *::>*            | PASSING TIME hérite de VERSIONED CHILD <span class="hl">(non utilisé dans le profil)</span>                                                                                                                                                                                                                   |
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
-| «FK»                | PointInJourney­PatternRef | PointInLinkSequenceRef | 0:1              | Référence les POINT D'ARRÊT PLANIFIÉ pour lequel on fournit les heures de passage. Ce point peut aussi, de façon plus exceptionnel être un POINT HORAIRE uniquement.                                                                                                                                            |
-|                     | ***DayOffset***           | *xsd:integer*          | 0:1              | Nombre de jour de décalage par rapport au jour de début de course (permet de gérer les courses à cheval sur plusieurs jours).                                                                                                                                                                                   |
+| **Classifi­cation**  | **Name**                  | **Type**               | **Cardin­ality**  | **Description**       |
+|---------------------|---------------------------|------------------------|------------------| ----------------------|
+| *::>*               | *::>*                     | *VersionedChild*       | *::>*            | PASSING TIME hérite de VERSIONED CHILD <span class="hl">(non utilisé dans le profil)</span>                                                                                                                                                                                                                     |
+| «FK»                | PointInJourney­PatternRef  | PointInLinkSequenceRef | 0:1              | Référence les POINT D'ARRÊT PLANIFIÉ pour lequel on fournit les heures de passage. Ce point peut aussi, de façon plus exceptionnel être un POINT HORAIRE uniquement.                                                                                                                                            |
 |                     | ArrivalTime               | xsd:time               | 0:1              | Heure d'arrivée.                                                                                                                                                                                                                                                                                                |
+|                     | ***ArrivalDayOffset***    | *xsd:integer*          | 0:1              | Nombre de jours de décalage par rapport au jour de début de course (permet de gérer les courses à cheval sur plusieurs jours).                                                                                                                                                                                   |
 |                     | DepartureTime             | xsd:time               | 0:1              | Heure de départ.                                                                                                                                                                                                                                                                                                |
-|                     |                           |                        |                  |                                                                                                                                                                                                                                                                                                                 |
+|                     | ***DepartureDayOffset***  | *xsd:integer*          | 0:1              | Nombre de jours de décalage par rapport au jour de début de course (permet de gérer les courses à cheval sur plusieurs jours).                                                                                                                                                                                   |
 |                     | Headway                   | HeadwayInterval        | 0:1              | Temps d'attente moyen avant le prochain passage d'une COURSE empruntant le même PARCOURS.                                                                                                                                                                                                                       |
-|                     | EarliestDeparture­Time    | xsd:time               | 0:1              | Heure de départ au plus tôt <span class="hl">(il s'agit là de l'engagement de service du transporteur ou de l'AOT; il permettra notamment de sécuriser les correspondances; il permet aussi d'indiquer la précision de l'heure de passage, en particuliers aux points ou l'horaire est interpolé).</span>     |
+|                     | EarliestDeparture­Time     | xsd:time               | 0:1              | Heure de départ au plus tôt <span class="hl">(il s'agit là de l'engagement de service du transporteur ou de l'AOT; il permettra notamment de sécuriser les correspondances; il permet aussi d'indiquer la précision de l'heure de passage, en particuliers aux points ou l'horaire est interpolé).</span>     |
 |                     | LatestArrivalTime         | xsd:time               | 0:1              | Heure de d'arrivée au plus tard <span class="hl">(il s'agit là de l'engagement de service du transporteur ou de l'AOT; il permettra notamment de sécuriser les correspondances; il permet aussi d'indiquer la précision de l'heure de passage, en particuliers aux points ou l'horaire est interpolé).</span> |
 
 *<span class="hl">Note: pour les courses en fréquence, les nécessaires
@@ -2100,180 +2110,101 @@ l'identification des voitures est variable d'une course à l'autre.
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profil NETEX_HORAIRE sont présentées
+communs. Seules les spécificités de la partie "horaires" sont présentées
 ici.*
+
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
+
+Une GeneralFrame de type **NETEX_HORAIRE** est utilisée pour échanger la description des horaires d'une ligne dans le fichier "line_xyz.xml". 
 
 ## TypeOfFrame : type spécifique *NETEX_HORAIRE*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_HORAIRE***. Il apparaitra systématiquement et explicitement
-dans les éléments ***members*** du ***GeneralFrame***.
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_HORAIRES`, seuls les objets de premier niveau suivants sont autorisés : 
+- SERVICE JOURNEY
+- SERVICE LINK
+- FLEXIBLE SERVICE PROPERTIES
+- TEMPLATE SERVICE JOURNEY
+- HEADWAY JOURNEY GROUP
+- RHYTHMICAL JOURNEY GROUP
+- COUPLED JOURNEY
+- JOURNEY PART COUPLE
+- JOURNEY PART
+- TRAIN
+- TRAIN COMPONENT
+- COMPOUND TRAIN
+- TRAIN NUMBER
+- TRAIN COMPONENT LABEL ASSIGNMENT
 
-<div class="table-title">TypeOfFrame – Element</div>
+Voici un exemple de cadre du fichier `line_xyz.xml` :
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <CompositeFrame id="FR:CompositeFrame:NETEX_LIGNE-line_xyz:LOC" version="any">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE:" />
+      <frames>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_RESEAU-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_LIGNE_STRUCTURE:" />
+          <members>
+            <Line id="sample" version="any">
+              <Name>Ligne d'exemple</Name>
+            </Line>
+            <!--  Partie Ligne
+              Peut contenir (chaque objet contiendra ses objets sous-jacents, les éléments listés ici pourront être référencés dans les autres objets)
+              LINE 
+              DIRECTION
+              ROUTE
+              ROUTE POINT
+              POINT ON ROUTE
+              ROUTE LINK
+              FLEXIBLE LINE
+              FLEXIBLE ROUTE
+            -->
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à NETEX_HORAIRE</span></p></td>
-</tr>
+            <!--  Partie Reseau
+              DESTINATION DISPLAY
+              FLEXIBLE POINT PROPERTIES
+              FLEXIBLE LINK PROPERTIES
+              SERVICE JOURNEY PATTERN
+              POINT IN JOURNEY PATTERN
+              SCHEDULED STOP POINT
+              TIMING POINT
+              TRANSFER RESTRICTION
+              PASSENGER STOP ASSIGNMENT
+              FLEXIBLE STOP ASSIGNMENT
+              TRAIN STOP ASSIGNMENT
+              SCHEMATIC MAP  
+            -->
+          </members>
+        </GeneralFrame>
 
-
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ HORAIRE:</span></p>
-<ul>
-<li><p><span class="hl">SERVICE JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">FLEXIBLE SERVICE PROPERTIES</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TEMPLATE SERVICE JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">HEADWAY JOURNEY GROUP</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">RHYTHMICAL JOURNEY GROUP</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE JOURNEY INTERCHANGE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">VEHICLE TYPE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COUPLED JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART COUPLE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COMPOUND TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN NUMBER</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT LABEL ASSIGNMENT</span></p>
-<p><span class="hl">Il faut noter que certains éléments ne seront utilisés que pour les descriptions des services ferrés (généralement longue distance, sauf pour TRAIN NUMBER et TRAIN). Il s'agit de :</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COUPLED JOURNEY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART COUPLE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">JOURNEY PART</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">COMPOUND TRAIN</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN NUMBER</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TRAIN COMPONENT LABEL ASSIGNMENT</span></p></li>
-</ul></td>
-</tr>
-
-
-</tbody>
-</table>
-
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX\_ HORAIRE) – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</p>
-<p><span class="hl">L’attribut </span><em><strong><span class="hl">version</span></strong></em><span class="hl"> portera la version du profil</span>.</p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_ HORAIRE</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX HORAIRE»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX HORAIRE»</span>.</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+        <GeneralFrame id="FR:GeneralFrame:NETEX_HORAIRE-line_xyz:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_HORAIRE:" />
+          <members>
+            <!-- 
+              Peut contenir
+              SERVICE JOURNEY
+              SERVICE LINK
+              FLEXIBLE SERVICE PROPERTIES
+              TEMPLATE SERVICE JOURNEY
+              HEADWAY JOURNEY GROUP
+              RHYTHMICAL JOURNEY GROUP
+              COUPLED JOURNEY
+              JOURNEY PART COUPLE
+              JOURNEY PART
+              TRAIN
+              TRAIN COMPONENT
+              COMPOUND TRAIN
+              TRAIN NUMBER
+              TRAIN COMPONENT LABEL ASSIGNMENT
+            -->
+          </members>
+        </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
 Bibliographie
 

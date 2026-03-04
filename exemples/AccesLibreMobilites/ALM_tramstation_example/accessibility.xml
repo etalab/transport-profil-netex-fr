@@ -1,0 +1,834 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+  <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
+  <ParticipantRef>ALM_wdm2netex</ParticipantRef>
+  <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement - Cet export contient des données issues d'OpenStreetMap (© contributeurs OpenStreetMap).</Description>
+  <dataObjects>
+    <GeneralFrame id="FR:GeneralFrame:NETEX_ACCESSIBILITY:LOC" version="1.09:FR-NETEX-2.3-0.0">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ACCESSIBILITY:"/>
+      <FrameDefaults>
+        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
+      </FrameDefaults>
+      <members>
+        <SitePathLink id="ALM:SitePathLink:w136_n762_n768:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609984</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>2.34</Distance>
+          <gml:LineString gml:id="w136_n762_n768">
+            <gml:pos>2.0787226 48.8151059</gml:pos>
+            <gml:pos>2.0787175 48.8150851</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n762:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n768:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:6:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <SiteRef ref="FR:StopPlace:StopArea_OCE87710913_rail:" versionRef="+1"/>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w137_n780_n761:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609984</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>2.16</Distance>
+          <gml:LineString gml:id="w137_n780_n761">
+            <gml:pos>2.0785686 48.8151028</gml:pos>
+            <gml:pos>2.0785734 48.815122</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n780:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n761:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:7:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <SiteRef ref="FR:StopPlace:StopArea_OCE87710913_rail:" versionRef="+1"/>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w138_n761_n762:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609983</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>11.07</Distance>
+          <gml:LineString gml:id="w138_n761_n762">
+            <gml:pos>2.0785734 48.815122</gml:pos>
+            <gml:pos>2.078626 48.8151163</gml:pos>
+            <gml:pos>2.0786763 48.8151109</gml:pos>
+            <gml:pos>2.0787226 48.8151059</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n761:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n762:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:8:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>unknown</AudibleSignalsAvailable>
+                <VisualSignsAvailable>unknown</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <SiteRef ref="FR:StopPlace:StopArea_OCE87710913_rail:" versionRef="+1"/>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w138_n761_n762:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w139_n761_n792:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609975</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>2</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>2.47</Distance>
+          <gml:LineString gml:id="w139_n761_n792">
+            <gml:pos>2.0785734 48.815122</gml:pos>
+            <gml:pos>2.07853985553 48.81512470946</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n761:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:Entrance:n792:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n792:LOC" versionRef="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:9:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <equipmentPlaces>
+            <EquipmentPlace id="ALM:EquipmentPlace:90" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n792_9_0:LOC" version="any">
+                  <EquipmentRef ref="ALM:EntranceEquipment:n792:LOC" version="1"/>
+                  <Location>
+                    <Longitude>2.07853985553</Longitude>
+                    <Latitude>48.81512470946</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+          </equipmentPlaces>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w139_n792_n763:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609975</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>2</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>0.88</Distance>
+          <gml:LineString gml:id="w139_n792_n763">
+            <gml:pos>2.07853985553 48.81512470946</gml:pos>
+            <gml:pos>2.0785280827 48.8151263</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:Entrance:n792:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n792:LOC" versionRef="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n763:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:10:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <AccessFeatureType>footpath</AccessFeatureType>
+          <PassageType>pathway</PassageType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w140_n762_n793:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609970</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>1.64</Distance>
+          <gml:LineString gml:id="w140_n762_n793">
+            <gml:pos>2.0787226 48.8151059</gml:pos>
+            <gml:pos>2.07874472413 48.81510337186</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n762:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:Entrance:n793:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n793:LOC" versionRef="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:11:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <Transition>up</Transition>
+          <AccessFeatureType>ramp</AccessFeatureType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <equipmentPlaces>
+            <EquipmentPlace id="ALM:EquipmentPlace:110" version="any">
+              <equipmentPositions>
+                <EquipmentPosition id="ALM:EquipmentPosition:n793_11_0:LOC" version="any">
+                  <EquipmentRef ref="ALM:EntranceEquipment:n793:LOC" version="1"/>
+                  <Location>
+                    <Longitude>2.07874472413</Longitude>
+                    <Latitude>48.81510337186</Latitude>
+                  </Location>
+                </EquipmentPosition>
+              </equipmentPositions>
+            </EquipmentPlace>
+          </equipmentPlaces>
+          <placeEquipments>
+            <RampEquipmentRef ref="ALM:RampEquipment:w140_n762_n753:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w140_n793_n753:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609970</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>6.32</Distance>
+          <gml:LineString gml:id="w140_n793_n753">
+            <gml:pos>2.07874472413 48.81510337186</gml:pos>
+            <gml:pos>2.07877577333 48.81510013245</gml:pos>
+            <gml:pos>2.07878416711 48.81513584684</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:Entrance:n793:LOC" versionRef="1"/>
+            <EntranceRef ref="ALM:Entrance:n793:LOC" versionRef="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n753:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:12:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <Transition>up</Transition>
+          <AccessFeatureType>ramp</AccessFeatureType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <placeEquipments>
+            <RampEquipmentRef ref="ALM:RampEquipment:w140_n762_n753:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <SitePathLink id="ALM:SitePathLink:w141_n776_n784:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609983</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Distance>7.49</Distance>
+          <gml:LineString gml:id="w141_n776_n784">
+            <gml:pos>2.0785808 48.8144893</gml:pos>
+            <gml:pos>2.0785535 48.8144899</gml:pos>
+            <gml:pos>2.0784996 48.8144911</gml:pos>
+            <gml:pos>2.0784785 48.8144915</gml:pos>
+          </gml:LineString>
+          <From>
+            <PlaceRef ref="ALM:PathJunction:n776:LOC" version="1"/>
+          </From>
+          <To>
+            <PlaceRef ref="ALM:PathJunction:n784:LOC" version="1"/>
+          </To>
+          <AccessibilityAssessment id="ALM:AccessibilityAssessment:13:" version="any">
+            <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
+            <limitations>
+              <AccessibilityLimitation>
+                <WheelchairAccess>unknown</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+                <EscalatorFreeAccess>true</EscalatorFreeAccess>
+                <LiftFreeAccess>true</LiftFreeAccess>
+                <AudibleSignalsAvailable>unknown</AudibleSignalsAvailable>
+                <VisualSignsAvailable>unknown</VisualSignsAvailable>
+                <TactileGuidanceAvailable>unknown</TactileGuidanceAvailable>
+              </AccessibilityLimitation>
+            </limitations>
+          </AccessibilityAssessment>
+          <PublicUse>all</PublicUse>
+          <Covered>outdoors</Covered>
+          <NumberOfSteps>0</NumberOfSteps>
+          <AccessFeatureType>crossing</AccessFeatureType>
+          <TactileWarningStrip>unknown</TactileWarningStrip>
+          <SiteRef ref="FR:StopPlace:StopArea_OCE87710913_rail:" versionRef="+1"/>
+          <placeEquipments>
+            <CrossingEquipmentRef ref="ALM:CrossingEquipment:w141_n776_n784:LOC"/>
+          </placeEquipments>
+        </SitePathLink>
+        <EntranceEquipment id="ALM:EntranceEquipment:n792:LOC" version="1">
+          <Width>6.00</Width>
+          <Door>false</Door>
+          <Barrier>false</Barrier>
+          <DropKerbOutside>true</DropKerbOutside>
+          <WheelchairPassable>true</WheelchairPassable>
+          <NecessaryForceToOpen>noForce</NecessaryForceToOpen>
+        </EntranceEquipment>
+        <EntranceEquipment id="ALM:EntranceEquipment:n793:LOC" version="1">
+          <Width>6.00</Width>
+          <Door>false</Door>
+          <Barrier>false</Barrier>
+          <DropKerbOutside>true</DropKerbOutside>
+          <WheelchairPassable>true</WheelchairPassable>
+          <NecessaryForceToOpen>noForce</NecessaryForceToOpen>
+        </EntranceEquipment>
+        <TicketingEquipment id="ALM:TicketingEquipment:n755:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketVendingMachine</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Ground</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104596</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+          </keyList>
+          <TicketMachines>true</TicketMachines>
+          <WheelchairSuitable>true</WheelchairSuitable>
+        </TicketingEquipment>
+        <TicketValidatorEquipment id="ALM:TicketValidatorEquipment:n756:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketValidator</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104608</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+        </TicketValidatorEquipment>
+        <PassengerSafetyEquipment id="ALM:PassengerSafetyEquipment:n757:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>EmergencyPhone</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Ground</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PublicCode</Key>
+              <Value>4588</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104549</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>2</Value>
+            </KeyValue>
+          </keyList>
+        </PassengerSafetyEquipment>
+        <PassengerSafetyEquipment id="ALM:PassengerSafetyEquipment:n758:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>EmergencyPhone</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Ground</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PublicCode</Key>
+              <Value>4589</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104548</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>2</Value>
+            </KeyValue>
+          </keyList>
+        </PassengerSafetyEquipment>
+        <ShelterEquipment id="ALM:ShelterEquipment:n772:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Geometry:Id</Key>
+              <Value>w1106617145</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10126319945</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+        </ShelterEquipment>
+        <ShelterEquipment id="ALM:ShelterEquipment:n788:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Geometry:Id</Key>
+              <Value>w1106617144</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10126319941</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+        </ShelterEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w138_n761_n762:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609983</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>levelCrossing</CrossingType>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>noTactileStrip</TactileWarningStrip>
+          <DroppedKerb>false</DroppedKerb>
+          <MarkingStatus>unknown</MarkingStatus>
+        </CrossingEquipment>
+        <RampEquipment id="ALM:RampEquipment:w140_n762_n753:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Pedestrian</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Incline</Key>
+              <Value>Up</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609970</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Length>7.96</Length>
+          <HandrailType>bothSides</HandrailType>
+          <Temporary>false</Temporary>
+        </RampEquipment>
+        <CrossingEquipment id="ALM:CrossingEquipment:w141_n776_n784:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>HighwayType</Key>
+              <Value>Street</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>w1104609983</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <DirectionOfUse>both</DirectionOfUse>
+          <CrossingType>levelCrossing</CrossingType>
+          <AcousticCrossingAids>false</AcousticCrossingAids>
+          <TactileWarningStrip>noTactileStrip</TactileWarningStrip>
+          <DroppedKerb>false</DroppedKerb>
+          <MarkingStatus>unknown</MarkingStatus>
+        </CrossingEquipment>
+        <PathJunction id="ALM:PathJunction:n762:LOC" version="1">
+          <Location id="n762">
+            <Longitude>2.0787226</Longitude>
+            <Latitude>48.8151059</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n768:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104603</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n768">
+            <Longitude>2.0787175</Longitude>
+            <Latitude>48.8150851</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n780:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104607</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n780">
+            <Longitude>2.0785686</Longitude>
+            <Latitude>48.8151028</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n761:LOC" version="1">
+          <Location id="n761">
+            <Longitude>2.0785734</Longitude>
+            <Latitude>48.815122</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n763:LOC" version="1">
+          <Location id="n763">
+            <Longitude>2.0785280827</Longitude>
+            <Latitude>48.8151263</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n753:LOC" version="1">
+          <Location id="n753">
+            <Longitude>2.07878416711</Longitude>
+            <Latitude>48.81513584684</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n776:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104600</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n776">
+            <Longitude>2.0785808</Longitude>
+            <Latitude>48.8144893</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n784:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104597</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n784">
+            <Longitude>2.0784785</Longitude>
+            <Latitude>48.8144915</Latitude>
+          </Location>
+        </PathJunction>
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
