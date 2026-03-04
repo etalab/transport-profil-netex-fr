@@ -17,8 +17,8 @@ Le dossier `exemples` est un ajout à partir de la version v2.4 du profil France
 
 |Nom de la branche | Description | XSD NeTEx de référence | Type de maintenance |
 |------------------|-------------|------------------|---------------------|
-|v2.4 | Version la plus récente du profil France|[v1.3](https://github.com/NeTEx-CEN/NeTEx/tree/v1.3)|Bugs uniquements|
-|v2.5-wip | Branche de travail pour la prochaine version du profil France|[v2.0](https://github.com/NeTEx-CEN/NeTEx)|Tout changement fonctionnel|
+|v2.4 | Version publiée la plus récente du profil France|[v1.3](https://github.com/NeTEx-CEN/NeTEx/tree/v1.3)|Non maintenue|
+|v2.5-wip | Branche de travail pour la prochaine version du profil France|[v2.0](https://github.com/NeTEx-CEN/NeTEx)|Tout changement (bugs, typos, ajout fonctionnel, etc.)|
 
 
 # Gouvernance
@@ -34,9 +34,7 @@ Cet espace de travail est ouvert à tout contributeur sans besoin d'inscription 
 
 ## Comment contribuer
 Pour toute question, commentaire ou ouvrir une discussion plus large, merci d'ouvrir un ticket dans les `Issues`.
-Pour toute demande de changement (Pull Request), ils doivent porter sur :
-- la branche `v2.4`uniquement en cas de correction de bugs ;
-- la branche `v2.5-wip` pour tout autre changement.
+Pour toute demande de changement, merci de faire une `Pull Request` qui vise la branche `v2.5-wip`. Elle est la seule branche de travail du profil France de NeTEx.
 
 ## Processus de mise à jour des branches
 Dans la mesure où seuls les bugs seront corrigés sur la branche `v2.4`, ils feront l'objet d'une évaluation au cas par cas pour leur reprise dans la branche `v2.5-wip`. Cette dernière apportant de nombreuses nouvelles fonctionalités, améliorations et articulation du profil France, il est probable que le nombre de reports soit très faible.
