@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/SG9/XSD%20Git%20Repository/NK%20Local%201.1%20version/xsd/NeTEx_publication-NoConstraint.xsd" version="1.1">-->
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex file:///C:/Data/Clients/Ministere/SIRI/NeTEx/New%20Modes/PT%200303/XSD/1.2.2r/xsd/NeTEx_publication.xsd" version="1.1">
+	<!--- =============== ENTETE =========== -->
+	<PublicationTimestamp>2019-06-12T09:30:47.0Z</PublicationTimestamp>
+	<ParticipantRef>AURIGE001</ParticipantRef>
+	<!-- ========== DONNEES =========== -->
+	<dataObjects>
+		<!-- =========================================== -->
+		<!-- CompositeFrame.de type NETEX_FRANCE -->
+		<CompositeFrame version="1" created="2019-06-12T09:30:47.0Z" id="FR-Tarif-Example:CompositeFrame:myFrame01:LOC">
+			<frames>
+				<!-- =========================================== -->
+				<!-- Frame NETEX_TARIF -->
+				<GeneralFrame version="001" id="FR-Tarif-Example:TypeOfFrame:NETEX_TARIF-Example1:LOC">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF">version="1.01:FR-NETEX_TARIF-1.0"</TypeOfFrameRef>
+					<members modificationSet="all">
+						<!-- ===================================================================================================================== -->
+						<!-- STRUCTURE TARIFAIRE ET DROITS DE BASE -->
+						<DistanceMatrixElement id="FR-Tarif-Example:DistanceMatrixElement:001:LOC" version="any">
+							<IsDirect>true</IsDirect>
+							<InverseAllowed>false</InverseAllowed>
+							<StartStopPointRef versionRef="any" ref="SNCF:ScheduledStopPoint:ParisGareduNord-87271007:LOC"/>
+							<EndStopPointRef versionRef="any" ref="SNCF:ScheduledStopPoint:LilleFlandre-87 286 005:LOC"/>
+							<!--Note On pourrait insérer ici une CONTRAINTE de SERIE si plusieurs itinéraires étaient concernés-->
+<!--						<seriesConstraints>
+								<SeriesConstraint id="SNCF:SeriesConstraint:Paris-Lille" order="1" version="1.0">
+										<Itinerary>Paris * Lille</Itinerary>
+										<SeriesType>stationToStation</SeriesType>
+										<FirstClassDistance>19</FirstClassDistance>  --><!-- et on peut en profiter pour ajouter une distance tarifaire --><!--
+										<SecondClassDistance>20</SecondClassDistance>
+										<journeyPatterns>
+											<JourneyPatternRef ref="SNCF:JourneyPattern:0001:LOC"></JourneyPatternRef> --><!--Peut passer par des JP, mais ausi par des points ... ou des correspondances--><!--
+											<JourneyPatternRef ref="SNCF:JourneyPattern:0002:LOC"></JourneyPatternRef>
+										</journeyPatterns>
+								</SeriesConstraint>
+							</seriesConstraints>-->
+						</DistanceMatrixElement>
+						
+						<FareStructureElement id="FR-Tarif-Example:FareStructureElement:002:LOC" version="any">
+							<DistanceMatrixElementRef ref="FR-Tarif-Example:DistanceMatrixElement:001:LOC"/>
+							<!--	<GenericParameterAssignment> </GenericParameterAssignment> -->
+						</FareStructureElement>
+						
+						<ValidableElement id="FR-Tarif-Example:ValidableElement:002:LOC" version="any">
+							<fareStructureElements>
+								<FareStructureElementRef ref="FR-Tarif-Example:FareStructureElement:002:LOC"/>
+							</fareStructureElements>
+							
+							<validityParameterAssignments>
+								<GenericParameterAssignment version="any" id="FR-Tarif-Example:GenericParameterAssignment:001:LOC" order="1">
+									<validityParameters>
+<!--										<ServiceJourneyPatternRef ref="xxxxx" version="any"/>  On peut préciser la ServiceJourneyPattern en plus du numéro de Train -->
+<!--										<TrainNumberRef ref="7057" version="any"/> --><!--Affectation du numéro de train à l'OD--><!-- NON car ça limiterais à un horaire et calendrier associé -->
+									</validityParameters>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							
+						</ValidableElement>
+						
+						
+						<!-- ===================================================================================================================== -->
+						<Notice id="FR-Tarif-Example:Notice:002:LOC" version="any">
+							<!--POUR L'EXEMPLE-->
+							<Name>Conditions de transport</Name>
+							<Text>Les conditions générale de transport sont disponibles en ligne sur https://medias.sncf.com/sncfcom/pdf/tarif-voyageurs/Tarifs-voyageurs_CGV.pdf</Text>
+							<CanBeAdvertised>true</CanBeAdvertised>
+						</Notice>
+						<!--SECONDE
+Billet échangeable et remboursable avec retenue de 5 € à compter de 30 jours avant le départ, portée à 15 € l'avant-veille jusqu'au jour du départ. À partir de 30 minutes avant départ du train, billet échangeable 2 fois maximum uniquement pour le même jour et le même trajet et non remboursable après échange. A la retenue s'ajoute l'éventuelle différence de prix entre l'ancien et le nouveau billet. 
+Billet non échangeable et non remboursable après le départ.-->
+
+						<Exchanging id="FR-Tarif-Example:Exchanging:001:LOC" version="any">
+							<Description>Billet échangeable gratuitement jusqu'à 30 jours avant le départ. S'ajoute l'éventuelle différence de prix entre l'ancien et le nouveau billet</Description>
+							<Allowed>full</Allowed>
+							<ResellWhen>beforeStartOfValidity</ResellWhen>
+							<ExchangableUntilDuration>-P30D</ExchangableUntilDuration>
+							<HasFee>false</HasFee>
+							<RefundBasis>perPerson</RefundBasis> <!--A vérifier-->
+						</Exchanging>
+						
+						<Exchanging id="FR-Tarif-Example:Exchanging:002:LOC" version="any">
+							<Description>Billet échangeable avec retenue de 5 € à compter de 30 jours avant le départ. A la retenue s'ajoute l'éventuelle différence de prix entre l'ancien et le nouveau billet</Description>
+							<prices>
+								<UsageParameterPrice version="any" id="FR-Tarif-Example:UsageParameterPrice:001:LOC"> 
+									<Amount>5</Amount>
+									<Currency>EUR</Currency>
+								</UsageParameterPrice>
+							</prices>
+							<Allowed>full</Allowed>
+							<ResellWhen>beforeStartOfValidity</ResellWhen>
+							<ExchangableFromDuration>-P30D</ExchangableFromDuration>
+							<ExchangableUntilDuration>-P2D</ExchangableUntilDuration>
+							<HasFee>true</HasFee>
+							<RefundBasis>perPerson</RefundBasis> <!--A vérifier-->
+						</Exchanging>
+						
+						<Exchanging id="FR-Tarif-Example:Exchanging:003:LOC" version="any">
+							<Description>Billet échangeable avec retenue de 15 € de l'avant-veille jusqu'au jour du départ. A la retenue s'ajoute l'éventuelle différence de prix entre l'ancien et le nouveau billet</Description>
+							<prices>
+								<UsageParameterPrice id="FR-Tarif-Example:UsageParameterPrice:013:LOC" version="any">
+									<Amount>15</Amount>
+									<Currency>EUR</Currency>
+								</UsageParameterPrice>
+							</prices>
+							<Allowed>full</Allowed>
+							<ResellWhen>beforeStartOfValidity</ResellWhen>
+							<ExchangableFromDuration>-P2D</ExchangableFromDuration>
+							<ExchangableUntilDuration>-PT30M</ExchangableUntilDuration>
+							<HasFee>true</HasFee>
+							<RefundBasis>perPerson</RefundBasis> <!--A vérifier-->
+						</Exchanging>
+						
+						<Exchanging id="FR-Tarif-Example:Exchanging:004:LOC" version="any">
+							<Description>À partir de 30 minutes avant départ du train, billet échangeable 2 fois maximum uniquement pour le même jour et le même trajet et non remboursable après échange.A la retenue de 15€ s'ajoute l'éventuelle différence de prix entre l'ancien et le nouveau billet</Description>
+							<prices>
+								<UsageParameterPrice id="FR-Tarif-Example:UsageParameterPrice:014:LOC" version="any">
+									<Amount>15</Amount>
+									<Currency>EUR</Currency>
+								</UsageParameterPrice>
+							</prices>
+							<Allowed>full</Allowed>
+							<ResellWhen>beforeStartOfValidity</ResellWhen>
+							<ExchangableFromDuration>-PT30M</ExchangableFromDuration>
+							<HasFee>true</HasFee>
+							<RefundBasis>perPerson</RefundBasis> <!--A vérifier-->
+							<NumberOfExchangesAllowed>2</NumberOfExchangesAllowed>
+							<ExchangableTo>sameProductSameDay</ExchangableTo>
+						</Exchanging>						
+						
+<!-- =========  Rembouresements -->	
+					
+						<Refunding id="FR-Tarif-Example:Refunding:001:LOC" version="any">
+							<Description>Billet Remboursable gratuitement jusqu'à 30 jours avant le départ.</Description>
+							<Allowed>full</Allowed>
+							<ResellWhen>beforeStartOfValidity</ResellWhen>
+							<ExchangableUntilDuration>-P30D</ExchangableUntilDuration>
+							<HasFee>false</HasFee>
+							<RefundBasis>perPerson</RefundBasis> <!--A vérifier-->
+						</Refunding>						
+						
+						<Refunding id="FR-Tarif-Example:Refunding:002:LOC" version="any">
+							<Description>Billet Remboursable avec retenue de 5 € à compter de 30 jours avant le départ.</Description>
+							<prices>
+								<UsageParameterPrice id="FR-Tarif-Example:UsageParameterPrice:002:LOC" version="any">
+									<Amount>5</Amount>
+									<Currency>EUR</Currency>
+								</UsageParameterPrice>
+							</prices>
+							<Allowed>full</Allowed>
+							<ResellWhen>beforeStartOfValidity</ResellWhen>
+							<ExchangableFromDuration>-P30D</ExchangableFromDuration>
+							<ExchangableUntilDuration>-P2D</ExchangableUntilDuration>
+							<HasFee>true</HasFee>
+							<RefundBasis>perPerson</RefundBasis> <!--A vérifier-->
+						</Refunding>
+						
+						<Refunding id="FR-Tarif-Example:Refunding:003:LOC" version="any">
+							<Description>Billet Remboursable avec retenue de 15 € de l'avant-veille jusqu'au jour du départ.</Description>
+							<prices>
+								<UsageParameterPrice id="FR-Tarif-Example:UsageParameterPrice:003:LOC" version="any">
+									<Amount>15</Amount>
+									<Currency>EUR</Currency>
+								</UsageParameterPrice>
+							</prices>
+							<Allowed>full</Allowed>
+							<ResellWhen>beforeStartOfValidity</ResellWhen>
+							<ExchangableFromDuration>-P2D</ExchangableFromDuration>
+							<ExchangableUntilDuration>-PT30M</ExchangableUntilDuration>
+							<HasFee>true</HasFee>
+							<RefundBasis>perPerson</RefundBasis> <!--A vérifier-->
+						</Refunding>
+						
+						<Reserving id="FR-Tarif-Example:Reserving:001:LOC" version="any">
+							<Description>Réservation incluse avec le titre de transport. Possibilité de choix du type de placement</Description>
+							<ReservingRequirements>reservationsCompulsory</ReservingRequirements>
+							<SeatAllocationMethod>autoAssigned</SeatAllocationMethod>
+						</Reserving>
+						<!-- ===================================================================================================================== -->
+						<!-- LE TITRE   -->
+						<PreassignedFareProduct id="FR-Tarif-Example:PreassignedFareProduct:Paris-Lille-001:LOC" version="any">
+							<Name>Paris-Lille</Name> <!--NOTE : OU "billet OD TGV" SI ON FAIT DE LA MUTUALISATION-->
+							<noticeAssignments>
+								<NoticeAssignment id="FR-Tarif-Example:NoticeAssignment:Paris-Lille-001:LOC" version="any" order="1">
+									<NoticeRef ref="FR-Tarif-Example:Notice:002:LOC"/>
+								</NoticeAssignment>
+							</noticeAssignments>
+							<ChargingMomentType>beforeTravel</ChargingMomentType>
+							<OperatorRef ref="FR-Tarif-Example:Authority:SNCF:"/>
+							<ConditionSummary>
+								<FareStructureType>pointToPointFare</FareStructureType>
+<!--							<IsPersonal>true</IsPersonal>      	déplacé sur le SalesOfferPackageElement => il faudra dire ce que l'on met sur le FP et ce qui va sur le Package-->
+								<TrainRestrictions>specifiedTrainOnly</TrainRestrictions>
+								<CanBreakJourney>false</CanBreakJourney>
+								<IsRefundable>false</IsRefundable>
+								<IsExchangable>false</IsExchangable>
+								<HasExchangeFee>true</HasExchangeFee>
+								<HasDynamicPricing>true</HasDynamicPricing> <!--YIELD MANANGED-->
+								<RequiresReservation>true</RequiresReservation> <!--inclue dans le titre-->
+								<HasReservationFee>false</HasReservationFee>
+							</ConditionSummary>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="FR-Tarif-Example:GenericParameterAssignment:Paris-Lille-001:LOC" version="any" order="1">
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<ReservingRef ref="FR-Tarif-Example:Reserving:001:LOC"/>
+										
+										<ExchangingRef ref="FR-Tarif-Example:Exchanging:001:LOC"/>
+										<ExchangingRef ref="FR-Tarif-Example:Exchanging:002:LOC"/>
+										<ExchangingRef ref="FR-Tarif-Example:Exchanging:003:LOC"/>
+										<ExchangingRef ref="FR-Tarif-Example:Exchanging:004:LOC"/>
+										<RefundingRef ref="FR-Tarif-Example:Refunding:001:LOC"/>
+										<RefundingRef ref="FR-Tarif-Example:Refunding:002:LOC"/>
+										<RefundingRef ref="FR-Tarif-Example:Refunding:003:LOC"/>
+									</limitations>
+									<validityParameters>
+										<VehicleModes>rail</VehicleModes>
+									</validityParameters>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+							<validableElements> 
+								<ValidableElementRef ref="FR-Tarif-Example:ValidableElement:002:LOC"/> 		
+								<!--etc. VOIR NOTE SUR ProductType -->		
+                                <!--NOTE: On peut aussi définit le VE ici plutôt que de le référencer-->		
+							</validableElements>
+							
+							<ProductType>singleTrip</ProductType> <!--NOTE IMPORTANTE: si le produit est "single trip" alors un seul de ValidableElement est utilisable, même s'il y a plusieurs VE: cela permet de gérer les cas ou un produit donne accès à une droit A OU B OU C .... On pourra aussi utliser ce mécanisme pour faire un unique produit O-D, contenant de très nombreuses O-D, mais avec une seule tarification comme dans le cas du Yield Management ...-->
+						</PreassignedFareProduct>
+						<!--l'Indication "Espace Famille pourra se faire par un FamilyServices dans les FacilitySet associé à la course ou au Service Pattern-->
+						<!-- ===================================================================================================================== -->
+						<!-- LE PACKAGE  ... A FINALISER  -->
+						<SalesOfferPackageElement id="FR-Tarif-Example:SalesOfferPackageElement:001:LOC" version="any" order="1">
+							<RequiresValidation>false</RequiresValidation> 
+							<ConditionSummary> <!--A ARTICULER AVEC LA PARTIE DANS LE FARE PRODUCT-->
+								<IsPersonal>true</IsPersonal>      	
+								<HasQuota>false</HasQuota> <!--le "HasQuota" peut être utilisé pour, par exemple proposer un nombre de titre limité à tarif réduit ... pour être aussi restreint par une période d'achat--> 
+							</ConditionSummary>
+							<TypeOfTravelDocumentRef ref="FR-Tarif-Example:TypeOfTravelDocument:001:LOC"/>
+							<PreassignedFareProductRef ref="FR-Tarif-Example:PreassignedFareProduct:Paris-Lille-001:LOC"/>
+						</SalesOfferPackageElement>						
+						
+						<TypeOfTravelDocument id="FR-Tarif-Example:TypeOfTravelDocument:001:LOC" version="any">
+							<Name>E-Billet</Name>
+							<Description>Billet électronique à Flashcode, imprimé sur papier ou viualisé sur terminal électronique (smartphone)</Description>
+							<Url>https://www.oui.sncf/aide/le-e-billet</Url>
+							<MediaType>other</MediaType> <!--"Other" car il n'y a pas qu'un unique support physique ... on pourrait aussi ne pas faire figurer cet élément-->
+							<MachineReadable>barCode</MachineReadable>
+						</TypeOfTravelDocument>
+						
+						<SalesOfferPackage id="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any">
+							<Name>Billet Origine-Destination (Paris-Lille) avec réservation</Name>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						
+						
+						<!-- ===================================================================================================================== -->
+						<!-- POINTS DE VENTE -->
+						<DistributionChannel id="FR-Tarif-Example:DistributionChannel:001:LOC" version="any">
+							<Name>Points de vente SNCF</Name>
+							<Description>Vente de ticket dans tous les points de vente SNCF</Description>
+							<DistributionChannelType>agency</DistributionChannelType>
+							<OrganisationRef ref="FR-Tarif-Example:Organisation:SNCF:"/>
+							<distributionPoints>
+								<PointRef ref="etc."/>
+								<PointRef ref="etc."/>
+							</distributionPoints>
+						</DistributionChannel>
+						
+						<DistributionChannel id="FR-Tarif-Example:DistributionChannel:002:LOC" version="any">
+							<Name>Oui SNCF</Name>
+							<Description>Vente de ticket sur le site officiel SNCF</Description>
+							<DistributionChannelType>online</DistributionChannelType>
+							<ContactDetails><Url>https://www.oui.sncf/</Url></ContactDetails>
+							<OrganisationRef ref="FR-Tarif-Example:Organisation:Oui-SNCF:"/>
+						</DistributionChannel>						
+						
+						<DistributionChannel id="FR-Tarif-Example:DistributionChannel:003:LOC" version="any">
+							<Name>Trainline</Name>
+							<Description>Vente de billets de 270 compagnies de train et de bus</Description>
+							<DistributionChannelType>online</DistributionChannelType>
+							<ContactDetails><Url>https://www.trainline.fr/</Url></ContactDetails>
+							<OrganisationRef ref="FR-Tarif-Example:Organisation:TrainLine:"/>
+						</DistributionChannel>	
+							
+						<GroupOfDistributionChannels id="FR-Tarif-Example:GroupOfDistributionChannels:001:LOC" version="any">
+							<Name>Tous les points de vente SNCF en ligne</Name>
+							<members>
+								<DistributionChannelRef ref="FR-Tarif-Example:DistributionChannel:002:LOC"/>
+								<DistributionChannelRef ref="FR-Tarif-Example:DistributionChannel:003:LOC"/>
+								<!--Etc.-->
+							</members>
+						</GroupOfDistributionChannels>
+
+						<DistributionAssignment id="FR-Tarif-Example:DistributionAssignment:001:LOC" version="any" order="1">
+							<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC"/>
+							<GroupOfDistributionChannelsRef ref="FR-Tarif-Example:GroupOfDistributionChannels:001:LOC"/>
+						</DistributionAssignment>						
+						
+						<!-- ===================================================================================================================== -->
+						<!-- TARIF REDUIT -->
+						<UserProfile id="FR-Tarif-Example:UserProfile:001:LOC" version="any">
+							<!--Plein tarif classique-->
+							<Name>Plein tarif</Name>
+							<Description>Plein tarif adulte sans réduction</Description>
+							<MinimumAge>11</MinimumAge>
+						</UserProfile>
+						
+						<UserProfile id="FR-Tarif-Example:UserProfile:002:LOC" version="any">
+							<!--Gratuit pour les enfants-->
+<!--							Votre enfant de moins de 4 ans voyage gratuitement avec vous. Pour en bénéficier, cochez la case « place gratuite sur les genoux » lors de votre réservation.-->
+							<Name>Moins de 4 ans</Name>
+							<Description>Gratuit pour les enfants de moins de 4 ans</Description>
+							<MaximumAge>4</MaximumAge>
+							<DiscountBasis>free</DiscountBasis>
+							<companionProfiles>
+								<CompanionProfile version="any" id="FR-Tarif-Example:CompanionProfile:002:LOC">
+									<Name>L'enfant doit avoir un adulte (payant) avec lui, et il n'a pas de siège attribué (sur les genoux)</Name>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:001:LOC"/>
+									<MinimumNumberOfPersons>1</MinimumNumberOfPersons>
+								</CompanionProfile>
+							</companionProfiles>
+						</UserProfile>
+						
+						<UserProfile id="FR-Tarif-Example:UserProfile:002b:LOC" version="any">
+							<!--Gratuit pour les enfants-->
+<!--							forfait bambin à 9€ : profitez-en pour vos voyages à bord de TGV INOUI, TER et Intercités. Ce tarif réduit vous est proposé par défaut lors de votre réservation --> 
+							<Name>Moins de 4 ans</Name>
+							<Description>Gratuit pour les enfants de moins de 4 ans</Description>
+							<MaximumAge>4</MaximumAge>
+							<DiscountBasis>discount</DiscountBasis>
+							<companionProfiles>
+								<CompanionProfile version="any" id="FR-Tarif-Example:CompanionProfile:002b:LOC">
+									<Name>L'enfant doit avoir un adulte (payant) avec lui, et il dispose d'un siège</Name>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:001:LOC"/>
+									<MinimumNumberOfPersons>1</MinimumNumberOfPersons>
+								</CompanionProfile>
+							</companionProfiles>
+						</UserProfile>
+						
+						<UserProfile id="FR-Tarif-Example:UserProfile:003:LOC" version="any">
+<!-- -60% pour les enfants de 4 à 11 ans inclus (jusqu’à 3 maximum) pour un voyage aller-retour incluant au moins un jour/une nuit de week-end sur place1
+       -30% pour un accompagnateur adulte pour un voyage aller-retour incluant au moins un jour/une nuit de week-end sur place1  -->
+							<Name>Tarif Enfant</Name>
+							<Description>60%de réduction pour les enfants entre 4 et 10 ans </Description>
+							<prices>
+								<UsageParameterPrice  id="FR-Tarif-Example:UsageParameterPrice:113:LOC" version="any">
+									<LimitingRule id="FR-Tarif-Example:LimitingRule:003:LOC" version="any">
+										<DiscountAsPercentage>0.40</DiscountAsPercentage>
+										<CanBeCumulative>false</CanBeCumulative>
+									</LimitingRule>
+								</UsageParameterPrice>
+							</prices>
+							<MinimumAge>4</MinimumAge>
+							<MaximumAge>11</MaximumAge>
+							<DiscountBasis>discount</DiscountBasis>
+						</UserProfile>
+						
+						<EntitlementRequired id="FR-Tarif-Example:EntitlementRequired:004:LOC" version="any">
+							<!--carte famille nombreuse 
+ 3 enfants=30 %
+4 enfants=40 %
+5 enfants=50 %
+6 enfants ou plus= 75 %
+A COMPLETER-->
+							<Name>Carte Famille Nombreuse SNCF</Name>
+							<Description>30% de réduction aus titulaires d’une carte "Famille nombreuse"délivrée par la SNCF (3 enfants) </Description>
+							<EntitlementProductRef ref="FR-Tarif-Example:EntitlementProduct:001:LOC"/>
+						</EntitlementRequired>
+						<EntitlementProduct id="FR-Tarif-Example:EntitlementProduct:001:LOC" version="any">
+							<Name>carte famille nombreuse SNCF 30% </Name>
+							<Description>carte "Famille nombreuse" délivrée par la SNCF - 3 enfants </Description>
+							<InfoUrl>https://www.service-public.fr/particuliers/vosdroits/F15292</InfoUrl>
+							<documentLinks>
+								<InfoLink>https%3A%2F%2Fwww.legifrance.gouv.fr%2Ftelecharger_rtf.do%3FidTexte%3DLEGITEXT000006063361%26dateTexte%3D20190617</InfoLink>
+							</documentLinks>
+							<GeneralOrganisationRef ref="FR-Tarif-Example:OperatorRef:SNCF:"/>
+						</EntitlementProduct>
+						
+<!--						<UserProfile id="FR-Tarif-Example:UserProfile:004:LOC" version="any">
+						    --><!-- User Profile pour les titulaire de carter Famille Nombreuse  --><!--
+							<Name>Titulaire de carte famille nombreuse SNCF bleue</Name>							
+							<Description>30%de réduction</Description>
+							<prices>
+								<UsageParameterPrice id="FR-Tarif-Example:UsageParameterPrice:004:LOC" version="any">
+									<LimitingRule id="FR-Tarif-Example:LimitingRule:004:LOC" version="any">
+										<DiscountAsPercentage>0.70</DiscountAsPercentage>
+										<CanBeCumulative>false</CanBeCumulative>
+									</LimitingRule>
+								</UsageParameterPrice>
+							</prices>
+							
+							<DiscountBasis>discount</DiscountBasis>
+						</UserProfile>	-->					
+						
+						<!-- ===================================================================================================================== -->
+						<!-- PRICING SERVICE -->
+						<PricingService version="any" id="FR-Tarif-Example:PricingService:001:LOC">
+							<Name>SNCF online pricing sercice</Name>
+							<OrganisationRef ref="FR-Tarif-Example:Organisation:SNCF:"/>
+							<Url>https://www.oui.sncf/tgv-inoui/tarifs</Url> <!--Voir quel lien mettre ... existe-t-il une API ?-->
+						</PricingService>
+						
+						<!-- ===================================================================================================================== -->
+						<!-- FARE TABLE avec tarif Yieldés ou fixes  -->
+						
+						<!-- Pour chaque cellule: Prix / UserProfile ou Entitlement / SalesOfferPackage (le lien avec les FareProduct est fait par le SalesOfferPackage) -->
+						<FareTable version="any" id="FR-Tarif-Example:TickeT+FareTable:001:LOC">
+							<Name> Tarif TGV Paris - Lille </Name>
+							<cells>
+								<Cell version="any" id="FR-Tarif-Example:Cell:001:LOC" order="1">
+									<SalesOfferPackagePrice version="any" id="FR-Tarif-Example:SalesOfferPackagePrice:001:LOC">
+										<Name>Prix dynamique plein tarif</Name>
+										<!--<Amount>00.00</Amount>       Possibilité de prix de référence même s'il y a un tarif "yieldé"-->
+										<PricingServiceRef ref="FR-Tarif-Example:PricingService:001:LOC" />
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:001:LOC"/>
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+								</Cell>
+								
+								<Cell version="any" id="FR-Tarif-Example:Cell:002:LOC" order="2">
+									<SalesOfferPackagePrice version="any" id="FR-Tarif-Example:SalesOfferPackagePrice:002:LOC">
+										<Name>Gratuit pour les enfants de moins de 4 ans</Name>
+										<Amount>0.0</Amount>  <!--GRATUIT POUR LES ENFANT DE MOINS DE 4 ANS "SUR LES GENOUX"-->
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:002:LOC"/>
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+								</Cell>
+								
+								<Cell version="any" id="FR-Tarif-Example:Cell:002b:LOC" order="3">
+									<SalesOfferPackagePrice version="any" id="FR-Tarif-Example:SalesOfferPackagePrice:003:LOC">
+										<Name>Tarif pour les enfants de moins de 4 ans sur un siège</Name>
+										<Amount>9.0</Amount>  <!--9€ FIXE POUR LES ENFANT DE MOINS DE 4 ANS "SUR UN SIEGE"-->
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:002b:LOC"/>
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+								</Cell>
+								
+								<Cell version="any" id="FR-Tarif-Example:Cell:003:LOC" order="4">
+									<SalesOfferPackagePrice version="any" id="FR-Tarif-Example:SalesOfferPackagePrice:004:LOC">
+										<Name>Prix dynamique pour le 4-11 ans</Name>
+										<PricingServiceRef ref="FR-Tarif-Example:PricingService:001:LOC" />
+										<DiscountingRule version="any" id="FR-Tarif-Example:DiscountingRule:003:LOC">
+											<DiscountAsPercentage>0.6</DiscountAsPercentage>
+										</DiscountingRule>
+									</SalesOfferPackagePrice>
+									<UserProfileRef version="any" ref="FR-Tarif-Example:UserProfile:003:LOC"/> <!--LES ENFANT DE DE 4 A 11 ANS => 60% de réduction-->
+									<SalesOfferPackageRef ref="FR-Tarif-Example:SalesOfferPackage:001:LOC" version="any"/>
+								</Cell>
+								
+								<!-- etc. -->
+<!--		NOTE						S'il n'y a pas re référence ou de min/max, il est peut intéressant de répéter cette ligne pour chaque OD possible .... On placera alors probablement toutes les OD dans une unique PreassignedFareProduct, typé "singleTrip" -->
+							</cells>
+						</FareTable>
+						
+						<!-- ===================================================================================================================== -->						
+						
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>

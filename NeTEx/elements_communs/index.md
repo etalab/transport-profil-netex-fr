@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France v2.3 - Éléments communs"
-date: 2024-11-21T00:00:00+00:00
+title: "NeTEx - Profil France v2.4 - Éléments communs"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
@@ -52,41 +52,47 @@ l'échange de données de description des arrêts" (issu des travaux
 groupes de normalisation (CN03/GT7 – Transport public / information
 voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN/TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896) et l’ancienne norme IFOPT (EN
+planifiée, basé sur Transmodel (EN 12896 series) et l’ancienne norme IFOPT (EN
 28701). NeTEx permet non seulement d'assurer les échanges pour les
 systèmes d'information voyageur mais traite aussi l’ensemble des
 concepts nécessaires en entrée et sortie des systèmes de planification
 de l'offre (graphiquage, etc.) et des SAE (Systèmes d’Aide à
 l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-
-
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-
-
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
 
-NeTEx a été développé dans le cadre du CEN/TC 278/WG 3/SG 9 piloté par
-la France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
+
+NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
+France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC 278/WG 3 avec le secteur ferroviaire, en particulier grâce à la
@@ -149,44 +155,19 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et le
-STIF. Ces deux profils ont une vocation nationale.
+Ce document présente la partie Éléments communs du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-Il est envisagé de produire différents profils de NeTEx avec des
-objectif métiers et fonctionnels spécialisés. Il est en particulier
-prévu :
+D'autres parties du profil France de NeTEx sont disponibles (arrêts, réseau, horaire, tarif, accessibilité, parking). Ils
+sont tous complémentaires les uns des autres (sans recouvrement) et s'appuient tous sur cette partie.
 
--   un profil pour les arrêts,
-
-
-
--   un profil pour les réseaux et leur topologie,
-
-
-
--   un profil pour les horaires (distinguant horaires et calendriers),
-
-
-
--   un profil pour les tarifs,
-
-
-
--   un profil complémentaire pour les arrêts (parking, cheminements,
-    équipements, détail de l’accessibilité),
-
-Tous ces profils utiliseront toutefois tous certains concepts génériques
-mis à disposition par NeTEx (ENTITÉ, VERSION, etc.). Ce document a pour
-vocation de regrouper tous ces éléments communs afin d’en éviter de
-multiples descriptions.
-
-Ce document sera donc naturellement référencé par tous les autres
-profils.
 
 **NOTE** : Ce document étant un profil d'échange de NeTEx, il ne se substitue
 en aucun cas à NeTEx, et un minimum de connaissance de NeTEx sera
 nécessaire à sa bonne compréhension.
+
+**NOTE IMPORTANTE** : Le profil France est un sous-ensemble de la norme NeTEx et ne possède pas de schéma XML (XSD) dédié. Pour toute validation de fichiers, se référer à la XSD de NeTEx dans sa version v1.3.2 disponible sur [GitHub](https://github.com/NeTEx-CEN/NeTEx/releases/tag/v1.3.2).
+
+
 
 # Domaine d'application
 
@@ -1328,9 +1309,9 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td></td>
 <td><em><strong>Location</strong></em></td>
 <td><em>Location</em></td>
-<td><p>0:1</p>
+<td>0:1
 <p><strong><span class="hl">1 :1</span></strong></p></td>
-<td>Localisation du POINT <span class="hl">(obligatoire dans le profil)</span></td>
+<td>Localisation du POINT <span class="hl">(Obligatoire dans le profil France, notamment pour les objets de type QUAY et STOP PLACE. Attention, l'attribut n'est pas attendu dans les SCHEDULED STOP POINT)</span></td>
 </tr>
 <tr class="odd">
 <td>«»</td>
@@ -1457,7 +1438,8 @@ d'objets plus complexes comme les ITINÉRAIREs (voir Profil Réseau).
 |---------------------|----------------|----------------------|------------------|-------------------------------------------------------|
 | ::>                 | ::>            | *DataManagedObject*  | ::>              | LINK SEQUENCE hérite de ***DataManagedObject***.      |
 |                     | ***Name***     | *MultilingualString* | 0:1              | Nom de la SÉQUENCE DE TRONÇON.                        |
-|                     | ***Distance*** | *DistanceType*       | 1:1              | Longueur totale (en mètre) de la SÉQUENCE DE TRONÇON. |
+|                     | ***Distance*** | *DistanceType*       | 0:1              | Longueur totale (en mètre) de la SÉQUENCE DE TRONÇON. |
+|                     | ***sectionsInSequence*** | *SectionInSequence*       | 0:*              | Liste ordonnée de TRONÇONs. |
 
 ## Attributs des Points d’une Séquence de Tronçons
 
@@ -1557,7 +1539,20 @@ façon détaillée. C’est, autant que possible, la version simplifiée du
 <p><span class="hl">L’héritage reste naturellement valable, mais aucun des attributs qu’il apporte ne sera utilisé.</span></p></td>
 </tr>
 
-
+<tr class="odd">
+<td></td>
+<td><em><strong>Name</strong></em></td>
+<td>MultilingualString</td>
+<td>0:1</td>
+<td>Nom de la VALIDITY CONDITION</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><em><strong>Description</strong></em></td>
+<td>MultilingualString</td>
+<td>0:1</td>
+<td>Description de la VALIDITY CONDITION</td>
+</tr>
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>ConditionedObjectRef</strong></em></td>
@@ -1700,108 +1695,7 @@ etc.)
 
 ## Accessibilité
 
-Les informations concernant l'ACCESSIBILITÉ sont utilisées de la même
-façon pour les LIEUx D'ARRÊT, les LIGNEs et les COURSEs. L’information
-d’accessibilité présentée correspond à une information minimale : le
-profil NeTEx pour l’accessibilité propose une version beaucoup plus
-détaillée de cette information (incluant les cheminements, les
-équipements, etc.).
-
-<div class="table-title">AccessibilityAssessment – Element (objet inclus)</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 8%" />
-<col style="width: 41%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardinalité</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td>ACCESSIBILITY ASSESSMENT hérite de DATA MANAGED OBJECT.</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>MobilityImpaired­Access</td>
-<td><em>Accessibility­Enumeration</em></td>
-<td>1:1</td>
-<td><p>Indication globale d'accessibilité (de la LIGNE ou du LIEU).</p>
-<p>Il peut valoir <em>true</em> (accessible), <em>false</em> (non accessible), <em>partial</em> ou <em>unknown</em></p></td>
-</tr>
-<tr class="even">
-<td>«cntd»</td>
-<td>limitations</td>
-<td>AccessibilityLimitation</td>
-<td>0:1</td>
-<td>Limitations d'accessibilité</td>
-</tr>
-
-<tr class="even">
-<td></td>
-<td><em><strong>Comment</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>0:1</td>
-<td><p>Commentaire complémentaire sur l'accessibilité.</p>
-<p><span class="hl">Ce champ a pour vocation à compléter, en termes d'information voyageur, l'information générale de la structure. Il a donc pour vocation à être affiché avec les informations d'accessibilité.</span></p></td>
-</tr>
-</tbody>
-</table>
-
-**NOTE** : L'attribut ***MobilityImpairedAccess*** n'a pas été retenu dans le
-cadre des travaux sur le modèle d'arrêt partagé (car considéré comme
-trop générique). Toutefois, ce champ étant obligatoire dans NeTEx, il
-devra être présent dans les échanges. Les valeurs qu'il peut prendre
-étant ***true***/***false***/***unknow***/***partial***, il est
-recommandé (pour des raisons de cohérence) que sa valeur soit:
-
--   ***true*** si tous les champs de ***AccessibilityLimitation*** sont
-    à ***true***
-
--   ***false*** si tous les champs de ***AccessibilityLimitation*** sont
-    à ***false***
-
--   ***partial*** si seulement certains champs de
-    ***AccessibilityLimitation*** sont à ***true***
-
--   ***unknow*** dans tous les autres cas
-
-<div class="table-title">AccessibilityLimitation – Element (objet inclus)</div>
-
-|                     |                             |                        |     |                                                                                                                                                 |
-|---------------------|-----------------------------|------------------------|-----|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Nom**                     | **Type**               |     | **Description**                                                                                                                                 |
-|                     | ***WheelchairAccess***      | *LimitationStatusEnum* | 1:1 | Indique si l'accès est possible sans fauteuil roulant (codification: ***true***/***false***/***unknow***/***partial***).                        |
-|                     | ***StepFreeAccess***        | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans franchissement de marche ou d'escalier (codification: ***true***/***false***/ ***unknow***/***partial***). |
-|                     | ***EscalatorFreeAccess***   | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans utiliser d'escalator (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
-|                     | ***LiftFreeAccess***        | *LimitationStatusEnum* | 0:1 | Indique si l'accès est possible sans utiliser d'ascenseur (codification: ***true***/***false***/***unknow***/ ***partial***).                   |
-|                     | ***AudibleSignsAvailable*** | *LimitationStatusEnum* | 0:1 | Indique si une signalétique auditive est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
-|                     | ***VisualSignsAvailable***  | *LimitationStatusEnum* | 0:1 | Indique si une signalétique visuelle est disponible (codification: ***true***/***false***/***unknow***/***partial***).                          |
-
-<span class="hl">Chaque fois que pour </span>***<span
-class="hl">LimitationStatus</span>***<span class="hl"> la valeur
-"partial" est utilisée, une "</span>***<span
-class="hl">ValidityCondition-> Description</span>***<span class="hl">"
-(dans l’objet </span>***<span
-class="hl">AccessibilityAssessment</span>***<span class="hl">) doit
-être fournie en conséquence pour expliquer pourquoi l'accessibilité
-n'est que partielle (notez que seule la </span>***<span
-class="hl">Description</span>***<span class="hl"> de la
-</span>***<span class="hl">ValidityCondition</span>***<span
-class="hl"> peut être remplie). Les informations textuelles contenues
-doivent pouvoir être présentées au public sans autre
-modification.</span>
+Les informations concernant l'ACCESSIBILITÉ sont utilisées de la même façon pour les LIEUx D'ARRÊT, les LIGNEs,  les COURSEs, etc. L’information d’accessibilité présentée correspond à une information minimale lorsque les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT) sont utilisées. Pour plus d'information sur les éléments retenus dans le profil France, se référer à la partie Accessibilité du profil France de NeTEx. Cette dernière propose, en outre, des éléments de description d'accessibilité plus détaillés, ainsi que l'identification des attributs obligatoires pour se conformer à la réglementation en vigueur.
 
 ## Nom alternatif
 
@@ -2074,94 +1968,56 @@ prendre la forme ci-dessous
 
 <div class="table-title">PostalAddress – Element (objet inclus)</div>
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 18%" />
-<col style="width: 23%" />
-<col style="width: 5%" />
-<col style="width: 44%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Nom</strong></td>
-<td><strong>Type</strong></td>
-<td></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td>::></td>
-<td>::></td>
-<td><em>Address</em></td>
-<td>::></td>
-<td><p>POSTAL ADDRESS hérite de ADDRESS.</p>
-<p>NOTE : <span class="hl">les éléments hérités au dessus d’ADDRESS ne sont pas à prendre en compte dans le profil (en particulier le nom hérité de GroupOfEntities n’est pas obligatoire)</span></p></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>HouseNumber</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Numéro du bâtiment sur la voie</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>BuildingName</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Nom du bâtiment</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>AddressLine1</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Complément d'adresse hors numéro, type et nom de voie.</td>
-</tr>
+L'objet PostalAddress de NeTEx contient de nombreux attributs mais le profil France choisit de n'en prioriser que certains
+afin de trouver le juste équilibre entre les 3 axes suivants :
+* production des données par ceux n'ayant pas nécessairement une donnée structurée (exemple de Open Trip Planner (OTP) lisant des données OpenStreetMap (OSM)),
+* consommation des données de manière uniforme et si possible structurée,
+* besoin de rester cohérent avec les modèles utilisés par les autres pays.
 
-<tr class="odd">
-<td></td>
-<td><em><strong>Street</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Nom et type de voie</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Town</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Nom de la ville.</td>
-</tr>
+Pour cette raison, les champs `HouseNumber`, `Street` et `BuildingName` ne sont pas priorisés dans le profil France. Ils peuvent être utilisés quand l'information existe, elle sera alors considérée comme venant compléter les attributs priorisés.
+Il est donc recommandé d'utiliser en priorité le champ `AddressLine1` en n'indiquant si possible que les numéros et le nom
+de la rue, en évitant d'inclure les noms ou codes des batiments. Ce champ libre permettra dans certains cas d'indiquer
+les informations nécessaire quand aucune adresse n'existe (par exemple un arrêt à un croisement de routes en inter-urbain).
 
-<tr class="even">
-<td></td>
-<td><em><strong>PostCode</strong></em></td>
-<td><em>PostCodeType</em></td>
-<td>0:1</td>
-<td>Code Postal</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>PostCode­Extension</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td>Extension du code postal (avec éventuel cedex ou boite postale)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>PostalRegion</strong></em></td>
-<td><em>xsd:normalizedString</em></td>
-<td>0:1</td>
-<td><p><span class="hl">Code INSEE</span></p>
-<p>NOTE <span class="hl">le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span></p>
-<p>NOTE <span class="hl">si l'on souhaite mieux formaliser la relation à la commune, l'Adresse Postale, la ZONE NeTEx dispose du "ParentZoneRef" que l'on peut utiliser à cet effet.</span></p></td>
-</tr>
+| **Classifi­cation** | **Nom**           | **Type**             |     | **Description**                         |
+|--------------------|-------------------|----------------------|-----|-----------------------------------------|
+|       ::>           | ::>  | *Address*        | 	::> | POSTAL ADDRESS hérite de ADDRESS. |
+|                     | ***AddressLine1***  | *xsd:normalizedString*        | 0:1 | Numéro et rue de l'adresse. Le num du batiment peut également être précisé.  <span class="hl">Ce champ retenu dans le profil France comme porteur de l'information de l'adresse (voir explication ci-dessus) </span> |
+|                     | ***HouseNumber***   | *xsd:normalizedString*        | 0:1 | Numéro du bâtiment sur la voie. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***Street***        | *xsd:normalizedString*        | 0:1 | Nom et type de voie. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***BuildingName***  | *xsd:normalizedString*        | 0:1 | Nom du bâtiment. Ce champ vient compléter le champ `AddressLine1` |
+|                     | ***Town***          | *MultilingualString* | 0:1 | Nom de la ville                             |
+|                     | ***PostCode***      | *PostCodeType* | 0:1 | Code Postal                             |
+|                     | ***PostCode­Extension*** | *xsd:normalizedString* | 0:1 | Extension du code postal (avec éventuel cedex ou boite postale)                           |
+|                     | ***PostalRegion***  | *MultilingualString* | 0:1 | Code INSEE. <span class="hl">NOTE : le code INSEE permet aussi de faire la liaison avec la ville ou l'arrondissement (en tant que zone administrative) d'appartenance.</span> |
 
 
-</tbody>
-</table>
+**Exemple de fourniture d'adresse dans le profil France :**
+L'adresse postale suivant : 
+> Bâtiment B  
+> 5 Allée des Pirouettes  
+> 31420 Bouzin  
+
+Peut s'exporter de la manière suivante :
+```xml
+<PostalAddress>
+    <AddressLine1>5 Allée des Pirouettes</AddressLine1>
+    <PostCode>31420</PostCode>
+    <Town>Bouzin</Town>
+</PostalAddress>
+```
+ou dans une version plus complète :
+```xml
+<PostalAddress>
+    <AddressLine1>Bâtiment B, 5 Allée des Pirouettes</AddressLine1>
+    <BuildingName>Bâtiment B</BuildingName>
+    <HouseNumber>5</HouseNumber>
+    <Street>Allée des Pirouettes</Street>
+    <PostCode>31420</PostCode>
+    <Town>Bouzin</Town>
+</PostalAddress>
+```
+
 
 <div class="table-title">RoadAddress – Element (objet inclus)</div>
 
@@ -2508,7 +2364,11 @@ faut l'interprété "trainTram").
 | ***nationalCoach***      | Car national      |
 | ***shuttleCoach***       | Navette           |
 | ***regionalCoach***      | Car régional      |
-| ***touristCoach***       | Car touristique   |
+| ***specialCoach***       | Car spécial       |
+| ***schoolCoach***        | Car scolaire      |
+| ***sightseeingCoach***   | Car touristique avec circuit |
+| ***touristCoach***       | Car touristique général  |
+| ***commuterCoach***      | Car pour trajets pendulaires |
 
 <div class="table-title">MetroSubmodeEnum</div>
 
@@ -3990,9 +3850,9 @@ utilisée pour identifier le profil).
 
 La figure ci-dessous présente l’ensemble des CADREs DE VERSION prédéfini
 dans NeTEx ainsi que le *GeneralFrame* qui est utilisé ici avec un type
-de CADRE spécifique pour les profils NeTEx utilisés en France: ***NeTEx
-COMMUN, NeTEx ARRET, NeTEx LIGNE, NeTEx RESEAU, NeTEx HORAIRE, NeTEx
-CALENDRIER** et **NeTEx TARIF***.
+de CADRE spécifique pour chaque partie du profil France (voir plus bas).
+
+**NOTE IMPORTANTE** : Pour chaque export, les identifiants des CADREs de VERSION (FRAME) doivent être uniques.
 
 ![image](media/image8.svg)
 *predefined Frames– XSD*
@@ -4106,8 +3966,52 @@ CALENDRIER** et **NeTEx TARIF***.
 |                     | ***DefaultLocale***                | *Locale*               | 0:1 | Valeur de LOCALE par défaut (pour tous les éléments qui ne le précisent pas)                     |
 |                     | ***Default­LocationSystem***       | *xsd:normalizedString* | 0:1 | Système de localisation par défaut (pour tous les éléments qui ne le précisent pas)              |
 
-<span class="hl">Dans le cadre du profil les distances sont par défaut
-exprimées en système métrique et les sommes d’argent en Euros.</span>
+<span class="hl">Dans le cadre du profil les distances et les longueurs sont par défaut
+exprimées en mètres (*SystemOfUnits* ayant une valeur *SiMetres*) et les sommes d’argent en Euros.</span>
+
+<div class="table-title">TypeOfFrame – Élément</div>
+
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 12%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Classifi­cation</strong></th>
+<th><strong>Nom</strong></th>
+<th><strong>Type</strong></th>
+<th></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>::></td>
+<td>::></td>
+<td><em>TypeOfValueDataManagedObject</em></td>
+<td><em>::>::></em></td>
+<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
+<p><span class="hl">L'Id est imposé à NETEX_</span><span class="hl"> </span><span class="hl">RESEAU</span></p></td>
+</tr>
+
+
+<tr class="even">
+<td>«cntd»</td>
+<td><em><strong>classes</strong></em></td>
+<td><em>ClassInContextRef</em></td>
+<td>0:*</td>
+<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+Chaque partie du profil France décrit les frames associées et la valeur spécifique du type de Frame à utiliser, et 
+le chapitre 7.4 du présent document rappelle les différentes valeurs.
 
 ## CODESPACE et codification des identifiants
 
@@ -4368,241 +4272,104 @@ le cadre d’un échange et que l’identifiant utilisé et unique au niveau
 national et pérenne, on conservera naturellement son identifiant et la
 codification ci-dessus ne s’applique plus.</span>
 
-## TypeOfFrame : types spécifiques
-
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***<span class="hl">NETEX_COMMUN, NETEX_ARRET</span>, <span
-class="hl">NETEX_RESEAU, NETEX_HORAIRE, NETEX_CALENDRIER,
-NETEX_TARIF</span>***. Il apparaitra systématiquement et explicitement
-dans les éléments ***members*** du ***GeneralFrame***.
-
-Le présent document ne présente que les *TypeOfFrame* ***<span
-class="hl">NETEX_COMMUN</span>** et **<span
-class="hl">NETEX_CALENDRIER</span>***. Les autres seront présentés par
-les documents spécifiques de chacun des profils.
-
-Dans la majorité des cas on aura besoin de plusieurs CADREs DE VERSION
-pour un échange complet (par exemple ***<span
-class="hl">NETEX_COMMUN</span>** et **<span
-class="hl">NETEX_ARRET</span>***): on utilisera donc un
-***CompositeFrame*** pour les grouper au sein d'un unique échange.
-
-Trois types spécifiques sont attribués à ces ***CompositeFrame**:*
-
--   ***<span class="hl">NETEX_FRANCE</span>*** peut contenir n'importe
-    quelles autres Frames et n'importe quel jeu de données
-
--   ***<span class="hl">NETEX_LIGNE</span>*** contient des
-    ***GeneralFrame*** de type ***<span class="hl">NETEX_COMMUN</span>, 
-    <span class="hl">NETEX_RESEAU, NETEX_HORAIRE</span>** et **<span
-    class="hl">NETEX_CALENDRIER</span>*** permettant la description
-    complète d'une unique ligne (une et une seule, avec toutes les
-    informations nécessaires à l'information voyageur). Le champ
-    ***Name*** des ***CompositeFrame*** de type ***<span
-    class="hl">NETEX_LIGNE</span>*** contient le nom de la ligne.
-
--   ***<span class="hl">NETEX_N\_LIGNES</span>*** contient des
-    ***GeneralFrame*** de type ***<span class="hl">NETEX_COMMUN</span>, 
-    <span class="hl">NETEX_RESEAU, NETEX_HORAIRE</span>** et **<span
-    class="hl">NETEX_CALENDRIER</span>*** permettant la description
-    complète d'un ensemble de lignes (toutes les informations
-    nécessaires à l'information voyageur pour les lignes concernées). Le
-    champ ***Name*** des ***CompositeFrame*** de type ***<span
-    class="hl">NETEX_N\_LIGNE</span>*** contient le nom des lignes
-    concernées, séparés par des virgules.
-
-<div class="table-title">TypeOfFrame pour NETEX_COMMUN et NETEX_CALENDRIER – Element (objet inclus)</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à </span><em><span class="hl">NETEX_COMMUN</span></em><span class="hl"> </span><span class="hl">ou </span><em><span class="hl">NETEX_CALENDRIER</span></em></p></td>
-</tr>
+## TypeOfFrame : types spécifiques 
 
 
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenues dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_COMMUN:</span></p>
-<ul>
-<li><p><span class="hl">VALIDITY CONDITION (AVAILABILITY CONDITION et VALIDITY TRIGGER)</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ALTERNATIVE NAME</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NOTICE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NOTICE ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">RESPONSIBILITY ROLE ASSIGNMENT</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ORGANISATION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">POINT PROJECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">ZONE PROJECTION</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TYPE OF FRAME</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TYPE OF VALUE spécifiques</span></p></li>
-</ul>
-<p><span class="hl">La liste est fixe pour NETEX_CALENDRIER:</span></p>
-<ul>
-<li><p><span class="hl">DAY TYPE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">OPERATING DAY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">SERVICE CALENDAR</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">DAY TYPE ASSIGNMENT</span></p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Le présent profil utilise des valeurs précises de *TypeOfFrame* pour spécifier le contenu de chaque fichier : 
+- accessibility.xml : TypeOfFrame NETEX_ACCESSIBILITY, décrit dans la partie accessibilité du profil
+- network.xml : TypeOfFrame NETEX_RESEAU décrit dans la partie "Description du réseau" du profil
+- stop.xml : TypeOfFrame NETEX_ARRET, décrit dans la partie "Description des arrêts" du profil
+- line_xyz.xml : TypeOfFrame NETEX_LIGNE et NETEX_LIGNE_STRUCTURE dans la partie "Description des réseaux" et NETEX_HORAIRE dans la partie Horaires du profil
+- fare.xml : TypeOfFrame NETEX_TARIF dans la partie Tarifs du profil
+- parking.xml : À venir dans la partie Parking du profil
+- poi.xml : TypeOfFrame NETEX_POI, décrit dans la partie Éléments Communs du profil
+- resource.xml : TypeOfFrame NETEX_FRANCE, NETEX_COMMUN et NETEX_CALENDRIER décrits dans la partie Éléments Communs du profil
 
-<div class="table-title">TypeOfFrame pour NETEX_FRANCE, NETEX_LIGNE et NETEX_N_LIGNES – Element (objet inclus) </div>
+Attention : les identifiants sont construits selon les recommandations du présent profil. Par exemple, `NETEX_LIGNE` sera présent dans un fichier
+avec la valeur complète `FR:TypeOfFrame:NETEX_LIGNE:`.
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à </span><em><span class="hl">NETEX_FRANCE, NETEX_LIGNE ou NETEX_N_LIGNES</span></em></p></td>
-</tr>
-<tr class="odd">
-<td>FK</td>
-<td><em><strong>typesOfFrame</strong></em></td>
-<td><em>TypeOfFrameRef</em></td>
-<td>0:*</td>
-<td><p>TYPES OF FRAME contenu dans ce TYPE OF FRAME. Ne dois pas être récursif.</p>
-<p>On trouve ici les TYPES OF FRAME autorisés au sein de la <em><strong>CompositeFrame</strong></em> <em><span class="hl">NETEX_FRANCE</span></em>, à savoir:</p>
-<ul>
-<li><p><span class="hl">NETEX_COMMUN, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_ARRET, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_RESEAU, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_HORAIRE,</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_CALENDRIER, </span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">NETEX_TARIF</span></p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Le fichier `resource.xml` contient une CompositeFrame de type `NETEX_FRANCE`, elle-même composée de :
+- Une GeneralFrame de type `NETEX_COMMUN`
+- Une GeneralFrame de type `NETEX_CALENDRIER`
+Les objets de premiers niveaux possibles dans ces frames sont indiqués dans les exemples XML ci-dessous sous forme de commentaires.
 
-<div class="table-title">TypeOfValue (pour le TypeOfFrame) – Element (objet inclus) </div>
+Le fichier `poi.xml` contient une GeneralFrame de type `NETEX_POI`.
 
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</p>
-<p><span class="hl">L’attribut version portera la version du profil.</span></p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_COMMUN ou NETEX_CALENDRIER ou NETEX_FRANCE, NETEX_LIGNE ou NETEX_N_LIGNES</span></p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX_COMMUN», « NETEX_CALENDRIER» ou « NETEX_FRANCE», «NETEX_LIGNE» ou «NETEX_N_LIGNES»</span></p></td>
-</tr>
+Voici un exemple de cadre du fichier `resource.xml` :
 
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX_COMMUN», « Profil d’échange français NETEX_CALENDRIER». Ou « Profil d’échange français «NETEX_FRANCE», «NETEX_LIGNE» ou «NETEX_N_LIGNES».</span></p></td>
-</tr>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <CompositeFrame id="exemple:CompositeFrame:NETEX_FRANCE-1:LOC" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_FRANCE:" />
+      <frames>
+        <GeneralFrame id="exemple:GeneralFrame:NETEX_COMMUN-1:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN:" />
+          <members>
+            <!--
+              VALIDITY CONDITION (AVAILABILITY CONDITION et VALIDITY TRIGGER)
+              ALTERNATIVE NAME
+              NOTICE
+              NOTICE ASSIGNMENT
+              RESPONSIBILITY ROLE ASSIGNMENT
+              ORGANISATION
+              POINT PROJECTION
+              ZONE PROJECTION
+              TYPE OF VALUE spécifiques
+              DATA SOURCE
+              SITE CONNECTION
+              VEHICLE TYPE
+              CONNECTION 
+              JOURNEY INTERCHANGE
+              DEFAULT CONNECTION
+              BOOKING ARRANGEMENT
+              SERVICE FACILITY SET
+              -->
+          </members>
+        </GeneralFrame>
+        <GeneralFrame id="exemple:GeneralFrame:NETEX_CALENDRIER-1:LOC" version="2.0:FR-NETEX-2.4">
+          <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_CALENDRIER:" />
+          <members>
+            <!--
+              DAY TYPE
+              OPERATING PERIOD
+              SERVICE CALENDAR
+              DAY TYPE ASSIGNMENT
+              -->
+          </members>
+        </GeneralFrame>
+      </frames>
+    </CompositeFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
+Voici un exemple de cadre du fichier `poi.xml` :
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_POI-1:LOC" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_POI:" />
+      <members>
+        <!--
+          POINT OF INTEREST
+          POINT OF INTEREST CLASSIFICATION
+          POINT OF INTEREST ENTRANCE
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>
+</PublicationDelivery>
+```
 
-</tbody>
-</table>
+ 
 
 ## Version des objets et références
 
@@ -4853,14 +4620,44 @@ Deux grandes typologies d’échange peuvent être envisagées : par échange
 de fichier (sous quelque forme que ce soit : FTP, mail, etc.) ou au
 travers de web service.
 
-## Fichier
+## Règles générales
+- **Pas de duplication de ressources NeTEx** : pas de duplication des données “classe - identifiant - version” ce qui signifie que deux versions différentes d’un même objet peuvent coexister
+- **Éviter les sur-informations** : Eviter l'ajout d'informations dont l'utilité n'est pas clairement identifiée.  
 
-L’échange par fichier est assez simple : le fichier est un fichier XML
-classique qui ne contiendra qu’un seul élément racine :
-***PublicationDelivery*** (voir 7.1).
+## Export sous forme de fichier
 
-Le fichier XSD de plus haut niveau à utiliser est
-*NeTEx_publication.xsd*.
+Un export NeTEx au profil France est une archive ZIP respectant plusieurs contraintes : 
+- le nom du fichier est libre, mais il est recommandé de préciser qu'il s'agit d'un fichier NeTEx ;
+- l'archive ne contient pas de dossiers, tous les fichiers sont listés à la racine ; 
+- les fichiers binaires, exécutables et sous archives sont interdits ;
+- d'autres fichiers de type texte ou json peuvent figurer dans l’archive mais seront ignorés à l’import ;
+- des mesures de sécurité “propres à chaque consommateur” pourront conduire à des exigences complémentaires.
+
+Les noms des fichiers doivent respecter les contraintes suivantes : 
+- pas de majuscule
+- le séparateur est “_”
+- pas d’accent
+- pas d'espace
+- une taille maximale de 250 caractères hors extension
+
+Les fichiers attendus dans l'archive sont les suivants : 
+| **Fichier** |  **Description** |
+|--------------------|--------------------------------------------|
+| accessibility.xml  | Fichier regroupant les équipements et les informations de cheminement, incluant leur caractéristiques d'accessibilité |
+| network.xml        | Fichier regroupant les informations sur les réseaux et les groupes de lignes |
+| stop.xml           | Fichier regroupant les informations sur les arrêts, les quais, etc. |
+| line_xyz.xml       | Chaque fichier contient la description complète d'une ligne de transport en commun (parcours, courses, horaires, etc.). La partie "xyz" du nom de fichier est laissée libre, à condition de respecter l'unicité et les contraintes associées aux noms de fichiers. Il est conseillé d'utiliser des libellés courts comme les codes des lignes par exemple. |
+| fare.xml           | Fichier regroupant les informations sur les tarifs, que ce soit pour les transports en commun, les parkings ou autres |
+| parking.xml        | Fichier regroupant les informations sur les parkings |
+| poi.xml            | Fichier regroupant les points d'intérêts et les informations associées |
+| resource.xml       | Fichier contenant toutes les informations qui ne sont pas collectés dans des fichiers thématiques (correspondances, calendriers, commentaires, etc.) |
+
+Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
+Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.
+
+Notes : 
+- Même dans le cas où l'export NeTEx ne contient qu'un seul fichier XML, ce fichier doit être fourni dans une archive ZIP en respectant les critères ci-dessus.
+- Pour tout échange de fichier en dehors d'un dépôt sur le [Point d'Accès National](https://transport.data.gouv.fr/), les parties sont libres d'éventuellement s'accorder sur un autre format d'archive et/ou de noms de fichiers.
 
 ## Web service
 

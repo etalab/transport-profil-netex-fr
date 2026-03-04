@@ -1,6 +1,6 @@
 ---
-title: "NeTEx - Profil France v2.3 - Description des arrêts"
-date: 2024-11-21T00:00:00+00:01
+title: "NeTEx - Profil France v2.4 - Description des arrêts"
+date: 2025-12-191T11:05:00+00:00
 draft: false
 tags: ["NeTEx"]
 autonumbering: true
@@ -45,46 +45,51 @@ Ce document est le fruit de la collaboration entre les différents
 partenaires des autorités organisatrices de transports, opérateurs,
 industriels et développeurs de solutions et de systèmes informatiques
 ayant pour objet l’aide à l’exploitation du transport public et
-l’information des voyageurs. Il a pour objet de présenter le profil
-d’échange Profil NeTEx Arrêts : "format de référence pour l'échange de
+l’information des voyageurs. Il a pour objet de présenter la partie Arrêts du
+Profil France de NeTEx : "format de référence pour l'échange de
 données de description des arrêts" (issu des travaux *NeTEx,
 Transmodel)* qui aujourd’hui fait consensus dans les groupes de
 normalisation (CN03/GT7 – Transport public / information voyageur).
 
+Ce document a été validé et publié comme suit : 
+- travaux de révision : 2024-2025
+- date de validation en CN03 : 19 décembre 2025
+- date de publication : 6 mars 2026
+
 **Introduction**
 
-Le présent format d’échange est un profil de NeTEx.
+Le présent document fait partie du profil France de NeTEx.
 
-NeTEx (CEN TS 16614-1, 16614-2 et 16614-3) propose un format et des
+NeTEx (CEN/TS 16614 series) propose un format et des
 services d'échange de données de description de l'offre de transport
-planifiée, basé sur Transmodel (EN 12896). NeTEx permet non seulement
+planifiée, basé sur Transmodel (EN 12896 series). NeTEx permet non seulement
 d'assurer les échanges pour les systèmes d'information voyageur mais
 traite aussi l’ensemble des concepts nécessaires en entrée et sortie des
 systèmes de planification de l'offre (graphiquage, etc.) et des SAE
 (Systèmes d’Aide à l’Exploitation).
 
-NeTEx se décompose en trois parties:
+NeTEx se décompose en six parties:
 
 -   Partie 1 : topologie des réseaux (les réseaux, les lignes, les
     parcours commerciaux les missions commerciales, les arrêts et lieux
     d’arrêts, les correspondances et les éléments géographiques en se
     limitant au strict minimum pour l’information voyageur)
 
-
-
 -   Partie 2 : horaires théoriques (les courses commerciales, les heures
     de passage graphiquées, les jours types associés ainsi que les
     versions des horaires)
 
-
-
 -   Partie 3 : information tarifaire (uniquement à vocation
     d’information voyageur)
 
+-   Partie 4 : profil européen pour l'information voyageur (EPIP)
+
+-   Partie 5 : nouveaux modes (les véhicules partagés en libre service, les courses partagées, etc.)
+
+-   Partie 6 : profil européen pour l'information voyageur en lien avec l'accessibilité (EPIAP)
+
 NeTEx a été développé dans le cadre du CEN/TC278/WG3/SG9 piloté par la
-France. Les parties 1 et 2 ont été publiées en tant que spécification
-technique début 2014. Les travaux pour la partie 3, quant à eux, se sont
-terminés en 2016.
+France. Les premières publications de NeTEx datent de 2014 et les plus récentes de mars 2026.
 
 Il faut noter que NeTEx a été l'occasion de renforcer les liens du
 CEN/TC278/WG3 avec le secteur ferrovaire, en particulier grâce à la
@@ -146,39 +151,15 @@ des informations comme :
 
 -   etc.
 
-Les principaux profils actuellement utilisés en France sont NEPTUNE
-(profil de TRIDENT) et le profil de SIRI défini par le CEREMA et le
-STIF. Ces deux profils ont une vocation nationale.
+Ce document présente la partie Arrêts du profil France de NeTEx, tel que défini par le Groupe de Travail dédié à l'information voyageur et à l'exploitation des services de mobilité (GT7) au sein de la Commission Nationale de normalisation pour le transport public (CN03).
 
-Le groupe de travail Qualité des données de l’AFIMB (Agence Française
-pour l’Information Multimodale et la Billettique) a engagé une démarche
-pour définir, sous la forme d’un « référentiel », les caractéristiques
-et exigences de qualité des données transport à recommander. Ces travaux
-ont, entre autres, permis d’élaborer un modèle d’arrêt partagé à partir
-du cadre fixé par les documents de normalisation (Transmodel et NeTEx).
-Ce modèle permet notamment de :
-
--   Proposer une structuration et une hiérarchisation des arrêts
-    (clarifier les concepts de lieu d’arrêt, arrêt physique, arrêt
-    commercial, etc.) ;
-
-
-
--   Décrire les caractéristiques souhaitées pour les arrêts de ce modèle
-    et les exigences de qualité pour ces caractéristiques ;
-
-Le profil présenté dans ce document permet d’échanger l’intégralité des
-informations qui ont été retenues dans le cadre de ce modèle d’arrêt
-partagé.
-
-D'autre profils de NeTEx sont disponibles (réseau, horaire, tarif). Ils
+D'autres parties du profil France de NeTEx sont disponibles (réseau, horaire, tarif, accessibilité, parking). Ils
 sont tous complémentaires les uns des autres (sans recouvrement) et
-s'appuient tous sur le document: **NeTEx - Profil Français de NETEx:
-éléments communs.** Il conviendra de se référer à ce document pour tous
+s'appuient tous sur le document: **NeTEx - Profil France - Éléments communs.** Il conviendra de se référer à ce document pour tous
 les éléments utilisés dans le présent document, et dont la structure
 n'est pas détaillée.
 
-Ce profil d’échange a pour objectif de décrire et de structurer
+Cette partie du profil d’échange a pour objectif de décrire et de structurer
 précisément les éléments nécessaires à une bonne information de
 description des arrêts de transport public de façon :
 
@@ -200,7 +181,7 @@ NeTEx sera nécessaire à sa bonne compréhension.
 
 # Domaine d'application
 
-Le présent document constitue le profil de la CEN/TS 16614 (NeTEx) pour
+Le présent document constitue la partie du profil France de la CEN/TS 16614 (NeTEx) pour
 l'échange de données de description d'arrêt en France. Il permet de
 décrire les arrêts de transports publics et la manière dont ils pourront
 être structurés pour des échanges entre systèmes d'information ainsi que
@@ -779,7 +760,7 @@ Au-delà du Profil Arrêt, les informations d’adresse sont donc attendues pour
 <td><strong>STOP PLACE</strong></td>
 <td><p><strong>QUAY<br />
 </strong></p>
-<p><em>(profil réseau)</em></p>
+<p><em>(partie réseau)</em></p>
 <p><strong>SCHEDULED STOP POINT<br />
 PASSENGER STOP ASSIGNMENT</strong></p></td>
 <td></td>
@@ -797,7 +778,7 @@ PASSENGER STOP ASSIGNMENT</strong></p></td>
 <td><em><strong>Trip plan computation — scheduled modes transport</strong></em></td>
 <td>Stop facilities access nodes (including platform information, help desks/information points, ticket booths, lifts/stairs, entrances and exit locations)</td>
 <td><strong>STOP PLACE's FACILITIES</strong></td>
-<td><p>(profil Accessibilité)</p>
+<td><p>(partie Accessibilité)</p>
 <p><strong>EQUIPMENT</strong></p></td>
 <td></td>
 </tr>
@@ -806,7 +787,7 @@ PASSENGER STOP ASSIGNMENT</strong></p></td>
 <td><em><strong>Trip plan computation — scheduled modes transport</strong></em></td>
 <td>Accessibility of access nodes, and paths within an interchange (such as existence of lifts, escalators)</td>
 <td><strong>STOP PLACE's FACILITIES</strong></td>
-<td><p><em>(profil Accessibilité)</em></p>
+<td><p><em>(partie Accessibilité)</em></p>
 <p><strong>EQUIPMENT<br />
 NAVIGATION PATH<br />
 </strong></p></td>
@@ -817,7 +798,7 @@ NAVIGATION PATH<br />
 <td><em><strong>Trip plan computation — scheduled modes transport</strong></em></td>
 <td>Existence of assistance services (such as existence of on-site assistance)</td>
 <td><strong>STOP PLACE's FACILITIES</strong></td>
-<td><p>(profil Accessibilité)</p>
+<td><p>(partie Accessibilité)</p>
 <p><strong>LOCAL SERVICE</strong></p></td>
 <td></td>
 </tr>
@@ -922,7 +903,7 @@ spécifier les valeurs de code autorisées :
     mécanisme TYPE OF VALUE dans quelques cas pour spécifier des codes
     normalisés supplémentaires : ceux-ci sont affectés à un CODESPACE
     «FR_IV_metadata» (https://netex-cen.eu/FR_IV) indiqué par un préfixe
-    «FR_IV». (par exemple, «FR_IV: monomodal».
+    «FR_IV». (par exemple, «FR_IV: monomodal».)
 
 -   des instances TypeOfFrame: le profil utilise plusieurs TYPES DE
     FRAME pour spécifier l'utilisation de VERSION FRAME dans le profil.
@@ -1338,10 +1319,12 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 </tr>
 <tr class="even">
 <td><em><strong>tariffZones</strong></em></td>
-<td><em>TariffZoneRef</em></td>
+<td><em>FareZoneRef</em></td>
 <td>0:*</td>
-<td><p>Identifiant de la zone tarifaire (ou section selon les cas). <span class="hl">Cet identifiant est, dans le cadre de ce profil, le code ou nom de la zone (typiquement "1", "2", etc.)</span></p>
-<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>tarrifZone</strong></em>, alors la zone tarifaire du <em><strong>StopPlace</strong></em> parent s'applique.</p></td>
+<td><p>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`.</p>
+<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>FareZone</strong></em>, alors la ou les zones tarifaires du <em><strong>StopPlace</strong></em> parent s'appliquent.</p>
+<p>Le profil France fait une restriction de la norme NeTEx en demandant explicitement une FareZoneRef, alors que NeTEx indique TariffZone (dont FareZone est une spécialisation).</p>
+</td>
 </tr>
 <tr class="odd">
 <td>STOP PLACE PROPERTY GROUP</td>
@@ -1391,6 +1374,8 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 </tr>
 </tbody>
 </table>
+
+<span class="h1"><strong>NOTE IMPORTANTE</strong> : Le profil France rend obligatoire l'attribut <em>Location</em> du STOP PLACE</span>
 
 ### Attributs de Place
 
@@ -1519,7 +1504,7 @@ la façon suivante:
 <td><em>AccessibilityAssessment</em></td>
 <td>0:1</td>
 <td><p>Information globale précisant le niveau d'accessibilité du <span class="hl">LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</span>.</p>
-<p>Voir le détail ci-dessous.</p></td>
+<p>Voir le détail dans l'annexe 9 du profil Accessibilité.</p></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1945,8 +1930,7 @@ Français de NETEx: éléments communs**:
 
 -   SiteElement: 7.2.8
 
-<div class="table-title">Quay (traduit pas ZONE D'EMBARQUEMENT en français) –</div>
-Element
+<div class="table-title">Quay (traduit par ZONE D'EMBARQUEMENT en français) – Element</div>
 
 <table>
 <colgroup>
@@ -2029,6 +2013,8 @@ Element
 
 </tbody>
 </table>
+
+<span class="h1"><strong>NOTE IMPORTANTE</strong> : Le profil France rend obligatoire l'attribut <em>Location</em> du QUAY</span>
 
 <div class="table-title">Espace de Lieu d’Arrêt – Element (abstrait)</div>
 
@@ -2139,9 +2125,10 @@ Element
 <tr class="odd">
 <td></td>
 <td><em><strong>tariffZones</strong></em></td>
-<td><em>TariffZoneRef</em></td>
+<td><em>FareZoneRef</em></td>
 <td>0:*</td>
-<td>Identifiant de la zone tarifaire (ou section selon les cas). <span class="hl">Cet identifiant est, dans le cadre de ce profil, le code ou nom de la zone (typiquement "1", "2", etc.)</span></td>
+<td>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`. Voir la desciption du champ `tariffZones` de l'objet StopPlace pour les précisions sur l'héritage.
+</td>
 </tr>
 </tbody>
 </table>
@@ -2497,125 +2484,50 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 # Entêtes NeTEx
 
 *Note: les entêtes NeTEx sont présentés dans le document éléments
-communs. Seules les spécificités du profil NETEX_ARRET sont présentées
+communs. Seules les spécificités de la partie "description des arrêts" sont présentées
 ici.*
+
+Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
+
+Une GeneralFrame de type **NETEX_ARRET** est utilisée pour échanger la description des arrêts 
+dans le fichier `stop.xml`. 
 
 ## TypeOfFrame : type spécifique *NETEX_ARRET*
 
-Le présent profil utilise un *TypeOfFrame* spécifique, identifié
-***NETEX_ARRET*** . Il apparaitra systématiquement et explicitement dans
-les éléments ***members*** du ***GeneralFrame***.
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_ARRET`, seuls les objets de premier niveau suivants sont autorisés : 
+- StopPlace
+- FlexibleStopPlace
+- Quay
+- TopographicPlace
+- StopPlaceEntrance
+- Entrance
+- AccessSpace
 
-<div class="table-title">TypeOfFrame – Element (objet inclus)</div>
-
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 12%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Nom</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>TypeOfValueDataManagedObject</em></td>
-<td><em>::>::></em></td>
-<td><p>TYPE OF FRAME hérite de TYPE OF VALUE.</p>
-<p><span class="hl">L'Id est imposé à NETEX_ARRET</span></p></td>
-</tr>
-
-
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>classes</strong></em></td>
-<td><em>ClassInContextRef</em></td>
-<td>0:*</td>
-<td><p>Liste des classes pouvant être contenu dans ce TYPE OF FRAME.</p>
-<p><span class="hl">La liste est fixe pour NETEX_ARRET :</span></p>
-<ul>
-<li><p><span class="hl">STOP PLACE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">QUAY</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">TOPOGRAPHIC PLACE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">STOP PLACE ENTRANCE</span></p></li>
-</ul>
-<ul>
-<li><p><span class="hl">GENERAL GROUP OF ENTITIES</span></p></li>
-</ul></td>
-</tr>
-
-
-</tbody>
-</table>
-
-<div class="table-title">TypeOfValue (pour le TypeOfFrame NETEX_ARRET) – Element</div>
-
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 14%" />
-<col style="width: 8%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Classifi­cation</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th></th>
-<th><strong>Description</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>::></td>
-<td>::></td>
-<td><em>DataManagedObject</em></td>
-<td>::></td>
-<td><p>TYPE OF VALUE hérite de DATA MANAGED OBJECT.</p>
-<p><span class="hl">L’attribut version portera la version du profil</span></p>
-<p><span class="hl">L'Identifiant du TYPE OF VALUE est imposé à NETEX_ARRET</span></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Name</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Nom du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « NETEX ARRET</span> <span class="hl">»</span>.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em><strong>Description</strong></em></td>
-<td><em>MultilingualString</em></td>
-<td>1:1</td>
-<td><p>Description du TYPE OF VALUE.</p>
-<p><span class="hl">Imposé à « Profil d’échange français NETEX ARRET»</span>.</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+Voici un exemple de cadre du fichier `stop.xml` :
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.4">
+  <PublicationTimestamp>2023-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_ARRET:" version="2.0:FR-NETEX-2.4">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ARRET:" />
+      <members>
+        <!--
+          STOP PLACE
+          FLEXIBLE STOP PLACE
+          QUAY
+          TOPOGRAPHIC PLACE
+          STOP PLACE ENTRANCE
+          ENTRANCE
+          GROUP OF STOP PLACES
+          ACCESS SPACE
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>                  
+</PublicationDelivery>
+```
 
 Bibliographie
 
