@@ -9,7 +9,7 @@ Cet espace de travail regroupe l'ensemble des éléments du profil France de NeT
 Dans le dossier `NeTEx` de cet espace de travail, on trouve un sous-dossier pour chaque partie du profil France. Chaque sous-dossier comprend : 
 - Un fichier `index.md` qui comprend le texte de la partie du profil,
 - Un dossier `media` pour toutes les illustrations.
-La sous-partie Tarifs comprend en plus un fichier `faq.md` qui sert de base méthodologique pour la représetnation de l'offre tarifaire en NeTEx.
+La sous-partie Tarifs comprend en plus un fichier `faq.md` qui sert de base méthodologique pour la représentation de l'offre tarifaire en NeTEx.
 
 Le dossier `exemples` est un ajout à partir de la version v2.4 du profil France pour illustrer les choix faits et faciliter la production / réutilisation de jeux de données en NeTEx.
 
