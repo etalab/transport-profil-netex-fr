@@ -277,15 +277,13 @@ Le 'mode v&eacute;hicule' est une caract&eacute;risation de l'exploitation du tr
 
 Le 'mode d'accès' (par exemple, la marche, le cyclisme, la conduite de voiture priv&eacute;e, etc.) est une caract&eacute;risation du mouvement du voyageur (par exemple, marcher, faire du v&eacute;lo, etc.) lui permettant d'atteindre le 'mode v&eacute;hicule' ou de r&eacute;aliser un voyage complet.
 
-Figure 1 : Cat&eacute;gorisation des modes de transport
-
-
+![Catégorisation des modes de transport (1/2)](media/Figure1_CategorieMode.jpg)
 
 Une distinction est faite entre le 'mode v&eacute;hicule' et le 'type de v&eacute;hicule'. Chaque 'mode v&eacute;hicule' peut correspondre à une gamme de 'types de v&eacute;hicules' (par exemple, pour le 'mode v&eacute;hicule' 'autobus', on peut avoir des types comme 'standard', 'articul&eacute;', 'minibus', 'à deux &eacute;tages').
 
 Une cat&eacute;gorisation plus fine des modes de transport est fournie par le concept de 'sous-mode', qui est une variante d'un 'mode'. Par exemple, pour le mode 'rail', les sous-modes possibles sont 'rail international' ou 'rail domestique' ; pour le mode 'autobus', l'exemple de sous-mode est 'autobus r&eacute;gional', pour le mode 'voiture', les exemples de sous-modes sont 'voiture &eacute;lectrique', 'voiture conventionnelle', 'voiture autonome'.
 
-Figure 2 : Cat&eacute;gorisation des modes de transport
+![Catégorisation des modes de transport (2/2)](media/CategorieModesTransport2.JPG)
 
 Les modes et sous-modes d&eacute;finis comme des 'moyens de transport' peuvent être caract&eacute;ris&eacute;s en termes de types de fonctionnement, c'est-à-dire des façons dont ils sont op&eacute;r&eacute;s.
 
@@ -752,54 +750,14 @@ Le covoiturage peut b&eacute;n&eacute;ficier d’une priorit&eacute; pour l’ut
 
 \[Pas dans le profil &agrave; date : Cf travaux en cours sur les infrastructure velo\]
 
-# Modèle de donn&eacute;es
 
-## Les modes Alternatifs (nouveaux modes)
-
-**Statut implémentation : OBLIGATOIRE** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
-
-### Modèle Conceptuel
-
-Figure 3 : Mode Alternatif NM
-
-### Modèle de donn&eacute;es
-
-#### MODE OF OPERATION (Mode d’exploitation)
-
-Table 4 — Mode d’op&eacute;ration
-
-#### Alternative Mode OfOperation (Mode d’exploitation Alternatif)
-
-Il s’agit d’un mode de transport public, diff&eacute;rent des modes conventionnels, par exemple l’auto Table 5 — Mode d’op&eacute;ration alternatif
-
-##### COVOITURAGE
-
-A r&eacute;diger ult&eacute;rieurement
-
-##### VEHICLE SHARING (Partage de v&eacute;hicule)
-
-Location de v&eacute;hicule &agrave; court terme où le v&eacute;hicule peut être pris et stationn&eacute; &agrave; diff&eacute;rents endroits dans la zone urbaine, &eacute;ventuellement sans l'obligation de ramener le v&eacute;hicule &agrave; un lieu sp&eacute;cifique.
-
-Table 6 — Paratage de v&eacute;hicule
-
-###### VEHICULE SHARING TYPE (Type de partage de v&eacute;hicule)
-
-Table 7 — Type de Partage de v&eacute;hicule
-
-###### TypeOfModeOfOperation
-
-Classification de MODE OF OPERATION.
-
-Table 8 — Type de mode d’op&eacute;ration
-
-## Flotte de v&eacute;hicule
-
-**Statut impl&eacute;mentation : OBLIGATOIRE** : Cette partie du profil peut être impl&eacute;ment&eacute;e en en fonction du contexte.
 # Modèle de donn&eacute;es
 
 ## Les modes Alternatifs (nouveaux modes)
 
 ### Modèle Conceptuel
+
+![Modes Alternatifs - Modèle conceptuel](media/Fig3_ModesAlternatifs.JPG)
 
 Figure 3 : Mode Alternatif NM
 
@@ -872,6 +830,8 @@ Table 8 - Type de mode d'op&eacute;ration
 Le modèle de flotte NM d&eacute;crit la flotte de v&eacute;hicules, d&eacute;finie comme un ensemble de v&eacute;hicules de tout type. Le concept de flotte est g&eacute;n&eacute;ral, c'est-à-dire qu'il ne d&eacute;pend pas du mode d'exploitation, mais il est particulièrement utile pour d&eacute;crire les services offerts par certains modes d'exploitation alternatifs (NM).**
 
 Une flotte appartient à une organisation de transport, un organisme l&eacute;galement constitu&eacute; li&eacute; à un aspect quelconque du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.**
+
+![Flotte de véhicule NM - Modèle conceptuel](media/Fig4_Flotte.JPG)
 
 Figure 4 : Flotte de v&eacute;hicule NM
 
