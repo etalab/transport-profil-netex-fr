@@ -335,15 +335,16 @@ Ce principe est commun sur tout les types de taxes.
 <TypeOfPricingRule id="FR:TypeOfPricingRule:TVA" version="any"/> <!-- Cette valeur sera à uniformiser dans le profil France pour identifier les taux de TVA -->
 <DiscountingRule version="any" id="exemple:DiscountingRule:01">
     <Name>TVA 10%</Name>
+    <TypeOfPricingRuleRef ref="FR:TypeOfPricingRule:TVA" />
     <DiscountAsPercentage>10</DiscountAsPercentage>
     <DiscountAsValue>1.3</DiscountAsValue>
 </DiscountingRule>
+<!-- SalesOfferPackagePrice doit être inclus dans une Cell de la FareTable -->
 <SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:012" version="any">
     <ValidBetween>
         <FromDate>2025-01-01T00:00:00</FromDate>
         <ToDate>2025-12-31T23:59:59</ToDate>
     </ValidBetween>
-    <TypeOfPricingRuleRef ref="FR:TypeOfPricingRule:TVA" /> <!-- Cette référence semble invalide -->
     <Amount>40.00</Amount>
     <Currency>EUR</Currency>
     <ruleStepResults>
