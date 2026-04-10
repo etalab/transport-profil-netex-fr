@@ -3473,7 +3473,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                    | InternalWidth               | LengthType           | 0:1             | Largeur à l'intérieur de la cabine                                                                                                                                                                                                                                                                                                                                                                    |
 |                    | HandrailType                | HandrailEnum         | 0:1             | Type de main courante <li><p><em>none</em> (aucun)</p></li> <li><p><em>oneSide</em> (d’un côté seulement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li>                                                                                                                                                                                                                                 |
 |                    | HandrailHeight              | LengthType           | 0:1             | Hauteur de la main courante                                                                                                                                                                                                                                                                                                                                                                           |
-|                    | CallButtonHeight            | LengthType           | 0:1             | Hauteur du bouton d’appel de l’ascenseur (à partir du sol                                                                                                                                                                                                                                                                                                                                             |
+|                    | CallButtonHeight            | LengthType           | 0:1             | Hauteur du bouton d’appel de l’ascenseur (à partir du sol)                                                                                                                                                                                                                                                                                                                                             |
 |                    | DirectionButtonHeight       | LengthType           | 0:1             | Hauteur des boutons d’appel directionels de l’ascenseur (à partir du sol), valeur la plus haute                                                                                                                                                                                                                                                                                                       |
 |                    | LowerHandrailHeight         | LengthType           | 0:1             | Hauteur de la main courante (à partir du sol)                                                                                                                                                                                                                                                                                                                                                         |
 |                    | RaisedButtons               | xsd:boolean          | 0:1             | Signale si les boutons sont en relief                                                                                                                                                                                                                                                                                                                                                                 |
@@ -3492,6 +3492,34 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                    | ButtonsHeight               | LengthType           | 0:1             | Hauteur (taille) des boutons                                                                                                                                                                                                                                                                                                                                                                          |
 |                    | GroundMarkalignedWithButton | xsd:boolean          | 0:1             | Signale la présence de marquage podotactile pour repérer les boutons                                                                                                                                                                                                                                                                                                                                  |
 
+Remarque : <span class="hl">plusieurs modélisations sont possibles pour les ascenseurs. Dans le cadre du profil, voici celle qui est préconisée :
+
+- un LIFT EQUIPMENT
+- un SITE PATH LINK pour chaque niveau traversé. Cet objet a une géométrie linéaire mais verticale (les coordonnées des points de départ et d'arrivée sont identiques, à l'exception de l'altitude éventuelle) <span>
+
+exemple :
+
+![schéma présentant une coupe d'un ascenseur, avec 3 SitePathLink dessinés](media/image19.png)
+
+- l'équipement de l'ascenseur :
+
+```xml
+<LiftEquipment id="doc:LiftEquipment:1" version="1">(...)</LiftEquipment>
+```
+
+- le tronçon de cheminement de l'ascenseur :
+
+```xml
+<SitePathLink id="doc:SPL:1" version="1"> 
+        (...)
+        <AccessFeatureType>lift</AccessFeatureType>
+        <placeEquipments>
+                <LiftEquipmentRef ref="doc:LiftEquipment:1"/>
+        </placeEquipments>
+</SitePathLink>
+```
+
+Si d'autres étages sont desservis, d'autres tronçons de cheminements avec AccessFeatureType=lift sont nécessaires.
 
 ## Sign Equipment
 
