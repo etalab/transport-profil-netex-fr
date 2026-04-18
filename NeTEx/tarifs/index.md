@@ -6004,7 +6004,7 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_TARIF`, seuls les objets de
   - PreassignedFareProduct 
   - SaleDiscountRight pour les bons de réduction
   - UsageDiscountRight pour les cartes de réduction
-  - AmountOfPriceUnit pour l'achat de support, comme la carte Navigo Liberté+
+  - AmountOfPriceUnitProduct pour l'achat de support, comme la carte Navigo Liberté+
 - SalesOfferPackageElement
 - SalesOfferPackage
 - TypeOfTravelDocument
@@ -6033,7 +6033,7 @@ Voici un exemple de cadre du fichier `fare.xml` :
              - PreassignedFareProduct 
              - SaleDiscountRight pour les bons de réduction
              - UsageDiscountRight pour les cartes de réduction
-             - AmountOfPriceUnit pour l'achat de support, comme la carte Navigo Liberté+
+             - AmountOfPriceUnitProduct pour l'achat de support, comme la carte Navigo Liberté+
           SalesOfferPackageElement
           SalesOfferPackage
           TypeOfTravelDocument
