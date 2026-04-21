@@ -4220,6 +4220,40 @@ En particulier, ça sera :
 
 **TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
 
+## Définition des *AccessibilityLimitation* pour les véhicules
+
+**WheelchairAccess** : Il existe un espace assez large pour accueillir les personnes en fauteuil roulant à bord, et on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
+
+**AudibleSignalsAvailable** : des annonces sonores d'information voyageur sont diffusées dans le véhicule. Il peut s'agir d'annonces à la porte avant rappelant la ligne et la destination, ou d'annonce à bord indiquant le prochain arrêt.
+
+**VisualSignsAvailable** : il y a un système d'affichage visuel de l'information voyageur. Il peut s'agir d'un affichage à l'extérieur (à l'avant et à l'arrière) indiquant la ligne et la destination, ou d'affichage à bord indiquant le prochain arrêt. Des critères de visibilité s'appliquent concernant le contraste, la taille et la police des caractères.
+
+**StepFreeAccess** : on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
+
+Les autres évaluations d'accessibilité ne sont pas retenues pour le véhicule.
+
+## Définition des *AccessibilityLimitation* retenus pour la course commerciale (SERVICE JOURNEY)
+
+On considère que l'évaluation d'accessibilité est remplie pour la course commerciale lorsque 100% des véhicules susceptibles d'opérer cette course commerciale remplissent cette évaluation d'accessibilité. Se rapporter aux définitions sur les véhicules pour connaitre les critères pour chaque évaluation d'accessibilité.
+
+Si certains véhicules ne sont pas équipés, on peut utiliser la valeur "partial", en renseignant un commentaire pour donner plus de détails.
+
+## Définition des *AccessibilityLimitation* retenus pour la ligne (LINE)
+
+Ces définitions s'appliquent également aux lignes flexibles (FLEXIBLE LINE).
+
+**WheelchairAccess** : La ligne est officiellement ouverte aux personnes en fauteuil roulant par l'opérateur ou l'autorité organisatrice. Cela signifie en général que le personnel est formé à la prise en charge des personnes en situation de handicap, que les supports d'information voyageur  (aux arrêts et à bord des véhicules) l'indiquent et que le matériel roulant est équipé en conséquence selon des critères dépendant de la politique locale.
+
+**AudibleSignalsAvailable** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne diffusent des annonces sonores. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
+
+**VisualSignsAvailable** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne disposent un système d'affichage visuel de l'information voyageur. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
+
+**StepFreeAccess** : On peut embarquer de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc) dans n'importe quel véhicule circulant sur cette ligne.
+
+Pour les critères qui portent sur tous les véhicules / sur tous les arrêts, on peut utiliser la valeur "partial" si certains véhicules ou arrêts ne sont pas équipés, en renseignant un commentaire pour donner plus de détails.
+
+Les autres évaluations d'accessibilité ne sont pas retenues pour la ligne dans le cadre du profil.
+
 ## Espace de manœuvre pour les entrées (ENTRANCE EQUIPMENT)
 
 L'espace de manœuvre (ou aire de rotation) désigne à un espace situé juste devant la porte, permettant de la manœuvrer correctement et de faire demi-tour en fauteuil roulant afin de l'emprunter. Un diamètre d'1,50 m est attendu et on peut en retrouver de chaque côté de la porte (attribut **TurningSpacePosition**).
