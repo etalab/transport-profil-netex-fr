@@ -116,9 +116,40 @@
 							</validityParameterAssignments>
 						</FareStructureElement>						
 						
-						
+						<!--
+							Cas 4 : Validité sur périmètre urbain mais à destination de certains arrêts (ex: aéroports)
 
-
+							Les méthodes non retenues : 
+								- utilisation d'un "supplément" en fonction de la destination : pas adaptée au cas d’usage français, ni aux besoins de la billettique.
+								- le ciblage géographique de manière à conserver des définitions explicites
+								- conserver un périmètre valide sur tout le réseau, afin d'éviter de proposer le tarif sur tous les trajets même si techniquement c'est possible
+								
+							Questions : 
+								- ajouter un filtre sur mode est possible avec GenericParameterAssignment/validityParameters/VehicleModes. 
+									est-ce utile ?
+								- oblige-t-on un opérateur ou une liste d'opérateurs pour éviter les opérateurs tiers / privés ?
+									si oui, à ajouter au niveau de FareZone. Faut-il que la zone de départ et la zone d'arrivée aient les mêmes opérateurs ?
+						-->
+						<DistanceMatrixElement id="exemple:DistanceMatrixElement:SpecialDestinations" version="any">
+							<StartTariffZoneRef ref="exemple:FareZone:AllStopPlaces" />
+							<EndTariffZoneRef ref="exemple:FareZone:AllSpecialDestinations"/>
+						</DistanceMatrixElement>
+						<FareStructureElement id="exemple:FareStructureElement:SpecialDestinations" version="any">
+							<Name>Depuis tous les arrêts vers certains arrêts</Name>
+							<TypeOfFareStructureElementRef ref="FR:ScopingValidityParameters" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:SpecialDestinations" version="any">
+									<TypeOfAccessRightAssignmentRef ref="FR:SpecialDestinations" />
+								
+									<DistanceMatrixElementRef ref="exemple:DistanceMatrixElement:SpecialDestinations"/>
+									
+									<!-- 
+									<validityParameters>
+										<VehicleModes>metro intercityRail</VehicleModes>
+									</validityParameters> -->
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
 					</members>
 				</GeneralFrame>
 			</frames>
