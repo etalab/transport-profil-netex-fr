@@ -11,125 +11,113 @@
 					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
 					<members>
 
-						<!-- Cas 1 : Ajout d'objets pour définir un périmètre -->
+						<!-- Cas 1 : Validité sur un ensemble de lignes -->
 						<FareStructureElement id="exemple:FareStructureElement:01" version="any">
 							<Name>Réseau ABC + ligne complémentaire</Name>
-							<TypeOfFareStructureElementRef ref="FR:SimpleTopology" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:ScopingValidityParameters" versionRef="any" />
 							<validityParameterAssignments>
 								<GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
 									<IsAllowed>true</IsAllowed> <!-- optionnel, "true" par défaut, fixé à "true" dans ce FSE -->
+									<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology"></TypeOfAccessRightAssignmentRef>
 									<validityParameters>
 										<NetworkRef ref="exemple:Network:001:LOC" />
 										<LineRef ref="exemple:Line:001:LOC" />
-										<!-- Possibilisé de mixer les types d'objets, mais ils seront tous ajoutés :
+										<!-- Possibilité de mixer les types d'objets, ce sont tous des ajouts :
 											- NetworkRef
 											- GroupOfLinesRef
 											- LineRef
-											- FareZoneRef
-											- FareSectionRef
-											
-											Les arrêts ne sont pas ajoutés pour éviter les risques d'autorisation de lignes externes 
-											sur les agrégations de données
+
+											Les objets non retenus dans ce type de FSE : 
+											- FareZoneRef et FareSectionRef
+											- Les arrêts (Quay et StopPlace)
 										-->
 									</validityParameters>
-									<IncludesGroupingType>OR</IncludesGroupingType> <!-- optionnel, "OR" par défaut, fixé à "OR" dans ce FSE -->
+									<IncludesGroupingType>OR</IncludesGroupingType> <!-- Proposition : Obligatoire dans le profil France -->
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+
+						<!--  Cas 2 : Validité sur un ensemble de lignes en excluant certains arrêts (ex: aéroports)
+					    Utilise un type de GenericParameterAssignment composé de : 
+							- 1 premier GenericParameterAssignment pour le périmètre global => mêmes objets que le cas 1
+							- 1 deuxième GenericParameterAssignment pour retirer les arrêts interdits (allowed = false) => uniquement 
+							Quay et StopPlace
+						-->
+						<FareStructureElement id="exemple:FareStructureElement:StopsExclusion" version="any">
+							<Name>Groupe de lignes sauf certains arrêts (StopPlaces ou Quays)</Name>
+							<TypeOfFareStructureElementRef ref="FR:ScopingValidityParameters" versionRef="any" />
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:StopsExclusion" version="any">
+									<TypeOfAccessRightAssignmentRef ref="FR:StopExclusionTopology" />
+									<IncludesGroupingType>AND</IncludesGroupingType>
+									<includes>
+										<GenericParameterAssignment id="exemple:GenericParameterAssignment:StopsExclusion-01" version="any">
+											<IsAllowed>true</IsAllowed>
+											<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology" />
+											<validityParameters>
+												<GroupOfLinesRef ref="exemple:GroupOfLinesRef:001:LOC" />
+											</validityParameters>
+											<IncludesGroupingType>OR</IncludesGroupingType> 
+										</GenericParameterAssignment>
+										<GenericParameterAssignment id="exemple:GenericParameterAssignment:StopsExclusion-02" version="any">
+											<IsAllowed>false</IsAllowed>
+											<TypeOfAccessRightAssignmentRef ref="FR:StopListExclusion" />
+											<validityParameters>
+												<StopPlaceRef ref="exemple:StopPlace:01" />
+												<StopPlaceRef ref="exemple:StopPlace:02" />
+												<QuayRef ref="exemple:Quay:01" /> 
+											</validityParameters>
+											<IncludesGroupingType>OR</IncludesGroupingType> 
+										</GenericParameterAssignment>
+									</includes>
 								</GenericParameterAssignment>
 							</validityParameterAssignments>
 						</FareStructureElement>
 
 
 						<!--
-							Cas 2 : Ajout de morceaux de lignes à un périmètre simple (on reste dans une modélisation type "Cas 1")
-								- Utilisation de ScheduledStopPoint pour rester sur une modélisation simple 
-								- Alternative possible sur des morceaux de JourneyPattern, peut être complexe si beaucoup de Patterns
-							
-							Note : Les FareSection ne peuvent être déclarées que dans des FareFrame. Dans des GeneralFrame, 
-							il est nécessaire de les déclarer dans des FareZone. 
+							Cas 3 : Validité sur périmètre urbain et des portions de lignes interurbaines
+							Utilise un type de GenericParameterAssignment composé de : 
+								- 1 premier GenericParameterAssignment pour le périmètre global (soit de type BaseTopology ou StopExclusionTopology, voir ci-dessus)
+								- 1 deuxième GenericParameterAssignment pour définir les portions de lignes interurbaines à ajouter
+
+							Les méthodes non retenues : 
+								- ciblage des arrêts par zone géographique (pas assez explicite et risque d'erreurs de ciblage)
+								- Utilisation de sections de JourneyPattern : entraine un couplage fort entre définition tarifaire et offre de transport
+									opérationnelle (souvent, ces deux données sont indépendentes). De plus, augmente de beaucoup la quantité de données à échanger,
+									en particulier lors des changement de services.
 						-->
-						<FareZone id="exemple:FareZone:01"  version="any">
-							<Description>liste des morceaux de lignes inter-urbaines "en zone 1"</Description>
-							<fareSections>
-								<FareSection id="exemple:FareSection:01" version="any">
-									<Description>Section de la ligne n°1</Description>
-									<projections>
-										<PointProjection id="exemple:RoutePointProjection:L1-01" version="any"> 
-											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L1-01" version="any" />
-										</PointProjection>
-										<PointProjection id="exemple:RoutePointProjection:L1-02" version="any"> 
-											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L1-02" version="any" />
-										</PointProjection>
-										<PointProjection id="exemple:RoutePointProjection:L1-03" version="any"> 
-											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L1-03" version="any" />
-										</PointProjection>
-									</projections> 
-								</FareSection>
-								<FareSection id="exemple:FareSection:02" version="any">
-									<Description>Section de la ligne n°2</Description>
-									<projections>
-										<PointProjection id="exemple:RoutePointProjection:L2-01" version="any"> 
-											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L2-01" version="any" />
-										</PointProjection>
-										<PointProjection id="exemple:RoutePointProjection:L2-02" version="any"> 
-											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L2-02" version="any" />
-										</PointProjection>
-										<PointProjection id="exemple:RoutePointProjection:L2-03" version="any"> 
-											<ProjectToPointRef ref="exemple:ScheduledStopPoint:L2-03" version="any" />
-										</PointProjection>
-									</projections> 
-								</FareSection>								
-							</fareSections>
-						</FareZone>
-						<FareStructureElement id="exemple:FareStructureElement:02" version="any">
+						<FareStructureElement id="exemple:FareStructureElement:UrbanAndInterurban" version="any">
 							<Name>Réseau ABC + morceaux de lignes interurbaines</Name>
-							<TypeOfFareStructureElementRef ref="FR:SimpleTopology" versionRef="any" />
+							<TypeOfFareStructureElementRef ref="FR:ScopingValidityParameters" versionRef="any" />
 							<validityParameterAssignments>
-								<GenericParameterAssignment id="exemple:GenericParameterAssignment:02" version="any">
-									<IsAllowed>true</IsAllowed>
-									<validityParameters>
-										<NetworkRef ref="exemple:Network:001:LOC" />
-										<FareZoneRef ref="exemple:FareZone:01" />
-									</validityParameters>
-									<IncludesGroupingType>OR</IncludesGroupingType>
-								</GenericParameterAssignment>
-							</validityParameterAssignments>
-						</FareStructureElement>
-
-
-						<!--  Cas 3 : Groupe de lignes en retirant certains arrêts (ex: Aéroports)
-						 - Solution 1 : 
-							   - Définir un groupe de ligne qui retire les lignes passant par les arrêts interdits
-							   - Redéfinir des "FareSection" pour toutes les lignes passant par les arrêts interdits dans une FareZone
-							   - Définir un FSE qui ajoute le groupe et la FareZone => équivalent au Cas 2 donc non explicité
-					     - Solution 2 : Générer un type de FSE complexe
-					     	  - 1 premier GenericParameterAssignment pour le périmètre global => mêmes objets que le cas 1
-					     	  - 1 deuxième GenericParameterAssignment pour retirer les arrêts interdits (allowed = false) => uniquement 
-					     	    Quay et StopPlace
-						-->
-						<FareStructureElement id="exemple:FareStructureElement:03" version="any">
-							<Name>Groupe de lignes sauf certains arrêts (StopPlaces ou Quays)</Name>
-							<TypeOfFareStructureElementRef ref="FR:TopologyWithStopExclusion" versionRef="any" />
-							<validityParameterAssignments>
-								<GenericParameterAssignment id="exemple:GenericParameterAssignment:03" version="any">
-									<IncludesGroupingType>AND</IncludesGroupingType> <!-- optionnel -->
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:UrbanAndInterurban" version="any">
+									<TypeOfAccessRightAssignmentRef ref="FR:UrbanAndInterurbanTopology" />
+									<IncludesGroupingType>OR</IncludesGroupingType> 
 									<includes>
-										<GenericParameterAssignment id="exemple:GenericParameterAssignment:03-01" version="any">
-											<IsAllowed>true</IsAllowed>
-											<validityParameters>
-												<GroupOfLinesRef ref="exemple:GroupOfLinesRef:001:LOC" />
-											</validityParameters>
+										<GenericParameterAssignment id="exemple:GenericParameterAssignment:UrbanAndInterurban-1" version="any">
+											<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology" /> <!-- ou ref="FR:StopExclusionTopology" --> 
 										</GenericParameterAssignment>
-										<GenericParameterAssignment id="exemple:GenericParameterAssignment:03-02" version="any">
-											<IsAllowed>false</IsAllowed>
+										<GenericParameterAssignment id="exemple:GenericParameterAssignment:UrbanAndInterurban-2" version="any">
+											<!-- 1 ou plusieurs GenericParameterAssignment avec IncludesGroupingType=AND
+											pour cibler les morceaux lignes pénétrantes -->
+											<IsAllowed>true</IsAllowed>
+											<TypeOfAccessRightAssignmentRef ref="FR:PartialInterurbanTopology" />
 											<validityParameters>
-												<StopPlaceRef ref="exemple:StopPlace:01" />
-												<StopPlaceRef ref="exemple:StopPlace:02" />
-												<QuayRef ref="exemple:Quay:01" /> 
+												<!-- un seul GroupOfLines, Network ou Line pour éviter de devoir jouer avec des OR sur les lignes
+													et un AND pour appliquer un seul GroupOfSites -->
+												<GroupOfLinesRef ref="exemple:GroupOfLines:002:LOC" />
+												<GroupOfSitesRef ref="exemple:GroupOfSites:002:LOC" />
 											</validityParameters>
+											<IncludesGroupingType>AND</IncludesGroupingType> 
 										</GenericParameterAssignment>
 									</includes>
 								</GenericParameterAssignment>
 							</validityParameterAssignments>
-						</FareStructureElement>
+						</FareStructureElement>						
+						
+						
+
 
 					</members>
 				</GeneralFrame>
