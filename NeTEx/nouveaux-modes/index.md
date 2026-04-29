@@ -883,6 +883,8 @@ L'entit&eacute; SERVICE EN LIGNE repr&eacute;sente tout service accessible à di
 
 Un OP&eacute;RATEUR DE SERVICE EN LIGNE est responsable de la gestion d'un SERVICE EN LIGNE (mais pas n&eacute;cessairement du transport lui-même, c'est-à-dire diff&eacute;rent d'un OP&eacute;RATEUR DE TRANSPORT), par exemple pour fournir des informations à un utilisateur sur des offres de covoiturage disponibles ou adapt&eacute;es, via une application web. Le SERVICE EN LIGNE assure une interface entre les utilisateurs ou entre utilisateurs et op&eacute;rateurs.
 
+![Services en Ligne](media/Fig5_ServiceEnLigne.JPG)
+
 Figure 5 : Services en ligne NM
 
 ### Modèle de donn&eacute;es
@@ -929,6 +931,8 @@ Exemple xml 3 : Online Service
 La description des zones de stationnement pour les modes de d&eacute;placement de type v&eacute;hicule partag&eacute; est d&eacute;crite dans le profil France Parking ;
 
 Cette partie du modèle permet de d&eacute;crire les zones de d&eacute;pôt des v&eacute;hicules. Le lien avec les v&eacute;hicules et services rattach&eacute;s Sont d&eacute;crits au paragraphe 10.7.2.2.
+
+![Fig-_Emplacement_NM](media/Fig6_Emplacement_NM.JPG)
 
 Figure 6 Modèle Emplacement NM
 
@@ -1021,6 +1025,8 @@ VEHICLE MEETING PLACE : lieux où des v&eacute;hicules, des voyageurs ou des con
 
 Ces lieux se distinguent par l’usage qui en est fait. Dans les VEHICLE MEETING PLACE, il n’est pas possible de laisser des v&eacute;hicules sans surveillance pendant une dur&eacute;e prolong&eacute;e. Un PLACE se distingue d’une CONNECTION, laquelle d&eacute;finit une paire de lieux entre lesquels un transfert est possible.
 
+![Fig7_Point de rencontre Covoiturage](media/Fig7_PointdeRencontre_Cov.JPG)
+
 Figure 7 : Lieux de rencontre (Covoiturage) NM
 
 ### Modèle de donn&eacute;es
@@ -1060,8 +1066,9 @@ Table 19 - VEHICLE POOLING MEETING PLACE – Attributes
 Une **RESTRICTION DE ZONE PAR TYPE DE V&eacute;HICULE** (VEHICLE TYPE ZONE RESTRICTION ) sp&eacute;cifie quel **TYPE DE RESTRICTION** s'applique à un **TYPE DE TRANSPORT (**TRANSPORT TYPE) donn&eacute;.
 
 ### Modèle conceptual
+![Fig8_GeoFencing](media/Fig8_ModeleGeoFencing.JPG)
 
-Figure 8 Modèle G&eacute;ofencing NM
+Figure 8 : Modèle G&eacute;ofencing NM
 
 ### Modèle de donn&eacute;es
 
@@ -1124,15 +1131,19 @@ Table 19 - Type de zone de restriction
 
 La d&eacute;finition d'un v&eacute;hicule (Cycle, Voiture) r&eacute;pond à la d&eacute;composition conceptuelle suivante.
 
+![Fig9_Vehicule](media/Fig9_Vehicule.JPG)
+
 Figure 9 : V&eacute;hicule - MC
 
 L'&eacute;quipement r&eacute;el du v&eacute;hicule sp&eacute;cifie le type d'&eacute;quipement à utiliser dans un v&eacute;hicule Donn&eacute;
+
+![Fig10_Equipement_Vehicule](media/Fig10_Equipement_vehicule.JPG)
 
 Figure 10 : Actual Vehicle Equipment MC
 
 ### Modèle de donn&eacute;es
 
-Le modèle **SIMLE** **VEHICLE TYPE** d&eacute;crit les v&eacute;hicules « personnels » et leurs propri&eacute;t&eacute;s.
+Le modèle **SIMPLE** **VEHICLE TYPE** d&eacute;crit les v&eacute;hicules « personnels » et leurs propri&eacute;t&eacute;s.
 
 Les v&eacute;hicules peuvent être class&eacute;s en fonction des exigences de planification, notamment :
 
@@ -1353,6 +1364,171 @@ Table 31 - Type de V&eacute;hicule
 
 Exemple xml 4 : Exemple mod&eacute;lisation « SimpleVehiculeType »
 
+## Identifiants d'accès aux véhicules
+
+Un code d'accès au service (SERVICE ACCESS CODE) est une spécialisation du document de voyage (TRAVEL DOCUMENT) qui fournit à l'utilisateur le code nécessaire pour utiliser un service.
+
+Les documents de voyage sont associés à un client de transport donné via un contrat tarifaire (FARE CONTRACT). Ils peuvent également être liés à un package d'achat client (CUSTOMER PURCHASE PACKAGE) en tant que représentation électronique de l'achat effectué par le client.
+
+Un code d'accès au service peut être associé à un véhicule physique et à un dispositif d'accès au support (MEDIUM ACCESS DEVICE) via une affectation d'accès au véhicule (VEHICLE ACCESS ASSIGNMENT). Cette association constitue un lien indépendant pouvant être utilisé de manière anonyme vis-à-vis du client pour exploiter le système d'accès.
+
+Le diagramme NM Vehicle Access MODEL décrit un contexte plus large lié à la mise à disposition d'un contrat permettant d'accéder à un service de transport. En particulier, le contrat tarifaire (FARE CONTRACT) peut héberger les codes d'accès au service fournis pour un service de mobilité, quel que soit le mode de transport alternatif.
+
+### Modèle conceptuel
+
+![Fig11_IdtAccesVehicule](media/Fig11_IdtAccesVehicule.JPG)
+
+Figure 11 : Identifiants d'accès au Véhicule
+
+### Modèle de données
+
+#### Code d'accès à un service (ServiceAccessCode)
+
+Code permettant d'accéder à un service, qui peut être un **code numérique**, un **code-barres**, un **flashcode (QR code)**, etc
+
+| **Classification** | **Nom**                                     | **Type**                                | **Cardinalité** | **Description**                                                                                                                                                                                                   |
+| ------------------ | ------------------------------------------- | --------------------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| «PK»               | **_id_**                                    | _ServiceAccessCodeIdType_               | 1:1             | Identifiant SERVICE ACCESS CODE                                                                                                                                                                                   |
+|                    | **_AccessCode_**                            | _xsd:normalizedString_                  | 1:1             | Chaîne de caractères fournie aux voyageurs pour accéder à un véhicule particulier.                                                                                                                                |
+|                    | **_ExpiryDate_**                            | _xsd:dateTime_                          | 1:1             | Date d'expiration d'un code d'accès au service                                                                                                                                                                    |
+| «FK»               | **_VehicleAccessCredentialsAssignmentRef_** | _VehicleAccessCredentialsAssignmentRef_ | 0:1             | Affectation d'accès au véhicule qui associe un code d'accès au service (SERVICE ACCESS CODE) à un véhicule et/ou à un dispositif d'accès afin de permettre l'utilisation du service d'accès de manière sécurisée, |
+
+Table 37 - Service de mobilitéAffectation des identifiants d'accès au véhicule (Vehicle Access Credentials Assignment)
+
+L'allocation d'un dispositif d'accès au support (MEDIUM ACCESS DEVICE) à un véhicule spécifique, afin de permettre à l'utilisateur (client transport - TRANSPORT CUSTOMER) d'accéder au véhicule (généralement dans le cadre d'un service de partage de véhicule ou de location de véhicule). Cette affectation peut être soumise à des limites de validité.
+
+| **Classification** | **Nom**                       | **Type**                                   | **Cardinalité** | **Description**                                                                                                     |
+| ------------------ | ----------------------------- | ------------------------------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------- |
+| ::>                | ::>                           | _Assignment_                               | ::>             | VEHICLE ACCESS CREDENTIALS ASSIGNMENT hérite de ASSIGNMENT                                                          |
+| «PK»               | **_id_**                      | _VehicleAccessCredentialsAssignmentIdType_ | 1:1             | **Identifiant de l'assignation des identifiants d'accès au véhicule (VEHICLE ACCESS CREDENTIALS ASSIGNMENT)** :     |
+| «FK»               | **_CommonVehicleServiceRef_** | _CommonVehicleServiceRef_                  | 0:1             | Référence au service de véhicule (VEHICLE SERVICE) auquel l'accès est effectué.                                     |
+| «FK»               | **_VehicleRef_**              | _VehicleRef_                               | 0:1             | Référence au véhicule auquel l'accès est autorisé / auquel l'accès est effectué.                                    |
+| «FK»               | **_MediumAccessDeviceRef_**   | _MediumAccessDeviceRef_                    | 0:1             | Référence au dispositif d'accès au support (MEDIUM ACCESS DEVICE) utilisé pour transmettre le code à l'utilisateur. |
+| «FK»               | **_ServiceAccessCodeRef_**    | _ServiceAccessCodeRef_                     | 1:1             | **Référence au code d'accès au service (SERVICE ACCESS CODE) permettant l'accès au véhicule.**                      |
+
+Table 39 - Vehicle Access Credentials Assignment
+
+## Paramètres d'utilisation (Usage Parameters)
+
+### **Modèle conceptuel - Paramètres d'éligibilité d'usage NM**
+
+Transmodel inclut des **paramètres d'usage** permettant de spécifier les restrictions relatives aux personnes autorisées à acheter un produit, notamment le **profil utilisateur (USER PROFILE)**.
+
+Pour les nouveaux modes de transport, ces paramètres sont complétés par l'ajout d'un paramètre supplémentaire : le **profil du covoitureur (VEHICLE POOLER PROFILE)**, qui définit des restrictions additionnelles concernant les utilisateurs d'un service de **covoiturage (VEHICLE POOLING)**.
+
+Par exemple, un service peut être proposé avec un VEHICLE POOLER PROFILE indiquant que les passagers doivent être de sexe féminin et non-fumeurs. Ces informations peuvent être mises en correspondance avec les préférences des passagers potentiels afin de sélectionner le trajet le plus approprié.
+
+Les détails relatifs aux bagages pouvant être transportés peuvent être spécifiés à l'aide du paramètre franchise bagage (LUGGAGE ALLOWANCE).
+
+![Fig12_ParametreUtilisation](media/Fig12_ParametreUtilisation.JPG)
+
+Figure 12 : Paramètres d'utilisation
+
+### Modèle de données
+
+#### Profil Utilisateur
+
+Profil social d'un passager, basé sur des critères tels que le groupe d'âge, le niveau d'éducation, la profession, le statut social, le sexe, etc., souvent utilisé pour déterminer l'éligibilité à des réductions tarifaires : par exemple 18-40 ans, diplômés, conducteurs, personnes sans emploi, femmes, etc
+
+| **Classification** | **Nom**                               | **Type**               | **Cardinalité** | **Description**                                                                                                                                    |
+| ------------------ | ------------------------------------- | ---------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ::>                | ::>                                   | _UsageParameter_       | ::>             | USER PROFILE hérite de USAGE PARAMETER..                                                                                                           |
+| «PK»               | **_id_**                              | _UserProfileIdType_    | 1:1             | Identifiant du USER PROFILE.                                                                                                                       |
+| «FK»               | **_BaseUserProfileRef_**              | _UserProfileRef_       | 0:1             | **Profil utilisateur de base (BASE USER PROFILE)** que ce profil vient spécialiser / affiner.                                                      |
+| «FK»               | **_TypeOf­ConcessionRef_**            | _TypeOfConcessionRef_  | 0:1             | Classification par type de concession                                                                                                              |
+| «enum»             | **_UserType_**                        | _UserTypeEnum_         | 0:1             | Classification des utilisateurs selon leur catégorie. Voir les valeurs autorisées ci-dessous.                                                      |
+| XGRP               | **_UserProfile­Qualification­Group_** | **_xmlGroup_**         | 0:1             | Éléments décrivant les conditions d'éligibilité pour un utilisateur.                                                                               |
+| «enum»             | **_Gender­Limitation_**               | _GenderLimitationList_ | 0:1             | Information relative au **genre exigé** pour l'éligibilité à un produit ou service, notamment pertinent pour les produits d'hébergement mono-sexe. |
+| «enum»             | **_ProofRequired_**                   | _ProofOfIdentityEnum_  | 0:\*            | Document ou justificatif demandé pour attester du statut de l'utilisateur. Voir les valeurs autorisées ci-dessous.                                 |
+| «enum»             | **_DiscountBasis_**                   | _DiscountBasisEnum_    | 0:1             | Type d'avantage tarifaire accordé à cette catégorie d'utilisateurs. Voir les valeurs autorisées précédemment                                       |
+| «cntd»             | **_companion­Profiles_**              | _CompanionProfile_     | 0:\*            | **Profils des accompagnateurs (COMPANION PROFILE)** décrivant les utilisateurs autorisés à voyager avec l'utilisateur principal.                   |
+
+Table 31 - Profil Utilisateur
+
+##### Type d'utilisateur (UserType)
+
+Le tableau suivant présente les valeurs autorisées pour le type d'utilisateur
+
+| **Valeur**          | **Description**                                  |
+| ------------------- | ------------------------------------------------ |
+| _anyone_            | User is any type of person.                      |
+| _adult_             | L'utilisateur est un adulte                      |
+| _child_             | L'utilisateur est un enfant                      |
+| _infant_            | L'utilisateur est un nourissons                  |
+| _senior_            | L'utilisateur est un sénior                      |
+| _schoolPupil_       | L'utilisateur est un écolier                     |
+| _student_           | L'utilisateur est un étudiant                    |
+| _youngPerson_       | L'utilisateur est une jeune personne             |
+| _disabled_          | L'utilisateur est handicapé                      |
+| _disabledCompanion_ | L'utilisateur est handicapé avec accompagnateur  |
+| _employee_          | L'utilisateur est un employé de l'opérateur      |
+| _military_          | L'utilisateur est un militaire                   |
+| _jobSeeker_         | L'utilisateur est sans emploi                    |
+| _guideDog_          | L'utilisateur est un chien guide                 |
+| _member_            | L'utilisateur dispose d'un programme de fidélité |
+| _animal_            | L'utilisateur est un animal                      |
+
+Table 31 - Profil Utilisateur
+
+##### Qualification du profil utilisateur (User Profile Qualification)
+
+Ensemble des critères ou attributs permettant de qualifier et d'évaluer un profil utilisateur, afin de déterminer son éligibilité à un produit, un service ou une offre tarifaire.
+
+| **Classification** | **Nom**                           | **Type**                   | **Cardinalité** | **Description**                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------ | --------------------------------- | -------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                    | **_MinimumAge_**                  | _xsd:integer_              | 0:1             | **Âge minimum requis pour l'adhésion à un profil utilisateur (USER PROFILE).**                                                                                                                                                                                                                                                                                                        |
+|                    | **_MaximumAge_**                  | _xsd:integer_              | 0:1             | **Âge maximum requis pour l'adhésion à un profil utilisateur (USER PROFILE).**                                                                                                                                                                                                                                                                                                        |
+|                    | **_MonthDayOn­WhichAge­Applies_** | _xsd:gmonthDay_            | 0:1             | our / mois à partir duquel l'âge s'applique (le cas échéant).                                                                                                                                                                                                                                                                                                                         |
+|                    | **_Minimum­Height_**              | _LengthType_               | 0:1             | Taille minimale requise pour l'adhésion à un profil utilisateur (USER PROFILE).                                                                                                                                                                                                                                                                                                       |
+|                    | **_MaximumHeight_**               | _LengthType_               | 0:1             | Poids maximal qu'un utilisateur doit respecter pour être éligible à un profil ou à un service, par exemple pour des raisons de sécurité (comme l'accès avec de grands chiens ou pour définir une limite applicable aux enfants)..                                                                                                                                                     |
+|                    | **_LocalResident_**               | _xsd:boolean_              | 0:1             | **Indique si l'utilisateur doit être résident local.** <br>→ Valeur booléenne précisant si l'utilisateur doit être un **résident local** pour être éligible. <br>→ La valeur par défaut est **« vrai » (true)**.                                                                                                                                                                      |
+| «cntd»             | **_resides_**                     | _ResidentialQualification_ | 0:\*            | **Qualifications résidentielles (RESIDENTIAL QUALIFICATIONS) pour le profil utilisateur (USER PROFILE)** - <br>→ Ensemble des conditions relatives à la résidence permettant de qualifier l'utilisateur. <br>→ Si plusieurs valeurs sont définies, elles sont combinées avec un **opérateur logique OU (OR)**, c'est-à-dire qu'il suffit qu'une seule des conditions soit satisfaite. |
+
+Table 31 - Qualification du profil utilisateur
+
+##### Preuves necessaires (ProofRequired)
+
+Le tableau suivant présente les valeurs autorisées pour le champ ProofRequired (ProofOfIdentityEnumeration).
+
+Il s'agit des types de preuves d'identité pouvant être exigées pour justifier l'éligibilité d'un utilisateur à un produit ou service.
+
+| **Valeur**          | **Description**                                                                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _noneRequired_      | Aucun justificatif d'identité n'est nécessaire pour l'accès au produit, au service ou au profil utilisateur concerné.                                                    |
+| _passport_          | La preuve requise est la présentation d'un passeport.                                                                                                                    |
+| _drivingLicence_    | La preuve requise est la présentation d'un permis de conduire.                                                                                                           |
+| _birthCertificate_  | La preuve requise est la présentation d'un acte de naissance.                                                                                                            |
+| _membershipCard_    | La preuve requise est la présentation d'un document d'identité, tel qu'une preuve d'appartenance à une organisation (carte de membre, justificatif d'affiliation, etc.). |
+| _studentCard_       | La preuve requise est la présentation d'une carte étudiante.                                                                                                             |
+| _identityDocument_  | La preuve requise est la présentation d'un document d'identité, tel qu'un permis de conduire ou un passeport.                                                            |
+| _creditCard_        | La preuve requise est la présentation d'une carte bancaire (carte de crédit).                                                                                            |
+| _medicalDocument_   | La preuve requise est la présentation d'un document médical ou d'une lettre émise par une autorité médicale.                                                             |
+| _letterWIthAddress_ | La preuve requise est la présentation d'une lettre ou d'une facture émise par une organisation à l'adresse du demandeur.                                                 |
+| _measurement_       | Mesure physique (comme la taille ou une autre mesure corporelle).                                                                                                        |
+| _emailAccount_      | La preuve consiste à répondre depuis un compte e-mail valide.                                                                                                            |
+| _mobileDevice_      | La preuve consiste à répondre depuis un appareil mobile associé à un compte.                                                                                             |
+| _other_             | Autre preuve.                                                                                                                                                            |
+
+Table 89 - Preuves nécessaires
+
+##### Profil du covoitureur (VehiclePoolerProfil)
+
+Ensemble de paramètres utilisateur caractérisant les droits d'accès à un service de covoiturage (VEHICLE POOLING SERVICE).
+
+→ Il s'agit d'une spécialisation du profil utilisateur (USER PROFILE) permettant de définir des attributs supplémentaires tels qu'une âge minimum.
+
+| **Classifi­cation** | **Name**                 | **Type**                     | **Cardin­ality** | **Description**                                                                                                                                                                                                                                                                    |
+| ------------------- | ------------------------ | ---------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ::>                 | ::>                      | _UserProfile_                | ::>              | VEHICLE POOLER PROFILE hérite de USER PROFILE..                                                                                                                                                                                                                                    |
+| «PK»                | **_id_**                 | _VehiclePoolerProfileIdType_ | 1:1              | Identifiant du profil du covoitureur (VEHICLE POOLER PROFILE).                                                                                                                                                                                                                     |
+| «FK»                | **_HostUserProfileRef_** | _UserProfileRef_             | 0:1              | Profil utilisateur de base (BASE USER PROFILE) que ce profil vient spécialiser / affiner.                                                                                                                                                                                          |
+|                     | **_SmokingAllowed_**     | _xsd:boolean_                | 0:1              | Indique si le tabagisme est autorisé ou non.                                                                                                                                                                                                                                       |
+|                     | **_PetsAllowed_**        | _xsd:boolean_                | 0:1              | Indique si les animaux de compagnie sont autorisés ou non.                                                                                                                                                                                                                         |
+|                     | **_LuggageAllowed_**     | _xsd:boolean_                | 0:1              | Indique si le covoitureur est disposé à transporter les bagages du passager.<br><br>→ La nature des bagages acceptés peut être spécifiée via un ou plusieurs éléments distincts de franchise bagage (LUGGAGE ALLOWANCE).<br><br>→ Cette disposition peut varier selon les trajets. |
+|                     | **_DetourAccepted_**     | _xsd:duration_               | 0:1              | Durée maximale acceptée pour un détour. <br>→ Indique le temps supplémentaire maximum autorisé pour effectuer un détour, par exemple pour prendre en charge ou déposer un passager lors d'un trajet.                                                                               |
+
+Table 89 - Profil du covoitureur
+
 ## Services
 
 **Statut implémentation : FACULTATIF** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
@@ -1361,7 +1537,9 @@ Exemple xml 4 : Exemple mod&eacute;lisation « SimpleVehiculeType »
 
 #### Modèle conceptual
 
-Figure 11 : Service En ligne - MC
+![Fig13_ServiceEnLigne](media/Fig13_ServiceEnLigne.JPG)
+
+Figure 13 : Service En ligne - MC
 
 #### Modèle de donn&eacute;es
 
@@ -1427,7 +1605,9 @@ Pour les nouveaux modes, les dispositions de r&eacute;servation peuvent être ap
 
 ##### Modèle conceptual
 
-Figure 12 : R&eacute;servation - MC
+![Fig14_Reservation](media/Fig14_Reservation.JPG)
+
+Figure 14 : R&eacute;servation - MC
 
 ##### Modèle de donn&eacute;es
 
@@ -1476,9 +1656,11 @@ Un **VEHICLE MEETING PLACE** peut être associ&eacute; à un **SITE** sp&eacute;
 
 Ces lieux se distinguent par leur usage : dans un **VEHICLE MEETING PLACE**, il n'est pas possible de laisser un v&eacute;hicule sans surveillance pour une dur&eacute;e prolong&eacute;e.
 
-Figure 13 :NM Point de rencontre (UML)
+![Fig15_PointRencontre](media/Fig15_PointRencontre.JPG)
 
-###### VEHICLE SERVICE PLACE ASSIGNMENT -
+Figure 15 :NM Point de rencontre (UML)
+
+###### Attribution des places de service des véhicules
 
 Les diff&eacute;rents **services de v&eacute;hicules** utilisent des **emplacements sp&eacute;cifiques** pour **embarquer et d&eacute;barquer les passagers**, ou pour permettre aux voyageurs de **prendre ou restituer un v&eacute;hicule**.
 
@@ -1486,17 +1668,25 @@ Des sp&eacute;cialisations du m&eacute;canisme g&eacute;n&eacute;rique **Transmo
 
 Chaque service est d&eacute;crit individuellement ci-dessous.
 
-Figure 13 NM Vehicle Service Place Assignment MODEL (UML)
+![Fig16_Emplacement](media/Fig16_Emplacement.JPG)
 
-###### VEHICLE SHARING PLACE ASSIGNMENT -
+Figure 16 NM Emplacements (UML)
 
-Les **services d'autopartage** et de **location de v&eacute;hicules** ont besoin d'**emplacements** pour que les utilisateurs puissent **prendre ou d&eacute;poser les v&eacute;hicules**. Ces emplacements peuvent être **exclusifs à un service** ou **partag&eacute;s**. Un **Vehicle Sharing Place Assignment** permet d'**attribuer des zones et places de stationnement** à un service particulier.
+###### Attribution des places dans un système de partage de véhicules
+
+Les **services d'autopartage**  ont besoin d'**emplacements** pour que les utilisateurs puissent **prendre ou d&eacute;poser les v&eacute;hicules**. Ces emplacements peuvent être **exclusifs à un service** ou **partag&eacute;s**. Un **Vehicle Sharing Place Assignment** permet d'**attribuer des zones et places de stationnement** à un service particulier.
 
 Certains services d'autopartage, dits **« Free-Floating »**, permettent de **d&eacute;poser et r&eacute;cup&eacute;rer le v&eacute;hicule n'importe où**, par exemple à un **emplacement identifiable quelconque**, repr&eacute;sent&eacute; par des **points de rencontre pour v&eacute;hicules**.
 
 Un même **Vehicle Sharing Place Assignment** peut **servir soit à l'autopartage, soit à la location**, mais **pas aux deux en même temps**. Si une zone de stationnement est utilis&eacute;e pour un assignment et un service d'autopartage, **deux assignments distincts doivent être d&eacute;finis**.
 
-Figure 14 : NM Vehicle Sharing Place Assignment MODEL (UML)
+![Fig17_AffectationPlaceSharing](media/Fig17_AffectationPlaceSharing.JPG)
+
+Figure 17 : NM Affectation d'un emplacement à un service de partage de vehicule (UML)
+
+###### Affectation des places en covoiturage
+
+A compléter ulterieurment
 
 ##### Modèle de donn&eacute;es
 
@@ -1552,7 +1742,9 @@ Le MODÈLE d'information sur la disponibilit&eacute; des v&eacute;hicules d&eacu
 
 Ces informations peuvent être globales, concernant la capacit&eacute; de l'ensemble du PARKING, ou indiquer la capacit&eacute; des ZONES DE STATIONNEMENT par TYPE DE V&eacute;HICULE. Il convient toutefois de noter que, pour &eacute;quilibrer l'offre et la demande dans les gares très fr&eacute;quent&eacute;es, les op&eacute;rateurs proposent parfois un service de personnel pour fournir ou retirer les v&eacute;hicules suppl&eacute;mentaires d'un d&eacute;pôt fixe ou de les placer sur des v&eacute;hicules mobiles. Cela signifie que la capacit&eacute; « virtuelle » d'un PARKING peut être sup&eacute;rieure au nombre de places physiques.
 
-Figure 16 : Disponibilit&eacute; pr&eacute;vue des v&eacute;hicules - MC
+![Fig18_DisponibiliteVehicule](media/Fig18_DisponibiliteVehicule.JPG)
+
+Figure 18 : Disponibilit&eacute; pr&eacute;vue des v&eacute;hicules - MC
 
 ##### Modèle de donn&eacute;es
 
@@ -1582,7 +1774,9 @@ La d&eacute;finition des &eacute;quipements de rechargement pour les v&eacute;hi
 
 A noter que l'information d'existance de capacit&eacute; de rechargement &eacute;lectrique est port&eacute;e au niveau de la Station (Recharging Availability).
 
-Figure 16 : Equipement de rechargement - MC
+![Fig19_EquipementRechargement](media/Fig19_EquipementRechargement.JPG)
+
+Figure 19 : Equipement de rechargement - MC
 
 ##### Modèle de donn&eacute;es
 
