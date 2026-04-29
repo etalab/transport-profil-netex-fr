@@ -44,6 +44,18 @@ Cet &eacute;l&eacute;ment permet de sp&eacute;cifier un &eacute;quipement d'un t
 
 Tout mode d'exploitation annonc&eacute; publiquement diff&eacute;rent du mode d'exploitation conventionnel, notamment le partage de v&eacute;hicules, la location de v&eacute;hicules et le covoiturage.
 
+**BOOKING ARRANGEMENT**
+
+A compléter
+
+**CAR MODEL PROFIL (NeTEx)**
+
+Le PROFIL DU MODÈLE DE VOITURE décrit l'ÉQUIPEMENT installé à bord d’une voiture d'un MODÈLE DE VOITURE spécifique
+
+**CAR POOLING SERVICE**
+
+A compléter
+
 **COMMON VEHICLE SERVICE**
 
 Un SERVICE DE MOBILIT&eacute; est en soi abstrait. Un SERVICE DE V&eacute;HICULES COMMUNS est une sp&eacute;cialisation d'un SERVICE DE MOBILIT&eacute; impliquant des V&eacute;HICULES.
@@ -61,6 +73,10 @@ Mode d'exploitation traditionnel propos&eacute; sous forme d'offre de transport 
 - Les conducteurs sont des salari&eacute;s ;
 - La flotte appartient à une autorit&eacute;, ou est d&eacute;tenue ou exploit&eacute;e par un op&eacute;rateur,
 - La topologie du r&eacute;seau est d&eacute;finie bien à l'avance et repose sur les lignes et les sch&eacute;mas de d&eacute;placement
+
+**CYCLE MODEL PROFILE** (NeTEx)
+
+Le PROFIL DU MODÈLE DE CYCLE décrit l'ÉQUIPEMENT installé à bord des cycles d'un MODÈLE DE CYCLE spécifique
 
 **FLEET (Flotte)- (Transmodel)**
 
@@ -86,13 +102,21 @@ Un des trois type de mode d'exploitation parmi ;
 
 L'entit&eacute; SERVICE EN LIGNE repr&eacute;sente tout service accessible à distance permettant d'acc&eacute;der à tout mode de transport et/ou à des informations relatives aux services de transport.
 
-**PARKING (parking) (Transmodel)**
+**ONLINE SERVICES OPERATOR** (NeTEx)
+
+A compléter
+
+**PARKING** (parking) (Transmodel)
 
 Emplacements d&eacute;sign&eacute;s pour stationner des v&eacute;hicules tels que des voitures, des motos et des v&eacute;los.
 
 **PARKING AREA** (zone de parking) (Transmodel)
 
 Zone identifi&eacute;e à l'int&eacute;rieur d'un parking, et contenant des places de stationnement (PARKING BAYs).
+
+**PARKING AREA CAPACITY ASSIGNMENT** (Transmodel)
+
+A compléter
 
 **PARKING BAY** (place de stationnement) _(Transmodel)_
 
@@ -101,6 +125,15 @@ Emplacement où l'on peut stationner une (unique) v&eacute;hicule.
 **PERSONAL MODE OF OPERATION** _(Transmodel)_
 
 Mode de d'exploitation priv&eacute; excluant toute utilisation annonc&eacute;e publiquement.
+
+**PROOF REQUIRED** (NeTEx)
+
+A compléter
+
+**SERVICE ACCES CODE** (Code d’accès à un service)
+
+A compléter
+
 
 **SIMPLE VEHICLE TYPE** _(NeTex)_
 
@@ -116,6 +149,10 @@ Chaque v&eacute;hicule possède :
 
 - un TRANSPORT TYPE,
 - un VEHICLE MODEL.
+
+**USER PROFILE QUALIFICATION**
+
+A compléter
 
 **VEHICULE CHARGING EQUIPMENT** (NeTEx)
 
@@ -133,9 +170,37 @@ Classification des v&eacute;hicules de transport public d'un même type selon l'
 
 Le PROFIL DU MODÈLE DE V&eacute;HICULE d&eacute;crit l'&eacute;QUIPEMENT install&eacute; à bord des V&eacute;HICULES d'un MODÈLE DE V&eacute;HICULE sp&eacute;cifique
 
+**VEHICLE POOLER PROFIL**
+
+A compléter
+
 **VEHICLE SHARING** (Transmodel)
 
 Location de v&eacute;hicule à court terme où le v&eacute;hicule peut être pris et stationn&eacute; à diff&eacute;rents endroits de la zone urbaine, souvent sans la contrainte de ramener le v&eacute;hicule à un endroit sp&eacute;cifique d&eacute;di&eacute;.
+
+**Vehicle Pooling** (Transmodel
+)
+Mode particulier d’exploitation d’un véhicule appartenant à un particulier, consistant à partager le véhicule pour un trajet entre un conducteur désigné, déjà engagé dans le trajet, et au moins un autre voyageur.
+
+**VEHICLE POOLING MEETING PLACE** (Lieu de rencontre pour covoiturage) (Transmodel)
+
+A compléter
+
+**VEHICLE POOLING PARKING BAY** (Emplacement de parking pour covoiturage) (Transmodel)
+
+A compléter
+
+**VEHICLE POOLING PARKING AREA** (zone de parking pour covoiturage) (Transmodel)
+
+A compléter
+
+**VEHICLE SERVICE PLACE ASSIGNEMENT**
+
+A compléter
+
+**VEHICLE SHARING PLACE ASSIGNEMENT**
+
+A compléter
 
 **VEHICLE SHARING PARKING AREA** (zone de parking pour v&eacute;hicule partag&eacute;) (Transmodel)
 
@@ -149,6 +214,14 @@ Emplacement où l'on peut stationner une (unique) v&eacute;hicule partag&eacute;
 
 Une ATTRIBUTION DE PLACE DE PARTAGE DE V&eacute;HICULE peut être utilis&eacute;e pour attribuer des ZONES DE STATIONNEMENT et des PLACES DE STATIONNEMENT sp&eacute;cifiques à utiliser par un service donn&eacute;.
 
+**VEHICLE SHARING SERVICE** (NeTEx)
+
+A compléter
+
+**VEHICLE SHARING TYPE** (NeTEx)
+
+A compléter
+
 **VEHICLE TYPE** _(NeTex)_
 
 D&eacute;finit les exigences applicables à un v&eacute;hicule programm&eacute; pour le transport de passagers. Ces exigences peuvent inclure :
@@ -156,6 +229,10 @@ D&eacute;finit les exigences applicables à un v&eacute;hicule programm&eacute; 
 - **Exigence de transport de passagers** : capacit&eacute; en passagers fauteuil roulant, etc.).
 - **Exigence de manœuvrabilit&eacute;** : contraintes li&eacute;es à la capacit&eacute; de manœuvre du v&eacute;hicule.
 - **Exigence d'&eacute;quipements** : installations requises à bord (accessibilit&eacute;, siège b&eacute;b&eacute;, etc.).
+
+**VEHICLE TYPE ZONE RESTRICTION** (Type de Zone de restriction de circulation)
+
+A compléter
 
 # Symboles et abr&eacute;viations
 
@@ -774,7 +851,7 @@ Figure 3 : Mode Alternatif NM
 
 Table 4 - Mode d'op&eacute;ration
 
-#### Alternative Mode OfOperation (Mode d'exploitation Alternatif)
+#### Alternative Mode Of Operation (Mode d'exploitation Alternatif)
 
 Il s'agit d'un mode de transport public, diff&eacute;rent des modes conventionnels, par exemple l'auto partage, le v&eacute;lo en libre-service, ou le covoiturage
 
@@ -967,6 +1044,11 @@ Table 14 - **PLACES DE STATIONNEMENT POUR V&eacute;HICULES PARTAG&eacute;S**
 
 _Une partie d&eacute;di&eacute;e de l’AIRE DE STATIONNEMENT pour le covoiturage compos&eacute;e d’une ou de plusieurs PLACES DE STATIONNEMENT DE COVOITURAGE._.
 
+Il est possible de préciser que la zone de parking est dédiée au covoiturage en utilisant la Balise <Name/>. Se reporter au profil NexTEx France Parking.
+
+Exemple : <VehiclePoolingParkingArea id="FR:VehiclePoolingParkingArea:76-6:Qpark" version="any"><Name>Zone réservée aux couvoitureurs</Name><TotalCapacity>2</TotalCapacity></VehiclePoolingParkingArea>
+															
+					
 |     |     |     |     |     |
 | --- | --- | --- | --- | --- |
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
