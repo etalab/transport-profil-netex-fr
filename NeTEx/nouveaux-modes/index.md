@@ -40,21 +40,28 @@ NOTE Les d&eacute;finitions ci-dessus sont des traductions litt&eacute;rales du 
 
 Cet &eacute;l&eacute;ment permet de sp&eacute;cifier un &eacute;quipement d'un type particulier effectivement disponible dans un v&eacute;hicule donn&eacute;.
 
-**ALTERNATIVE MODE OF OPERATION (Transmodel)**
+**ALTERNATIVE MODE OF OPERATION** (Transmodel)
 
 Tout mode d'exploitation annonc&eacute; publiquement diff&eacute;rent du mode d'exploitation conventionnel, notamment le partage de v&eacute;hicules, la location de v&eacute;hicules et le covoiturage.
 
-**BOOKING ARRANGEMENT**
+**BOOKING ARRANGEMENT** (Transmodel)
 
-A compléter
+Ensemble des règles et informations décrivant les modalités selon lesquelles un service de transport peut être réservé, incluant les conditions de réservation, les délais, les moyens de contact et les procédures à suivre par l’usager.
 
-**CAR MODEL PROFIL (NeTEx)**
+**CAR MODEL PROFIL** (NeTEx)
 
-Le PROFIL DU MODÈLE DE VOITURE décrit l'ÉQUIPEMENT installé à bord d’une voiture d'un MODÈLE DE VOITURE spécifique
+Description structurée des caractéristiques d’un modèle de véhicule utilisé dans un service de transport, incluant ses propriétés techniques, ses capacités et ses équipements, afin de qualifier son usage dans le système de transport.
 
-**CAR POOLING SERVICE**
+Selon le niveau de détail, cela peut inclure par exemple :
 
-A compléter
+* capacité (nombre de places),
+* type de motorisation (thermique, électrique, hybride),
+accessibilité (PMR),
+* équipements (climatisation, espace bagages, etc.).
+
+**CAR POOLING SERVICE** (NeTEx)
+
+Service de transport dans lequel plusieurs usagers partagent un véhicule privé pour effectuer tout ou partie d’un trajet commun, selon des conditions définies d’organisation, de mise en relation et d’exploitation.
 
 **COMMON VEHICLE SERVICE**
 
@@ -78,15 +85,15 @@ Mode d'exploitation traditionnel propos&eacute; sous forme d'offre de transport 
 
 Le PROFIL DU MODÈLE DE CYCLE décrit l'ÉQUIPEMENT installé à bord des cycles d'un MODÈLE DE CYCLE spécifique
 
-**FLEET (Flotte)- (Transmodel)**
+**FLEET (Flotte)**- (Transmodel)
 
 Une flotte appartient à une organisation de transport, un organisme l&eacute;galement constitu&eacute; li&eacute; à tout aspect du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.
 
-**MOBILITY CONSTRAINT ZONE (NeTEx)**
+**MOBILITY CONSTRAINT ZONE** (NeTEx)
 
 Une ZONE DE CONTRAINTE DE SERVICE DE MOBILIT&eacute; d&eacute;finit des restrictions de d&eacute;placement au sein d'une zone pour un MODE DE FONCTIONNEMENT donn&eacute;.
 
-**MOBILITY SERVICE (Transmodel)**
+**MOBILITY SERVICE** (Transmodel)
 
 Service de transport alternatif disponible sur un territoire &eacute;tendu, par exemple le covoiturage, la location, etc.
 
@@ -102,9 +109,9 @@ Un des trois type de mode d'exploitation parmi ;
 
 L'entit&eacute; SERVICE EN LIGNE repr&eacute;sente tout service accessible à distance permettant d'acc&eacute;der à tout mode de transport et/ou à des informations relatives aux services de transport.
 
-**ONLINE SERVICES OPERATOR** (NeTEx)
+**ONLINE SERVICES OPERATOR** (Exploitant de services en ligne) (NeTEx)
 
-A compléter
+Organisation responsable de la fourniture et de l’exploitation de services numériques permettant l’accès, la réservation, l’information ou la vente de services de transport via des canaux en ligne.
 
 **PARKING** (parking) (Transmodel)
 
@@ -114,9 +121,9 @@ Emplacements d&eacute;sign&eacute;s pour stationner des v&eacute;hicules tels qu
 
 Zone identifi&eacute;e à l'int&eacute;rieur d'un parking, et contenant des places de stationnement (PARKING BAYs).
 
-**PARKING AREA CAPACITY ASSIGNMENT** (Transmodel)
+**PARKING AREA CAPACITY ASSIGNMENT** (NeTEx)
 
-A compléter
+Association qui définit l’allocation d’une capacité de stationnement à une aire de stationnement donnée, en précisant comment une capacité (totale ou partielle) est affectée à un usage, un type de véhicule ou un service spécifique.
 
 **PARKING BAY** (place de stationnement) _(Transmodel)_
 
@@ -126,14 +133,14 @@ Emplacement où l'on peut stationner une (unique) v&eacute;hicule.
 
 Mode de d'exploitation priv&eacute; excluant toute utilisation annonc&eacute;e publiquement.
 
-**PROOF REQUIRED** (NeTEx)
 
-A compléter
+**SERVICE ACCES CODE** (Code d’accès à un service)(NeTEx)
 
-**SERVICE ACCES CODE** (Code d’accès à un service)
+Code définissant une condition ou une règle d’accès applicable à un service de transport, précisant les restrictions, permissions ou modalités d’utilisation associées à ce service.
 
-A compléter
+**SERVICE PROFILE QUALIFICATION** (NeTEx)
 
+Ensemble des attributs ou critères permettant de qualifier un profil de service de transport, afin de décrire ses caractéristiques fonctionnelles, opérationnelles ou commerciales et de le distinguer d’autres profils de service.
 
 **SIMPLE VEHICLE TYPE** _(NeTex)_
 
@@ -150,9 +157,9 @@ Chaque v&eacute;hicule possède :
 - un TRANSPORT TYPE,
 - un VEHICLE MODEL.
 
-**USER PROFILE QUALIFICATION**
+**USER PROFILE QUALIFICATION** (Transmodel)
 
-A compléter
+nsemble des attributs ou critères permettant de qualifier un profil d’utilisateur de transport, afin de déterminer ses droits, conditions d’accès ou avantages applicables dans le cadre d’un système de transport.
 
 **VEHICULE CHARGING EQUIPMENT** (NeTEx)
 
@@ -172,37 +179,37 @@ Le PROFIL DU MODÈLE DE V&eacute;HICULE d&eacute;crit l'&eacute;QUIPEMENT instal
 
 **VEHICLE POOLER PROFIL**
 
-A compléter
+Ensemble des caractéristiques décrivant un utilisateur ou un acteur qui met un véhicule à disposition dans un service de covoiturage, permettant de qualifier son rôle, ses droits et ses conditions de participation au service.
 
 **VEHICLE SHARING** (Transmodel)
 
 Location de v&eacute;hicule à court terme où le v&eacute;hicule peut être pris et stationn&eacute; à diff&eacute;rents endroits de la zone urbaine, souvent sans la contrainte de ramener le v&eacute;hicule à un endroit sp&eacute;cifique d&eacute;di&eacute;.
 
-**Vehicle Pooling** (Transmodel
-)
+**Vehicle Pooling** (Transmodel)
+
 Mode particulier d’exploitation d’un véhicule appartenant à un particulier, consistant à partager le véhicule pour un trajet entre un conducteur désigné, déjà engagé dans le trajet, et au moins un autre voyageur.
 
 **VEHICLE POOLING MEETING PLACE** (Lieu de rencontre pour covoiturage) (Transmodel)
 
-A compléter
+Lieu défini où les participants d’un service de covoiturage se rencontrent pour débuter ou organiser un trajet commun.
 
 **VEHICLE POOLING PARKING BAY** (Emplacement de parking pour covoiturage) (Transmodel)
 
-A compléter
+Emplacement de stationnement dédié ou identifié au sein d’une aire de stationnement, destiné à l’usage des véhicules participant à un service de covoiturage.
 
 **VEHICLE POOLING PARKING AREA** (zone de parking pour covoiturage) (Transmodel)
 
-A compléter
+Zone de stationnement dédiée ou qualifiée pour l’usage des véhicules participant à un service de covoiturage (vehicle pooling), permettant d’organiser et de restreindre l’utilisation de l’aire à ce type de service.
 
 **VEHICLE SERVICE PLACE ASSIGNEMENT**
 
-A compléter
+Association définissant l’affectation d’un lieu de service à l’usage des véhicules dans le cadre d’un service de transport, précisant les conditions dans lesquelles ce lieu peut être utilisé pour l’embarquement, le débarquement ou l’exploitation du service.
 
 **VEHICLE SHARING PLACE ASSIGNEMENT**
 
-A compléter
+Association définissant l’affectation d’un lieu à un service de partage de véhicule, précisant les conditions dans lesquelles ce lieu peut être utilisé pour la prise, la restitution ou l’exploitation de véhicules partagés.
 
-**VEHICLE SHARING PARKING AREA** (zone de parking pour v&eacute;hicule partag&eacute;) (Transmodel)
+**VEHICLE SHARING PARKING AREA** (zone de parking pour v&eacute;hicule partag&eacute;) (NeTEx)
 
 Zone identifi&eacute;e à l'int&eacute;rieur d'un parking d&eacute;di&eacute; au v&eacute;hicules partag&eacute;s, et contenant des places de stationnement (PARKING BAYs).
 
@@ -216,11 +223,11 @@ Une ATTRIBUTION DE PLACE DE PARTAGE DE V&eacute;HICULE peut être utilis&eacute;
 
 **VEHICLE SHARING SERVICE** (NeTEx)
 
-A compléter
+Service de transport permettant à des utilisateurs d’accéder à des véhicules partagés, généralement en libre-service ou sur réservation, selon des conditions d’utilisation définies par un opérateur.
 
 **VEHICLE SHARING TYPE** (NeTEx)
 
-A compléter
+Type définissant la catégorie ou le mode de fonctionnement d’un service de partage de véhicules, caractérisant la manière dont les véhicules sont mis à disposition et utilisés par les usagers.
 
 **VEHICLE TYPE** _(NeTex)_
 
@@ -230,9 +237,9 @@ D&eacute;finit les exigences applicables à un v&eacute;hicule programm&eacute; 
 - **Exigence de manœuvrabilit&eacute;** : contraintes li&eacute;es à la capacit&eacute; de manœuvre du v&eacute;hicule.
 - **Exigence d'&eacute;quipements** : installations requises à bord (accessibilit&eacute;, siège b&eacute;b&eacute;, etc.).
 
-**VEHICLE TYPE ZONE RESTRICTION** (Type de Zone de restriction de circulation)
+**VEHICLE TYPE ZONE RESTRICTION** (Type de Zone de restriction de circulation)(NeTEx)
 
-A compléter
+Règle définissant les restrictions applicables à un type de véhicule dans une zone géographique donnée, précisant si ce type de véhicule est autorisé, limité ou interdit dans cette zone.
 
 # Symboles et abr&eacute;viations
 
