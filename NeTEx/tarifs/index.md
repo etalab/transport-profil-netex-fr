@@ -3602,7 +3602,7 @@ OFFER PACKAGEs.</td>
 </tbody>
 </table>
 
-<div class='table-title'>SalesOfferPackageCommonGroup – Element</div>
+<div class='table-title'>SalesOfferPackageCommonGroup – Group</div>
 
 <table>
 <thead>
@@ -3803,6 +3803,28 @@ ELEMENT.</td>
     <SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
   </salesOfferPackageElements>
 </SalesOfferPackage>
+```
+
+### Prix de l'offre à la vente
+
+<div class='table-title'>SalesOfferPackagePrice – Element</div>
+
+SalesOfferPackagePrice hérite de FarePrice. Les propriétés spécifiques du SalesOfferPackagePrice ne sont pas retenues dans le 
+cadre du profil France. 
+L'objet SalesOfferPackagePrice n'est pas ajouté au niveau de la Frame. Il est à inclure :
+- directement dans la Cell de la FareTable 
+- ou comme objet listé dans FareTable/prices, puis référencée dans la Cell par un SalesOfferPackagePriceRef.
+
+L'exemple ci-dessous présente les attributs recommandés du SalesOfferPackagePrice dans le prodil France :
+```xml 
+<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
+    <ValidBetween> <!-- Dates de validité du tarif -->
+        <FromDate>2025-01-01T00:00:00</FromDate>
+        <ToDate>2025-12-31T00:00:00</ToDate>
+    </ValidBetween>
+    <Amount>38.80</Amount>
+    <Currency>EUR</Currency>
+</SalesOfferPackagePrice>
 ```
 
 ### Document de voyage 
@@ -6012,6 +6034,10 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_TARIF`, seuls les objets de
 - DiscountingRule
 - FareTable (les SalesOfferPackagePrice sont inclus dans les Cell de la FareTable)
 - DistanceMatrixElement
+
+Il est à noter que les SalesOfferPackagePrice sont à inclure :
+- directement dans la Cell de la FareTable 
+- ou comme objet inclus dans FareTable/prices, puis référencée dans la Cell par un SalesOfferPackagePriceRef.
 
 Voici un exemple de cadre du fichier `fare.xml` :
 
