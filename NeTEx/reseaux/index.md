@@ -800,7 +800,7 @@ proposent ces colonnes:
     les textes surlignés en jaune indiquent une spécificité du profil
     par rapport à NeTEx).
 
-Les textes surlignés en <span class="hl">Jaune</span> sont ceux
+Les textes surlignés en <mark>Jaune</mark> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx: une
 codification particulière, une restriction d'usage, etc.
 
@@ -927,7 +927,7 @@ de nuit, etc.).
 <td colspan="2"><em>::></em></td>
 <td><em>DataManagedObject</em></td>
 <td><em>::></em></td>
-<td>LINE hérite de <em><strong>DataManagedObject</strong></em> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
+<td>LINE hérite de <em><strong>DataManagedObject</strong></em> <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -977,8 +977,8 @@ de nuit, etc.).
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td><p>Identifiant publique de la LIGNE.</p>
-<p><span class="hl">Il s'agit généralement d'un numéro, parfois complété d'une lettre (par exemple 95, ou 27A, etc.).</span> Les <em><strong><span class="hl">Name</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">ShortName</span></strong></em><span class="hl"> porteront généralement une information plus explicite (par exemple la ligne ayant le </span><em><strong><span class="hl">PublicCode</span></strong></em><span class="hl"> </span><em><span class="hl">95</span></em><span class="hl"> à Paris s'appelle "</span><em><span class="hl">Porte de Vanves / Porte de Montmartre"</span></em><span class="hl">).</span></p>
-<p><span class="hl">On peut considérer que le nom complet de la ligne est une concaténation de son </span><em><strong><span class="hl">PublicCode</span></strong></em><span class="hl"> et de son </span><em><strong><span class="hl">Name</span></strong></em><span class="hl">.</span></p></td>
+<p><mark>Il s'agit généralement d'un numéro, parfois complété d'une lettre (par exemple 95, ou 27A, etc.). Les <em><strong>Name</strong></em> et <em><strong>ShortName</strong></em> porteront généralement une information plus explicite (par exemple la ligne ayant le <em><strong>PublicCode</strong></em> <em>95</em> à Paris s'appelle <em>"Porte de Vanves / Porte de Montmartre"</em>).</mark></p>
+<p><mark>On peut considérer que le nom complet de la ligne est une concaténation de son <em><strong>PublicCode</strong></em> et de son <em><strong>Name</strong></em>.</mark></p></td>
 </tr>
 <tr class="even">
 <td>«AK»</td>
@@ -986,7 +986,7 @@ de nuit, etc.).
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td><p>Identifiant secondaire de la LIGNE.</p>
-<p><span class="hl">Il s'agit généralement d'un identifiant propre au fournisseur (transporteur) de l'information.</span></p></td>
+<p><mark>Il s'agit généralement d'un identifiant propre au fournisseur (transporteur) de l'information.</mark></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -1008,14 +1008,14 @@ de nuit, etc.).
 <td colspan="2"><em><strong>additional­Operators</strong></em></td>
 <td><em>OperatorRef</em></td>
 <td>0:*</td>
-<td>Réference un EXPLOITANT additionnel pour la LIGNE <span class="hl">(comme pour les RER A et B à Paris, où encore les lignes en "pool").</span></td>
+<td>Réference un EXPLOITANT additionnel pour la LIGNE <mark>(comme pour les RER A et B à Paris, où encore les lignes en "pool")</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td colspan="2"><em><strong>otherModes</strong></em></td>
 <td><em>modeRefs</em></td>
 <td></td>
-<td>Réference un MODE de transport additionnel pour la LIGNE <span class="hl">(certaine ligne SNCF sont parfois ponctuellement remplacées par des lignes de car par exemple).</span></td>
+<td>Réference un MODE de transport additionnel pour la LIGNE <mark>(certaines lignes SNCF sont parfois ponctuellement remplacées par des lignes de car par exemple)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1023,10 +1023,10 @@ de nuit, etc.).
 <td><em>TypeOfLineRef</em></td>
 <td>0:1</td>
 <td><p>TYPE DE LIGNE spécifique.</p>
-<p><span class="hl">Permet une classification particulière de la ligne (ligne saisonnière, ligne de substitution, etc.)</span></p>
-<p><span class="hl">Deux types prédéfinis sont proposé par le profil: SEASONAL_LINE_TYPE et REPLACEMENT_LINE_TYPE Pour ce second type on utilisera, par convention, le derivedFromObjectRef (voir le document Profil NeTEx éléments communs) pour effectuer le lien avec la ligne à remplacer, et on renseignera le ValidityTrigger permettant de décrire dans quelle condition le remplacement est activé.</span></p>
-<p><span class="hl">À ne pas confondre avec une marque commerciale, pour lequel l'attribut Branding est disponible dans le DataManagedObject (voir le document Profil NeTEx éléments communs).</span></p>
-<p><span class="hl">A définir par un TYPE DE VALEUR spécifique (</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></p></td>
+<p><mark>Permet une classification particulière de la ligne (ligne saisonnière, ligne de substitution, etc.)</mark></p>
+<p><mark>Deux types prédéfinis sont proposé par le profil : SEASONAL_LINE_TYPE et REPLACEMENT_LINE_TYPE. Pour ce second type on utilisera, par convention, le derivedFromObjectRef (voir le document Profil NeTEx éléments communs) pour effectuer le lien avec la ligne à remplacer, et on renseignera le ValidityTrigger permettant de décrire dans quelle condition le remplacement est activé.</mark></p>
+<p><mark>À ne pas confondre avec une marque commerciale, pour lequel l'attribut Branding est disponible dans le DataManagedObject (voir le document Profil NeTEx éléments communs).</mark></p>
+<p><mark>A définir par un TYPE DE VALEUR spécifique (<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>).</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1047,7 +1047,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong><del>RepresentBy­GroupRef</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Le GROUPE DE LIGNES référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</span></td>
+<td><mark>Le GROUPE DE LIGNES référence les LIGNES, mais on n'utilise pas la relation inverse dans le profil.</mark></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1061,7 +1061,7 @@ de nuit, etc.).
 <td colspan="2"><em><strong>Accessibility­Assessment</strong></em></td>
 <td><em>Accessibility­Assessment</em></td>
 <td>0:1</td>
-<td>Information concernant l'accessibilité de la ligne <span class="hl">(<em>voir la partie Accessibilité du profil France</em>).</span></td>
+<td>Information concernant l'accessibilité de la ligne <mark>(<em>voir la partie Accessibilité du profil France</em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1076,7 +1076,7 @@ de nuit, etc.).
 <td><em>noticeAssignments_RelStructure</em></td>
 <td>0:*</td>
 <td><p>NOTEs affectées à la LIGNE.</p>
-<p><span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></p></td>
+<p><mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>).</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1094,7 +1094,7 @@ de nuit, etc.).
 
 | **Classifi­cation** | **Name**                    | **Type**            | **Cardin­ality** | **Description**                                                                                                                                                                                  |
 |---------------------|-----------------------------|---------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *::>*               | *::>*                       | *TypeOfValue*       | *::>*            | DIRECTION hérite de TYPE OF VALUE <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span> |
+| *::>*               | *::>*                       | *TypeOfValue*       | *::>*            | DIRECTION hérite de TYPE OF VALUE <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>. |
 |                     | ***DirectionType***         | *DirectionTypeEnum* | 0:1              | Valeur fixe parmi : ‘*outbound’, ‘inbound’, ‘clockwise’, ‘anticlockwise’* (sortant, entrant, horaire, antihoraire) associée à cette DIRECTION.                                                   |
 | «FK»                | ***Opposite­DirectionRef*** | *DirectionRef*      | 0:1              | Référence à la DIRECTION correspondant au sens opposé.                                                                                                                                           |
 
@@ -1123,8 +1123,8 @@ de nuit, etc.).
 <td><em>::></em></td>
 <td><em>GroupOfEntities</em></td>
 <td><em>::></em></td>
-<td><p>GROUP OF LINEs hérite de GROUP OF ENTITies.<span class="hl"> </span><span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span></p>
-<p><span class="hl">L'attribut </span><em><strong><span class="hl">PurposeofGroupingRef</span></strong></em><span class="hl"> pourra être utilisé pour qualifier les lignes administratives en utilisant la valeur "</span><em><strong><span class="hl">administrativeLine</span></strong></em><span class="hl">".</span></p></td>
+<td><p>GROUP OF LINEs hérite de GROUP OF ENTITies <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</p>
+<p><mark>L'attribut <em><strong>PurposeofGroupingRef</strong></em> pourra être utilisé pour qualifier les lignes administratives en utilisant la valeur <em><strong>"administrativeLine"</strong></em>.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1193,16 +1193,13 @@ Exemple :
 <!-- avec le groupe de lignes G1 qui contient des références aux lignes L1 et L2, et le groupe de lignes G2 qui contient une référence à la ligne L3. -->
 ```
 
-
-
-
 ## Zone tarifaire
 
 <div class="table-title">TariffZone – Element</div>
 
 | **Classifi­cation** | **Name** | **Type** | **Cardin­ality** | **Description**                                                                                                                                                                                                                   |
 |---------------------|----------|----------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ::>                 | ::>      | *Zone*   | ::>              | TARIFF ZONE hérite de ZONE.<span class="hl"> (</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span> sans y apporter de nouveaux attributs. |
+| ::>                 | ::>      | *Zone*   | ::>              | TARIFF ZONE hérite de ZONE <mark>(*voir le document **Profil NeTEx éléments communs***)</mark> sans y apporter de nouveaux attributs. |
 
 ## Les itinéraires
 
@@ -1210,7 +1207,7 @@ Exemple :
 
 | **Classifi­cation** | **Name**               | **Type**              | **Cardin­ality** | **Description**                                                                                                                                                                               |
 |---------------------|------------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *::>*               | *::>*                  | *LinkSequence*        | *::>*            | ROUTE hérite de LINK SEQUENCE <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
+| *::>*               | *::>*                  | *LinkSequence*        | *::>*            | ROUTE hérite de LINK SEQUENCE <mark>(voir le document **Profil NeTEx éléments communs***)</mark>. |
 | «FK»                | ***LineRef***          | *LineRef*             | 0:1              | LIGNE à laquelle l'ITINÉRAIRE appartient.                                                                                                                                                     |
 |                     | ***DirectionType***    | *TypeOfDirectionEnum* | 0:1              | Type de direction de la ROUTE (***outbound***, ***inbound***, pour aller Retrour et éventuellement ***clockwise*** ou ***anticlockwise*** pour les boucles)                                   |
 | «FK»                | ***DirectionRef***     | *DirectionRef*        | 0:1              | Référence la DIRECTION de l'ITINÉRAIRE.                                                                                                                                                       |
@@ -1224,7 +1221,7 @@ Exemple :
 
 | **Classifi­cation** | **Name**             | **Type**      | **Cardin­ality** | **Description**                                                                                                                                                                             |
 |---------------------|----------------------|---------------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *::>*               | *::>*                | *Point*       | *::>*            | ROUTE POINT hérite de POINT <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
+| *::>*               | *::>*                | *Point*       | *::>*            | ROUTE POINT hérite de POINT <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>. |
 |                     | ***BorderCrossing*** | *xsd:boolean* | 0:1              | Indique que le point est un point situé à la frontière entre deux pays.                                                                                                                     |
 
 ### Les points sur itinéraire
@@ -1233,9 +1230,9 @@ Exemple :
 
 | **Classifi­cation**           | **Name**            |                    | **Type**              | **Cardin­ality** | **Description**                                                                                                                                                                                                 |
 |-------------------------------|---------------------|--------------------|-----------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *::>*                         | *::>*               |                    | *PointInLinkSequence* | *::>*            | POINT ON ROUTE hérite de POINT IN LINK SEQUENCE <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
-| *Hérité de POINT IN SEQUENCE* |                     | ***~~RouteRef~~*** |                       |                  | <span class="hl">Les PointOnRoute seront systématiquement inclus dans les ROUTEs</span>                                                                                                                       |
-|                               |                     | ***projections***  | *projections*         | 0:1              | Projection sur la voirie ou les rails <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>.           |
+| *::>*                         | *::>*               |                    | *PointInLinkSequence* | *::>*            | POINT ON ROUTE hérite de POINT IN LINK SEQUENCE <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>.                                                                                            |
+| *Hérité de POINT IN SEQUENCE* |                     | ***~~RouteRef~~*** |                       |                  | <mark>Les PointOnRoute seront systématiquement inclus dans les ROUTEs.</mark>                                                                                                                                   |
+|                               |                     | ***projections***  | *projections*         | 0:1              | Projection sur la voirie ou les rails <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>.                                                                                                      |
 | «FK»                          | ***RoutePointRef*** |                    | *RoutePointRef*       | 1:1              | Référence au POINT D'ITINÉRAIRE correspondant                                                                                                                                                                   |
 
 #### Point sur séquence de tronçon
@@ -1244,10 +1241,10 @@ Exemple :
 
 | **Classifi­cation** | **Name**              | **Type**              | **Cardin­ality** | **Description**                                                                                                                                                                                                        |
 |---------------------|-----------------------|-----------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *::>*               | *::>*                 | *PointInSequence*     | *::>*            | POINT IN LINK SEQUENCE hérite de ***PointInSequence*** <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
+| *::>*               | *::>*                 | *PointInSequence*     | *::>*            | POINT IN LINK SEQUENCE hérite de ***PointInSequence*** <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>.                                                                                            |
 |                     | ***order***           | *xsd:positiveInteger* | 0:1              | Numéro d'ordre du point dans la séquence.                                                                                                                                                                              |
-|                     | ***LinkSequenceRef*** | *LinkSequenceRef*     | 0:1              | Référence la SÉQUENCE DE TRONÇONs à laquelle appartient le POINT <span class="hl">(une spécialisation pourra intervenir via un groupe de substitution).</span>                                                       |
-|                     | ***projections***     | *projections*         | 0:1              | Projection sur la voirie ou les rails <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>.                  |
+|                     | ***LinkSequenceRef*** | *LinkSequenceRef*     | 0:1              | Référence la SÉQUENCE DE TRONÇONs à laquelle appartient le POINT <mark>(une spécialisation pourra intervenir via un groupe de substitution)</mark>.                                                                    |
+|                     | ***projections***     | *projections*         | 0:1              | Projection sur la voirie ou les rails <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>.                                                                                                             |
 
 ### Les tronçons d'itinéraire
 
@@ -1255,12 +1252,11 @@ Exemple :
 
 | **Classifi­cation** | **Name**           | **Type**        | **Cardin­ality** | **Description**                                                                                                                                                                           |
 |---------------------|--------------------|-----------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *::>*               | *::>*              | *Link*          | *::>*            | ROUTE LINK hérite de LINK <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">)</span>. |
+| *::>*               | *::>*              | *Link*          | *::>*            | ROUTE LINK hérite de LINK <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>.                                                                                            |
 |                     | Distance           | DistanceType    | 1:1              | Longueur du ROUTE LINK. Les unités sont telles que spécifiées pour la FRAME (la valeur par défaut est SI mètres).                                                                         |
 | «cntd»              | LineString         | gmlLineString   | 0:1              | Géométrie du TRONÇON sous forme d’une linestring GML (la géométrie d’un TRONÇON n’est donc pas limitée à un simple couple de point, mais est décrite par une séquence de points).  |
-| «FK»                | ***FromPointRef*** | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de début de <span class="hl">TRONÇON</span>.                                                                                                                         |
-| «FK»                | ***ToPointRef***   | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de fin de <span class="hl">TRONÇON</span>.                                                                                                                           |
-|                     |                    |                 |                  |                                                                                                                                                                                           |
+| «FK»                | ***FromPointRef*** | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de début de <mark>TRONÇON</mark>.                                                                                                                                      |
+| «FK»                | ***ToPointRef***   | *RoutePointRef* | 1:1              | POINT D'ITINÉRAIRE de fin de <mark>TRONÇON</mark>.                                                                                                                                        |
 
 Exemple de LineString pour décrire un tracé : 
 ```xml
@@ -1299,7 +1295,7 @@ Exemple de LineString pour décrire un tracé :
 <td><em>::></em></td>
 <td><em>DataManagedObject</em></td>
 <td><em>::></em></td>
-<td>DESTINATION DISPLAY hérite de <em><strong>DataManagedObject</strong></em> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td>DESTINATION DISPLAY hérite de <em><strong>DataManagedObject</strong></em> <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 
 
@@ -1315,9 +1311,9 @@ Exemple de LineString pour décrire un tracé :
 <td><em><strong>FrontText</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td><p>0:1</p>
-<p><span class="hl">1:1</span></p></td>
+<p><mark>1:1</mark></p></td>
 <td><p>Texte frontal (affiché sur le devant du véhicule) de l'AFFICHAGE DE DESTINATION.</p>
-<p><span class="hl">Au niveau du profil, ce texte est considéré comme étant le texte principal et est rendu obligatoire.</span></p></td>
+<p><mark>Au niveau du profil, ce texte est considéré comme étant le texte principal et est rendu obligatoire.</mark></p></td>
 </tr>
 
 
@@ -1327,7 +1323,7 @@ Exemple de LineString pour décrire un tracé :
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td><p>Code associé à l'AFFICHAGE DE DESTINATION.</p>
-<p><span class="hl">Dans un certain nombre de cas l'AFFICHAGE DE DESTINATION n'est pas un texte mais un code (par exemple pour les RER et Transilen en IIe-de-France avec des codes comme PADO, DEFI ou encore PORO). Ce sont ces codes qui seront indiqué dans ce champ (on réservera les champs </span><em><strong><span class="hl">XxxxText</span></strong></em><span class="hl"> pour un texte compréhensible par tous)</span>.</p></td>
+<p><mark>Dans un certain nombre de cas l'AFFICHAGE DE DESTINATION n'est pas un texte mais un code (par exemple pour les RER et Transilen en IIe-de-France avec des codes comme PADO, DEFI ou encore PORO). Ce sont ces codes qui seront indiqué dans ce champ (on réservera les champs <em><strong>XxxxText</strong></em> pour un texte compréhensible par tous).</mark></p></td>
 </tr>
 
 <tr class="odd">
@@ -1335,7 +1331,7 @@ Exemple de LineString pour décrire un tracé :
 <td><em><strong><del>vias</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Les éventuels vias seront intégrés dans le texte de l'AFFICHAGE DE DESTINATION.</span></td>
+<td><mark>Les éventuels vias seront intégrés dans le texte de l'AFFICHAGE DE DESTINATION.</mark></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1372,7 +1368,7 @@ Exemple de LineString pour décrire un tracé :
 <td><em>::></em></td>
 <td><em>DataManagedObject</em></td>
 <td><em>::></em></td>
-<td>DESTINATION DISPLAY VARIANT hérite de <em><strong>DataManagedObject</strong></em> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td>DESTINATION DISPLAY VARIANT hérite de <em><strong>DataManagedObject</strong></em> <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 
 <tr class="even">
@@ -1397,9 +1393,9 @@ Exemple de LineString pour décrire un tracé :
 <td><em><strong>FrontText</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td><p>0:1</p>
-<p><span class="hl">1:1</span></p></td>
+<p><mark>1:1</mark></p></td>
 <td><p>Texte "frontal" de la VARIANTE D'AFFICHAGE DE DESTINATION.</p>
-<p><span class="hl">Au niveau du profil, ce texte est considéré comme étant le texte principal et est rendu obligatoire.</span></p></td>
+<p><mark>Au niveau du profil, ce texte est considéré comme étant le texte principal et est rendu obligatoire.</mark></p></td>
 </tr>
 
 
@@ -1458,7 +1454,7 @@ flexibilité.
 <td><em><strong>FlexibleLineType</strong></em></td>
 <td><em>FlexibleLineTypeEnum</em></td>
 <td>1:1</td>
-<td><p>Type de LIGNE FLEXIBLE <span class="hl">(voir le document NeTEx pour le détail des différents types de flexibilité)</span>:</p>
+<td><p>Type de LIGNE FLEXIBLE <mark>(voir le document NeTEx pour le détail des différents types de flexibilité)</mark> :</p>
 <ul>
 <li><p><em>corridorService</em></p></li>
 <li><p><em>mainRouteWithFlexibleEnds</em></p></li>
@@ -1505,7 +1501,7 @@ flexibilité.
 <td><em><strong>BookingContact</strong></em></td>
 <td><em>ContactDetails</em></td>
 <td>0:1</td>
-<td>Informations de contact pour la réservation <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td>Informations de contact pour la réservation <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1569,7 +1565,7 @@ flexibilité.
 <td>MultilingualString</td>
 <td>0:1</td>
 <td><p>Heure au plus tard, dans la journée, où la réservation doit se faire.</p>
-<p><span class="hl">A combiner avec </span><em><strong><span class="hl">BookWhen </span></strong></em><span class="hl">pour exprimer, par exemple </span><em><span class="hl">"avant la veille à 18:00"</span>.</em></p></td>
+<p><mark>À combiner avec <em><strong>BookWhen></strong></em> pour exprimer, par exemple <em>"avant la veille à 18:00"</em>.</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1583,7 +1579,7 @@ flexibilité.
 <td><em><strong><del>BookingUrl</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">On utilise l'URL de bookingContact</span></td>
+<td><mark>On utilise l'URL de bookingContact</mark></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1627,7 +1623,7 @@ flexibilité.
 <td><em><strong>FlexibleRoute­Type</strong></em></td>
 <td><em>FlexibleRouteTypeEnum</em></td>
 <td>1:1</td>
-<td><p>Type d'ITINÉRAIRE FLEXIBLE <em><span class="hl">(voir le document NeTEx pour les définitions)</span></em> :</p>
+<td><p>Type d'ITINÉRAIRE FLEXIBLE <mark><em>(voir le document NeTEx pour les définitions)</em></mark> :</p>
 <ul>
 <li><p><em>flexibleAreasOnly</em></p></li>
 <li><p><em>hailAndRideSections</em></p></li>
@@ -1668,7 +1664,7 @@ flexibilité.
 <td colspan="2"><em>::></em></td>
 <td><em>VersionedChild</em></td>
 <td><em>::></em></td>
-<td><em><strong>FlexiblePointProperties</strong></em> hérite de <strong><em>VersionedChild</em></strong> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td><em><strong>FlexiblePointProperties</strong></em> hérite de <strong><em>VersionedChild</em></strong> <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td>Choice</td>
@@ -1706,7 +1702,7 @@ flexibilité.
 <td><em>xsd:boolean</em></td>
 <td>0:1</td>
 <td><p>Point représentant une ZONE</p>
-<p>Le POINT est alors obligatoirement référencé par une ZONE dont il est le centroïd <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</p></td>
+<p>Le POINT est alors obligatoirement référencé par une ZONE dont il est le centroïd <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1743,7 +1739,7 @@ flexibilité.
 <td><em>::></em></td>
 <td><em>VesionedChild</em></td>
 <td><em>::></em></td>
-<td><em><strong>FlexibleLinkProperties</strong></em> hérite de <strong><em>VesionedChild</em></strong> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td><em><strong>FlexibleLinkProperties</strong></em> hérite de <strong><em>VesionedChild</em></strong> <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1819,7 +1815,7 @@ flexibilité.
 <td><em>::></em></td>
 <td><em>LinkSequence</em></td>
 <td><em>::></em></td>
-<td>JOURNEY PATTERN hérite de LINK SEQUENCE <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td>JOURNEY PATTERN hérite de LINK SEQUENCE <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
@@ -1833,7 +1829,7 @@ flexibilité.
 <td><em><strong><del>DirectionType</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Les informations de directions seront portées par l'ITINÉRAIRE.</span></td>
+<td><mark>Les informations de directions seront portées par l'ITINÉRAIRE.</mark></td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
@@ -1841,14 +1837,14 @@ flexibilité.
 <td><em>DirectionRef</em></td>
 <td>0:1</td>
 <td>La DIRECTION d’une JOURNEY PATTERN est souvent utilisée pour distinguer des groupes de JOURNEY PATTERN utilisant les mêmes branches (c’est-à-dire des ROUTEs) d’une LIGNE.<br />
-<span class="hl">La DIRECTION est disponible à des fins de filtrage exclusivement (par exemple dans une interface utilisateur de calculateur d’itinéraire ou un système d'information sur les horaires), mais ne devra pas être considérée comme une informations descriptive (ce n’est pas une information présentée « spontanément »).</span></td>
+<mark>La DIRECTION est disponible à des fins de filtrage exclusivement (par exemple dans une interface utilisateur de calculateur d’itinéraire ou un système d'information sur les horaires), mais ne devra pas être considérée comme une informations descriptive (ce n’est pas une information présentée « spontanément »).</mark></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong>Destination­Display­Ref</strong></em></td>
 <td><em>DestinationDisplayRef</em></td>
 <td>0:1</td>
-<td>AFFICHAGE DE DESTINATION associée à la MISSION COMMERCIALE <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td>AFFICHAGE DE DESTINATION associée à la MISSION COMMERCIALE <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -1871,7 +1867,7 @@ Liste ordonnée des sections de la MISSION COMMERCIALE (SERVICE LINK). Chaque se
 <td><em>ServiceJourneyPatternTypeEnumeration</em></td>
 <td>0:1</td>
 <td><p>Type de MISSION COMMERCIALE.</p>
-<p><span class="hl">Il s'agit d'un type "étendu" qui permet de typer tout PARCOURS présentant un intérêt pour l'information voyageur.</span> Les valeurs possibles pour ce type sont:</p>
+<p><mark>Il s'agit d'un type "étendu" qui permet de typer tout PARCOURS présentant un intérêt pour l'information voyageur.</mark> Les valeurs possibles pour ce type sont :</p>
 <ul>
 <li><p><em>Passenger</em> : service passager</p></li>
 <li><p><em>garageRunOut</em> : sortie de garage/dépôt</p></li>
@@ -1917,15 +1913,15 @@ manœuvre de retournement).
 <td><em>::></em></td>
 <td><em>PointInLinkSequence</em></td>
 <td><em>::></em></td>
-<td><p>POINT IN JOURNEY PATTERN hérite de POINT IN LINK SEQUENCE <span class="hl">(voir )</span></p>
-<p><span class="hl">On n'utilisera pas le </span><em><strong><span class="hl">LinkSequenceRef</span></strong></em><span class="hl"> de cet héritage car, dans le contexte du profil, cet objet sera toujours "à l'intérieur" d'une MISSION COMMERCIALE.</span></p></td>
+<td><p>POINT IN JOURNEY PATTERN hérite de POINT IN LINK SEQUENCE <mark>(voir )</mark></p>
+<p><mark>On n'utilisera pas le <em><strong>LinkSequenceRef</strong></em> de cet héritage car, dans le contexte du profil, cet objet sera toujours "à l'intérieur" d'une MISSION COMMERCIALE.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
 <td><em><strong>PointRef</strong></em></td>
 <td><em>PointRef</em></td>
 <td>0:1</td>
-<td>POINT à placer dans le PARCOURS <span class="hl">(il peut s'agir de n'importe quel type de point).</span></td>
+<td>POINT à placer dans le PARCOURS <mark>(il peut s'agir de n'importe quel type de point)</mark>.</td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -1933,7 +1929,7 @@ manœuvre de retournement).
 <td><em>DestinationDisplayRef</em></td>
 <td>0:1</td>
 <td><p>DESTINATION DISPLAY associée à ce POINT.</p>
-<p><span class="hl">Cette information, qui sert à changer l'AFFICHAGE DE DESTINATION lorsque le véhicule arrive à ce POINT ne sera renseignée que si </span><em><strong><span class="hl">ChangeOfDestinationDisplay</span></strong></em><span class="hl"> est VRAI</span></p></td>
+<p><mark>Cette information, qui sert à changer l'AFFICHAGE DE DESTINATION lorsque le véhicule arrive à ce POINT ne sera renseignée que si <em><strong>ChangeOfDestinationDisplay</strong></em> est VRAI</mark></p></td>
 </tr>
 
 <tr class="even">
@@ -1941,7 +1937,7 @@ manœuvre de retournement).
 <td><em><strong>FlexiblePointProperties</strong></em></td>
 <td><em>FlexiblePointProperties</em></td>
 <td>0:1</td>
-<td>Information sur l'éventuelle flexibilité du POINT <span class="hl">(voir )</span></td>
+<td>Information sur l'éventuelle flexibilité du POINT <mark>(voir )</mark></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1980,8 +1976,8 @@ manœuvre de retournement).
 <td><em>::></em></td>
 <td><em>TimingPointInJourneyPattern</em></td>
 <td><em>::></em></td>
-<td><p>STOP POINT IN JOURNEY PATTERN hérite de POINT IN LINK SEQUENCE <span class="hl">(voir )</span></p>
-<p><span class="hl">On n'utilisera pas le </span><em><strong><span class="hl">LinkSequenceRef</span></strong></em><span class="hl"> de cet héritage car, dans le contexte du profil, cet objet sera toujours "à l'intérieur" d'une MISSION COMMERCIALE.</span></p></td>
+<td><p>STOP POINT IN JOURNEY PATTERN hérite de POINT IN LINK SEQUENCE <mark>(voir )</mark></p>
+<p><mark>On n'utilisera pas le <em><strong>LinkSequenceRef</strong></em> de cet héritage car, dans le contexte du profil, cet objet sera toujours "à l'intérieur" d'une MISSION COMMERCIALE.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
@@ -1990,8 +1986,6 @@ manœuvre de retournement).
 <td>1:1</td>
 <td>Reference au POINT D'ARRÊT PLANIFIÉ.</td>
 </tr>
-
-
 
 <tr class="odd">
 <td></td>
@@ -2013,16 +2007,15 @@ manœuvre de retournement).
 <td><em>DestinationDisplayRef</em></td>
 <td>0:1</td>
 <td><p>DESTINATION DISPLAY associée ce POINT.</p>
-<p><span class="hl">Cette information, qui sert à changer l'AFFICHAGE DE DESTINATION lorsque le véhicule arrive à ce POINT ne sera renseignée que si </span><em><strong><span class="hl">ChangeOfDestinationDisplay</span></strong></em><span class="hl"> est VRAI</span></p></td>
+<p><mark>Cette information, qui sert à changer l'AFFICHAGE DE DESTINATION lorsque le véhicule arrive à ce POINT ne sera renseignée que si <em><strong>ChangeOfDestinationDisplay</strong></em> est VRAI</mark></p></td>
 </tr>
-
 
 <tr class="even">
 <td></td>
 <td><em><strong>FlexiblePointProperties</strong></em></td>
 <td><em>FlexiblePointProperties</em></td>
 <td>0:1</td>
-<td>Information sur l'éventuelle flexibilité du POINT <span class="hl">(voir )</span></td>
+<td>Information sur l'éventuelle flexibilité du POINT <mark>(voir )</mark></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2044,7 +2037,7 @@ manœuvre de retournement).
 <td><em><strong>RequestStop</strong></em></td>
 <td><em>xsd:boolean</em></td>
 <td>0:1</td>
-<td>Indique que l'arrêt doit être demandé <span class="hl">(bouton à l'intérieur du véhicule et faire un signe de la main depuis le quai, ou tout autre dispositif fonctionnellement similaire potentiellement précisé ci-dessous).</span></td>
+<td>Indique que l'arrêt doit être demandé <mark>(bouton à l'intérieur du véhicule et faire un signe de la main depuis le quai, ou tout autre dispositif fonctionnellement similaire potentiellement précisé ci-dessous)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2129,7 +2122,7 @@ manœuvre de retournement).
 <td><em>MultilingualString</em></td>
 <td>0:1</td>
 <td><p>Nom abrégé du POINT D'ARRÊT PLANIFIÉ.</p>
-<p><span class="hl">Informations à garder cohérente avec le lieu d'arrêt</span>.</p></td>
+<p><mark>Informations à garder cohérente avec le lieu d'arrêt.</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -2145,7 +2138,7 @@ manœuvre de retournement).
 <td><em><strong>PublicCode</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
-<td>Code publique du POINT D'ARRÊT PLANIFIÉ <span class="hl">(code identifiant utilisé pour les services, par SMS par exemple)</span><span class="hl">.</span></td>
+<td>Code publique du POINT D'ARRÊT PLANIFIÉ <mark>(code identifiant utilisé pour les services, par SMS par exemple)</mark>.</td>
 </tr>
 <tr class="even">
 <td>«AK»</td>
@@ -2161,7 +2154,7 @@ manœuvre de retournement).
 <td><em><strong>StopType</strong></em></td>
 <td><em>StopPlaceTypeEnum</em></td>
 <td>0:1</td>
-<td><p><span class="hl">Type de POINT D'ARRÊT PLANIFIÉ. Ce champ n'est retenu que pour fournir une information quand l'affection au LIEU D'ARRÊT n'est pas fournie (le LIEU D'ARRÊT porte cette information de type). Si </span><em><strong><span class="hl">StopType</span></strong></em><span class="hl"> est fourni et l'affection au LIEU D'ARRÊT aussi, ces informations devront être cohérente (si ça ne l'est pas, c'est le LIEU D'ARRÊT qui sera pris comme référence).</span></p>
+<td><p><mark>Type de POINT D'ARRÊT PLANIFIÉ. Ce champ n'est retenu que pour fournir une information quand l'affection au LIEU D'ARRÊT n'est pas fournie (le LIEU D'ARRÊT porte cette information de type). Si <em><strong>StopType</strong></em> est fourni et l'affection au LIEU D'ARRÊT aussi, ces informations devront être cohérente (si ça ne l'est pas, c'est le LIEU D'ARRÊT qui sera pris comme référence).</mark></p>
 <ul>
 <li><p><em>onstreetBus (bus sur voirie)</em></p></li>
 <li><p><em>onstreetTram (Tram sur voirie)</em></p></li>
@@ -2193,28 +2186,28 @@ manœuvre de retournement).
 <td><em><strong><del>ForAlighting</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Voir </span><em><strong><span class="hl">Stop</span><span class="hl">PointInJourneyPattern</span></strong></em></td>
+<td><mark>Voir <em><strong>StopPointInJourneyPattern</em></mark></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><em><strong><del>ForBoarding</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Voir </span><em><strong><span class="hl">Stop</span><span class="hl">PointInJourneyPattern</span></strong></em></td>
+<td><mark>Voir <em><strong>StopPointInJourneyPattern</em></mark></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><em><strong><del>RequestStop</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Voir </span><em><strong><span class="hl">Stop</span><span class="hl">PointInJourneyPattern</span></strong></em></td>
+<td><mark>Voir <em><strong>StopPointInJourneyPattern</em></mark></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
 <td><em><strong><del>TopographicPlace­Ref</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Ces informations seront portées par le lieu d'arrêt.</span></td>
+<td><mark>Ces informations seront portées par le lieu d'arrêt.</mark></td>
 </tr>
 
 </tbody>
@@ -2259,8 +2252,8 @@ retenues).
 <td><em>::></em></td>
 <td><em>PointInSequence</em></td>
 <td><em>::></em></td>
-<td><p>TIMING POINT IN JOURNEY PATTERN hérite de POINT IN LINK SEQUENCE <span class="hl">(voir )</span></p>
-<p><span class="hl">On n'utilisera pas le </span><em><strong><span class="hl">LinkSequenceRef</span></strong></em><span class="hl"> de cet héritage car, dans le contexte du profil, cet objet sera toujours "à l'intérieur" d'une MISSION COMMERCIALE.</span></p></td>
+<td><p>TIMING POINT IN JOURNEY PATTERN hérite de POINT IN LINK SEQUENCE <mark>(voir )</mark></p>
+<p><mark>On n'utilisera pas le <em><strong>LinkSequenceRef</strong></em> de cet héritage car, dans le contexte du profil, cet objet sera toujours "à l'intérieur" d'une MISSION COMMERCIALE.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2314,7 +2307,7 @@ retenues).
 <td><em>::></em></td>
 <td><em>TimingPoint</em></td>
 <td><em>::></em></td>
-<td>TIMING POINT hérite de POINT<span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">)</span>.</td>
+<td>TIMING POINT hérite de POINT <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2391,7 +2384,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 <td><em>TransportModeEnum</em></td>
 <td>0:1</td>
 <td><p>MODE de transport concerné par cette extrémité de correspondance.</p>
-<p><span class="hl">Cet attribut permet de particulariser les correspondances en fonction des modes de transport. Si rien n'est indiqué, tous les modes présents sont concernés. Si le mode est précisé, mais que certain modes présent n'ont pas de correspondance associée, c'est que la correspondance n'est pas possible pour ces modes.</span></p></td>
+<p><mark>Cet attribut permet de particulariser les correspondances en fonction des modes de transport. Si rien n'est indiqué, tous les modes présents sont concernés. Si le mode est précisé, mais que certain modes présent n'ont pas de correspondance associée, c'est que la correspondance n'est pas possible pour ces modes.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
@@ -2428,7 +2421,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 <td>::></td>
 <td><em>DataManagedObject</em></td>
 <td>::></td>
-<td>TRANSFER hérite de <em><strong>DataManagedObject</strong></em> <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
+<td>TRANSFER hérite de <em><strong>DataManagedObject</strong></em> <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2443,7 +2436,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 <td><em>TypeOfTransferRef</em></td>
 <td>0:1</td>
 <td><p>Type de TRANSFERT.</p>
-<p><span class="hl">Utilisé uniquement avec le code "ADVERTISED" pour signaler que la correspondance doit être affichée sur les média (information à l'arrêt).</span></p></td>
+<p><mark>Utilisé uniquement avec le code "ADVERTISED" pour signaler que la correspondance doit être affichée sur les média (information à l'arrêt).</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2464,7 +2457,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 <td><em><strong><del>TransferDuration</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">Temps de correspondance total (marche plus temps d'attentes): non retenu pour le profil</span></td>
+<td><mark>Temps de correspondance total (marche plus temps d'attentes): non retenu pour le profil</mark></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -2521,9 +2514,9 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 <td><em><strong>DefaultDuration</strong></em></td>
 <td><em>xsd:duration</em></td>
 <td><p>0:1</p>
-<p><span class="hl">1:1</span></p></td>
+<p><mark>1:1</mark></p></td>
 <td><p>Durée par défaut (à pied)</p>
-<p><span class="hl">Obligatoire dans le contexte du profil.</span></p></td>
+<p><mark>Obligatoire dans le contexte du profil.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2538,7 +2531,7 @@ d'arrêts spécifique), héritant tous du concept TRANSFER.
 <td><em>xsd:duration</em></td>
 <td>0:1</td>
 <td><p>Durée pour un voyageur découvrant ce parcours.</p>
-<p><span class="hl">Note: on attend naturellement </span><em><strong><span class="hl">FrequentTraveller-Duration</span></strong></em><span class="hl"> <= </span><em><strong><span class="hl">DefaultDuration</span></strong></em><span class="hl"> <= </span><em><strong><span class="hl">OccasionalTraveller-Duration</span></strong></em></p></td>
+<p><mark>Note : on attend naturellement <em><strong>FrequentTraveller-Duration</strong></em> &le; <em><strong>DefaultDuration</strong></em> &le; <em><strong>OccasionalTraveller-Duration</strong></em>.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2559,12 +2552,10 @@ EXPLOITANT ou par LIEU TOPOGRAPHIQUE (ville, arrondissement, etc.).
 Cette information est particulièrement importante pour les calculateurs
 d'itinéraire.
 
-<span class="hl">Par convention on fournira en général un
-</span>***<span class="hl">DefaultConnection</span>**<span
-class="hl"> </span>*<span class="hl">sans contrainte pour le cas
-général, et on le particularisera par des versions spécifiques par MODE
-ou par EXPLOITANT qui viendront alors "surcharger" la version sans
-contrainte (la priorité est aux versions particularisées).</span>
+<mark>Par convention on fournira en général un ***DefaultConnection*** sans
+contrainte pour le cas général, et on le particularisera par des versions
+spécifiques par MODE ou par EXPLOITANT qui viendront alors "surcharger" la
+version sans contrainte (la priorité est aux versions particularisées).</mark>
 
 <div class="table-title">DefaultConnection – Element</div>
 
@@ -2669,24 +2660,10 @@ D'EMBARQUEMENT (QUAY).
 </tr>
 <tr class="even">
 <td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
 <td colspan="2"><em><strong><del>ScheduledStopPointRef</del></strong></em></td>
 <td></td>
 <td></td>
-<td><span class="hl">On limite dans le profil le SITE CONNECTION aux correspondances entre sites (LIEU D'ARRÊT, PARKING, POI) de façon à simplifier l'analyse des données et éviter toute possible confusion sémantique.</span></td>
+<td><mark>On limite dans le profil le SITE CONNECTION aux correspondances entre sites (LIEU D'ARRÊT, PARKING, POI) de façon à simplifier l'analyse des données et éviter toute possible confusion sémantique.</mark></td>
 </tr>
 <tr class="odd">
 <td>Choice</td>
@@ -2697,27 +2674,11 @@ D'EMBARQUEMENT (QUAY).
 </tr>
 <tr class="even">
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
 <td><em>Choice</em></td>
 <td><em><strong>QuayRef</strong></em></td>
 <td><em>QuayRef</em></td>
 <td>0:1</td>
-<td>Référence à une ZONE D'EMBARGEMENT <span class="hl">(voir profil NeTEx Arrêt)</span></td>
+<td>Référence à une ZONE D'EMBARGEMENT <mark>(voir profil NeTEx Arrêt)</mark></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2725,7 +2686,7 @@ D'EMBARQUEMENT (QUAY).
 <td><em>StopPlaceEntranceRef</em></td>
 <td>0:1</td>
 <td><p>Référence à une entrée (entrée à utiliser pour cette correspondance)</p>
-<p><span class="hl"> (voir profil NeTEx Arrêt)</span></p></td>
+<p><mark>(voir profil NeTEx Arrêt)</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -2733,8 +2694,8 @@ D'EMBARQUEMENT (QUAY).
 <td><em>PointOfInterestEndGroup</em></td>
 <td>0:1</td>
 <td><p>Eléments pour identifier un POI à la l’extrémité d’un SITE CONNECTION.</p>
-<p><span class="hl">On pourra utilisera </span><em><strong><span class="hl">PointOfInterestRef </span></strong></em><span class="hl">avec une référence externe.</span></p>
-<p><em><span class="hl">Note: la valeur de ce champ sera précisée quand on disposera d'un profil pour les POI</span>s.</em></p></td>
+<p><mark>On pourra utiliser <em><strong>PointOfInterestRef</strong></em> avec une référence externe.</mark></p>
+<p><mark><em>Note : la valeur de ce champ sera précisée quand on disposera d'un profil pour les POIs.</em></mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2742,29 +2703,8 @@ D'EMBARQUEMENT (QUAY).
 <td><em>ParkingEndGroup</em></td>
 <td>0:1</td>
 <td><p>Eléments pour identifier un PARKING à l’extrémité d’un SITE CONNECTION.</p>
-<p><span class="hl">On utilisera </span><em><strong><span class="hl">PakingRef </span></strong></em><span class="hl">avec une référence externe.</span></p>
-<p><em><span class="hl">Note: la valeur de ce champ sera précisée quand on disposera d'un profil pour les PARKINGs.</span></em></p></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td colspan="2"></td>
-<td></td>
-<td></td>
-<td></td>
+<p><mark>On utilisera <em><strong>ParkingRef</strong></em> avec une référence externe.</mark></p>
+<p><mark><em>Note : la valeur de ce champ sera précisée quand on disposera d'un profil pour les PARKINGs.</em></mark></p></td>
 </tr>
 </tbody>
 </table>
@@ -2792,7 +2732,7 @@ utilisés pour effectuer une requête à un calculateur d’itinéraire, ils
 sont aussi utilisés pour interroger la desserte de transport
 avoisinante, etc.).
 
-<span class="hl">Dans de nombreux cas, les POIs seront définis dans des
+<mark>Dans de nombreux cas, les POIs seront définis dans des
 bases de données externes (INSPIRE, OSM, ou jeux de données commerciaux)
 et simplement référencés par SITE CONNECTIONs. Toutefois la le
 formalisme NeTEx peut aussi permettre d’enrichir l’information issue
@@ -2800,13 +2740,10 @@ d’une autre source (par exemple pour y décrire les service disponible,
 l’accessibilité, les équipements du lieu, etc.). Dans ces cas
 d’enrichissement, on prendra soin de bien conserver l’identifiant de
 l’objet enrichi et on utilisera le codespace adéquat (par exemple
-</span><span class="hl">"</span><span
-class="hl">FR_OSM:PointOfInteres:node:55711945</span><span
-class="hl">"</span><span class="hl"> où </span><span
-class="hl">55711945 </span><span class="hl">est bien d’identifiant
+"FR_OSM:PointOfInteres:node:55711945" où 55711945 est bien l’identifiant
 OSM, pour enrichir une POI issu d’Open Street Map et permet
-</span><span class="hl">node</span><span class="hl"> de qualifier le
-type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
+au node de qualifier le
+type d’objet OSM pour garantir l’unicité de l’identifiant)</mark>
 
 1.  PointOfInterest – XML Element
 
@@ -2846,7 +2783,7 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 <td><em>PointOfInterest­ClassificationRef | PointOfInterestClassificationView</em></td>
 <td>0:*</td>
 <td><p>Classification du POINT OF INTEREST.</p>
-<p><span class="hl">Seul l'attribut Name de PointOfInterestClassificationView sera utilisé pour cette classification. Aucune classification standard n'est prédéfinie ni par NeTEx, ni par le profil.</span></p></td>
+<p><mark>Seul l'attribut Name de PointOfInterestClassificationView sera utilisé pour cette classification. Aucune classification standard n'est prédéfinie ni par NeTEx, ni par le profil.</mark></p></td>
 </tr>
 
 <tr class="even">
@@ -2865,8 +2802,8 @@ type d’objet OSM pour garantir l’unicité de l’identifiant)</span>
 La description du cheminement est ici limitée à ses caractéristiques
 principales (en particulier pour l'accessibilité).
 
-<span class="hl">Note : la partie Accessibilité du profil France fournit
-une vue beaucoup plus détaillée du NavigationPath.</span>
+<mark>Note : la partie Accessibilité du profil France fournit
+une vue beaucoup plus détaillée du NavigationPath.</mark>
 
 <div class="table-title">NavigationPath – Element</div>
 
@@ -2893,19 +2830,6 @@ une vue beaucoup plus détaillée du NavigationPath.</span>
 <td><em>::></em></td>
 <td>NAVIGATION PATH hérite de LINK SEQUENCE.</td>
 </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <tr class="even">
 <td></td>
 <td><em><strong>AccessFeature­List</strong></em></td>
@@ -3000,8 +2924,8 @@ description des ITL (Interdiction de trafic local).
 <td><em>::></em></td>
 <td><em>Zone</em></td>
 <td><em>::></em></td>
-<td><p>ROUTING CONSTRAINT ZONE hérite de ZONE <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></p>
-<p><span class="hl">Note: on définira généralement la zone par la liste des POINTs D'ARRÊT PLANIFIÉs concernés par la contrainte (une ZONE peut en effet être définie par un ensemble de points, par son attribut </span><em><strong><span class="hl">members</span></strong></em><span class="hl">). Si la ZONE n'est pas définie par un ensemble de points (et uniquement dans ce cas-là) c'est son périmètre géographique qui sera utilisé (il devra donc impérativement être défini).</span></p></td>
+<td><p>ROUTING CONSTRAINT ZONE hérite de ZONE <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</p>
+<p><mark>Note : on définira généralement la zone par la liste des POINTs D'ARRÊT PLANIFIÉs concernés par la contrainte (une ZONE peut en effet être définie par un ensemble de points, par son attribut <em><strong>>members</strong></em>). Si la ZONE n'est pas définie par un ensemble de points (et uniquement dans ce cas-là) c'est son périmètre géographique qui sera utilisé (il devra donc impérativement être défini).</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3036,7 +2960,7 @@ description des ITL (Interdiction de trafic local).
 <td><em><strong>pointsInPattern</strong></em></td>
 <td><em>pointsInPattern</em></td>
 <td></td>
-<td><span class="hl">Cette propriété n'est pas retenue dans le profil France. Le champ <em>member</em> est utilisé, comme indiqué ci-dessus dans l'héritage de Zone.</span></td>
+<td><mark>Cette propriété n'est pas retenue dans le profil France. Le champ <em>member</em> est utilisé, comme indiqué ci-dessus dans l'héritage de Zone.</mark></td>
 </tr>
 </tbody>
 </table>
@@ -3066,7 +2990,7 @@ description des ITL (Interdiction de trafic local).
 <td><em>::></em></td>
 <td><em>DataManagedObject</em></td>
 <td><em>::></em></td>
-<td>TRANSFER RESTRICTION hérite de DATA MANAGED OBJECT (via ASSIGNMENT) <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
+<td>TRANSFER RESTRICTION hérite de DATA MANAGED OBJECT (via ASSIGNMENT) <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 
 <tr class="even">
@@ -3093,7 +3017,7 @@ description des ITL (Interdiction de trafic local).
 <ul>
 <li><p>cannotTransfer</p></li>
 </ul>
-<p><span class="hl">Seule l'interdiction de correspondance est retenue dans le profil.</span></p></td>
+<p><mark>Seule l'interdiction de correspondance est retenue dans le profil.</mark></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -3101,8 +3025,8 @@ description des ITL (Interdiction de trafic local).
 <td>ScheduledStopPointRef</td>
 <td>0:1</td>
 <td><p>PONT D'ARRÊT PLANIFIÉ de départ</p>
-<p><span class="hl">Si seul le départ est indiqué, toutes les correspondances partantes sont interdites (et entrante aussi si BothWays=vrai).</span></p>
-<p><span class="hl">Au moins l'un des deux attributs </span><em><strong><span class="hl">FromPointRef ou ToPointRef </span></strong></em><span class="hl">doir être valorisé.</span></p></td>
+<p><mark>Si seul le départ est indiqué, toutes les correspondances partantes sont interdites (et entrante aussi si BothWays=vrai).</mark></p>
+<p><mark>Au moins l'un des deux attributs <em><strong>FromPointRef</strong></em> ou <em><strong>ToPointRef</strong></em> doit être valorisé.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
@@ -3110,8 +3034,8 @@ description des ITL (Interdiction de trafic local).
 <td>ScheduledStopPointRef</td>
 <td>0:1</td>
 <td><p>PONT D'ARRÊT PLANIFIÉ de destination.</p>
-<p><span class="hl">Si seul la destination est indiquée, toutes les correspondances arrivantes sont interdites (et sortantes aussi si BothWays=vrai).</span></p>
-<p><span class="hl">Au moins l'un des deux attributs </span><em><strong><span class="hl">FromPointRef ou ToPointRef </span></strong></em><span class="hl">doit être valorisé.</span></p></td>
+<p><mark>Si seule la destination est indiquée, toutes les correspondances arrivantes sont interdites (et sortantes aussi si BothWays=vrai).</mark></p>
+<p><mark>Au moins l'un des deux attributs <em><strong>FromPointRef</strong></em> ou <em><strong>ToPointRef</strong></em> doit être valorisé.</mark></p></td>
 </tr>
 </tbody>
 </table>
@@ -3129,7 +3053,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 
 | **Classifi­cation** | **Name**                     | **Type**                | **Cardin­ality** | **Description**                                                                                                                                                                                                                |
 |---------------------|------------------------------|-------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *::>*               | *::>*                        | *DataManagedObject*     | *::>*            | STOP ASSIGNMENT hérite de DATA MANAGED OBJECT (via ASSIGNMENT) <span class="hl">(</span>*<span class="hl">voir le document </span>**<span class="hl">Profil NeTEx éléments communs</span>***<span class="hl">).</span> |
+| *::>*               | *::>*                        | *DataManagedObject*     | *::>*            | STOP ASSIGNMENT hérite de DATA MANAGED OBJECT (via ASSIGNMENT) <mark>(*voir le document **Profil NeTEx éléments communs***)</mark>. |
 | «FK»                | ***ScheduledStop­PointRef*** | *ScheduledStopPointRef* | 0:1              | Référence au POINT D'ARRÊT PLANIFIÉ.                                                                                                                                                                                           |
 
 <div class="table-title">PassengerStopAssignment – Element</div>
@@ -3178,7 +3102,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td><em>TrainStopAssignment</em></td>
 <td>0:*</td>
 <td><p>Références à des affectations détaillées des positions de train (alignement des voitures sur les marques à quai).</p>
-<p><span class="hl">On utilisera ici des objets indépendant (des références et non des inclusions) de façon à permettre une mise à jour de l’affectation de train, sans avoir à modifier l'affectation d'arrêt elle-même. De même on autorise que l'affectation de train référence l'affectation d'arrêt sans que la réciproque ne soit vraie (on pourra donc ne pas remplir le présent élément).</span></p></td>
+<p><mark>On utilisera ici des objets indépendant (des références et non des inclusions) de façon à permettre une mise à jour de l’affectation de train, sans avoir à modifier l'affectation d'arrêt elle-même. De même on autorise que l'affectation de train référence l'affectation d'arrêt sans que la réciproque ne soit vraie (on pourra donc ne pas remplir le présent élément).</mark></p></td>
 </tr>
 </tbody>
 </table>
@@ -3223,10 +3147,10 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td><em>TrainRef</em></td>
 <td>0:1</td>
 <td><p>Identifiant du train concerné.</p>
-<p><span class="hl">On pourra soit utiliser l'identifiant d'un TRAIN défini par ailleurs, soit directement référencer un numéro de train en utilisant la convention suivante:</span></p>
+<p><mark>On pourra soit utiliser l'identifiant d'un TRAIN défini par ailleurs, soit directement référencer un numéro de train en utilisant la convention suivante :</mark></p>
 <ul>
-<li><p><span class="hl">L'attribut nameOfRefClass de la référence est positionné à "TrainNumberRef"</span></p></li>
-<li><p><span class="hl">L'attribut </span><em><strong><span class="hl">ref</span></strong></em><span class="hl"> de la référence est instancié avec le numéro de train (ex: "</span><em><span class="hl">9050"</span></em><span class="hl"> pour l'Eurostar Londres-Paris de 19h01)</span></p></li>
+<li><p><mark>L'attribut nameOfRefClass de la référence est positionné à "TrainNumberRef".</mark></p></li>
+<li><p><mark>L'attribut <em><strong>ref</strong></em> de la référence est instancié avec le numéro de train (ex : <em>"9050"</em> pour l'Eurostar Londres-Paris de 19h01).</mark></p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -3235,10 +3159,10 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td><em>TrainComponenRef</em></td>
 <td>0:1</td>
 <td><p>COMPOSANT DE TRAIN (voiture) concerné par l'affectation de train.</p>
-<p><span class="hl">On pourra soit utiliser l'identifiant d'un COMPOSANT DE TRAIN défini par ailleurs, soit directement référencer un numéro de voiture en utilisant la convention suivante:</span></p>
+<p><mark>On pourra soit utiliser l'identifiant d'un COMPOSANT DE TRAIN défini par ailleurs, soit directement référencer un numéro de voiture en utilisant la convention suivante :</mark></p>
 <ul>
-<li><p><span class="hl">L'attribut nameOfRefClass de la référence est positionné à "TrainComponentRef"</span></p></li>
-<li><p><span class="hl">L'attribut </span><em><strong><span class="hl">ref</span></strong></em><span class="hl"> de la référence est instancié avec le numéro de voiture (ex: "</span><em><span class="hl">12"</span></em><span class="hl">)</span></p></li>
+<li><p><mark>L'attribut nameOfRefClass de la référence est positionné à "TrainComponentRef".</mark></p></li>
+<li><p><mark>L'attribut <em><strong>ref</strong></em> de la référence est instancié avec le numéro de voiture (ex : <em>"12"</em>).</mark></p></li>
 </ul></td>
 </tr>
 
@@ -3249,10 +3173,10 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td><em>BoardingPositionRef</em></td>
 <td>0:1</td>
 <td><p>Référence la POSITION D'EMBARQUEMENT avec laquelle le COMPOSANT DE TRAIN s'alignera.</p>
-<p>La POSITION D'EMBARQUEMENT n'étant pas retenue dans le profil NeTEx Arrêt, on utilisera la convention suivante:</p>
+<p>La POSITION D'EMBARQUEMENT n'étant pas retenue dans le profil NeTEx Arrêt, on utilisera la convention suivante :</p>
 <ul>
-<li><p><span class="hl">L'attribut nameOfRefClass de la référence est positionné à "BoardingPositionRef"</span></p></li>
-<li><p><span class="hl">L'attribut </span><em><strong><span class="hl">ref</span></strong></em><span class="hl"> de la référence est instancié avec le nom de la marque à quay (ex: </span><em><span class="hl">"W"</span></em><span class="hl">)</span></p></li>
+<li><p><mark>L'attribut nameOfRefClass de la référence est positionné à "BoardingPositionRef".</mark></p></li>
+<li><p><mark>L'attribut <em><strong>ref</strong></em> de la référence est instancié avec le nom de la marque à quay (ex : <em>"W"</em>).</mark></p></li>
 </ul></td>
 </tr>
 
@@ -3295,7 +3219,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td>::></td>
 <td><em>DataManagedObject</em></td>
 <td>::></td>
-<td>SCHEMATIC MAP hérite de DATA MANAGED OBJECT <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
+<td>SCHEMATIC MAP hérite de DATA MANAGED OBJECT <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3311,7 +3235,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td><em>xsd:anyURI</em></td>
 <td>0:1</td>
 <td><p>URL d'accès à la carte schématique</p>
-<p><span class="hl">La carte schématique peut être aussi bien une image raster classique (.png, .jpg, etc.), qu'une image vectorielle (.svg, .ai, etc.).</span></p></td>
+<p><mark>La carte schématique peut être aussi bien une image raster classique (.png, .jpg, etc.), qu'une image vectorielle (.svg, .ai, etc.).</mark></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -3353,7 +3277,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td>::></td>
 <td><em>GroupMember</em></td>
 <td>::></td>
-<td>SCHEMATIC MAP MEMBER hérite de GROUP MEMBER <span class="hl">(</span><em><span class="hl">voir le document </span><strong><span class="hl">Profil NeTEx éléments communs</span></strong></em><span class="hl">).</span></td>
+<td>SCHEMATIC MAP MEMBER hérite de GROUP MEMBER <mark>(<em>voir le document <strong>Profil NeTEx éléments communs</strong></em>)</mark>.</td>
 </tr>
 
 <tr class="even">
@@ -3371,7 +3295,7 @@ de du ministère des transport) et les POINTs D'ARRÊT PLANIFIÉs.
 <td><em>InfoLink</em></td>
 <td>0:1</td>
 <td><p>URL vers l'objet dans la carte schématique:</p>
-<p><span class="hl">On utilisera la syntaxe HTML de référencement par ancre ("anchor", avec la syntaxe </span><em><span class="hl">#anchor, </span></em><span class="hl">par exemple </span><a href="http://www.macarte.com/schma.svg#objectId"><span class="hl">http://www.macarte.com/schma.svg#objectId</span></a><span class="hl"> ) pour référencer un objet vectoriel identifié. L'URL de la carte schématique étant fournie par l'attribut </span><em><strong><span class="hl">ImageUri</span></strong></em><span class="hl">, on pourra ne fournir que la référence de l'objet (</span><em><span class="hl">#objectId</span></em><span class="hl">)</span></p></td>
+<p><mark>On utilisera la syntaxe HTML de référencement par ancre ("anchor", avec la syntaxe <em>#anchor</em>, par exemple `http://www.macarte.com/schema.svg#objectId`) pour référencer un objet vectoriel identifié. L'URL de la carte schématique étant fournie par l'attribut <em><strong>ImageUri</strong></em>, on pourra ne fournir que la référence de l'objet (<em>#objectId</em>)</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
