@@ -6541,8 +6541,8 @@ month) and/or fixed start/end dates and times.*
 </tr>
 <tr class="odd">
 <td>« enum »</td>
-<td><em><strong>ValidityType</strong></em></td>
-<td><em>ValidityTypeEnum</em></td>
+<td><em><strong>ValidityPeriodType</strong></em></td>
+<td><em>UsageValidityTypeEnum</em></td>
 <td>0:*</td>
 <td><p>Type of USAGE VALIDITY PERIOD. See allowed values below.</p>
 <ul>
