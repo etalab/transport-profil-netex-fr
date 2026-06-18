@@ -3809,11 +3809,22 @@ ELEMENT.</td>
 
 <div class='table-title'>SalesOfferPackagePrice – Element</div>
 
-SalesOfferPackagePrice hérite de FarePrice. Les propriétés spécifiques du SalesOfferPackagePrice ne sont pas retenues dans le 
-cadre du profil France. 
-L'objet SalesOfferPackagePrice n'est pas ajouté au niveau de la Frame. Il est à inclure :
-- directement dans la Cell de la FareTable 
+L'objet SalesOfferPackagePrice est à inclure directement dans la FareTable :
+- directement dans la Cell 
 - ou comme objet listé dans FareTable/prices, puis référencée dans la Cell par un SalesOfferPackagePriceRef.
+
+Il n'est donc pas ajouté au niveau de la Frame. L'object SalesOfferPackagePrice n'est pas non plus directement référencé 
+par un SalesOfferPackage, le lien entre un SalesOfferPackage et un SalesOfferPackagePrice doit être réalisé dans la Cell de la 
+FareTable.
+
+| **Classification** | **Name**                           | **Type**                           | **Cardinality** | **Description**                                                                 |
+|--------------------|------------------------------------|------------------------------------|-----------------|---------------------------------------------------------------------------------|
+| ::\>               | ::\>                              | *<u>FarePrice_VersionedChildStructure</u>*  | ::\>            | SALES OFFER PACKAGE PRICE hérite de FARE PRICE.      |
+| « PK »             | ***id***                          | *SalesOfferPackagePriceIdType*         | 1:1             | Identifiant du SALES OFFER PACKAGE PRICE.                                   |
+|                    | ***SalesOfferPackageRef***        | *<u>SalesOfferPackageRefStructure</u>* |             | Référence à un SALES OFFER PACKAGE. Ce champ n'est pas retenu dans le cadre du profil France. |
+|                    | ***SalesOfferPackageElementRef*** | ***<u>SalesOfferPackageElementRefStructure</u>*** |              | Référence à un SALES OFFER PACKAGE ELEMENT. Ce champ n'est pas retenu dans le cadre du profil France. |
+
+
 
 L'exemple ci-dessous présente les attributs recommandés du SalesOfferPackagePrice dans le prodil France :
 ```xml 
