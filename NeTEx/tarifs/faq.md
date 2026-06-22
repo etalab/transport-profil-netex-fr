@@ -34,14 +34,14 @@ Voici un exemple avec un profile moins de 26 ans :
 ```xml
 <UserProfile id="exemple:UserProfile:01" version="any">
     <!--50% pour les enfants entre 4 et 10 ans -->
-    <Name>Tarif -26 ans</Name>
-    <Description>Profil jeune adulte (moinsde 26 ans)</Description>
+    <Name>Enfant 4 à 10 ans</Name>
+    <Description>Profil jeune enfant (entre 4 et 10 ans)</Description>
     <noticeAssignments>
         <NoticeAssignment id="exemple:NoticeAssignment:01" version="any">
             <NoticeRef ref="exemple:Notice:01" version="any" />
         </NoticeAssignment>
     </noticeAssignments>
-    <UserType>youngPerson</UserType>  
+    <UserType>child</UserType>  
     <MinimumAge>4</MinimumAge>
     <MaximumAge>10</MaximumAge>
     <ProofRequired>identityDocument</ProofRequired>
@@ -156,7 +156,7 @@ Cette information est associée au produit tarifaire (`PreassignedFareProduct`) 
 
 ```xml
 <FareStructureElement id="exemple:FareStructureElement:01" version="any">
-    <Name>Abonnement 30 jours</Name>
+    <Name>Abonnement 1 mois</Name>
     <TypeOfFareStructureElementRef ref="exemple:TypeOfFareStructureElement:usage_period" versionRef="any" />
     <validityParameterAssignments>
         <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
