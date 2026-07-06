@@ -2628,7 +2628,7 @@ réponse).
 
 <div class="table-title">FrameRequestPolicy – Element</div>
 
-| Classification               | Nom                           | Type          |     | Description                                                                                                                   |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---------------------------- | ----------------------------- | ------------- | --- | ----------------------------------------------------------------------------------------------------------------------------- |
 | *AbstractRequestPolicyGroup* | ***MaximumNumberOfElements*** | *xsd:integer* | 0:1 | Nombre maximal d’objets à retourner dans la réponse.                                                                          |
 |                              | ***IncludeDeleted***          | *xsd:boolean* | 0:1 | Indique qu’il faut aussi transmettre les indications d’objets supprimés (arrêt qui n’est plus utilisé, etc.) dans la réponse. |
