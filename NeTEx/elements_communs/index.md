@@ -1051,7 +1051,7 @@ comme balise incluse (et non comme élément racine).</mark>
 | -------------- | -------------------- | -------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>            | ::>                  | *VersionedChild*                | ::>        | **AlternativeText** hérite de VERSIONED CHILD.                                                                                                            |
 | «PK»           | ***attributeName***  | *xsd:NCName*                           | 0:1| Nom de l'attribut de texte pour lequel il s'agit du texte de remplacement. Doit être un nom d'attribut existant.                                          |
-| «PK»           | ***useForLanguage*** | *xsd:language*                         | <u>0:1</u> | <p>Langage utilisé pour cette variante</p><p><mark>« fr » n’est pas accepté dans le profil, **AlternativeText** étant réservé aux traductions.</mark></p> |
+| «PK»           | ***useForLanguage*** | *xsd:language*                         | 0:1 | <p>Langue utilisée pour cette variante</p><p><mark>« fr » n’est pas accepté dans le profil, **AlternativeText** étant réservé aux traductions.</mark></p> |
 |                | Text                 | *MultilingualString* (Language + Text) | 1:1        | Variante du texte original, dans le langage spécifié                                                                                                      |
 
 ## Localisation (Location)
