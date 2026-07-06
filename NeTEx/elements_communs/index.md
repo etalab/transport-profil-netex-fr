@@ -1014,7 +1014,7 @@ réglementation en vigueur.
 
 <div class="table-title">AlternativeName – Element</div>
 
-| Classification | Nom                  | Type                 |     | Description                                                                                                                                                                                                                                                                                                                                                                    |
+| Classification | Nom                  | Type                 |   Cardinalité  | Description                                                                                                                                                                                                                                                                                                                                                                    |
 | -------------- | -------------------- | -------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | «FK»           | ***NamedObjectRef*** | *VersionOfObjectRef* | 0:1 | <p>Référence de l’objet pour lequel on fourni un nom alternatif.</p><p><mark>Cet attribut n’est utilisé que si le nom alternatif est fourni comme un objet indépendant au sein d’une FRAME (voir 7.2). Dans tous les autre cas (le NOM ALTERNATIF est dans l’arborescence XML d’un objet) c’est le contexte qui fournit cette information, et ce champ sera ignoré.</mark></p> |
 |                | ***Lang***           | *Language*           | 0:1 | Langue utilisée pour ces alias (codification RFC 1766)                                                                                                                                                                                                                                                                                                                         |
@@ -1058,7 +1058,7 @@ comme balise incluse (et non comme élément racine).</mark>
 
 <div class="table-title">Location – Element (abstrait)</div>
 
-| Classification | Nom               | Type                             |     | Description                                                                                                                                                                                                                                                                                                 |
+| Classification | Nom               | Type                             |   Cardinalité  | Description                                                                                                                                                                                                                                                                                                 |
 | -------------- | ----------------- | -------------------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | «FK»           | ***srsName***     | *LocatingSystemNameType*         | 0:1 | <p>Référentiel géographique: il s'appliquera aux Latitude et Longitude (permettant ainsi d'utiliser d'autres référentiels géodésiques que WGS84).</p><p>À utiliser au format GML (ex urn:ogc:def:crs:EPSG::4326 pour WGS84, voir <http://www.epsg.org> et <http://www.opengeospatial.org/ogcUrnPolicy>)</p> |
 |                | ***Longitude***   | *LongitudeType*                  | 1:1 | Latitude du centroïd (point "central" du lieu d'arrêt) – WGS84 par défaut (-180 à +180)                                                                                                                                                                                                                     |
@@ -1104,7 +1104,7 @@ prendre la forme ci-dessous
 
 <div class="table-title">Address – Element (objet inclus)</div>
 
-| Classification | Nom               | Type                 |             | Description                             |
+| Classification | Nom               | Type                 |     Cardinalité        | Description                             |
 | -------------- | ----------------- | -------------------- | ----------- | --------------------------------------- |
 | «FK»           | ***CountryRef***  | *CountryEnum*        | 0:1         | Code ISO 3166 du pays (deux caractères) |
 |                | ***CountryName*** | *MultilingualString* | 0:1         | Nom du pays                             |
@@ -1130,7 +1130,7 @@ en évitant d'inclure les noms ou codes des batiments. Ce champ libre permettra
 dans certains cas d'indiquer les informations nécessaire quand aucune adresse
 n'existe (par exemple un arrêt à un croisement de routes en inter-urbain).
 
-|     | Nom                     | Type                   |     | Description                                                                                                                                                                                             |
+|     | Nom                     | Type                   |  Cardinalité   | Description                                                                                                                                                                                             |
 | --- | ----------------------- | ---------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::> | ::>                     | *Address*              | ::> | POSTAL ADDRESS hérite de ADDRESS.                                                                                                                                                                       |
 |     | ***AddressLine1***      | *xsd:normalizedString* | 0:1 | Numéro et rue de l'adresse. Le num du batiment peut également être précisé. <mark>Ce champ retenu dans le profil France comme porteur de l'information de l'adresse (voir explication ci-dessus)</mark> |
@@ -1194,7 +1194,7 @@ pour celui-ci.
 
 <div class="table-title">Locale – Type (objet inclus)</div>
 
-|   | Nom                        | Type             |      | Description                                                                         |
+|   | Nom                        | Type             |   Cardinalité   | Description                                                                         |
 | - | -------------------------- | ---------------- | ---- | ----------------------------------------------------------------------------------- |
 |   | ***TimeZoneOffset***       | *TimeZoneOffset* | 0:1  | Décalage horaire (positif ou négatif) par rapport à l'heure GMT                     |
 |   | ***TimeZone***             | *TimeZoneOffset* | 0:1  | Nom de la zone horaire                                                              |
@@ -1239,7 +1239,7 @@ décrivant un jeu de données OSM comme ci-dessous
 <Codespace id="*osm*">
   <Xmlns>*osm*</Xmlns>
   <XmlnsUrl>*http://planet.openstreetmap.org/planet/2014/*</XmlnsUrl>
-  <Description>Open Street Map through Planet OSM</Description>
+  <Description>OpenStreetMap through Planet OSM</Description>
 </Codespace>
 ```
 
@@ -1251,7 +1251,7 @@ date proposé par le mécanisme de référence de NeTEx.
 
 <div class="table-title">Attributs pour les références externes (objet inclus)</div>
 
-|      | Nom                  | Type                    |     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|      | Nom                  | Type                    |  Cardinalité   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ---- | -------------------- | ----------------------- | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |      | ***NameOfRefClass*** | *NameOfClass*           | 0:1 | Nom de la classe de l'objet référencé                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |      | ***created***        | *xsd:dateTime*          | 0:1 | <mark>Date à laquelle la référence a été créée: ATTENTION il ne s'agit pas ici de la **date de création de l'objet, mais bien de la date à laquelle la référence a été créée**. Cela permettra, en cas d'absence de mécanisme de version, de retrouver la version de l'objet considérée (dernière version à la date du…).</mark>                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -1260,7 +1260,7 @@ date proposé par le mécanisme de référence de NeTEx.
 
 <div class="table-title">PointProjection – Element</div>
 
-|      | Nom                     | Type         |     | Description                                                                                                                                                                                                                                                                                                                        |
+|      | Nom                     | Type         |  Cardinalité   | Description                                                                                                                                                                                                                                                                                                                        |
 | ---- | ----------------------- | ------------ | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | «FK» | ***ProjectedPointRef*** | *PointRef*   | 0:1 | <p>POINT projeté.</p><p><mark>Cet attribut n’est utile que si la projection est fournie comme un objet indépendant au sein d’une FRAME (voir 7.2). Dans tous les autres cas (la PROJECTION est dans l’arborescence XML d’un objet) c’est le contexte qui fournit cette information, et ce champ sera ignoré.</mark></p>            |
 | «FK» | ***ProjectToPointRef*** | *PointRef*   | 0:1 | <p>POINT sur lequel on se projette.</p><p><mark>Dans le contexte des profils NeTEx, il s'agit là d'une référence vers une donnée externe (OSM, Nokia Here (ex Navteq), Tomtom TeleAtlas, IGN, INSPIRE, etc.).</mark></p><p><mark>La codification respectera les règles décrites ci-dessus pour les références externes.</mark></p> |
@@ -1269,7 +1269,7 @@ date proposé par le mécanisme de référence de NeTEx.
 
 <div class="table-title">ZoneProjection – Element</div>
 
-|      | Nom                      | Type      |     | Description                                                                                                                                                                                                                                                                                                                           |
+|      | Nom                      | Type      |   Cardinalité  | Description                                                                                                                                                                                                                                                                                                                           |
 | ---- | ------------------------ | --------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | «FK» | ***ProjectedZoneRef***   | *ZoneRef* | 0:1 | <p>ZONE that is being projected.</p><p><mark>Cet attribut n’est utile que si la projection est fournie comme un objet indépendant au sein d’une FRAME (voir 7.2). Dans tous les autre cas (la PROJECTION est dans l’arborescence XML d’un objet) c’est le contexte qui fournit cette information, et ce champ sera ignoré.</mark></p> |
 | «FK» | ***ProjectedToZoneRef*** | *ZoneRef* | 0:1 | <p>ZONE sur lequel on se projette.</p><p><mark>Dans le contexte des profils NeTEx, il s'agit là d'une référence vers une donnée externe (OSM, Nokia Here (ex Navteq), Tomtom TeleAtlas, IGN, INSPIRE, etc.).</mark></p><p><mark>La codification respectera les règles décrites ci-dessus pour les références externes.</mark></p>     |
@@ -1419,7 +1419,7 @@ d'OPÉRATEUR et d'AUTORITÉ.
 
 <div class="table-title">Organisation – Element</div>
 
-|        | Nom                    | Type                     |                                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|        | Nom                    | Type                     |         Cardinalité               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------ | ---------------------- | ------------------------ | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>    | ::>                    | *DataManagedObject*      | ::>                                | ORGANISATION hérite de DATA MANAGED OBJECT.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | «AK»   | ***PublicCode***       | *xsd:normalizedString*   | 0:1                                | Identifiant (code) public de l'INSTITUTION (exemples: STIF, SNCF, etc.)                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -1435,7 +1435,7 @@ d'OPÉRATEUR et d'AUTORITÉ.
 
 <div class="table-title">ContactDetails – Element (objet inclus)</div>
 
-|    | Name                 | Type                   |             | Description                          |
+|    | Name                 | Type                   |    Cardinalité     | Description                          |
 | -- | -------------------- | ---------------------- | ----------- | ------------------------------------ |
 |    | ***ContactPerson***  | *xsd:normalizedString* | 0:1         | Nom de la personne de contact.       |
 |    | ***Email***          | *EmailAddressType*     | 0:1         | Email de contact au format ISO.      |
@@ -1458,7 +1458,7 @@ de contrôle.
 
 <div class="table-title">OrganisationPart – Element (abstrait pour le profil)</div>
 
-|        | Name                                   | Type                        |             | Description                                                                                                                                                                 |
+|        | Name                                   | Type                        |    Cardinalité         | Description                                                                                                                                                                 |
 | ------ | -------------------------------------- | --------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>    | ::>                                    | *DataManagedObject*         | ::>         | ORGANISATION PART hérite de DATA MANAGED OBJECT.                                                                                                                            |
 |        | ***Name***                             | *MultilingualString*        | 0:1         | Nom du SOUS ENSEMBLE ORGANISATIONEL                                                                                                                                         |
@@ -1477,13 +1477,13 @@ L'OPÉRATEUR hérite de l'INSTITUTION, on utilisera un champ
 
 <div class="table-title">Operator – Element</div>
 
-| Classification | Name                          | Type            |             | Description                                                    |
+| Classification | Name                          | Type            |     Cardinalité        | Description                                                    |
 | -------------- | ----------------------------- | --------------- | ----------- | -------------------------------------------------------------- |
 | ::>            | ::>                           | *Organisation*  | ::>         | OPERATOR hérite ORGANISATION.                                  |
 |                | ***CountryRef***              | CountryRef      | 0:1         | Code ISO 3166-1 correspondant à la nationalité de l’exploitant |
-|                | Address                       | PostalAddress   | 0:1         | Postal ADDRESS of ORGANISATION.                                |
-|                | PrimaryMode                   | VehicleModeEnum | 0:1         | Mode de tranport principal de l'opérateur (s'il en a un)       |
-|                | CustomerServiceContactDetails |                 |             | <mark>Voir ContactDetails d'ORGANISATION.</mark>               |
+|                | ***Address***                 | PostalAddress   | 0:1         | Postal ADDRESS of ORGANISATION.                                |
+|                | ***PrimaryMode***             | VehicleModeEnum | 0:1         | Mode de transport principal de l'opérateur (s'il en a un)       |
+|                | ***CustomerServiceContactDetails*** |                 |             | <mark>Voir ContactDetails d'ORGANISATION.</mark>               |
 |                | ***~~departments~~***         |                 |             | <mark>Voir Parts d'ORGANISATION.</mark>                        |
 
 ### Autorités
@@ -1542,7 +1542,7 @@ jour, etc.).
 
 <div class="table-title">Notice – Element</div>
 
-|        | Name                               | Type                   |             | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
+|        | Nom                               | Type                   |    Cardinalité         | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------ | ---------------------------------- | ---------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>    | ::>                                | *DataManagedObject*    | ::>         | NOTICE hérite de DATA MANAGED OBJECT.                                                                                                                                                                                                                                                                                                                                                                                      |
 |        | ***Name***                         | *MultilingualString*   | 0:1         | Nom de la NOTE.                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -1554,7 +1554,7 @@ jour, etc.).
 
 <div class="table-title">DeliveryVariant – Element (objet inclus)</div>
 
-|      | Name                           | Type                 |     | Description                                                                                                                                                                                                          |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---- | ------------------------------ | -------------------- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>  | ::>                            | *DataManagedObject*  | ::> | DELIVERY VARIANT hérite de DATA MANAGED OBJECT.                                                                                                                                                                      |
 | «FK» | ***ParentRef***                |                      |     | <mark>Les variantes seront toujours exprimées au sein de la NOTE elle-même.</mark>                                                                                                                                   |
@@ -1572,12 +1572,12 @@ une NOTICE déjà définie dans un NOTICE ASSIGNMENT antérieur.</mark>
 
 <div class="table-title">Notice Assignment – Element</div>
 
-|      | Name                         | Type                           |     | Description                                                                                                                                                                     |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---- | ---------------------------- | ------------------------------ | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>  | ::>                          | *<u>DataManagedObject</u>*     | ::> | NOTICE ASSIGNMENT inherits from DATA MANAGED OBJECT.                                                                                                                            |
 | «PK» | ***id***                     | *TypeOfNoticeAssignmentIdType* | 1:1 | Identifiant du NOTICE ASSIGNMENT.                                                                                                                                               |
 | «FK» | a : ***NoticeRef***          | *NoticeRef*                    | 0:1 | Reference à une NOTE                                                                                                                                                            |
-|      | c : ***Notice***             | *<u>Notice</u>*                | 0:1 | <p>Description de la NOTE elle même.</p><p><mark>On préférera toujours ***Notice*** à ***NoticeRef*** (utilisez uniquement ***NoticeRef*** pour les NOTEs partagés).</mark></p> |
+|      | c : ***Notice***             | *Notice*                | 0:1 | <p>Description de la NOTE elle même.</p><p><mark>On préférera toujours ***Notice*** à ***NoticeRef*** (utilisez uniquement ***NoticeRef*** pour les NOTEs partagés).</mark></p> |
 | «FK» | ***NoticedObjectRef***       | *VersionOfObjectRef*           | 0:1 | Objet auquel la NOTE est associée. Si donné par le contexte peut être omis.                                                                                                     |
 | «FK» | ***StartPointInPatternRef*** | *PointInSequenceRef*           | 0:1 | POINT à partir duquel la NOTE devient applicatble (dans un PARCOURS).                                                                                                           |
 | «FK» | ***EndPointInPatternRef***   | *PointInSequenceRef*           | 0:1 | POINT à partir duquel la NOTE n’est plus applicatble (dans un PARCOURS).                                                                                                        |
@@ -1589,7 +1589,7 @@ une NOTICE déjà définie dans un NOTICE ASSIGNMENT antérieur.</mark>
 
 <div class="table-title">OperatingDay – Element</div>
 
-|      | Name                     | Type                 |     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---- | ------------------------ | -------------------- | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>  | ::>                      | *DataManagedObject*  | ::> | OPERATING DAY hérite de DATA MANAGED OBJECT.                                                                                                                                                                                                                                                                                                                                                                                                  |
 |      | ***CalendarDate***       | *xsd:date*           | 1:1 | <p>Date calendaire de la JOURNÉE D'EXPLOITATION.</p><p><mark>Il s'agit ici du jour calendaire où démarre la JOURNÉE D'EXPLOITATION, l'heure de début et la durée de la journée étant précisées par les autres paramètres.</mark></p>                                                                                                                                                                                                          |
@@ -1606,7 +1606,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 
 <div class="table-title">DayType – Model Element</div>
 
-| Classification | Name               | Type                 |             | Description                                                                                                                                                                                                                                                                                                         |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | ------------------ | -------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>            | ::>                | *DataManagedObject*  | ::>         | <p>DAY TYPE hérite de DATA MANAGED OBJECT.</p><p><mark>On utilisera le ***ValidBetween*** pour une éventuelle limitation de période</mark></p>                                                                                                                                                                      |
 |                | ***Name***         | *MultilingualString* | 0:1         | Nom du TYPE DE JOUR.                                                                                                                                                                                                                                                                                                |
@@ -1641,7 +1641,7 @@ Mais pour désigner les samedis d'été :
 
 <div class="table-title">PropertyOfDay – Element (objet inclus)</div>
 
-| Classification | Name               | Type                         |             | Description                                                                                                                                                |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | ------------------ | ---------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                | ***Name***         | *MultilingualString*         | 0:1         | Nom de la PROPRIÉTÉ DE JOUR.                                                                                                                               |
 |                | ***Description***  | *MultilingualString*         | 0:1         | Description de la PROPRIÉTÉ DE JOUR.                                                                                                                       |
@@ -1728,7 +1728,7 @@ correspondants.
 
 <div class="table-title">DayTypeAssignment – Element</div>
 
-| Classification | Name                                             | Type              |             | Description                                                                                                                                                                                                                         |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | ------------------------------------------------ | ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>            | ::>                                              | *VersionedChild*  | ::>         | DAY TYPE ASSIGNMENT hérite de VERSIONED CHILD.                                                                                                                                                                                      |
 | «FK»           | ***ServiceCalendarRef***                         | *CalendarRef*     | 0:1         | CALENDRIER DE SERVICE auquel l'affectation de TYPE DE JOUR appartient.                                                                                                                                                              |
@@ -1747,7 +1747,7 @@ nouveau CALENDRIER DE SERVICE).
 
 <div class="table-title">ServiceCalendar – Element</div>
 
-|        | Nom                      | Type                  |      | Description                                                        |
+| Classification | Nom | Type | Cardinalité | Description |
 | ------ | ------------------------ | --------------------- | ---- | ------------------------------------------------------------------ |
 | ::>    | ::>                      | *DataManagedObject*   | ::>  | SERVICE CALENDAR hérite de DATA MANAGED OBJECT.                    |
 |        | ***Name***               | *MultilingualString*  | 0:1  | Nom du CALENDRIER DE SERVICE.                                      |
@@ -1760,10 +1760,10 @@ nouveau CALENDRIER DE SERVICE).
 
 <div class="table-title">OperatingPeriod – Element</div>
 
-|      | Nom                | Type                |     | Description                                         |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---- | ------------------ | ------------------- | --- | --------------------------------------------------- |
 | ::>  | ::>                | *DataManagedObject* | ::> | OPERATING PERIOD hérite de DATA MANAGED OBJECT.     |
-| «FK» | ServiceCalendarRef | CalendarRef         | 0:1 | CALENDRIER DE SERVICE auquel la période appartient. |
+| «FK» | ***ServiceCalendarRef*** | CalendarRef         | 0:1 | CALENDRIER DE SERVICE auquel la période appartient. |
 |      | b : ***FromDate*** | dateTime            | 1:1 | Date calendaire de début                            |
 |      | b : ***ToDate***   | dateTime            | 1:1 | Date calendaire de fin                              |
 
@@ -1773,7 +1773,7 @@ chaque jour de la période: qu'elle soit valide ou non le jour).</mark>
 
 <div class="table-title">UicOperatingPeriod – Element</div>
 
-| Classification | Name               | Type                     |             | Description                                                                                                                                                                                                               |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | ------------------ | ------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>            | ::>                | *<u>OperatingPeriod</u>* | ::>         | UIC OPERATING PERIOD inherits from OPERATING PERIOD.                                                                                                                                                                      |
 |                | ***ValidDayBits*** | *xsd:normalizedString*   | 1:1         | String of bits (built of "0" and "1"), one for each day in the period: whether valid or not valid on the day. Normally there will be a bit for every day between start and end date. If bit is missing, assume available. |
@@ -1783,7 +1783,7 @@ chaque jour de la période: qu'elle soit valide ou non le jour).</mark>
 
 <div class="table-title">Timeband – Element (objet inclus)</div>
 
-| Classification | Nom             | Type                |             | Description                                                                                                                                                  |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | --------------- | ------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ::>            | ::>             | *DataManagedObject* | ::>         | TIME BAND hérite de DATA MANAGED OBJECT.                                                                                                                     |
 |                | ***StartTime*** | *xsd:time*          | 1:1         | heure de début (inclusif).                                                                                                                                   |
@@ -1798,7 +1798,7 @@ par exemple).
 
 <div class="table-title">TypeOfValue – Element (abstrait)</div>
 
-| Classification | Nom               | Type                 |     | Description                                  |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | ----------------- | -------------------- | --- | -------------------------------------------- |
 | ::>            | ::>               | *DataManagedObject*  | ::> | TYPE OF VALUE hérite de DATA MANAGED OBJECT. |
 |                | ***Name***        | *MultilingualString* | 0:1 | Nom du TYPE DE VALEUR.                       |
@@ -1814,7 +1814,7 @@ etc.).
 
 <div class="table-title">Presentation – Type (objet inclus)</div>
 
-| Classification | Name                       | Type                   |     | Description                                                                        |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | -------------------------- | ---------------------- | --- | ---------------------------------------------------------------------------------- |
 |                | ***Colour***               | *ColourValue*          | 0:1 | Couleur <mark>(format RVB)</mark>                                                  |
 |                | ***ColourName***           | *xsd:normalizedString* | 0:1 | Nom de la couleur                                                                  |
@@ -1833,7 +1833,7 @@ marques.
 
 <div class="table-title">Branding – Element (objet inclus)</div>
 
-| Classification | Nom                | Type                    |     | Description                                                                   |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | ------------------ | ----------------------- | --- | ----------------------------------------------------------------------------- |
 | ::>            | ::>                | *DataManagedObject*     | ::> | BRANDING hérite de TYPE OF VALUE.                                             |
 |                | ***Presentation*** | *PresentationStructure* | 0:1 | Informations de graphisme et de style de représentation associés à la marque. |
@@ -1868,7 +1868,7 @@ spécifiques sont décrits dans les lignes ci-dessous.
 
 <div class="table-title">PublicationDelivery</div>
 
-| Classification         | Nom                              | Type                          |     | Description                                                                                                                                                                                                                                   |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---------------------- | -------------------------------- | ----------------------------- | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                        | ***version***                    | *xsd:NMTOKEN*                 |     | <p>Identifiant de la version de NeTEx utilisée.</p><p>*Voir 7.5*</p>                                                                                                                                                                          |
 | PublicationHeaderGroup | ***PublicationTimestamp***       | *xsd:dateTime*                | 1:1 | Date et heure de publication des données                                                                                                                                                                                                      |
@@ -1928,7 +1928,7 @@ de CADRE spécifique pour chaque partie du profil France (voir plus bas).
 
 <div class="table-title">VersionFrame – Element</div>
 
-|        | Nom                             | Type                 |     | Description                                                                                                                                                                                                                                                                                                            |
+| Classification | Nom | Type | Cardinalité | Description |
 | ------ | ------------------------------- | -------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>    | ::>                             | *DataManagedObject*  | ::> | VERSION FRAME hérite de DATA MANAGED OBJECT.                                                                                                                                                                                                                                                                           |
 |        | ***Name***                      | *MultilingualString* | 0:1 | Nom du VERSION FRAME.                                                                                                                                                                                                                                                                                                  |
@@ -1949,7 +1949,7 @@ de CADRE spécifique pour chaque partie du profil France (voir plus bas).
 
 <div class="table-title">VersionFrameDefaults – Element (objet inclus)</div>
 
-|      | Nom                               | Type                   |     | Description                                                                                      |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---- | --------------------------------- | ---------------------- | --- | ------------------------------------------------------------------------------------------------ |
 | «FK» | ***DefaultCodeSpaceRef***         | *CodeSpaceRef*         | 0:1 | Codespace par défaut (voir 7.3) qui sera utilisé pour tous les éléments qui ne le précisent pas. |
 | «FK» | ***DefaultDataSourceRef***        | *DataSourceRef*        | 0:1 | Source de données par défaut (pour tous les éléments qui ne le précisent pas)                    |
@@ -1963,7 +1963,7 @@ d’argent en Euros.</mark>
 
 <div class="table-title">TypeOfFrame – Élément</div>
 
-|        | Nom           | Type                           |     | Description                                                                                     |
+| Classification | Nom | Type | Cardinalité | Description |
 | ------ | ------------- | ------------------------------ | --- | ----------------------------------------------------------------------------------------------- |
 | ::>    | ::>           | *TypeOfValueDataManagedObject* | ::> | <p>TYPE OF FRAME hérite de TYPE OF VALUE.</p><p><mark>L'Id est imposé à NETEX_RESEAU</mark></p> |
 | «cntd» | ***classes*** | *ClassInContextRef*            | 0:* | Liste des classes pouvant être contenues dans ce TYPE OF FRAME.                                 |
@@ -2014,7 +2014,7 @@ id=era:4501234345
 
 <div class="table-title">Codespace – Element (objet inclus)</div>
 
-|      | Nom               | Type          |     | Description                                                                                                       |
+| Classification | Nom | Type | Cardinalité | Description |
 | ---- | ----------------- | ------------- | --- | ----------------------------------------------------------------------------------------------------------------- |
 | ::>  | ::>               | *Entity*      | ::> | CODESPACE hérite de ENTITY.                                                                                       |
 | «AK» | ***Xmlns***       | *xsd:NMTOKEN* | 1:1 | Préfixe du CODESPACE, unique au sein du document XML (exemple : ‘ratp’,’transilien’,’tisseo’, etc.)               |
@@ -2331,7 +2331,7 @@ une référence vers un objet externe.</mark>
 
 <div class="table-title">VersionOfObjectRef (abstrait)</div>
 
-| Classification | Nom                  | Type              |     | Description                                                                                                                                                                                                              |
+| Classification | Nom | Type | Cardinalité | Description |
 | -------------- | -------------------- | ----------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 |                | ***NameOfRefClass*** | *NameOfClass*     | 0:1 | Nom de la classe d’objet référencée.                                                                                                                                                                                     |
 | «FK»           | ***ref***            | *(ObjectIdType)+* | 1:1 | Identifiant de l’objet référencé                                                                                                                                                                                         |
@@ -2561,7 +2561,7 @@ profil.
 
 <div class="table-title">SIRI/NeTEx ServiceRequest — Attributes</div>
 
-| Classification        | Nom                                    | Type               |                                        | Description                                                                                                                                                                              |
+| Classification | Nom | Type | Cardinalité | Description |
 | --------------------- | -------------------------------------- | ------------------ | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                       | ***ServiceRequestContext***            | *+Structure*       | 0:1                                    | Propriétés générales de la requête.                                                                                                                                                      |
 | *log*                 | ***RequestTimestamp***                 | *xsd:dateTime*     | **1:1**                                | Datation de la requête                                                                                                                                                                   |
@@ -2582,7 +2582,7 @@ n'est pas pris en charge).
 
 <div class="table-title">ServiceRequestContext (issu du profil SIRI)</div>
 
-|                           | Nom                           | Type                   |     | Description                                                                                                                                                                                                                                                                  |
+| Classification | Nom | Type | Cardinalité | Description |
 | ------------------------- | ----------------------------- | ---------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                           | ***ServiceRequestContext***   | *+Structure*           |     | Propriétés générales des requêtes.                                                                                                                                                                                                                                           |
 | *Server Endpoint Address* | ***CheckStatusAddress***      | *EndpointAddress*      | 0:1 | Adresse (URL) de destination du ***CheckStatus***.                                                                                                                                                                                                                           |
