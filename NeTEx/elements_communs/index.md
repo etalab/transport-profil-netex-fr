@@ -956,7 +956,7 @@ façon détaillée. C’est, autant que possible, la version simplifiée du
 
 <div class="table-title">ValidBetween – Element (objet inclus)</div>
 
-| Classification | Nom            | Type           |     | Description                                                                                                                                                                                                                                  |
+| Classification | Nom            | Type           |   Cardinalité  | Description                                                                                                                                                                                                                                  |
 | -------------- | -------------- | -------------- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                | ***FromDate*** | *xsd:dateTime* | 0:1 | Date et heure de début de validité (inclusif) <br/> <mark>Le ***FromDate*** est obligatoire dans le cadre du profil (le ***ToDate*** ne l’est pas, et s’il n’est pas rempli, la validité débute au ***FromDate*** sans limite de fin.</mark> |
 |                | ***ToDate***   | *xsd:dateTime* | 0:1 | Date et heure de fin de validité (inclusif)                                                                                                                                                                                                  |
