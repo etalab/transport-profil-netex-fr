@@ -1047,7 +1047,7 @@ comme balise incluse (et non comme élément racine).</mark>
 
 1. *AlternativeText – XML Element*
 
-| Classification | Nom                  | Type                                   |            | Description                                                                                                                                               |
+| Classification | Nom                  | Type                                   |    Cardinalité        | Description                                                                                                                                               |
 | -------------- | -------------------- | -------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>            | ::>                  | *VersionedChild*                | ::>        | **AlternativeText** hérite de VERSIONED CHILD.                                                                                                            |
 | «PK»           | ***attributeName***  | *xsd:NCName*                           | 0:1| Nom de l'attribut de texte pour lequel il s'agit du texte de remplacement. Doit être un nom d'attribut existant.                                          |
