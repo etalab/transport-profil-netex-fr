@@ -1320,7 +1320,7 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 
 <div class="table-title">TariffZone– Element</div>
 
-| Classification | Name               | Type                  | Cardinalité | Description                                             |
+| Classification | Nom               | Type                  | Cardinalité | Description                                             |
 | -------------- | ------------------ | --------------------- | ----------- | ------------------------------------------------------- |
 | ::>            | ::>                | *<u>Zone</u>*         | ::>         | ZONE TARIFAIRE.hérite de ZONE.                          |
 |                | id                 | TariffZoneIdType      | 1:1         | Identifiand de la ZONE TARIFAIRE.                       |
