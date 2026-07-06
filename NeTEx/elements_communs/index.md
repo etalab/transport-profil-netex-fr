@@ -2659,7 +2659,7 @@ la requête, seul le ***ServiceDelivery*** de la réponse sera utilisé.
 
 <div class="table-title">DataObjectDelivery (issu du profil SIRI) — Attributes</div>
 
-|           | Nom                         | Type                   |                                        | Description                                                                               |
+| Classification | Nom | Type | Cardinalité | Description |
 | --------- | --------------------------- | ---------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------- |
 |           | ***DataObjectDelivery***    | *+Structure*           |                                        | Qualificateur des réponses.                                                               |
 | *Log*     | ***ResponseTimestamp***     | *xsd:dateTime*         | 0:1                                    | Date de création de ce statut de réponse.                                                 |
