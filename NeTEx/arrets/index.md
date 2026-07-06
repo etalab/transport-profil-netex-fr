@@ -1230,7 +1230,7 @@ Français de NETEx: éléments communs**:
 
 <div class="table-title">Espace de Lieu d’Arrêt – Element (abstrait)</div>
 
-| Classification | Name  | Type                   | Cardinalité | Description                                |
+| Classification | Nom  | Type                   | Cardinalité | Description                                |
 | -------------- | ----- | ---------------------- | ----------- | ------------------------------------------ |
 | *::>*          | *::>* | *<u>SiteComponent</u>* | *::>*       | STOP PLACE SPACE hérite de SITE COMPONENT. |
 |                | Label | xsd:normalizedString   | 0:1         | Label associé à l’espace                   |
