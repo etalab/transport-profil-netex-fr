@@ -927,7 +927,7 @@ SÉQUENCE DE TRONÇONS.
 
 <div class="table-title">PointInLinkSequence – Element (Abstrait)</div>
 
-| Classification | Nom                   | Type                    |     | Description                                                                                                                       |
+| Classification | Nom                   | Type                    | Cardinalité | Description                                                                                                                       |
 | -------------- | --------------------- | ----------------------- | --- | --------------------------------------------------------------------------------------------------------------------------------- |
 | ::>            | ::>                   | *<u>VersionedChild</u>* | ::> | POINT IN LINK SEQUENCE hérite de VERSIONED CHILD.                                                                                 |
 | «atr»          | ***order***           | *xsd:positiveInteger*   | 1:1 | Ordre du POINT au sein de la séquence (la valeur de début est sans importance seules comptent les valeurs relatives entre elles). |
