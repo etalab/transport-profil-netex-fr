@@ -1259,7 +1259,7 @@ Français de NETEx: éléments communs**:
 
 <div class="table-title">StopPlaceEntrance – Element</div>
 
-| Classification | Name                          | Type                              |     | Description                                                                                                                                                       |
+| Classification | Nom                          | Type                              |     | Description                                                                                                                                                       |
 | -------------- | ----------------------------- | --------------------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ::>            | ::>                           | *Entrance*                        | ::> | <p>STOP PLACE ENTRANCE. hérite de SITE ENTRANCE.</p><p><mark>NOTE : ***StopPlaceEntrance*** n'utilise pas le ***placeGroup*** dans le cadre du profil.</mark></p> |
 | GROUP          | ***StopPlaceComponentGroup*** | *StopPlaceComponentPropertyGroup* | 0:1 | Propriétés communes avec le COMPOSANT DE LIEU D'ARRÊT (voir 7.4.2-Attributs de StopPlaceComponent plus haut).                                                     |
