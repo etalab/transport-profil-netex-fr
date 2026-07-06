@@ -912,7 +912,7 @@ d'objets plus complexes comme les ITINÉRAIREs (voir Profil Réseau).
 
 <div class="table-title">LinkSequence – Element (Abstrait)</div>
 
-| Classification | Nom                      | Type                 |             | Description                                           |
+| Classification | Nom                      | Type                 | Cardinalité | Description                                           |
 | -------------- | ------------------------ | -------------------- | ----------- | ----------------------------------------------------- |
 | ::>            | ::>                      | *DataManagedObject*  | ::>         | LINK SEQUENCE hérite de ***DataManagedObject***.      |
 |                | ***Name***               | *MultilingualString* | 0:1         | Nom de la SÉQUENCE DE TRONÇON.                        |
