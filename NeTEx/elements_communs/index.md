@@ -2620,7 +2620,7 @@ réponse).
 
 <div class="table-title">NetworkFilterByValue – Element</div>
 
-| Classification            | Nom                    | Type                   |      | Description                                                                                                                                             |
+| Classification | Nom | Type | Cardinalité | Description |
 | ------------------------- | ---------------------- | ---------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Object By Value           | ***BoundingBox***      | *BoundingBoxStructure* | 0:\* | Ce filtre permet de ne demander que les données à l’intérieur d’un périmètre géographique spécifié.                                                     |
 |                           | ***objectReferences*** | *VersionOfObjectRef*   | 0:\* | Permet de spécifier l’identifiant de l’objet recherché. Si l’identifiant n’est pas précisé, tous les objets de la classe correspondante sont retournés. |
