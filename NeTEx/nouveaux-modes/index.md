@@ -1900,4 +1900,92 @@ Les **COMPOSANTS DE STATIONNEMENT** particuliers et l'**EMPLACEMENT D'&eacute;QU
 
 Table 40 - Equipement de rechargement
 
+## Compte Client
+### Modèle conceptuel
+#### Moyens de paiement
+
+Un CLIENT DE TRANSPORT peut enregistrer sur un COMPTE CLIENT les moyens de paiement qu'il souhaite utiliser pour régler les PRODUITS TARIFAIRES achetés via ce compte, par exemple une carte bancaire ou un compte de paiement mobile
+
+![Fig20_CompteClient](media/Fig20_CompteClient.JPG)
+
+#### Restriction de Services
+
+Le modèle des restrictions de service définit un petit nombre d'éléments réutilisables pour classer les moyens de paiement. Quelques ajouts supplémentaires sont faits pour permettre de nouveaux modes ; en particulier, les éléments des arrangements de réservation sont affinés et étendus. (Voir le modèle des ARRANGEMENTS DE RÉSERVATION).
+
+![Fig21_Restriction de services](media/Fig21_ServiceRestriction.JPG)
+
+### Modèle de données
+
+#### Moyens de Paiement 
+
+Un moyen de paiement enregistré qu'un client de transport souhaite utiliser pour effectuer des paiements associés à un compte client, par exemple au moyen d'une carte EMV (EuroPay, MasterCard, Visa) désignée.
+
+
+| Classification | Nom | Type | Cardinalité | Description |
+|---|---|---|---|---|
+| ::> | ::> | VersionedChild | ::> | CUSTOMER PAYMENT MEANS hérite de VERSIONED CHILD. |
+| «PK» | id | CustomerPaymentMeansIdType | 1:1 | Identifiant de CUSTOMER PAYMENT MEANS. |
+|  | Name | MultilingualString | 0:1 | Nom du moyen de paiement. |
+| «FK» | CustomerAccountRef | CustomerAccountRef | 0:1 | Compte client associé au moyen de paiement. |
+| «FK» | MediumAccessDeviceRef | MediumAccessDeviceRef | 0:1 | MEDIUM ACCESS DEVICE associé à CUSTOMER PAYMENT MEANS. |
+| «enum» | PaymentMethod | PaymentMethodEnum | 0:1 | Méthode de paiement associée à CUSTOMER ACCOUNT. Cf. SERVICE RESTRICTIONs. |
+| «FK» | TypeOfPaymentMethodRef | TypeOfPaymentMethodRef | 0:1 | Référence à un TYPE OF PAYMENT METHOD. |
+|  | LastVerifiedDate | xsd:dateTime | 0:1 | Date de dernière vérification du moyen de paiement. |
+|
+
+Ci-dessous un exemple de compte client associé à deux Moyens de paiement
+
+```= xml
+<CustomerAccount version="any" id="rydt:Cust555@AC7651">
+<Name>hotrider</Name>
+<StartDate>2020-02-28T13:00:00</StartDate>
+<CustomerAccountStatusType>active</CustomerAccountStatusType>
+<CustomerPaymentMeansRef version="any" ref="rydt:Cust555@AC7651@p1"/>
+<paymentMeans>
+<CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p1">
+<Name>EZ Ritter Visa Card</Name>
+<EmvCardRef version="any" ref="visa:47594444555666"/>
+</CustomerPaymentMeans>
+<CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p2">
+<Name>EZ Ritter mobile device</Name>
+<MobileDeviceRef version="any" ref="rydt:4178671234567"/>
+</CustomerPaymentMeans>
+</paymentMeans>
+<mediumAccessDevices>
+<MobileDeviceRef version="any" ref="rydt:4178671234567"/>
+</mediumAccessDevices>
+</CustomerAccount>
+```
+
+#### Restriction de service
+
+Définit les restrictions applicables au compte client
+
+##### Méthode de Paiement (TypeOfPaymentMethod)
+
+| Classification | Nom | Type | Cardinalité | Description |
+|---|---|---|---|---|
+| ::> | ::> | TypeOfValue | ::> | TYPE OF PAYMENT METHOD hérité de TYPE OF VALUE. |
+| «PK» | id | TypeOfPayment-MethodIdType | 1:1 | Identifiant de TYPE OF PAYMENT METHOD. |
+| «enum» | PaymentMethod | PaymentMethodEnum | 0:1 | Cf les valeurs ci-dessous |
+|  | AutomatedUse | xsd:boolean | 0:1 | Si le mode de paiement peut être utilisé ou si les paiements peuvent être automatisés, par exemple pour le prélèvement automatique. |
+
+#### Méthode de Paiement – Valeurs autorisées
+
+
+| Valeur | Description |
+|---|---|
+| `cash` | Espèce |
+| `cashExactChangeOnly` | Espèce — appoint exact uniquement |
+| `cashAndCard` | Espèce et carte |
+| `creditCard` | Carte de crédit |
+| `debitCard` | Carte de débit |
+| `travelCard` | Carte de transport |
+| `contactlessPaymentCard` | Paiement sans contact |
+| `mobilePhone` | Téléphone mobile |
+| `mobileApp` | Application mobile |
+| `voucher` | Bon / coupon |
+
+
+
 # Entêtes NeTEx
