@@ -1053,7 +1053,10 @@ _Une partie d&eacute;di&eacute;e de l’AIRE DE STATIONNEMENT pour le covoiturag
 
 Il est possible de préciser que la zone de parking est dédiée au covoiturage en utilisant la Balise <Name/>. Se reporter au profil NexTEx France Parking.
 
-Exemple : <VehiclePoolingParkingArea id="FR:VehiclePoolingParkingArea:76-6:Qpark" version="any"><Name>Zone réservée aux couvoitureurs</Name><TotalCapacity>2</TotalCapacity></VehiclePoolingParkingArea>
+Exemple : 
+``` xml
+<VehiclePoolingParkingArea id="FR:VehiclePoolingParkingArea:76-6:Qpark" version="any"><Name>Zone réservée aux covoitureurs</Name><TotalCapacity>2</TotalCapacity></VehiclePoolingParkingArea>
+```
 															
 					
 |     |     |     |     |     |
@@ -1085,6 +1088,16 @@ Permet de d&eacute;finir un Place de parking pour le partage de v&eacute;hicule.
 | «PK» | **_id_** | _VehicleSharingParkingBayIdType_ | 1:1 | Identifiant du VEHICLE SHARING PARKING BAY. |
 
 Table 16 - **Dock de stationnement pour v&eacute;hicule partag&eacute;**
+
+VehiculeSharingParkingArea est une spécialisation de ParkingArea qui permet de préciser les emplacements dévolus au covoiturage lorsqu’existant
+
+
+``` xml 
+<VehicleSharingParkingArea id="FR:ParkingArea:76-5:Qpark" version="any">
+<Name>Zone Autopartage</Name>
+<TotalCapacity>10</TotalCapacity>
+</VehicleSharingParkingArea>
+```
 
 ##### VehiclePoolingParkingBay
 
