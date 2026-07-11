@@ -653,7 +653,7 @@ proposent ces colonnes :
   textes surlignés en jaune indiquent une spécificité du profil par
   rapport à NeTEx).
 
-Les textes surlignés en <span class="mark">Jaune</span> sont ceux
+Les textes surlignés en <mark>Jaune</mark> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx: une
 codification particulière, une restriction d'usage, etc.
 
@@ -732,11 +732,11 @@ comme une zone géométrique, bordée d'un polygone.
 Une ZONE peut contenir d'autres ZONEs plus petites. Ceci est exprimé par
 la relation réflexive sur ZONE et donc un PARKING peut inclure d'autres
 PARKING comme tous les objets qui héritent de la
-<span class="mark">ZONE : dans le contexte du profil Parking , on se
+<mark>ZONE : dans le contexte du profil Parking , on se
 limitera à **3** niveaux au maximum (un PARKING de plus haut niveau,
 pouvant contenir un ou plusieurs Parkings, chacun pouvant à leur tour
 contenir un ou plusieurs Parkings mais sans pouvoir descendre plus
-« bas »).</span>
+« bas »).</mark>
 
 Une ZONE peut être représentée par un seul POINT (par l'attribut
 **Centroïd*) ***qui peut être utilisé comme une référence ponctuelle à
@@ -779,15 +779,15 @@ attributs*
 
 ### Parking
 
-<span class="mark">**\[Code PAYS\]:\[Code commune
+<mark>**\[Code PAYS\]:\[Code commune
 INSEE\]:\[Parking\]:\[Code parking spécifique\]:\[Code émetteur du code
-technique ou LOC\]**, on aura donc :</span>
+technique ou LOC\]**, on aura donc :</mark>
 
-- <span class="mark">**\[Code PAYS\]**: Identifiant du Pays en
+- <mark>**\[Code PAYS\]**: Identifiant du Pays en
   respectant la norme ISO 3166-1 (voir:
   [www.iso.org/iso/country_codes/iso_3166_code_lists.htm](http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm),
-  **FR** pour la France ).</span>
-- <span class="mark">**\[Code commune INSEE\]**: 5 caractères (exemple :
+  **FR** pour la France ).</mark>
+- <mark>**\[Code commune INSEE\]**: 5 caractères (exemple :
   78297 pour Guyancourt), 2 caractères pour le département et 3 pour la
   commune elle-même en France métropolitaine et 3 2 caractères pour le
   département et 2 pour la commune elle-même pour l’outre-mer.
@@ -797,11 +797,11 @@ technique ou LOC\]**, on aura donc :</span>
   En cas de mise à jour du code commune par l’INSEE, par souci de
   pérennité de l’identifiant, on conservera le code attribué
   initialement (pas de suivi d’un éventuel changement de codification
-  INSEE donc).</span>
-- **<span class="mark">\[Type d’objet\]: Parking</span>**
-- <span class="mark">**\[Code arrêt spécifique\]** : code technique
-  libre</span>
-- <span class="mark">**\[Code émetteur du code technique\]** :
+  INSEE donc).</mark>
+- **<mark>\[Type d’objet\]: Parking</mark>**
+- <mark>**\[Code arrêt spécifique\]** : code technique
+  libre</mark>
+- <mark>**\[Code émetteur du code technique\]** :
   Identifiant de l’attributeur de code technique, par exemple EFFIA,
   QParK, Indigo, Parcub, ou l’identifiant de la collectivité en charge
   du parking. **LOC** permet de préciser que l'identifiant a été défini
@@ -811,9 +811,9 @@ technique ou LOC\]**, on aura donc :</span>
   l'identifiant est local. Pour les objets faisant partie de
   référentiels partagés on peut le remplacer par un \[NomAttributaire\]
   qui le nom (ou code) du système référentiel utilisé pour attribuer
-  l’identifiant.</span>
+  l’identifiant.</mark>
 
-<span class="mark">Exemple ***FR:75105:Parking:076:LOC***</span>
+<mark>Exemple ***FR:75105:Parking:076:LOC***</mark>
 
 Pour mémoire, les élément constitutif de cet identifiant n’ont pour
 vocation que de garantir l’unicité et la pérennité quel que soit le
@@ -823,13 +823,13 @@ information figure dans les attributs des objets). En corollaire, une
 fois un identifiant attribué, il ne doit plus être modifié, même si l’un
 des constitutifs utilisé était amené à changer.
 
-<span class="mark">Note : dans le cas de parkings pour lesquels un
+<mark>Note : dans le cas de parkings pour lesquels un
 identifiant unique aurait été délivré par le Point d’accès national sous
 la forme ***INSEE-P-xxx*** (où INSEE est le code ***INSEE*** de la
 commune et ***xxx*** est le numéro d’ordre sur 3 chiffres) le code INSEE
 sera réutilisé dans la structuration ci-dessus et ***xxx*** sera utilisé
 pour le **\[Code arrêt spécifique\]**, le **\[Code émetteur du code
-technique\]** sera « **NAP** ».</span>
+technique\]** sera « **NAP** ».</mark>
 
 <div class='table-title'>Parking – Element</div>
 
@@ -2373,10 +2373,10 @@ Parking) et décrite de façon détaillée dans le profil accessibilité.
 
 </div>
 
-<span class="mark">Note : si l’on souhaite décrire les équipements de
+<mark>Note : si l’on souhaite décrire les équipements de
 recharge de de façon détaillée (types de prise, puissance, voltage,
 fabriquant, etc.), NeTEx dispose d’un ***ChargingEquipmentProfile*** qui
-n’est pas décrit ici.</span>
+n’est pas décrit ici.</mark>
 
 # Entêtes NeTEx
 
@@ -3495,7 +3495,7 @@ ceux pour lesquels des spécialisations n’ont pas été prévues.
 <td><em><strong>Name</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td><p>0:1</p>
-<p><span class="mark-gray">1:1</span></p></td>
+<p><mark class="gray">1:1</mark></p></td>
 <td><p>Nom du groupe d'entité (<mark>du LIEU D'ARRÊT, de la ZONE
 D'EMBARQUEMENT, de l'ACCÈS, etc.)</mark></p>
 <p><mark>Attribut rendu obligatoire dans le cadre de ce
@@ -4486,9 +4486,9 @@ attributs retenus y sont présentés (l'affectation est très paramétrable,
 mais la grande majorité des attributs ne sont pas retenus dans le
 profil).
 
-<span class="mark">Les NoticeAssignments doivent être intégré en ligne à
+<mark>Les NoticeAssignments doivent être intégré en ligne à
 l'élément annoté et non placé séparément. Ils peuvent faire référence à
-une NOTICE déjà défini dans un NOTICE ASSIGNMENT antérieur.</span>
+une NOTICE déjà défini dans un NOTICE ASSIGNMENT antérieur.</mark>
 
 <div class='table-title'>Notice Assignment – Element</div>
 
@@ -4674,13 +4674,13 @@ recommandé (pour des raisons de cohérence) que sa valeur soit:
 
 </div>
 
-<span class="mark">Chaque fois que pour ***LimitationStatus*** la valeur
+<mark>Chaque fois que pour ***LimitationStatus*** la valeur
 "partial" est utilisée, une "***ValidityCondition-\> Description***"
 (dans l’objet ***AccessibilityAssessment***) doit être fournie en
 conséquence pour expliquer pourquoi l'accessibilité n'est que partielle
 (notez que seule la ***Description*** de la ***ValidityCondition*** peut
 être remplie). Les informations textuelles contenues doivent pouvoir
-être présentées au public sans autre modification.</span>
+être présentées au public sans autre modification.</mark>
 
 ### Nom alternatif
 
@@ -4788,8 +4788,8 @@ Paris-Bercy”), alors qu’***AlternativeText*** servira essentiellement
 pour les traductions (par exemple. “en.London”, “fr.Londres”,
 “it.Londra”, “cn.倫敦”, “ge.ლონდონი”, etc).
 
-<span class="mark">Dans le profil, **AlternativeText** sera toujours
-utilisé comme balise incluse (et non comme élément racine).</span>
+<mark>Dans le profil, **AlternativeText** sera toujours
+utilisé comme balise incluse (et non comme élément racine).</mark>
 
 <div class='table-title'>AlternativeText – XML Element</div>
 
@@ -4871,11 +4871,11 @@ etc.).
 
 | **Class.** | **Name**                   | **Type**               | **Card.** | **Description**                                                                                                                                                                                                                                                       |
 |------------|----------------------------|------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|            | ***Colour***               | *ColourValue*          | 0:1       | Couleur <span class="mark">(format RVB)</span>                                                                                                                                                                                                                        |
+|            | ***Colour***               | *ColourValue*          | 0:1       | Couleur <mark>(format RVB)</mark>                                                                                                                                                                                                                                     |
 |            | ***ColourName***           | *xsd:normalizedString* | 0:1       | Nom de la couleur                                                                                                                                                                                                                                                     |
 |            | ***BackGroundColour***     | *ColourValueType*      | 0:1       | Valeur RVB de la couleur de fond (par exemple la couleur de la ligne de transport)                                                                                                                                                                                    |
 |            | ***BackgroundColourName*** | *xsd:String*           | 0:1       | Nom de la couleur de fond dans le *ColourSystem*.                                                                                                                                                                                                                     |
-|            | ***TextColour***           | *ColourValue*          | 0:1       | Couleur du texte <span class="mark">(format RVB)</span>                                                                                                                                                                                                               |
+|            | ***TextColour***           | *ColourValue*          | 0:1       | Couleur du texte <mark>(format RVB)</mark>                                                                                                                                                                                                                            |
 |            | ***TextColourName***       | *xsd:normalizedString* | 0:1       | Nom de la couleur du texte                                                                                                                                                                                                                                            |
 |            | ***TextFont***             | *xsd:normalizedString* | 0:1       | Identifiant de la police de caractère                                                                                                                                                                                                                                 |
 |            | ***TextFontName***         | *xsd:normalizedString* | 0:1       | Nom de la police de caractère                                                                                                                                                                                                                                         |
@@ -4935,9 +4935,9 @@ etc.)</td>
 <td><em><strong>CompanyNumber</strong></em></td>
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
-<td><p>Numéro d'enregistrement de l'institution<span
-class="mark-gray">(type code transporteur affecté par l'AO, NAO de la
-norme 99-502 pour les AOT, etc.)</span></p>
+<td><p>Numéro d'enregistrement de l'institution<mark
+class="gray">(type code transporteur affecté par l'AO, NAO de la
+norme 99-502 pour les AOT, etc.)</mark></p>
 <p><strong><mark>Numéro SIRET (champ obligatoire) pour les exploitants
 et propriétaire de parkings.</mark></strong></p></td>
 </tr>
@@ -4991,7 +4991,7 @@ et propriétaire de parkings.</mark></strong></p></td>
 <td><em><strong>OrganisationType</strong></em></td>
 <td><em>TypeOfOrganisationEnum</em></td>
 <td><p>0:1</p>
-<p><span class="mark-gray">1:1</span></p></td>
+<p><mark class="gray">1:1</mark></p></td>
 <td><p>Type d'organisation codifié:</p>
 <ul>
 <li><strong>authority</strong> : Autorité organisatrice</li>
@@ -5013,8 +5013,8 @@ public</li>
 <td>0:*</td>
 <td><p>Ensemble des entités constituant ou faisant partie de
 l'INSTITUTION (UNITÉ ORGANISATIONELLE ou DÉPARTEMENT).</p>
-<p><span class="mark-gray">Seules les UNITÉs ORGANISATIONELLEs seront
-utilisées dans le cadre des profils NeTEx.</span></p></td>
+<p><mark class="gray">Seules les UNITÉs ORGANISATIONELLEs seront
+utilisées dans le cadre des profils NeTEx.</mark></p></td>
 </tr>
 </tbody>
 </table>
@@ -5066,9 +5066,9 @@ utilisées dans le cadre des profils NeTEx.</span></p></td>
 <td><em>VersionedChild</em></td>
 <td></td>
 <td><p>RESPONSIBILITY ROLE hérite de VERSIONED CHILD.</p>
-<p><span class="mark-gray">Non utilisé quand inclus comme roles de
+<p><mark class="gray">Non utilisé quand inclus comme roles de
 <em><strong>ResponsabilitySet</strong> (l’inclusion est la solution
-retenue par le profil)</em></span></p></td>
+retenue par le profil)</em></mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -5118,8 +5118,8 @@ possibles sont :</p>
 <td><em>TypeOfResponsibility RoleRef</em></td>
 <td></td>
 <td><p>Référence à un type de responsabilité.</p>
-<p><span class="mark-gray">On utilisera notamment ce champ pour
-référencer un type de contrat quand cela est nécessaire.</span></p></td>
+<p><mark class="gray">On utilisera notamment ce champ pour
+référencer un type de contrat quand cela est nécessaire.</mark></p></td>
 </tr>
 <tr class="even">
 <td>« FK »</td>
@@ -6533,8 +6533,7 @@ tarifs</td>
 </div>
 
 <style>
-  .mark      { background-color: yellow; }
-  .mark-gray { background-color: lightgray; }
+  mark.gray { background-color: lightgray; }
 
   .red { color: red; }
 

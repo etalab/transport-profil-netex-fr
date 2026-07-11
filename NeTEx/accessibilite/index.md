@@ -238,12 +238,12 @@ EN 12896, Public transport - Reference data model (Transmodel)
 
 NOTE Pour les besoins du présent document, les termes et définitions
 suivants s'appliquent. Ils sont directement issus de la traduction
-française de Transmodel et NeTEx <span class="hl">(on notera que
+française de Transmodel et NeTEx <mark>(on notera que
 certaines traductions sont un peu « étonnantes », toutefois il a été
 jugé préférable de rester cohérent avec la traduction officielle). Il
 conviendra souvent de se référer au corps du document car certaines
 traductions officielles peuvent amener à une totale incompréhension des
-concepts.</span>
+concepts.</mark>
 
 Pour une information complète, il conviendra toutefois de se référer au
 document normatif.
@@ -1046,7 +1046,7 @@ proposent ces colonnes:
     les textes surlignés en jaune indiquent une spécificité du profil
     par rapport à NeTEx).
 
-Les textes surlignés en <span class="hl">Jaune</span> sont ceux
+Les textes surlignés en <mark>Jaune</mark> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx : une
 codification particulière, une restriction d'usage, etc.
 
@@ -1108,15 +1108,12 @@ gare, accès possibles pour les UFR uniquement sur certains quais)
 signalétique auditive en cas de perturbations mais pas d'annonces pour
 les prochains passages)
 
-<span class="hl">Dans le cadre du profil France il est convenu, lorsque
-"</span>***<span class="hl">Partiel</span>***<span class="hl">" est
-utilisé, de systématiquement remplir le champ "</span>***<span
-class="hl">ValidityCondition->Description</span>***<span class="hl">"
+<mark>Dans le cadre du profil France il est convenu, lorsque "***Partiel***" est
+utilisé, de systématiquement remplir le champ "***ValidityCondition->Description***"
 pour préciser comment l'information doit être interprétée. Il est à noter
-que seul le champ </span>***<span class="hl">ValidityCondition</span>***
-<span class="hl"> permet de contenir une description textuelle, sous forme d'un
-texte libre susceptible d'être présenté au public en complément des
-indicateurs ci-dessus.</span>
+que seul le champ ***ValidityCondition*** permet de contenir une description
+textuelle, sous forme d'un texte libre susceptible d'être présenté au public en
+complément des indicateurs ci-dessus.</mark>
 
 ![image](media/image8.svg)
 *Accessibilité dans les autres parties du profil France*
@@ -1173,7 +1170,7 @@ précision sur les équipements et cheminements rencontrés.
 <td><em>MultilingualString</em></td>
 <td>0:1</td>
 <td><p>Commentaire complémentaire sur l'accessibilité.</p>
-<p><span class="hl">Ce champ a pour vocation à compléter, en termes d'information voyageur, l'information générale de la structure. Il a donc pour vocation à être affiché avec les informations d'accessibilité.</span></p></td>
+<p><mark>Ce champ a pour vocation à compléter, en termes d'information voyageur, l'information générale de la structure. Il a donc pour vocation à être affiché avec les informations d'accessibilité.</mark></p></td>
 </tr>
 </tbody>
 </table>
@@ -1210,9 +1207,7 @@ recommandé (pour des raisons de cohérence) que sa valeur soit:
 
 ## Adéquation aux besoins
 
-<span class="hl">L'adéquation aux besoins n'est pas retenue dans le
-cadre du profill accessibilité.</span>
-
+<mark>L'adéquation aux besoins n'est pas retenue dans le cadre du profil accessibilité.</mark>
 
 ## Les services disponibles
 
@@ -1255,8 +1250,8 @@ etc.) et POSSIBILITÉ DE RESTER À BORD (ONBOARD STAY).
 | «PK» | id | FacilitySetIdType | 1:1 | Identifiant du FACILITY SET. |
 | | ***ProvidedByRef*** | OrganisationRef | 0:1 | ORGANISATION en charge de proposer le FACILITY SET. |
 | | Description | MultilingualString | 0:1 | Description du FACILITY SET. |
-| «FK» | TypeOfFacilityRef | *TypeOfFacilityRef* | 0:1 | Classification du FACILITY SET. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
-| «cntd» | otherFacilities | _*TypeOfEquipment*_ / *TypeTypeOfEquipmentRef* | 0:\* | Types de FACILITY arbitraires définis par l'utilisateur dans FACILITY SET, leur définition renvoie à des TYPES OF EQUIPMENT. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
+| «FK» | TypeOfFacilityRef | *TypeOfFacilityRef* | 0:1 | Classification du FACILITY SET. <mark>Non retenu dans le profil France jusqu'à son harmonisation.</mark> |
+| «cntd» | otherFacilities | _*TypeOfEquipment*_ / *TypeTypeOfEquipmentRef* | 0:\* | Types de FACILITY arbitraires définis par l'utilisateur dans FACILITY SET, leur définition renvoie à des TYPES OF EQUIPMENT. <mark>Non retenu dans le profil France jusqu'à son harmonisation.</mark> |
 | «cntd» | (CommonFacilityGroup) | xxxFacilitList | 0:\* | FACILITIEs sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les FACILITY SETs. Il existe d'autres FACILITIEs spécifiques aux SERVICE FACILITY SET et SITE FACILITY SET. |
 
 <div class="table-title">ServiceFacilitySet – Élément</div>
@@ -1287,8 +1282,8 @@ etc.) et POSSIBILITÉ DE RESTER À BORD (ONBOARD STAY).
 | | ***PassengerCommsFacilityList*** | *PassengerCommsFacilityListOfEnumerations* | 0:1  | Listes des services de communication. |
 
 
-Les SERVICES DISPONIBLES communs à toutes ces spécialisations et <span
-class="hl">retenus dans le cadre du profil sont les suivants </span>:
+Les SERVICES DISPONIBLES communs à toutes ces spécialisations et
+<mark>retenus dans le cadre du profil sont les suivants</mark> :
 
 ***<u>-Information d'accessibilité</u>***
 
@@ -1357,8 +1352,8 @@ accompagnés)*
 
 * *suitableForWheelchairs (adapté aux fauteuils roulants)*
 
-* *suitableForHeavilyDisabled (adapté aux handicaps lourds ; <span class="hl">
-note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
+* *suitableForHeavilyDisabled (adapté aux handicaps lourds ; <mark>
+note : prendre contact avec le gestionnaire pour plus de précisions</mark>)*
 
 * *suitableForPushchairs (adapté aux poussettes)*
 
@@ -1429,8 +1424,8 @@ ligne)*
 * *mobileTicketing (billettique mobile – sur smartphone)*
 
 Les SERVICES DISPONIBLES de type Service (sans redondance des catégories
-précédentes) <span class="hl">retenus dans le cadre du profil sont les
-suivants </span>:
+précédentes) <mark>retenus dans le cadre du profil sont les
+suivants</mark> :
 
 ***<u>-Services Réservés</u>***
 
@@ -1449,8 +1444,8 @@ les fauteuils roulants notamment)*
 * *cyclesAllowed (vélos autorisés en bagage)*
 
 Les SERVICES DISPONIBLES spécifiques aux lieux (sans redondance des
-catégories précédentes) <span class="hl">retenus dans le cadre du profil
-sont les suivants </span>:
+catégories précédentes) <mark>retenus dans le cadre du profil
+sont les suivants</mark> :
 
 ***<u>-Urgence</u>***
 
@@ -1484,8 +1479,8 @@ station)*
 * *unmanned (sans personnel)*
 
 Les SERVICES DISPONIBLES disponible au niveau de la place, lors du
-voyage (sans redondance des catégories précédentes) <span
-class="hl">retenus dans le cadre du profil sont les suivants :</span>
+voyage (sans redondance des catégories précédentes) <mark>retenus dans le cadre
+du profil sont les suivants</mark> :
 
 ***<u>Installation</u>***
 
@@ -1501,11 +1496,11 @@ C'est une notion qu'il faut considérer de façon générale et un service
 (SERVICE LOCAL tel qu’OBJETS TROUVÉS, BILLETTERIE) est également
 considéré comme un ÉQUIPEMENT.
 
-<span class="hl">Dans le cadre du profil pour l'accessibilité, la
+<mark>Dans le cadre du profil pour l'accessibilité, la
 description des équipements est recommandée à chaque fois que cela est
 possible (et que l'information est disponible). La description des
 ÉQUIPEMENTs est donc préférée à la description des services
-disponibles.</span>
+disponibles.</mark>
 
 ### Équipements localisés
 
@@ -1576,8 +1571,8 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td><em>PublicCode</em></td>
 <td>0:1</td>
 <td><p>Code public de l’équipement, et qui figure généralement sur l’équipement, typiquement sous la forme d’une étiquette.</p>
-<p><span class="hl">Pourra contenir des codes comme, par exemple, les codes MIR de la RATP</span></p>
-<p><span class="hl">Notez que ce code doit être accessible/préhensible sur l'équipement (notament en vue d'utilisation pour du crowd-sourcing et de la signalisation d'anomalie, etc.)</span></p></td>
+<p><mark>Pourra contenir des codes comme, par exemple, les codes MIR de la RATP.</mark></p>
+<p><mark>Notez que ce code doit être accessible/préhensible sur l'équipement (notament en vue d'utilisation pour du crowd-sourcing et de la signalisation d'anomalie, etc.).</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1585,7 +1580,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td>xsd:anyURI</td>
 <td>0:1</td>
 <td><p>Image de l’EQUIPEMENT.</p>
-<p><span class="hl">Pourra aussi référencer des documents audio, des pages web, etc</span></p></td>
+<p><mark>Pourra aussi référencer des documents audio, des pages web, etc</mark>.</p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -1600,7 +1595,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td>MultilingualString</td>
 <td>0:1</td>
 <td>Description de l’EQUIPEMENT.<br />
-<span class="hl">Doit pouvoir être présenté au public</span></td>
+<mark>Doit pouvoir être présenté au public.</mark></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1608,7 +1603,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td>MultilingualString</td>
 <td>0:1</td>
 <td>Note concernat l’EQUIPEMENT.<br />
-<span class="hl">Doit pouvoir être présenté au public</span></td>
+<mark>Doit pouvoir être présenté au public.</mark></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1616,7 +1611,7 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 <td>boolean</td>
 <td>0:1</td>
 <td><p>Indique si l’équipement est hors service pour une durée prolongée. Une véritable information de disponibilité en temps réel pourra être fournie avec le service SIRI Facility Monitoring.</p>
-<p><span class="hl">Quand </span><em><strong><span class="hl">OutOfService</span></strong></em><span class="hl"> est utilisé, l'utilisation du ValidityCondition devient obligatoire pour, en particulier, indiquer la période prévue d'indisponibilité (et donc la date prévue de retour en fonctionnement)</span></p></td>
+<p><mark>Quand <em><strong>OutOfService</strong></em> est utilisé, l'utilisation du ValidityCondition devient obligatoire pour, en particulier, indiquer la période prévue d'indisponibilité (et donc la date prévue de retour en fonctionnement).</mark></p></td>
 </tr>
 </tbody>
 </table>
@@ -1908,9 +1903,9 @@ recommandé de ne pas trop les subdiviser (et donc de ne pas les faire
 trop petits) pour éviter de surcharger l'utilisateur en information et
 aussi pour limiter le volume d'information à gérer par les systèmes.
 
-<span class="hl">À noter qu’en présence de bandes de guidage, il est obligatoire de créer un 
+<mark>À noter qu’en présence de bandes de guidage, il est obligatoire de créer un
 ou plusieurs objets SitePathLink pour les modéliser avec l'attribut *TactileGuidingStrip* dûment renseigné. 
-Sa définition détaillée est en Table 11 plus bas. </span>
+Sa définition détaillée est en Table 11 plus bas.</mark>
 
 <div class="table-title">SitePathLink – Élément</div>
 
@@ -1949,18 +1944,18 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>Distance</td>
 <td>DistanceType</td>
 <td><p>0:1</p>
-<p><span class="hl">1:1</span></p></td>
+<p><mark>1:1</mark></p></td>
 <td><p>Longueur du tronçon de cheminement.</p>
-<p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité. Il s'agit de la distance parcourue le long du tronçon de cheminement et non de la distance à vol d'oiseau entre les points de départ et d'arrivée.</span></p></td>
+<p><mark>L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité. Il s'agit de la distance parcourue le long du tronçon de cheminement et non de la distance à vol d'oiseau entre les points de départ et d'arrivée.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
 <td>LineString</td>
 <td>gmlLineString</td>
 <td><p>0:1</p>
-<p><span class="hl">1:1</span></p></td>
+<p><mark>1:1</mark></p></td>
 <td><p>Géométrie du tronçon de cheminement.</p>
-<p><span class="hl">Dans le contexte du profil pour l'accessibilité, la géométrie des PATH LINKs sera systématiquement décrite avec l'attribut <em><strong>LineString</strong></em> (GML) hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notament au niveau des extrémités, des centroïdes des objets référencés par <em><strong>From</strong></em> et <em><strong>To</strong></em> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du LineString devront coïncider avec ceux des autres PATH LINK connectés dans le cadre d'un NAVIGATION PATH.</span></p></td>
+<p><mark>Dans le contexte du profil pour l'accessibilité, la géométrie des PATH LINKs sera systématiquement décrite avec l'attribut <em><strong>LineString</strong></em> (GML) hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notament au niveau des extrémités, des centroïdes des objets référencés par <em><strong>From</strong></em> et <em><strong>To</strong></em> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du LineString devront coïncider avec ceux des autres PATH LINK connectés dans le cadre d'un NAVIGATION PATH.</mark></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -1975,7 +1970,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>PathLinkEnd</td>
 <td>1:1</td>
 <td><p>Point ou lieu de fin du PATH LINK. Voir tableau suivant</p>
-<p><em><strong><span class="hl">From</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">To</span></strong></em><span class="hl"> peuvent référencer le même espace, mais avec des </span><em><strong><span class="hl">LineString </span></strong><span class="hl">(voir ci-dessus)</span></em><span class="hl"> différentes. On utilisera notament cette particularité pour traverser des équipements long (comme un tapis roulant) situés dans un EQUIPMENT PLACE (ZONE).</span></p></td>
+<p><mark><em><strong>From</strong></em> et <em><strong>To</strong></em> peuvent référencer le même espace, mais avec des <em><strong>LineString</strong> (voir ci-dessus)</em> différentes. On utilisera notament cette particularité pour traverser des équipements long (comme un tapis roulant) situés dans un EQUIPMENT PLACE (ZONE).</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -1997,7 +1992,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td><p>Indique si le cheminement est ouvert au public.</p>
-<p><span class="hl">Public (true) par défaut (si l'attribut n'est pas fourni)</span></p></td>
+<p><mark>Public (true) par défaut (si l'attribut n'est pas fourni).</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -2005,7 +2000,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>CoveredEnum</td>
 <td>0:1</td>
 <td>Type de couverture.
-<p><span class="hl">La valeur <em>mixed</em> est déconseillée dans le cadre du profil pour l'accessibilité : il convient dans ce cas de segmenter en plusieurs SitePathLink avec chacun un type de couverture propre.</span></p></td>
+<p><mark>La valeur <em>mixed</em> est déconseillée dans le cadre du profil pour l'accessibilité : il convient dans ce cas de segmenter en plusieurs SitePathLink avec chacun un type de couverture propre.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2061,7 +2056,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>xsd:integer</td>
 <td>0:1</td>
 <td>Nombre de marches rencontrées sur le cheminement.
-<p><span class="hl">Il s'agit du nombre de marches total de l'escalier si le tronçon de cheminement correspond à un escalier, ou du nombre de ressauts ou marches isolées sinon.</span></p></td>
+<p><mark>Il s'agit du nombre de marches total de l'escalier si le tronçon de cheminement correspond à un escalier, ou du nombre de ressauts ou marches isolées sinon.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2069,8 +2064,8 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>LengthType</td>
 <td>0:1</td>
 <td><p>Largeur minimale du cheminement</p>
-<p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs et trottoirs.</span></p>    
+<p><mark>La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</mark></p>
+<p><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs et trottoirs.</mark></p>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2089,7 +2084,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <li><p><em>up (montée)</em></p></li>
 <li><p><em>down (descente)</em></p></li>
 <li><p><em>level (pas de changement de niveau)</em></p></li>
-</ul><p><span class="hl">Les valeurs <em>upAndDown</em> (montée puis descente) et <em>downAndUp</em> (descente puis montée) sont déconseillées dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs SitePathLink avec chacun un type de transition propre.</span></p></td>
+</ul><p><mark>Les valeurs <em>upAndDown</em> (montée puis descente) et <em>downAndUp</em> (descente puis montée) sont déconseillées dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs SitePathLink avec chacun un type de transition propre.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2097,7 +2092,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>xsd:integer</td>
 <td>0:1</td>
 <td><p>Pente en degrés (dans le sens direct, from/to, du cheminement)</p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</span></p>   
+<p><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</mark></p>
 </td>
 </tr>
 <tr class="odd">
@@ -2106,7 +2101,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>xsd:integer</td>
 <td>0:1</td>
 <td><p>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</span></p>   
+<p><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</mark></p>
 </td>
 </tr>
 <tr class="even">
@@ -2241,7 +2236,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <li><p><em>noTactileStrip (pas de bandes d’interception)</em></p></li>
 <li><p><em>unknown (inconnu)</em></p></li>
 </ul>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les escaliers et passages piétons.</span></p>   
+<p><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les escaliers et passages piétons.</mark></p>
 </td>
 </tr>
 <tr class="odd">
@@ -2250,8 +2245,8 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td><p>Indique s’il y a des bandes de guidage podotactiles.</p>
-<p><span class="hl">En cas de présence de bandes de guidage podotactiles, il 
-est obligatoire de renseigner les tronçons de cheminement correspondants.</span></p></td>
+<p><mark>En cas de présence de bandes de guidage podotactiles, il
+est obligatoire de renseigner les tronçons de cheminement correspondants.</mark></p></td>
 </tr>
 <tr class="even">
 <td>«cntd»</td>
@@ -2705,7 +2700,7 @@ passagers)* *–* Élément
 |                     | Wheelchair­TurningCircle     | LengthType             | 0:1              | Diamètre de giration pour les fauteuils roulants                                           |
 |                     | SharpsDisposal              | xsd:boolean            | 0:1              | Disponibilité d’une poubelle pour objets tranchants                                        |
 |                     | Staffing                    | StaffingEnum           | 0:1              | Présence de personnel                                                                      |
-|                     | KeyScheme                   | xsd:normalizedString   | 0:1              | <span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br /><span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span>         |
+|                     | KeyScheme                   | xsd:normalizedString   | 0:1              | <mark>Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme<br />- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</mark>         |
 |                     | CallButtonAvailable         | xsd:boolean            | 0:1              | Présence d’un bouton d’appel                                                               |
 |                     | SupportBarHeigth            | xsd:decimal            | 0:1              | Hauteur de la barre de support (quand il y en a une)                                       |
 |                     | LockedAccess                | xsd:boolean            | 0:1              | Indique si les toilettes peuvent être verrouillées et donc une clé (ou un outil équivalent) est nécessaire pour y accéder. |
@@ -2883,7 +2878,7 @@ passagers)* *–* Élément
 
 ## Access Equipment
 
-<span class="hl">Dans le cas des entrées de gare, l'attribut *Width* est rendu obligatoire par l'arrêté du 28 mai 2024. Voir le détail dans la table ci-après.</span>
+<mark>Dans le cas des entrées de gare, l'attribut *Width* est rendu obligatoire par l'arrêté du 28 mai 2024. Voir le détail dans la table ci-après.</mark>
 
 <div class="table-title">AccessEquipment (équipement d’accès) – Élément</div>
 
@@ -2895,9 +2890,9 @@ passagers)* *–* Élément
 |                     | ***DirectionOfUse***  | DirectionOfUseEnum         | 0:1              | Direction dans laquelle on peut emprunter l’accès (les deux par defaut) |
 |                     | ***SafeForGuideDog*** | *xsd:boolean*              | 0:1              | Signale si l’accès est sans risqué pour un chien guide.                 |
 
-<span class="hl">En cas de présence de bandes d’interception podotactiles, il est
+<mark>En cas de présence de bandes d’interception podotactiles, il est
 obligatoire renseigner l’attribut *TactileWarningStrip* dans tout *CrossingEquipment*. 
-Voir la table ci-après pour la description de cet élément.</span>
+Voir la table ci-après pour la description de cet élément.</mark>
 
 <div class="table-title">CrossingEquipment (croisements et traversées) – Élément</div>
 
@@ -2972,7 +2967,7 @@ Voir la table ci-après pour la description de cet élément.</span>
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td><p>Signale la présence d’une aide acoustique à la traversée</p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</span></p> 
+<p><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</mark></p>
 </td>
 </tr>
 <tr class="odd">
@@ -3054,16 +3049,16 @@ Voir la table ci-après pour la description de cet élément.</span>
 <li><p><em>noTactileStrip</em> (pas de bande d’interception)</p></li>
 <li><p><em>unknown</em> (inconnu)</p></li>
 </ul>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</span></p> 
+<p><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</mark></p>
 </td>
 </tr>
 </tbody>
 </table>
 
-<span class="hl">Il faudra porter une attention toute particulière aux éléments de
+<mark>Il faudra porter une attention toute particulière aux éléments de
 description des *EntranceEquipment* (entrées), notamment sur le détail des types de porte 
 et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
-*NecessaryForceToOpen* détaillés dans la table ci-après.</span>
+*NecessaryForceToOpen* détaillés dans la table ci-après.</mark>
 
 <div class="table-title">EntranceEquipment (entrées) – Élément</div>
 
@@ -3080,7 +3075,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                     | EntranceRequires­Staffing    | xsd:boolean            | 0:1              | Signale que le passage requiert la présence d’agents du personnel                          |
 |                     | EntranceRequiresTicket      | xsd:boolean            | 0:1              | Signale que le passage requiert un ticket                                                  |
 |                     | AcousticSensor              | xsd:boolean            | 0:1              | Signale la présence de capteurs acoustiques                                                |
-|                     | AutomaticDoor               | xsd:boolean            | 0:1              | Signale que la porte est à ouverture/fermeture automatique<br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | AutomaticDoor               | xsd:boolean            | 0:1              | Signale que la porte est à ouverture/fermeture automatique<br><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</mark>                 |
 |                     | DropKerbOutside             | xsd:boolean            | 0:1              | Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage      |
 |                     | GlassDoor                   | xsd:boolean            | 0:1              | Signale la présence d’une porte vitrée                                                     |
 |                     | WheelchairPassable          | xsd:boolean            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant.                              |
@@ -3090,13 +3085,13 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                     | Airlock                     | xsd:boolean            | 0:1              | Signale la présence d’un sas                                                               |
 |                     | DoorstepMark                | xsd:boolean            | 0:1              | Signale la présente d’une marque de seuil (de franchissement) podotactile.                 |
 |                     | AudioPassthroughIndicator   | xsd:boolean            | 0:1              | Signale la présente d’un signal sonore de franchissement.                                  |
-|                     | NecessaryForceToOpen        | NecessaryForceEnum     | 0:1              | Force nécessaire pour l’ouverture de la porte <li><p><em>noForce</em> (aucune force nécessaire)</p></li> <li><p><em>lightForce</em> (force légère)</p></li><li><p><em>mediumForce</em> (force moyenne)</p></li><li><p><em>heavyForce</em> (force importante)</p></li><li><p><em>unknown</em> (inconnu)</p></li><br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | NecessaryForceToOpen        | NecessaryForceEnum     | 0:1              | Force nécessaire pour l’ouverture de la porte <li><p><em>noForce</em> (aucune force nécessaire)</p></li> <li><p><em>lightForce</em> (force légère)</p></li><li><p><em>mediumForce</em> (force moyenne)</p></li><li><p><em>heavyForce</em> (force importante)</p></li><li><p><em>unknown</em> (inconnu)</p></li><br><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</mark>                 |
 |                     | DoorHandleOutside           | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'extérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
 |                     | DoorHandleInside            | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'intérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
 |                     | RampDoorbell                | xsd:boolean            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
 |                     | Recognizable                | xsd:boolean            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *false* lorsque l'entrée est difficile à repérer.                              |
-|                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
-|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considèrera le diamètre du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
+|                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><mark>Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</mark>                                  |
+|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><mark>On considèrera le diamètre du plus petit espace de manœuvre (intérieur ou extérieur).</mark>                              |
 
 <div class="table-title">QueueingEquipment (gestion de queue) – Élément</div>
 
@@ -3124,7 +3119,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                     | *TactileGuidance­Strips*     | xsd:boolean                  | 0:1              | Indique si la rampe dispose d’une bande de guidage podotactile                          |
 |                     | *VisualGuidance­Bands*       | xsd:boolean                  | 0:1              | Indique si la rampe dispose de bandes de guidage visuelles                              |
 |                     | *Temporary*                 | xsd:boolean                  | 0:1              | Signale que la rampe est temporaire                                                     |
-|                     | *RestStopDistance*          | xsd:boolean                  | 0:1              | Distance maximale entre deux paliers de repos <br><span class="hl">Il est recommandé d'implanter un palier de repos en bas et en haut de chaque rampe, ainsi que tous les 10 mètres en cas de longue rampe.</span>  |
+|                     | *RestStopDistance*          | xsd:boolean                  | 0:1              | Distance maximale entre deux paliers de repos <br><mark>Il est recommandé d'implanter un palier de repos en bas et en haut de chaque rampe, ainsi que tous les 10 mètres en cas de longue rampe.</mark>  |
 | «enum»              | *SafetyEdge*                | SafetyEdgeEnum               | 0:1              | Indique la présence d'une bordure chasse-roue. Il s'agit d'une bordure latérale visant à bloquer la roue du fauteuil roulant pour éviter les chutes. <br><ul><li><em>oneSide </em>(d’un côté uniquement)</li><li><em>bothSides </em>(des deux côtés)</li><li><em>none </em>(pas de chasse-roue)</li></ul>   |
 | «enum»              | *TurningSpace*              | RampTurningSpacePositionEnum | 0:1              | Indique la présence d'une aire de rotation (ou espace de manœuvre) UFR en bas et/ou en haut de la rampe : <br><ul><li><em>bottom </em>(en bas uniquement)</li><li><em>top </em>(en haut uniquement)</li><li><em>topAndBottom </em>(en haut et en bas)</li><li><em>none</em> (pas d'aire de rotation)</li><li><em>level</em> (plat)</li></ul>      |
 
@@ -3315,7 +3310,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>xsd:boolean</td>
 <td>0:1</td>
 <td><p>Indique la présence d'une bande visuellement contrastée permettant de bien distinguer le bord des marches.</p>
-<p><span class="hl">Les bandes doivent être présentes sur chaque marche, sur l'intégralité de la largeur des marches et d'une profondeur de 2 cm.</span></p>
+<p><mark>Les bandes doivent être présentes sur chaque marche, sur l'intégralité de la largeur des marches et d'une profondeur de 2 cm.</mark></p>
 </td>
 </tr>
 <tr class="odd">
@@ -3377,7 +3372,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>StairEnd</td>
 <td>0:1</td>
 <td><p>Caractérisation de l’extrémité haute de l’escalier</p>
-<p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les bandes d'éveil de vigilance en haut des escaliers.</span></p>
+<p><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les bandes d'éveil de vigilance en haut des escaliers.</mark></p>
 </td>
 </tr>
 <tr class="even">
@@ -3424,9 +3419,9 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 
 | **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-|                     | Continuing­Handrail | xsd:boolean | 0:1              | Indique si la main courante de l'escalier se prolonge au-delà des marches. <br> <span class="hl">La prolongation doit être au moins égale à la largeur d'une marche.</span>                                                                                                            |
-|                     | TexturedSurface     | xsd:boolean | 0:1              | Signale une surface au sol texturée. <br> <span class="hl">On indiquera ainsi la présence d'une bande d'éveil à la vigilance (BEV).</span>                                                                                                                                             |
-|                     | VisualContrast      | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur.  <br> <span class="hl">On indiquera ainsi par exemple la présence de contremarches d'une couleur différente du reste de l'escalier pour la première et la dernière marche.</span> |
+|                     | Continuing­Handrail | xsd:boolean | 0:1              | Indique si la main courante de l'escalier se prolonge au-delà des marches. <br> <mark>La prolongation doit être au moins égale à la largeur d'une marche.</mark>                                                                                                            |
+|                     | TexturedSurface     | xsd:boolean | 0:1              | Signale une surface au sol texturée. <br> <mark>On indiquera ainsi la présence d'une bande d'éveil à la vigilance (BEV).</mark>                                                                                                                                             |
+|                     | VisualContrast      | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur.  <br> <mark>On indiquera ainsi par exemple la présence de contremarches d'une couleur différente du reste de l'escalier pour la première et la dernière marche.</mark> |
 
 <div class="table-title">StairFlight (volées de marche d’escalier) – Élément</div>
 
@@ -3466,7 +3461,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 | ------------------ | --------------------------- | -------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | *::>*              | *::>*                       | PlaceAccessEquipment | *::>*           | LIFT hérite de ACCESS EQUIPMENT                                                                                                                                                                                                                                                                                                                                                                       |
 | «PK»               | id                          | LiftIdType           | 1:1             | identifiant du LiftEquipement                                                                                                                                                                                                                                                                                                                                                                         |
-|                    | Depth                       | LengthType           | 0:1             | Profondeur de l’ascenseur      <br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</span>                                                                                                                                                                                                                                                         |
+|                    | Depth                       | LengthType           | 0:1             | Profondeur de l’ascenseur      <br><mark>Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</mark>                                                                                                                                                                                                                                                         |
 |                    | MaximumLoad                 | WeightType           | 0:1             | Charge maximale                                                                                                                                                                                                                                                                                                                                                                                       |
 |                    | WheelchairPassable          | xsd:boolean          | 0:1             | Signale si l’utilisation en fauteuil roulant est possible                                                                                                                                                                                                                                                                                                                                             |
 |                    | WheelchairTurningCircle     | LengthType           | 0:1             | Diamètre de giration pour les fauteuils roulants dans l’ascenseur                                                                                                                                                                                                                                                                                                                                     |
@@ -3575,7 +3570,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td>xsd:anyUrl</td>
 <td>0:1</td>
 <td><p>URL associée d’information associée au panneau ou au signe.</p>
-<p><span class="hl">Doit être conforme à l'accessibilité RGAA</span></p></td>
+<p><mark>Doit être conforme à l'accessibilité RGAA</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3777,7 +3772,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 <td><p>Type of assistance fournie :</p>
 <ul>
 <li><p><em>personalAssistance</em> (personnel d’assistance)</p></li>
-<li><p><em>boardingAssistance <span class="hl">(le champ Description sera utilisé pour préciser l'assistant à l'embarquement/débarquement, notament dans le cas des correspondances multimodales)</span></em></p></li>
+<li><p><em>boardingAssistance <mark>(le champ Description sera utilisé pour préciser l'assistant à l'embarquement/débarquement, notament dans le cas des correspondances multimodales)</mark></em></p></li>
 <li><p><em>wheechairAssistance</em> (assistance pour les fauteuils roulants)</p></li>
 <li><p><em>unaccompaniedMinorAssistance</em> (assistance pour les mineurs non accompagnés)</p></li>
 <li><p><em>wheelchairUse</em> (utilisation de fauteil roulant)</p></li>

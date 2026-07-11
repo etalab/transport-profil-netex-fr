@@ -884,11 +884,11 @@ proposent ces colonnes :
   textes surlignés en jaune indiquent une spécificité du profil par
   rapport à NeTEx).
 
-Les textes surlignés en <span class="mark">jaune</span> sont ceux
+Les textes surlignés en <mark>jaune</mark> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx : une
 codification particulière, une restriction d'usage, etc.
 
-Les textes surlignés en <span class="mark-blue">bleu</span>
+Les textes surlignés en <mark class="blue">bleu</mark>
 correspondent à des éléments de NeTEx non retenus dans le cadre de ce
 profil (présentés à titre informatif donc). Dans les diagrammes XSD, les
 éléments et attributs apparaissant sur fond bleu sont ceux qui ne sont
@@ -1461,7 +1461,7 @@ construction des structures tarifaires.
 | **Classifi­cation**  | | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
 | ------------------- | --- | ------------------------ | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
 | | ***Choice*** | | | | |
-| « FK » | ***a*** | ***GeographicalIntervalRef*** | *GeographicalIntervalRef* | 0:1 | <p>Référence au GEOGRAPHICAL INTERVAL associé au FARE STRUCTURE ELEMENT.</p><p><span class="hl">Note : de façon générale on n’utilisera les références que s’il y a effectivement réutilisation (donc ici on préférera **geographicalIntervals** à **GeographicalIntervalRef** sauf si les mêmes **GeographicalInterval** sont utilisés à plusieurs reprises)</span></p> |
+| « FK » | ***a*** | ***GeographicalIntervalRef*** | *GeographicalIntervalRef* | 0:1 | <p>Référence au GEOGRAPHICAL INTERVAL associé au FARE STRUCTURE ELEMENT.</p><p><mark>Note : de façon générale on n’utilisera les références que s’il y a effectivement réutilisation (donc ici on préférera **geographicalIntervals** à **GeographicalIntervalRef** sauf si les mêmes **GeographicalInterval** sont utilisés à plusieurs reprises)</mark></p> |
 | « cntd » | ***b*** | ***geographicalIntervals*** | <u>*GeographicalInterval*</u> / *GeographicalIntervalRef* | 0:\* | GEOGRAPHICAL INTERVALs associé au FARE STRUCTURE ELEMENT |
 | « cntd » | ***c*** | ***geographicalStructureFactors*** | <u>*GeographicalStructureFactor*</u> / *GeographicalStructureFactorRef*</td> | 0:\* | GEOGRAPHICAL STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
 | | ***Choice*** | | | | |
@@ -1501,10 +1501,10 @@ de la STRUCTURE FARE.
 | « PK »             | ***id***                      | *FareStructureElementInSequenceIdType* | 1:1             | Identifiant du FARE STRUCTURE ELEMENT IN SEQUENCE.                     |
 | « FK »             | ***FareStructureElementRef*** | *FareStructureElementRef*              | 0:1             | Référence à unFARE STRUCTURE ELEMENT.                                  |
 
-<span class="mark">Note : les éventuels
+<mark>Note : les éventuels
 ***ValidityParameterAssignment*** ne sont pas retenus dans le
 ***FareStructureElementInSequence*** et seront, si nécessaire, placés
-dans les ***FareStructureElement*** « hôte » de la séquence.</span>
+dans les ***FareStructureElement*** « hôte » de la séquence.</mark>
 
 <div class='table-title'>FareElementInSequence – Element</div>
 
@@ -1577,7 +1577,7 @@ une « tranche horaire » pour le voyage, par ex. aux heures de pointe ou
 aux heures creuses, et un QUOTA TARIFAIRE (FARE QUOTA FACTOR) définit
 une allocation limitée de sièges disponibles à un prix particulier.
 
-<span class="mark">Note : un ***QualityStructureFactor*** peut aussi
+<mark>Note : un ***QualityStructureFactor*** peut aussi
 être référencé par l’AFFECTATION DES PARAMÈTRES DES DROITS D'ACCÈS
 (ACCESS RIGHT PARAMETER ASSIGNMENT, plus précisément par le
 ***ValidityParameterAssignment***). On n’utilisera le
@@ -1589,7 +1589,7 @@ contre il ne s’applique que pour un ou quelques titres ou cartes de
 réduction (par exemple une carte de réduction valable uniquement en
 heures creuses), alors le ***QualityStructureFactor*** sera référencé
 par le ***ValidityParameterAssignment*** (et en cas d’ambiguïté, c’est
-cette seconde solution que l’on préférera systèmatiquement)</span>
+cette seconde solution que l’on préférera systèmatiquement)</mark>
 
 ![](media/image5.png) *QualityStructureFactor – Modèle conceptuel*
 
@@ -1600,9 +1600,9 @@ cette seconde solution que l’on préférera systèmatiquement)</span>
 | ::\>               | ::\>     | *<u>FareStructureFactor</u>*   | ::\>            | QUALITY STRUCTURE FACTOR hérite de PRICEABLE OBJECT. |
 | « PK »             | ***id*** | *QualityStructureFactorIdType* | 1:1             | Identifiant du QUALITY STRUCTURE FACTOR.             |
 
-<span class="mark">Note : dans le cas où les *QualityStructureFactor*
+<mark>Note : dans le cas où les *QualityStructureFactor*
 est très spécifique, on en effectuera la description dans une Notice
-(disponible via l’héritage PriceableObject).</span>
+(disponible via l’héritage PriceableObject).</mark>
 
 <div class='table-title'>FareStructureFactor – Element</div>
 
@@ -1613,9 +1613,9 @@ est très spécifique, on en effectuera la description dans une Notice
 |                    | ***PrivateCode***                  | *PrivateCodeStructure*                  | 0:1             | Code externe associé au facteur                          |
 |                    | ***TypeOfFareStructureFactorRef*** | *TypeOfFareStructureFactorRefStructure* | 0:1             | Référence à un TYPE OF FARE STRUCTURE FACTOR.            |
 
-<span class="mark">Note : dans le cas où les *FareStructureFactor* est
+<mark>Note : dans le cas où les *FareStructureFactor* est
 très spécifique, on en effectuera la description dans une Notice
-(disponible via l’héritage PriceableObject).</span>
+(disponible via l’héritage PriceableObject).</mark>
 
 <div class='table-title'>FareDemandFactor – Element</div>
 
@@ -2522,9 +2522,9 @@ titre ouvrant droit à réduction</mark></p></td>
 <span class="red">**UNIQUEMENT UTILE SI L’ALIMENTATION D’UN SYSTÈME
 BILLETTIQUE EST ENVISAGEE !**</span>
 
-<span class="mark">Note : l’ÉLÉMENT CONTRÔLABLE n’est à utiliser que
+<mark>Note : l’ÉLÉMENT CONTRÔLABLE n’est à utiliser que
 dans les contexte de l’alimentation d’un système billettique (de façon à
-lui préciser les élément effectivement à contrôler)</span>
+lui préciser les élément effectivement à contrôler)</mark>
 
 La définition d'un système tarifaire comprend toujours un niveau de base
 de droits d'accès, pour lequel les paramètres de validité contrôlés
@@ -2638,7 +2638,7 @@ A LA VENTE (voir plus loin) pour décrire un produit commercialisé que
 l'utilisateur peut acheter matérialisé sur un DOCUMENT DE VOYAGE
 (ticket, carte, mobile, etc.).
 
-<span class="mark">Note : la plupart de spécialisation de : UN PRODUIT
+<mark>Note : la plupart de spécialisation de : UN PRODUIT
 TARIFAIRE dispose d’un attribut ***ProductType***. Par convention, dans
 le cadre du profil si le produit est "*single trip*" et qu’il référence
 plusieurs ***ValidableElements***, alors le PRODUIT ne donne la
@@ -2649,7 +2649,7 @@ mécanisme pour faire un unique produit O-D, contenant de très nombreuses
 O-D, mais avec une seule tarification comme dans le cas du Yield
 Management. Pour mémoire, le ***ValidableElement*** peut lui-même être
 constitué d’une séquence de ***FareStructureElement***s, ce qui
-permettra bien de gérer toutes les situations de droits combinés.</span>
+permettra bien de gérer toutes les situations de droits combinés.</mark>
 
 ![](media/image8.png) *Produits Tarifaires (vue simplifiée) – Modèle
 conceptuel*
@@ -2668,13 +2668,13 @@ conceptuel*
 
 | **Classification** | **Name**            | **Type**                   | **Cardinality** | **Description**                                                                     |
 |--------------------|---------------------|----------------------------|-----------------|-------------------------------------------------------------------------------------|
-| ::\>               | ::\>                | *<u>PriceableObject</u>*  | ::\>            | FARE PRODUCT hérite de SERVICE ACCESS RIGHT. <br><span class="hl">Note : cet héritage fournit entre autres un attribut ***noticeAssignments*** ; dans le contexte de ce profil, c’est au niveau des ***SalesOfferPackage*** et ***FareProducts*** que l’on placera les Notices.</span>                                     | 
+| ::\>               | ::\>                | *<u>PriceableObject</u>*  | ::\>            | FARE PRODUCT hérite de SERVICE ACCESS RIGHT. <br><mark>Note : cet héritage fournit entre autres un attribut ***noticeAssignments*** ; dans le contexte de ce profil, c’est au niveau des ***SalesOfferPackage*** et ***FareProducts*** que l’on placera les Notices.</mark>                                     | 
 | « PK »             | ***id***                | *FareProductIdType*   | 0:1            | Identifiant du FARE PRODUCT.                             |
 | « FK »               | ***ChargingMomentRef***                | *ChargingMomentRef*   | 0:1            | Référence à CHARGING MOMENT associé au produit.  |
 | « enum »               | ***ChargingMomentType***                | *ChargingMomentTypeEnum*   | 0:1            | <p>Énumération des valeurs normalisées du moment de paiement.</p><p><ul><li>beforeTravel (avant le voyage)</li><li>onStartOfTravel (au départ du voyage)</li><li>beforeEndOfTravel (avant la fin du voyage)</li><li>onStartThenAdjustAtEndOfTravel (au départ avec ajustement à la fin du voyage)</li><li>onStarThenAdjustAtEndOfFareDay (au départ avec ajustement en fin de journée)</li><li>onStartThenAdjustAtEndOfChargePeriod (au départ avec ajustement en fin de période tarifaire)</li><li>atEndOfTravel (à la fin du voyage)</li><li>atEndOfFareDay (à la fin de la journée tarifaire)</li><li>atEndOfChargePeriod (à la fin de la période tarifaire)</li><li>free (gratuit)</li><li>anyTime (à n’importe quel moment)</li><li>other (autre)</li></ul></p> |
 | « FK »               | ***typesOfFareProductRef***                | *TypeOfFareProductRef*   | 0:\*            | Classifications du FARE PRODUCT.  |
 | « FK »               | ***TransportOrganisationRef***                | *(TransportOrganisationRef) OperatorRef / AuthorityRef*  | 0:1            | OPERATOR ou AUTHORITY en charge du FARE PRODUCT.  |
-| « cntd »               | ***ConditionSummary***                | *<u>ConditionSummary</u>*   | 0:1            | <p>Résumé des conditions associées au FARE PRODUCT.</p> <p><span class="hl">Note : dans le cadre du profil, seuls certains attributs des ***ConditionSummary*** sont acceptés pour le ***FareProduct*** (voir description des ***ConditionSummary***).</span></p>  |
+| « cntd »               | ***ConditionSummary***                | *<u>ConditionSummary</u>*   | 0:1            | <p>Résumé des conditions associées au FARE PRODUCT.</p> <p><mark>Note : dans le cadre du profil, seuls certains attributs des ***ConditionSummary*** sont acceptés pour le ***FareProduct*** (voir description des ***ConditionSummary***).</mark></p>  |
 | XGRP               | ***FareProductValidityGroup***                | *FareProductRef*</em>*   | 0:1            | 	Informations de validité relatives au FARE PRODUCT.  |
 
 <div class='table-title'>FareProductValidityGroup – Group</div>
@@ -3130,13 +3130,13 @@ transport. On peut, titre d’exemple, citer un titre de transport associé
 
 <div class='table-title'>ThirdPartyProduct – Element</div>
 
-| **Classification** | **Name** |                                                                | **Type**                                                   | **Cardinality**                    | **Description**                                                                                       |
-|--------------------|----------|----------------------------------------------------------------|------------------------------------------------------------|------------------------------------|-------------------------------------------------------------------------------------------------------|
-| ::\>               | ::\>     |                                                                | *<u>FareProduct</u>*                                       | ::\>                               | THIRD PARTY PRODUCT hérite de FARE PRODUCT.                                                           |
-| « PK »             | ***id*** |                                                                | *ThirdPartyProductIdType*                                  | 1:1                                | Identifiant du THIRD PARTY PRODUCT.                                                                   |
-|                    |          |                                                                | CHOICE                                                     |                                    |                                                                                                       |
-| « cntd »           | ***a***  | ***GeneralGroupOfEntities***                                   | *<u>GeneralGroupOfEntities</u>*                            | 0:1                                | GENERAL GROUP OF ENTITIES associé au THIRD PARTY PRODUCT.                                             |
-| « cntd »           | ***a***  | ***<span class="mark-blue">GeneralGroupOfEntitiesRef</span>*** | *<span class="mark-blue">GeneralGroupOfEntitiesRef</span>* | <span class="mark-blue">0:1</span> | <span class="mark-blue">Référence à GENERAL GROUP OF ENTITIES associé au Third PARTY product.</span> |
+| **Classification** | **Name** |                                                           | **Type**                                              | **Cardinality**               | **Description**                                                                                 |
+|--------------------|----------|-----------------------------------------------------------|-------------------------------------------------------|-------------------------------|-------------------------------------------------------------------------------------------------|
+| ::\>               | ::\>     |                                                           | *<u>FareProduct</u>*                                  | ::\>                          | THIRD PARTY PRODUCT hérite de FARE PRODUCT.                                                     |
+| « PK »             | ***id*** |                                                           | *ThirdPartyProductIdType*                             | 1:1                           | Identifiant du THIRD PARTY PRODUCT.                                                             |
+|                    |          |                                                           | CHOICE                                                |                               |                                                                                                 |
+| « cntd »           | ***a***  | ***GeneralGroupOfEntities***                              | *<u>GeneralGroupOfEntities</u>*                       | 0:1                           | GENERAL GROUP OF ENTITIES associé au THIRD PARTY PRODUCT.                                       |
+| « cntd »           | ***a***  | ***<mark class="blue">GeneralGroupOfEntitiesRef</mark>*** | *<mark class="blue">GeneralGroupOfEntitiesRef</mark>* | <mark class="blue">0:1</mark> | <mark class="blue">Référence à GENERAL GROUP OF ENTITIES associé au Third PARTY product.</mark> |
 
 ### Résumé Des Conditions Tarifaires 
 
@@ -3163,15 +3163,15 @@ TARIFAIRES.
 
 ![](media/image10.png) *Résume des conditions – Modèle physique*
 
-<span class="mark">Note : les attributs du ***ConditionSummary*** sont
-spécialisés par le profil NeTEx Tarif France</span>. Ainsi certains sont
+<mark>Note : les attributs du ***ConditionSummary*** sont
+spécialisés par le profil NeTEx Tarif France</mark>. Ainsi certains sont
 uniquement destinés à être utilisés par les PRODUITs TARIFAIREs (Fare
 Product) et d’autres sont réservés aux OFFREs À LA VENTE
 (SalesPackageOffer). Cette restriction et ce systématisme ont pour
 vocation de simplifier l’usage d’un profil (placer une information donnée
 à un endroit unique quand cela est possible). Une colonne précisant
-**<span class="mark">PT</span>** (PRODUITs TARIFAIRE) ou
-**<span class="mark">OalV</span>** (OFFRE À LA VENTE) a été ajoutée pour
+**<mark>PT</mark>** (PRODUITs TARIFAIRE) ou
+**<mark>OalV</mark>** (OFFRE À LA VENTE) a été ajoutée pour
 préciser cette affectation (s’il n’y a pas de précision, l’attribut
 reste utilisable dans les deux cas)*.*
 
@@ -3305,20 +3305,20 @@ SUMMARY.</td>
 
 | **Classification** | **Name**              | **Type**      | **Cardinality** | **Description**                                                                                       |                                    |
 |--------------------|-----------------------|---------------|-----------------|-------------------------------------------------------------------------------------------------------|------------------------------------|
-|                    | ***ProvidesCard***    | *xsd:boolean* | 0:1             | Indique si une carte est fournie avec le produit.                                                     | **<span class="mark">OalV</span>** |
-|                    | ***GoesOnCard***      | *xsd:boolean* | 0:1             | Indique si le produit va sur une carte.                                                               | **<span class="mark">OalV</span>** |
-|                    | ***IsPersonal***      | *xsd:boolean* | 0:1             | Indique si que le produit est vendu de manière anonyme ou à une personne identifiée.                  | **<span class="mark">OalV</span>** |
-|                    | ***RequiresPhoto***   | *xsd:boolean* | 0:1             | Indique si l'utilisation du produit nécessite la fourniture d'une photo.                              | **<span class="mark">OalV</span>** |
-|                    | ***MustCarry***       | *xsd:boolean* | 0:1             | Indique si la carte, le support, doit être transporté lors du déplacement afin d'utiliser le produit. | **<span class="mark">OalV</span>** |
-|                    | ***RequiresAccount*** | *xsd:boolean* | 0:1             | Indique si le produit nécessite que l'utilisateur crée un compte pour la facturation.                 | **<span class="mark">OalV</span>** |
+|                    | ***ProvidesCard***    | *xsd:boolean* | 0:1             | Indique si une carte est fournie avec le produit.                                                     | **<mark>OalV</mark>**              |
+|                    | ***GoesOnCard***      | *xsd:boolean* | 0:1             | Indique si le produit va sur une carte.                                                               | **<mark>OalV</mark>**              |
+|                    | ***IsPersonal***      | *xsd:boolean* | 0:1             | Indique si que le produit est vendu de manière anonyme ou à une personne identifiée.                  | **<mark>OalV</mark>**              |
+|                    | ***RequiresPhoto***   | *xsd:boolean* | 0:1             | Indique si l'utilisation du produit nécessite la fourniture d'une photo.                              | **<mark>OalV</mark>**              |
+|                    | ***MustCarry***       | *xsd:boolean* | 0:1             | Indique si la carte, le support, doit être transporté lors du déplacement afin d'utiliser le produit. | **<mark>OalV</mark>**              |
+|                    | ***RequiresAccount*** | *xsd:boolean* | 0:1             | Indique si le produit nécessite que l'utilisateur crée un compte pour la facturation.                 | **<mark>OalV</mark>**              |
 
 <div class='table-title'>ConditionSummaryEntitlementGroup – Group</div>
 
 | **Classification** | **Name**                  | **Type**      | **Cardinality** | **Description**                                                        |                                  |
 |--------------------|---------------------------|---------------|-----------------|------------------------------------------------------------------------|----------------------------------|
-|                    | ***IsSupplement***        | *xsd:boolean* | 0:1             | Indique si le produit est un complément à un autre produit             | **<span class="mark">PT</span>** |
-|                    | ***RequiresEntitlement*** | *xsd:boolean* | 0:1             | Indique si le produit nécessite un droit ouvert par d'autres produits. | **<span class="mark">PT</span>** |
-|                    | ***GivesEntitlement***    | *xsd:boolean* | 0:1             | Indique si le produit ouvre des droits à d'autres produits.            | **<span class="mark">PT</span>** |
+|                    | ***IsSupplement***        | *xsd:boolean* | 0:1             | Indique si le produit est un complément à un autre produit             | **<mark>PT</mark>**              |
+|                    | ***RequiresEntitlement*** | *xsd:boolean* | 0:1             | Indique si le produit nécessite un droit ouvert par d'autres produits. | **<mark>PT</mark>**              |
+|                    | ***GivesEntitlement***    | *xsd:boolean* | 0:1             | Indique si le produit ouvre des droits à d'autres produits.            | **<mark>PT</mark>**              |
 
 <div class='table-title'>ConditionSummaryTravelGroup – Group</div>
 
@@ -3415,32 +3415,32 @@ puis à reprendre son trajet.</td>
 
 | **Classification** | **Name**                       | **Type**      | **Cardinality** | **Description**                                                                                               |                                    |
 |--------------------|--------------------------------|---------------|-----------------|---------------------------------------------------------------------------------------------------------------|------------------------------------|
-|                    | ***CanChangeClass***           | *xsd:boolean* | 0:1             | Indique si l'utilisateur peut changer de classe                                                               | **<span class="mark">PT</span>**   |
-|                    | ***IsRefundable***             | *xsd:boolean* | 0:1             | Indique si le billet est remboursable                                                                         | **<span class="mark">OalV</span>** |
-|                    | ***IsExchangable***            | *xsd:boolean* | 0:1             | Indique si le billet est échangeable                                                                          | **<span class="mark">OalV</span>** |
-|                    | ***HasExchangeFee***           | *xsd:boolean* | 0:1             | Indique s'il y a des frais pour les échanges.                                                                 | **<span class="mark">OalV</span>** |
-|                    | ***HasDiscountedFares***       | *xsd:boolean* | 0:1             | Indique si les tarifs réduits sont autorisés.                                                                 | **<span class="mark">PT</span>**   |
-|                    | ***AllowAdditionalDiscounts*** | *xsd:boolean* | 0:1             | Indique si plusieurs remises peuvent être appliquées, par ex. Enfant + Accompagnateur.                        | **<span class="mark">PT</span>**   |
-|                    | ***AllowCompanionDiscount***   | *xsd:boolean* | 0:1             | Indique s'il y a une remise pour les accompagnateur.                                                          | **<span class="mark">PT</span>**   |
-|                    | ***HasMinimumPrice***          | *xsd:boolean* | 0:1             | Indique s'il y a un prix minimum lors de la combinaison de remises.                                           | **<span class="mark">PT</span>**   |
-|                    | ***RequiresPositiveBalance***  | *xsd:boolean* | 0:1             | Indique si le produit nécessite un solde positif (généralement sur une carte de transport) pour être utilisé. | **<span class="mark">OalV</span>** |
+|                    | ***CanChangeClass***           | *xsd:boolean* | 0:1             | Indique si l'utilisateur peut changer de classe                                                               | **<mark>PT</mark>**                |
+|                    | ***IsRefundable***             | *xsd:boolean* | 0:1             | Indique si le billet est remboursable                                                                         | **<mark>OalV</mark>**              |
+|                    | ***IsExchangable***            | *xsd:boolean* | 0:1             | Indique si le billet est échangeable                                                                          | **<mark>OalV</mark>**              |
+|                    | ***HasExchangeFee***           | *xsd:boolean* | 0:1             | Indique s'il y a des frais pour les échanges.                                                                 | **<mark>OalV</mark>**              |
+|                    | ***HasDiscountedFares***       | *xsd:boolean* | 0:1             | Indique si les tarifs réduits sont autorisés.                                                                 | **<mark>PT</mark>**                |
+|                    | ***AllowAdditionalDiscounts*** | *xsd:boolean* | 0:1             | Indique si plusieurs remises peuvent être appliquées, par ex. Enfant + Accompagnateur.                        | **<mark>PT</mark>**                |
+|                    | ***AllowCompanionDiscount***   | *xsd:boolean* | 0:1             | Indique s'il y a une remise pour les accompagnateur.                                                          | **<mark>PT</mark>**                |
+|                    | ***HasMinimumPrice***          | *xsd:boolean* | 0:1             | Indique s'il y a un prix minimum lors de la combinaison de remises.                                           | **<mark>PT</mark>**                |
+|                    | ***RequiresPositiveBalance***  | *xsd:boolean* | 0:1             | Indique si le produit nécessite un solde positif (généralement sur une carte de transport) pour être utilisé. | **<mark>OalV</mark>**              |
 
 <div class='table-title'>ConditionSummaryReservationGroup – Group</div>
 
 | **Classification** | **Name**                      | **Type**      | **Cardinality** | **Description**                                                                                                          |                                    |
 |--------------------|-------------------------------|---------------|-----------------|--------------------------------------------------------------------------------------------------------------------------|------------------------------------|
-|                    | ***PenaltyWIthoutTicket***    | *xsd:boolean* | 0:1             | Indique s'il y a une pénalité pour voyager sans billet, c'est-à-dire que les billets ne peuvent pas être achetés à bord. | **<span class="mark">OalV</span>** |
-|                    | ***AvailableOnSubscription*** | *xsd:boolean* | 0:1             | Indique si le produit est disponible sur abonnement.                                                                     | **<span class="mark">OalV</span>** |
+|                    | ***PenaltyWIthoutTicket***    | *xsd:boolean* | 0:1             | Indique s'il y a une pénalité pour voyager sans billet, c'est-à-dire que les billets ne peuvent pas être achetés à bord. | **<mark>OalV</mark>**              |
+|                    | ***AvailableOnSubscription*** | *xsd:boolean* | 0:1             | Indique si le produit est disponible sur abonnement.                                                                     | **<mark>OalV</mark>**              |
 
 <div class='table-title'>ConditionSummaryReservationGroup – Group</div>
 
 | **Classification** | **Name**                    | **Type**      | **Cardinality** | **Description**                                                                                                           |                                    |
 |--------------------|-----------------------------|---------------|-----------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------|
-|                    | ***HasPurchaseConditions*** | *xsd:boolean* | 0:1             | Indique si les conditions d'achat s'appliquent à la vente du produit, par ex. quand doit être acheté ou qui peut acheter. | **<span class="mark">OalV</span>** |
-|                    | ***HasDynamicPricing***     | *xsd:boolean* | 0:1             | Indique si le produit a une tarification dynamique.                                                                       | **<span class="mark">PT</span>**   |
-|                    | ***RequiresReservation***   | *xsd:boolean* | 0:1             | Indique si le produit nécessite une réservation.                                                                          | **<span class="mark">OalV</span>** |
-|                    | ***HasReservationFee***     | *xsd:boolean* | 0:1             | Indique si la réservation est payante.                                                                                    | **<span class="mark">OalV</span>** |
-|                    | ***HasQuota***              | *xsd:boolean* | 0:1             | Indique qu'il y a un quota limité pour l'offre ou qu'elle est vendue en nombre illimité.                                  | **<span class="mark">OalV</span>** |
+|                    | ***HasPurchaseConditions*** | *xsd:boolean* | 0:1             | Indique si les conditions d'achat s'appliquent à la vente du produit, par ex. quand doit être acheté ou qui peut acheter. | **<mark>OalV</mark>**              |
+|                    | ***HasDynamicPricing***     | *xsd:boolean* | 0:1             | Indique si le produit a une tarification dynamique.                                                                       | **<mark>PT</mark>**                |
+|                    | ***RequiresReservation***   | *xsd:boolean* | 0:1             | Indique si le produit nécessite une réservation.                                                                          | **<mark>OalV</mark>**              |
+|                    | ***HasReservationFee***     | *xsd:boolean* | 0:1             | Indique si la réservation est payante.                                                                                    | **<mark>OalV</mark>**              |
+|                    | ***HasQuota***              | *xsd:boolean* | 0:1             | Indique qu'il y a un quota limité pour l'offre ou qu'elle est vendue en nombre illimité.                                  | **<mark>OalV</mark>**              |
 
 ### Exemple
 
@@ -4441,24 +4441,24 @@ caractéristique comparée, par exemple :
 - « LE » est égal ou inférieur au paramètre, par exemple : le voyage
   doit se terminer avant « 23h00 ».
 
-<span class="mark">Note : à chaque fois que cela est possible, on
+<mark>Note : à chaque fois que cela est possible, on
 préfèrera faire porter les ***ValidityParameter***s par le
 **FareProduct**… le passage par le ***SalesOffPackage***, ou le
 ***ValidableElement*** (voir le ***FareStructureElement***) ne se fera
 que si les droits sont véritablement complètement spécifiques à ces
-concepts.</span>
+concepts.</mark>
 
-<span class="mark">A titre d’exemple l’association des
+<mark>A titre d’exemple l’association des
 ***ValidityParameter***s au ***SalesOffPackage*** sera justifiée si le
 fait de porter son titre sur une « carte grand voyageur » donnait accès
 à une « salon grand voyageur » ce qui ne serait pas le cas pour le même
-titre sur billet papier ou billet électronique.</span>
+titre sur billet papier ou billet électronique.</mark>
 
-<span class="mark">De plus, seuls les ***ValidityParameter***s
+<mark>De plus, seuls les ***ValidityParameter***s
 génériques sur un ***FareProduct*** seront affectés « en dur », et toutes
 les variantes avec impact sur le prix (réduction famille nombreuse,
 tarifs enfants, etc. pour ce même ***FareProduct***) seront affectées via
-une ***FareTable***.</span>
+une ***FareTable***.</mark>
 
 La figure ci-dessous propose une vue d’ensemble des affectations de
 droits : on y voit clairement que des droits peuvent apparaitre à tous
@@ -4467,10 +4467,10 @@ façons de décrire les tarifs.
 
 L’AFFECTATION DES PARAMÈTRES DES DROITS D'ACCÈS (ACCESS RIGHT PARAMETER
 ASSIGNMENT) est l’élément central de l’affectation des droits.
-<span class="mark">Toutefois, dans le contexte du profil, il est considéré
+<mark>Toutefois, dans le contexte du profil, il est considéré
 comme abstrait et on ne l’instanciera pas en tant qu’élément XML, mais
 uniquement via sa spécialisation en AFFECTATION DES PARAMÈTRES
-GÉNÉRIQUES (GENERIC PARAMETER ASSIGNMENT).</span>
+GÉNÉRIQUES (GENERIC PARAMETER ASSIGNMENT).</mark>
 
 L’AFFECTATION DE PARAMÈTRES GÉNÉRIQUES (GENERIC PARAMETER ASSIGNMENT)
 spécifie donc les droits d'accès génériques pour une classe de produits
@@ -5206,7 +5206,7 @@ s'ajoute l'&#xE9;ventuelle diff&#xE9;rence de prix entre l'ancien et le nouveau 
 
 ## Les Grilles Tarifaires (FareTable)
 
-<span class="mark">Dans tous les tableaux précédents, les attributs
+<mark>Dans tous les tableaux précédents, les attributs
 fournissant une information de prix n'ont pas été retenus dans le cadre du
 Profil France : cela tient au fait que l’option retenue par le profil
 est de systématiser la présentation des prix au travers d’une GRILLE
@@ -5214,23 +5214,23 @@ TARIFAIRE (FARE TABLE). L’objectif est ici de systématiser la production
 et l’interprétation des données d’ordre tarifaire, mais aussi d’éviter
 une trop grande disparité des choix et options de modélisation qui ne
 manquerait pas de se présenter (surtout dans le domaine tarifaire) s’il
-elles n’étaient pas un peu contraintes.</span>
+elles n’étaient pas un peu contraintes.</mark>
 
-<span class="mark">La présentation des prix sous forme de grille des
+<mark>La présentation des prix sous forme de grille des
 tarifs reste un grand classique dans le domaine des transports, et ce
 choix permettra aussi la simplification de la présentation de l’offre
 aux voyageur (ce qui est cohérent avec l’objectif d’information voyageur
-du profil).</span>
+du profil).</mark>
 
-<span class="mark">Il reste toutefois quelques cas où des prix pourront
+<mark>Il reste toutefois quelques cas où des prix pourront
 être fournis en dehors des GRILLEs TARIFAIREs : par exemple si un
 produit offre une réduction fixe, par exemple de 5€, cela pourra être
 indiqué explicitement dans la description du produit tarifaire de façon
 à pouvoir en donner une description complète et pertinente au
-voyageur.</span>
+voyageur.</mark>
 
-<span class="mark">Note : dans le cadre du profil, on fait le choix de
-ne pas prévoir la gestion de réductions cumulatives.</span>
+<mark>Note : dans le cadre du profil, on fait le choix de
+ne pas prévoir la gestion de réductions cumulatives.</mark>
 
 Une GRILLE TARIFAIRE permet la représentation de groupes de prix pour
 des combinaisons d'éléments tarifaires. Il définit une matrice
@@ -5251,10 +5251,10 @@ un prix correspondant (par exemple : Titre pour zones A et B + billet à
 l’unité + jeune voyageur (18-25 ans) =\> Prix). On conserve donc une
 construction très modulaire.
 
-<span class="mark">La GRILLE TARIFAIRE fera des références vers tous les
+<mark>La GRILLE TARIFAIRE fera des références vers tous les
 éléments qui la constituent à l’exception des prix eux-mêmes qui, n’étant
 pas définis par ailleurs, devront être complètement définis au sein de
-la GRILLE TARIFAIRE.</span>
+la GRILLE TARIFAIRE.</mark>
 
 ![](media/image24.png) *Grilles Tarifaires – Modèle conceptuel*
 
@@ -5711,22 +5711,22 @@ TABLE)</mark></p></td>
 
 <div class='table-title'>FarePrice – Element (abstrait)</div>
 
-| **Classification** | **Name**                                   | **Type**                                     | **Cardinality**                    | **Description**                                                                            |
-|--------------------|--------------------------------------------|----------------------------------------------|------------------------------------|--------------------------------------------------------------------------------------------|
-| ::\>               | ::\>                                       | *<u>VersionedChild</u>*                      | ::\>                               | FARE PRICE hérite de VERSIONED CHILD                                                       |
-| « PK »             | ***id***                                   | *FarePriceIdType*                            | 1:1                                | Identifiant du FARE PRICE.                                                                 |
-|                    | ***Name***                                 | *MultilingualString*                         | 0:1                                | Nom du PRICE.                                                                              |
-|                    | ***Description***                          | *MultilingualString*                         | 0:1                                | Description du PRICE.                                                                      |
-|                    | ***PrivateCode***                          | *PrivateCode*                                | 0:1                                | Identifiant externe du PRICE.                                                              |
-|                    | ***StartDate***                            | *xsd:date*                                   | 0:1                                | Date de départ pour la validité du PRICE.                                                  |
-|                    | ***EndDate***                              | *xsd:date*                                   | 0:1                                | Date de fin pour la validité du PRICE.                                                     |
-|                    | ***Amount***                               | *AmountType*                                 | 0:1                                | Prix dans l’unité monétaire convenue.                                                      |
-|                    | ***Currency***                             | *CurrencyType*                               | 0:1                                | Code de devise ISO 4217 (Ceci dans une optimisation permettant d'omettre les PRICE UNITs). |
-| « FK »             | ***PriceUnitRef***                         | *PriceUnitRef*                               | 0:1                                | Référence à un PRICE UNIT ; peut-être remplacé par ***Currency***.                          |
-|                    | ***<span class="mark-blue">Units</span>*** | *<span class="mark-blue">xsd:decimal</span>* | <span class="mark-blue">0:1</span> | <span class="mark-blue">Nombe d'unités désignée.</span>                                    |
-| « FK »             | ***PricingServiceRef***                    | *PricingServiceRef*                          | 0:1                                | Référence à un PRICE SERVICE qui peut fournir le prix (pour la tarification dynamique).    |
-| XGRP               | ***FarePriceCalculationGroup***            | ***<u>xmlGroup</u>***                        | 0:1                                | Éléments régissant le calcul des prix.                                                     |
-|                    | ***Ranking***                              | *xsd:integer*                                | 0:1                                | Classement relatif du prix par rapport aux autres prix.                                    |
+| **Classification** | **Name**                              | **Type**                                | **Cardinality**               | **Description**                                                                            |
+|--------------------|---------------------------------------|-----------------------------------------|-------------------------------|--------------------------------------------------------------------------------------------|
+| ::\>               | ::\>                                  | *<u>VersionedChild</u>*                 | ::\>                          | FARE PRICE hérite de VERSIONED CHILD                                                       |
+| « PK »             | ***id***                              | *FarePriceIdType*                       | 1:1                           | Identifiant du FARE PRICE.                                                                 |
+|                    | ***Name***                            | *MultilingualString*                    | 0:1                           | Nom du PRICE.                                                                              |
+|                    | ***Description***                     | *MultilingualString*                    | 0:1                           | Description du PRICE.                                                                      |
+|                    | ***PrivateCode***                     | *PrivateCode*                           | 0:1                           | Identifiant externe du PRICE.                                                              |
+|                    | ***StartDate***                       | *xsd:date*                              | 0:1                           | Date de départ pour la validité du PRICE.                                                  |
+|                    | ***EndDate***                         | *xsd:date*                              | 0:1                           | Date de fin pour la validité du PRICE.                                                     |
+|                    | ***Amount***                          | *AmountType*                            | 0:1                           | Prix dans l’unité monétaire convenue.                                                      |
+|                    | ***Currency***                        | *CurrencyType*                          | 0:1                           | Code de devise ISO 4217 (Ceci dans une optimisation permettant d'omettre les PRICE UNITs). |
+| « FK »             | ***PriceUnitRef***                    | *PriceUnitRef*                          | 0:1                           | Référence à un PRICE UNIT ; peut-être remplacé par ***Currency***.                         |
+|                    | ***<mark class="blue">Units</mark>*** | *<mark class="blue">xsd:decimal</mark>* | <mark class="blue">0:1</mark> | <mark class="blue">Nombe d'unités désignée.</mark>                                         |
+| « FK »             | ***PricingServiceRef***               | *PricingServiceRef*                     | 0:1                           | Référence à un PRICE SERVICE qui peut fournir le prix (pour la tarification dynamique).    |
+| XGRP               | ***FarePriceCalculationGroup***       | ***<u>xmlGroup</u>***                   | 0:1                           | Éléments régissant le calcul des prix.                                                     |
+|                    | ***Ranking***                         | *xsd:integer*                           | 0:1                           | Classement relatif du prix par rapport aux autres prix.                                    |
 
 <div class='table-title'>FarePriceCalculationGroup – Group</div>
 
@@ -5890,14 +5890,14 @@ ici de 30%.
 ![](media/image26.png) *Exemple de tarif particulier pouvant justifier
 l’usage d’une note pour le simplifier*
 
-<span class="mark">Autre élément important dans le cadre de ce profil :
+<mark>Autre élément important dans le cadre de ce profil :
 les Notices seront exclusivement rattachées aux grilles tarifaires
 (***FareTable***), qui permettra en fait de l’associer à une offre à la
 vente (***SalesOfferPackage***), ou éventuellement à un produit
 tarifaire (***PreassignedFareProduct***). Théoriquement une note peut
 être attachée à n’importe quel objet mais attacher les note sans règle à
 de nombreux endroits rendrait l’exploitation de la donnée très
-délicate.</span>
+délicate.</mark>
 
 Il sera aussi souvent utile de pouvoir proposer des traductions des
 notes dans différentes langues : on procédera naturellement à ces
@@ -10337,8 +10337,7 @@ service interfaces - Situation Exchange
 </div>
 
 <style>
-  .mark      { background-color: yellow; }
-  .mark-blue { background-color: cyan;   }
+  mark.blue { background-color: cyan; }
 
   .red { color: red; }
 

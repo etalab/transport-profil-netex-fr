@@ -874,7 +874,7 @@ proposent ces colonnes:
     les textes surlignés en jaune indiquent une spécificité du profil
     par rapport à NeTEx).
 
-Les textes surlignés en <span class="hl">jaune</span> sont ceux
+Les textes surlignés en <mark>jaune</mark> sont ceux
 présentant une particularité (spécialisation) par rapport à NeTEx: une
 codification particulière, une restriction d'usage, etc.
 
@@ -1274,7 +1274,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><em>Site</em></td>
 <td><em>::></em></td>
 <td><p>STOP PLACE hérite de SITE.</p>
-<p><span class="hl">NOTE L'identification du STOP PLACE a pour vocation à être codifiée. Sa codification est décrite le document </span><strong><span class="hl">éléments communs</span>.</strong></p></td>
+<p><mark>NOTE : L'identification du STOP PLACE a pour vocation à être codifiée. Sa codification est décrite dans le document <strong>éléments communs</strong>.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«AK»</td>
@@ -1303,7 +1303,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <p><em>WaterSubmode</em></p></td>
 <td>0:1</td>
 <td><p>Sous mode associé au mode (caractérise le type d’exploitation). Les sous modes sont une énumération dont les valeurs sont présentées en 7.2.10.</p>
-<p><span class="hl">Il faut noter le cas particulier du Tram-Train qui, bien qu'étant classé en sous-mode du TRAM, peut aussi être utilisé en sous-mode du Ferré.</span></p></td>
+<p><mark>Il faut noter le cas particulier du Tram-Train qui, bien qu'étant classé en sous-mode du TRAM, peut aussi être utilisé en sous-mode du Ferré.</mark></p></td>
 </tr>
 <tr class="even">
 <td>submode</td>
@@ -1322,7 +1322,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><em>FareZoneRef</em></td>
 <td>0:*</td>
 <td><p>Identifiant de la zone tarifaire (ou section selon les cas) précisé dans le fichier `fare.xml`.</p>
-<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <span class="hl">(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</span> qui lui a une <em><strong>FareZone</strong></em>, alors la ou les zones tarifaires du <em><strong>StopPlace</strong></em> parent s'appliquent.</p>
+<p>Si la zone tarifaire n'est pas précisée (le champ étant facultatif) mais que la <em><strong>StopPlace</strong></em> est inclue dans une autre <mark>(LIEU D'ARRÊT MONOMODAL dans une LIEU D'ARRÊT MULTIMODAL par exemple)</mark> qui lui a une <em><strong>FareZone</strong></em>, alors la ou les zones tarifaires du <em><strong>StopPlace</strong></em> parent s'appliquent.</p>
 <p>Le profil France fait une restriction de la norme NeTEx en demandant explicitement une FareZoneRef, alors que NeTEx indique TariffZone (dont FareZone est une spécialisation).</p>
 </td>
 </tr>
@@ -1348,7 +1348,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><p>Qualification de la possibilité de correspondance au sein du lieu d’arrêt</p>
 <ul>
 <li><p><em><strong>noInterchange</strong></em></p></li>
-<li><p><em><strong>interchangeAllowed</strong> <span class="hl">(valeur par défaut si le champ n’est pas renseigné)</span></em></p></li>
+<li><p><em><strong>interchangeAllowed</strong> <mark>(valeur par défaut si le champ n’est pas renseigné)</mark></em></p></li>
 <li><p><em>preferredInterchange</em> (indique que le Lieu d’Arrêt est spécialement conçu pour faciliter les échanges, avec des chemins de guidage de chemin, un chemin de promenade facile, sécurisé et court, etc.).</p></li>
 </ul></td>
 </tr>
@@ -1370,7 +1370,7 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td><em><strong>quays</strong></em></td>
 <td><em>Quay</em></td>
 <td>0:*</td>
-<td>Liste des identifiants <span class="hl">(le profil fait le choix de définir les ZONEs D’EMBARQUEMENT indépendaemment et de les référencer)</span> des ZONEs D'EMBARQUEMENT contenues dans le LIEU <span class="hl">(exclusivement pour les LIEUx D'ARRÊT de type LIEUX D'ARRÊT MONOMODAL).</span></td>
+<td>Liste des identifiants <mark>(le profil fait le choix de définir les ZONEs D’EMBARQUEMENT indépendaemment et de les référencer)</mark> des ZONEs D'EMBARQUEMENT contenues dans le LIEU <mark>(exclusivement pour les LIEUx D'ARRÊT de type LIEUX D'ARRÊT MONOMODAL)</mark>.</td>
 </tr>
 </tbody>
 </table>
@@ -1402,52 +1402,44 @@ plates-formes composites à deux côtés ou plus ou à des sections nommées.
 <td>::></td>
 <td><em>Zone</em></td>
 <td>::></td>
-<td>PLACE hérite de ZONE <em><span class="hl">(voir le document éléments communs)</span></em><span class="hl">.</span></td>
+<td>PLACE hérite de ZONE <mark><em>(voir le document éléments communs)</em></mark>.</td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
 <td><em><strong>placeTypes</strong></em></td>
 <td><em>TypeOfPlaceRef</em></td>
 <td><p>0:*</p>
-<p><strong><span class="hl">0:1</span></strong></p>
-<p><em><strong><span class="hl">spécial</span></strong></em></p></td>
-<td><p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT et les zones administratives (TOPOGRAPHIC PLACE), et il est alors obligatoire, et sa cardinalité est alors 1:1.</span></p>
-<p><span class="hl">Pour le LIEU D'ARRET Codification permettant de distinguer les:</span></p>
+<p><strong><mark>0:1</mark></strong></p>
+<p><em><strong><mark>spécial</mark></strong></em></p></td>
+<td><p><mark>Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT et les zones administratives (TOPOGRAPHIC PLACE), et il est alors obligatoire, et sa cardinalité est alors 1:1.</mark></p>
+<p><mark>Pour le LIEU D'ARRET Codification permettant de distinguer les :</mark></p>
 <ul>
 <li>
-<p><span class="hl">LIEU D'ARRÊT MONOMODAL </span><br />
-<span class="hl">valeur: monomodalStopPlace</span></p>
+<p><mark>LIEU D'ARRÊT MONOMODAL <br/> valeur : monomodalStopPlace</mark></p>
 </li>
 <li>
-<p><span class="hl">PÔLE MONOMODAL</span><br />
-<span class="hl">valeur: monomodalHub</span></p>
+<p><mark>PÔLE MONOMODAL <br/> valeur : monomodalHub</mark></p>
 </li>
 <li>
-<p><span class="hl">LIEU D'ARRÊT MULTIMODAL</span><br />
-<span class="hl">valeur: multimodalStopPlace</span></p>
+<p><mark>LIEU D'ARRÊT MULTIMODAL <br/> valeur : multimodalStopPlace</mark></p>
 </li>
 </ul>
-<p><span class="hl">Type de zones administratives françaises (TOPOGRAPHIC PLACE), qui doit être cohérent avec les Topographic-PlaceType (voir ):</span></p>
+<p><mark>Type de zones administratives françaises (TOPOGRAPHIC PLACE), qui doit être cohérent avec les Topographic-PlaceType (voir ) :</mark></p>
 <ul>
 <li>
-<p><span class="hl">RÉGION </span><br />
-<span class="hl">valeur: region</span></p>
+<p><mark>RÉGION <br/> valeur : region</mark></p>
 </li>
 <li>
-<p><span class="hl">DÉPARTEMENT </span><br />
-<span class="hl">valeur: department</span></p>
+<p><mark>DÉPARTEMENT <br/> valeur : department</mark></p>
 </li>
 <li>
-<p><span class="hl">GROUPEMENT DE COMMUNES </span><br />
-<span class="hl">valeur: urbanCommunity</span></p>
+<p><mark>GROUPEMENT DE COMMUNES <br/> valeur : urbanCommunity</mark></p>
 </li>
 <li>
-<p><span class="hl">VILLE </span><br />
-<span class="hl">valeur: town</span></p>
+<p><mark>VILLE <br/> valeur : town</mark></p>
 </li>
 <li>
-<p><span class="hl">ARRONDISSEMENT </span><br />
-<span class="hl">valeur: </span><em><strong><span class="hl">district</span></strong></em></p>
+<p><mark>ARRONDISSEMENT <br/> valeur : <em><strong>district</strong></em></mark></p>
 </li>
 </ul></td>
 </tr>
@@ -1503,7 +1495,7 @@ la façon suivante:
 <td><em><strong>AccessibilityAssessment</strong></em></td>
 <td><em>AccessibilityAssessment</em></td>
 <td>0:1</td>
-<td><p>Information globale précisant le niveau d'accessibilité du <span class="hl">LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</span>.</p>
+<td><p>Information globale précisant le niveau d'accessibilité du <mark>LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</mark>.</p>
 <p>Voir le détail dans l'annexe 9 du profil Accessibilité.</p></td>
 </tr>
 <tr class="even">
@@ -1511,7 +1503,7 @@ la façon suivante:
 <td><em><strong>AccessModes</strong></em></td>
 <td><em>AccessModeEnum</em></td>
 <td>0:*</td>
-<td><p>Liste des modes utilisables (il peut donc y en avoir plusieurs) pour accéder à ce <span class="hl">LIEU D'ARRÊT (renseigné uniquement pour les LIEUx D'ARRÊT</span>):</p>
+<td><p>Liste des modes utilisables (il peut donc y en avoir plusieurs) pour accéder à ce <mark>LIEU D'ARRÊT (renseigné uniquement pour les LIEUx D'ARRÊT)</mark> :</p>
 <ul>
 <li>
 <p><em><strong>foot</strong></em>: À pied</p>
@@ -1540,7 +1532,7 @@ la façon suivante:
 <td><em><strong>alternativeNames</strong></em></td>
 <td><em>AlternativeName</em></td>
 <td>0:*</td>
-<td><p>Nom(s) alternatif(s) (potentiellement multiple) <span class="hl">du </span><span class="hl">LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</span>.</p>
+<td><p>Nom(s) alternatif(s) (potentiellement multiple) <mark>du LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</mark>.</p>
 <p>Voir le détail dans le profil Éléments Communs.</p></td>
 </tr>
 <tr class="odd">
@@ -1548,13 +1540,13 @@ la façon suivante:
 <td><em><strong>CrossRoad</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td>0:1</td>
-<td>Identification du croisement (nom des rues de l'intersection) où se situe <span class="hl">le LIEU D'ARRÊT, la ZONE D'EMBARQUEMENT ou l'ACCÈS</span>..</td>
+<td>Identification du croisement (nom des rues de l'intersection) où se situe <mark>le LIEU D'ARRÊT, la ZONE D'EMBARQUEMENT ou l'ACCÈS</mark>..</td>
 </tr>
 <tr class="even">
 <td><em><strong>Landmark</strong></em></td>
 <td><em>MultilingualString</em></td>
 <td>0:1</td>
-<td>Nom d'un repère proche <span class="hl">du </span><span class="hl">LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</span> (par exemple "en face du café XXX", "juste après la bouche d'incendie", etc.).</td>
+<td>Nom d'un repère proche <mark>du LIEU D'ARRÊT, de la ZONE D'EMBARQUEMENT ou de l'ACCÈS</mark> (par exemple "en face du café XXX", "juste après la bouche d'incendie", etc.).</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -1686,15 +1678,15 @@ la façon suivante:
 <td><em><strong>TopographicPlaceRef</strong></em></td>
 <td><em>TopographicPlaceRef</em></td>
 <td>0:1</td>
-<td>Référence à la zone administrative à laquelle appartient le <span class="hl">LIEU D'ARRÊT, la ZONE D'EMBARQUEMENT ou l'ACCÈS</span> (il s'agira ici uniquement d'une zone administrative de type Ville ou Arrondissement: c'est la structure administrative elle-même qui décrira les inclusions dans les zones administratives "supérieures").</td>
+<td>Référence à la zone administrative à laquelle appartient le <mark>LIEU D'ARRÊT, la ZONE D'EMBARQUEMENT ou l'ACCÈS</mark> (il s'agira ici uniquement d'une zone administrative de type Ville ou Arrondissement : c'est la structure administrative elle-même qui décrira les inclusions dans les zones administratives "supérieures").</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><em><strong>additionalTopographicPlaces</strong></em></td>
 <td><em>topographicPlaceRefs</em></td>
 <td>0 :*</td>
-<td><p>Un <span class="hl">LIEU D'ARRÊT</span> peut avoir des composants dans plusieurs communes d’où la cardinalité : ce champ permet de référencer toutes ces zones administratives (la précédente étant la principale).</p>
-<p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</span></p></td>
+<td><p>Un <mark>LIEU D'ARRÊT</mark> peut avoir des composants dans plusieurs communes d’où la cardinalité : ce champ permet de référencer toutes ces zones administratives (la précédente étant la principale).</p>
+<p><mark>Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT.</mark></p></td>
 </tr>
 
 <tr class="odd">
@@ -1702,7 +1694,7 @@ la façon suivante:
 <td><em><strong>Locale</strong></em></td>
 <td><em>Locale</em></td>
 <td>0:1</td>
-<td><p>Information locales liées au <span class="hl">LIEU D'ARRÊT, ZONE D'EMBARQUEMENT ou ACCÈS</span> comme le fuseau horaire, la langue, etc.</p>
+<td><p>Information locales liées au <mark>LIEU D'ARRÊT, ZONE D'EMBARQUEMENT ou ACCÈS</mark> comme le fuseau horaire, la langue, etc.</p>
 <p>Voir Profil Éléments Communs.</p></td>
 </tr>
 <tr class="even">
@@ -1717,12 +1709,12 @@ la façon suivante:
 <td><em><strong>ParentSiteRef</strong></em></td>
 <td><em>SiteRef</em></td>
 <td>0:1</td>
-<td><p><span class="hl">Référence au LIEU D'ARRÊT "contenant" le présent LIEU. Cette liaison est contrainte en fonction de la spécialisation du LIEU D'ARRÊT:</span></p>
+<td><p><mark>Référence au LIEU D'ARRÊT "contenant" le présent LIEU. Cette liaison est contrainte en fonction de la spécialisation du LIEU D'ARRÊT :</mark></p>
 <ul>
-<li><p><span class="hl">LIEU D'ARRET MONOMODAL : parent= LIEU D'ARRÊT MULTIMODAL ou POLE MONOMODAL</span></p></li>
-<li><p><span class="hl">POLE MONOMODAL : parent= LIEU D'ARRÊT MULTIMODAL</span></p></li>
-<li><p><span class="hl">LIEU D'ARRÊT MULTIMODAL = pas de parent</span></p>
-<p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</span></p></li>
+<li><p><mark>LIEU D'ARRET MONOMODAL : parent &equiv; LIEU D'ARRÊT MULTIMODAL ou POLE MONOMODAL</mark></p></li>
+<li><p><mark>POLE MONOMODAL : parent &equiv; LIEU D'ARRÊT MULTIMODAL</mark></p></li>
+<li><p><mark>LIEU D'ARRÊT MULTIMODAL &equiv; pas de parent</mark></p>
+<p><mark>Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</mark></p></li>
 </ul></td>
 </tr>
 
@@ -1738,7 +1730,7 @@ la façon suivante:
 <p><levelRef ref="Banlieue"/></p>
 <p><levelRef ref="GrandeLigne"/></p>
 <p></levels></p>
-<p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</span></p></td>
+<p><mark>Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>«cntd»</td>
@@ -1746,7 +1738,7 @@ la façon suivante:
 <td><em>Entrance</em></td>
 <td>0:*</td>
 <td><p>Lien vers les entrées du LIEU (référence des ACCÈS)</p>
-<p><span class="hl">Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT</span></p></td>
+<p><mark>Cet attribut n'est utilisé que pour les LIEUx D'ARRÊT.</mark></p></td>
 </tr>
 
 </tbody>
@@ -1899,18 +1891,14 @@ correspondants.
 | «enum»              | ***TransportMode***    | *VehicleModeEnum*         | 0:1              | Principal MODE de transport pour ce groupe Voir STOP PLACE pour les valeurs. |
 | «enum»              | ***TransportSubmode*** | *SubmodeEnum*             | 0:1              | Principal SOUS MODE de transport pour ce groupe                              |
 
-<span class="hl">Note : de façon à assurer la compatibilité avec les
+<mark>Note : de façon à assurer la compatibilité avec les
 travaux d’Île-de-France Mobilité, on conserve temporairement la
 possibilité de décrire le groupe de lieux, avec un GroupOfEntities dont
-le champ </span>**<span
-class="hl">PurposeofGroupingRef</span>**<span class="hl"> sera
-instancié avec "</span>**<span
-class="hl">groupOfStopPlace</span>**<span class="hl">" et dont
-</span>***<span class="hl">members</span>***<span class="hl">
-contient la liste des identifiants des membres des GROUPEs DE LIEUX
-D'ARRÊT (ce sont donc exclusivement des identifiants de LIEU D'ARRÊT).
-Cette possibilité n’est valable que pour les données produite en
-Île-de-France.</span>
+le champ **PurposeofGroupingRef** sera instancié avec **"groupOfStopPlace"** et
+dont ***members*** contient la liste des identifiants des membres des
+GROUPEs DE LIEUX D'ARRÊT (ce sont donc exclusivement des identifiants de
+LIEU D'ARRÊT). Cette possibilité n’est valable que pour les données produites en
+Île-de-France.</mark>
 
 ## Zone d'embarquement
 
@@ -1954,7 +1942,7 @@ Français de NETEx: éléments communs**:
 <td><em>StopPlaceSpace</em></td>
 <td><em>::></em></td>
 <td><p>QUAY hérite de STOP PLACE SPACE et STOP PLACE COMPONENT.</p>
-<p><span class="hl">NOTE Pour les ZONE D'EMBARQUEMENT l'identification a pour vocation à être codifiée: voir Éléments Communs.</span></p></td>
+<p><mark>NOTE : Pour les ZONE D'EMBARQUEMENT l'identification a pour vocation à être codifiée : voir Éléments Communs.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>QUAY IDENTIFIER GROUP</td>
@@ -1962,7 +1950,7 @@ Français de NETEx: éléments communs**:
 <td><em>xsd:normalizedString</em></td>
 <td>0:1</td>
 <td><p>Code court connu du public pour identifier le LIEU D'ARRÊT (utilisé par exemple pour les services SMS, etc.)</p>
-<p><span class="hl">Dans le cas des trains, en particulier, le nom des voies (« Voie A », « Voix 2B », « Voix 1 », etc.) est à mettre dans ce </span><em><strong><span class="hl">PublicCode</span></strong></em><span class="hl"> et non dans le </span><em><strong><span class="hl">Name</span></strong></em><span class="hl"> (qui contiendra le nom de l’arrêt, « Versailles Chantier » par exemple, de façon à ce qu’un service d’information voyageur puis indique « descendez à Versailles Chantier » et précise « Voie 2B » et ne se contente pas de dire « descendez voix 2B »…)</span></p></td>
+<p><mark>Dans le cas des trains, en particulier, le nom des voies (« Voie A », « Voix 2B », « Voix 1 », etc.) est à mettre dans ce <em><strong>PublicCode</strong></em> et non dans le <em><strong>Name</strong></em> (qui contiendra le nom de l’arrêt, « Versailles Chantier » par exemple, de façon à ce qu’un service d’information voyageur puis indique « descendez à Versailles Chantier » et précise « Voie 2B » et ne se contente pas de dire « descendez voix 2B »…).</mark></p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -2001,7 +1989,7 @@ Français de NETEx: éléments communs**:
 <li><p><em><strong>ferryLanding</strong></em>: Accostage de ferry</p></li>
 <li><p><em><strong>telecabinePlatform</strong></em>: Quai de téléphérique</p></li>
 </ul>
-<p><span class="hl">NOTE NeTEx propose aussi </span><em><strong><span class="hl">taxiStand</span></strong></em><span class="hl">, </span><em><strong><span class="hl">setDownPlace</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">other </span></strong></em><span class="hl">mais ces valeurs ne sont pas retenues dans le cadre du présent profil.</span></p></td>
+<p><mark>NOTE : NeTEx propose aussi <em><strong>taxiStand</strong></em>, <em><strong>setDownPlace</strong></em> et <em><strong>other</strong></em> mais ces valeurs ne sont pas retenues dans le cadre du présent profil.</mark></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -2055,11 +2043,11 @@ Français de NETEx: éléments communs**:
 <td><em><strong>SiteRef</strong></em></td>
 <td><em>SiteRef</em></td>
 <td><p>0:1</p>
-<p><span class="hl">1:1</span></p></td>
-<td><p><span class="hl">Pour une ZONE D'EMBARQUEMENT, il s'agit de l'identifiant du LIEU D'ARRÊT MONOMODAL dont dépend la ZONE D'EMBARQUEMENT.</span></p>
-<p><span class="hl">Pour un ACCÈS il s'agit de l'identifiant du LIEU D'ARRÊT MONOMODAL, POLE MONOMODAL ou LIEU D'ARRÊT MULTIMODAL auquel mène l'ACCÈS.</span></p>
-<p><span class="hl">Cet attribut est obligatoire dans le cadre du profil.</span></p>
-<p><span class="hl">Note : de plus, notament pour faciliter les conversions vers le profil Européen, on systématisera l’includion XML des </span><em><strong><span class="hl">SiteComponents</span></strong></em><span class="hl"> dans les </span><em><strong><span class="hl">Sites.</span></strong></em></p></td>
+<p><mark>1:1</mark></p></td>
+<td><p><mark>Pour une ZONE D'EMBARQUEMENT, il s'agit de l'identifiant du LIEU D'ARRÊT MONOMODAL dont dépend la ZONE D'EMBARQUEMENT.</mark></p>
+<p><mark>Pour un ACCÈS il s'agit de l'identifiant du LIEU D'ARRÊT MONOMODAL, POLE MONOMODAL ou LIEU D'ARRÊT MULTIMODAL auquel mène l'ACCÈS.</mark></p>
+<p><mark>Cet attribut est obligatoire dans le cadre du profil.</mark></p>
+<p><mark>Note : de plus, notament pour faciliter les conversions vers le profil Européen, on systématisera l’inclusion XML des <em><strong>SiteComponents</strong></em> dans les <em><strong>Sites</strong></em>.</mark></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
@@ -2068,11 +2056,6 @@ Français de NETEx: éléments communs**:
 <td>0:1</td>
 <td>Niveau (étages) du lieu d'arrêt auquel se situe la ZONE D'EMBARQUEMENT ou l'ACCÈS. Il est identifié par son nom : cela peut être "<strong>1</strong>", "<strong>A</strong>", "<strong>Banlieue</strong>", etc.</td>
 </tr>
-
-
-
-
-
 </tbody>
 </table>
 
@@ -2102,8 +2085,8 @@ Français de NETEx: éléments communs**:
 <td><em>VehicleModeEnum</em></td>
 <td><p>0:1</p>
 <p>1:1</p></td>
-<td><p>Mode de transport principal pour la <span class="hl">ZONE D'EMBARQUEMENT</span>. La liste des modes est présentée en 5.15 dans le Profil Éléments Communs.</p>
-<p><span class="hl">Cet attribut est obligatoire dans le cadre du profil</span>.</p></td>
+<td><p>Mode de transport principal pour la <mark>ZONE D'EMBARQUEMENT</mark>. La liste des modes est présentée en 5.15 dans le Profil Éléments Communs.</p>
+<p><mark>Cet attribut est obligatoire dans le cadre du profil.</mark></p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -2119,7 +2102,7 @@ Français de NETEx: éléments communs**:
 <p><em>WaterSubmode</em></p></td>
 <td>0:1</td>
 <td><p>Sous mode associé au mode (caractérise le type d’exploitation). Les sous modes sont des énumérés dont les valeurs sont présentées en 7.2.10.</p>
-<p><span class="hl">Il faut noter le cas particulier du Tram-Train qui, bien qu'étant classé en sous-mode du TRAM, peut aussi être utilisé en sous-mode du Ferré.</span></p></td>
+<p><mark>Il faut noter le cas particulier du Tram-Train qui, bien qu'étant classé en sous-mode du TRAM, peut aussi être utilisé en sous-mode du Ferré.</mark></p></td>
 </tr>
 
 <tr class="odd">
@@ -2159,7 +2142,7 @@ Français de NETEx: éléments communs**:
 <td><em>Entrance</em></td>
 <td><em>::></em></td>
 <td><p>STOP PLACE ENTRANCE. hérite de SITE ENTRANCE.</p>
-<p><span class="hl">NOTE </span><em><strong><span class="hl">StopPlaceEntrance</span></strong></em><span class="hl"> n'utilise pas le </span><em><strong><span class="hl">placeGroup</span></strong></em><span class="hl"> dans le cadre du profil .</span></p></td>
+<p><mark>NOTE : <em><strong>StopPlaceEntrance</strong></em> n'utilise pas le <em><strong>placeGroup</strong></em> dans le cadre du profil.</mark></p></td>
 </tr>
 <tr class="odd">
 <td>GROUP</td>
@@ -2313,7 +2296,7 @@ Aucun champ spécifique utilisé
 <td>1:1</td>
 <td><p>Description de la TOPOGRAPHIC PLACE.</p>
 <p>Le nom de la Zone Administrative est un des attributs de cette structure, ce qui explique son caractère obligatoire.</p>
-<p><em><span class="hl">Note: le nom peut aussi apparaître dans l'attribut </span><strong><span class="hl">name</span></strong><span class="hl"> hérité de </span><strong><span class="hl">GroupOfEntities</span></strong><span class="hl"> où il n'est pas obligatoire. Si les deux noms sont renseignés, ils doivent naturellement être identiques (si ce n'était pas le cas, celui obligatoire du </span><strong><span class="hl">Descriptor</span></strong><span class="hl"> prévaut)</span></em></p></td>
+<p><em><mark>Note : le nom peut aussi apparaître dans l'attribut <strong>name</strong> hérité de <strong>GroupOfEntities</strong> où il n'est pas obligatoire. Si les deux noms sont renseignés, ils doivent naturellement être identiques (si ce n'était pas le cas, celui obligatoire du <strong>Descriptor</strong> prévaut).</mark></em></p></td>
 </tr>
 
 <tr class="even">
@@ -2395,12 +2378,12 @@ Aucun champ spécifique utilisé
 <td><em><strong>ParentTopo­graphic­PlaceRef</strong></em></td>
 <td><em>TopographicPlaceRef</em></td>
 <td>0:1</td>
-<td><p>Référence la zone administrative dans laquelle est incluse celle-ci. <span class="hl">Ce champ doit respecter les règles suivantes :</span></p>
-<p><span class="hl">• une RÉGION n'a pas de parent (voir CountryRef)</span></p>
-<p><span class="hl">• un DÉPARTEMENT est contenu dans une RÉGION</span></p>
-<p><span class="hl">• un GROUPEMENT DE COMMUNES est contenu dans un DÉPARTEMENT (ou éventuellement une région s'il est à cheval sur plusieurs DEPARTEMENTs)</span></p>
-<p><span class="hl">• une VILLE est contenue dans un DÉPARTEMENT (et PAS dans GROUPEMENT DE COMMUNES: voir containedIn plus bas)</span></p>
-<p><span class="hl">• un ARRONDISSEMENT est contenu dans VILLE</span></p></td>
+<td><p>Référence la zone administrative dans laquelle est incluse celle-ci. <mark>Ce champ doit respecter les règles suivantes :</mark></p>
+<p><mark>• une RÉGION n'a pas de parent (voir CountryRef)</mark></p>
+<p><mark>• un DÉPARTEMENT est contenu dans une RÉGION</mark></p>
+<p><mark>• un GROUPEMENT DE COMMUNES est contenu dans un DÉPARTEMENT (ou éventuellement une région s'il est à cheval sur plusieurs DEPARTEMENTs)</mark></p>
+<p><mark>• une VILLE est contenue dans un DÉPARTEMENT (et PAS dans GROUPEMENT DE COMMUNES: voir containedIn plus bas)</mark></p>
+<p><mark>• un ARRONDISSEMENT est contenu dans VILLE</mark></p></td>
 </tr>
 
 <tr class="odd">
@@ -2408,7 +2391,7 @@ Aucun champ spécifique utilisé
 <td><em><strong>containedIn</strong></em></td>
 <td><em>TopographicPlaceRef</em></td>
 <td>0:*</td>
-<td><span class="hl">Ce champs est utilisé pour les VILLEs uniquement et permet d'indiquer que la VILLE fait aussi partie d'un GROUPEMENT DE COMMUNES).</span></td>
+<td><mark>Ce champ est utilisé pour les VILLEs uniquement et permet d'indiquer que la VILLE fait aussi partie d'un GROUPEMENT DE COMMUNES).</mark></td>
 </tr>
 
 </tbody>
@@ -2465,7 +2448,7 @@ utilisant un élément ***TopographicPlaceDescriptor*** (par exemple,
 <td>MultilingualString</td>
 <td>0:1</td>
 <td><p>Nom utilisé pour distinguer le TOPOGRAPHIC PLACE d’autres lieux similaires portant le même nom. Ce texte ne doit pas être inclus dans le nom mais peut être ajouté par les applications en fonction du contexte.</p>
-<p>Le qualificatif doit être dans la même langue que le nom <span class="hl">(Français pour le profil)</span></p></td>
+<p>Le qualificatif doit être dans la même langue que le nom <mark>(Français pour le profil)</mark></p></td>
 </tr>
 
 </tbody>
