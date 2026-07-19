@@ -712,7 +712,15 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td colspan="2"><em>::></em></td>
 <td><em>Journey</em></td>
 <td><em>::></em></td>
-<td>SERVICE JOURNEY hérite de JOURNEYet intègre un certain nombre d'éléments de VEHICLE JOURNEY</td>
+<td>SERVICE JOURNEY hérite de JOURNEY et intègre un certain nombre d'éléments de VEHICLE JOURNEY</td>
+</tr>
+<tr>
+<td></td>
+<td colspan="2"><em><strong>AccessibilityAssessment</strong></em></td>
+<td><em>AccessibilityAssessment</em></td>
+<td>1:1</td>
+<td><p>Caractéristiques d’accessibilité des courses, provenant de l'hériage de JOURNEY.</p>
+<p><span class="hl">Ce champ est à collecte obligatoire sur la base de l'arrêté du 28 mai 2024. Voir la partie Accessibilité du profil France pour plus de détails</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>

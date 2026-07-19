@@ -4240,7 +4240,7 @@ Si certains véhicules ne sont pas équipés, on peut utiliser la valeur "partia
 
 ## Définition des *AccessibilityLimitation* retenus pour la ligne (LINE)
 
-Ces définitions s'appliquent également aux lignes flexibles (FLEXIBLE LINE).
+Ces définitions s'appliquent également aux lignes flexibles (FLEXIBLE LINE). De manière générale, ces critères sont pour une évaluation d'accessibilité de l'ensemble de la ligne. Pour des informations plus fines surles arrêts desservis par la ligne et/ou les véhicules utilisés, se reporter directement à ces objets. Si les informations des arrêts et/ou des véhicules font état d'une accessibilité partielle sur l'un des critères ci-dessous, la valeur "partial" est à privilégié, accompagnée d'un commentaire. 
 
 **WheelchairAccess** : La ligne est officiellement ouverte aux personnes en fauteuil roulant par l'opérateur ou l'autorité organisatrice. Cela signifie en général que le personnel est formé à la prise en charge des personnes en situation de handicap, que les supports d'information voyageur  (aux arrêts et à bord des véhicules) l'indiquent et que le matériel roulant est équipé en conséquence selon des critères dépendant de la politique locale.
 
