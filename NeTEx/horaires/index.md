@@ -718,7 +718,7 @@ autorisés à monter à bord ou à descendre du véhicule aux arrêts.
 <td></td>
 <td colspan="2"><em><strong>AccessibilityAssessment</strong></em></td>
 <td><em>AccessibilityAssessment</em></td>
-<td>1:1</td>
+<td>0:1 <br> <span class="hl">1:1</span></td>
 <td><p>Caractéristiques d’accessibilité des courses, provenant de l'héritage de JOURNEY.</p>
 <p><span class="hl">Ce champ est à collecte obligatoire sur la base de l'arrêté du 28 mai 2024. Voir la partie Accessibilité du profil France pour plus de détails</span></p></td>
 </tr>
