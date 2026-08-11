@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.09:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xlink="http://www.w3.org/1999/xlink" version="2.0:FR-NETEX-2.3-0.0" xsi:schemaLocation="http://www.netex.org.uk/netex">
   <PublicationTimestamp>2022-12-07T12:00:00</PublicationTimestamp>
   <ParticipantRef>ALM_wdm2netex</ParticipantRef>
   <Description>Export AccèsLibre Mobilités des données d'accessibilité et de cheminement - Cet export contient des données issues d'OpenStreetMap (© contributeurs OpenStreetMap).</Description>
   <dataObjects>
-    <GeneralFrame id="FR:GeneralFrame:NETEX_ACCESSIBILITY:LOC" version="1.09:FR-NETEX-2.3-0.0">
+    <GeneralFrame id="FR:GeneralFrame:NETEX_ACCESSIBILITY:LOC" version="2.0:FR-NETEX-2.3-0.0">
       <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_ACCESSIBILITY:"/>
       <FrameDefaults>
         <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
@@ -724,6 +724,202 @@
           <DroppedKerb>false</DroppedKerb>
           <MarkingStatus>unknown</MarkingStatus>
         </CrossingEquipment>
+        <PathJunction id="ALM:PathJunction:n755:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketVendingMachine</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Ground</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104596</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>WheelchairAccess</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n755">
+            <Longitude>2.0786456</Longitude>
+            <Latitude>48.8147225</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n756:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>TicketValidator</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104608</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n756">
+            <Longitude>2.0785584</Longitude>
+            <Latitude>48.8151101</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n757:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>EmergencyPhone</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Ground</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PublicCode</Key>
+              <Value>4588</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104549</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>2</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n757">
+            <Longitude>2.078469</Longitude>
+            <Latitude>48.8146842</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n758:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>EmergencyPhone</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Yes</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>ObstacleType</Key>
+              <Value>Ground</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>PublicCode</Key>
+              <Value>4589</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10108104548</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>2</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n758">
+            <Longitude>2.0786591</Longitude>
+            <Latitude>48.8146719</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n772:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Geometry:Id</Key>
+              <Value>w1106617145</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10126319945</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n772">
+            <Longitude>2.0786644</Longitude>
+            <Latitude>48.8146525</Latitude>
+          </Location>
+        </PathJunction>
+        <PathJunction id="ALM:PathJunction:n788:LOC" version="1">
+          <keyList>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Amenity</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Obstacle</Key>
+              <Value>Shelter</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Geometry:Id</Key>
+              <Value>w1106617144</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Id</Key>
+              <Value>n10126319941</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Source</Key>
+              <Value>OpenStreetMap</Value>
+            </KeyValue>
+            <KeyValue typeOfKey="WDM_tag">
+              <Key>Ref:Import:Version</Key>
+              <Value>1</Value>
+            </KeyValue>
+          </keyList>
+          <Location id="n788">
+            <Longitude>2.0784548</Longitude>
+            <Latitude>48.8146675</Latitude>
+          </Location>
+        </PathJunction>
         <PathJunction id="ALM:PathJunction:n762:LOC" version="1">
           <Location id="n762">
             <Longitude>2.0787226</Longitude>
