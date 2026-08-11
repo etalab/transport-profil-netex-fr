@@ -3807,7 +3807,7 @@ ELEMENT.</td>
 
 ### Prix de l'offre à la vente
 
-<div class='table-title'>SalesOfferPackagePrice – Element</div>
+<div class='table-title'>SalesOfferPackagePrice – Elément</div>
 
 L'objet SalesOfferPackagePrice est à inclure directement dans la FareTable :
 - directement dans la Cell 
@@ -3826,7 +3826,7 @@ FareTable.
 
 
 
-L'exemple ci-dessous présente les attributs recommandés du SalesOfferPackagePrice dans le prodil France :
+L'exemple ci-dessous présente les attributs recommandés du SalesOfferPackagePrice dans le profil France :
 ```xml 
 <SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
     <ValidBetween> <!-- Dates de validité du tarif -->
