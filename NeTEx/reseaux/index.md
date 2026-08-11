@@ -1546,7 +1546,7 @@ Les valeurs de l'énumération LineType pour décrire la flexibilité d'un servi
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>BookingUrl/strong></em></td>
+<td><em><strong>BookingUrl</strong></em></td>
 <td>InfoLinkStructure</td>
 <td>0:1</td>
 <td>Lien de réservation du service. <span class="hl">Dans le cadre du profil France, on priorise l'utilisation de l'URL de bookingContact lorsque la réservation passe par un opérateur et/ou nécessite une vérification manuelle. Cet élément est à utiliser pour le renvoi vers un service de réservation.</span></td>
