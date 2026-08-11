@@ -1060,7 +1060,7 @@ de nuit, etc.).
 <td></td>
 <td colspan="2"><em><strong>Accessibility­Assessment</strong></em></td>
 <td><em>Accessibility­Assessment</em></td>
-<td>0:1</td>
+<td>0:1 <br> <span class="hl">1:1</span></td>
 <td>Information concernant l'accessibilité de la ligne <span class="hl">(<em>voir la partie Accessibilité du profil France</em>).</span></td>
 </tr>
 <tr class="odd">
