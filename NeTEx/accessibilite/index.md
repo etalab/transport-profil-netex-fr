@@ -4268,7 +4268,7 @@ Si certains véhicules ne sont pas équipés, on peut utiliser la valeur "partia
 
 ## Définition des *AccessibilityLimitation* retenus pour la ligne (LINE)
 
-Ces définitions s'appliquent également aux lignes flexibles (FLEXIBLE LINE). De manière générale, ces critères sont pour une évaluation d'accessibilité de l'ensemble de la ligne. Pour des informations plus fines sur les arrêts desservis par la ligne et/ou les véhicules utilisés, se reporter directement à ces objets. Si les informations des arrêts et/ou des véhicules de la ligne font état d'une accessibilité partielle sur l'un des critères ci-dessous, la valeur "partial" est à privilégier au niveau de la ligne, accompagnée d'un commentaire. 
+De manière générale, ces critères sont pour une évaluation d'accessibilité de l'ensemble de la ligne. Pour des informations plus fines sur les arrêts desservis par la ligne et/ou les véhicules utilisés, se reporter directement à ces objets. Si les informations des arrêts et/ou des véhicules de la ligne font état d'une accessibilité partielle sur l'un des critères ci-dessous, la valeur "partial" est à privilégier au niveau de la ligne, accompagnée d'un commentaire. 
 
 **WheelchairAccess** : La ligne est officiellement ouverte aux personnes en fauteuil roulant par l'opérateur ou l'autorité organisatrice. Cela signifie en général que le personnel est formé à la prise en charge des personnes en situation de handicap, que les supports d'information voyageur  (aux arrêts et à bord des véhicules) l'indiquent et que le matériel roulant est équipé en conséquence selon des critères dépendant de la politique locale.
 
@@ -4281,6 +4281,8 @@ Ces définitions s'appliquent également aux lignes flexibles (FLEXIBLE LINE). D
 Pour les critères qui portent sur tous les véhicules / sur tous les arrêts, on peut utiliser la valeur "partial" si certains véhicules ou arrêts ne sont pas équipés, en renseignant un commentaire pour donner plus de détails.
 
 Les autres évaluations d'accessibilité ne sont pas retenues pour la ligne dans le cadre du profil.
+
+Note pour le transport à la demande (lignes flexibles ou mixtes) : depuis NeTEx v2.0, seul l'objet LINE est utilisé. Pour plus de détails sur la description du transport à la demande, se référer à la partie Réseaux du profil France.
 
 ## Espace de manœuvre pour les entrées (ENTRANCE EQUIPMENT)
 
