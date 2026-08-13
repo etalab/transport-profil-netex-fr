@@ -4282,7 +4282,7 @@ Pour les critères qui portent sur tous les véhicules / sur tous les arrêts, o
 
 Les autres évaluations d'accessibilité ne sont pas retenues pour la ligne dans le cadre du profil.
 
-Note pour le transport à la demande (lignes flexibles ou mixtes) : depuis NeTEx v2.0, seul l'objet LINE est utilisé. Pour plus de détails sur la description du transport à la demande, se référer à la partie Réseaux du profil France.
+Remarque : ces définitions sont également valables pour les lignes de transport à la demande (lignes flexibles ou mixtes). Pour plus de détails sur la description du transport à la demande, se référer à la partie Réseaux du profil.
 
 ## Espace de manœuvre pour les entrées (ENTRANCE EQUIPMENT)
 
