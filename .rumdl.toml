@@ -1,0 +1,41 @@
+# rumdl configuration file
+
+# Global configuration options
+[global]
+# List of rules to disable (uncomment and modify as needed)
+disable = ["MD025", "MD033", "MD036"]
+
+# Additional rules to enable on top of defaults (additive, does not replace)
+# Use this to activate opt-in rules like MD060, MD063, MD072, MD073, MD074
+extend-enable = ["MD060"]
+
+# Additional rules to disable on top of the disable list (additive)
+# extend-disable = ["MD041"]
+
+# List of file/directory patterns to include for linting (if provided, only these will be linted)
+include = [
+   "NeTEx/*/index.md"
+]
+
+# List of file/directory patterns to exclude from linting
+# exclude = []
+
+# Respect .gitignore files when scanning directories (default: true)
+respect-gitignore = true
+
+# Rule-specific configurations (uncomment and modify as needed)
+
+# Keep lines short for better readability
+[MD013]
+line-length = 80
+# Exclude code blocks from line length check
+code-blocks = false
+reflow = true
+
+# Table Format
+[MD060]
+style = "aligned"
+
+# Use real headings, not just bold text
+[MD036]
+fix = false

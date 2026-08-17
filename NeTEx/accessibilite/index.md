@@ -3473,7 +3473,7 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                    | InternalWidth               | LengthType           | 0:1             | Largeur à l'intérieur de la cabine                                                                                                                                                                                                                                                                                                                                                                    |
 |                    | HandrailType                | HandrailEnum         | 0:1             | Type de main courante <li><p><em>none</em> (aucun)</p></li> <li><p><em>oneSide</em> (d’un côté seulement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li>                                                                                                                                                                                                                                 |
 |                    | HandrailHeight              | LengthType           | 0:1             | Hauteur de la main courante                                                                                                                                                                                                                                                                                                                                                                           |
-|                    | CallButtonHeight            | LengthType           | 0:1             | Hauteur du bouton d’appel de l’ascenseur (à partir du sol                                                                                                                                                                                                                                                                                                                                             |
+|                    | CallButtonHeight            | LengthType           | 0:1             | Hauteur du bouton d’appel de l’ascenseur (à partir du sol)                                                                                                                                                                                                                                                                                                                                             |
 |                    | DirectionButtonHeight       | LengthType           | 0:1             | Hauteur des boutons d’appel directionels de l’ascenseur (à partir du sol), valeur la plus haute                                                                                                                                                                                                                                                                                                       |
 |                    | LowerHandrailHeight         | LengthType           | 0:1             | Hauteur de la main courante (à partir du sol)                                                                                                                                                                                                                                                                                                                                                         |
 |                    | RaisedButtons               | xsd:boolean          | 0:1             | Signale si les boutons sont en relief                                                                                                                                                                                                                                                                                                                                                                 |
@@ -3492,6 +3492,34 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 |                    | ButtonsHeight               | LengthType           | 0:1             | Hauteur (taille) des boutons                                                                                                                                                                                                                                                                                                                                                                          |
 |                    | GroundMarkalignedWithButton | xsd:boolean          | 0:1             | Signale la présence de marquage podotactile pour repérer les boutons                                                                                                                                                                                                                                                                                                                                  |
 
+Remarque : <span class="hl">plusieurs modélisations sont possibles pour les ascenseurs. Dans le cadre du profil, voici celle qui est préconisée :
+
+- un LIFT EQUIPMENT
+- un SITE PATH LINK pour chaque niveau traversé. Cet objet a une géométrie linéaire mais verticale (les coordonnées des points de départ et d'arrivée sont identiques, à l'exception de l'altitude éventuelle) <span>
+
+exemple :
+
+![schéma présentant une coupe d'un ascenseur, avec 3 SitePathLink dessinés](media/image19.png)
+
+- l'équipement de l'ascenseur :
+
+```xml
+<LiftEquipment id="doc:LiftEquipment:1" version="1">(...)</LiftEquipment>
+```
+
+- le tronçon de cheminement de l'ascenseur :
+
+```xml
+<SitePathLink id="doc:SPL:1" version="1"> 
+        (...)
+        <AccessFeatureType>lift</AccessFeatureType>
+        <placeEquipments>
+                <LiftEquipmentRef ref="doc:LiftEquipment:1"/>
+        </placeEquipments>
+</SitePathLink>
+```
+
+Si d'autres étages sont desservis, d'autres tronçons de cheminements avec AccessFeatureType=lift sont nécessaires.
 
 ## Sign Equipment
 
@@ -4219,6 +4247,42 @@ En particulier, ça sera :
 - *false* si les deux sont absents
 
 **TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
+
+## Définition des *AccessibilityLimitation* pour les véhicules
+
+**WheelchairAccess** : Il existe un espace assez large pour accueillir les personnes en fauteuil roulant à bord, et on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
+
+**AudibleSignalsAvailable** : des annonces sonores d'information voyageur sont diffusées dans le véhicule. Il peut s'agir d'annonces à la porte avant rappelant la ligne et la destination, ou d'annonce à bord indiquant le prochain arrêt.
+
+**VisualSignsAvailable** : il y a un système d'affichage visuel de l'information voyageur. Il peut s'agir d'un affichage à l'extérieur (à l'avant et à l'arrière) indiquant la ligne et la destination, ou d'affichage à bord indiquant le prochain arrêt. Des critères de visibilité s'appliquent concernant le contraste, la taille et la police des caractères.
+
+**StepFreeAccess** : on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
+
+Les autres évaluations d'accessibilité ne sont pas retenues pour le véhicule.
+
+## Définition des *AccessibilityLimitation* retenus pour la course commerciale (SERVICE JOURNEY)
+
+On considère que l'évaluation d'accessibilité est remplie pour la course commerciale lorsque 100% des véhicules susceptibles d'opérer cette course commerciale remplissent cette évaluation d'accessibilité. Se rapporter aux définitions sur les véhicules pour connaitre les critères pour chaque évaluation d'accessibilité.
+
+Si certains véhicules ne sont pas équipés, on peut utiliser la valeur "partial", en renseignant un commentaire pour donner plus de détails.
+
+## Définition des *AccessibilityLimitation* retenus pour la ligne (LINE)
+
+De manière générale, ces critères sont pour une évaluation d'accessibilité de l'ensemble de la ligne. Pour des informations plus fines sur les arrêts desservis par la ligne et/ou les véhicules utilisés, se reporter directement à ces objets. Si les informations des arrêts et/ou des véhicules de la ligne font état d'une accessibilité partielle sur l'un des critères ci-dessous, la valeur "partial" est à privilégier au niveau de la ligne, accompagnée d'un commentaire. 
+
+**WheelchairAccess** : La ligne est officiellement ouverte aux personnes en fauteuil roulant par l'opérateur ou l'autorité organisatrice. Cela signifie en général que le personnel est formé à la prise en charge des personnes en situation de handicap, que les supports d'information voyageur  (aux arrêts et à bord des véhicules) l'indiquent et que le matériel roulant est équipé en conséquence selon des critères dépendant de la politique locale.
+
+**AudibleSignalsAvailable** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne diffusent des annonces sonores. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
+
+**VisualSignsAvailable** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne disposent un système d'affichage visuel de l'information voyageur. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
+
+**StepFreeAccess** : On peut embarquer de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc) dans n'importe quel véhicule circulant sur cette ligne.
+
+Pour les critères qui portent sur tous les véhicules / sur tous les arrêts, on peut utiliser la valeur "partial" si certains véhicules ou arrêts ne sont pas équipés, en renseignant un commentaire pour donner plus de détails.
+
+Les autres évaluations d'accessibilité ne sont pas retenues pour la ligne dans le cadre du profil.
+
+Remarque : ces définitions sont également valables pour les lignes de transport à la demande (lignes flexibles ou mixtes). Pour plus de détails sur la description du transport à la demande, se référer à la partie Réseaux du profil.
 
 ## Espace de manœuvre pour les entrées (ENTRANCE EQUIPMENT)
 
