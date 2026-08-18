@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="1.11:NO-NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../../Documents/GitHub/TransmodelEcosystem/NeTEx/xsd/NeTEx_publication.xsd">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../../Documents/GitHub/TransmodelEcosystem/NeTEx/xsd/NeTEx_publication.xsd">
 	<!-- INFORMATION SUR LE FICHIER D EXEMPLE
 	Exemple provenant du titre T-Libr proposé par la SMT AML, limité à 2 produits tarifaires :
 	- L'abonnement mensuel 1 Zone : T-libr Côtière
