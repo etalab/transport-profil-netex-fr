@@ -28,7 +28,7 @@ Voici un extrait de fichier XML reprenant les informations ci-dessus :
 ```
 ## Comment utiliser les FareStructureElement pour modéliser un produit tarifaire ?
 
-Nous rappelons que le `FareStructureElement` (FSE) est l’élément de base de la
+Pour rappel, le `FareStructureElement` (FSE) est l’élément de base de la
 construction des structures tarifaires.
 
 Dans la mesure où la norme NeTEx propose de nombreux éléments dans cet objet pour permettre
