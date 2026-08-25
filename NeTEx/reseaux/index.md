@@ -1411,7 +1411,7 @@ Exemple de LineString pour décrire un tracé :
 ![image](media/image3.svg)
 *Flexible Line – Modèle conceptuel*
 
-La plupart des objets de bases utilisés pour la description des lignes
+La plupart des objets de base utilisés pour la description des lignes
 disposent d'une déclinaison dite "flexible" que l'on utilisera en
 particulier dans le cadre du transport à la demande (TAD), mais aussi
 dans de nombreux autres contextes de nouveaux services de transport
@@ -1422,65 +1422,31 @@ substitution (substitution group) XML utilisé par NeTEx permet
 d'utiliser n'importe que objet "flexible" en lieu et place de la version
 non flexible correspondante.
 
+Par ailleurs, depuis NeTEx v2.0, l'objet FLEXIBLE LINE est déprécié au profit de LINE.
+Cette dépréciation s'explique par la multiplication de services dits "mixtes" avec
+à la fois des services planifiés et des services à la demande pour une même ligne.
+En conformité avec ce changement, seuls les éléments permettant de décrire la flexibilité
+d'un service de transport public sont repris dans le profil France
+
 Pour les POINTs et le TRONÇON, c'est un objet supplémentaire
 (référençant l'objet "principal") qui apporte les propriétés de
 flexibilité.
 
-### Ligne flexible
+### Flexibilité d'une ligne
 
-<div class="table-title">FlexibleLine – Element</div>
+Dans l'objet LINE, les éléments de flexibilité se retrouvent principalement via :
+- le champ LineType qui est inclus dans le groupe LINE CLASSIFICATION
+- l'objet BookingArrangements qui est inclus dans le groupe LINE PROPERTIES
 
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 19%" />
-<col style="width: 22%" />
-<col style="width: 6%" />
-<col style="width: 43%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Cardin­ality</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td><em>::></em></td>
-<td><em>::></em></td>
-<td><em>Line</em></td>
-<td><em>::></em></td>
-<td>FLEXIBLE LINE hérite de LINE</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em><strong>FlexibleLineType</strong></em></td>
-<td><em>FlexibleLineTypeEnum</em></td>
-<td>1:1</td>
-<td><p>Type de LIGNE FLEXIBLE <span class="hl">(voir le document NeTEx pour le détail des différents types de flexibilité)</span>:</p>
-<ul>
-<li><p><em>corridorService</em></p></li>
-<li><p><em>mainRouteWithFlexibleEnds</em></p></li>
-<li><p><em>flexibleAreasOnly</em></p></li>
-<li><p><em>hailAndRideSections</em></p></li>
-<li><p><em>fixedStopAreaWide</em></p></li>
-<li><p><em>freeAreaAreaWide</em></p></li>
-<li><p><em>mixedFlexible</em></p></li>
-<li><p><em>mixedFlexibleAndFixed</em></p></li>
-<li><p><em>fixed</em></p></li>
-<li><p><em>other</em></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>«cntd»</td>
-<td><em><strong>Booking­Arrangements</strong></em></td>
-<td><em>BookingArrangements</em></td>
-<td>0:1</td>
-<td>Information sur les conditions de réservation.</td>
-</tr>
-</tbody>
-</table>
+Les valeurs de l'énumération LineType pour décrire la flexibilité d'un service sont comme suit : 
+- corridorService
+- mainRouteWithFlexibleEnds
+- flexibleAreasOnly
+- hailAndRideSections
+- fixedStopAreaWide
+- freeAreaAreaWide
+- mixedFlexible
+- mixedFlexibleAndFixed
 
 <div class="table-title">BookingArrangements – Element (objet inclus)</div>
 
@@ -1580,10 +1546,10 @@ flexibilité.
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong><del>BookingUrl</del></strong></em></td>
-<td></td>
-<td></td>
-<td><span class="hl">On utilise l'URL de bookingContact</span></td>
+<td><em><strong>BookingUrl</strong></em></td>
+<td>InfoLinkStructure</td>
+<td>0:1</td>
+<td>Lien de réservation du service. <span class="hl">Dans le cadre du profil France, on priorise l'utilisation de l'URL de bookingContact lorsque la réservation passe par un opérateur et/ou nécessite une vérification manuelle. Cet élément est à utiliser pour le renvoi vers un service de réservation.</span></td>
 </tr>
 <tr class="even">
 <td></td>
