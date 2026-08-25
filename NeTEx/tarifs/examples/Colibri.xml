@@ -11,10 +11,10 @@
 	Dans un esprit de simplification, cet exemple ne prend qu'un canal de distribution : la vente en ligne.-->
 	<!--- =============== ENTÊTE =========== -->
 	<PublicationTimestamp>2026-08-17T00:00:00.0Z</PublicationTimestamp>
-	<ParticipantRef>TT</ParticipantRef>
+	<ParticipantRef>GT7</ParticipantRef>
 	<!--- =============== DONNÉES =========== -->
 	<dataObjects>
-		<CompositeFrame id="FR-Tarif-Example:CompositeFrame:myFrame01" version="1">
+		<CompositeFrame id="exemple:CompositeFrame:myFrame01" version="1">
 			<frames>
 				<GeneralFrame id="FR-Tarif-Example:CompositeFrame:myFrame01" version="1">
 					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
@@ -48,7 +48,7 @@
 									<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology"/>
 									<validityParameters>
 										<!-- Toutes les références utilisées dans cet exemple ont pour vocation de représenter les réseaux / groupes de lignes qui sont inclus dans le tarif T-Libr. Ces références sont proposées à titre d'illustration. Elle doivent être modifiées pour correspondre à celles définies dans l'offre de transport. -->
-										<GroupOfLinesRef ref="fr:SMTAML:TER-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TER-Cotiere"/>
 										<GroupOfLinesRef ref="fr:SMTAML:TCL-1"/>
 										<GroupOfLinesRef ref="fr:SMTAML:TCL-2"/>
 										<GroupOfLinesRef ref="fr:SMTAML:COLIBRI-Cotiere"/>
@@ -145,12 +145,7 @@
 											<CanTransfer>true</CanTransfer>
 											<!-- Requis, une utilisation multiple d'un titre est considérée comme un transfert -->
 											<HasTransferFee>false</HasTransferFee>
-											<!-- Optionnel -->
 											<SharedUsage>singleUser</SharedUsage>
-											<!-- Optionnel -->
-											<!-- proposition de ne pas conserver les champs 
-											<MaximumNumberOfNamedTransferees>
-											-->
 										</Transferability>
 									</limitations>
 								</GenericParameterAssignment>
