@@ -16,7 +16,7 @@
 	<dataObjects>
 		<CompositeFrame id="exemple:CompositeFrame:myFrame01" version="1">
 			<frames>
-				<GeneralFrame id="FR-Tarif-Example:CompositeFrame:myFrame01" version="1">
+				<GeneralFrame id="exemple:CompositeFrame:myFrame01" version="1">
 					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
 					<members>
 						<!-- STRUCTURE TARIFAIRE ET DROITS DE BASE -->
@@ -47,13 +47,16 @@
 									<IsAllowed>true</IsAllowed>
 									<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology"/>
 									<validityParameters>
-										<!-- Toutes les références utilisées dans cet exemple ont pour vocation de représenter les réseaux / groupes de lignes qui sont inclus dans le tarif T-Libr. Ces références sont proposées à titre d'illustration. Elle doivent être modifiées pour correspondre à celles définies dans l'offre de transport. -->
+										<!-- Toutes les références utilisées dans cet exemple ont pour vocation de représenter 
+										les réseaux / groupes de lignes qui sont inclus dans le tarif T-Libr. 
+										Ces références sont proposées à titre d'illustration. Elle doivent être modifiées 
+										pour correspondre à celles définies dans l'offre de transport. -->
 										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TER-Cotiere"/>
-										<GroupOfLinesRef ref="fr:SMTAML:TCL-1"/>
-										<GroupOfLinesRef ref="fr:SMTAML:TCL-2"/>
-										<GroupOfLinesRef ref="fr:SMTAML:COLIBRI-Cotiere"/>
-										<GroupOfLinesRef ref="fr:SMTAML:TICO-Cotiere"/>
-										<GroupOfLinesRef ref="fr:SMTAML:CARREGIONAUXAIN-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TCL-1"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TCL-2"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:COLIBRI-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TICO-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:CARREGIONAUXAIN-Cotiere"/>
 									</validityParameters>
 									<IncludesGroupingType>OR</IncludesGroupingType>
 								</GenericParameterAssignment>
@@ -67,11 +70,14 @@
 									<IsAllowed>true</IsAllowed>
 									<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology"/>
 									<validityParameters>
-										<!-- Toutes les références utilisées dans cet exemple ont pour vocation de représenter les réseaux / groupes de lignes qui sont inclus dans le tarif T-Libr. Ces références sont proposées à titre d'illustration. Elle doivent être modifiées pour correspondre à celles définies dans l'offre de transport. -->
-										<GroupOfLinesRef ref="fr:SMTAML:TER-Cotiere"/>
-										<GroupOfLinesRef ref="fr:SMTAML:COLIBRI-Cotiere"/>
-										<GroupOfLinesRef ref="fr:SMTAML:TICO-Cotiere"/>
-										<GroupOfLinesRef ref="fr:SMTAML:CARREGIONAUXAIN-Cotiere"/>
+										<!-- Toutes les références utilisées dans cet exemple ont pour vocation de représenter 
+										les réseaux / groupes de lignes qui sont inclus dans le tarif T-Libr. 
+										Ces références sont proposées à titre d'illustration. Elle doivent être modifiées 
+										pour correspondre à celles définies dans l'offre de transport. -->
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TER-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:COLIBRI-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TICO-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:CARREGIONAUXAIN-Cotiere"/>
 									</validityParameters>
 									<IncludesGroupingType>OR</IncludesGroupingType>
 								</GenericParameterAssignment>
