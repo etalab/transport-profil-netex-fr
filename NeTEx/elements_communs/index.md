@@ -4535,7 +4535,7 @@ class="hl">versionRef</span>**<span class="hl"> (et non plus
 indiqué dans l'exemple ci-dessous:</span>
 
 ```
-<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN" versionREf="1.01:FR-NETEX_COMMUN-1.0"/>
+<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN" versionRef="1.01:FR-NETEX_COMMUN-1.0"/>
 ```
 <span class="hl">Toutefois, contrairement aux références internes, la
 précision du numéro de </span>***<span

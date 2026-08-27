@@ -23,7 +23,7 @@ Voici un extrait de fichier XML reprenant les informations ci-dessus:
             <SalesOfferPackageRef ref="exemple:SalesOfferPackageRef:01" />
             <UserProfileRef ref="exemple:UserProfile:01" version="any" />
         </Cell>
-    <cells>
+    </cells>
 </FareTable>
 ```
 ## Que contient un UserProfile ?
@@ -34,17 +34,17 @@ Voici un exemple avec un profile moins de 26 ans :
 ```xml
 <UserProfile id="exemple:UserProfile:01" version="any">
     <!--50% pour les enfants entre 4 et 10 ans -->
-    <Name>Tarif -26 ans</Name>
-    <UserType>YoungPerson</UserType>  
-    <Description>Profil jeune adulte (moinsde 26 ans)</Description>
-    <MinimumAge>4</MinimumAge>
-    <MaximumAge>10</MaximumAge>
-    <ProofRequired>IdentityDocument</ProofRequired>
+    <Name>Enfant 4 à 10 ans</Name>
+    <Description>Profil jeune enfant (entre 4 et 10 ans)</Description>
     <noticeAssignments>
         <NoticeAssignment id="exemple:NoticeAssignment:01" version="any">
             <NoticeRef ref="exemple:Notice:01" version="any" />
         </NoticeAssignment>
     </noticeAssignments>
+    <UserType>child</UserType>  
+    <MinimumAge>4</MinimumAge>
+    <MaximumAge>10</MaximumAge>
+    <ProofRequired>identityDocument</ProofRequired>
 </UserProfile>
 ```
 
@@ -96,9 +96,9 @@ Exemple pour une période de vente du 15/09/2025 au 30/10/2025 :
 ```xml
 <SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
     <validityConditions>
-        <AvailabilityCondition id="exemple:AvailabilityCondition:01">
-            <FromDate>2025-09-15</FromDate>
-            <ToDate>2025-10-30</ToDate>
+        <AvailabilityCondition id="exemple:AvailabilityCondition:01" version="any">
+            <FromDate>2025-09-15T00:00:00</FromDate>
+            <ToDate>2025-10-30T23:59:59</ToDate>
         </AvailabilityCondition>
     </validityConditions>
     <!-- autres informations -->
@@ -119,8 +119,8 @@ Exemple :
 <SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
     <validityConditions>
         <ValidBetween>
-            <FromDate>2025-01-01</FromDate>
-            <ToDate>2025-12-31</ToDate>
+            <FromDate>2025-01-01T00:00:00</FromDate>
+            <ToDate>2025-12-31T23:59:59</ToDate>
         </ValidBetween>
     </validityConditions>
     <!-- autres informations -->
@@ -156,14 +156,14 @@ Cette information est associée au produit tarifaire (`PreassignedFareProduct`) 
 
 ```xml
 <FareStructureElement id="exemple:FareStructureElement:01" version="any">
-    <Name>Abonnement 30 jours</Name>
+    <Name>Abonnement 1 mois</Name>
     <TypeOfFareStructureElementRef ref="exemple:TypeOfFareStructureElement:usage_period" versionRef="any" />
     <validityParameterAssignments>
         <GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
             <limitations>
                 <UsageValidityPeriod id="exemple:UsageValidityPeriod:01" version="any">
-                    <UsageTrigger>startOfPeriod</UsageTrigger>
                     <ValidityPeriodType>monthlyPass</ValidityPeriodType>
+                    <UsageTrigger>startOfPeriod</UsageTrigger>
                     <StandardDuration>PT1M</StandardDuration>
                 </UsageValidityPeriod>
             </limitations>
@@ -179,8 +179,8 @@ créer des cellules différentes pour les différents prix des associations entr
 ```xml
 <SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
     <ValidBetween>
-        <FromDate>2025-01-01</FromDate>
-        <ToDate>2025-12-31</ToDate>
+        <FromDate>2025-01-01T00:00:00</FromDate>
+        <ToDate>2025-12-31T23:59:59</ToDate>
     </ValidBetween>
     <Amount>38.80</Amount>
     <Currency>EUR</Currency>
@@ -335,15 +335,16 @@ Ce principe est commun sur tout les types de taxes.
 <TypeOfPricingRule id="FR:TypeOfPricingRule:TVA" version="any"/> <!-- Cette valeur sera à uniformiser dans le profil France pour identifier les taux de TVA -->
 <DiscountingRule version="any" id="exemple:DiscountingRule:01">
     <Name>TVA 10%</Name>
+    <TypeOfPricingRuleRef ref="FR:TypeOfPricingRule:TVA" />
     <DiscountAsPercentage>10</DiscountAsPercentage>
     <DiscountAsValue>1.3</DiscountAsValue>
 </DiscountingRule>
+<!-- SalesOfferPackagePrice doit être inclus dans une Cell de la FareTable -->
 <SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:012" version="any">
     <ValidBetween>
-        <FromDate>2025-01-01</FromDate>
-        <ToDate>2025-12-31</ToDate>
+        <FromDate>2025-01-01T00:00:00</FromDate>
+        <ToDate>2025-12-31T23:59:59</ToDate>
     </ValidBetween>
-    <TypeOfPricingRuleRef ref="FR:TypeOfPricingRule:TVA" />
     <Amount>40.00</Amount>
     <Currency>EUR</Currency>
     <ruleStepResults>

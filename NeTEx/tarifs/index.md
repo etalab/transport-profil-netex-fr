@@ -1451,7 +1451,7 @@ construction des structures tarifaires.
 | ------------------- | --------------------------- | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
 | ::&gt; | ::&gt; | <u>*PriceableObject*</u> | ::&gt; | FARE STRUCTURE ELEMENT hérite de PRICEABLE OBJECT |
 | « PK » | ***id*** | *FareStructureElementIdType* | 1:1 | Identifiant de FARE STRUCTURE ELEMENT |
-| « enum » | ***TariffBasis*** | *TariffBasisEnum* | 0:1 | <p>Base tarifaire à utiliser pour cet élément</p><p><ul><li>Flat (constant)</li><li>Distance (distance)</li><li>unitSection (section)</li><li>zone (zonal)</li><li>zoneToZone (zone à zone)</li><li>pointToPoint (point à point)</li><li>route (itinéraire)</li><li>tour (tour)</li><li>group (group)</li><li>discount (rabais)</li><li>period (période)</li><li>free (gratuit)</li><li>other (autre)</li></ul></p> |
+| « enum » | ***TariffBasis*** | *TariffBasisEnum* | 0:1 | <p>Base tarifaire à utiliser pour cet élément</p><p><ul><li>flat (constant)</li><li>distance (distance)</li><li>unitSection (section)</li><li>zone (zonal)</li><li>zoneToZone (zone à zone)</li><li>pointToPoint (point à point)</li><li>route (itinéraire)</li><li>tour (tour)</li><li>group (group)</li><li>discount (rabais)</li><li>period (période)</li><li>free (gratuit)</li><li>other (autre)</li></ul></p> |
 | | ***TypeOfFareStructureElementRef*** | *TypeOfFareStructureElementRef* | 0:1 | Type ouvert associé à l’élément |
 | XGRP | ***FareStructureElementFactorGroup*** | *xmlGroup* | 0:1 | FARE STRUCTURE FACTORs associé au FARE STRUCTURE ELEMENT |
 | XGRP | ***FareStructureComponentGroup*** | *xmlGroup* | 0:1 | FARE STRUCTURE COMPONENTs associé au FARE STRUCTURE ELEMENT |
@@ -1651,8 +1651,8 @@ très spécifique, on en effectuera la description dans une Notice
 <td>0:1</td>
 <td><p>TIME DEMAND TYPE correspondant au FARE DEMAND FACTOR:</p>
 <blockquote>
-<p><em>Peak (heures de pointe)</em></p>
-<p><em>Middle (heures intermédiaires)</em></p>
+<p><em>peak (heures de pointe)</em></p>
+<p><em>middle (heures intermédiaires)</em></p>
 <p><em>offPeak (heures creuses)</em></p>
 <p><em>superOffPeak (heures super-creuses)</em></p>
 <p><em>night (nuit)</em></p>
@@ -2184,7 +2184,7 @@ la destination peuvent avoir des types différents).
 <td>0:1</td>
 <td><p>Classification de l’interval:</p>
 <blockquote>
-<p><em>Stop (arrêt)</em></p>
+<p><em>stop (arrêt)</em></p>
 <p><em>tariffZone (zone tarifaire)</em></p>
 <p><em>distance (distance)</em></p>
 <p><em>section (section)</em></p>
@@ -2910,10 +2910,10 @@ quotidien. Voir les valeurs autorisées ci-dessous. Une valeur
 quantitative peut être définie avec une USAGE VALIDITY PERIOD, ainsi
 qu'une définition plus détaillée des heures de début et de fin.</p>
 <blockquote>
-<p><em>Day (jour)</em></p>
-<p><em>Week (semaine)</em></p>
-<p><em>Month (mois)</em></p>
-<p><em>None (rien)</em></p>
+<p><em>day (jour)</em></p>
+<p><em>week (semaine)</em></p>
+<p><em>month (mois)</em></p>
+<p><em>none (rien)</em></p>
 </blockquote></td>
 </tr>
 <tr class="odd">
@@ -3219,8 +3219,8 @@ reste utilisable dans les deux cas)*.*
 <td>0:1</td>
 <td><p>Base pour la tarification.</p>
 <blockquote>
-<p><em>Flat (constant)</em></p>
-<p><em>Distance (distance)</em></p>
+<p><em>flat (constant)</em></p>
+<p><em>distance (distance)</em></p>
 <p><em>unitSection (section)</em></p>
 <p><em>zone (zonal)</em></p>
 <p><em>zoneToZone (zone à zone)</em></p>
@@ -4118,13 +4118,13 @@ donc qu'elle doit être autorisée).</td>
 <td>0:1</td>
 <td><p>Droit de distribution du DISTRIBUTION CHANNEL.</p>
 <blockquote>
-<p><em>None (aucun)</em></p>
-<p><em>Sell (vente)</em></p>
-<p><em>Exchange (échange)</em></p>
-<p><em>Refund (reboursement)</em></p>
-<p><em>Inform (information)</em></p>
-<p><em>Private (privé)</em></p>
-<p><em>Other (autre)</em></p>
+<p><em>none (aucun)</em></p>
+<p><em>sell (vente)</em></p>
+<p><em>exchange (échange)</em></p>
+<p><em>refund (reboursement)</em></p>
+<p><em>inform (information)</em></p>
+<p><em>private (privé)</em></p>
+<p><em>other (autre)</em></p>
 </blockquote></td>
 </tr>
 <tr class="odd">
@@ -6541,8 +6541,8 @@ month) and/or fixed start/end dates and times.*
 </tr>
 <tr class="odd">
 <td>« enum »</td>
-<td><em><strong>ValidityType</strong></em></td>
-<td><em>ValidityTypeEnum</em></td>
+<td><em><strong>ValidityPeriodType</strong></em></td>
+<td><em>UsageValidityTypeEnum</em></td>
 <td>0:*</td>
 <td><p>Type of USAGE VALIDITY PERIOD. See allowed values below.</p>
 <ul>
