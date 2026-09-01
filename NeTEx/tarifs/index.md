@@ -3602,7 +3602,7 @@ OFFER PACKAGEs.</td>
 </tbody>
 </table>
 
-<div class='table-title'>SalesOfferPackageCommonGroup – Element</div>
+<div class='table-title'>SalesOfferPackageCommonGroup – Group</div>
 
 <table>
 <thead>
@@ -3803,6 +3803,39 @@ ELEMENT.</td>
     <SalesOfferPackageElementRef ref="FR-Tarif-Example:SalesOfferPackageElement:001:LOC"/>
   </salesOfferPackageElements>
 </SalesOfferPackage>
+```
+
+### Prix de l'offre à la vente
+
+<div class='table-title'>SalesOfferPackagePrice – Elément</div>
+
+L'objet SalesOfferPackagePrice est à inclure directement dans la FareTable :
+- directement dans la Cell 
+- ou comme objet listé dans FareTable/prices, puis référencée dans la Cell par un SalesOfferPackagePriceRef.
+
+Il n'est donc pas ajouté au niveau de la Frame. L'object SalesOfferPackagePrice n'est pas non plus directement référencé 
+par un SalesOfferPackage, le lien entre un SalesOfferPackage et un SalesOfferPackagePrice doit être réalisé dans la Cell de la 
+FareTable.
+
+| **Classification** | **Name**                           | **Type**                           | **Cardinality** | **Description**                                                                 |
+|--------------------|------------------------------------|------------------------------------|-----------------|---------------------------------------------------------------------------------|
+| ::\>               | ::\>                              | *<u>FarePrice_VersionedChildStructure</u>*  | ::\>            | SALES OFFER PACKAGE PRICE hérite de FARE PRICE.      |
+| « PK »             | ***id***                          | *SalesOfferPackagePriceIdType*         | 1:1             | Identifiant du SALES OFFER PACKAGE PRICE.                                   |
+|                    | ***SalesOfferPackageRef***        | *<u>SalesOfferPackageRefStructure</u>* |             | Référence à un SALES OFFER PACKAGE. Ce champ n'est pas retenu dans le cadre du profil France. |
+|                    | ***SalesOfferPackageElementRef*** | ***<u>SalesOfferPackageElementRefStructure</u>*** |              | Référence à un SALES OFFER PACKAGE ELEMENT. Ce champ n'est pas retenu dans le cadre du profil France. |
+
+
+
+L'exemple ci-dessous présente les attributs recommandés du SalesOfferPackagePrice dans le profil France :
+```xml 
+<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
+    <ValidBetween> <!-- Dates de validité du tarif -->
+        <FromDate>2025-01-01T00:00:00</FromDate>
+        <ToDate>2025-12-31T00:00:00</ToDate>
+    </ValidBetween>
+    <Amount>38.80</Amount>
+    <Currency>EUR</Currency>
+</SalesOfferPackagePrice>
 ```
 
 ### Document de voyage 
@@ -6012,6 +6045,10 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_TARIF`, seuls les objets de
 - DiscountingRule
 - FareTable (les SalesOfferPackagePrice sont inclus dans les Cell de la FareTable)
 - DistanceMatrixElement
+
+Il est à noter que les SalesOfferPackagePrice sont à inclure :
+- directement dans la Cell de la FareTable 
+- ou comme objet inclus dans FareTable/prices, puis référencée dans la Cell par un SalesOfferPackagePriceRef.
 
 Voici un exemple de cadre du fichier `fare.xml` :
 
