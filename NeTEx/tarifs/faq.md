@@ -3,13 +3,13 @@ Ce document explicite certains points du profil France, mais n'a pas vocation à
 En cas de différence entre ce document et le texte du profil France, c'est ce dernier qui fait foi.
 Cette FAQ est en cours d'enrichissement par les membres du GT7.
 
-## Quelle structuration donner à mon export de tarifs en Netex France ?
+## Quelle structuration donner à mon export de tarifs en NeTEx France ?
 
 Le profil France a fait le choix de passer par la notion de `FareTable` et ses cellules (`Cell`) pour exposer
 les données. Chaque `Cell` du tableau tarifaire fait le lien entre un `SalesOfferPackage`, un profil utilisateur `UserProfile` et le prix `SalesOfferPackagePrice` associé au `SalesOfferPackage`.
 Le profil France fait le choix d'utiliser le `SalesOfferPackage` et non pas directement le `PreassignedFareProduct` afin de permettre de spécifier les canaux de distribution des offres à la vente et augmenter ainsi les cas d'usages des données publiées sur le PAN.
 
-Voici un extrait de fichier XML reprenant les informations ci-dessus:
+Voici un extrait de fichier XML reprenant les informations ci-dessus :
 ```xml
 <FareTable id="exemple:FareTable:template:01" version="any">
     <Name>FareTable name</Name>
@@ -26,11 +26,36 @@ Voici un extrait de fichier XML reprenant les informations ci-dessus:
     </cells>
 </FareTable>
 ```
+## Comment utiliser les FareStructureElement pour modéliser un produit tarifaire ?
+
+Pour rappel, le `FareStructureElement` (FSE) est l’élément de base de la
+construction des structures tarifaires.
+
+Dans la mesure où la norme NeTEx propose de nombreux éléments dans cet objet pour permettre
+la description exhaustive de nombreuses structures tarifaires, le choix a été fait dans
+le profil France de : 
+- Créer des types de `FareStructureElement` selon la structure d'offre tarifaire décrite,
+- Catégoriser ces types en quatre grandes familles : Conditions d'utilisation, Conditions de vente,
+    Conditions de voyage, Couverture topologique
+
+C'est la combinaison de ces `FareStructureElement` qui permet de définir un produit tarifaire.
+
+Pour chaque type de `FareStructureElement`, on retrouve : 
+- un `TypeOfFareStructureElementRef` qui porte une codification propre au profil France,
+- une structure fixe de l'élément qui identifie clairement les champs à modifier pour
+    valoriser les informations du produit tarifaire décrit.
+
+Pour la structure complète des `FareStructureElement` du profil France, se référer aux extraits XML : 
+- [FareStructureElement - Conditions d utilisation](https://github.com/etalab/transport-profil-netex-fr/blob/v2.5-wip/exemples/tarifs/FareStructureElement%20-%20Conditions%20d%20utilisation.xml)
+- [FareStructureElement - Conditions de vente](https://github.com/etalab/transport-profil-netex-fr/blob/v2.5-wip/exemples/tarifs/FareStructureElement%20-%20Conditions%20de%20vente.xml)
+- [FareStructureElement - Conditions de voyage](https://github.com/etalab/transport-profil-netex-fr/blob/v2.5-wip/exemples/tarifs/FareStructureElement%20-%20Conditions%20de%20voyage.xml)
+- [FareStructureElement - Couverture topologique](https://github.com/etalab/transport-profil-netex-fr/blob/v2.5-wip/exemples/tarifs/FareStructureElement%20-%20Couverture%20de%20topologique.xml)
+
 ## Que contient un UserProfile ?
 Le document du profil France présente plusieurs exemples. Le profil France ne retient pas la notion de réduction au niveau du UserProfile. 
 Le fait qu'un voyageur doive être accompagné est indiqué au travers d'une notice.
 
-Voici un exemple avec un profile moins de 26 ans :
+Voici un exemple avec un profil d'un jeune enfant :
 ```xml
 <UserProfile id="exemple:UserProfile:01" version="any">
     <!--50% pour les enfants entre 4 et 10 ans -->
@@ -106,13 +131,13 @@ Exemple pour une période de vente du 15/09/2025 au 30/10/2025 :
 ```
 
 ### Periode d'utilisation autorisée des titres
-Afin d'indiquer une periode d'utilisation, le profile France fait le choix d'utiliser `ValidityConditions/ValidBetween` sur l'offre à la vente (`SalesOfferPackage`).
+Afin d'indiquer une periode d'utilisation, le profil France fait le choix d'utiliser `ValidityConditions/ValidBetween` sur l'offre à la vente (`SalesOfferPackage`).
 Cette information est portée par le SalesOfferPackage, car la periode d'utilisation peut varier en fonction du support ou du canal de distribution.
 Par exemple, le produit vendu à bord à consommation immédiate ou le produit mensuel qui commence le mois suivant l'achat.
-Cette information ne doit pas être indiquée sur le FareProduct.
+Cette information ne doit pas être indiquée sur le `FareProduct`.
 
-- ticket dans la durée : Periode d'utilisation d'un titre (ex : scolaire valable du lundi au vendredi)
-- ticket unitaire : Periode pendant laquelle le titre peut être consommé
+- ticket dans la durée : Période d'utilisation d'un titre (ex : scolaire valable du lundi au vendredi)
+- ticket unitaire : Période pendant laquelle le titre peut être consommé
 
 Exemple :
 ```xml
@@ -130,6 +155,8 @@ Exemple :
 ### Période pendant laquelle le titre peut être utilisé (ou "consommé") après l’achat
 
 Cette information est associée au produit tarifaire (`PreassignedFareProduct`) contenu dans l'offre à la vente (`SalesOfferPackage`). Pour indiquer cette information, il convient d'utiliser `ValidableElement/FareStructureElement` (ex. TimeInterval).
+
+Exemple pour un titre qui peut être utilisé pendant 2h :
 
 ```xml
 <TimeInterval id="exemple:TimeInterval:template:01" version="any">
@@ -154,6 +181,8 @@ Cette information est associée au produit tarifaire (`PreassignedFareProduct`) 
 
 ### Durée de validité du titre dans les autres cas (semaine, mensuel, etc.)
 
+Exemple pour un abonnement mensuel :
+
 ```xml
 <FareStructureElement id="exemple:FareStructureElement:01" version="any">
     <Name>Abonnement 1 mois</Name>
@@ -175,6 +204,8 @@ Cette information est associée au produit tarifaire (`PreassignedFareProduct`) 
 ### Date de validité du tarif
 Dans la cellule (`Cell`), le prix est porté par l'objet `SalesOfferPackagePrice`. La plage de validité du tarif peut être indiquée sur l'objet (voir l'exemple ci-dessous). Une cellule ne pouvant comporter qu'un seul prix, il conviendra de
 créer des cellules différentes pour les différents prix des associations entre `SalesOfferPackage` et `UserProfile`.
+
+Exemple d'un tarif valide entre le 01/01/2025 et le 31/12/2025 :
 
 ```xml
 <SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
@@ -217,7 +248,7 @@ La durée est rattachée à un `FareStructureElement` en utilisant un `TimeStruc
 Pour le moment, la partie nouveaux modes du profil France n'est pas encore publiée, la FAQ ne décrit pas encore ces tarifs.
 
 ### Pour les prix qui dépendent de la distance (en transport en communs)
-Dans ce cas des transports en communs, il est recommandé de fournir les tarifs sur une OD.
+Dans ce cas des transports en commun, il est recommandé de fournir les tarifs sur une Origine - Destination (OD).
 
 ```xml
 <DistanceMatrixElement id="exemple:DistanceMatrixElement:01" version="any"> 
@@ -245,9 +276,9 @@ La zone tarifaire `FareZone` peut contenir :
 - la description géographique de la zone tarifaire, en général avec une liste de communes couvertes,
 - la liste des arrêts associés à la zone tarifaire.
 
-Les arrêts étant géographiquement positionnés, il est possible de faire cette association géographique. Il arrive cependant que
-des points d'arrêts soient rattachés à une commune, mais positionnés géographiquement dans la commune d'à côté. Les deux informations
-sont donc utiles :
+Les arrêts étant géographiquement positionnés, il est possible de faire cette association géographique. Il arrive
+cependant que des points d'arrêts soient rattachés à une commune, mais positionnés géographiquement dans 
+la commune d'à côté. Les deux informations sont donc utiles :
 - la liste des arrêts pour avoir une information très précise, par exemple pour la mise en place d'un calculateur tarifaire
 - la zone géographique pour des représentations sur une carte
 
@@ -255,9 +286,10 @@ sont donc utiles :
 
 La notion de carnet de tickets est représentée par un object `FareStructureElement` contenant :
 - un `QualityStructureFactor` contenant le nombre de tickets
-- le type de produit (ticket simple, cartnet, abonnement, etc.) est indiqué dans `UsageValidityPeriod/ValidityPeriodType` indiqué dans `validityParameterAssignments/GenericParameterAssignment/limitations`
+- le type de produit (ticket simple, carnet, abonnement, etc.) est indiqué dans `UsageValidityPeriod/ValidityPeriodType`
+    qui est inclus dans `validityParameterAssignments/GenericParameterAssignment/limitations`
 
-Voici un exemple :
+Voici un exemple d'un carnet de 10 tickets :
 ```xml
 <FareStructureElement version="1.0" id="exemple:FareStructureElement:01">
     <Name>Carnet de 10 Ticket</Name>
@@ -323,11 +355,12 @@ Cas d'un ticket de type "journée" permettant autant de trajet que souhaité dur
 ## Comment indiquer la TVA ?
 
 Le profil France propose des tarifs TTC. La communication sur les informations de TVA peut 
-entrainer des risques de mauvaise comprehension sur les informations financières. Les informations 
+entraîner des risques de mauvaise comprehension sur les informations financières. Les informations 
 de TVA ne sont donc pas requises par le profil France.
 
-Dans le cas du choix de commniquer tout de même sur le taux de TVA,  il est possible d'utiliser dans un `SalesOfferPackagePrice`
-un `RuleStepResult`. Le pourcentage est direct (sans le signe % et sans signe négatif) et il est fortement recommandé 
+Dans le cas du choix de commniquer tout de même sur le taux de TVA,  il est possible d'utiliser 
+dans un `SalesOfferPackagePrice` un `RuleStepResult`. 
+Le pourcentage est direct (sans le signe % et sans signe négatif) et il est fortement recommandé 
 de communiquer sur la valorisation du montant de la TVA.
 Ce principe est commun sur tout les types de taxes. 
 
@@ -376,7 +409,7 @@ La validation obligatoire est à indiquer par la propriété `ActivationMeans` d
 </FareStructureElement>
 ```
 
-Pour préciser que l'absence de validation peut entraine une verbalisation : 
+Pour préciser que l'absence de validation peut entraîner une verbalisation : 
 ```xml
 <FareStructureElement id="exemple:FareStructureElement:01" version="any"> 
     <Name>Verbalisation en cas de non validation</Name>
