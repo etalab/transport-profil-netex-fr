@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../../NeTEx/xsd/NeTEx_publication.xsd"
+	version="1.1">
+	<PublicationTimestamp>2025-11-19T09:30:47Z</PublicationTimestamp>
+	<ParticipantRef>Exemple</ParticipantRef>
+	<dataObjects>
+		<!-- CompositeFrame pour regrouper les contenus de plusieurs fichiers du profil France -->
+		<CompositeFrame id="exemple:CompositeFrame:01" version="any">
+			<frames>
+				<!-- GeneralFrame de type NETEX_TARIF correspondant au contenu du fichier "fare.xml" -->
+				<GeneralFrame id="exemple:GeneralFrame:NETEX_TARIF-Example1:LOC" version="any">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members modificationSet="all">
+						<UserProfile id="exemple:UserProfile:001" version="any">
+							<Name>Plein tarif</Name>
+							<Description>Plein tarif adulte sans réduction</Description>
+							<UserType>adult</UserType>
+							<MinimumAge>26</MinimumAge>
+							<MaximumAge>65</MaximumAge>
+						</UserProfile>
+						<UserProfile id="exemple:UserProfile:002" version="any">
+							<Name>jeune moins de 26 ans</Name>
+							<Description>tarif réduit moins de 26 ans</Description>
+							<UserType>youngPerson</UserType>
+							<MaximumAge>26</MaximumAge>
+							<ProofRequired>identityDocument</ProofRequired>
+						</UserProfile>
+						<TypeOfTravelDocument id="exemple:TypeOfTravelDocument:001:" version="any">
+							<Name>carte Korrigo</Name>
+							<IsSmartCard>true</IsSmartCard>
+							<MediaType>smartCard</MediaType>
+							<MachineReadable>nfc</MachineReadable>
+						</TypeOfTravelDocument>
+
+						<DistributionChannel id="exemple:DistributionChannel:web" version="any">
+							<Name>site web breizgo.bzh</Name>
+							<DistributionChannelType>online</DistributionChannelType>
+							<AuthorityRef ref="ILLENOO2:Authority:ILLENOO2:" versionRef="any"/>  <!-- référence à une donnée d'un autre jeu de données-->
+							<PaymentMethods>creditCard</PaymentMethods>
+							<DistributionRights>sell</DistributionRights>
+						</DistributionChannel>
+						<DistributionChannel id="exemple:DistributionChannel:agence" version="any">
+							<Name>point de vente agrees</Name>
+							<DistributionChannelType>agency</DistributionChannelType>
+							<AuthorityRef ref="ILLENOO2:Authority:ILLENOO2:" versionRef="any"/>
+							<PaymentMethods> creditCard cash cheque</PaymentMethods>
+							<DistributionRights>sell exchange refund</DistributionRights>
+						</DistributionChannel>
+
+						<FareStructureElement id="exemple:FareStructureElement:001" version="any">
+							<Name>zones du produit et combinatoires possibles </Name>
+							<distanceMatrixElements>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:11">
+									<StartTariffZoneRef ref="exemple:FareZone:001"/>
+									<EndTariffZoneRef ref="exemple:FareZone:001"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:22">
+									<StartTariffZoneRef ref="example:FareZone:002"/>
+									<EndTariffZoneRef ref="example:FareZone:002"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:33">
+									<StartTariffZoneRef ref="example:FareZone:003"/>
+									<EndTariffZoneRef ref="example:FareZone:003"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:44">
+									<StartTariffZoneRef ref="example:FareZone:004"/>
+									<EndTariffZoneRef ref="example:FareZone:004"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:12">
+									<StartTariffZoneRef ref="example:FareZone:001"/>
+									<EndTariffZoneRef ref="example:FareZone:002"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:23">
+									<StartTariffZoneRef ref="example:FareZone:002"/>
+									<EndTariffZoneRef ref="example:FareZone:003"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:34">
+									<StartTariffZoneRef ref="example:FareZone:003"/>
+									<EndTariffZoneRef ref="example:FareZone:004"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:13">
+									<StartTariffZoneRef ref="example:FareZone:001"/>
+									<EndTariffZoneRef ref="example:FareZone:003"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:24">
+									<StartTariffZoneRef ref="example:FareZone:002"/>
+									<EndTariffZoneRef ref="example:FareZone:004"/>
+								</DistanceMatrixElement>
+								<DistanceMatrixElement version="any" id="example:DistanceMatricElement:14">
+									<StartTariffZoneRef ref="example:FareZone:001"/>
+									<EndTariffZoneRef ref="example:FareZone:004"/>
+								</DistanceMatrixElement>
+							</distanceMatrixElements>
+							<!-- A quoi sert de lister les zones possibles si elles sont dans les DistanceMatrixElement ?
+		        			<GenericParameterAssignment version="any" id="exemple:GenericParameterAssignment:001">
+		        				<ValidityParameterGroupingType>OR</ValidityParameterGroupingType>
+		        				<validityParameters>
+		        					<FareZoneRef ref="exemple:FareZone:001" />
+		        					<FareZoneRef ref="exemple:FareZone:002" />
+		        					<FareZoneRef ref="exemple:FareZone:003" />
+		        					<FareZoneRef ref="exemple:FareZone:004" />
+		        				</validityParameters>
+		        			</GenericParameterAssignment>
+		        			-->
+						</FareStructureElement>
+
+						<PreassignedFareProduct id="example:PreassignedFareProduct:Breizgo+star-001:LOC" version="any">
+							<Name>abonnement mensuelBreizgo+ star</Name>
+							<AuthorityRef ref="ILLENOO2:Authority:ILLENOO2"/>
+							<ConditionSummary>
+								<FareStructureType>zoneToZoneFare</FareStructureType>
+								<TariffBasis>zoneToZone</TariffBasis>
+								<HasNotices>true</HasNotices>
+								<IsSupplement>false</IsSupplement>
+								<RequiresEntitlement>false</RequiresEntitlement>
+								<GivesEntitlement>false</GivesEntitlement>
+								<HasTravelTimeRestrictions>false</HasTravelTimeRestrictions>
+								<HasZoneRestrictions>true</HasZoneRestrictions>
+							</ConditionSummary>
+							<validableElements>
+								<ValidableElement id="example:ValidableElement:001" version="any">
+									<fareStructureElements>
+										<FareStructureElementRef ref="exemple:FareStructureElement:001" version="any"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<ProductType>periodPass</ProductType>
+						</PreassignedFareProduct>
+
+						<SalesOfferPackageElement id="example:SalesOfferPackageElement:001"
+							version="any">
+							<RequiresValidation>true</RequiresValidation>
+							<TypeOfTravelDocumentRef ref="example:TypeOfTravelDocument:001"/>
+							<PreassignedFareProductRef ref="example:PreassignedFareProduct:Breizgo+star-001"/>
+						</SalesOfferPackageElement>
+
+						<SalesOfferPackage id="example:SalesOfferPackage:001:LOC" version="any">
+							<Name>Abonnement mensuel breizgo+ star</Name>
+							<noticeAssignments>
+								<NoticeAssignment id="exemple:NoticeAssignment:01" version="any">
+									<NoticeRef ref="exemple:Notice:001:LOC"/>
+								</NoticeAssignment>
+								<NoticeAssignment id="exemple:NoticeAssignment:02" version="any">
+									<NoticeRef ref="exemple:Notice:002:LOC"/>
+								</NoticeAssignment>
+							</noticeAssignments>
+							<ConditionSummary>
+								<HasNotices>true</HasNotices>
+								<GoesOnCard>true</GoesOnCard>
+								<IsPersonal>true</IsPersonal>
+								<RequiresPhoto>false</RequiresPhoto>
+								<MustCarry>true</MustCarry>
+								<RequiresAccount>true</RequiresAccount>
+								<IsRefundable>false</IsRefundable>
+								<IsExchangable>false</IsExchangable>
+								<AvailableOnSubscription>true</AvailableOnSubscription>
+							</ConditionSummary>
+							<distributionAssignments>
+								<DistributionAssignment id="example:DistributionAssignment:01" version="any">
+									<DistributionChannelRef ref="example:DistributionChannel:web"/>
+								</DistributionAssignment>
+								<DistributionAssignment id="example:DistributionAssignment:02" version="any">
+									<DistributionChannelRef ref="example:DistributionChannel:agence"/>
+								</DistributionAssignment>
+							</distributionAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElementRef ref="example:SalesOfferPackageElement:001:LOC"/>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+
+
+						<FareTable version="any" id="example:FareTable:001:LOC">
+							<Name>grille tarifaire définie par matrice de distance</Name>
+							<StartDate>2025-09-10</StartDate>
+							<EndDate>2026-07-05</EndDate>
+							<cells>
+								<Cell version="any" id="example:FareTableCell:001:LOC">
+									<Name>tarif zone 1 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:001:LOC" version="any">
+										<Amount>25.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:11"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:002:LOC">
+									<Name>tarif zone 1 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:002:LOC" version="any">
+										<Amount>50.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:11"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:003.LOC">
+									<Name>tarif zone 2 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:003:LOC" version="any">
+										<Amount>25.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:22"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:004.LOC">
+									<Name>tarif zone 2 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:004:LOC" version="any">
+										<Amount>50.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:22"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:005.LOC">
+									<Name>tarif zone 3 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:005:LOC" version="any">
+										<Amount>25.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:33"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:006.LOC" order="1">
+									<Name>tarif zone 3 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:006:LOC" version="any">
+										<Amount>50.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:33"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:007.LOC" order="1">
+									<Name>tarif zone 4 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:007:LOC" version="any">
+										<Amount>25.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:44"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:008.LOC" order="1">
+									<Name>tarif zone 4 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:008:LOC" version="any">
+										<Amount>50.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:44"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:009.LOC" order="1">
+									<Name>tarif zones 1 à 2 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:009:LOC" version="any">
+										<Amount>30.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:12"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:010.LOC" order="1">
+									<Name>tarif zones 1 à 2 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:010:LOC" version="any">
+										<Amount>65.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:12"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:011.LOC" order="1">
+									<Name>tarif zones 2 à 3 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:011:LOC" version="any">
+										<Amount>30.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:23"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:012.LOC" order="1">
+									<Name>tarif zones 2 à 3 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:012:LOC" version="any">
+										<Amount>65.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:23"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:013.LOC" order="1">
+									<Name>tarif zones 3 à 4 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:013:LOC" version="any">
+										<Amount>30.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:34"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:014.LOC" order="1">
+									<Name>tarif zones 3 à 4 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:014:LOC" version="any">
+										<Amount>65.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:34"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:015.LOC" order="1">
+									<Name>tarif zones 1 à 3 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:015:LOC" version="any">
+										<Amount>35.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:13"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:016.LOC" order="1">
+									<Name>tarif zones 1 à 3 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:016:LOC" version="any">
+										<Amount>80.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:13"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:017.LOC" order="1">
+									<Name>tarif zones 2 à 4 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:017:LOC" version="any">
+										<Amount>35.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:24"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:018.LOC" order="1">
+									<Name>tarif zones 2 à 4 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:018:LOC" version="any">
+										<Amount>80.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:24"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:019.LOC" order="1">
+									<Name>tarif zones 1 à 4 profil -26</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:019:LOC" version="any">
+										<Amount>40.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:14"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:002"/>
+								</Cell>
+								<Cell version="any" id="example:FareTableCell:020.LOC" order="1">
+									<Name>tarif zones 1 à 4 profil tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:020:LOC" version="any">
+										<Amount>85.00</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<DistanceMatrixElementRef ref="example:DistanceMatricElement:14"/>
+									<SalesOfferPackageRef ref="example:SalesOfferPackage:001:LOC" version="any"/>
+									<UserProfileRef ref="example:UserProfile:001"/>
+								</Cell>
+							</cells>
+						</FareTable>
+
+						<FareZone id="exemple:FareZone:001" version="any">
+							<Name>zone n°1 du produit breizgo et star</Name>
+							<members>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1015:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1016:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1017:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1018:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1019:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:12:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:13:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:14:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:15:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:16:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:17:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:18:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:19:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:20:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:21:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:22:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:23:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:24:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:25:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:26:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:27:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:28:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:29:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:30:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:31:LOC"/>
+								<!-- référence à des Network ou des Line impossible dans un FareZone 
+								<NetworkRef versionRef="any" ref="STAR:Network:1:LOC" />
+								<LineRef versionRef="any" ref="ILLENOO2:Line:515:LOC" />
+								<LineRef versionRef="any" ref="ILLENOO2:Line:516:LOC" />
+								<LineRef versionRef="any"ref="ILLENOO2:Line:518:LOC" />
+								 -->
+							</members>
+							<ZoneTopology>tiled</ZoneTopology>
+						</FareZone>
+						<FareZone id="example:FareZone:002" version="any">
+							<Name>zone n°2 du produit breizgo et star</Name>
+							<members>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:2:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:3:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:4:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:5:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:6:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:7:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:8:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:9:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:10:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:11:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:32:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:33:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:34:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:35:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:36:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:37:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:38:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:39:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:40:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:41:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:42:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:43:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:44:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:45:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:46:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:47:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:48:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:49:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:50:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:51:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1020:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1021:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1022:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1013:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1014:LOC"/>
+							</members>
+							<ZoneTopology>tiled</ZoneTopology>
+						</FareZone>
+						<FareZone id="example:FareZone:003" version="any">
+							<Name>zone n°3 du produit breizgo et star</Name>
+							<members>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1010:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1011:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1012:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1023:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1024:LOC"/>
+							</members>
+							<ZoneTopology>tiled</ZoneTopology>
+						</FareZone>
+						<FareZone id="example:FareZone:004" version="any">
+							<Name>zone n°4 du produit breizgo et star</Name>
+							<members>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1009:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1025:LOC"/>
+								<ScheduledStopPointRef versionRef="any" ref="ILLENOO2:ScheduledStopPoint:1026:LOC"/>
+							</members>
+							<ZoneTopology>tiled</ZoneTopology>
+						</FareZone>
+					</members>
+				</GeneralFrame>
+
+				<!-- CompositeFrame de type NETEX_COMMUN correspondant a une partie du fichier resource.xml  -->
+				<GeneralFrame id="exemple:GeneralFrame:NETEX_COMMUN-1:LOC" version="2.0:FR-NETEX-2.4">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN:"/>
+					<members>
+						<Notice id="exemple:Notice:01:" version="any">
+							<Name>descripton du pass</Name>
+							<Text>Ce titre permet la libre circulation, pendant un mois calendaire,
+								sans limitation du nombre de trajets : sur une Origine-Destination
+								définie sur le réseau BreizhGo Car et en libre circulation sur le
+								réseau urbain de Rennes Métropole (réseau STAR)</Text>
+							<CanBeAdvertised>true</CanBeAdvertised>
+						</Notice>
+						<Notice id="exemple:Notice:02" version="any">
+							<Name>descripton détaillée</Name>
+							<Text>L abonnement mensuel est délivré sur un trajet donné. Les
+								correspondances entre lignes au sein du réseau BreizhGo ne sont pas
+								permises L’abonnement mensuel est disponible à la vente 2 mois
+								avant, à compter du 20 du mois. L’abonnement est valable sur un mois
+								calendaire (du 1er au dernier jour du mois</Text>
+							<CanBeAdvertised>true</CanBeAdvertised>
+						</Notice>
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
