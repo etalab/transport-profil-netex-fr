@@ -65,7 +65,7 @@ Service de transport dans lequel plusieurs usagers partagent un véhicule privé
 
 **COMMON VEHICLE SERVICE**
 
-Un SERVICE DE MOBILIT&eacute; est en soi abstrait. Un SERVICE DE V&eacute;HICULES COMMUNS est une sp&eacute;cialisation d'un SERVICE DE MOBILIT&eacute; impliquant des V&eacute;HICULES.
+Un SERVICE DE MOBILITE est en soi abstrait. Un SERVICE DE VEHICULES COMMUNS est une sp&eacute;cialisation d'un SERVICE DE MOBILIT&eacute; impliquant des V&eacute;HICULES.
 
 Trois sp&eacute;cialisations d'un SERVICE DE V&eacute;HICULES COMMUNS sont possibles :
 
@@ -91,7 +91,7 @@ Une flotte appartient à une organisation de transport, un organisme l&eacute;ga
 
 **MOBILITY CONSTRAINT ZONE** (NeTEx)
 
-Une ZONE DE CONTRAINTE DE SERVICE DE MOBILIT&eacute; d&eacute;finit des restrictions de d&eacute;placement au sein d'une zone pour un MODE DE FONCTIONNEMENT donn&eacute;.
+Une ZONE DE CONTRAINTE DE SERVICE DE MOBILITE d&eacute;finit des restrictions de d&eacute;placement au sein d'une zone pour un MODE DE FONCTIONNEMENT donn&eacute;.
 
 **MOBILITY SERVICE** (Transmodel)
 
@@ -99,7 +99,7 @@ Service de transport alternatif disponible sur un territoire &eacute;tendu, par 
 
 **MODE OF OPERATION**
 
-Un des trois type de mode d'exploitation parmi ;
+Un des trois types de mode d'exploitation parmi ;
 
 - Les modes d'exploitation conventionnels,
 - Les modes d'exploitation alternatifs
@@ -127,7 +127,7 @@ Association qui définit l’allocation d’une capacité de stationnement à un
 
 **PARKING BAY** (place de stationnement) _(Transmodel)_
 
-Emplacement où l'on peut stationner une (unique) v&eacute;hicule.
+Emplacement où l'on peut stationner un (unique) v&eacute;hicule.
 
 **PERSONAL MODE OF OPERATION** _(Transmodel)_
 
@@ -159,7 +159,7 @@ Chaque v&eacute;hicule possède :
 
 **USER PROFILE QUALIFICATION** (Transmodel)
 
-nsemble des attributs ou critères permettant de qualifier un profil d’utilisateur de transport, afin de déterminer ses droits, conditions d’accès ou avantages applicables dans le cadre d’un système de transport.
+Ensemble des attributs ou critères permettant de qualifier un profil d’utilisateur de transport, afin de déterminer ses droits, conditions d’accès ou avantages applicables dans le cadre d’un système de transport.
 
 **VEHICULE CHARGING EQUIPMENT** (NeTEx)
 
@@ -167,7 +167,7 @@ L'EQUIPEMENT DE RECHARGE DE VEHICULE est une sp&eacute;cialisation de l'EQUIPEME
 
 **VEHICLE MEETING PLACE** (NeTEx)
 
-Lieux où les v&eacute;hicules/voyageurs/conducteurs se rencontrent pour changer de mode de transport, pour embarquer, d&eacute;barquer, prendre en charge, d&eacute;poser, etc. Un LIEU DE RENCONTRE DE V&eacute;HICULES peut être associ&eacute; à un SITE sp&eacute;cifique (tel qu'un LIEU D'ARRÊT ou un POINT D'INT&eacute;RÊT) ou à tout composant du SITE
+Lieux où les v&eacute;hicules/voyageurs/conducteurs se rencontrent pour changer de mode de transport, pour embarquer, d&eacute;barquer, prendre en charge, d&eacute;poser, etc. Un LIEU DE RENCONTRE DE VEHICULES peut être associ&eacute; à un SITE sp&eacute;cifique (tel qu'un LIEU D'ARRÊT ou un POINT D'INT&eacute;RÊT) ou à tout composant du SITE
 
 **VEHICLE MODEL** (Transmodel)
 
@@ -175,7 +175,7 @@ Classification des v&eacute;hicules de transport public d'un même type selon l'
 
 **VEHICLE MODEL PROFILE** (NeTEx)
 
-Le PROFIL DU MODÈLE DE V&eacute;HICULE d&eacute;crit l'&eacute;QUIPEMENT install&eacute; à bord des V&eacute;HICULES d'un MODÈLE DE V&eacute;HICULE sp&eacute;cifique
+Le PROFIL DU MODÈLE DE VEHICULE d&eacute;crit l'EQUIPEMENT install&eacute; à bord des VEHICULES d'un MODÈLE DE VEHICULE sp&eacute;cifique
 
 **VEHICLE POOLER PROFIL**
 
@@ -183,7 +183,7 @@ Ensemble des caractéristiques décrivant un utilisateur ou un acteur qui met un
 
 **VEHICLE SHARING** (Transmodel)
 
-Location de v&eacute;hicule à court terme où le v&eacute;hicule peut être pris et stationn&eacute; à diff&eacute;rents endroits de la zone urbaine, souvent sans la contrainte de ramener le v&eacute;hicule à un endroit sp&eacute;cifique d&eacute;di&eacute;.
+Partage de v&eacute;hicule à court terme où le v&eacute;hicule peut être pris et stationn&eacute; à diff&eacute;rents endroits de la zone urbaine, souvent sans la contrainte de ramener le v&eacute;hicule à un endroit sp&eacute;cifique d&eacute;di&eacute;.
 
 **Vehicle Pooling** (Transmodel)
 
@@ -215,11 +215,11 @@ Zone identifi&eacute;e à l'int&eacute;rieur d'un parking d&eacute;di&eacute; au
 
 **VEHICLE SHARING PARKING BAY** (place de stationnement pour v&eacute;hicule partag&eacute;) _(Transmodel)_
 
-Emplacement où l'on peut stationner une (unique) v&eacute;hicule partag&eacute;e.
+Emplacement où l'on peut stationner un (unique) v&eacute;hicule partag&eacute;.
 
 **VEHICLE SHARING PLACE ASSIGNEMENT** (NeTEx)
 
-Une ATTRIBUTION DE PLACE DE PARTAGE DE V&eacute;HICULE peut être utilis&eacute;e pour attribuer des ZONES DE STATIONNEMENT et des PLACES DE STATIONNEMENT sp&eacute;cifiques à utiliser par un service donn&eacute;.
+Une ATTRIBUTION DE PLACE DE PARTAGE DE VEHICULE peut être utilis&eacute;e pour attribuer des ZONES DE STATIONNEMENT et des PLACES DE STATIONNEMENT sp&eacute;cifiques à utiliser par un service donn&eacute;.
 
 **VEHICLE SHARING SERVICE** (NeTEx)
 
@@ -243,7 +243,7 @@ Règle définissant les restrictions applicables à un type de véhicule dans un
 
 # Symboles et abr&eacute;viations
 
-**LOM** : Moi d'orientation des mobilit&eacute;s
+**LOM** : Loi d'orientation des mobilit&eacute;s
 
 **NeTEx** : Network Timetable Exchange
 
@@ -260,7 +260,7 @@ La mise à disposition des donn&eacute;es, quand elles existent, est obligatoire
 - Au niveau europ&eacute;en, du règlement d&eacute;l&eacute;gu&eacute; (UE) 2017/1926 de la Commission du 31 mai 2017 modifi&eacute; par le règlement d&eacute;l&eacute;gu&eacute; (UE) 2024/490 de la Commission du 29 novembre 2023 (&lt;<https://eur-lex.europa.eu/eli/reg_del/2017/1926/2024-03-04>&gt;), dit "règlement MMTIS" ;
 - Au niveau français, des articles L. 1115-1 à L. 1115-7 , D. 1115-1, R. 1115-2 à R. 1115-8 et D. 1115-9 à D. 1115-11 du code du transports, notamment cr&eacute;&eacute;s ou modifi&eacute;s par les articles 25 et 27 de loi n° 2019-1428 du 24 d&eacute;cembre 2019 d'orientation des mobilit&eacute;s, dites loi « LOM ».
 
-Ces mêmes articles de la LOM pr&eacute;cise le calendrier de mise à disposition des donn&eacute;es.
+Ces mêmes articles de la LOM pr&eacute;cisent le calendrier de mise à disposition des donn&eacute;es.
 
 Le tableau ci-dessous r&eacute;sulte de l'analyse du code des transports et du règlement MMTIS et fournit la liste des concepts concern&eacute;s dans le pr&eacute;sent profil correspondant aux donn&eacute;es mentionn&eacute;es dans l'annexe du règlement. Il sera donc n&eacute;cessaire de fournir ces donn&eacute;es pour être conforme au cadre r&eacute;glementaire (il s'agit bien de mettre à disposition toutes les donn&eacute;es existantes dans les SI transport, et non de cr&eacute;er des donn&eacute;es qui n'existeraient pas encore sous forme informatique).
 
@@ -1989,3 +1989,4 @@ Définit les restrictions applicables au compte client
 
 
 # Entêtes NeTEx
+
