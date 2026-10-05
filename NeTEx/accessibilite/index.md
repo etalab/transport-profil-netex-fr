@@ -1290,208 +1290,250 @@ etc.) et POSSIBILITÉ DE RESTER À BORD (ONBOARD STAY).
 Les SERVICES DISPONIBLES communs à toutes ces spécialisations et <span
 class="hl">retenus dans le cadre du profil sont les suivants </span>:
 
-***<u>-Information d'accessibilité</u>***
+**- AccessibilityInfoFacilityList (Information d'accessibilité)**
 
 * *audioInformation (information audio)*
-
 * *audioForHearingImpaired (information audio adaptée pour le
 malentendants)*
-
 * *visualDisplays (écran d’affichage)*
-
 * *displaysForVisuallyImpaired (écran d’affichage adapté pour les mal
 voyants)*
-
 * *largePrintTimetables (grand panneau d’affichage)*
 
-***<u>-Assistance</u>***
+**- AssistanceFacilityList (Assistance)**
 
 * *personalAssistance (assistance personnalisée)*
-
 * *boardingAssistance (assistance à l’embarquement)*
-
-* *wheechairAssistance (assistance pour les fauteuils roulants)*
-
+* *wheelchairAssistance (assistance pour les fauteuils roulants)*
 * *unaccompaniedMinorAssistance (assistance pour les mineurs non
 accompagnés)*
-
 * *conductor (chef de train ou de station disponible)*
-
 * *information (information disponible)*
+* *none (aucun service d'assistance proposé)*. <span
+class="hl">À utiliser comme valeur unique.</span>
 
-***<u>-A disposition pour l'accessibilité</u>***
+**- AccessibilityToolList (Outils à disposition pour l'accessibilité)**
 
 * *wheelchair (fauteuils roulants disponibles)*
-
 * *walkingstick (cannes disponibles)*
-
 * *audioNavigator (navigateurs audios disponibles)*
-
 * *visualNavigator (navigateurs visuels disponibles)*
-
 * *passengerCart (caddies disponibles)*
-
 * *pushchair (poussettes disponibles)*
-
 * *umbrella (parapluies disponibles)*
-
 * *buggy (voiturettes disponibles)*
 
-***<u>-Famille</u>***
+**- ClimateControlList (Contrôle de la température)**
+
+* *airConditioning (climatisation)*
+* *heating (chauffage)*
+* *noConditioning (pas de climatisation)*
+* *windowsCanBeOpened (fenêtres pouvant être ouvertes)*
+* *sealedWindows (fenêtres scellées)*
+* *none (aucun mécanisme de variation de la température)*
+
+**- FamilyFacilityList (Famille)**
 
 * *servicesForChildren (services et activités pour les enfants)*
-
 * *nurseryService (service de garderie)*
+* *none (aucun service spécifique pour les familles)*. <span
+class="hl">À utiliser comme valeur unique.</span>
 
-***<u>-Médical</u>***
+**- LightingControlFacilityList (Éclairage)**
+
+* *tintedWindows (vitres teintées)*
+* *blinds (stores)*
+* *curtains (rideaux)*
+* *dimmableLights (lumières à intensité réglable)*
+* *lightsAlwaysOn (lumière toujours allumée)*
+* *noNaturalLight (pas de lumière naturelle)*
+* *none (aucun mécanisme de variation de l'éclairage)*
+
+**- MedicalFacilityList (Médical)**
 
 * *defibrillator (défibrillateur)*
-
 * *alcoholTest (test d'alcoolémie)*
 
-***<u>-Mobilité/Accessibilité</u>***
+**- MobilityFacilityList (Mobilité/Accessibilité)**
 
 * *lowFloor (plancher bas)*
-
 * *stepFreeAccess (accès sans marches)*
-
 * *suitableForWheelchairs (adapté aux fauteuils roulants)*
-
 * *suitableForHeavilyDisabled (adapté aux handicaps lourds ; <span class="hl">
 note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
-
 * *suitableForPushchairs (adapté aux poussettes)*
-
 * *boardingAssistance (assistance à l’embarquement)*
-
 * *onboardAssistance (assistance à bord)*
-
 * *unaccompaniedMinorAssistance (assistance pour les mineurs non accompagnés)*
-
 * *tactilePlatformEdges (marquage podotactile sur le bord des quais)*
-
 * *tactileGuidingStrips (bandes de guidage podotactiles)*
+* *raisedKerb (quai surélevé)*
+* *none (aucun service pour faciliter la mobilité et l'accessibilité)*. <span
+class="hl">À utiliser comme valeur unique.</span>
 
-* *raisedKerb (trottoir surélevé)*
-* raisedKerb (quai surélevé)
-***<u>-Loisir</u>***
+**- PassengerCommsFacilityList (Loisir)**
 
 * *freeWifi (Wifi gratuit)*
-
 * *publicWifi (Wifi public)*
+* *internet (accès internet disponible)*
+* *telephone (téléphone public)*
+* *audioEntertainment (divertissements audio)*
+* *videoEntertainment (divertissements vidéo)*
+* *businessServices (centre d'affaires)*
+* *postOffice (services postaux)*
+* *postBox (boîte à lettres)*
+* *powerSupplySockets (prises électriques)*
+* *usbAPowerSocket (prises électriques avec connecteur USB A)*
+* *usbCPowerSocket (prises électriques avec connecteur USB C)*
 
-* *internet (accès Internet disponible)*
-
-* *powerSupplySockets (prises de courant)*
-
-***<u>-Information Voyageur</u>***
+**- PassengerInformationEquipmentList (Information Voyageur)**
 
 * *informationDesk (comptoir d’information voyageur)*
-
 * *realTimeDepartures (horaires de départ temps-réel)*
+* *fareInformation (informations tarifaires)*
+* *lineNetworkPlan (plan de la ligne ou du réseau)*
+* *lineTimetable (horaires de la ligne)*
+* *stopTimetable (horaire à l'arrêt)*
+* *interactiveKiosk (kiosque interactif)*
+* *realTimeDisruptions (perturbations en temps réel)*
+* *stationMap (plan de la station)*
+* *acousticStationMap (plan audio de la station)*
+* *tactileStationMap (plan tactile de la station)*
 
-**<u>-Dispositif d'information voyageur</u>***
+**- PassengerInformationFacilityList (Dispositif d'information voyageur)**
 
 * *nextStopIndicator (indicateur des prochains arrêts)*
-
 * *stopAnnouncements (annonce des arrêts)*
-
-* *passengerInformationDisplay (affichage pour l’information voyageur)*
-
+* *passengerInformationDisplay (écran d'affichage pour l’information voyageur)*
 * *realTimeConnections (information temps-réel sur les correspondances)*
 
-***<u>-Sanitaire</u>***
+**- SanitaryFacilityList(Sanitaire)**
 
-* *None* *(pas de sanitaires)*
-
+* *none (pas de sanitaires)*. <span
+class="hl">À utiliser comme valeur unique.</span>
 * *toilet (toilettes)*
-
-* *wheelChairAccessToilet (toilettes accessible pour les fauteuils
+* *wheelchairAccessToilet (toilettes accessible pour les fauteuils
 roulants)*
-
 * *shower (douches)*
-
 * *washingAndChangeFacilities (espace pour se laver et se changer)*
-
 * *babyChange (espace bébé)*
-
 * *wheelchairBabyChange (espace bébé accessible en fauteuil roulant)*
 
-***<u>-Billet et Billettique</u>***
+**- TicketingFacilityList (Billet et Billettique)**
 
 * *ticketMachines (machine de vente de billet)*
-
 * *ticketOffice (guichet de vente de billet)*
-
 * *ticketOnDemandMachines (machine d’impression de billet acheté en
 ligne)*
-
 * *mobileTicketing (billettique mobile – sur smartphone)*
 
-Les SERVICES DISPONIBLES de type Service (sans redondance des catégories
-précédentes) <span class="hl">retenus dans le cadre du profil sont les
+Les SERVICES À BORD (SERVICE FACILITY), sans redondance des catégories
+précédentes, <span class="hl">retenus dans le cadre du profil sont les
 suivants </span>:
 
-***<u>-Services Réservés</u>***
+**- ServiceReservationFacilityList (Services Réservés)**
 
 * *wheelchairOnlyReservations (service réservé pour fauteuil roulant, sur
 réservation)*
 
-***<u>-Accès à la place</u>***
+**- AccommodationAccessList (Accès à la place)**
 
+* *reservation (places réservées)*
+* *freeSeating (placement libre)*
 * *standing (debout)*
 
-***<u>-Bagages</u>***
+**- LuggageCarriageFacilityList (Bagages)**
 
 * *extraLargeLuggageRacks (espace pour les bagages très larges – incluant
 les fauteuils roulants notamment)*
-
 * *cyclesAllowed (vélos autorisés en bagage)*
+* *pushchairsAllowed (poussettes autorisées en bagage)*
 
-Les SERVICES DISPONIBLES spécifiques aux lieux (sans redondance des
-catégories précédentes) <span class="hl">retenus dans le cadre du profil
+Les SERVICES SUR SITE (SITE FACILITY SET), sans redondance des
+catégories précédentes, <span class="hl">retenus dans le cadre du profil
 sont les suivants </span>:
 
-***<u>-Urgence</u>***
+**- EmergencyServiceList (Urgence)**
 
 * *police (police)*
-
 * *fire (incendie)*
-
 * *firstAid (premiers secours)*
-
 * *sosPoint (point SOS, appel d’urgence)*
 
-***<u>-Service Bagage</u>***
+**- LuggageServiceFacilityList (Service Bagage)**
 
 * *porterage (porteur)*
-
 * *collectAndDeliverToStation (service de collecte et livraison en
 station)*
+* *leftLuggage (consigne, bagagerie)*
 
-***<u>-Parking</u>***
+**- ParkingFacilityList (Parking)**
 
 * *carPark (parking auto)*
-
 * *cyclePark (parking vélo)*
+* *parkAndRidePark (Park & Ride)*
+* *motorcyclePark (parking pour motos)*
+* *rentalCarPark (parking pour locations de voitures)*
 
-***<u>-Personnel</u>***
+**- Staffing (Personnel)**
 
-* *fullTime (personne présente en permanence)*
-
-* *partTime (personne présente à temps partiel)*
-
+* *fullTime (personnel présent en permanence)*
+* *partTime (personnel présent à temps partiel)*
 * *unmanned (sans personnel)*
 
-Les SERVICES DISPONIBLES disponible au niveau de la place, lors du
-voyage (sans redondance des catégories précédentes) <span
+Les SERVICE D’INSTALLATION (ACCOMMODATION) disponibles au niveau de la place, lors du
+voyage, sans redondance des catégories précédentes <span
 class="hl">retenus dans le cadre du profil sont les suivants :</span>
 
-***<u>Installation</u>***
+**- AccommodationFacilityList (Installation)**
 
 * *specialSleeper (couchettes spéciales/adaptées)*
-
 * *specialSeating (sièges spéciaux/adaptés)*
+
+Voici un exemple indiquant les SERVICES DISPONIBLES dans un LIEU D'ARRÊT :
+
+```xml
+<StopPlace id="doc:StopPlace:42:LOC" version="any">
+    (...)
+    <AccessibilityAssessment id="doc:AccessibilityAssessment:42:" version="any">
+        (...)
+    </AccessibilityAssessment>
+    <facilities>
+        <SiteFacilitySet id="doc:SiteFacilitySet:42:" version="any">
+          <AccessibilityInfoFacilityList>audioInformation audioForHearingImpaired visualDisplays displaysForVisuallyImpaired</AccessibilityInfoFacilityList>
+          <MedicalFacilityList>defibrillator</MedicalFacilityList>
+          <MobilityFacilityList>suitableForWheelchairs tactilePlatformEdges</MobilityFacilityList>
+          <PassengerInformationEquipmentList>informationDesk realTimeDepartures</PassengerInformationEquipmentList>
+          <SanitaryFacilityList>none</SanitaryFacilityList>
+          <TicketingFacilityList>ticketMachines ticketOffice</TicketingFacilityList>
+          <ParkingFacilityList>carPark cyclePark parkAndRidePark</ParkingFacilityList>
+          <Staffing>partTime</Staffing>
+        </SiteFacilitySet>
+    </facilities>
+    (...)
+</StopPlace>
+```
+
+Voici un exemple indiquant les SERVICES DISPONIBLES d'une COURSE COMMERCIALE :
+
+```xml
+<ServiceJourney version="any" id="doc:ServiceJourney:142:LOC">
+    (...)
+  <facilities>
+    <ServiceFacilitySet version="any" id="doc:SiteFacilitySet:142:">
+      <AssistanceFacilityList>boardingAssistance wheelchairAssistance</AssistanceFacilityList>
+      <ClimateControlList>airConditioning heating sealedWindows</ClimateControlList>
+      <MobilityFacilityList>lowFloor stepFreeAccess suitableForWheelchairs suitableForPushchairs </MobilityFacilityList>
+      <PassengerInformationFacilityList>stopAnnouncements</PassengerInformationFacilityList>
+      <SanitaryFacilityList>toilet wheelchairAccessToilet</SanitaryFacilityList>
+      <AccommodationAccessList>standing freeSeating</AccommodationAccessList>
+      <LuggageCarriageFacilityList>cyclesAllowed extraLargeLuggageRacks</LuggageCarriageFacilityList>
+      <ServiceReservationFacilityList>wheelchairOnlyReservations</ServiceReservationFacilityList>
+    </ServiceFacilitySet>
+  </facilities>
+  (...)
+</ServiceJourney>
+```
 
 ## Les Équipements
 
@@ -3806,7 +3848,7 @@ Si d'autres étages sont desservis, d'autres tronçons de cheminements avec Acce
 <ul>
 <li><p><em>personalAssistance</em> (personnel d’assistance)</p></li>
 <li><p><em>boardingAssistance <span class="hl">(le champ Description sera utilisé pour préciser l'assistant à l'embarquement/débarquement, notament dans le cas des correspondances multimodales)</span></em></p></li>
-<li><p><em>wheechairAssistance</em> (assistance pour les fauteuils roulants)</p></li>
+<li><p><em>wheelchairAssistance</em> (assistance pour les fauteuils roulants)</p></li>
 <li><p><em>unaccompaniedMinorAssistance</em> (assistance pour les mineurs non accompagnés)</p></li>
 <li><p><em>wheelchairUse</em> (utilisation de fauteil roulant)</p></li>
 <li><p><em>conductor</em> (controleur)</p></li>
