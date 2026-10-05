@@ -1490,6 +1490,51 @@ class="hl">retenus dans le cadre du profil sont les suivants :</span>
 * *specialSleeper (couchettes spéciales/adaptées)*
 * *specialSeating (sièges spéciaux/adaptés)*
 
+Voici un exemple indiquant les SERVICES DISPONIBLES dans un LIEU D'ARRÊT :
+
+```xml
+<StopPlace id="doc:StopPlace:42:LOC" version="any">
+    (...)
+    <AccessibilityAssessment id="doc:AccessibilityAssessment:42:" version="any">
+        (...)
+    </AccessibilityAssessment>
+    <facilities>
+        <SiteFacilitySet id="doc:SiteFacilitySet:42:" version="any">
+          <AccessibilityInfoFacilityList>audioInformation audioForHearingImpaired visualDisplays displaysForVisuallyImpaired</AccessibilityInfoFacilityList>
+          <MedicalFacilityList>defibrillator</MedicalFacilityList>
+          <MobilityFacilityList>suitableForWheelchairs tactilePlatformEdges</MobilityFacilityList>
+          <PassengerInformationEquipmentList>informationDesk realTimeDepartures</PassengerInformationEquipmentList>
+          <SanitaryFacilityList>none</SanitaryFacilityList>
+          <TicketingFacilityList>ticketMachines ticketOffice</TicketingFacilityList>
+          <ParkingFacilityList>carPark cyclePark parkAndRidePark</ParkingFacilityList>
+          <Staffing>partTime</Staffing>
+        </SiteFacilitySet>
+    </facilities>
+    (...)
+</StopPlace>
+```
+
+Voici un exemple indiquant les SERVICES DISPONIBLES d'une COURSE COMMERCIALE :
+
+```xml
+<ServiceJourney version="any" id="doc:ServiceJourney:142:LOC">
+    (...)
+  <facilities>
+    <ServiceFacilitySet version="any" id="doc:SiteFacilitySet:142:">
+      <AssistanceFacilityList>boardingAssistance wheelchairAssistance</AssistanceFacilityList>
+      <ClimateControlList>airConditioning heating sealedWindows</ClimateControlList>
+      <MobilityFacilityList>lowFloor stepFreeAccess suitableForWheelchairs suitableForPushchairs </MobilityFacilityList>
+      <PassengerInformationFacilityList>stopAnnouncements</PassengerInformationFacilityList>
+      <SanitaryFacilityList>toilet wheelchairAccessToilet</SanitaryFacilityList>
+      <AccommodationAccessList>standing freeSeating</AccommodationAccessList>
+      <LuggageCarriageFacilityList>cyclesAllowed extraLargeLuggageRacks</LuggageCarriageFacilityList>
+      <ServiceReservationFacilityList>wheelchairOnlyReservations</ServiceReservationFacilityList>
+    </ServiceFacilitySet>
+  </facilities>
+  (...)
+</ServiceJourney>
+```
+
 ## Les Équipements
 
 Un ÉQUIPEMENT est un matériel particulier installé, soit fixe
