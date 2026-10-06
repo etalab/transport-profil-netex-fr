@@ -22,6 +22,8 @@ CEN/TS 16614-2, Network and Timetable Exchange (NeTEx) - Part 2: Public transpor
 
 CEN/TS 16614-3, Network and Timetable Exchange (NeTEx) - Part 3: Fare exchange format
 
+CEN/TS 16614-5, Network and Timetable Exchange (NeTEx) - Part 5: Alternative Modes exchange format
+
 EN 12896, Road transport and traffic telematics - Public transport - Reference data model (Transmodel)
 
 Le profil France NeTex modes Alternatifs s'appuie sur les profils NeTex France mentionn&eacute;s ci-après. Les informations d&eacute;crites dans ces profil nationaux ne sont pas reprises dans ce document.
@@ -847,6 +849,28 @@ Figure 3 : Mode Alternatif NM
 
 ### Modèle de donn&eacute;es
 
+### Description des concepts
+
+Le diagramme ci-dessus a pour objectif de clarifier la distinction entre les deux concepts suivants :
+
+- Le concept de **MODE**, défini comme tout moyen de transport (communiqué au public d'une façon ou d'une autre), ou **SUBMODE** qui défini comme une variante d'un **MODE**, lié au **VEHICLE TYPE** (voir EN 12896-1) ;
+- Le concept de **MODE OF OPERATION** qui représente la manière dont le **MODE** ou le **SUBMODE** est exploité. 
+
+Le **MODE OF OPERATION** dispose de trois spécialisations, **CONVENTIONAL MODE OF OPERATION**, **PERSONAL MODE OF OPERATION**, et **ALTERNATIVE MODE OF OPERATION**. Seul le dernier sera détaillé dans ce profil.
+
+
+Le **ALTERNATIVE MODE OF OPERATION** correspond à tout mode d'exploitation annoncé publiquement différent du **CONVENTIONAL MODE OF OPERATION**, par exemple : **VEHICLE SHARING**, **VEHICLE RENTAL** et **VEHICLE POOLING**.
+    - **VEHICLE RENTAL** [non détaillé dans la version actuelle de ce profil]: Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule issu d'une **FLEET** de véhicules (en général détenus par des privés), disponible pour une utilisation pendant une certaine durée (potentiellement longue) et moyennant des frais, avec la contrainte de le restituer dans des agences spécifiées.
+    - **VEHICLE SHARING** : Location de véhicule à court terme où le véhicule peut être pris et garé à différents endroits de la zone urbaine, éventuellement sans la contrainte de restituer le véhicule à un lieu spécifique.
+    - **VEHICLE POOLING** : Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule détenu par un privé, consistant à partager le véhicule pour un trajet entre le conducteur qui effectue lui-même un déplacement et au moins un autre voyageur.
+
+
+> **NOTE** — *Chauffeured Car* (correspondant notamment aux VTC) et *Taxi* sont des types particuliers de **VEHICLE POOLING** (avec un **TYPE OF OPERATION** dédié).
+
+Le diagramme  montre que tout **SUBMODE** peut se voir attribuer un ou plusieurs **MODEs OF OPERATION**. Par exemple, un *mini-bus* peut être exploité en **CONVENTIONAL MODE OF OPERATION** (à horaires fixes ou à la demande), ou comme un **ALTERNATIVE MODE**, par exemple dédié au **VEHICLE SHARING**.
+
+**TYPE OF MODE OF OPERATION** caractérise plus précisément les manières possibles d'exploiter un **SUBMODE** donné.
+
 #### MODE OF OPERATION (Mode d'exploitation)
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
@@ -901,7 +925,11 @@ Table 7 - Type de Partage de v&eacute;hicule
 
 Classification de MODE OF OPERATION.
 
-<div class="joplin-table-wrapper"><table><tbody><tr><th><p><strong>Classification</strong></p></th><th><p><strong>Nom</strong></p></th><th><p><strong>Type</strong></p></th><th><p><strong>Cardinalit&eacute;</strong></p></th><th><p><strong>Description</strong></p></th></tr><tr><td><p>::&gt;</p></td><td><p>::&gt;</p></td><td><p>TypeOfValue</p></td><td><p>::&gt;</p></td><td><p>TYPE OF MODE OF OPERATION h&eacute;rite de TYPE OF VALUE.</p></td></tr><tr><td><p><a id="BKM_2D231185_EAE2_440B_8E14_F78C1D499CE1"></a>«PK»</p></td><td><p>id</p></td><td><p>TypeOfModeOfOperationIdType</p></td><td><p>1:1</p></td><td><p>Identifiant de TYPE OF MODE OF OPERATION.</p><p>Pour le partage de v&eacute;hicule sont autoris&eacute;s&nbsp;:</p><ul><li>Stationless Vehicle Sharing</li><li>Cycle sharing</li><li>Commercial Car sharing</li></ul></td></tr></tbody></table></div>
+<div class="joplin-table-wrapper"><table><tbody><tr><th><p><strong>Classification</strong></p></th><th><p><strong>Nom</strong></p></th><th><p><strong>Type</strong></p></th><th><p><strong>Cardinalit&eacute;</strong></p></th><th><p><strong>Description</strong></p></th></tr><tr><td><p>::&gt;</p></td><td><p>::&gt;</p></td><td><p>TypeOfValue</p></td><td><p>::&gt;</p></td><td><p>TYPE OF MODE OF OPERATION h&eacute;rite de TYPE OF VALUE.</p></td></tr><tr><td><p><a id="BKM_2D231185_EAE2_440B_8E14_F78C1D499CE1"></a>«PK»</p></td><td><p>id</p></td><td><p>TypeOfModeOfOperationIdType</p></td><td><p>1:1</p></td><td><p>Identifiant de TYPE OF MODE OF OPERATION.</p><p>Pour le partage de v&eacute;hicule sont autoris&eacute;s&nbsp;:</p><ul><li>Stationless Vehicle Sharing</li><li>Cycle sharing</li><li>Commercial Car sharing</li></ul>
+
+<p>Pour le covoiturage est autoris&eacute;&nbsp;:</p><ul><li>Long Distance Carpooling</li></ul>
+
+</td></tr></tbody></table></div>
 
 Table 8 - Type de mode d'op&eacute;ration
 
@@ -913,7 +941,7 @@ Table 8 - Type de mode d'op&eacute;ration
 
 Le modèle de flotte NM d&eacute;crit la flotte de v&eacute;hicules, d&eacute;finie comme un ensemble de v&eacute;hicules de tout type. Le concept de flotte est g&eacute;n&eacute;ral, c'est-à-dire qu'il ne d&eacute;pend pas du mode d'exploitation, mais il est particulièrement utile pour d&eacute;crire les services offerts par certains modes d'exploitation alternatifs (NM).**
 
-Une flotte appartient à une organisation de transport, un organisme l&eacute;galement constitu&eacute; li&eacute; à un aspect quelconque du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.**
+Une flotte appartient à une organisation de transport (Opérateur, Autorité organisatrice), un organisme l&eacute;galement constitu&eacute; li&eacute; à un aspect quelconque du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.**
 
 ![Flotte de véhicule NM - Modèle conceptuel](media/Fig4_Flotte.JPG)
 
@@ -965,7 +993,7 @@ Exemple xml 2 : Flotte de v&eacute;hicules
 
 L'entit&eacute; SERVICE EN LIGNE repr&eacute;sente tout service accessible à distance offrant un accès à un mode de transport et/ou à des informations relatives aux services de transport.
 
-Un OP&eacute;RATEUR DE SERVICE EN LIGNE est responsable de la gestion d'un SERVICE EN LIGNE (mais pas n&eacute;cessairement du transport lui-même, c'est-à-dire diff&eacute;rent d'un OP&eacute;RATEUR DE TRANSPORT), par exemple pour fournir des informations à un utilisateur sur des offres de covoiturage disponibles ou adapt&eacute;es, via une application web. Le SERVICE EN LIGNE assure une interface entre les utilisateurs ou entre utilisateurs et op&eacute;rateurs.
+Un OP&eacute;RATEUR DE SERVICE EN LIGNE est responsable de la gestion d'un SERVICE EN LIGNE (mais pas n&eacute;cessairement du transport lui-même, c'est-à-dire diff&eacute;rent d'un OP&eacute;RATEUR DE TRANSPORT), par exemple pour fournir des informations à un utilisateur sur des offres de covoiturage disponibles ou adapt&eacute;es, via une application web. Le SERVICE EN LIGNE assure une interface entre les utilisateurs (entre le conducteur et le voyageur pour le covoiturage, par exemple) ou entre utilisateurs et op&eacute;rateurs.
 
 ![Services en Ligne](media/Fig5_ServiceEnLigne.JPG)
 
@@ -1028,30 +1056,32 @@ La d&eacute;finition des zones de stationnement et de leurs emplacements est d&e
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
-| ::> | ::> | ParkingArea | ::> | VEHICLE SHARING PARKING AREA h&eacute;rite PARKING AREA. |
+| ::> | ::> | ParkingArea | ::> | VEHICLE SHARING PARKING AREA h&eacute;rite PARKING AREA.<br>(Voir le profil Parking pour les nombreux élément hérités) |
 | «PK» | id  | VehicleSharingParkingAreaIdType | 1:1 | Identifiant de VEHICLE SHARING PARKING AREA. |
 
 Table 13 - **PLACES DE STATIONNEMENT**
 
 #### VEHICLE SHARING PARKING AREA (Zone de partage de v&eacute;hicule)
 
-L'affectation d'une VEHICLE SHARING PARKING AREA à tout type de service de partage de v&eacute;hicule
+La VEHICLE SHARING PARKING AREA n'a pas d'attribut suppl&eacute;mentaire par rapport à une PARKING AREA (voir Profil Parking): c'est une une spécialisation qui a pour vocation de réserver la zone de parking au partage de vehicules.
+
+Il est aussi possible affecter certains place d'un parking classique à un service de partage de v&eacute;hicule, sans pour autant que toute la zone lui soit attribu&eacute;e. L'affectation d'une place (PARKING BAY) se fait alors parun un VEHICLE SHARING PLACE ASSIGNMENT.
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
 | ::> | ::> | VehicleServicePlaceAssignment | ::> | VEHICLE SHARING PLACE ASSIGNMENT h&eacute;rite de VEHICLE SERVICE PLACE ASSIGNMENT. |
 | «PK» | id  | VehicleSharingPlaceAssignmentIdType | 1:1 | Identifiant de VEHICLE SHARING PLACE ASSIGNMENT. |
-| «cntd» | VehicleCommonServiceRef | VehicleSharingServiceRef | 0:\* | R&eacute;f&eacute;rence à VEHICLE SHARING SERVICE |
+| «cntd» | VehicleCommonServiceRef | VehicleSharingServiceRef | 0:\* | R&eacute;f&eacute;rence à un VEHICLE SHARING SERVICE (pour réserver une place ou connaitre la disponibilité, par exemple) |
 | «FK» | VehicleSharingParkingAreaRef | VehicleSharingParkingAreaRef | 1:1 | R&eacute;f&eacute;rence un VEHICLE SHARING PARKING AREA. |
 | «FK» | VehicleSharingParkingBayRef | ParkingBayRef | 1:1 | R&eacute;f&eacute;rence à VEHICLE SHARING PARKING BAY. |
 
-Table 14 - **PLACES DE STATIONNEMENT POUR V&eacute;HICULES PARTAG&eacute;S**
+Table 14 - **AFFECTATION DE PLACES DE STATIONNEMENT POUR V&eacute;HICULES PARTAG&eacute;S**
 
 #### Vehicle Pooling Parking Area (Zone de covoiturage)
 
 _Une partie d&eacute;di&eacute;e de l’AIRE DE STATIONNEMENT pour le covoiturage compos&eacute;e d’une ou de plusieurs PLACES DE STATIONNEMENT DE COVOITURAGE._.
 
-Il est possible de préciser que la zone de parking est dédiée au covoiturage en utilisant la Balise <Name/>. Se reporter au profil NexTEx France Parking.
+Il est possible de préciser que la zone de parking est dédiée au covoiturage en utilisant la balise **ParkingType** avec la valeur _liftShareParking_ (Se reporter au profil NexTEx France Parking pour plus de détails sur les objest ci-dessous).
 
 Exemple : 
 ``` xml
@@ -1065,7 +1095,7 @@ Exemple :
 | ::> | ::> | _ParkingArea_ | ::> | VEHICLE POOLING PARKING AREA h&eacute;rite de from PARKING AREA<br><br>\[non d&eacute;crit dans PART5 NeTex\] |
 | «PK» | **_id_** | _VehiclePoolingParkingAreaIdType_ | 1:1 | Identifier of VEHICLE POOLING PARKING AREA. |
 
-Table 14 — Zone de co voiturage
+Table 14 — Zone de covoiturage
 
 #### ParkingBay (Place de stationnement)
 
@@ -1076,7 +1106,7 @@ Une place dans le PARKING r&eacute;serv&eacute;e au partage de v&eacute;hicules.
 | ::> | ::> | ParkingBay | ::> | VEHICLE SHARING PARKING BAY h&eacute;rite PARKING BAY. |
 | «PK» | id  | VehicleSharingParkingBayIdType | 1:1 | Identifiant de VEHICLE SHARING PARKING BAY. |
 
-Table 15 - **Dock de stationnement pour v&eacute;hicule**
+Table 15 - **Place de stationnement pour v&eacute;hicule**
 
 ##### **_VehicleSharingParkingBay (Emplacement de parking à l'usage de partage de v&eacute;hicule)_**
 
@@ -1087,7 +1117,7 @@ Permet de d&eacute;finir un Place de parking pour le partage de v&eacute;hicule.
 | ::> | ::> | _ParkingBay_ | ::> | VEHICLE SHARING PARKING BAY h&eacute;rite de PARKING BAY. |
 | «PK» | **_id_** | _VehicleSharingParkingBayIdType_ | 1:1 | Identifiant du VEHICLE SHARING PARKING BAY. |
 
-Table 16 - **Dock de stationnement pour v&eacute;hicule partag&eacute;**
+Table 16 - **Place de stationnement pour v&eacute;hicule partag&eacute;**
 
 VehiculeSharingParkingArea est une spécialisation de ParkingArea qui permet de préciser les emplacements dévolus au covoiturage lorsqu’existant
 
