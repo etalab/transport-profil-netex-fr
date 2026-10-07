@@ -1258,7 +1258,7 @@ Restriction d'utilisation dans une MOBILITY SERVICE CONSTRAINT ZONE TRANSPORT TY
 
 Table 19 - Type de zone de restriction
 
-## V&eacute;hicules
+## Types de V&eacute;hicules et V&eacute;hicules
 
 **Statut implémentation : FACULTATIF** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
 
@@ -1267,6 +1267,8 @@ Table 19 - Type de zone de restriction
 La d&eacute;finition d'un v&eacute;hicule (Cycle, Voiture) r&eacute;pond à la d&eacute;composition conceptuelle suivante.
 
 Note : dans le contexte des Nouveaux Modes, la description de v&eacute;hicule se fera essentiellement via des SIMPLE VEHICLE TYPE (qui, comme de VEHICLE TYPE, héritent de TRANSPORT TYPE)
+
+Note : les VEHICLE TYPEs sont déjà décrits dans le **NeTEx - Profil France - Horaires**, ce chapitre vien en complément pour la cas particulier des Nouveaux Modes.
 
 ![Fig9_Vehicule](media/Fig9_Vehicule.JPG)
 
@@ -1280,19 +1282,22 @@ Figure 10 : Actual Vehicle Equipment MC
 
 ### Modèle de donn&eacute;es
 
-Le modèle **SIMPLE** **VEHICLE TYPE** d&eacute;crit les v&eacute;hicules « personnels » et leurs propri&eacute;t&eacute;s.
+Le modèle **SIMPLE** **VEHICLE TYPE** d&eacute;crit les types de v&eacute;hicules « personnels » et leurs propri&eacute;t&eacute;s.
 
-Les v&eacute;hicules peuvent être class&eacute;s en fonction des exigences de planification, notamment :
+Les types de v&eacute;hicules peuvent être class&eacute;s en fonction des exigences de planification, notamment :
 
 - Le modèle,
 - La capacit&eacute;,
 - Les &eacute;quipements embarqu&eacute;s (Siège b&eacute;b&eacute;, …)
 
-Ces mêmes exigences peuvent être associ&eacute;es à un **SERVICE JOURNEY** pour indiquer que ce service doit être assur&eacute; par un v&eacute;hicule de ce type.
+Ces mêmes exigences peuvent être associ&eacute;es à un **SERVICE JOURNEY** ou un **SINGLE JOURNEY** (typiquement pour un service de covoiturage) pour indiquer que ce service doit être assur&eacute; par un v&eacute;hicule de ce type.
 
 #### Vehicle (V&eacute;hicule)
 
 Description d'un v&eacute;hicule transport des passagers.
+
+Rappel: Le **VEHICLE** est utilis&eacute;e pour d&eacute;crire les v&eacute;hicules physiques de transport disponibles pour les op&eacute;rations et l'affectation quotidienne (par opposition aux v&eacute;hicules logiques consid&eacute;r&eacute;s pour la planification des ressources). Chaque **VEHICLE** doit &ecirc;tre classifi&eacute; comme &eacute;tant d'un **VEHICLE TYPE** particulier.
+
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
