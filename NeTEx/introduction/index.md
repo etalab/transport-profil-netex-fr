@@ -29,6 +29,16 @@
 
 ### Level of Service 2 
 
+| Catégorie                                                                                                                                              | Concepts à minima                              | Autres concepts                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Location search: Location of parking places                                                                                                            | PARKING                                        | PARKING AREA, REFUELLING EQUIPMENT, VEHICLE CHARGING EQUIPMENT et leurs informations d'accessibilité |
+| Location search: Park & Ride stops                                                                                                                     | PARKING                                        | PARKING AREA, REFUELLING EQUIPMENT, VEHICLE CHARGING EQUIPMENT et leurs informations d'accessibilité |
+| Location search: Bike sharing stations                                                                                                                 | PARKING                                        | PARKING AREA, REFUELLING EQUIPMENT, VEHICLE CHARGING EQUIPMENT et leurs informations d'accessibilité |
+| Location search: Car-sharing stations                                                                                                                  | PARKING                                        | PARKING AREA, REFUELLING EQUIPMENT, VEHICLE CHARGING EQUIPMENT et leurs informations d'accessibilité |
+| Location search: Secure bike parking (such as locked bike garages)                                                                                     | PARKING                                        | PARKING AREA, REFUELLING EQUIPMENT, VEHICLE CHARGING EQUIPMENT et leurs informations d'accessibilité |
+| Where and how to buy tickets for scheduled transport, including retail channels, fulfilment methods, payment methods                                   | *voir la partie Tarifs*                        |                                                                                                      |
+| Where and how to pay for parking, including retail channels, fulfilment methods, payment methods                                                       | PARKING (attributs relatifs à la tarification) |                                                                                                      |
+| Basic common standard fares (all scheduled modes): Standard fare structures (point to point including daily and weekly fares, zonal fares, flat fares) | *voir la partie Tarifs*                        |                                                                                                      |
 
 
 
