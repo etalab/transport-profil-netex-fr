@@ -935,7 +935,7 @@ Table 8 - Type de mode d'op&eacute;ration
 
 ## Flotte de v&eacute;hicule
 
-**Statut implémentation : OBLIGATOIRE** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
+**Statut implémentation : OBLIGATOIRE ** : Cette partie du profil doit être implémentée en cohérence avec le contexte (pour les service de partage de v&eacute;hicules).
 
 ### Modèle Conceptuel
 
@@ -1145,17 +1145,17 @@ Table 17 — **Dock de stationnement pour v&eacute;hicule de co voiturage**
 
 **Statut implémentation : OBLIGATOIRE** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
 
-### Modèle conceptuel
+### Mod&egrave;le conceptuel
 
-Le MODÈLE NM Vehicle Meeting Place d&eacute;finit les lieux d’arrêt où les passagers se retrouvent avec leurs modes de transport alternatifs. Au niveau le plus g&eacute;n&eacute;ral, il peut s’agir de tout lieu disposant d’une adresse. Ceux-ci peuvent inclure des STOP PLACE et des PARKING, ainsi que leurs composant.
+Le mod&egrave;le NM Vehicle Meeting Place d&eacute;finit les lieux d’arrêt où les passagers se retrouvent avec leurs modes de transport alternatifs. Au niveau le plus g&eacute;n&eacute;ral, il peut s’agir de tout lieu disposant d’une adresse. Ceux-ci peuvent inclure des STOP PLACE et des PARKING, ainsi que leurs composant.
 
-Transmodel inclut un modèle permettant de d&eacute;crire les &eacute;l&eacute;ments de stationnement comme des sp&eacute;cialisations de SITE COMPONENT. La relation entre les lieux d’arrêt et les services qui s’y arrêtent est d&eacute;crite dans le MODÈLE NM Service Area Assignment.
+Transmodel inclut un mod&egrave;le permettant de d&eacute;crire les &eacute;l&eacute;ments de stationnement comme des sp&eacute;cialisations de SITE COMPONENT. La relation entre les lieux d’arrêt et les services qui s’y arrêtent est d&eacute;crite dans le mod&egrave;le NM VEHICLE SERVICE PLACE ASSIGNMENT.
 
-Le MODÈLE NM Vehicle Meeting Place distingue deux grands types de ADDRESSABLE PLACE, c’est-&agrave;-dire des lieux pouvant être localis&eacute;s par des coordonn&eacute;es spatiales et/ou par une adresse postale ou routière :
+Le mod&egrave;le NM VEHICLE MEETING PLACE distingue deux grands types d'ADDRESSABLE PLACE, c’est-&agrave;-dire des lieux pouvant être localis&eacute;s par des coordonn&eacute;es spatiales et/ou par une adresse postale ou routière :
 
-VEHICLE MEETING PLACE : lieux où des v&eacute;hicules, des voyageurs ou des conducteurs se rencontrent afin de changer de mode de transport, pour la mont&eacute;e, la descente, la prise en charge, la d&eacute;pose, etc. Un VEHICLE MEETING PLACE peut être associ&eacute; &agrave; un SITE sp&eacute;cifique (tel qu’un STOP PLACE ou un POINT OF INTEREST) ou &agrave; tout composant au sein de ce SITE.
+VEHICLE MEETING PLACE : lieux où des v&eacute;hicules, des voyageurs ou des conducteurs se rencontrent afin de changer de mode de transport, pour la mont&eacute;e, la descente, la prise en charge, la d&eacute;pose, etc. Un VEHICLE MEETING PLACE peut être associ&eacute; &agrave; un SITE sp&eacute;cifique (tel qu’un STOP PLACE ou un POINT OF INTEREST) ou &agrave; tout composant au sein de ce SITE.Il est aussi naturellement possible de l'associer à toute ADRESSABLE PLACE qui peut correspondre, si n&eacute;cessaire, à une adresse ppersonnelle.
 
-Ces lieux se distinguent par l’usage qui en est fait. Dans les VEHICLE MEETING PLACE, il n’est pas possible de laisser des v&eacute;hicules sans surveillance pendant une dur&eacute;e prolong&eacute;e. Un PLACE se distingue d’une CONNECTION, laquelle d&eacute;finit une paire de lieux entre lesquels un transfert est possible.
+Ces lieux se distinguent par l’usage qui en est fait. Dans les VEHICLE MEETING PLACE, il n’est pas possible de laisser des v&eacute;hicules sans surveillance pendant une dur&eacute;e prolong&eacute;e. 
 
 ![Fig7_Point de rencontre Covoiturage](media/Fig7_PointdeRencontre_Cov.JPG)
 
@@ -1175,7 +1175,7 @@ Un lieu où v&eacute;hicules et passagers se rencontrent pour changer de mode de
 | «FK» | **_TopographicPlaceRef_** | _TopographicPlaceRef_ | 0:1 | Reference &agrave; un TOPOGRAPHIC PLACE. |
 | «FK» | **_SiteElementRef_** | _SiteElementRef_ | 0:1 | R&eacute;f&eacute;rence &agrave; un SITE ELEMENT, tel que PARKING, PARKING AREA, PARKING BAP, STOP PLACE, QUAY, POINT OF INTEREST, etc. |
 
-Table 19 — VehicleMeetingPlace — Elemen
+Table 19 — VehicleMeetingPlace — Element
 
 #### Vehicle Pooling Meeting Place (Lieu de rendez-vous)
 
@@ -1189,13 +1189,16 @@ Un lieu de rendez-vous pour le covoiturage, d&eacute;sign&eacute; ou convenu par
 
 Table 19 - VEHICLE POOLING MEETING PLACE – Attributes
 
+
+Note : Voir VehicleSharingPlaceAssignment pour affectation de ce MEETING PLACEs aux services.
+
 ## G&eacute;ofencing
 
 **Statut implémentation : OBLIGATOIRE** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
 
 **Une ZONE DE CONTRAINTE DE SERVICE DE MOBILIT&eacute;** (MOBILITY SERVICE CONSTRAINT ZONE ) impose des restrictions sur les d&eacute;placements à l'int&eacute;rieur d'une zone pour un **MODE DE FONCTIONNEMENT** donn&eacute;.
 
-Une **RESTRICTION DE ZONE PAR TYPE DE V&eacute;HICULE** (VEHICLE TYPE ZONE RESTRICTION ) sp&eacute;cifie quel **TYPE DE RESTRICTION** s'applique à un **TYPE DE TRANSPORT (**TRANSPORT TYPE) donn&eacute;.
+Une **RESTRICTION DE ZONE PAR TYPE DE V&eacute;HICULE** (VEHICLE TYPE ZONE RESTRICTION ) sp&eacute;cifie quel **TYPE DE RESTRICTION** s'applique à un **TYPE DE TRANSPORT** (TRANSPORT TYPE) donn&eacute;.
 
 ### Modèle conceptual
 ![Fig8_GeoFencing](media/Fig8_ModeleGeoFencing.JPG)
@@ -1263,11 +1266,13 @@ Table 19 - Type de zone de restriction
 
 La d&eacute;finition d'un v&eacute;hicule (Cycle, Voiture) r&eacute;pond à la d&eacute;composition conceptuelle suivante.
 
+Note : dans le contexte des Nouveaux Modes, la description de v&eacute;hicule se fera essentiellement via des SIMPLE VEHICLE TYPE (qui, comme de VEHICLE TYPE, héritent de TRANSPORT TYPE)
+
 ![Fig9_Vehicule](media/Fig9_Vehicule.JPG)
 
 Figure 9 : V&eacute;hicule - MC
 
-L'&eacute;quipement r&eacute;el du v&eacute;hicule sp&eacute;cifie le type d'&eacute;quipement à utiliser dans un v&eacute;hicule Donn&eacute;
+L'&eacute;quipement r&eacute;el du v&eacute;hicule sp&eacute;cifie le type d'&eacute;quipement à utiliser dans un v&eacute;hicule donn&eacute;
 
 ![Fig10_Equipement_Vehicule](media/Fig10_Equipement_vehicule.JPG)
 
