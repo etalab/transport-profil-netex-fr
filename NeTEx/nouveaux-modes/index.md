@@ -1508,13 +1508,18 @@ Exemple xml 4 : Exemple mod&eacute;lisation « SimpleVehiculeType »
 
 ## Identifiants d'accès aux véhicules
 
-Un code d'accès au service (SERVICE ACCESS CODE) est une spécialisation du document de voyage (TRAVEL DOCUMENT) qui fournit à l'utilisateur le code nécessaire pour utiliser un service.
+Un code d'accès au service (SERVICE ACCESS CODE) est une spécialisation du document de voyage (TRAVEL DOCUMENT) qui fournit à l'utilisateur le code nécessaire pour utiliser un service. Pour mémoire un TRAVEL DOCUMENT peut prendre de nombreuses formes et être une carte à puce, un document sur un smartphone ou une application sur un smartphone, etc.
 
 Les documents de voyage sont associés à un client de transport donné via un contrat tarifaire (FARE CONTRACT). Ils peuvent également être liés à un package d'achat client (CUSTOMER PURCHASE PACKAGE) en tant que représentation électronique de l'achat effectué par le client.
 
 Un code d'accès au service peut être associé à un véhicule physique et à un dispositif d'accès au support (MEDIUM ACCESS DEVICE) via une affectation d'accès au véhicule (VEHICLE ACCESS ASSIGNMENT). Cette association constitue un lien indépendant pouvant être utilisé de manière anonyme vis-à-vis du client pour exploiter le système d'accès.
 
 Le diagramme NM Vehicle Access MODEL décrit un contexte plus large lié à la mise à disposition d'un contrat permettant d'accéder à un service de transport. En particulier, le contrat tarifaire (FARE CONTRACT) peut héberger les codes d'accès au service fournis pour un service de mobilité, quel que soit le mode de transport alternatif.
+
+Note: les concepts liés à la tarification (TRAVEL DOCUMENT, FARE CONTRACT, etc.), ainsi que leur utilisation, sont détaillés dans le **Profil France - Tarifs**
+
+Note: les codes d'accès ne sont utiles à échanger pour vers un service dédié à l'émission du titre de voyage: dans un contexte classique d'information voyageur seule l'indication qu'un code d'accès sera fournit suffira (_UsageValidityPeriod.ActivationMeans_).
+
 
 ### Modèle conceptuel
 
@@ -1884,6 +1889,8 @@ Le MODÈLE d'information sur la disponibilit&eacute; des v&eacute;hicules d&eacu
 
 Ces informations peuvent être globales, concernant la capacit&eacute; de l'ensemble du PARKING, ou indiquer la capacit&eacute; des ZONES DE STATIONNEMENT par TYPE DE V&eacute;HICULE. Il convient toutefois de noter que, pour &eacute;quilibrer l'offre et la demande dans les gares très fr&eacute;quent&eacute;es, les op&eacute;rateurs proposent parfois un service de personnel pour fournir ou retirer les v&eacute;hicules suppl&eacute;mentaires d'un d&eacute;pôt fixe ou de les placer sur des v&eacute;hicules mobiles. Cela signifie que la capacit&eacute; « virtuelle » d'un PARKING peut être sup&eacute;rieure au nombre de places physiques.
 
+Note:Il s'agit ici d'une capactié à héberger des véhicule, si une disponibilité en temps réel est souhaité cela se fera par le serice **SIRI FacilityMonitoring** (_MonitoredCounting_)
+
 ![Fig18_DisponibiliteVehicule](media/Fig18_DisponibiliteVehicule.JPG)
 
 Figure 18 : Disponibilit&eacute; pr&eacute;vue des v&eacute;hicules - MC
@@ -1914,7 +1921,7 @@ Note : Pour tout compl&eacute;ment d'information se r&eacute;f&eacute;rer au pro
 
 La d&eacute;finition des &eacute;quipements de rechargement pour les v&eacute;hicules partag&eacute;s &eacute;lectrique peut être rattach&eacute;e à un emplacement de v&eacute;hicule en station.
 
-A noter que l'information d'existance de capacit&eacute; de rechargement &eacute;lectrique est port&eacute;e au niveau de la Station (Recharging Availability).
+A noter que l'information d'existance de capacit&eacute; de rechargement &eacute;lectrique est port&eacute;e au niveau de la Station (_RechargingAvailable_).
 
 ![Fig19_EquipementRechargement](media/Fig19_EquipementRechargement.JPG)
 
@@ -1977,23 +1984,23 @@ Ci-dessous un exemple de compte client associé à deux Moyens de paiement
 
 ```= xml
 <CustomerAccount version="any" id="rydt:Cust555@AC7651">
-<Name>hotrider</Name>
-<StartDate>2020-02-28T13:00:00</StartDate>
-<CustomerAccountStatusType>active</CustomerAccountStatusType>
-<CustomerPaymentMeansRef version="any" ref="rydt:Cust555@AC7651@p1"/>
-<paymentMeans>
-<CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p1">
-<Name>EZ Ritter Visa Card</Name>
-<EmvCardRef version="any" ref="visa:47594444555666"/>
-</CustomerPaymentMeans>
-<CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p2">
-<Name>EZ Ritter mobile device</Name>
-<MobileDeviceRef version="any" ref="rydt:4178671234567"/>
-</CustomerPaymentMeans>
-</paymentMeans>
-<mediumAccessDevices>
-<MobileDeviceRef version="any" ref="rydt:4178671234567"/>
-</mediumAccessDevices>
+    <Name>hotrider</Name>
+    <StartDate>2020-02-28T13:00:00</StartDate>
+    <CustomerAccountStatusType>active</CustomerAccountStatusType>
+    <CustomerPaymentMeansRef version="any" ref="rydt:Cust555@AC7651@p1" />
+    <paymentMeans>
+        <CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p1">
+            <Name>EZ Ritter Visa Card</Name>
+            <EmvCardRef version="any" ref="visa:47594444555666" />
+        </CustomerPaymentMeans>
+        <CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p2">
+            <Name>EZ Ritter mobile device</Name>
+            <MobileDeviceRef version="any" ref="rydt:4178671234567" />
+        </CustomerPaymentMeans>
+    </paymentMeans>
+    <mediumAccessDevices>
+        <MobileDeviceRef version="any" ref="rydt:4178671234567" />
+    </mediumAccessDevices>
 </CustomerAccount>
 ```
 
