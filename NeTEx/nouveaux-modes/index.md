@@ -22,6 +22,8 @@ CEN/TS 16614-2, Network and Timetable Exchange (NeTEx) - Part 2: Public transpor
 
 CEN/TS 16614-3, Network and Timetable Exchange (NeTEx) - Part 3: Fare exchange format
 
+CEN/TS 16614-5, Network and Timetable Exchange (NeTEx) - Part 5: Alternative Modes exchange format
+
 EN 12896, Road transport and traffic telematics - Public transport - Reference data model (Transmodel)
 
 Le profil France NeTex modes Alternatifs s'appuie sur les profils NeTex France mentionn&eacute;s ci-après. Les informations d&eacute;crites dans ces profil nationaux ne sont pas reprises dans ce document.
@@ -847,6 +849,28 @@ Figure 3 : Mode Alternatif NM
 
 ### Modèle de donn&eacute;es
 
+### Description des concepts
+
+Le diagramme ci-dessus a pour objectif de clarifier la distinction entre les deux concepts suivants :
+
+- Le concept de **MODE**, défini comme tout moyen de transport (communiqué au public d'une façon ou d'une autre), ou **SUBMODE** qui défini comme une variante d'un **MODE**, lié au **VEHICLE TYPE** (voir EN 12896-1) ;
+- Le concept de **MODE OF OPERATION** qui représente la manière dont le **MODE** ou le **SUBMODE** est exploité. 
+
+Le **MODE OF OPERATION** dispose de trois spécialisations, **CONVENTIONAL MODE OF OPERATION**, **PERSONAL MODE OF OPERATION**, et **ALTERNATIVE MODE OF OPERATION**. Seul le dernier sera détaillé dans ce profil.
+
+
+Le **ALTERNATIVE MODE OF OPERATION** correspond à tout mode d'exploitation annoncé publiquement différent du **CONVENTIONAL MODE OF OPERATION**, par exemple : **VEHICLE SHARING**, **VEHICLE RENTAL** et **VEHICLE POOLING**.
+    - **VEHICLE RENTAL** [non détaillé dans la version actuelle de ce profil]: Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule issu d'une **FLEET** de véhicules (en général détenus par des privés), disponible pour une utilisation pendant une certaine durée (potentiellement longue) et moyennant des frais, avec la contrainte de le restituer dans des agences spécifiées.
+    - **VEHICLE SHARING** : Location de véhicule à court terme où le véhicule peut être pris et garé à différents endroits de la zone urbaine, éventuellement sans la contrainte de restituer le véhicule à un lieu spécifique.
+    - **VEHICLE POOLING** : Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule détenu par un privé, consistant à partager le véhicule pour un trajet entre le conducteur qui effectue lui-même un déplacement et au moins un autre voyageur.
+
+
+> **NOTE** — *Chauffeured Car* (correspondant notamment aux VTC) et *Taxi* sont des types particuliers de **VEHICLE POOLING** (avec un **TYPE OF OPERATION** dédié).
+
+Le diagramme  montre que tout **SUBMODE** peut se voir attribuer un ou plusieurs **MODEs OF OPERATION**. Par exemple, un *mini-bus* peut être exploité en **CONVENTIONAL MODE OF OPERATION** (à horaires fixes ou à la demande), ou comme un **ALTERNATIVE MODE**, par exemple dédié au **VEHICLE SHARING**.
+
+**TYPE OF MODE OF OPERATION** caractérise plus précisément les manières possibles d'exploiter un **SUBMODE** donné.
+
 #### MODE OF OPERATION (Mode d'exploitation)
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
@@ -901,19 +925,23 @@ Table 7 - Type de Partage de v&eacute;hicule
 
 Classification de MODE OF OPERATION.
 
-<div class="joplin-table-wrapper"><table><tbody><tr><th><p><strong>Classification</strong></p></th><th><p><strong>Nom</strong></p></th><th><p><strong>Type</strong></p></th><th><p><strong>Cardinalit&eacute;</strong></p></th><th><p><strong>Description</strong></p></th></tr><tr><td><p>::&gt;</p></td><td><p>::&gt;</p></td><td><p>TypeOfValue</p></td><td><p>::&gt;</p></td><td><p>TYPE OF MODE OF OPERATION h&eacute;rite de TYPE OF VALUE.</p></td></tr><tr><td><p><a id="BKM_2D231185_EAE2_440B_8E14_F78C1D499CE1"></a>«PK»</p></td><td><p>id</p></td><td><p>TypeOfModeOfOperationIdType</p></td><td><p>1:1</p></td><td><p>Identifiant de TYPE OF MODE OF OPERATION.</p><p>Pour le partage de v&eacute;hicule sont autoris&eacute;s&nbsp;:</p><ul><li>Stationless Vehicle Sharing</li><li>Cycle sharing</li><li>Commercial Car sharing</li></ul></td></tr></tbody></table></div>
+<div class="joplin-table-wrapper"><table><tbody><tr><th><p><strong>Classification</strong></p></th><th><p><strong>Nom</strong></p></th><th><p><strong>Type</strong></p></th><th><p><strong>Cardinalit&eacute;</strong></p></th><th><p><strong>Description</strong></p></th></tr><tr><td><p>::&gt;</p></td><td><p>::&gt;</p></td><td><p>TypeOfValue</p></td><td><p>::&gt;</p></td><td><p>TYPE OF MODE OF OPERATION h&eacute;rite de TYPE OF VALUE.</p></td></tr><tr><td><p><a id="BKM_2D231185_EAE2_440B_8E14_F78C1D499CE1"></a>«PK»</p></td><td><p>id</p></td><td><p>TypeOfModeOfOperationIdType</p></td><td><p>1:1</p></td><td><p>Identifiant de TYPE OF MODE OF OPERATION.</p><p>Pour le partage de v&eacute;hicule sont autoris&eacute;s&nbsp;:</p><ul><li>Stationless Vehicle Sharing</li><li>Cycle sharing</li><li>Commercial Car sharing</li></ul>
+
+<p>Pour le covoiturage est autoris&eacute;&nbsp;:</p><ul><li>Long Distance Carpooling</li></ul>
+
+</td></tr></tbody></table></div>
 
 Table 8 - Type de mode d'op&eacute;ration
 
 ## Flotte de v&eacute;hicule
 
-**Statut implémentation : OBLIGATOIRE** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
+**Statut implémentation : OBLIGATOIRE ** : Cette partie du profil doit être implémentée en cohérence avec le contexte (pour les service de partage de v&eacute;hicules).
 
 ### Modèle Conceptuel
 
 Le modèle de flotte NM d&eacute;crit la flotte de v&eacute;hicules, d&eacute;finie comme un ensemble de v&eacute;hicules de tout type. Le concept de flotte est g&eacute;n&eacute;ral, c'est-à-dire qu'il ne d&eacute;pend pas du mode d'exploitation, mais il est particulièrement utile pour d&eacute;crire les services offerts par certains modes d'exploitation alternatifs (NM).**
 
-Une flotte appartient à une organisation de transport, un organisme l&eacute;galement constitu&eacute; li&eacute; à un aspect quelconque du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.**
+Une flotte appartient à une organisation de transport (Opérateur, Autorité organisatrice), un organisme l&eacute;galement constitu&eacute; li&eacute; à un aspect quelconque du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.**
 
 ![Flotte de véhicule NM - Modèle conceptuel](media/Fig4_Flotte.JPG)
 
@@ -965,7 +993,7 @@ Exemple xml 2 : Flotte de v&eacute;hicules
 
 L'entit&eacute; SERVICE EN LIGNE repr&eacute;sente tout service accessible à distance offrant un accès à un mode de transport et/ou à des informations relatives aux services de transport.
 
-Un OP&eacute;RATEUR DE SERVICE EN LIGNE est responsable de la gestion d'un SERVICE EN LIGNE (mais pas n&eacute;cessairement du transport lui-même, c'est-à-dire diff&eacute;rent d'un OP&eacute;RATEUR DE TRANSPORT), par exemple pour fournir des informations à un utilisateur sur des offres de covoiturage disponibles ou adapt&eacute;es, via une application web. Le SERVICE EN LIGNE assure une interface entre les utilisateurs ou entre utilisateurs et op&eacute;rateurs.
+Un OP&eacute;RATEUR DE SERVICE EN LIGNE est responsable de la gestion d'un SERVICE EN LIGNE (mais pas n&eacute;cessairement du transport lui-même, c'est-à-dire diff&eacute;rent d'un OP&eacute;RATEUR DE TRANSPORT), par exemple pour fournir des informations à un utilisateur sur des offres de covoiturage disponibles ou adapt&eacute;es, via une application web. Le SERVICE EN LIGNE assure une interface entre les utilisateurs (entre le conducteur et le voyageur pour le covoiturage, par exemple) ou entre utilisateurs et op&eacute;rateurs.
 
 ![Services en Ligne](media/Fig5_ServiceEnLigne.JPG)
 
@@ -1028,30 +1056,32 @@ La d&eacute;finition des zones de stationnement et de leurs emplacements est d&e
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
-| ::> | ::> | ParkingArea | ::> | VEHICLE SHARING PARKING AREA h&eacute;rite PARKING AREA. |
+| ::> | ::> | ParkingArea | ::> | VEHICLE SHARING PARKING AREA h&eacute;rite PARKING AREA.<br>(Voir le profil Parking pour les nombreux élément hérités) |
 | «PK» | id  | VehicleSharingParkingAreaIdType | 1:1 | Identifiant de VEHICLE SHARING PARKING AREA. |
 
 Table 13 - **PLACES DE STATIONNEMENT**
 
 #### VEHICLE SHARING PARKING AREA (Zone de partage de v&eacute;hicule)
 
-L'affectation d'une VEHICLE SHARING PARKING AREA à tout type de service de partage de v&eacute;hicule
+La VEHICLE SHARING PARKING AREA n'a pas d'attribut suppl&eacute;mentaire par rapport à une PARKING AREA (voir Profil Parking): c'est une une spécialisation qui a pour vocation de réserver la zone de parking au partage de vehicules.
+
+Il est aussi possible affecter certains place d'un parking classique à un service de partage de v&eacute;hicule, sans pour autant que toute la zone lui soit attribu&eacute;e. L'affectation d'une place (PARKING BAY) se fait alors parun un VEHICLE SHARING PLACE ASSIGNMENT.
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
 | ::> | ::> | VehicleServicePlaceAssignment | ::> | VEHICLE SHARING PLACE ASSIGNMENT h&eacute;rite de VEHICLE SERVICE PLACE ASSIGNMENT. |
 | «PK» | id  | VehicleSharingPlaceAssignmentIdType | 1:1 | Identifiant de VEHICLE SHARING PLACE ASSIGNMENT. |
-| «cntd» | VehicleCommonServiceRef | VehicleSharingServiceRef | 0:\* | R&eacute;f&eacute;rence à VEHICLE SHARING SERVICE |
+| «cntd» | VehicleCommonServiceRef | VehicleSharingServiceRef | 0:\* | R&eacute;f&eacute;rence à un VEHICLE SHARING SERVICE (pour réserver une place ou connaitre la disponibilité, par exemple) |
 | «FK» | VehicleSharingParkingAreaRef | VehicleSharingParkingAreaRef | 1:1 | R&eacute;f&eacute;rence un VEHICLE SHARING PARKING AREA. |
 | «FK» | VehicleSharingParkingBayRef | ParkingBayRef | 1:1 | R&eacute;f&eacute;rence à VEHICLE SHARING PARKING BAY. |
 
-Table 14 - **PLACES DE STATIONNEMENT POUR V&eacute;HICULES PARTAG&eacute;S**
+Table 14 - **AFFECTATION DE PLACES DE STATIONNEMENT POUR V&eacute;HICULES PARTAG&eacute;S**
 
 #### Vehicle Pooling Parking Area (Zone de covoiturage)
 
 _Une partie d&eacute;di&eacute;e de l’AIRE DE STATIONNEMENT pour le covoiturage compos&eacute;e d’une ou de plusieurs PLACES DE STATIONNEMENT DE COVOITURAGE._.
 
-Il est possible de préciser que la zone de parking est dédiée au covoiturage en utilisant la Balise <Name/>. Se reporter au profil NexTEx France Parking.
+Il est possible de préciser que la zone de parking est dédiée au covoiturage en utilisant la balise **ParkingType** avec la valeur _liftShareParking_ (Se reporter au profil NexTEx France Parking pour plus de détails sur les objest ci-dessous).
 
 Exemple : 
 ``` xml
@@ -1065,7 +1095,7 @@ Exemple :
 | ::> | ::> | _ParkingArea_ | ::> | VEHICLE POOLING PARKING AREA h&eacute;rite de from PARKING AREA<br><br>\[non d&eacute;crit dans PART5 NeTex\] |
 | «PK» | **_id_** | _VehiclePoolingParkingAreaIdType_ | 1:1 | Identifier of VEHICLE POOLING PARKING AREA. |
 
-Table 14 — Zone de co voiturage
+Table 14 — Zone de covoiturage
 
 #### ParkingBay (Place de stationnement)
 
@@ -1076,7 +1106,7 @@ Une place dans le PARKING r&eacute;serv&eacute;e au partage de v&eacute;hicules.
 | ::> | ::> | ParkingBay | ::> | VEHICLE SHARING PARKING BAY h&eacute;rite PARKING BAY. |
 | «PK» | id  | VehicleSharingParkingBayIdType | 1:1 | Identifiant de VEHICLE SHARING PARKING BAY. |
 
-Table 15 - **Dock de stationnement pour v&eacute;hicule**
+Table 15 - **Place de stationnement pour v&eacute;hicule**
 
 ##### **_VehicleSharingParkingBay (Emplacement de parking à l'usage de partage de v&eacute;hicule)_**
 
@@ -1087,7 +1117,7 @@ Permet de d&eacute;finir un Place de parking pour le partage de v&eacute;hicule.
 | ::> | ::> | _ParkingBay_ | ::> | VEHICLE SHARING PARKING BAY h&eacute;rite de PARKING BAY. |
 | «PK» | **_id_** | _VehicleSharingParkingBayIdType_ | 1:1 | Identifiant du VEHICLE SHARING PARKING BAY. |
 
-Table 16 - **Dock de stationnement pour v&eacute;hicule partag&eacute;**
+Table 16 - **Place de stationnement pour v&eacute;hicule partag&eacute;**
 
 VehiculeSharingParkingArea est une spécialisation de ParkingArea qui permet de préciser les emplacements dévolus au covoiturage lorsqu’existant
 
@@ -1115,17 +1145,17 @@ Table 17 — **Dock de stationnement pour v&eacute;hicule de co voiturage**
 
 **Statut implémentation : OBLIGATOIRE** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
 
-### Modèle conceptuel
+### Mod&egrave;le conceptuel
 
-Le MODÈLE NM Vehicle Meeting Place d&eacute;finit les lieux d’arrêt où les passagers se retrouvent avec leurs modes de transport alternatifs. Au niveau le plus g&eacute;n&eacute;ral, il peut s’agir de tout lieu disposant d’une adresse. Ceux-ci peuvent inclure des STOP PLACE et des PARKING, ainsi que leurs composant.
+Le mod&egrave;le NM Vehicle Meeting Place d&eacute;finit les lieux d’arrêt où les passagers se retrouvent avec leurs modes de transport alternatifs. Au niveau le plus g&eacute;n&eacute;ral, il peut s’agir de tout lieu disposant d’une adresse. Ceux-ci peuvent inclure des STOP PLACE et des PARKING, ainsi que leurs composant.
 
-Transmodel inclut un modèle permettant de d&eacute;crire les &eacute;l&eacute;ments de stationnement comme des sp&eacute;cialisations de SITE COMPONENT. La relation entre les lieux d’arrêt et les services qui s’y arrêtent est d&eacute;crite dans le MODÈLE NM Service Area Assignment.
+Transmodel inclut un mod&egrave;le permettant de d&eacute;crire les &eacute;l&eacute;ments de stationnement comme des sp&eacute;cialisations de SITE COMPONENT. La relation entre les lieux d’arrêt et les services qui s’y arrêtent est d&eacute;crite dans le mod&egrave;le NM VEHICLE SERVICE PLACE ASSIGNMENT.
 
-Le MODÈLE NM Vehicle Meeting Place distingue deux grands types de ADDRESSABLE PLACE, c’est-&agrave;-dire des lieux pouvant être localis&eacute;s par des coordonn&eacute;es spatiales et/ou par une adresse postale ou routière :
+Le mod&egrave;le NM VEHICLE MEETING PLACE distingue deux grands types d'ADDRESSABLE PLACE, c’est-&agrave;-dire des lieux pouvant être localis&eacute;s par des coordonn&eacute;es spatiales et/ou par une adresse postale ou routière :
 
-VEHICLE MEETING PLACE : lieux où des v&eacute;hicules, des voyageurs ou des conducteurs se rencontrent afin de changer de mode de transport, pour la mont&eacute;e, la descente, la prise en charge, la d&eacute;pose, etc. Un VEHICLE MEETING PLACE peut être associ&eacute; &agrave; un SITE sp&eacute;cifique (tel qu’un STOP PLACE ou un POINT OF INTEREST) ou &agrave; tout composant au sein de ce SITE.
+VEHICLE MEETING PLACE : lieux où des v&eacute;hicules, des voyageurs ou des conducteurs se rencontrent afin de changer de mode de transport, pour la mont&eacute;e, la descente, la prise en charge, la d&eacute;pose, etc. Un VEHICLE MEETING PLACE peut être associ&eacute; &agrave; un SITE sp&eacute;cifique (tel qu’un STOP PLACE ou un POINT OF INTEREST) ou &agrave; tout composant au sein de ce SITE.Il est aussi naturellement possible de l'associer à toute ADRESSABLE PLACE qui peut correspondre, si n&eacute;cessaire, à une adresse ppersonnelle.
 
-Ces lieux se distinguent par l’usage qui en est fait. Dans les VEHICLE MEETING PLACE, il n’est pas possible de laisser des v&eacute;hicules sans surveillance pendant une dur&eacute;e prolong&eacute;e. Un PLACE se distingue d’une CONNECTION, laquelle d&eacute;finit une paire de lieux entre lesquels un transfert est possible.
+Ces lieux se distinguent par l’usage qui en est fait. Dans les VEHICLE MEETING PLACE, il n’est pas possible de laisser des v&eacute;hicules sans surveillance pendant une dur&eacute;e prolong&eacute;e. 
 
 ![Fig7_Point de rencontre Covoiturage](media/Fig7_PointdeRencontre_Cov.JPG)
 
@@ -1145,7 +1175,7 @@ Un lieu où v&eacute;hicules et passagers se rencontrent pour changer de mode de
 | «FK» | **_TopographicPlaceRef_** | _TopographicPlaceRef_ | 0:1 | Reference &agrave; un TOPOGRAPHIC PLACE. |
 | «FK» | **_SiteElementRef_** | _SiteElementRef_ | 0:1 | R&eacute;f&eacute;rence &agrave; un SITE ELEMENT, tel que PARKING, PARKING AREA, PARKING BAP, STOP PLACE, QUAY, POINT OF INTEREST, etc. |
 
-Table 19 — VehicleMeetingPlace — Elemen
+Table 19 — VehicleMeetingPlace — Element
 
 #### Vehicle Pooling Meeting Place (Lieu de rendez-vous)
 
@@ -1159,13 +1189,16 @@ Un lieu de rendez-vous pour le covoiturage, d&eacute;sign&eacute; ou convenu par
 
 Table 19 - VEHICLE POOLING MEETING PLACE – Attributes
 
+
+Note : Voir VehicleSharingPlaceAssignment pour affectation de ce MEETING PLACEs aux services.
+
 ## G&eacute;ofencing
 
 **Statut implémentation : OBLIGATOIRE** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
 
 **Une ZONE DE CONTRAINTE DE SERVICE DE MOBILIT&eacute;** (MOBILITY SERVICE CONSTRAINT ZONE ) impose des restrictions sur les d&eacute;placements à l'int&eacute;rieur d'une zone pour un **MODE DE FONCTIONNEMENT** donn&eacute;.
 
-Une **RESTRICTION DE ZONE PAR TYPE DE V&eacute;HICULE** (VEHICLE TYPE ZONE RESTRICTION ) sp&eacute;cifie quel **TYPE DE RESTRICTION** s'applique à un **TYPE DE TRANSPORT (**TRANSPORT TYPE) donn&eacute;.
+Une **RESTRICTION DE ZONE PAR TYPE DE V&eacute;HICULE** (VEHICLE TYPE ZONE RESTRICTION ) sp&eacute;cifie quel **TYPE DE RESTRICTION** s'applique à un **TYPE DE TRANSPORT** (TRANSPORT TYPE) donn&eacute;.
 
 ### Modèle conceptual
 ![Fig8_GeoFencing](media/Fig8_ModeleGeoFencing.JPG)
@@ -1225,7 +1258,7 @@ Restriction d'utilisation dans une MOBILITY SERVICE CONSTRAINT ZONE TRANSPORT TY
 
 Table 19 - Type de zone de restriction
 
-## V&eacute;hicules
+## Types de V&eacute;hicules et V&eacute;hicules
 
 **Statut implémentation : FACULTATIF** : Cette partie du profil doit être implémentée en cohérence avec le contexte.
 
@@ -1233,11 +1266,15 @@ Table 19 - Type de zone de restriction
 
 La d&eacute;finition d'un v&eacute;hicule (Cycle, Voiture) r&eacute;pond à la d&eacute;composition conceptuelle suivante.
 
+Note : dans le contexte des Nouveaux Modes, la description de v&eacute;hicule se fera essentiellement via des SIMPLE VEHICLE TYPE (qui, comme de VEHICLE TYPE, héritent de TRANSPORT TYPE)
+
+Note : les VEHICLE TYPEs sont déjà décrits dans le **NeTEx - Profil France - Horaires**, ce chapitre vien en complément pour la cas particulier des Nouveaux Modes.
+
 ![Fig9_Vehicule](media/Fig9_Vehicule.JPG)
 
 Figure 9 : V&eacute;hicule - MC
 
-L'&eacute;quipement r&eacute;el du v&eacute;hicule sp&eacute;cifie le type d'&eacute;quipement à utiliser dans un v&eacute;hicule Donn&eacute;
+L'&eacute;quipement r&eacute;el du v&eacute;hicule sp&eacute;cifie le type d'&eacute;quipement à utiliser dans un v&eacute;hicule donn&eacute;
 
 ![Fig10_Equipement_Vehicule](media/Fig10_Equipement_vehicule.JPG)
 
@@ -1245,19 +1282,22 @@ Figure 10 : Actual Vehicle Equipment MC
 
 ### Modèle de donn&eacute;es
 
-Le modèle **SIMPLE** **VEHICLE TYPE** d&eacute;crit les v&eacute;hicules « personnels » et leurs propri&eacute;t&eacute;s.
+Le modèle **SIMPLE** **VEHICLE TYPE** d&eacute;crit les types de v&eacute;hicules « personnels » et leurs propri&eacute;t&eacute;s.
 
-Les v&eacute;hicules peuvent être class&eacute;s en fonction des exigences de planification, notamment :
+Les types de v&eacute;hicules peuvent être class&eacute;s en fonction des exigences de planification, notamment :
 
 - Le modèle,
 - La capacit&eacute;,
 - Les &eacute;quipements embarqu&eacute;s (Siège b&eacute;b&eacute;, …)
 
-Ces mêmes exigences peuvent être associ&eacute;es à un **SERVICE JOURNEY** pour indiquer que ce service doit être assur&eacute; par un v&eacute;hicule de ce type.
+Ces mêmes exigences peuvent être associ&eacute;es à un **SERVICE JOURNEY** ou un **SINGLE JOURNEY** (typiquement pour un service de covoiturage) pour indiquer que ce service doit être assur&eacute; par un v&eacute;hicule de ce type.
 
 #### Vehicle (V&eacute;hicule)
 
 Description d'un v&eacute;hicule transport des passagers.
+
+Rappel: Le **VEHICLE** est utilis&eacute;e pour d&eacute;crire les v&eacute;hicules physiques de transport disponibles pour les op&eacute;rations et l'affectation quotidienne (par opposition aux v&eacute;hicules logiques consid&eacute;r&eacute;s pour la planification des ressources). Chaque **VEHICLE** doit &ecirc;tre classifi&eacute; comme &eacute;tant d'un **VEHICLE TYPE** particulier.
+
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
@@ -1468,13 +1508,18 @@ Exemple xml 4 : Exemple mod&eacute;lisation « SimpleVehiculeType »
 
 ## Identifiants d'accès aux véhicules
 
-Un code d'accès au service (SERVICE ACCESS CODE) est une spécialisation du document de voyage (TRAVEL DOCUMENT) qui fournit à l'utilisateur le code nécessaire pour utiliser un service.
+Un code d'accès au service (SERVICE ACCESS CODE) est une spécialisation du document de voyage (TRAVEL DOCUMENT) qui fournit à l'utilisateur le code nécessaire pour utiliser un service. Pour mémoire un TRAVEL DOCUMENT peut prendre de nombreuses formes et être une carte à puce, un document sur un smartphone ou une application sur un smartphone, etc.
 
 Les documents de voyage sont associés à un client de transport donné via un contrat tarifaire (FARE CONTRACT). Ils peuvent également être liés à un package d'achat client (CUSTOMER PURCHASE PACKAGE) en tant que représentation électronique de l'achat effectué par le client.
 
 Un code d'accès au service peut être associé à un véhicule physique et à un dispositif d'accès au support (MEDIUM ACCESS DEVICE) via une affectation d'accès au véhicule (VEHICLE ACCESS ASSIGNMENT). Cette association constitue un lien indépendant pouvant être utilisé de manière anonyme vis-à-vis du client pour exploiter le système d'accès.
 
 Le diagramme NM Vehicle Access MODEL décrit un contexte plus large lié à la mise à disposition d'un contrat permettant d'accéder à un service de transport. En particulier, le contrat tarifaire (FARE CONTRACT) peut héberger les codes d'accès au service fournis pour un service de mobilité, quel que soit le mode de transport alternatif.
+
+Note: les concepts liés à la tarification (TRAVEL DOCUMENT, FARE CONTRACT, etc.), ainsi que leur utilisation, sont détaillés dans le **Profil France - Tarifs**
+
+Note: les codes d'accès ne sont utiles à échanger pour vers un service dédié à l'émission du titre de voyage: dans un contexte classique d'information voyageur seule l'indication qu'un code d'accès sera fournit suffira (_UsageValidityPeriod.ActivationMeans_).
+
 
 ### Modèle conceptuel
 
@@ -1844,6 +1889,8 @@ Le MODÈLE d'information sur la disponibilit&eacute; des v&eacute;hicules d&eacu
 
 Ces informations peuvent être globales, concernant la capacit&eacute; de l'ensemble du PARKING, ou indiquer la capacit&eacute; des ZONES DE STATIONNEMENT par TYPE DE V&eacute;HICULE. Il convient toutefois de noter que, pour &eacute;quilibrer l'offre et la demande dans les gares très fr&eacute;quent&eacute;es, les op&eacute;rateurs proposent parfois un service de personnel pour fournir ou retirer les v&eacute;hicules suppl&eacute;mentaires d'un d&eacute;pôt fixe ou de les placer sur des v&eacute;hicules mobiles. Cela signifie que la capacit&eacute; « virtuelle » d'un PARKING peut être sup&eacute;rieure au nombre de places physiques.
 
+Note:Il s'agit ici d'une capactié à héberger des véhicule, si une disponibilité en temps réel est souhaité cela se fera par le serice **SIRI FacilityMonitoring** (_MonitoredCounting_)
+
 ![Fig18_DisponibiliteVehicule](media/Fig18_DisponibiliteVehicule.JPG)
 
 Figure 18 : Disponibilit&eacute; pr&eacute;vue des v&eacute;hicules - MC
@@ -1874,7 +1921,7 @@ Note : Pour tout compl&eacute;ment d'information se r&eacute;f&eacute;rer au pro
 
 La d&eacute;finition des &eacute;quipements de rechargement pour les v&eacute;hicules partag&eacute;s &eacute;lectrique peut être rattach&eacute;e à un emplacement de v&eacute;hicule en station.
 
-A noter que l'information d'existance de capacit&eacute; de rechargement &eacute;lectrique est port&eacute;e au niveau de la Station (Recharging Availability).
+A noter que l'information d'existance de capacit&eacute; de rechargement &eacute;lectrique est port&eacute;e au niveau de la Station (_RechargingAvailable_).
 
 ![Fig19_EquipementRechargement](media/Fig19_EquipementRechargement.JPG)
 
@@ -1937,23 +1984,23 @@ Ci-dessous un exemple de compte client associé à deux Moyens de paiement
 
 ```= xml
 <CustomerAccount version="any" id="rydt:Cust555@AC7651">
-<Name>hotrider</Name>
-<StartDate>2020-02-28T13:00:00</StartDate>
-<CustomerAccountStatusType>active</CustomerAccountStatusType>
-<CustomerPaymentMeansRef version="any" ref="rydt:Cust555@AC7651@p1"/>
-<paymentMeans>
-<CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p1">
-<Name>EZ Ritter Visa Card</Name>
-<EmvCardRef version="any" ref="visa:47594444555666"/>
-</CustomerPaymentMeans>
-<CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p2">
-<Name>EZ Ritter mobile device</Name>
-<MobileDeviceRef version="any" ref="rydt:4178671234567"/>
-</CustomerPaymentMeans>
-</paymentMeans>
-<mediumAccessDevices>
-<MobileDeviceRef version="any" ref="rydt:4178671234567"/>
-</mediumAccessDevices>
+    <Name>hotrider</Name>
+    <StartDate>2020-02-28T13:00:00</StartDate>
+    <CustomerAccountStatusType>active</CustomerAccountStatusType>
+    <CustomerPaymentMeansRef version="any" ref="rydt:Cust555@AC7651@p1" />
+    <paymentMeans>
+        <CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p1">
+            <Name>EZ Ritter Visa Card</Name>
+            <EmvCardRef version="any" ref="visa:47594444555666" />
+        </CustomerPaymentMeans>
+        <CustomerPaymentMeans version="any" id="rydt:Cust555@AC7651@p2">
+            <Name>EZ Ritter mobile device</Name>
+            <MobileDeviceRef version="any" ref="rydt:4178671234567" />
+        </CustomerPaymentMeans>
+    </paymentMeans>
+    <mediumAccessDevices>
+        <MobileDeviceRef version="any" ref="rydt:4178671234567" />
+    </mediumAccessDevices>
 </CustomerAccount>
 ```
 
