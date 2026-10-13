@@ -1133,7 +1133,7 @@ plus pour étayer les structures tarifaires.
 |                    | ***Name***                    | *xsd:MultilingualString*                                   | 1:1             | Nom de la zone tarifaire visible par le voyageur. Ce champ est rendu obligatoire dans tous les elements de type `GroupOfEntities` (cf. partie Elements Communs du profil France). Dans le cas où la zone tarifaire ne dispose que d'un nom court, il est recommandé de le diffuser dans les deux champs `ShortName` et `Name`. |
 |                    | ***Description***             | *xsd:MultilingualString*                                   | 0:1             | Description textuelle de la zone.                                                                        |
 | « enum »           | ***ZoneTopology***            | *ZoneTopologyEnum*                                       | 0:1             | Topologie de la FARE ZONE (en anneaux, tuiles adjacentes, etc.). Voir les valeurs autorisées ci-dessous. |
-| « FK »             | ***TransportOranisationRef*** | *(TransportOrganisationRef) OperatorRef \| AuthorityRef* | 0:1             | Reference à l’OPERATOR associé à la FARE ZONE.                                                           |
+| « FK »             | ***TransportOrganisationRef*** | *(TransportOrganisationRef) OperatorRef \| AuthorityRef* | 0:1             | Reference à l’OPERATOR associé à la FARE ZONE.                                                           |
 | « cntd »           | ***fareSections***            | *<u>FareSection</u>*                                     | 0:\*            | FARE SECTIONs de la FARE ZONE.                                                                           |
 | « cntd »           | ***contains***                | *<u>TariffZoneRef</u>*                                   | 0:\*            | Autre zone tarifaire entièrement incluse dans la FARE ZONE.                                              |
 | « cntd »           | ***neighbours***              | *FareZoneRef*                                            | 0:\*            | FARE ZONEs adjacentes.                                                                                   |
@@ -2672,7 +2672,7 @@ conceptuel*
 | « PK »             | ***id***                | *FareProductIdType*   | 0:1            | Identifiant du FARE PRODUCT.                             |
 | « FK »               | ***ChargingMomentRef***                | *ChargingMomentRef*   | 0:1            | Référence à CHARGING MOMENT associé au produit.  |
 | « enum »               | ***ChargingMomentType***                | *ChargingMomentTypeEnum*   | 0:1            | <p>Énumération des valeurs normalisées du moment de paiement.</p><p><ul><li>beforeTravel (avant le voyage)</li><li>onStartOfTravel (au départ du voyage)</li><li>beforeEndOfTravel (avant la fin du voyage)</li><li>onStartThenAdjustAtEndOfTravel (au départ avec ajustement à la fin du voyage)</li><li>onStarThenAdjustAtEndOfFareDay (au départ avec ajustement en fin de journée)</li><li>onStartThenAdjustAtEndOfChargePeriod (au départ avec ajustement en fin de période tarifaire)</li><li>atEndOfTravel (à la fin du voyage)</li><li>atEndOfFareDay (à la fin de la journée tarifaire)</li><li>atEndOfChargePeriod (à la fin de la période tarifaire)</li><li>free (gratuit)</li><li>anyTime (à n’importe quel moment)</li><li>other (autre)</li></ul></p> |
-| « FK »               | ***typesOfFareProductRef***                | *TypeOfFareProductRef*   | 0:\*            | Classifications du FARE PRODUCT.  |
+| « FK »               | ***TypeOfFareProductRef***                | *TypeOfFareProductRef*   | 0:\*            | Classifications du FARE PRODUCT.  |
 | « FK »               | ***TransportOrganisationRef***                | *(TransportOrganisationRef) OperatorRef / AuthorityRef*  | 0:1            | OPERATOR ou AUTHORITY en charge du FARE PRODUCT.  |
 | « cntd »               | ***ConditionSummary***                | *<u>ConditionSummary</u>*   | 0:1            | <p>Résumé des conditions associées au FARE PRODUCT.</p> <p><span class="hl">Note : dans le cadre du profil, seuls certains attributs des ***ConditionSummary*** sont acceptés pour le ***FareProduct*** (voir description des ***ConditionSummary***).</span></p>  |
 | XGRP               | ***FareProductValidityGroup***                | *FareProductRef*</em>*   | 0:1            | 	Informations de validité relatives au FARE PRODUCT.  |
@@ -3421,7 +3421,7 @@ puis à reprendre son trajet.</td>
 |                    | ***HasExchangeFee***           | *xsd:boolean* | 0:1             | Indique s'il y a des frais pour les échanges.                                                                 | **<span class="mark">OalV</span>** |
 |                    | ***HasDiscountedFares***       | *xsd:boolean* | 0:1             | Indique si les tarifs réduits sont autorisés.                                                                 | **<span class="mark">PT</span>**   |
 |                    | ***AllowAdditionalDiscounts*** | *xsd:boolean* | 0:1             | Indique si plusieurs remises peuvent être appliquées, par ex. Enfant + Accompagnateur.                        | **<span class="mark">PT</span>**   |
-|                    | ***AllowCompanionDiscount***   | *xsd:boolean* | 0:1             | Indique s'il y a une remise pour les accompagnateur.                                                          | **<span class="mark">PT</span>**   |
+|                    | ***AllowCompanionDiscounts***   | *xsd:boolean* | 0:1             | Indique s'il y a une remise pour les accompagnateur.                                                          | **<span class="mark">PT</span>**   |
 |                    | ***HasMinimumPrice***          | *xsd:boolean* | 0:1             | Indique s'il y a un prix minimum lors de la combinaison de remises.                                           | **<span class="mark">PT</span>**   |
 |                    | ***RequiresPositiveBalance***  | *xsd:boolean* | 0:1             | Indique si le produit nécessite un solde positif (généralement sur une carte de transport) pour être utilisé. | **<span class="mark">OalV</span>** |
 
@@ -3429,7 +3429,7 @@ puis à reprendre son trajet.</td>
 
 | **Classification** | **Name**                      | **Type**      | **Cardinality** | **Description**                                                                                                          |                                    |
 |--------------------|-------------------------------|---------------|-----------------|--------------------------------------------------------------------------------------------------------------------------|------------------------------------|
-|                    | ***PenaltyWIthoutTicket***    | *xsd:boolean* | 0:1             | Indique s'il y a une pénalité pour voyager sans billet, c'est-à-dire que les billets ne peuvent pas être achetés à bord. | **<span class="mark">OalV</span>** |
+|                    | ***PenaltyIfWithoutTicket***    | *xsd:boolean* | 0:1             | Indique s'il y a une pénalité pour voyager sans billet, c'est-à-dire que les billets ne peuvent pas être achetés à bord. | **<span class="mark">OalV</span>** |
 |                    | ***AvailableOnSubscription*** | *xsd:boolean* | 0:1             | Indique si le produit est disponible sur abonnement.                                                                     | **<span class="mark">OalV</span>** |
 
 <div class='table-title'>ConditionSummaryReservationGroup – Group</div>
@@ -3718,7 +3718,7 @@ utilisé.</td>
 </tr>
 <tr class="odd">
 <td>« FK »</td>
-<td><em><strong>TypeOfTravelDocumenRef</strong></em></td>
+<td><em><strong>TypeOfTravelDocumentRef</strong></em></td>
 <td><em>TypeOfTravelDocumentRef</em></td>
 <td>0:1</td>
 <td><p>Référence à un TYPE OF TRAVEL DOCUMENT.</p>
@@ -5537,7 +5537,7 @@ itinéraire indirect.</p>
 | « FK »             | ***TypeOfFareProductRef***           | *TypeOfFareProductRef*           | 0:1             | TYPE OF FARE PRODUCT pour lequel la CELL fournit un prix.                         |
 | « FK »             | ***DistributionChannelRef***         | *DistributionChannelRef*         | 0:1             | DISTRIBUTION CHANNEL pour laquelle la CELL fournit un prix.                       |
 | « FK »             | ***GroupOfDistributionChannelsRef*** | *GroupOfDistributionChannelsRef* | 0:1             | GROUP OF DISTRIBUTION CHANNELs pour laquelle la CELL fournit un prix.             |
-| « enum »           | ***PaymentMethods***                 | *PaymentMethodEnum*              | 0:1             | Valeur standard de ***PaymentMethod*** pour laquelle la CELL fournit un prix. |
+| « enum »           | ***PaymentMethod***                  | *PaymentMethodEnum*              | 0:1             | Valeur standard de ***PaymentMethod*** pour laquelle la CELL fournit un prix. |
 | « FK »             | ***TypeOfPaymentMethodRef***         | *TypeOfPaymentMethodRef*         | 0:1             | TYPE OF PAYMENT METHOD pour lequel la CELL fournit un prix.                       |
 
 <div class='table-title'>CellHeadingsGroup – Group</div>
@@ -6334,7 +6334,7 @@ allowed values.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>MaximumNumberOfChanges</strong></em></td>
+<td><em><strong>MaximumNumberOfInterchanges</strong></em></td>
 <td><em>xsd:integer</em></td>
 <td>0:1</td>
 <td>Maximum number of transfers that can be made on a trip.</td>
@@ -6435,7 +6435,7 @@ shall be from the specified nights.</em></p></li>
 </tr>
 <tr class="even">
 <td>« enum »</td>
-<td><em><strong>RequiredNightsAway</strong></em></td>
+<td><em><strong>RequiresNightsAway</strong></em></td>
 <td><em>DayOfWeekEnum</em></td>
 <td>0:7</td>
 <td>Specific nights which shall be spent away. See NeTEx Part1.</td>
@@ -7330,8 +7330,8 @@ PLACE.</td>
 </tr>
 <tr class="odd">
 <td>« FK »</td>
-<td><em><strong>TopographicalPlaceRef</strong></em></td>
-<td><em>TopographicalPlaceRef</em></td>
+<td><em><strong>TopographicPlaceRef</strong></em></td>
+<td><em>TopographicPlaceRef</em></td>
 <td>0:1</td>
 <td>TOPOGRAPHIC PLACE for which residency rule applies. See NeTEx
 Part1.</td>
@@ -7417,7 +7417,7 @@ a companion.</td>
 </tr>
 <tr class="odd">
 <td>« enum »</td>
-<td><em><strong>CompanionRelationship</strong></em></td>
+<td><em><strong>CompanionRelationshipType</strong></em></td>
 <td><em>CompanionRelationshipEnum</em></td>
 <td>0:1</td>
 <td><p>Required relationship of companion to eligible user. See allowed
@@ -7973,7 +7973,7 @@ Wheelchair.</em></p></li>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>MaximumNumberOfItems</strong></em></td>
+<td><em><strong>MaximumNumberItems</strong></em></td>
 <td><em>xsd:nonNegativeInteger</em></td>
 <td>0:1</td>
 <td>Number of bags allowed.</td>
@@ -8206,7 +8206,7 @@ values.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>MustReserveWholeCompartment.</strong></em></td>
+<td><em><strong>MustReserveWholeCompartment</strong></em></td>
 <td><em>xsd:boolean</em></td>
 <td>0:1</td>
 <td>Whether a whole compartment shall be reserved.</td>
@@ -8994,8 +8994,8 @@ failed to validate it.</em></p></li>
 </tr>
 <tr class="even">
 <td>« enum »</td>
-<td><em><strong>SameStationEntryPolicy</strong></em></td>
-<td><em>SameStationEntryPolicyEnum</em></td>
+<td><em><strong>SameStationRentryPolicy</strong></em></td>
+<td><em>SameStationRentryPolicyEnum</em></td>
 <td>0:1</td>
 <td><p>Policy for allowing re-entry at the same station within a certain
 time. See below.</p>
@@ -9010,7 +9010,7 @@ journey.</em></p></li>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>MinimumTimeBeforeRentry</strong></em></td>
+<td><em><strong>MinimumTimeBeforeReentry</strong></em></td>
 <td><em>xsd:duration</em></td>
 <td>0:1</td>
 <td>Minimum time before can re-enter at the same station before
