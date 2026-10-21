@@ -856,13 +856,13 @@ Le diagramme ci-dessus a pour objectif de clarifier la distinction entre les deu
 - Le concept de **MODE**, défini comme tout moyen de transport (communiqué au public d'une façon ou d'une autre), ou **SUBMODE** qui défini comme une variante d'un **MODE**, lié au **VEHICLE TYPE** (voir EN 12896-1) ;
 - Le concept de **MODE OF OPERATION** qui représente la manière dont le **MODE** ou le **SUBMODE** est exploité. 
 
-Le **MODE OF OPERATION** dispose de trois spécialisations, **CONVENTIONAL MODE OF OPERATION**, **PERSONAL MODE OF OPERATION**, et **ALTERNATIVE MODE OF OPERATION**. Seul le dernier sera détaillé dans ce profil.
+Le **MODE OF OPERATION** dispose de trois spécialisations : **CONVENTIONAL MODE OF OPERATION**, **PERSONAL MODE OF OPERATION**, et **ALTERNATIVE MODE OF OPERATION**. Seul le dernier sera détaillé dans ce profil.
 
 
 Le **ALTERNATIVE MODE OF OPERATION** correspond à tout mode d'exploitation annoncé publiquement différent du **CONVENTIONAL MODE OF OPERATION**, par exemple : **VEHICLE SHARING**, **VEHICLE RENTAL** et **VEHICLE POOLING**.
-    - **VEHICLE RENTAL** [non détaillé dans la version actuelle de ce profil]: Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule issu d'une **FLEET** de véhicules (en général détenus par des privés), disponible pour une utilisation pendant une certaine durée (potentiellement longue) et moyennant des frais, avec la contrainte de le restituer dans des agences spécifiées.
-    - **VEHICLE SHARING** : Location de véhicule à court terme où le véhicule peut être pris et garé à différents endroits de la zone urbaine, éventuellement sans la contrainte de restituer le véhicule à un lieu spécifique.
-    - **VEHICLE POOLING** : Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule détenu par un privé, consistant à partager le véhicule pour un trajet entre le conducteur qui effectue lui-même un déplacement et au moins un autre voyageur.
+    - **VEHICLE RENTAL** (non détaillé dans la version actuelle de ce profil) : Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule issu d'une **FLEET** de véhicules (en général détenus par des entités privées), disponible pour une utilisation pendant une certaine durée (potentiellement longue) et moyennant des frais, avec la contrainte de le restituer dans des agences spécifiées.
+    - **VEHICLE SHARING** : Location de véhicule à court terme où le véhicule peut être pris et restitué à différents endroits de la zone urbaine, éventuellement sans la contrainte de restituer le véhicule dans un lieu spécifique.
+    - **VEHICLE POOLING** : Un **ALTERNATIVE MODE OF OPERATION** d'un véhicule détenu par une entité privée (personne physique ou morale), consistant à partager le véhicule pour un trajet entre le conducteur qui effectue lui-même un déplacement et au moins un autre voyageur.
 
 
 > **NOTE** — *Chauffeured Car* (correspondant notamment aux VTC) et *Taxi* sont des types particuliers de **VEHICLE POOLING** (avec un **TYPE OF OPERATION** dédié).
@@ -935,7 +935,7 @@ Table 8 - Type de mode d'op&eacute;ration
 
 ## Flotte de v&eacute;hicule
 
-**Statut implémentation : OBLIGATOIRE ** : Cette partie du profil doit être implémentée en cohérence avec le contexte (pour les service de partage de v&eacute;hicules).
+**Statut implémentation : OBLIGATOIRE**. Cette partie du profil doit être implémentée en cohérence avec le contexte (pour les services de partage de v&eacute;hicules).
 
 ### Modèle Conceptuel
 
@@ -1147,7 +1147,7 @@ Table 17 — **Dock de stationnement pour v&eacute;hicule de co voiturage**
 
 ### Mod&egrave;le conceptuel
 
-Le mod&egrave;le NM Vehicle Meeting Place d&eacute;finit les lieux d’arrêt où les passagers se retrouvent avec leurs modes de transport alternatifs. Au niveau le plus g&eacute;n&eacute;ral, il peut s’agir de tout lieu disposant d’une adresse. Ceux-ci peuvent inclure des STOP PLACE et des PARKING, ainsi que leurs composant.
+Le mod&egrave;le NM VEHICLE MEETING PLACE d&eacute;finit les lieux d’arrêt où les passagers se retrouvent avec leurs modes de transport alternatifs. Au niveau le plus g&eacute;n&eacute;ral, il peut s’agir de tout lieu disposant d’une adresse. Ceux-ci peuvent inclure des STOP PLACE et des PARKING, ainsi que leurs composant.
 
 Transmodel inclut un mod&egrave;le permettant de d&eacute;crire les &eacute;l&eacute;ments de stationnement comme des sp&eacute;cialisations de SITE COMPONENT. La relation entre les lieux d’arrêt et les services qui s’y arrêtent est d&eacute;crite dans le mod&egrave;le NM VEHICLE SERVICE PLACE ASSIGNMENT.
 
@@ -1175,7 +1175,7 @@ Un lieu où v&eacute;hicules et passagers se rencontrent pour changer de mode de
 | «FK» | **_TopographicPlaceRef_** | _TopographicPlaceRef_ | 0:1 | Reference &agrave; un TOPOGRAPHIC PLACE. |
 | «FK» | **_SiteElementRef_** | _SiteElementRef_ | 0:1 | R&eacute;f&eacute;rence &agrave; un SITE ELEMENT, tel que PARKING, PARKING AREA, PARKING BAP, STOP PLACE, QUAY, POINT OF INTEREST, etc. |
 
-Table 19 — VehicleMeetingPlace — Element
+Table 19 — VehicleMeetingPlace — &Eacute;l&eacute;ment
 
 #### Vehicle Pooling Meeting Place (Lieu de rendez-vous)
 
@@ -1187,7 +1187,7 @@ Un lieu de rendez-vous pour le covoiturage, d&eacute;sign&eacute; ou convenu par
 | ::> | ::> | _VEHICLE MEETING PLACE_ | ::> | **_VEHICLE POOLING MEETING PLACE_** inherits from **_VEHICLE MEETING PLACE._** |
 | «UID» | **_Id_** | _VehiclePoolingMeetingPlaceIdType_ | 1:1 | Identifier of VEHICLE POOLING MEETING PLACE. |
 
-Table 19 - VEHICLE POOLING MEETING PLACE – Attributes
+Table 19 - VEHICLE POOLING MEETING PLACE – Attributs
 
 
 Note : Voir VehicleSharingPlaceAssignment pour affectation de ce MEETING PLACEs aux services.
@@ -1268,7 +1268,7 @@ La d&eacute;finition d'un v&eacute;hicule (Cycle, Voiture) r&eacute;pond à la d
 
 Note : dans le contexte des Nouveaux Modes, la description de v&eacute;hicule se fera essentiellement via des SIMPLE VEHICLE TYPE (qui, comme de VEHICLE TYPE, héritent de TRANSPORT TYPE)
 
-Note : les VEHICLE TYPEs sont déjà décrits dans le **NeTEx - Profil France - Horaires**, ce chapitre vien en complément pour la cas particulier des Nouveaux Modes.
+Note : les VEHICLE TYPEs sont déjà décrits dans le **NeTEx - Profil France - Horaires**, ce chapitre vient en complément pour la cas particulier des Nouveaux Modes.
 
 ![Fig9_Vehicule](media/Fig9_Vehicule.JPG)
 
@@ -1508,7 +1508,7 @@ Exemple xml 4 : Exemple mod&eacute;lisation « SimpleVehiculeType »
 
 ## Identifiants d'accès aux véhicules
 
-Un code d'accès au service (SERVICE ACCESS CODE) est une spécialisation du document de voyage (TRAVEL DOCUMENT) qui fournit à l'utilisateur le code nécessaire pour utiliser un service. Pour mémoire un TRAVEL DOCUMENT peut prendre de nombreuses formes et être une carte à puce, un document sur un smartphone ou une application sur un smartphone, etc.
+Un code d'accès au service (SERVICE ACCESS CODE) est une spécialisation du document de voyage (TRAVEL DOCUMENT) qui fournit à l'utilisateur le code nécessaire pour utiliser un service. Pour mémoire, un TRAVEL DOCUMENT peut prendre de nombreuses formes que ce soit une carte à puce, un document sur un smartphone ou une application sur un smartphone, etc.
 
 Les documents de voyage sont associés à un client de transport donné via un contrat tarifaire (FARE CONTRACT). Ils peuvent également être liés à un package d'achat client (CUSTOMER PURCHASE PACKAGE) en tant que représentation électronique de l'achat effectué par le client.
 
@@ -1516,9 +1516,9 @@ Un code d'accès au service peut être associé à un véhicule physique et à u
 
 Le diagramme NM Vehicle Access MODEL décrit un contexte plus large lié à la mise à disposition d'un contrat permettant d'accéder à un service de transport. En particulier, le contrat tarifaire (FARE CONTRACT) peut héberger les codes d'accès au service fournis pour un service de mobilité, quel que soit le mode de transport alternatif.
 
-Note: les concepts liés à la tarification (TRAVEL DOCUMENT, FARE CONTRACT, etc.), ainsi que leur utilisation, sont détaillés dans le **Profil France - Tarifs**
+Note : les concepts liés à la tarification (TRAVEL DOCUMENT, FARE CONTRACT, etc.), ainsi que leur utilisation, sont détaillés dans le **Profil France - Tarifs**
 
-Note: les codes d'accès ne sont utiles à échanger pour vers un service dédié à l'émission du titre de voyage: dans un contexte classique d'information voyageur seule l'indication qu'un code d'accès sera fournit suffira (_UsageValidityPeriod.ActivationMeans_).
+Note : les codes d'accès ne sont utiles à échanger pour vers un service dédié à l'émission du titre de voyage. Dans un contexte classique d'information voyageur seule l'indication qu'un code d'accès sera fournit suffira (_UsageValidityPeriod.ActivationMeans_).
 
 
 ### Modèle conceptuel
@@ -1889,7 +1889,7 @@ Le MODÈLE d'information sur la disponibilit&eacute; des v&eacute;hicules d&eacu
 
 Ces informations peuvent être globales, concernant la capacit&eacute; de l'ensemble du PARKING, ou indiquer la capacit&eacute; des ZONES DE STATIONNEMENT par TYPE DE V&eacute;HICULE. Il convient toutefois de noter que, pour &eacute;quilibrer l'offre et la demande dans les gares très fr&eacute;quent&eacute;es, les op&eacute;rateurs proposent parfois un service de personnel pour fournir ou retirer les v&eacute;hicules suppl&eacute;mentaires d'un d&eacute;pôt fixe ou de les placer sur des v&eacute;hicules mobiles. Cela signifie que la capacit&eacute; « virtuelle » d'un PARKING peut être sup&eacute;rieure au nombre de places physiques.
 
-Note:Il s'agit ici d'une capactié à héberger des véhicule, si une disponibilité en temps réel est souhaité cela se fera par le serice **SIRI FacilityMonitoring** (_MonitoredCounting_)
+Note : Il s'agit ici d'une capactié à héberger des véhicules, si une disponibilité en temps-réel est souhaitée cela se fera par le service **SIRI FacilityMonitoring** (_MonitoredCounting_)
 
 ![Fig18_DisponibiliteVehicule](media/Fig18_DisponibiliteVehicule.JPG)
 
