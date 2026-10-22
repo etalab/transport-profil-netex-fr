@@ -73,7 +73,7 @@ Trois sp&eacute;cialisations d'un SERVICE DE V&eacute;HICULES COMMUNS sont possi
 
 - SERVICE DE LOCATION DE V&eacute;HICULES : Offre de service de transport li&eacute;e à la LOCATION DE V&eacute;HICULES. Hors p&eacute;rimètre du pr&eacute;sent profil,
 - SERVICE DE PARTAGE DE V&eacute;HICULES : Offre de service de transport li&eacute;e au PARTAGE DE V&eacute;HICULES.
-- SERVICE DE VEHICULES PARTAGES (co voiturage) : Service de transport mettant en relation conducteur et passager(s) pour effectuer des trajets.
+- SERVICE DE VEHICULES PARTAGES (covoiturage) : Service de transport mettant en relation conducteur et passager(s) pour effectuer des trajets.
 
 **CONVENTIONAL MODE OF OPERATION** (Transmodel)
 
@@ -363,13 +363,11 @@ Le 'mode v&eacute;hicule' est une caract&eacute;risation de l'exploitation du tr
 
 Le 'mode d'accès' (par exemple, la marche, le cyclisme, la conduite de voiture priv&eacute;e, etc.) est une caract&eacute;risation du mouvement du voyageur (par exemple, marcher, faire du v&eacute;lo, etc.) lui permettant d'atteindre le 'mode v&eacute;hicule' ou de r&eacute;aliser un voyage complet.
 
-![Catégorisation des modes de transport (1/2)](media/Figure1_CategorieMode.jpg)
+![Catégorisation des modes de transport (1/2)](media/Figure1_CategorieMode.JPG)
 
 Une distinction est faite entre le 'mode v&eacute;hicule' et le 'type de v&eacute;hicule'. Chaque 'mode v&eacute;hicule' peut correspondre à une gamme de 'types de v&eacute;hicules' (par exemple, pour le 'mode v&eacute;hicule' 'autobus', on peut avoir des types comme 'standard', 'articul&eacute;', 'minibus', 'à deux &eacute;tages').
 
 Une cat&eacute;gorisation plus fine des modes de transport est fournie par le concept de 'sous-mode', qui est une variante d'un 'mode'. Par exemple, pour le mode 'rail', les sous-modes possibles sont 'rail international' ou 'rail domestique' ; pour le mode 'autobus', l'exemple de sous-mode est 'autobus r&eacute;gional', pour le mode 'voiture', les exemples de sous-modes sont 'voiture &eacute;lectrique', 'voiture conventionnelle', 'voiture autonome'.
-
-![Catégorisation des modes de transport (2/2)](media/CategorieModesTransport2.JPG)
 
 Les modes et sous-modes d&eacute;finis comme des 'moyens de transport' peuvent être caract&eacute;ris&eacute;s en termes de types de fonctionnement, c'est-à-dire des façons dont ils sont op&eacute;r&eacute;s.
 
@@ -379,13 +377,15 @@ Ce document distingue les types suivants de 'mode de fonctionnement' :
 - **Mode alternatif de fonctionnement** : tout mode de fonctionnement public annonc&eacute; diff&eacute;rent du mode de fonctionnement conventionnel, notamment le partage de v&eacute;hicules, la location de v&eacute;hicules et le covoiturage ;
 - **Mode personnel de fonctionnement** : un mode de transport priv&eacute; excluant toute utilisation publiquement annonc&eacute;e.
 
+![Catégorisation des modes de transport (2/2)](media/CategorieModesTransport2.JPG)
+
 Le champ d'application de ce document concerne le mode de fonctionnement alternatif, à l'exception de la location de v&eacute;hicules. La distinction entre les modes de fonctionnement alternatif et conventionnel repose sur le fait qu'un mode conventionnel repose sur un ensemble de caract&eacute;ristiques : les conducteurs sont des employ&eacute;s, la flotte est d&eacute;tenue par un op&eacute;rateur ou une autorit&eacute;, et la topologie du r&eacute;seau est d&eacute;finie à l'avance et repose sur des lignes et des modèles de trajets ; tandis que les modes alternatifs peuvent ne pas remplir une ou plusieurs de ces caract&eacute;ristiques.
 
 Ce document concerne le mode alternatif de fonctionnement.
 
 # Cas d'utilisation & Concepts rattach&eacute;s
 
-La prise en charge par NeTEx des modes alternatifs vise à inclure l'&eacute;change de donn&eacute;es de r&eacute;f&eacute;rence afin de permettre une information voyageur int&eacute;gr&eacute;e pour tous les modes. On suppose que l'&eacute;change de donn&eacute;es dynamiques, telles que les statuts et pr&eacute;visions en temps r&eacute;el, les offres de trajets en temps r&eacute;el, etc., sera couvert par d'autres API pour les fonctions dynamiques li&eacute;es aux modes alternatifs qui ne relèvent pas du champ d'application de NeTEx, mais qui sont incluses dans le p&eacute;rimètre de Transmodel et, pour la plupart, couvertes par SIRI pour l'&eacute;change de donn&eacute;es.
+La prise en charge par NeTEx des modes alternatifs vise à inclure l'&eacute;change de donn&eacute;es de r&eacute;f&eacute;rence afin de permettre une information voyageur int&eacute;gr&eacute;e pour tous les modes. L'&eacute;change de donn&eacute;es dynamiques, telles que les statuts et pr&eacute;visions en temps r&eacute;el, les offres de trajets en temps r&eacute;el, etc., sera couvert par d'autres API pour les fonctions dynamiques li&eacute;es aux modes alternatifs qui ne relèvent pas du champ d'application de NeTEx, mais qui sont incluses dans le p&eacute;rimètre de Transmodel et, pour la plupart, couvertes par SIRI pour l'&eacute;change de donn&eacute;es.
 
 Le champ de couverture du profil France Nouveaux Modes partie Statique inclut les cas d'utilisation suivants. Pour les aspects tarification et parking, il convient de se reporter aux profils France NeTEx associ&eacute;s.
 
@@ -907,7 +907,7 @@ Location de v&eacute;hicule à court terme où le v&eacute;hicule peut être pri
 | «PK» | id  | VehicleSharingIdType | 1:1 | Identifiant de VEHICLE SHARING MODEL OF OPERATION. |
 | «enum» | VehicleSharingType | VehicleSharingTypeEnum | 0:1 | Valeurs autoris&eacute;es pour un VEHICLE SHARING. Cf la table ci-après |
 
-Table 6 - Paratage de v&eacute;hicule
+Table 6 - Partage de v&eacute;hicule
 
 ###### VEHICULE SHARING TYPE (Type de partage de v&eacute;hicule)
 
@@ -939,9 +939,9 @@ Table 8 - Type de mode d'op&eacute;ration
 
 ### Modèle Conceptuel
 
-Le modèle de flotte NM d&eacute;crit la flotte de v&eacute;hicules, d&eacute;finie comme un ensemble de v&eacute;hicules de tout type. Le concept de flotte est g&eacute;n&eacute;ral, c'est-à-dire qu'il ne d&eacute;pend pas du mode d'exploitation, mais il est particulièrement utile pour d&eacute;crire les services offerts par certains modes d'exploitation alternatifs (NM).**
+Le modèle de flotte NM d&eacute;crit la flotte de v&eacute;hicules, d&eacute;finie comme un ensemble de v&eacute;hicules de tout type. Le concept de flotte est g&eacute;n&eacute;ral, c'est-à-dire qu'il ne d&eacute;pend pas du mode d'exploitation, mais il est particulièrement utile pour d&eacute;crire les services offerts par certains modes d'exploitation alternatifs (NM).
 
-Une flotte appartient à une organisation de transport (Opérateur, Autorité organisatrice), un organisme l&eacute;galement constitu&eacute; li&eacute; à un aspect quelconque du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.**
+Une flotte appartient à une organisation de transport (Opérateur, Autorité organisatrice), un organisme l&eacute;galement constitu&eacute; li&eacute; à un aspect quelconque du système de transport. Une organisation de transport peut poss&eacute;der plusieurs flottes.
 
 ![Flotte de véhicule NM - Modèle conceptuel](media/Fig4_Flotte.JPG)
 
@@ -951,7 +951,7 @@ Figure 4 : Flotte de v&eacute;hicule NM
 
 #### Fleet (Flotte)
 
-**Un ensemble de v&eacute;hicule de tout type****.**
+Un ensemble de v&eacute;hicule de tout type.
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
@@ -1042,7 +1042,7 @@ Exemple xml 3 : Online Service
 
 La description des zones de stationnement pour les modes de d&eacute;placement de type v&eacute;hicule partag&eacute; est d&eacute;crite dans le profil France Parking ;
 
-Cette partie du modèle permet de d&eacute;crire les zones de d&eacute;pôt des v&eacute;hicules. Le lien avec les v&eacute;hicules et services rattach&eacute;s Sont d&eacute;crits au paragraphe 10.7.2.2.
+Cette partie du modèle permet de d&eacute;crire les zones de d&eacute;pôt des v&eacute;hicules. Le lien avec les v&eacute;hicules et services rattach&eacute;s sont d&eacute;crits au paragraphe 10.7.2.2.
 
 ![Fig-_Emplacement_NM](media/Fig6_Emplacement_NM.JPG)
 
@@ -1139,7 +1139,7 @@ Un emplacement d&eacute;di&eacute; pour garer soit un v&eacute;hicule participan
 | ::> | ::> | _ParkingBay_ | ::> | VEHICLE POOLING PARKING BAY h&eacute;rite de PARKING BAY. |
 | «PK» | **_id_** | _VehiclePoolingParkingBayIdType_ | 1:1 | Identifiant du VEHICLE POOLING PARKING BAY. |
 
-Table 17 — **Dock de stationnement pour v&eacute;hicule de co voiturage**
+Table 17 — **Dock de stationnement pour v&eacute;hicule de covoiturage**
 
 ## Point de rencontre (Covoiturage)
 
@@ -1153,7 +1153,7 @@ Transmodel inclut un mod&egrave;le permettant de d&eacute;crire les &eacute;l&ea
 
 Le mod&egrave;le NM VEHICLE MEETING PLACE distingue deux grands types d'ADDRESSABLE PLACE, c’est-&agrave;-dire des lieux pouvant être localis&eacute;s par des coordonn&eacute;es spatiales et/ou par une adresse postale ou routière :
 
-VEHICLE MEETING PLACE : lieux où des v&eacute;hicules, des voyageurs ou des conducteurs se rencontrent afin de changer de mode de transport, pour la mont&eacute;e, la descente, la prise en charge, la d&eacute;pose, etc. Un VEHICLE MEETING PLACE peut être associ&eacute; &agrave; un SITE sp&eacute;cifique (tel qu’un STOP PLACE ou un POINT OF INTEREST) ou &agrave; tout composant au sein de ce SITE.Il est aussi naturellement possible de l'associer à toute ADRESSABLE PLACE qui peut correspondre, si n&eacute;cessaire, à une adresse ppersonnelle.
+VEHICLE MEETING PLACE : lieux où des v&eacute;hicules, des voyageurs ou des conducteurs se rencontrent afin de changer de mode de transport, pour la mont&eacute;e, la descente, la prise en charge, la d&eacute;pose, etc. Un VEHICLE MEETING PLACE peut être associ&eacute; &agrave; un SITE sp&eacute;cifique (tel qu’un STOP PLACE ou un POINT OF INTEREST) ou &agrave; tout composant au sein de ce SITE.Il est aussi naturellement possible de l'associer à toute ADRESSABLE PLACE qui peut correspondre, si n&eacute;cessaire, à une adresse personnelle.
 
 Ces lieux se distinguent par l’usage qui en est fait. Dans les VEHICLE MEETING PLACE, il n’est pas possible de laisser des v&eacute;hicules sans surveillance pendant une dur&eacute;e prolong&eacute;e. 
 
@@ -1215,7 +1215,7 @@ ZONE d&eacute;finissant une zone de restriction de l'utilisation d'un MOBILITY S
 | --- | --- | --- | --- | --- |
 | ::> | ::> | Zone | ::> | MOBILITY SERVICE CONSTRAINT ZONE h&eacute;rite de ZONE. |
 | «PK» | id  | MobilityConstraintZoneIdType | 1:1 | Identifiant d'une MOBILITY SERVICE CONSTRAINT ZONE. |
-| «enum» | RuleApplicability | RuleApplicabilityEnum | 0:1 | Indique si la règle s'applique à l'int&eacute;rieur ou l'ext&eacute;rieur de la zone.<br><br>Par D&eacute;faut : Int&eacute;rieur. |
+| «enum» | RuleApplicability | RuleApplicabilityEnum | 0:1 | Indique si la règle s'applique à l'int&eacute;rieur ou l'ext&eacute;rieur de la zone.<br><br>Par d&eacute;faut : Int&eacute;rieur. |
 | «enum» | ZoneUse | ZoneUseTypeEnum | 0:1 | Comment la zone peut être utilis&eacute;e |
 | «cntd» | vehicleTypeRestrictions | VehicleTypeZoneRestriction | 0:\* | Restrictions applicables à diff&eacute;rents types de v&eacute;hicules |
 |     | MaximumSpeed | Speed | 0:1 | Vitesse maximale dans la zone |
@@ -1230,15 +1230,15 @@ Les valeurs autoris&eacute;es pour **ZoneUseType (**ZoneUseTypeEnumeration**) so
 | **Valeur** | **Description** |
 | --- | --- |
 | allUsesAllowed | Toute utilisation autoris&eacute;e : Ramassage, d&eacute;pose, via |
-| forbiddenZone | Interdiction de ramassage ou de D&eacute;pôt dans la zone |
-| cannotPickUpInZone | Interdiction d'entr&eacute;e dans la zone |
+| forbiddenZone | Interdiction de ramassage ou de d&eacute;pôt dans la zone |
+| cannotPickUpInZone | Interdiction de ramassage dans la zone |
 | cannotDropOffInZone | Interdiction de d&eacute;pôt dans la zone |
-| mustPickUpInZone | Obligation d'entr&eacute;e dans la zone |
+| mustPickUpInZone | Obligation de ramassage dans la zone |
 | mustDropOffInZone | Obligation de d&eacute;pôt dans la zone |
-| passThroughUseOnly | Interdiction d'entr&eacute;e ou de D&eacute;pôt dans la zone mais possibilit&eacute; de travers&eacute;e |
+| passThroughUseOnly | Interdiction de ramassage ou de D&eacute;pôt dans la zone mais possibilit&eacute; de travers&eacute;e |
 | noPassThrough | Interdiction de traverse uniquement (obligation de ramassage ou d&eacute;pôt dans la zone) |
-| cannotPickUpAndDropOfInSameZone | Interdiction d'entr&eacute;e et d&eacute;pôt dans la même zone. |
-| mustPickUpAndDropOffInSameZone | Obligation d'entr&eacute;e et d&eacute;pôt dans la zone |
+| cannotPickUpAndDropOfInSameZone | Interdiction de ramassage et d&eacute;pôt dans la même zone. |
+| mustPickUpAndDropOffInSameZone | Obligation de ramassage et d&eacute;pôt dans la zone |
 | other | Autres restrictions. |
 
 Table 18 - ZoneUseType
@@ -1294,9 +1294,9 @@ Ces mêmes exigences peuvent être associ&eacute;es à un **SERVICE JOURNEY** ou
 
 #### Vehicle (V&eacute;hicule)
 
-Description d'un v&eacute;hicule transport des passagers.
+Description d'un v&eacute;hicule de transport des passagers.
 
-Rappel: Le **VEHICLE** est utilis&eacute;e pour d&eacute;crire les v&eacute;hicules physiques de transport disponibles pour les op&eacute;rations et l'affectation quotidienne (par opposition aux v&eacute;hicules logiques consid&eacute;r&eacute;s pour la planification des ressources). Chaque **VEHICLE** doit &ecirc;tre classifi&eacute; comme &eacute;tant d'un **VEHICLE TYPE** particulier.
+Rappel: Le **VEHICLE** est utilis&eacute; pour d&eacute;crire les v&eacute;hicules physiques de transport disponibles pour les op&eacute;rations et l'affectation quotidienne (par opposition aux v&eacute;hicules logiques consid&eacute;r&eacute;s pour la planification des ressources). Chaque **VEHICLE** doit &ecirc;tre classifi&eacute; comme &eacute;tant d'un **VEHICLE TYPE** particulier.
 
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
@@ -1356,9 +1356,8 @@ Table 22 - Transport Type
 | --- | --- | --- | --- | --- |
 |     | Reversing­Direction | xsd:boolean | 0:1 | Whether VEHICLE TYPE has a reversing direction. |
 |     | SelfPropelled | xsd:boolean | 0:1 | Whether VEHICLE TYPE is self-propelled. |
-| «enum» | PropulsionType | PropulsionTypeEnum | 0:1 | Type de carburant du VEHICLE TYPE. Cf ci-dessous |
-| «enum» | FuelType | FuelTypeEnum | 0:1 | Type of Fuel of VEHICLE TYPE. See allowed values below. |
-|     | TypeOfFuel | FuelTypeEnum |     | DEPRECATED - renamed to FuelType |
+| «enum» | PropulsionType | PropulsionTypeEnum | 0:1 | Type de propulsion du VEHICLE TYPE. Cf ci-dessous |
+| «enum» | FuelType | FuelTypeEnum | 0:1 | Type de carburant du VEHICLE TYPE. Cf ci-dessous |
 |     | MaximumRange | DistanceType | 0:1 | Autonomie maximale en km |
 
 Table 23 -TransportTypePropertiesGroup
@@ -1438,10 +1437,10 @@ La d&eacute;finition du siège enfant peut prendre les valeurs suivantes : **_._
 
 | **Valeur** | **Description** |
 | --- | --- |
-| _Baby_ | Siège adapt&eacute; pour les b&eacute;b&eacute;s |
+| _baby_ | Siège adapt&eacute; pour les b&eacute;b&eacute;s |
 | _smallChild_ | Siège adapt&eacute; pour les enfants entre 9-18 kg. |
 | _olderChild_ | Siège adapt&eacute; pour les enfants entre 15-36 kg. |
-| _None_ | No child. |
+| _none_ | Pas de siège enfant |
 | _other_ | Autre type de siège |
 
 Table 28 - D&eacute;finition d'un siège Enfant
@@ -1472,9 +1471,9 @@ Valeurs autoris&eacute;es pour un permis d'utilisation (_LicenceRequirementsEnum
 | _additional_ | _Requires additional vehicle category licence._ |
 | _none_ | _Aucun permis requis_ |
 
-Table 30 - Type de v&eacute;hicule simple
+Table 30 - Type de permis d'utilisation
 
-##### PersonalVehicleCategory- v Valeurs autoris&eacute;es
+##### PersonalVehicleCategory - Valeurs autoris&eacute;es
 
 Valeurs autoris&eacute;es pour la cat&eacute;gorie de v&eacute;hicule Personnel _PersonalVehicleCategoryEnum_).
 
@@ -1625,7 +1624,7 @@ Ensemble des critères ou attributs permettant de qualifier et d'évaluer un pro
 | ------------------ | --------------------------------- | -------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                    | **_MinimumAge_**                  | _xsd:integer_              | 0:1             | **Âge minimum requis pour l'adhésion à un profil utilisateur (USER PROFILE).**                                                                                                                                                                                                                                                                                                        |
 |                    | **_MaximumAge_**                  | _xsd:integer_              | 0:1             | **Âge maximum requis pour l'adhésion à un profil utilisateur (USER PROFILE).**                                                                                                                                                                                                                                                                                                        |
-|                    | **_MonthDayOn­WhichAge­Applies_** | _xsd:gmonthDay_            | 0:1             | our / mois à partir duquel l'âge s'applique (le cas échéant).                                                                                                                                                                                                                                                                                                                         |
+|                    | **_MonthDayOn­WhichAge­Applies_** | _xsd:gmonthDay_            | 0:1             | Jour / mois à partir duquel l'âge s'applique (le cas échéant).                                                                                                                                                                                                                                                                                                                         |
 |                    | **_Minimum­Height_**              | _LengthType_               | 0:1             | Taille minimale requise pour l'adhésion à un profil utilisateur (USER PROFILE).                                                                                                                                                                                                                                                                                                       |
 |                    | **_MaximumHeight_**               | _LengthType_               | 0:1             | Poids maximal qu'un utilisateur doit respecter pour être éligible à un profil ou à un service, par exemple pour des raisons de sécurité (comme l'accès avec de grands chiens ou pour définir une limite applicable aux enfants)..                                                                                                                                                     |
 |                    | **_LocalResident_**               | _xsd:boolean_              | 0:1             | **Indique si l'utilisateur doit être résident local.** <br>→ Valeur booléenne précisant si l'utilisateur doit être un **résident local** pour être éligible. <br>→ La valeur par défaut est **« vrai » (true)**.                                                                                                                                                                      |
@@ -1732,7 +1731,7 @@ Un Service type V&eacute;lo en libre-service ou Auto-partage.
 | «FK» | VehicleSharingRef | VehicleSharingRef | 0:1 | R&eacute;f&eacute;rence à un VEHICLE SHARING mode d'exploitation. |
 |     | SharingPolicyUrl | xsd:anyURI | 1:1 | URL pour la politique d'utilisation |
 |     | MinimumSharingPeriod | xsd:duration | 0:1 | Dur&eacute;e minimum de partage VEHICLE SHARING. |
-|     | MaximumSharingPeriod | xsd:duration | 0:1 | Dur&eacute;e maximum de partage VEHICLE SHARING_._ |
+|     | MaximumSharingPeriod | xsd:duration | 0:1 | Dur&eacute;e maximum de partage VEHICLE SHARING. |
 |     | FloatingVehicles | xsd:boolean | 0:1 | Indique si le partage de v&eacute;hicule est de type free floating. |
 | «FK» | fleets | FleetRef | 0:\* | R&eacute;f&eacute;rence à une FLEETs qui gère le service de partage. |
 
@@ -1889,7 +1888,7 @@ Le MODÈLE d'information sur la disponibilit&eacute; des v&eacute;hicules d&eacu
 
 Ces informations peuvent être globales, concernant la capacit&eacute; de l'ensemble du PARKING, ou indiquer la capacit&eacute; des ZONES DE STATIONNEMENT par TYPE DE V&eacute;HICULE. Il convient toutefois de noter que, pour &eacute;quilibrer l'offre et la demande dans les gares très fr&eacute;quent&eacute;es, les op&eacute;rateurs proposent parfois un service de personnel pour fournir ou retirer les v&eacute;hicules suppl&eacute;mentaires d'un d&eacute;pôt fixe ou de les placer sur des v&eacute;hicules mobiles. Cela signifie que la capacit&eacute; « virtuelle » d'un PARKING peut être sup&eacute;rieure au nombre de places physiques.
 
-Note : Il s'agit ici d'une capactié à héberger des véhicules, si une disponibilité en temps-réel est souhaitée cela se fera par le service **SIRI FacilityMonitoring** (_MonitoredCounting_)
+Note : Il s'agit ici d'une capacité à héberger des véhicules, si une disponibilité en temps-réel est souhaitée cela se fera par le service **SIRI FacilityMonitoring** (_MonitoredCounting_)
 
 ![Fig18_DisponibiliteVehicule](media/Fig18_DisponibiliteVehicule.JPG)
 
@@ -1899,7 +1898,7 @@ Figure 18 : Disponibilit&eacute; pr&eacute;vue des v&eacute;hicules - MC
 
 ###### ParkingAreaCapacityAssignement
 
-L'Affectation de la capacit&eacute; d'une aire de stationnement permet l'Attribution d'un nombre de places pour un type de v&eacute;hicule particulier dans une aire de stationnement.
+L'Affectation de la capacit&eacute; d'une aire de stationnement permet l'attribution d'un nombre de places pour un type de v&eacute;hicule particulier dans une aire de stationnement.
 
 | **Classification** | **Nom** | **Type** | **Cardinalit&eacute;** | **Description** |
 | --- | --- | --- | --- | --- |
@@ -1941,7 +1940,7 @@ Les **COMPOSANTS DE STATIONNEMENT** particuliers et l'**EMPLACEMENT D'&eacute;QU
 | --- | --- | --- | --- | --- |
 | ::> | ::> | _PlaceEquipment_ | ::> | VEHICLE CHARGING EQUIPMENT h&eacute;rite de PLACE EQUIPMENT |
 | «PK» | **_id_** | _VehicleChargingEquipmentId_ | 1:1 | Identifiant VEHICLE CHARGING EQUIPMENT. |
-|     | **_FreeRecharging_** | _xsd:boolean_ | 0:1 | Identique si le chargement est gratuit |
+|     | **_FreeRecharging_** | _xsd:boolean_ | 0:1 | Indique si le chargement est gratuit |
 |     | **_Reservation_** | _xsd:boolean_ | 0:1 | Indique si une r&eacute;servation est n&eacute;cessaire |
 |     | **_ReservationUrl_** | _xsd:anyURI_ | 0:1 | URL de r&eacute;servation. |
 
@@ -1953,13 +1952,13 @@ Table 40 - Equipement de rechargement
 
 Un CLIENT DE TRANSPORT peut enregistrer sur un COMPTE CLIENT les moyens de paiement qu'il souhaite utiliser pour régler les PRODUITS TARIFAIRES achetés via ce compte, par exemple une carte bancaire ou un compte de paiement mobile
 
-![Fig20_CompteClient](media/Fig20_CompteClient.JPG)
+![Fig20_CompteClient](media/Fig20_CompteCLient.jpg)
 
 #### Restriction de Services
 
 Le modèle des restrictions de service définit un petit nombre d'éléments réutilisables pour classer les moyens de paiement. Quelques ajouts supplémentaires sont faits pour permettre de nouveaux modes ; en particulier, les éléments des arrangements de réservation sont affinés et étendus. (Voir le modèle des ARRANGEMENTS DE RÉSERVATION).
 
-![Fig21_Restriction de services](media/Fig21_ServiceRestriction.JPG)
+![Fig21_Restriction de services](media/Fig21_ServiceRestriction.jpg)
 
 ### Modèle de données
 
@@ -1978,11 +1977,10 @@ Un moyen de paiement enregistré qu'un client de transport souhaite utiliser pou
 | «enum» | PaymentMethod | PaymentMethodEnum | 0:1 | Méthode de paiement associée à CUSTOMER ACCOUNT. Cf. SERVICE RESTRICTIONs. |
 | «FK» | TypeOfPaymentMethodRef | TypeOfPaymentMethodRef | 0:1 | Référence à un TYPE OF PAYMENT METHOD. |
 |  | LastVerifiedDate | xsd:dateTime | 0:1 | Date de dernière vérification du moyen de paiement. |
-|
 
 Ci-dessous un exemple de compte client associé à deux Moyens de paiement
 
-```= xml
+``` xml
 <CustomerAccount version="any" id="rydt:Cust555@AC7651">
     <Name>hotrider</Name>
     <StartDate>2020-02-28T13:00:00</StartDate>
