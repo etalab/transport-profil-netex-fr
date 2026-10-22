@@ -67,13 +67,13 @@ Service de transport dans lequel plusieurs usagers partagent un véhicule privé
 
 **COMMON VEHICLE SERVICE**
 
-Un SERVICE DE MOBILITE est en soi abstrait. Un SERVICE DE VEHICULES COMMUNS est une spécialisation d'un SERVICE DE MOBILITÉ impliquant des VÉHICULES.
+Un SERVICE DE MOBILITE est en soi abstrait. Un SERVICE DE VÉHICULES COMMUNS est une spécialisation d'un SERVICE DE MOBILITÉ impliquant des VÉHICULES.
 
 Trois spécialisations d'un SERVICE DE VÉHICULES COMMUNS sont possibles :
 
 - SERVICE DE LOCATION DE VÉHICULES : Offre de service de transport liée à la LOCATION DE VÉHICULES. Hors périmètre du présent profil,
 - SERVICE DE PARTAGE DE VÉHICULES : Offre de service de transport liée au PARTAGE DE VÉHICULES.
-- SERVICE DE VEHICULES PARTAGES (covoiturage) : Service de transport mettant en relation conducteur et passager(s) pour effectuer des trajets.
+- SERVICE DE VÉHICULES PARTAGES (covoiturage) : Service de transport mettant en relation conducteur et passager(s) pour effectuer des trajets.
 
 **CONVENTIONAL MODE OF OPERATION** (Transmodel)
 
@@ -163,13 +163,13 @@ Chaque véhicule possède :
 
 Ensemble des attributs ou critères permettant de qualifier un profil d’utilisateur de transport, afin de déterminer ses droits, conditions d’accès ou avantages applicables dans le cadre d’un système de transport.
 
-**VEHICULE CHARGING EQUIPMENT** (NeTEx)
+**VÉHICULE CHARGING EQUIPMENT** (NeTEx)
 
-L'EQUIPEMENT DE RECHARGE DE VEHICULE est une spécialisation de l'EQUIPEMENT DE LIEU indiquant la disponibilité de la recharge de véhicule.
+L'EQUIPEMENT DE RECHARGE DE VÉHICULE est une spécialisation de l'EQUIPEMENT DE LIEU indiquant la disponibilité de la recharge de véhicule.
 
 **VEHICLE MEETING PLACE** (NeTEx)
 
-Lieux où les véhicules/voyageurs/conducteurs se rencontrent pour changer de mode de transport, pour embarquer, débarquer, prendre en charge, déposer, etc. Un LIEU DE RENCONTRE DE VEHICULES peut être associé à un SITE spécifique (tel qu'un LIEU D'ARRÊT ou un POINT D'INTéRÊT) ou à tout composant du SITE
+Lieux où les véhicules/voyageurs/conducteurs se rencontrent pour changer de mode de transport, pour embarquer, débarquer, prendre en charge, déposer, etc. Un LIEU DE RENCONTRE DE VÉHICULES peut être associé à un SITE spécifique (tel qu'un LIEU D'ARRÊT ou un POINT D'INTéRÊT) ou à tout composant du SITE
 
 **VEHICLE MODEL** (Transmodel)
 
@@ -177,7 +177,7 @@ Classification des véhicules de transport public d'un même type selon l'équip
 
 **VEHICLE MODEL PROFILE** (NeTEx)
 
-Le PROFIL DU MODÈLE DE VEHICULE décrit l'EQUIPEMENT installé à bord des VEHICULES d'un MODÈLE DE VEHICULE spécifique
+Le PROFIL DU MODÈLE DE VÉHICULE décrit l'EQUIPEMENT installé à bord des VÉHICULES d'un MODÈLE DE VÉHICULE spécifique
 
 **VEHICLE POOLER PROFIL**
 
@@ -221,7 +221,7 @@ Emplacement où l'on peut stationner un (unique) véhicule partagé.
 
 **VEHICLE SHARING PLACE ASSIGNEMENT** (NeTEx)
 
-Une ATTRIBUTION DE PLACE DE PARTAGE DE VEHICULE peut être utilisée pour attribuer des ZONES DE STATIONNEMENT et des PLACES DE STATIONNEMENT spécifiques à utiliser par un service donné.
+Une ATTRIBUTION DE PLACE DE PARTAGE DE VÉHICULE peut être utilisée pour attribuer des ZONES DE STATIONNEMENT et des PLACES DE STATIONNEMENT spécifiques à utiliser par un service donné.
 
 **VEHICLE SHARING SERVICE** (NeTEx)
 
@@ -909,7 +909,7 @@ Location de véhicule à court terme où le véhicule peut être pris et station
 
 Table 6 - Partage de véhicule
 
-###### VEHICULE SHARING TYPE (Type de partage de véhicule)
+###### VÉHICULE SHARING TYPE (Type de partage de véhicule)
 
 Cette table indique les valeurs autorisées pour VehicleSharingType dans le cadre du profil France
 
@@ -957,7 +957,7 @@ Un ensemble de véhicule de tout type.
 | --- | --- | --- | --- | --- |
 | ::> | ::> | _GroupOfEntities_ | ::> | FLEET hérite de GROUP OF ENTITies. |
 | «PK» | **_id_** | _FleetIdType_ | 1:1 | Identifiant de FLEET. |
-| «cntd» | **_members_** | _Vehicle_ | 0:\* | VEHICULES de la flotte. Cf VEHICULE<br><br>Voir § 10.6. |
+| «cntd» | **_members_** | _Vehicle_ | 0:\* | VÉHICULES de la flotte. Cf VÉHICULE<br><br>Voir § 10.6. |
 | «FK» | **_TransportOrganisationRef_** | _TransportOrganisationRef_ | 0:1 | Identifiant de l'organisation TRANSPORT ORGANISATION possédant la Flotte |
 | «FK» | **_TypeOfFleetRef_** | _TypeOfFleetRef_ | 0:1 | Identifiant du TYPE OF FLEET. |
 | «cntd» | **_transportTypes_** | _TransportTypeRef_ | 0:\* | TRANSPORT TYPEs et VEHICLE TYPEs de la Flotte. |
@@ -1304,11 +1304,11 @@ Rappel: Le **VEHICLE** est utilisé pour décrire les véhicules physiques de tr
 | «PK» | **_id_** | VehicleIdType | 1:1 | Identifiant |
 |     | **_Name_** | MultilingualString | 0:1 | Nom du véhicule |
 |     | ShortName | MultilingualString | 0:1 | Nom court VEHICLE. |
-| «AK» | Registration­Number | xsd:normalizedString | 0:1 | Immatriculation du VEHICULE. |
-|     | Registration Date | xsd:date | 0:1 | date d'immatriculation du VEHICULE |
+| «AK» | Registration­Number | xsd:normalizedString | 0:1 | Immatriculation du VÉHICULE. |
+|     | Registration Date | xsd:date | 0:1 | date d'immatriculation du VÉHICULE |
 | «AK» | OperationalNumber | xsd:normalizedString | 0:1 | Operational number of VEHICLE. |
-| «AK» | PrivateCode | PrivateCode | 0:1 | Identifiant alternatif du VEHICULE.<br><br>Peut être utilisé pour les identifiant interne. |
-| «FK» | TransportOrganisationRef | TransportOrganisationRef | 1:1 | Identifiant de l'OPERATEUR ou d'une TRANSPORT ORGANISATION. |
+| «AK» | PrivateCode | PrivateCode | 0:1 | Identifiant alternatif du VÉHICULE.<br><br>Peut être utilisé pour les identifiants internes. |
+| «FK» | TransportOrganisationRef | TransportOrganisationRef | 1:1 | Identifiant de l'OPÉRATEUR ou d'une TRANSPORT ORGANISATION. |
 | «FK» | TransportTypeRef | TransportTypeRef | 0:1 | Identifiant d'un TRANSPORT TYPE du VEHICLE |
 | «FK» | VehicleModelRef | VehicleModelRef | 0:1 | Identifiant MODEL du VEHICLE |
 | «FK» | VehicleModelProfileRef | VehicleModelProfileRef | 0:1 | Identifiant MODEL EQUIPMENT PROFILE of VEHICLE |
