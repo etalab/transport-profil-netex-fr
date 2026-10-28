@@ -15,7 +15,7 @@ signalés par le mot *(profil)*, en italique et entre parenthèses.
 Pour une information complète, il conviendra toutefois de se référer au
 document normatif.
 
-## **ACCESS** (ACCÈS)
+## **<span lang="en">ACCESS</span>** (ACCÈS)
 
 Possibilité matérielle (spatiale) pour un usager d'accéder à un système
 de transports publics ou de le quitter. Ce tronçon peut être utilisé
@@ -27,14 +27,14 @@ vers un LIEU (destination du déplacement).
 
 → Partie Accessibilité
 
-## **ACCESS END** (FIN D'ACCÈS)
+## **<span lang="en">ACCESS END</span>** (FIN D'ACCÈS)
 
 Origine ou destination d'un tronçon d'ACCÈS. Peut indiquer un POINT
 et/ou un LIEU.
 
 → Partie Accessibilité
 
-## **ACCESS MODE** (MODE D'ACCÈS)
+## **<span lang="en">ACCESS MODE</span>** (MODE D'ACCÈS)
 
 Caractérisation du déplacement d'un passager lorsqu'il emprunte un moyen de
 transport autre que les transports publics (p. ex : à pied, à vélo, etc.).
@@ -43,16 +43,16 @@ transport autre que les transports publics (p. ex : à pied, à vélo, etc.).
 
 → Partie Réseaux
 
-## **ACCESS RIGHT IN PRODUCT** (DROIT D’ACCÈS D’UN PRODUIT tarifaire)
+## **<span lang="en">ACCESS RIGHT IN PRODUCT</span>** (DROIT D’ACCÈS D’UN PRODUIT tarifaire)
 
-Un ÉLÉMENT VALIDABLE (VALIDABLE ELEMENT) faisant partie d’un PRODUIT
-TARIFAIRE PRÉDÉFINI (PRE-ASSIGNED FARE PRODUCT), éventuellement incluant
+Un ÉLÉMENT VALIDABLE (<span lang="en">VALIDABLE ELEMENT</span>) faisant partie d’un PRODUIT
+TARIFAIRE PRÉDÉFINI (<span lang="en">PRE-ASSIGNED FARE PRODUCT</span>), éventuellement incluant
 un numéro d’ordre dans un ensemble d’ ÉLÉMENTs VALIDABLEs regroupés pour
 définir les droits d’accès de ce PRODUIT TARIFAIRE PRÉDÉFINI
 
 → Partie Tarifs
 
-## **ACCESS RIGHT PARAMETER ASSIGNMENT** (AFFECTATION DES PARAMÈTRES DES DROITS D'ACCÈS)
+## **<span lang="en">ACCESS RIGHT PARAMETER ASSIGNMENT</span>** (AFFECTATION DES PARAMÈTRES DES DROITS D'ACCÈS)
 
 L'affectation d'un paramètre tarifaire (faisant référence à la
 géographie, au temps, à la qualité ou à l'usage) à un élément d'un
@@ -61,7 +61,7 @@ etc.).
 
 → Partie Tarifs
 
-## **ACCESSIBILITY ASSESSMENT** (ÉVALUATION D'ACCESSIBILITÉ)
+## **<span lang="en">ACCESSIBILITY ASSESSMENT</span>** (ÉVALUATION D'ACCESSIBILITÉ)
 
 Caractéristiques d'accessibilité d'une entité utilisée par les passagers (comme
 un LIEU D'ARRÊT, un COMPOSANT DE LIEU D'ARRÊT, etc.). L'accessibilité est
@@ -72,7 +72,7 @@ l’accessibilité.
 
 → Partie Accessibilité
 
-## **ACCESSIBILITY LIMITATION** (LIMITE D'ACCESSIBILITÉ)
+## **<span lang="en">ACCESSIBILITY LIMITATION</span>** (LIMITE D'ACCESSIBILITÉ)
 
 Catégorisation des caractéristiques d'accessibilité d'un SITE (p. ex. :
 LIEU D'ARRÊT ou COMPOSANT DE LIEU D'ARRÊT) pour indiquer son
@@ -85,20 +85,20 @@ d'itinéraires pour les différentes classes d'usager.
 
 → Partie Accessibilité
 
-## **ACCOMODATION** (HÉBERGEMENT)
+## **<span lang="en">ACCOMODATION</span>** (HÉBERGEMENT)
 
 Combinaison de caractéristiques d'hébergement disponibles sur un service
 (p. ex : "Couchette première classe douche/2 lits").
 
 → Partie Accessibilité
 
-## **ACTUAL VEHICLE EQUIPMENT** (ÉQUIPEMENT VÉHICULE RÉEL)
+## **<span lang="en">ACTUAL VEHICLE EQUIPMENT</span>** (ÉQUIPEMENT VÉHICULE RÉEL)
 
 Équipement d'un type particulier sur un VÉHICULE donné.
 
 → Partie Accessibilité
 
-## **ADDRESS** (ADRESSE)
+## **<span lang="en">ADDRESS</span>** (ADRESSE)
 
 *(Transmodel)*
 
@@ -106,7 +106,7 @@ Adresse d'un lieu (postale et/ou sur voirie)
 
 → Partie Arrêts
 
-## **ALTERNATIVE NAME** (ALIAS)
+## **<span lang="en">ALTERNATIVE NAME</span>** (ALIAS)
 
 *(NeTEx)*
 
@@ -114,7 +114,7 @@ Nom alternatif pour un objet.
 
 → Partie éléments communs
 
-## **AMOUNT OF PRICE UNIT** (MONTANT D’UNITÉS TARIFAIRE)
+## **<span lang="en">AMOUNT OF PRICE UNIT</span>** (MONTANT D’UNITÉS TARIFAIRE)
 
 PRODUIT TARIFAIRE constitué d'une valeur stockée d'UNITÉS TARIFAIRE : une
 somme d'argent sur un porte-monnaie électronique, une quantité d'unités
@@ -122,14 +122,14 @@ transport sur une carte, etc.
 
 → Partie Tarifs
 
-## **ASSISTANCE SERVICE** (SERVICE D'ASSISTANCE)
+## **<span lang="en">ASSISTANCE SERVICE</span>** (SERVICE D'ASSISTANCE)
 
 SERVICE LOCAL spécialisé dans l'ASSISTANCE, fournissant des informations
 telles que la langue, le personnel formé à l'accessibilité, etc.
 
 → Partie Accessibilité
 
-## **AUTHORITY** (AUTORITÉ ORGANISATRICE)
+## **<span lang="en">AUTHORITY</span>** (AUTORITÉ ORGANISATRICE)
 
 INSTITUTION sous la responsabilité de laquelle l’organisation des
 transports est placée pour une zone géographique ou administrative
@@ -137,7 +137,7 @@ donnée.
 
 → Partie Réseaux
 
-## **BOARDING POSITION** (POSITION D’EMBARQUEMENT)
+## **<span lang="en">BOARDING POSITION</span>** (POSITION D’EMBARQUEMENT)
 
 *(Transmodel)*
 
@@ -152,22 +152,22 @@ extension du Modèle d’Arrêt Partagé.
 
 → Partie Arrêts
 
-## **BOOKING ARRANGEMENT** (CONDITIONS DE RESERVATION)
+## **<span lang="en">BOOKING ARRANGEMENT</span>** (CONDITIONS DE RESERVATION)
 
 CONDITIONS DE RÉSERVATION pour une LIGNE FLEXIBLE.
 
 → Partie Réseaux
 
-## **BORDER POINT** (POINT FRONTALIER)
+## **<span lang="en">BORDER POINT</span>** (POINT FRONTALIER)
 
 Un POINT sur le Réseau marquant une limite pour le calcul tarifaire.
 Peut ou non être un POINT D'ARRÊT PLANIFIÉ.
 
 → Partie Tarifs
 
-## **CAPPED DISCOUNT RIGHT** (REDUCTION PAR PLAFONNEMENT)
+## **<span lang="en">CAPPED DISCOUNT RIGHT</span>** (RÉDUCTION PAR PLAFONNEMENT)
 
-Spécialisation du DROIT A REDUCTION utilisé pour les tarifications de
+Spécialisation du DROIT À RÉDUCTION utilisé pour les tarifications de
 type « pay-as-you-go », où une fois qu'un certain niveau de consommation
 a été atteint dans un intervalle de temps donné, un plafond (tel que
 spécifié par une ou plusieurs RÈGLES DE PLAFONNEMENT) est appliqué, par
@@ -176,20 +176,20 @@ journée, au prix d'un passe journalier.
 
 → Partie Tarifs
 
-## **CATERING SERVICE** (SERVICE DE RESTAURATION)
+## **<span lang="en">CATERING SERVICE</span>** (SERVICE DE RESTAURATION)
 
 Spécialisation de SERVICE LOCAL dédiée aux services de restauration.
 
 → Partie Accessibilité
 
-## **CELL** (CELLULE)
+## **<span lang="en">CELL</span>** (CELLULE)
 
 Une combinaison unique de caractéristique au sein d'un GRILLE TARIFAIRE,
 utilisée pour associer un prix à un élément de tarif.
 
 → Partie Tarifs
 
-## **CHARGING MOMENT** (MOMENT DE PAIMENT)
+## **<span lang="en">CHARGING MOMENT</span>** (MOMENT DE PAIMENT)
 
 Une classification des PRODUITS TARIFAIRES selon le mode de paiement et
 le type de compte : pré-paiement à usage unique, pré-paiement avec débit
@@ -198,21 +198,21 @@ post- paiement etc...
 
 → Partie Tarifs
 
-## **CHARGING POLICY** (POLITIQUE DE PAIEMENT)
+## **<span lang="en">CHARGING POLICY</span>** (POLITIQUE DE PAIEMENT)
 
 Paramètre régissant le montant minimum et le crédit autorisé lors de la
 consommation d'un PRODUIT TARIFAIRE.
 
 → Partie Tarifs
 
-## **CLASS OF USE** (CLASSE D’UTILISATION)
+## **<span lang="en">CLASS OF USE</span>** (CLASSE D’UTILISATION)
 
 Une classification des tarifs et autres classes de services par
 catégorie d'utilisateur autorisé à les utiliser.
 
 → Partie Tarifs
 
-## **COMMERCIAL PROFILE** (PROFIL COMMERCIALE)
+## **<span lang="en">COMMERCIAL PROFILE</span>** (PROFIL COMMERCIALE)
 
 Catégorisation d'utilisateurs en fonction de leurs relations
 commerciales avec l'opérateur (fréquence d'utilisation, montant
@@ -220,32 +220,32 @@ d'achat…), souvent utilisée pour les remises.
 
 → Partie Tarifs
 
-## **COMMUNICATION SERVICE** (SERVICE DE COMMUNICATIONS)
+## **<span lang="en">COMMUNICATION SERVICE</span>** (SERVICE DE COMMUNICATIONS)
 
 Spécialisation de SERVICE LOCAL dédiée aux services de communications.
 
 → Partie Accessibilité
 
-## **COMPANION PROFILE** (PROFIL D’ACCOMPAGNATEUR)
+## **<span lang="en">COMPANION PROFILE</span>** (PROFIL D’ACCOMPAGNATEUR)
 
 Le nombre et les caractéristiques des personnes autorisées à voyager en
 tant qu’accompagnateur d'un autre PROFIL UTILISATEUR.
 
 → Partie Tarifs
 
-## **COMPLAINTS SERVICE** (SERVICE DE RÉCLAMATIONS)
+## **<span lang="en">COMPLAINTS SERVICE</span>** (SERVICE DE RÉCLAMATIONS)
 
 Spécialisation du SERVICE CLIENT pour les RÉCLAMATIONS.
 
 → Partie Accessibilité
 
-## **COMPOUND TRAIN** (TRAIN COMPOSÉ)
+## **<span lang="en">COMPOUND TRAIN</span>** (TRAIN COMPOSÉ)
 
 TYPE DE VEHICULE composé d’une séquence d’un ou plusieurs TRAIN.
 
 → Partie Réseaux
 
-## **CONNECTION** (CORRESPONDANCE)
+## **<span lang="en">CONNECTION</span>** (CORRESPONDANCE)
 
 Possibilité physique (spatiale) d'un passager de passer d'un véhicule de
 transport public vers un autre dans le but de continuer son voyage. Des
@@ -254,14 +254,14 @@ type de passager.
 
 → Partie Réseaux
 
-## **CONNECTION END** (EXTRÉMITÉ DE CORRESPONDANCE)
+## **<span lang="en">CONNECTION END</span>** (EXTRÉMITÉ DE CORRESPONDANCE)
 
 Début ou fin d'une CORRESPONDANCE. Il s’agit forcément d’une relation
 avec un POINT D’ARRÊT PLANIFIÉ.
 
 → Partie Réseaux
 
-## **CONTACT DETAILS** (INFORMATIONS DE CONTACT)
+## **<span lang="en">CONTACT DETAILS</span>** (INFORMATIONS DE CONTACT)
 
 *(NeTEx)*
 
@@ -272,14 +272,14 @@ etc.).
 
 → Partie éléments communs
 
-## **CONTROL CENTRE** (CENTRE DE CONTROL)
+## **<span lang="en">CONTROL CENTRE</span>** (CENTRE DE CONTROL)
 
 UNITÉ ORGANISATIONNELLE composée d’une équipe opérationnelle en charge
 des commandes et du contrôle des services d’exploitation.
 
 → Partie Réseaux
 
-## **COUPLED JOURNEY** (COURSE COUPLÉE)
+## **<span lang="en">COUPLED JOURNEY</span>** (COURSE COUPLÉE)
 
 Un voyage complet opéré par un train couplé, composé de deux COURSES, ou
 plus, restant couplées tout au long d’un PARCOURS. Une COURSE COUPLÉE
@@ -287,7 +287,7 @@ peut être considérée comme une simple COURSE.
 
 → Partie horaires
 
-## **CROSSING EQUIPMENT** (ÉQUIPEMENT DE CROISEMENT)
+## **<span lang="en">CROSSING EQUIPMENT</span>** (ÉQUIPEMENT DE CROISEMENT)
 
 ÉQUIPEMENT D'ACCÈS À LA PLACE spécialisé pour ÉQUIPEMENTS DE
 FRANCHISSEMENT (passages piétons, éclairage piétons, dispositif
@@ -295,21 +295,21 @@ acoustique, capteurs, bandes de guidage tactiles, etc.).
 
 → Partie Accessibilité
 
-## **CUSTOMER SERVICE** (SERVICE CLIENT)
+## **<span lang="en">CUSTOMER SERVICE</span>** (SERVICE CLIENT)
 
 SERVICE LOCAL générique spécial pour SERVICE CLIENT (objets perdus,
 point de rencontre, réclamations, etc.).
 
 → Partie Accessibilité
 
-## **CYCLE STORAGE EQUIPMENT** (ÉQUIPEMENT DE STOCKAGE DE CYCLE)
+## **<span lang="en">CYCLE STORAGE EQUIPMENT</span>** (ÉQUIPEMENT DE STOCKAGE DE CYCLE)
 
 Spécialisation de l'ÉQUIPEMENT DE PLACE décrivant les équipements de
 parc pour deux-roues.
 
 → Partie Accessibilité
 
-## **DATA SOURCE** (SOURCE DE DONNEES)
+## **<span lang="en">DATA SOURCE</span>** (SOURCE DE DONNEES)
 
 *(Transmodel)*
 
@@ -319,7 +319,7 @@ contexte de l'interopérabilité des systèmes d'information.
 
 → Partie éléments communs
 
-## **DATED PASSING TIME** (HEURE DE PASSAGE DATÉE)
+## **<span lang="en">DATED PASSING TIME</span>** (HEURE DE PASSAGE DATÉE)
 
 HEURE DE PASSAGE pour un JOUR D'EXPLOITATION donné. Cet objet restera
 abstrait dans le contexte de ce profil et ne sera utiliséutilisé qu’au
@@ -327,7 +327,7 @@ travers de sa spécialisation en HEURE DE PASSAGE COMMANDÉE.
 
 → Partie horaires
 
-## **DATED VEHICLE JOURNEY** (COURSE DATÉE)
+## **<span lang="en">DATED VEHICLE JOURNEY</span>** (COURSE DATÉE)
 
 Service service particulier d'un véhicule sur un jour de fonctionnement
 particulier, y compris toutes les modifications éventuellement décidées
@@ -337,7 +337,7 @@ spécialisation en COURSE DATÉE NORMALE.
 
 → Partie horaires
 
-## **DEAD RUN** (HAUT LE PIED)
+## **<span lang="en">DEAD RUN</span>** (HAUT LE PIED)
 
 PARCOURS associé à un HAUT LE PIED (sans transport des passagers :
 retour dépôt, jonction entre ligne, etc.).
@@ -346,7 +346,7 @@ retour dépôt, jonction entre ligne, etc.).
 
 → Partie horaires
 
-## **DEFAULT CONNECTION** (CORRESPONDACE PAR DEFAUT)
+## **<span lang="en">DEFAULT CONNECTION</span>** (CORRESPONDACE PAR DEFAUT)
 
 Possibilité physique (spatiale) d'un passager de passer d'un véhicule de
 transport public vers un autre dans le but de continuer son voyage. Elle
@@ -358,14 +358,14 @@ correspondance bus vers train peut être différente de train vers bus).
 
 → Partie Réseaux
 
-## **DEFAULT INTERCHANGE** (CORRESPONDANCE PAR DEFAUT)
+## **<span lang="en">DEFAULT INTERCHANGE</span>** (CORRESPONDANCE PAR DEFAUT)
 
 Paramètre définissant la durée acceptable (maximum autorisée et objectif
 de durée standard) pour une correspondance entre deux POINTS D'ARRÊT.
 
 → Partie horaires
 
-## **DELIVERY VARIANT** (VARIANTE DE DIFFUSION)
+## **<span lang="en">DELIVERY VARIANT</span>** (VARIANTE DE DIFFUSION)
 
 *(Transmodel)*
 
@@ -374,7 +374,7 @@ lu, imprimé, etc.).
 
 → Partie éléments communs
 
-## **DESTINATION DISPLAY** (DESTINATION AFFICHÉE)
+## **<span lang="en">DESTINATION DISPLAY</span>** (DESTINATION AFFICHÉE)
 
 Une destination d'un PARCOURS (ou ITINÉRAIRE) particulier, affichée au
 public en général sur une girouette ou sur tout autre afficheur
@@ -384,20 +384,20 @@ franchissement des points VIA.
 
 → Partie Réseaux
 
-## **DESTINATION DISPLAY VARIANT** (VARIANTE DE DESTINATION AFFICHÉE)
+## **<span lang="en">DESTINATION DISPLAY VARIANT</span>** (VARIANTE DE DESTINATION AFFICHÉE)
 
 alternative à la DESTINATION AFFICHÉE, généralement destiné à des média
 spécifiques (SMS, type d’afficheur particulier, etc.)
 
 → Partie Réseaux
 
-## **DIRECTION** (SENS)
+## **<span lang="en">DIRECTION</span>** (SENS)
 
 Classification de l'orientation générale des ITINÉRAIREs.
 
 → Partie Réseaux
 
-## **DISTANCE MATRIX ELEMENT** (ÉLÉMENT DE MATRICE DE DISTANCES)
+## **<span lang="en">DISTANCE MATRIX ELEMENT</span>** (ÉLÉMENT DE MATRICE DE DISTANCES)
 
 Une cellule d'une matrice origine-destination pour les ZONES TARIFAIRES
 ou POINTS D'ARRÊT, exprimant une distance tarifaire pour le trajet
@@ -405,34 +405,34 @@ correspondant : valeur en km, nombre d'unités tarifaires etc.
 
 → Partie Tarifs
 
-## **DISTRIBUTION ASSIGNMENT** (AFFECTATION DE DISTRIBUTION)
+## **<span lang="en">DISTRIBUTION ASSIGNMENT</span>** (AFFECTATION DE DISTRIBUTION)
 
 Une affectation du CANAL DE DISTRIBUTION par lequel un produit peut ou
 non être distribué.
 
 → Partie Tarifs
 
-## **DISTRIBUTION CHANNEL** (CANAL DE DISTRIBUTION)
+## **<span lang="en">DISTRIBUTION CHANNEL</span>** (CANAL DE DISTRIBUTION)
 
 Un type de point de vente pour la vente d'un produit.
 
 → Partie Tarifs
 
-## **DISTRIBUTION VALIDITY PARAMETERS** (PARAMÈTRE DE VALIDITÉ POUER LA DISTRIBUTION)
+## **<span lang="en">DISTRIBUTION VALIDITY PARAMETERS</span>** (PARAMÈTRE DE VALIDITÉ POUER LA DISTRIBUTION)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié à la distribution des produits
 tarifaires.
 
 → Partie Tarifs
 
-## **ELIGIBILITY CHANGE POLICY** (POLITIQUE POUR LE CHANGEMENT D’ÉLIGIBILITÉ)
+## **<span lang="en">ELIGIBILITY CHANGE POLICY</span>** (POLITIQUE POUR LE CHANGEMENT D’ÉLIGIBILITÉ)
 
 La politique à appliquer si l'éligibilité d'un utilisateur, en tant que
 PROFIL UTILISATEUR, change.
 
 → Partie Tarifs
 
-## **ENCUMBRANCE NEED** (BESOIN DE TRANSPORT DE BAGAGES)
+## **<span lang="en">ENCUMBRANCE NEED</span>** (BESOIN DE TRANSPORT DE BAGAGES)
 
 BESOIN D'USAGER spécifique, à savoir une exigence d'un passager
 voyageant avec des bagages, un animal ou tout autre objet, et qui
@@ -441,14 +441,14 @@ transports publics.
 
 → Partie Accessibilité
 
-## **ENTITLEMENT GIVEN** (DROIT OBTENU)
+## **<span lang="en">ENTITLEMENT GIVEN</span>** (DROIT OBTENU)
 
 Paramètre indiquant si un PRODUIT TARIFAIRE particulier donne le droit
 d'acheter ou d'utiliser un droit d'accès.
 
 → Partie Tarifs
 
-## **ENTITLEMENT PRODUCT** (PRODUIT OUVRANT DES DROITS)
+## **<span lang="en">ENTITLEMENT PRODUCT</span>** (PRODUIT OUVRANT DES DROITS)
 
 Une condition préalable pour accéder à un service ou pour acheter un
 PRODUIT TARIFAIRE délivré par une organisation qui peut ne pas être un
@@ -456,14 +456,14 @@ opérateur transport public (par exemple, une carte militaire).
 
 → Partie Tarifs
 
-## **ENTITLEMENT REQUIRED** (DROIT REQUIS)
+## **<span lang="en">ENTITLEMENT REQUIRED</span>** (DROIT REQUIS)
 
 Paramètre indiquant si un PRODUIT TARIFAIRE nécessite un droit ou
 autorisation particulière pour pouvoir l’acheter ou l’utiliser.
 
 → Partie Tarifs
 
-## **ENTITY** (ENTITÉ)
+## **<span lang="en">ENTITY</span>** (ENTITÉ)
 
 *(Transmodel)*
 
@@ -474,7 +474,7 @@ un SYSTÈME DE DONNÉES particulier qui l'a définie.
 
 → Partie éléments communs
 
-## **ENTITY IN VERSION** (ENTITÉ PAR VERSION)
+## **<span lang="en">ENTITY IN VERSION</span>** (ENTITÉ PAR VERSION)
 
 *(Transmodel)*
 
@@ -482,7 +482,7 @@ Les ENTITÉs associées à une VERSION spécifique.
 
 → Partie éléments communs
 
-## **ENTRANCE** (ACCÈS DE SITE)
+## **<span lang="en">ENTRANCE</span>** (ACCÈS DE SITE)
 
 *(Transmodel)*
 
@@ -492,14 +492,14 @@ distinctif d’un accès.
 
 → Partie Arrêts
 
-## **ENTRANCE EQUIPMENT** (ÉQUIPEMENT D'ENTRÉE)
+## **<span lang="en">ENTRANCE EQUIPMENT</span>** (ÉQUIPEMENT D'ENTRÉE)
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS À LA PLACE pour ENTRÉES (portes,
 barrières, portes tournantes, etc.)
 
 → Partie Accessibilité
 
-## **EQUIPMENT** (ÉQUIPEMENT)
+## **<span lang="en">EQUIPMENT</span>** (ÉQUIPEMENT)
 
 Équipement installé de manière fixe (ÉQUIPEMENT DE LIEU) ou à bord des
 véhicules (ÉQUIPEMENT VÉHICULE). Un service (SERVICE LOCAL de type
@@ -508,33 +508,33 @@ immatériel.
 
 → Partie Accessibilité
 
-## **EQUIPMENT PLACE** (LIEU DES EQUIPEMENTS)
+## **<span lang="en">EQUIPMENT PLACE</span>** (LIEU DES EQUIPEMENTS)
 
 COMPOSANT DE SITE comprenant un ÉQUIPEMENT
 
 → Partie Accessibilité
 
-## **EQUIPMENT POSITION** (POSITION DES EQUIPEMENTS)
+## **<span lang="en">EQUIPMENT POSITION</span>** (POSITION DES EQUIPEMENTS)
 
 La place précise au sein d'un LIEU DES ÉQUIPEMENTS d'équipements
 particuliers.
 
 → Partie Accessibilité
 
-## **ESCALATOR EQUIPMENT** (ÉQUIPEMENT D'ESCALIER ROULANT)
+## **<span lang="en">ESCALATOR EQUIPMENT</span>** (ÉQUIPEMENT D'ESCALIER ROULANT)
 
 Spécialisation de l'ÉQUIPEMENT D'ESCALIER pour des ESCALIERS ROULANTS.
 
 → Partie Accessibilité
 
-## **EXCHANGING** (ÉCHANGE)
+## **<span lang="en">EXCHANGING</span>** (ÉCHANGE)
 
 Si et comment le droit d'accès peut être échangé contre un autre droit
 d'accès.
 
 → Partie Tarifs
 
-## **FACILITY** (INSTALLATION)
+## **<span lang="en">FACILITY</span>** (INSTALLATION)
 
 *note : la traduction SERVICE aurait probablement été plus appropriée*
 
@@ -545,7 +545,7 @@ propriétés fournies dans le cadre d'une prestation particulière.
 
 → Partie Accessibilité
 
-## **FACILITY SET** (ENSEMBLE D'INSTALLATIONS)
+## **<span lang="en">FACILITY SET</span>** (ENSEMBLE D'INSTALLATIONS)
 
 Ensemble d'INSTALLATIONS disponibles pour une COURSE COMMERCIALE ou un
 MORCEAU DE COURSE. L'ensemble peut être disponible uniquement pour un
@@ -554,7 +554,7 @@ plancher surbaissé).
 
 → Partie Accessibilité
 
-## **FARE DEMAND FACTOR** (FACTEUR TARIFAIRE LIÉ À LA DEMENADE)
+## **<span lang="en">FARE DEMAND FACTOR</span>** (FACTEUR TARIFAIRE LIÉ À LA DEMENADE)
 
 Un ensemble nommé de paramètres définissant une période de déplacement
 avec un prix donné, par exemple heures creuses, heures pleines, super
@@ -562,56 +562,56 @@ heures creuses, etc.
 
 → Partie Tarifs
 
-## **FARE ELEMENT IN SEQUENCE** (D’ÉLÉMENT TARIFAIRE EN SÉQUENCE)
+## **<span lang="en">FARE ELEMENT IN SEQUENCE</span>** (D’ÉLÉMENT TARIFAIRE EN SÉQUENCE)
 
 Un ÉLÉMENT TARIFAIRE faisant partie d'un ensemble, y compris son ordre
 éventuel dans la séquence d'ÉLÉMENTS TARIFAIRE.
 
 → Partie Tarifs
 
-## **FARE POINT IN JOURNEY PATTERN** (POINT TARIFAIRE DANS UN PARCOURS)
+## **<span lang="en">FARE POINT IN JOURNEY PATTERN</span>** (POINT TARIFAIRE DANS UN PARCOURS)
 
 Un POINT SUR PARCOURS qui représente le début ou la fin d'une SECTION
 TARIFAIRE, ou un point utilisé pour définir une CONTRAINTE DE SÉRIE.
 
 → Partie Tarifs
 
-## **FARE PRICE** (PRIX)
+## **<span lang="en">FARE PRICE</span>** (PRIX)
 
 Caractéristiques de prix définies par défaut caractérisant les
 différents GROUPES DE PRIX.
 
 → Partie Tarifs
 
-## **FARE PRODUCT** (PRODUIT TARIFAIRE)
+## **<span lang="en">FARE PRODUCT</span>** (PRODUIT TARIFAIRE)
 
 Un élément commercialisable immatériel (droits d'accès, droits de
 remise, etc.), propre à un MOMENT DE PAIEMENT.
 
 → Partie Tarifs
 
-## **FARE QUOTA FACTOR** (FACTEUR DE QUOTA TARIFAIRE)
+## **<span lang="en">FARE QUOTA FACTOR</span>** (FACTEUR DE QUOTA TARIFAIRE)
 
 Un ensemble paramètres définissant un nombre maximal de tarifs
 disponibles pour une dénomination donnée.
 
 → Partie Tarifs
 
-## **FARE SCHEDULED STOP POINT** (POINT D’ARRÊT TARIFAIRE)
+## **<span lang="en">FARE SCHEDULED STOP POINT</span>** (POINT D’ARRÊT TARIFAIRE)
 
 Une spécialisation de POINT D'ARRÊT PLANIFIÉ décrivant un arrêt avec des
 caractéristiques tarifaires en lien avec l’itinéraire.
 
 → Partie Tarifs
 
-## **FARE SECTION** (SECTION TARIFAIRE)
+## **<span lang="en">FARE SECTION</span>** (SECTION TARIFAIRE)
 
 Subdivision d'un PARCOURS constitué de POINTs consécutifs sur ce
 PARCOURS, utilisée pour définir un élément de la structure tarifaire.
 
 → Partie Tarifs
 
-## **FARE STRUCTURE ELEMENT** (ÉLÉMENT DE STRUCTURE TARIFAIRE)
+## **<span lang="en">FARE STRUCTURE ELEMENT</span>** (ÉLÉMENT DE STRUCTURE TARIFAIRE)
 
 Une séquence ou un ensemble d'éléments tarifaires auxquels sont
 appliquées des règles de limitation des droits d'accès et de calcul des
@@ -619,7 +619,7 @@ prix (structure tarifaire).
 
 → Partie Tarifs
 
-## **FARE STRUCTURE ELEMENT IN SEQUENCE** (ÉLÉMENTS DE STRUCTURE TARIFAIRE EN SÉQUENCE)
+## **<span lang="en">FARE STRUCTURE ELEMENT IN SEQUENCE</span>** (ÉLÉMENTS DE STRUCTURE TARIFAIRE EN SÉQUENCE)
 
 Un ÉLÉMENT DE STRUCTURE TARIFAIRE faisant partie d'un ÉLÉMENT VALIDABLE,
 y compris son ordre éventuel dans la séquence d'ÉLÉMENTS DE STRUCTURE
@@ -628,7 +628,7 @@ quantitative.
 
 → Partie Tarifs
 
-## **FARE TABLE** (GRILLE TARIFAIRE)
+## **<span lang="en">FARE TABLE</span>** (GRILLE TARIFAIRE)
 
 Un regroupement de prix pouvant être associé à tout ou partie des
 éléments suivants : ÉLÉMENT DE MATRICE DE DISTANCE, ÉLÉMENT DE STRUCTURE
@@ -637,21 +637,21 @@ CLASSE D'UTILISATION, OPÉRATEUR, MODE VÉHICULE, PRODUIT TARIFAIRE.
 
 → Partie Tarifs
 
-## **FARE VALIDITY PARAMETERS** (PARAMETRES DE VALIDITÉ TARIFAIRE)
+## **<span lang="en">FARE VALIDITY PARAMETERS</span>** (PARAMETRES DE VALIDITÉ TARIFAIRE)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié aux produits tarifaires et/ou à
 leur distribution.
 
 → Partie Tarifs
 
-## **FARE ZONE** (ZONE BILLÉTIQUE)
+## **<span lang="en">FARE ZONE</span>** (ZONE BILLÉTIQUE)
 
 Specialisation d’une ZONE TARIFAIRE pour inclure les SECTIONs
 TARIFAIREs.
 
 → Partie Tarifs
 
-## **FLEXIBLE LINE** (LIGNE FLEXIBLE)
+## **<span lang="en">FLEXIBLE LINE</span>** (LIGNE FLEXIBLE)
 
 Spécialisation de la LIGNE pour décrire les services flexibles. Tous les
 services d'une LIGNE peuvent ne pas être flexibles, la flexibilité
@@ -661,7 +661,7 @@ flexibilité de la LIGNE).
 
 → Partie Réseaux
 
-## **FLEXIBLE LINK PROPERTIES** (PROPRIÉTÉ DE TRONÇON FLEXIBLE)
+## **<span lang="en">FLEXIBLE LINK PROPERTIES</span>** (PROPRIÉTÉ DE TRONÇON FLEXIBLE)
 
 Ensemble de caractéristiques décrivant les éventuelles flexibilités
 associées à un lien
@@ -671,7 +671,7 @@ l'héritage multiple.
 
 → Partie Réseaux
 
-## **FLEXIBLE POINT PROPERTIES** (PROPRIÉTÉ DE POINT FLEXIBLE)
+## **<span lang="en">FLEXIBLE POINT PROPERTIES</span>** (PROPRIÉTÉ DE POINT FLEXIBLE)
 
 Ensemble de caractéristiques décrivant les éventuelles flexibilités
 associées à un point
@@ -681,7 +681,7 @@ l'héritage multiple.
 
 → Partie Réseaux
 
-## **FLEXIBLE ROUTE** (ITINERAIRE FLEXIBLE)
+## **<span lang="en">FLEXIBLE ROUTE</span>** (ITINERAIRE FLEXIBLE)
 
 Spécialisation de l'ITINÉRAIRE pour décrire les services flexibles. Il
 peut inclure des POINTs et des ZONEs, et des sections parcourues dans un
@@ -689,14 +689,14 @@ ordre prédéfini ou non.
 
 → Partie Réseaux
 
-## **FLEXIBLE SERVICE PROPERTIES** (PROPRIÉTÉS DE COURSE FLEXIBLE)
+## **<span lang="en">FLEXIBLE SERVICE PROPERTIES</span>** (PROPRIÉTÉS DE COURSE FLEXIBLE)
 
 Propriété supplémentaire d'un service permettant de caractériser sa
 flexibilité. Un service peut n'être que partiellement flexible.
 
 → Partie horaires
 
-## **FLEXIBLE STOP PLACE** (LIEU D’ARRÊT FLEXIBLE)
+## **<span lang="en">FLEXIBLE STOP PLACE</span>** (LIEU D’ARRÊT FLEXIBLE)
 
 Spécialisation du LIEU D’ARRÊT décrivant un arrêt d'un service flexible.
 Il peut être composé de zones flexibles ou de zones de type « hail and
@@ -709,7 +709,7 @@ ZONE étant alors considéré comme le POINT D'ARRÊT PLANIFIÉ).
 
 → Partie Réseaux
 
-## **FREQUENCY OF USE** (FÉQUENCE D’UTILISATION)
+## **<span lang="en">FREQUENCY OF USE</span>** (FÉQUENCE D’UTILISATION)
 
 Limites de fréquence d'utilisation d'un PRODUIT TARIFAIRE (ou d'un de
 ses composants) ou d'une OFFRE A LA VENTE pendant une PÉRIODE DE
@@ -718,21 +718,21 @@ la fréquence de consommation du droit au cours de la période.
 
 → Partie Tarifs
 
-## **FULFILMENT METHOD** (MÉTHODE DE DÉLIVRANCE)
+## **<span lang="en">FULFILMENT METHOD</span>** (MÉTHODE DE DÉLIVRANCE)
 
 Le moyen par lequel le billet est remis au CLIENT, par ex. en ligne,
 collecte, etc.
 
 → Partie Tarifs
 
-## **GENERAL SIGN** (SIGNALISATION GÉNÉRALE)
+## **<span lang="en">GENERAL SIGN</span>** (SIGNALISATION GÉNÉRALE)
 
 Spécialisation d'ÉQUIPEMENT DE SIGNALISATION différent des INDICATIONS
 DE DIRECTION et de LIEU.
 
 → Partie Accessibilité
 
-## **GENERIC PARAMETER ASSIGNMENT** (AFFECTATION GÉNÉRIQUE DES PARAMÈTRES)
+## **<span lang="en">GENERIC PARAMETER ASSIGNMENT</span>** (AFFECTATION GÉNÉRIQUE DES PARAMÈTRES)
 
 Une AFFECTATION DE PARAMETRES DE VALIDITE spécifiant des droits d'accès
 génériques pour une classe de produits (par exemple une limite de
@@ -741,7 +741,7 @@ tranche horaire - 7h à 10h - pour les trajets effectués avec un titre
 
 → Partie Tarifs
 
-## **GEOGRAPHICAL INTERVAL** (INTERVAL GÉOGRAPHIQUE)
+## **<span lang="en">GEOGRAPHICAL INTERVAL</span>** (INTERVAL GÉOGRAPHIQUE)
 
 Un intervalle géographique précisant les droits d'accès pour les
 ÉLÉMENTS DE STRUCTURE TARIFAIRE dans la plage de cet intervalle : 0-5
@@ -749,20 +749,20 @@ km, 4-6 zones etc.
 
 → Partie Tarifs
 
-## **GEOGRAPHICAL STRUCTURE FACTOR** (FACTEUR D’INTERVAL GÉOGRAPHIQUE)
+## **<span lang="en">GEOGRAPHICAL STRUCTURE FACTOR</span>** (FACTEUR D’INTERVAL GÉOGRAPHIQUE)
 
 La valeur d'un INTERVALLE GEOGRAPHIQUE ou d'un ELEMENT MATRICE DE
 DISTANCE exprimée par une UNITÉ GEOGRAPHIQUE.
 
 → Partie Tarifs
 
-## **GEOGRAPHICAL UNIT** (UNITÉ GÉOGAPHIQUE)
+## **<span lang="en">GEOGRAPHICAL UNIT</span>** (UNITÉ GÉOGAPHIQUE)
 
 Une unité de calcul des tarifs géographiques dégressifs.
 
 → Partie Tarifs
 
-## **GROUP OF DISTANCE MATRIX ELEMENTS** (GROUPE D’ÉLÉMENT MATRICES DE DISTANCE)
+## **<span lang="en">GROUP OF DISTANCE MATRIX ELEMENTS</span>** (GROUPE D’ÉLÉMENT MATRICES DE DISTANCE)
 
 Un regroupement d'ÉLÉMENTS DE MATRICE DE DISTANCE. Peut être utilisé
 pour fournir des paires Origine/Destination réutilisables (et leur
@@ -770,7 +770,7 @@ associer un PRIX).
 
 → Partie Tarifs
 
-## **GROUP OF ENTITIES** (GROUPE D'ENTITÉS)
+## **<span lang="en">GROUP OF ENTITIES</span>** (GROUPE D'ENTITÉS)
 
 *(Transmodel)*
 
@@ -779,43 +779,43 @@ spécifique ou un numéro.
 
 → Partie éléments communs
 
-## **GROUP OF LINES** (GROUPE DE LIGNES)
+## **<span lang="en">GROUP OF LINES</span>** (GROUPE DE LIGNES)
 
 Regroupement de lignes référencées de manière commune relative à un
 objectif donné.
 
 → Partie Réseaux
 
-## **GROUP OF OPERATOR** (GROUPE D’EXPLOITANTS)
+## **<span lang="en">GROUP OF OPERATOR</span>** (GROUPE D’EXPLOITANTS)
 
 Groupe d’EXPLOITANTs ayant en commun, par exemple, un ensemble de règles
 tarifaires et d’information voyageur.
 
 → Partie Réseaux
 
-## **GROUP OF SALES OFFER PACKAGES** (GROUPE D’OFFRES À LA VENTE)
+## **<span lang="en">GROUP OF SALES OFFER PACKAGES</span>** (GROUPE D’OFFRES À LA VENTE)
 
 Un groupement d’OFFREs À LA VENTE
 
 → Partie Tarifs
 
-## **GROUP OF STOP PLACE** (GROUPE DE LIEUX D’ARRÊT)
+## **<span lang="en">GROUP OF STOP PLACE</span>** (GROUPE DE LIEUX D’ARRÊT)
 
 *(Transmodel)*
 
 Il correspond à une spécialisation de la notion normalisée TRANSMODEL de
-GROUPE D’ENTITÉs (GROUP OF ENTITIES en anglais).
+GROUPE D’ENTITÉs (<span lang="en">GROUP OF ENTITIES</span> en anglais).
 
 → Partie Arrêts
 
-## **GROUP TICKET** (TICKET DE GROUPE)
+## **<span lang="en">GROUP TICKET</span>** (TICKET DE GROUPE)
 
 Le nombre et les caractéristiques des personnes autorisées à voyager en
 plus du titulaire d'un droit d'accès.
 
 → Partie Tarifs
 
-## **HEADING SIGN** (SIGNALISATION DE TITRE)
+## **<span lang="en">HEADING SIGN</span>** (SIGNALISATION DE TITRE)
 
 *note : GIROUETTE aurait été une traduction plus appropriée*
 
@@ -824,14 +824,14 @@ direction, d'une ligne, etc.
 
 → Partie Accessibilité
 
-## **HEADWAY INTERVAL** (INTERVAL)
+## **<span lang="en">HEADWAY INTERVAL</span>** (INTERVAL)
 
 Intervalle temporel caractérisant un GROUPE DE COURSE À INTERVALLE (par
 exemple toutes les 10 minutes ou toutes les 4 à 6 minutes).
 
 → Partie horaires
 
-## **HEADWAY JOURNEY GROUP** (GROUPE DE COURSES EN FRÉQUENCE)
+## **<span lang="en">HEADWAY JOURNEY GROUP</span>** (GROUPE DE COURSES EN FRÉQUENCE)
 
 Groupe de COURSEs suivant le même PARCOURS et dont les départs sont
 séparés d'un intervalle temporel fixe au sein d'un créneau horaire donné
@@ -841,14 +841,14 @@ créneau horaire est exprimé par l'objet TIME BAND.
 
 → Partie horaires
 
-## **HIRE SERVICE** (SERVICE DE LOCATION)
+## **<span lang="en">HIRE SERVICE</span>** (SERVICE DE LOCATION)
 
 Spécialisation de SERVICE LOCAL dédiée aux services de location (cycles,
 voitures).
 
 → Partie Accessibilité
 
-## **INSTALLED EQUIPMENT** (ÉQUIPEMENT INSTALLÉ)
+## **<span lang="en">INSTALLED EQUIPMENT</span>** (ÉQUIPEMENT INSTALLÉ)
 
 Équipement installé de manière fixe (ÉQUIPEMENT DE LIEU) ou embarqué
 (associé à des véhicules). Cet équipement est matérialisé par opposition
@@ -856,14 +856,14 @@ voitures).
 
 → Partie Accessibilité
 
-## **INTERCHANGE** (CORRESPONDANCE DE COURSES)
+## **<span lang="en">INTERCHANGE</span>** (CORRESPONDANCE DE COURSES)
 
 Une possibilité théorique de correspondance entre courses intervenant à
 un seul POINT D'ARRÊT ou entre différents POINTs D'ARRÊT.
 
 → Partie horaires
 
-## **JOURNEY FREQUENCY GROUP** (GROUPE DE COURSES EN FRÉQUENCE)
+## **<span lang="en">JOURNEY FREQUENCY GROUP</span>** (GROUPE DE COURSES EN FRÉQUENCE)
 
 Définit un groupe de COURSEs afin de leur attribuer un comportement
 particulier comme un service en fréquence ou un service cadencé (passe
@@ -871,7 +871,7 @@ toutes les heures ..h10, ..h25 et ..h45 par exemple).
 
 → Partie horaires
 
-## **JOURNEY PART** (PARTIE DE COURSE)
+## **<span lang="en">JOURNEY PART</span>** (PARTIE DE COURSE)
 
 Une partie d'une COURSE créée dans un but fonctionnel spécifique,
 notamment dans les situations lors de couplage ou de séparation de
@@ -879,14 +879,14 @@ véhicule.
 
 → Partie horaires
 
-## **JOURNEY PART COUPLE** (COUPLE DE PARTIES DE COURSE)
+## **<span lang="en">JOURNEY PART COUPLE</span>** (COUPLE DE PARTIES DE COURSE)
 
 Deux PARTIEs DE COURSEs de différentes COURSES effectuées simultanément
 par un train constitué par le couplage de plusieurs véhicules ou rames.
 
 → Partie horaires
 
-## **JOURNEY PATTERN** (PARCOURS)
+## **<span lang="en">JOURNEY PATTERN</span>** (PARCOURS)
 
 Liste ordonnée de POINTs D'ARRÊT PLANIFIÉs et de POINTs HORAIREs sur un
 unique ITINÉRAIRE, décrivant le plan de déplacement pour les véhicules
@@ -896,14 +896,14 @@ point est la destination.
 
 → Partie Réseaux
 
-## **LEFT LUGGAGE SERVICE** (SERVICE DE CONSIGNE)
+## **<span lang="en">LEFT LUGGAGE SERVICE</span>** (SERVICE DE CONSIGNE)
 
 Spécialisation du SERVICE CLIENTÈLE pour les consignes à bagages
 (casiers en libre-service, gratuits, etc.).
 
 → Partie Accessibilité
 
-## **LIFT EQUIPMENT** (ÉQUIPEMENT D'ASCENSEUR)
+## **<span lang="en">LIFT EQUIPMENT</span>** (ÉQUIPEMENT D'ASCENSEUR)
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS À LA PLACE pour ASCENSEURS (indique
 des caractéristiques telles que la profondeur, la charge maximale,
@@ -911,14 +911,14 @@ etc.).
 
 → Partie Accessibilité
 
-## **LINE** (LIGNE)
+## **<span lang="en">LINE</span>** (LIGNE)
 
 Groupe d'ITINÉRAIREs (voir plus bas) qui est en général connu du public
 par une appellation commune (nom ou numéro, extrémités de ligne, etc.).
 
 → Partie Réseaux
 
-## **LINK** (TRONÇON)
+## **<span lang="en">LINK</span>** (TRONÇON)
 
 *(Transmodel)*
 
@@ -928,7 +928,7 @@ POINTs.
 
 → Partie éléments communs
 
-## **LINK SEQUENCE** (SUITE DE TRONÇON)
+## **<span lang="en">LINK SEQUENCE</span>** (SUITE DE TRONÇON)
 
 *(Transmodel)*
 
@@ -939,7 +939,7 @@ le réseau.
 
 → Partie éléments communs
 
-## **LOCAL SERVICE** (SERVICE LOCAL)
+## **<span lang="en">LOCAL SERVICE</span>** (SERVICE LOCAL)
 
 Service identifié en fonction de l'utilisation du SITE ou des services
 de transport à un lieu particulier (p. ex :porteur, assistance aux
@@ -949,27 +949,27 @@ traité comme une forme d'ÉQUIPEMENT immatériel.
 
 → Partie Accessibilité
 
-## **LOST PROPERTY SERVICE** (SERVICE DES OBJETS TROUVÉS)
+## **<span lang="en">LOST PROPERTY SERVICE</span>** (SERVICE DES OBJETS TROUVÉS)
 
 Spécialisation du SERVICE CLIENTÈLE pour les objets trouvés.
 
 → Partie Accessibilité
 
-## **LUGGAGE ALLOWANCE** (BAGAGES AUTORISÉS)
+## **<span lang="en">LUGGAGE ALLOWANCE</span>** (BAGAGES AUTORISÉS)
 
 Le nombre et les caractéristiques (poids, volume) des bagages qu'un
 titulaire d'un droit d'accès est autorisé à transporter.
 
 → Partie Tarifs
 
-## **LUGGAGE LOCKER EQUIPMENT** (ÉQUIPEMENT DE CONSIGNE À BAGAGES)
+## **<span lang="en">LUGGAGE LOCKER EQUIPMENT</span>** (ÉQUIPEMENT DE CONSIGNE À BAGAGES)
 
 Spécialisation de l'ÉQUIPEMENT DE POINT D'ARRÊT pour les consignes à
 bagages.
 
 → Partie Accessibilité
 
-## **LUGGAGE SERVICE** (SERVICE BAGAGES)
+## **<span lang="en">LUGGAGE SERVICE</span>** (SERVICE BAGAGES)
 
 Spécialisation du SERVICE CLIENTÈLE pour les bagages
 (installations/équipements et caractéristiques telles que les chariots à
@@ -977,7 +977,7 @@ bagages, l'utilisation gratuite, etc.).
 
 → Partie Accessibilité
 
-## **MEDICAL NEED** (BESOIN MÉDICAL)
+## **<span lang="en">MEDICAL NEED</span>** (BESOIN MÉDICAL)
 
 BESOIN D'USAGER spécifique, à savoir une exigence d'un passager en ce
 qui concerne une contrainte médicale (p. ex : allergie) pour accéder aux
@@ -985,21 +985,21 @@ transports publics.
 
 → Partie Accessibilité
 
-## **MEETING POINT SERVICE** (SERVICE DE POINT DE RENCONTRE)
+## **<span lang="en">MEETING POINT SERVICE</span>** (SERVICE DE POINT DE RENCONTRE)
 
 Spécialisation du SERVICE CLIENT pour les points de rencontre
 (caractéristiques telles que la description, le libellé, etc.).
 
 → Partie Accessibilité
 
-## **MINIMUM STAY** (SÉJOUR MINIMUM)
+## **<span lang="en">MINIMUM STAY</span>** (SÉJOUR MINIMUM)
 
 Détails de tout séjour minimum à la destination requis pour utiliser le
 produit.
 
 → Partie Tarifs
 
-## **MOBILITY NEED** (BESOIN DE MOBILITÉ)
+## **<span lang="en">MOBILITY NEED</span>** (BESOIN DE MOBILITÉ)
 
 BESOIN D'USAGER spécifique, à savoir une contrainte d'un passager en ce
 qui concerne sa mobilité (p. ex : fauteuil roulant, fauteuil roulant
@@ -1007,7 +1007,7 @@ motorisé).
 
 → Partie Accessibilité
 
-## **MONEY SERVICE** (SERVICE DE CHANGE)
+## **<span lang="en">MONEY SERVICE</span>** (SERVICE DE CHANGE)
 
 Spécialisation de SERVICE LOCAL dédiée aux services d'argent.
 
@@ -1018,41 +1018,41 @@ Spécialisation de SERVICE LOCAL dédiée aux services d'argent.
 *(profil)*
 
 Le Pôle Monomodal correspond à une spécialisation de la notion
-normalisée de LIEU D'ARRÊT (STOP PLACE en anglais) : un Pôle Monomodal
+normalisée de LIEU D'ARRÊT (<span lang="en">STOP PLACE</span> en anglais) : un Pôle Monomodal
 n’est composé que de LIEUx D’ARRÊT Monomodaux de modes identiques mais
 de noms différents.
 
 → Partie Arrêts
 
-## **Monomodal STOP PLACE** (LIEU D’ARRÊT Monomodal)
+## **Monomodal <span lang="en">STOP PLACE</span>** (LIEU D’ARRÊT Monomodal)
 
 *(profil)*
 
 Il correspond à une spécialisation de la notion normalisée de LIEU
-D'ARRÊT (STOP PLACE en anglais) dédiant le LIEU et ses COMPOSANT à un
+D'ARRÊT (<span lang="en">STOP PLACE</span> en anglais) dédiant le LIEU et ses COMPOSANT à un
 unique MODE.
 
 → Partie Arrêts
 
-## **Multimodal STOP PLACE** (LIEU D’ARRÊT Multimodal)
+## **Multimodal <span lang="en">STOP PLACE</span>** (LIEU D’ARRÊT Multimodal)
 
 *(profil)*
 
 Il correspond aussi à une spécialisation de la notion normalisée de LIEU
-D'ARRÊT (STOP PLACE en anglais) : un LIEU D’ARRÊT Multimodal n’est
+D'ARRÊT (<span lang="en">STOP PLACE</span> en anglais) : un LIEU D’ARRÊT Multimodal n’est
 composé que de LIEUx D’ARRÊT Monomodaux et Pôles Monomodaux de modes
 différents.
 
 → Partie Arrêts
 
-## **NAVIGATION PATH** (CHEMINEMENT USAGER)
+## **<span lang="en">NAVIGATION PATH</span>** (CHEMINEMENT USAGER)
 
 Un tronçon désigné entre deux endroits. Peut inclure une séquence triée
 de TRONÇONS DE CHEMINEMENT.
 
 → Partie Accessibilité
 
-## **NAVIGATION PATH ASSIGNMENT** (AFFECTATION DE CHEMINEMENT DE NAVIGATION)
+## **<span lang="en">NAVIGATION PATH ASSIGNMENT</span>** (AFFECTATION DE CHEMINEMENT DE NAVIGATION)
 
 Affectation d'un CHEMINEMENT USAGER à une AFFECTATION DE POINT D'ARRÊT
 spécifique, par exemple, pour indiquer le chemin à prendre pour établir
@@ -1060,27 +1060,27 @@ une CONNEXION.
 
 → Partie Accessibilité
 
-## **NETWORK** (RÉSEAU)
+## **<span lang="en">NETWORK</span>** (RÉSEAU)
 
 Un GROUPE DE LIGNES disposant d'un nom sous lequel un réseau de
 transport est connu.
 
 → Partie Réseaux
 
-## **NETWORK VALIDITY PARAMETERS** (PARAMETRES DE VALIDITÉ DU RESEAU)
+## **<span lang="en">NETWORK VALIDITY PARAMETERS</span>** (PARAMETRES DE VALIDITÉ DU RESEAU)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié à la structure du réseau.
 
 → Partie Tarifs
 
-## **NORMAL DATED VEHICLE JOURNEY** (COURSE DATÉE NORMALE)
+## **<span lang="en">NORMAL DATED VEHICLE JOURNEY</span>** (COURSE DATÉE NORMALE)
 
 Une COURSE DATÉE correspondant à la planification du parcours des
 véhicules.
 
 → Partie horaires
 
-## **NOTICE** (NOTE)
+## **<span lang="en">NOTICE</span>** (NOTE)
 
 *(Transmodel)*
 
@@ -1090,7 +1090,7 @@ rattaché à une LIGNE, un PARCOURS, etc.
 
 → Partie éléments communs
 
-## **NOTICE ASSIGNEMENT** (AFFECTATION DE NOTE)
+## **<span lang="en">NOTICE ASSIGNEMENT</span>** (AFFECTATION DE NOTE)
 
 *(Transmodel)*
 
@@ -1100,20 +1100,20 @@ ou les sections d'un parcours concerné par la NOTE
 
 → Partie éléments communs
 
-## **ONBOARD STAY** (SÉJOUR À BORD)
+## **<span lang="en">ONBOARD STAY</span>** (SÉJOUR À BORD)
 
 Permission d'embarquer avant la course ou de rester à bord après la
 course.
 
 → Partie Accessibilité
 
-## **OPERATOR** (EXPLOITANT)
+## **<span lang="en">OPERATOR</span>** (EXPLOITANT)
 
 Entreprise offrant des services de transport public.
 
 → Partie Réseaux
 
-## **ORGANISATION** (INSTITUTION)
+## **<span lang="en">ORGANISATION</span>** (INSTITUTION)
 
 *(NeTEx)*
 
@@ -1121,13 +1121,13 @@ Une instance légale impliquée dans certains aspects du transport public.
 
 → Partie éléments communs
 
-## **ORGANISATIONAL VALIDITY PARAMETERS** (PARAMETRES DE VALIDITÉ ORGANISATIONELS)
+## **<span lang="en">ORGANISATIONAL VALIDITY PARAMETERS</span>** (PARAMETRES DE VALIDITÉ ORGANISATIONELS)
 
 Un type de PARAMÈTRE DE VALIDITÉ relatifs à l'organisation.
 
 → Partie Tarifs
 
-## **PARKING** (PARKING)
+## **<span lang="en">PARKING</span>** (PARKING)
 
 *(Transmodel)*
 
@@ -1136,16 +1136,16 @@ voitures, des motos et des vélos.
 
 → Partie Parking
 
-## **PARKING AREA** (ZONE DE PARKING)
+## **<span lang="en">PARKING AREA</span>** (ZONE DE PARKING)
 
 *(Transmodel)*
 
 Zone identifiée à l’intérieur d’un parking, et contenant des places de
-stationnement (PARKING BAYs).
+stationnement (<span lang="en">PARKING BAY</span>s).
 
 → Partie Parking
 
-## **PARKING BAY** (PLACE DE STATIONNEMENT)
+## **<span lang="en">PARKING BAY</span>** (PLACE DE STATIONNEMENT)
 
 *(Transmodel)*
 
@@ -1153,7 +1153,7 @@ Emplacement où l’on peut stationner un (unique) véhicule.
 
 → Partie Parking
 
-## **PARKING CAPACITY** (CAPACITÉ DU PARKING)
+## **<span lang="en">PARKING CAPACITY</span>** (CAPACITÉ DU PARKING)
 
 *(Transmodel)*
 
@@ -1161,16 +1161,16 @@ Capacités d’accueil du parking.
 
 → Partie Parking
 
-## **PARKING COMPONENT** (COMPOSANT DE PARKING)
+## **<span lang="en">PARKING COMPONENT</span>** (COMPOSANT DE PARKING)
 
 *(Transmodel)*
 
-Composant générique du parking (par exemple PARKING AREA -zone de
-parking- ou PARKING BAY -place de stationnement-)
+Composant générique du parking (par exemple <span lang="en">PARKING AREA</span> -zone de
+parking- ou <span lang="en">PARKING BAY</span> -place de stationnement-)
 
 → Partie Parking
 
-## **PARKING ENTRANCE FOR VEHICLES** (ENTRÉE DU PARKING POUR LES VÉHICULES)
+## **<span lang="en">PARKING ENTRANCE FOR VEHICLES</span>** (ENTRÉE DU PARKING POUR LES VÉHICULES)
 
 *(Transmodel)*
 
@@ -1178,16 +1178,16 @@ Entrée (et/ou sortie) du parking destinée aux véhicules
 
 → Partie Parking
 
-## **PARKING PASSENGER ENTRANCE** (ENTRÉE DU PARKING POUR LES PIÉTONS)
+## **<span lang="en">PARKING PASSENGER ENTRANCE</span>** (ENTRÉE DU PARKING POUR LES PIÉTONS)
 
 *(Transmodel)*
 
 Entrée (et/ou sortie) du parking destinée aux piétons et tout conducteur
-ou passager des véhicule (y-compruis fauteuils roulants).
+ou passager des véhicule (y-compris fauteuils roulants).
 
 → Partie Parking
 
-## **PARKING PROPERTIES** (PROPRIÉTÉ DU PARKING)
+## **<span lang="en">PARKING PROPERTIES</span>** (PROPRIÉTÉ DU PARKING)
 
 *(Transmodel)*
 
@@ -1196,14 +1196,14 @@ d’accueil.
 
 → Partie Parking
 
-## **PASSENGER EQUIPMENT** (ÉQUIPEMENT USAGER)
+## **<span lang="en">PASSENGER EQUIPMENT</span>** (ÉQUIPEMENT USAGER)
 
 Équipement d'un type particulier réellement disponible au niveau d'un
 LIEU ou d'un VÉHICULE.
 
 → Partie Accessibilité
 
-## **PASSENGER INFORMATION EQUIPMENT** (ÉQUIPEMENT D'INFORMATIONS AUX PASSAGERS)
+## **<span lang="en">PASSENGER INFORMATION EQUIPMENT</span>** (ÉQUIPEMENT D'INFORMATIONS AUX PASSAGERS)
 
 Un équipement destiné à fournir des informations sur les transports en
 commun, tels que des terminaux (dans la rue, aux guichets ou reliés à un
@@ -1212,13 +1212,13 @@ fascicules, etc.).
 
 → Partie Accessibilité
 
-## **PASSENGER SAFETY EQUIPMENT** (ÉQUIPEMENT DE SÉCURITÉ DES PASSAGERS)
+## **<span lang="en">PASSENGER SAFETY EQUIPMENT</span>** (ÉQUIPEMENT DE SÉCURITÉ DES PASSAGERS)
 
 Spécialisation ÉQUIPEMENT PASSAGER pour la sécurité des passagers.
 
 → Partie Accessibilité
 
-## **PASSENGER STOP ASSIGNMENT** (AFFECTATION D’ARRÊT POUR PASSAGER)
+## **<span lang="en">PASSENGER STOP ASSIGNMENT</span>** (AFFECTATION D’ARRÊT POUR PASSAGER)
 
 Affection d’un POINT D’ARRÊT PLANIFIÉ à un LIEU D’ARRÊT (ou un de ses
 composant de type ZONE D’EMBARQUEMENT ou POSITION D’EMBARQUEMENT) pour
@@ -1226,7 +1226,7 @@ un service passager.
 
 → Partie Réseaux
 
-## **PASSING TIME** (HEURE DE PASSAGE)
+## **<span lang="en">PASSING TIME</span>** (HEURE DE PASSAGE)
 
 Données temporelles concernant le passage des véhicules de transport
 public à un POINT particulier (par exemple heure d'arrivée, heure de
@@ -1234,7 +1234,7 @@ départ, temps d'attente).
 
 → Partie horaires
 
-## **PATH JUNCTION** (NŒUD DE CHEMINEMENT)
+## **<span lang="en">PATH JUNCTION</span>** (NŒUD DE CHEMINEMENT)
 
 Un point précis, à l'intérieur ou à l'extérieur d'un LIEU D'ARRÊT ou
 d'un POINT D'INTERÊT, au niveau duquel deux TRONÇONS DE CHEMINEMENTS
@@ -1242,7 +1242,7 @@ peuvent se connecter
 
 → Partie Accessibilité
 
-## **PATH LINK** (TRONÇON DE CHEMINEMENT)
+## **<span lang="en">PATH LINK</span>** (TRONÇON DE CHEMINEMENT)
 
 Un tronçon dans un LIEU ou entre plusieurs LIEUX (par exemple, LIEUX
 D'ARRÊT, ESPACES D'ACCÈS ou QUAIS, POINTS D'EMBARQUEMENT, POINTS
@@ -1257,28 +1257,28 @@ le représenter sur des plans et des systèmes de suivi.
 
 → Partie Accessibilité
 
-## **PATH LINK END** (FIN DE TRONÇON DE CHEMINEMENT)
+## **<span lang="en">PATH LINK END</span>** (FIN DE TRONÇON DE CHEMINEMENT)
 
 SITE de départ ou d'arrivée d'un TRONÇON DE CHEMINEMENT. Il peut être
 lié à un NIVEAU spécifique du SITE.
 
 → Partie Accessibilité
 
-## **PATH LINK IN SEQUENCE** (TRONÇON DE CHEMINEMENT EN SÉQUENCE)
+## **<span lang="en">PATH LINK IN SEQUENCE</span>** (TRONÇON DE CHEMINEMENT EN SÉQUENCE)
 
 Étape d'un CHEMINEMENT USAGER indiquant la traversée d'un TRONÇON DE
 CHEMINEMENT particulier au sein d'un itinéraire recommandé.
 
 → Partie Accessibilité
 
-## **PENALTY POLICY** (POLITIQUE D’AMENDE)
+## **<span lang="en">PENALTY POLICY</span>** (POLITIQUE D’AMENDE)
 
 Politique concernant différents aspects des frais de pénalité, par
 exemple entrée répétée dans la même gare, ne pas avoir de billet, etc.
 
 → Partie Tarifs
 
-## **PLACE** (LIEU)
+## **<span lang="en">PLACE</span>** (LIEU)
 
 *(Transmodel)*
 
@@ -1288,21 +1288,21 @@ de départ ou d'arrivée d'un déplacement. Un lieu peut être de dimension
 
 → Partie Arrêts
 
-## **PLACE ACCESS EQUIPMENT** (ÉQUIPEMENT D'ACCÈS À LA PLACE)
+## **<span lang="en">PLACE ACCESS EQUIPMENT</span>** (ÉQUIPEMENT D'ACCÈS À LA PLACE)
 
 Spécialisation d'ÉQUIPEMENT DE LIEU dédiée à l'accès (ascenseurs,
 entrées, escaliers, rampes, etc.).
 
 → Partie Accessibilité
 
-## **PLACE EQUIPMENT** (ÉQUIPEMENT DE LIEU)
+## **<span lang="en">PLACE EQUIPMENT</span>** (ÉQUIPEMENT DE LIEU)
 
 Équipement d'un type particulier réellement disponible au niveau d'un
 LIEU.
 
 → Partie Accessibilité
 
-## **PLACE IN SEQUENCE** (LIEUX ACCESSIBLES EN SEQUENCE)
+## **<span lang="en">PLACE IN SEQUENCE</span>** (LIEUX ACCESSIBLES EN SEQUENCE)
 
 Point traversé par un CHEMINEMENT USAGER en séquence, connecté par un
 TRONÇON DE CHEMINEMENT jusqu'au point suivant. Il peut s'agir d'un lieu,
@@ -1310,26 +1310,26 @@ d'un NŒUD ou d'un POINT.
 
 → Partie Accessibilité
 
-## **PLACE LIGHTING** (ÉCLAIRAGE DE LA PLACE)
+## **<span lang="en">PLACE LIGHTING</span>** (ÉCLAIRAGE DE LA PLACE)
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU pour ÉQUIPEMENT D'ÉCLAIRAGE (par
 ex., réverbère).
 
 → Partie Accessibilité
 
-## **PLACE SIGN** (SIGNALISATION DE PLACE)
+## **<span lang="en">PLACE SIGN</span>** (SIGNALISATION DE PLACE)
 
 Panneau portant le nom d'un LIEU.
 
 → Partie Accessibilité
 
-## **PLACE VALIDITY PARAMETERS** (PARAMETRES DE VALIDITÉ DES LIEUX)
+## **<span lang="en">PLACE VALIDITY PARAMETERS</span>** (PARAMETRES DE VALIDITÉ DES LIEUX)
 
 Un type de PARAMÈTRE DE VALIDITÉ relatifs aux sites du réseau.
 
 → Partie Tarifs
 
-## **POINT** (POINT)
+## **<span lang="en">POINT</span>** (POINT)
 
 *(Transmodel)*
 
@@ -1339,20 +1339,20 @@ LOCALISATION donné.
 
 → Partie éléments communs
 
-## **POINT IN JOURNEY PATTERN** (POINT SUR PARCOURS)
+## **<span lang="en">POINT IN JOURNEY PATTERN</span>** (POINT SUR PARCOURS)
 
 Un POINT D'ARRÊT PLANIFIÉ ou un POINT HORAIRE dans un PARCOURS indiquant
 son rang dans ce PARCOURS.
 
 → Partie Réseaux
 
-## **POINT IN TIMING PATTERN** (POINT SUR PARCOURS HORAIRE)
+## **<span lang="en">POINT IN TIMING PATTERN</span>** (POINT SUR PARCOURS HORAIRE)
 
 POINT sur PARCOURS qui est un POINT HORAIRE.
 
 → Partie Réseaux
 
-## **POINT OF INTEREST** (POINTS D'INTÉRÊT)
+## **<span lang="en">POINT OF INTEREST</span>** (POINTS D'INTÉRÊT)
 
 Type de LIEU vers ou à travers lequel les passagers peuvent souhaiter
 circuler au cours de leur course et qui est modélisé en détail par les
@@ -1360,14 +1360,14 @@ calculateurs d'itinéraire.
 
 → Partie Accessibilité
 
-## **POINT ON ROUTE** (POINT SUR ITINÉRAIRE)
+## **<span lang="en">POINT ON ROUTE</span>** (POINT SUR ITINÉRAIRE)
 
 POINT D'ITINÉRAIRE (accompagné de son rang) qui sert à définir un
 ITINÉRAIRE.
 
 → Partie Réseaux
 
-## **POSTAL ADDRESS** (ADRESSE POSTALE)
+## **<span lang="en">POSTAL ADDRESS</span>** (ADRESSE POSTALE)
 
 *(Transmodel)*
 
@@ -1378,26 +1378,26 @@ et d'autres descripteurs.
 
 → Partie Arrêts
 
-## **PRE-ASSIGNED FARE PRODUCT** (PRODUIT TARIFAIRE PRÉDÉFINI)
+## **<span lang="en">PRE-ASSIGNED FARE PRODUCT</span>** (PRODUIT TARIFAIRE PRÉDÉFINI)
 
 UN PRODUIT TARIFAIRE composé d'un ou plusieurs ÉLÉMENTS VALIDABLES,
 spécifiques à un MODE DE PAIEMENT.
 
 → Partie Tarifs
 
-## **PRICEABLE OBJECT** (OBJET AVEC PRIX)
+## **<span lang="en">PRICEABLE OBJECT</span>** (OBJET AVEC PRIX)
 
 Un élément qui peut avoir un PRIX.
 
 → Partie Tarifs
 
-## **PRODUCT VALIDITY PARAMETERS** (PARAMETRES DE VALIDITÉ DU PRODUIT)
+## **<span lang="en">PRODUCT VALIDITY PARAMETERS</span>** (PARAMETRES DE VALIDITÉ DU PRODUIT)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié aux produits tarifaires.
 
 → Partie Tarifs
 
-## **PSYCHOSENSORY NEED** (BESOIN PSYCHOSENSORIEL)
+## **<span lang="en">PSYCHOSENSORY NEED</span>** (BESOIN PSYCHOSENSORIEL)
 
 BESOIN D'USAGER spécifique, à savoir une contrainte d'un passager
 relative à un handicap psychosensoriel (p. ex : troubles visuels ou
@@ -1405,13 +1405,13 @@ auditifs, aversion pour les espaces confinés).
 
 → Partie Accessibilité
 
-## **PURCHASE WINDOW** (FENÊTRE D’ACHAT)
+## **<span lang="en">PURCHASE WINDOW</span>** (FENÊTRE D’ACHAT)
 
 Période pendant laquelle le produit doit être acheté.
 
 → Partie Tarifs
 
-## **PURPOSE OF GROUPING** (FINALITÉ DE GROUPEMENT)
+## **<span lang="en">PURPOSE OF GROUPING</span>** (FINALITÉ DE GROUPEMENT)
 
 *(Transmodel)*
 
@@ -1421,7 +1421,7 @@ objet donné.
 
 → Partie éléments communs
 
-## **QUALITY STRUCTURE FACTOR** (FACTEUR QUALITATIF)
+## **<span lang="en">QUALITY STRUCTURE FACTOR</span>** (FACTEUR QUALITATIF)
 
 Un facteur influençant la définition des droits d'accès ou le calcul des
 prix, en fonction de la qualité : seuil de congestion du trafic,
@@ -1429,14 +1429,14 @@ réservation anticipée/tardive, etc.
 
 → Partie Tarifs
 
-## **QUALITY STRUCTURE FACTOR PRICE** (PRIX DE FACTEUR QUALITATIF)
+## **<span lang="en">QUALITY STRUCTURE FACTOR PRICE</span>** (PRIX DE FACTEUR QUALITATIF)
 
 Un ensemble de toutes les caractéristiques de prix possibles d'un
 FACTEUR QUALITATIF, par ex. prix total par défaut, etc.
 
 → Partie Tarifs
 
-## **QUAY** (ZONE D’EMBARQUEMENT)
+## **<span lang="en">QUAY</span>** (ZONE D’EMBARQUEMENT)
 
 *(Transmodel)*
 
@@ -1446,51 +1446,51 @@ autre mode de transport.
 
 → Partie Arrêts
 
-## **QUEUING EQUIPMENT** (ÉQUIPEMENT DE FILE D'ATTENTE)
+## **<span lang="en">QUEUING EQUIPMENT</span>** (ÉQUIPEMENT DE FILE D'ATTENTE)
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU dédiée aux files d'attente.
 
 → Partie Accessibilité
 
-## **RAMP EQUIPMENT** (ÉQUIPEMENT DE RAMPE)
+## **<span lang="en">RAMP EQUIPMENT</span>** (ÉQUIPEMENT DE RAMPE)
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU pour rampes (indique des
 caractéristiques telles que la profondeur, la pente, etc.).
 
 → Partie Accessibilité
 
-## **REFUNDING** (REMBOURSEMENT)
+## **<span lang="en">REFUNDING</span>** (REMBOURSEMENT)
 
 Indique si et comment le produit peut être remboursé.
 
 → Partie Tarifs
 
-## **REPLACING** (REMPLACEMENT)
+## **<span lang="en">REPLACING</span>** (REMPLACEMENT)
 
 Indique si et comment le produit peut être remplacé.
 
 → Partie Tarifs
 
-## **RESELLING** (REVENTE)
+## **<span lang="en">RESELLING</span>** (REVENTE)
 
 Conditions de revente (c'est-à-dire pour échange ou remboursement)
 attachées au produit.
 
 → Partie Tarifs
 
-## **RESERVING** (RESERVATION)
+## **<span lang="en">RESERVING</span>** (RESERVATION)
 
 Indiquer si le droit d'accès nécessite une réservation.
 
 → Partie Tarifs
 
-## **RESIDENTIAL QUALIFICATION** (QUALIFICATION RÉSIDENTIELLE)
+## **<span lang="en">RESIDENTIAL QUALIFICATION</span>** (QUALIFICATION RÉSIDENTIELLE)
 
 Décrit une exigence de résidence dans une certaine zone géographique.
 
 → Partie Tarifs
 
-## **RESPONSIBILITY ROLE ASSIGNMENT** (AFFECTATION DE RÔLE)
+## **<span lang="en">RESPONSIBILITY ROLE ASSIGNMENT</span>** (AFFECTATION DE RÔLE)
 
 *(NeTEx)*
 
@@ -1501,13 +1501,13 @@ la gestion de cette donnée (diffusion, mise à jour, etc.).
 
 → Partie éléments communs
 
-## **RETAIL SERVICE** (SERVICE DE DÉTAIL)
+## **<span lang="en">RETAIL SERVICE</span>** (SERVICE DE DÉTAIL)
 
 Spécialisation de SERVICE LOCAL dédiée aux services de distribution.
 
 → Partie Accessibilité
 
-## **RHYTMHICAL JOURNEY GROUP** (GROUPE DE COURSES CADENCÉES)
+## **<span lang="en">RHYTMHICAL JOURNEY GROUP</span>** (GROUPE DE COURSES CADENCÉES)
 
 Groupe de COURSEs suivant le même PARCOURS et répétant le même rythme de
 départ toutes les heures (passe toutes les heures ..h10, ..h25 et ..h45
@@ -1516,7 +1516,7 @@ est exprimé par l'objet TIME BAND sur le schéma.
 
 → Partie horaires
 
-## **ROAD ADDRESS** (ADRESSE SUR VOIRIE)
+## **<span lang="en">ROAD ADDRESS</span>** (ADRESSE SUR VOIRIE)
 
 *(Transmodel)*
 
@@ -1526,7 +1526,7 @@ de voies, et les éléments de positionnement le long de la voie.
 
 → Partie Arrêts
 
-## **ROUGH SURFACE** (SURFACE RUGUEUSE)
+## **<span lang="en">ROUGH SURFACE</span>** (SURFACE RUGUEUSE)
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU pour surfaces rugueuses, qui
 indique la texture des surfaces, principalement pour informer les
@@ -1534,14 +1534,14 @@ personnes handicapées.
 
 → Partie Accessibilité
 
-## **ROUND TRIP** (ALLER RETOUR)
+## **<span lang="en">ROUND TRIP</span>** (ALLER RETOUR)
 
 Propriétés relatives à l'usage pour un aller simple ou un aller-retour
 d'un droit d'accès.
 
 → Partie Tarifs
 
-## **ROUTE** (ITINÉRAIRE)
+## **<span lang="en">ROUTE</span>** (ITINÉRAIRE)
 
 Liste ordonnée de POINTs définissant un seul chemin à travers le réseau
 routier (ou ferré). Un ITINÉRAIRE peut passer deux fois par un même
@@ -1549,27 +1549,27 @@ POINT.
 
 → Partie Réseaux
 
-## **ROUTE LINK** (TRONÇON D'ITINÉRAIRE)
+## **<span lang="en">ROUTE LINK</span>** (TRONÇON D'ITINÉRAIRE)
 
 Tronçon orienté entre deux POINTs D'ITINÉRAIRE permettant une définition
 univoque d'un chemin à travers le réseau.
 
 → Partie Réseaux
 
-## **ROUTE POINT** (POINT D'ITINÉRAIRE)
+## **<span lang="en">ROUTE POINT</span>** (POINT D'ITINÉRAIRE)
 
 POINT permettant de définir la géométrie d'un ITINÉRAIRE à travers le
 réseau.
 
 → Partie Réseaux
 
-## **ROUTING** (ITINÉRAIRE)
+## **<span lang="en">ROUTING</span>** (ITINÉRAIRE)
 
 Limitations d'un droit d'accès relative à l’itinéraire réalisable.
 
 → Partie Tarifs
 
-## **ROUTING CONSTRAINT ZONE** (ZONE DE CONTRAINTE)
+## **<span lang="en">ROUTING CONSTRAINT ZONE</span>** (ZONE DE CONTRAINTE)
 
 ZONE au sein de laquelle une contrainte d'acheminement s'applique. La
 ZONE peut être définie soit par un périmètre géographique, soit par la
@@ -1577,47 +1577,47 @@ liste des POINTs D'ARRÊT PLANIFIÉS qu'elle contient.
 
 → Partie Réseaux
 
-## **ROUTING VALIDITY PARAMETERS** (PARAMETRE DE VALIDITE DE L’ITINERAIRE)
+## **<span lang="en">ROUTING VALIDITY PARAMETERS</span>** (PARAMETRE DE VALIDITE DE L’ITINERAIRE)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié à un itinéraire spécifique.
 
 → Partie Tarifs
 
-## **RUBBISH DISPOSAL** (ÉLIMINATION DES DÉCHETS)
+## **<span lang="en">RUBBISH DISPOSAL</span>** (ÉLIMINATION DES DÉCHETS)
 
 Spécialisation des ÉQUIPEMENTS pour évacuation des déchets, indiquant
 les types de déchets, etc.
 
 → Partie Accessibilité
 
-## **SALE DISCOUNT RIGHT** (DROIT A REDUCTION)
+## **<span lang="en">SALE DISCOUNT RIGHT</span>** (DROIT À RÉDUCTION)
 
-PRODUIT TARIFAIRE (FARE PRODUCT) qui permet à son porteur de bénéficier
-d’une déduction lors de l’achat d’OFFREs A LA VENTE (SALES OFFER
-PACKAGE) particulières.
+PRODUIT TARIFAIRE (<span lang="en">FARE PRODUCT</span>) qui permet à son porteur de bénéficier
+d’une déduction lors de l’achat d’OFFREs A LA VENTE (<span lang="en">SALES OFFER
+PACKAGE</span>) particulières.
 
 → Partie Tarifs
 
-## **SALE OFFER ENTITLEMENT GIVEN** (DROIT D’ACCES A UNE OFFRE)
+## **<span lang="en">SALE OFFER ENTITLEMENT GIVEN</span>** (DROIT D’ACCES A UNE OFFRE)
 
 DROIT accordé pour utiliser une OFFRE A LA VENTE.
 
 → Partie Tarifs
 
-## **SALE OFFER ENTITLEMENT REQUIRED** (DROIT NÉCESSAIRE POUR ACCEDER A L’OFFRE)
+## **<span lang="en">SALE OFFER ENTITLEMENT REQUIRED</span>** (DROIT NÉCESSAIRE POUR ACCEDER A L’OFFRE)
 
 DROIT nécessaire pour utiliser une OFFRE A LA VENTE.
 
 → Partie Tarifs
 
-## **SALES NOTICE ASSIGNMENT** (AFFECTATION D’UNE NOTE)
+## **<span lang="en">SALES NOTICE ASSIGNMENT</span>** (AFFECTATION D’UNE NOTE)
 
 Affectation d’une NOTE à un une OFFRE A LA VENTE ou à un GROUPE D’OFFREs
 A LA VENTE.
 
 → Partie Tarifs
 
-## **SALES OFFER PACKAGE** (OFFRE A LA VENTE)
+## **<span lang="en">SALES OFFER PACKAGE</span>** (OFFRE A LA VENTE)
 
 Une offre à la vente dans son ensemble, composé d'un ou plusieurs
 PRODUITS TARIFAIRES matérialisé grâce à un ou plusieurs DOCUMENTS DE
@@ -1627,7 +1627,7 @@ VOYAGE.
 
 → Partie Tarifs
 
-## **SALES OFFER PACKAGE ELEMENT** (ÉLÉMENT D’OFFRE A LA VENTE)
+## **<span lang="en">SALES OFFER PACKAGE ELEMENT</span>** (ÉLÉMENT D’OFFRE A LA VENTE)
 
 L'affectation d'un PRODUIT TARIFAIRE à un TYPE DE DOCUMENT DE VOYAGE
 afin de définir une OFFRE A LA VENTE, réalisé sous forme d'affectation
@@ -1636,26 +1636,26 @@ recharger le PRODUIT TARIFAIRE sur le TYPE DU DOCUMENT DE VOYAGE.
 
 → Partie Tarifs
 
-## **SALES OFFER PACKAGE PRICE** (PRIX D’UNE OFFRE A LA VENTE)
+## **<span lang="en">SALES OFFER PACKAGE PRICE</span>** (PRIX D’UNE OFFRE A LA VENTE)
 
 Un ensemble de toutes les caractéristiques de prix possibles d'une OFFRE
 A LA VENTE : prix total par défaut, etc.
 
 → Partie Tarifs
 
-## **SANITARY EQUIPMENT** (ÉQUIPEMENT SANITAIRE)
+## **<span lang="en">SANITARY EQUIPMENT</span>** (ÉQUIPEMENT SANITAIRE)
 
 Spécialisation ÉQUIPEMENT PASSAGER pour les installations sanitaires.
 
 → Partie Accessibilité
 
-## **SCHEDULED STOP POINT** (POINT D'ARRÊT PLANIFIÉ)
+## **<span lang="en">SCHEDULED STOP POINT</span>** (POINT D'ARRÊT PLANIFIÉ)
 
 POINT où les passagers peuvent monter à bord ou descendre des véhicules.
 
 → Partie Réseaux
 
-## **SCHEMATIC MAP** (PLAN SCHÉMATIQUE)
+## **<span lang="en">SCHEMATIC MAP</span>** (PLAN SCHÉMATIQUE)
 
 Carte représentant schématiquement la disposition de la structure
 topographique des lieux (par exemple, un ensemble de sites) ou le réseau
@@ -1666,13 +1666,13 @@ hyperliens.
 
 → Partie Réseaux
 
-## **SCHEMATIC MAP MEMBER** (COMPOSANT DE PLAN SCHÉMATIQUE)
+## **<span lang="en">SCHEMATIC MAP MEMBER</span>** (COMPOSANT DE PLAN SCHÉMATIQUE)
 
 Projection d’un objet transport sur un PLAN SCHÉMATIQUE.
 
 → Partie Réseaux
 
-## **SCOPING VALIDITY PARAMETERS** (CIBLAGE DES PARAMÈTRES DE VALIDITÉ)
+## **<span lang="en">SCOPING VALIDITY PARAMETERS</span>** (CIBLAGE DES PARAMÈTRES DE VALIDITÉ)
 
 Regroupement des affectations de PARAMETRE DE VALIDITÉ aux éléments pour
 les associer à un ensemble de cibles (éléments auxquels ils
@@ -1680,21 +1680,21 @@ s’appliquent).
 
 → Partie Tarifs
 
-## **SEATING EQUIPMENT** (ÉQUIPEMENT DE SIÈGES)
+## **<span lang="en">SEATING EQUIPMENT</span>** (ÉQUIPEMENT DE SIÈGES)
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU décrivant les propriétés des
 sièges
 
 → Partie Accessibilité
 
-## **SEATING VALIDITY PARAMETERS** (PARAMÈTRES DE VALIDITÉ DES SIÈGES)
+## **<span lang="en">SEATING VALIDITY PARAMETERS</span>** (PARAMÈTRES DE VALIDITÉ DES SIÈGES)
 
 Type de PARAMÈTRE DE VALIDITÉ lié aux caractéristiques des sièges (par
 exemple, siège d'autocar ou de passager).
 
 → Partie Tarifs
 
-## **SERIES CONSTRAINT** (CONTRAINTE DE SÉRIE)
+## **<span lang="en">SERIES CONSTRAINT</span>** (CONTRAINTE DE SÉRIE)
 
 Extension d'un ÉLÉMENT DE MATRICE DE DISTANCE (une cellule d'une matrice
 origine-destination pour les ZONES TARIFAIRES ou les POINTS D'ARRÊT
@@ -1705,14 +1705,14 @@ utilisées pour les tarifs ferroviaires.
 
 → Partie Tarifs
 
-## **SERVICE ACCESS RIGHT** (DROIT D’ACCÈS AU SERVICE)
+## **<span lang="en">SERVICE ACCESS RIGHT</span>** (DROIT D’ACCÈS AU SERVICE)
 
 Un élément commercialisable immatériel dédié à l'accès à certains
 services.
 
 → Partie Tarifs
 
-## **SERVICE FACILITY SET** (ENSEMBLE D'INSTALLATIONS DE SERVICE)
+## **<span lang="en">SERVICE FACILITY SET</span>** (ENSEMBLE D'INSTALLATIONS DE SERVICE)
 
 Ensemble d'INSTALLATIONS disponibles pour un TYPE DE VÉHICULE spécifique
 (p. ex : voiture équipée d'un plancher surbaissé), éventuellement pour
@@ -1720,33 +1720,33 @@ un service uniquement (ou pour une COURSE ou une COURSE COMMERCIALE).
 
 → Partie Accessibilité
 
-## **SERVICE JOURNEY** (COURSE COMMERCIALE)
+## **<span lang="en">SERVICE JOURNEY</span>** (COURSE COMMERCIALE)
 
 Une COURSE transportant des passagers prévus pour un JOUR TYPE donné. Le
 déroulement est en principe défini par le PARCOURS COMMERCIAL.
 
 → Partie horaires
 
-## **SERVICE JOURNEY INTERCHANGE** (CORRESPONDANCE DE COURSES COMMERCIALES)
+## **<span lang="en">SERVICE JOURNEY INTERCHANGE</span>** (CORRESPONDANCE DE COURSES COMMERCIALES)
 
 Une possibilité théorique de correspondance entre COURSEs COMMERCIALEs
 intervenant à un seul POINT D'ARRÊT ou entre différents POINTs D'ARRÊT.
 
 → Partie horaires
 
-## **SERVICE JOURNEY PATTERN** (PARCOURS COMMERCIAL)
+## **<span lang="en">SERVICE JOURNEY PATTERN</span>** (PARCOURS COMMERCIAL)
 
 PARCOURS associé à une COURSE COMMERCIALE (transportant des passagers).
 
 → Partie Réseaux
 
-## **SERVICE LINK** (TRONÇON COMMERCIAL)
+## **<span lang="en">SERVICE LINK</span>** (TRONÇON COMMERCIAL)
 
 TRONÇON entre une paire ordonnée de POINTs D'ARRÊT PLANIFIÉS.
 
 → Partie Réseaux
 
-## **SERVICE PATTERN** (MISSION COMMERCIALE)
+## **<span lang="en">SERVICE PATTERN</span>** (MISSION COMMERCIALE)
 
 Vue d'un PARCOURS définie uniquement par des POINTs D'ARRÊT SUR
 PARCOURS. La MISSION COMMERCIALE se distingue du PARCOURS COMMERCIAL par
@@ -1755,27 +1755,27 @@ intermédiaire.
 
 → Partie Réseaux
 
-## **SERVICE VALIDITY PARAMETERS** (PARAMÈTRE DE VALIDITÉ DU SERVICE)
+## **<span lang="en">SERVICE VALIDITY PARAMETERS</span>** (PARAMÈTRE DE VALIDITÉ DU SERVICE)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié aux caractéristiques du service
 (par exemple, la classe).
 
 → Partie Tarifs
 
-## **SHELTER EQUIPMENT** (ÉQUIPEMENT D'ABRIS)
+## **<span lang="en">SHELTER EQUIPMENT</span>** (ÉQUIPEMENT D'ABRIS)
 
 Spécialisation de l'ÉQUIPEMENT D'ATTENTE pour un abri.
 
 → Partie Accessibilité
 
-## **SIGN EQUIPMENT** (ÉQUIPEMENT DE SIGNALISATION)
+## **<span lang="en">SIGN EQUIPMENT</span>** (ÉQUIPEMENT DE SIGNALISATION)
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU pour la signalisation
 (directions, etc.).
 
 → Partie Accessibilité
 
-## **SITE** (SITE)
+## **<span lang="en">SITE</span>** (SITE)
 
 *(Transmodel)*
 
@@ -1786,7 +1786,7 @@ avoir des ENTRÉEs qui en constituent les points d'accès (correspondant
 
 → Partie Arrêts
 
-## **SITE COMPONENT** (COMPOSANT DE SITE)
+## **<span lang="en">SITE COMPONENT</span>** (COMPOSANT DE SITE)
 
 *(Transmodel)*
 
@@ -1797,7 +1797,7 @@ l'accessibilité et diverses autres caractéristiques.
 
 → Partie Arrêts
 
-## **SITE CONNECTION** (CORRESPONDANCE ENTRE SITES)
+## **<span lang="en">SITE CONNECTION</span>** (CORRESPONDANCE ENTRE SITES)
 
 La possibilité physique (spatiale) d'un passager de continuer son
 déplacement déterminé par deux localisations comme des SITEs ou leurs
@@ -1806,7 +1806,7 @@ fonction du type de passager.
 
 → Partie Réseaux
 
-## **SITE ELEMENT** (ÉLÉMENT DE SITE)
+## **<span lang="en">SITE ELEMENT</span>** (ÉLÉMENT DE SITE)
 
 *(Transmodel)*
 
@@ -1815,40 +1815,40 @@ COMPOSANTs DE SITES auxquels il correspond, incluant l’ACCESSIBILITÉ.
 
 → Partie Arrêts
 
-## **SITE EQUIPMENT** (ÉQUIPEMENT DE SITE)
+## **<span lang="en">SITE EQUIPMENT</span>** (ÉQUIPEMENT DE SITE)
 
 Spécialisation d'ÉQUIPEMENT DE LIEU pour SITES (CASIER À BAGAGES,
 ÉQUIPEMENT D'ATTENTE, STAND DE CHARIOTS, etc.)
 
 → Partie Accessibilité
 
-## **SITE FACILITY SET** (ENSEMBLE D'INSTALLATIONS SUR SITE)
+## **<span lang="en">SITE FACILITY SET</span>** (ENSEMBLE D'INSTALLATIONS SUR SITE)
 
 Ensemble d'INSTALLATIONS disponibles pour un ÉLÉMENT DE SITE.
 
 → Partie Accessibilité
 
-## **SITE VALIDITY PARAMETERS** (PARAMÈTRE DE VALIDITÉ DU SITE)
+## **<span lang="en">SITE VALIDITY PARAMETERS</span>** (PARAMÈTRE DE VALIDITÉ DU SITE)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié aux caractéristiques du SITE.
 
 → Partie Tarifs
 
-## **STAIR EQUIPMENT** (ÉQUIPEMENT D'ESCALIER)
+## **<span lang="en">STAIR EQUIPMENT</span>** (ÉQUIPEMENT D'ESCALIER)
 
 Specialisation of ACCESS EQUIPMENT for stairs (stair, escalator,
 staircase, etc.).
 
 → Partie Accessibilité
 
-## **STAIRCASE EQUIPMENT** (ÉQUIPEMENT D'ESCALIER)
+## **<span lang="en">STAIRCASE EQUIPMENT</span>** (ÉQUIPEMENT D'ESCALIER)
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU pour escaliers (escalier,
 escalier mécanique, cage d'escalier, etc.).
 
 → Partie Accessibilité
 
-## **START TIME AT STOP POINT** (HORAIRE DE DÉBUT AU POINT D’ARRÊT)
+## **<span lang="en">START TIME AT STOP POINT</span>** (HORAIRE DE DÉBUT AU POINT D’ARRÊT)
 
 Heure à laquelle une tranche horaire tarifaire (tranche horaire pointe,
 heures creuses) commence pour les trajets au départ d'une gare
@@ -1856,20 +1856,20 @@ particulière.
 
 → Partie Tarifs
 
-## **STEP LIMIT** (LIMITATION DU NOMBRE D’ÉTAPES)
+## **<span lang="en">STEP LIMIT</span>** (LIMITATION DU NOMBRE D’ÉTAPES)
 
 Paramètre géographique limitant les droits d'accès par comptage
 d'arrêts, de tronçons ou de zones.
 
 → Partie Tarifs
 
-## **STOP ASSIGNMENT** (AFFECTATION D’ARRÊT)
+## **<span lang="en">STOP ASSIGNMENT</span>** (AFFECTATION D’ARRÊT)
 
 Affection d’un POINT D’ARRÊT PLANIFIÉ à un LIEU D’ARRÊT.
 
 → Partie Réseaux
 
-## **STOP PLACE** (LIEU D'ARRÊT)
+## **<span lang="en">STOP PLACE</span>** (LIEU D'ARRÊT)
 
 *(Transmodel)*
 
@@ -1879,7 +1879,7 @@ véhicules ou préparer leur déplacement.
 
 → Partie Arrêts
 
-## **STOP PLACE COMPONENT** (COMPOSANT DE LIEU D'ARRÊT)
+## **<span lang="en">STOP PLACE COMPONENT</span>** (COMPOSANT DE LIEU D'ARRÊT)
 
 *(Transmodel)*
 
@@ -1891,7 +1891,7 @@ caractéristiques.
 
 → Partie Arrêts
 
-## **STOP PLACE ENTRANCE** (ACCÈS DE LIEU D'ARRÊT)
+## **<span lang="en">STOP PLACE ENTRANCE</span>** (ACCÈS DE LIEU D'ARRÊT)
 
 *(Transmodel)*
 
@@ -1901,7 +1901,7 @@ tout autre signe distinctif d’un accès.
 
 → Partie Arrêts
 
-## **STOP PLACE SPACE** (ESPACE DE LIEU D'ARRÊT)
+## **<span lang="en">STOP PLACE SPACE</span>** (ESPACE DE LIEU D'ARRÊT)
 
 *(Transmodel)*
 
@@ -1910,13 +1910,13 @@ D'EMBARQUEMENT, un POINT D'EMBARQUEMENT, un LIEU D'ÉQUIPEMENT, etc.
 
 → Partie Arrêts
 
-## **STOP POINT IN JOURNEY PATTERN** (POINT D'ARRÊT SUR PARCOURS)
+## **<span lang="en">STOP POINT IN JOURNEY PATTERN</span>** (POINT D'ARRÊT SUR PARCOURS)
 
 POINT d'un PARCOURS qui est un POINT D'ARRÊT
 
 → Partie Réseaux
 
-## **SUB-MODE** (SOUS MODE)
+## **<span lang="en">SUB-MODE</span>** (SOUS MODE)
 
 *(NeTEx)*
 
@@ -1926,7 +1926,7 @@ exemple "bus interurbain" dans le cas d'un MODE DE TRANSPORT "bus").
 
 → Partie éléments communs
 
-## **SUBMODE** (SOUS-MODE)
+## **<span lang="en">SUBMODE</span>** (SOUS-MODE)
 
 Précision sur le MODE, comme "international" ou "longue distance" (pour
 un MODE Rail par exemple). Le SOUS-MODE caractérise très souvent un type
@@ -1934,14 +1934,14 @@ d'exploitation qui vient donc compléter le MODE.
 
 → Partie Réseaux
 
-## **SUBSCRIBING** (SOUSCRIPTION)
+## **<span lang="en">SUBSCRIBING</span>** (SOUSCRIPTION)
 
 Paramètres régissant la souscription à un produit permettant un paiement
 à intervalles réguliers.
 
 → Partie Tarifs
 
-## **SUITABILITY** (APPROPRIATION)
+## **<span lang="en">SUITABILITY</span>** (APPROPRIATION)
 
 Déclaration stipulant si un BESOIN D'USAGER particulier peut être
 satisfait. Elle peut être utilisée pour indiquer si un SITE est
@@ -1949,7 +1949,7 @@ accessible par un passager ayant un BESOIN particulier.
 
 → Partie Accessibilité
 
-## **SUPPLEMENT PRODUCT** (SUPPLÉMENT)
+## **<span lang="en">SUPPLEMENT PRODUCT</span>** (SUPPLÉMENT)
 
 PRODUIT TARIFAIRE PRÉAFFECTÉ qui offrira un droit supplémentaire
 lorsqu'il est utilisé avec (en complément) d'un autre (siège réservé,
@@ -1958,14 +1958,14 @@ SUPPLÉMENTAIRE signifie aussi généralement prix de supplément.
 
 → Partie Tarifs
 
-## **SUSPENDING** (SUSPENSION)
+## **<span lang="en">SUSPENDING</span>** (SUSPENSION)
 
 Conditions de suspension d'un PRODUIT TARIFAIRE, par ex. forfait période
 ou abonnement.
 
 → Partie Tarifs
 
-## **TARGET PASSING TIME** (HEURE DE PASSAGE COMMANDÉE)
+## **<span lang="en">TARGET PASSING TIME</span>** (HEURE DE PASSAGE COMMANDÉE)
 
 Données temporelles indiquant l'objectif à atteindre quant au passage du
 véhicule à un POINT SUR PARCOURS particulier pour une COURSE DATÉE afin
@@ -1976,19 +1976,19 @@ du départ du véhicule (travaux, etc.).
 
 → Partie horaires
 
-## **TARIFF** (TARIF)
+## **<span lang="en">TARIFF</span>** (TARIF)
 
 Un tarif particulier, décrit par une combinaison de paramètres.
 
 → Partie Tarifs
 
-## **TARIFF VALIDITY PARAMETERS** (PARAMÈTRES DE VALIDITÉ DU TARIF)
+## **<span lang="en">TARIFF VALIDITY PARAMETERS</span>** (PARAMÈTRES DE VALIDITÉ DU TARIF)
 
 Un type de PARAMÈTRE DE VALIDITÉ lié aux TARIFs.
 
 → Partie Tarifs
 
-## **TARIFF ZONE** (ZONE TARIFAIRE)
+## **<span lang="en">TARIFF ZONE</span>** (ZONE TARIFAIRE)
 
 Une ZONE utilisée pour définir une structure tarifaire zonale dans un
 système de comptage de zones ou de matrice de zones.
@@ -1997,13 +1997,13 @@ système de comptage de zones ou de matrice de zones.
 
 → Partie Arrêts
 
-## **TEMPLATE SERVICE JOURNEY** (MODÈLE DE COURCE COMMERCIALE)
+## **<span lang="en">TEMPLATE SERVICE JOURNEY</span>** (MODÈLE DE COURCE COMMERCIALE)
 
 COURSE DE RÉFÉRENCE transportant des voyageurs.
 
 → Partie horaires
 
-## **TEMPLATE VEHICLE JOURNEY** (COURSE DE RÉFÉRENCE)
+## **<span lang="en">TEMPLATE VEHICLE JOURNEY</span>** (COURSE DE RÉFÉRENCE)
 
 COURSE modèle dont l'occurrence a été spécifiée au sein d'un GROUPE DE
 COURSE À INTERVALLE ou d'un GROUPE DE COURSE CADENCÉ; elle peut donc
@@ -2011,33 +2011,33 @@ représenter un grand nombre de COURSEs.
 
 → Partie horaires
 
-## **TEMPORAL VALIDITY PARAMETERS** (PARAMÈTRES DE VALIDITÉ TEMPORELS)
+## **<span lang="en">TEMPORAL VALIDITY PARAMETERS</span>** (PARAMÈTRES DE VALIDITÉ TEMPORELS)
 
 Regroupement des paramètres de validité temporelle.
 
 → Partie Tarifs
 
-## **THIRD PARTY PRODUCT** (PRODUIT TARIFAIRE TIER)
+## **<span lang="en">THIRD PARTY PRODUCT</span>** (PRODUIT TARIFAIRE TIER)
 
 PRODUIT TARIFAIRE (non lié au transport public) commercialisé avec un
 PRODUIT TARIFAIRE de transport public.
 
 → Partie Tarifs
 
-## **TICKET VALIDATOR EQUIPMENT** (ÉQUIPEMENT DE VALIDATION DE TITRES DE TRANSPORT)
+## **<span lang="en">TICKET VALIDATOR EQUIPMENT</span>** (ÉQUIPEMENT DE VALIDATION DE TITRES DE TRANSPORT)
 
 Spécialisation de l'ÉQUIPEMENT PASSAGER (ÉQUIPEMENT DE LIEU) décrivant
 les contrôleurs de billets.
 
 → Partie Accessibilité
 
-## **TICKETING EQUIPMENT** (ÉQUIPEMENT DE DISTRIBUTION DE TITRES DE TRANSPORT)
+## **<span lang="en">TICKETING EQUIPMENT</span>** (ÉQUIPEMENT DE DISTRIBUTION DE TITRES DE TRANSPORT)
 
 Spécialisation de l'ÉQUIPEMENT PASSAGER pour la billetterie.
 
 → Partie Accessibilité
 
-## **TICKETING SERVICE** (SERVICE DE DISTRIBUTION DE TITRES DE TRANSPORT)
+## **<span lang="en">TICKETING SERVICE</span>** (SERVICE DE DISTRIBUTION DE TITRES DE TRANSPORT)
 
 Spécialisation de SERVICE LOCAL pour billetterie, fournissant des
 informations sur les guichets de billetterie et les achats en ligne,
@@ -2045,7 +2045,7 @@ informations sur les guichets de billetterie et les achats en ligne,
 
 → Partie Accessibilité
 
-## **TIME BAND** (PLAGE HORAIRE)
+## **<span lang="en">TIME BAND</span>** (PLAGE HORAIRE)
 
 Une période dans une journée, importante pour certains aspects des
 transports publics, par ex. conditions de circulation ou catégorie
@@ -2053,7 +2053,7 @@ tarifaire similaires.
 
 → Partie Tarifs
 
-## **TIME DEMAND TYPE** (NIVEAU DE SERVICE)
+## **<span lang="en">TIME DEMAND TYPE</span>** (NIVEAU DE SERVICE)
 
 Un indicateur des conditions de circulation ou d'autres facteurs (heure
 de pointe, heure creuse, etc.) qui peuvent affecter les temps de
@@ -2062,7 +2062,7 @@ par la planification ou définie par l'utilisation de PLAGEs HORAIRES.
 
 → Partie Tarifs
 
-## **TIME INTERVAL** (INTERVAL TEMPOREL)
+## **<span lang="en">TIME INTERVAL</span>** (INTERVAL TEMPOREL)
 
 Un intervalle temporel précisant les droits d'accès aux ÉLÉMENTS DE
 STRUCTURE TARIFAIRE dans la plage de cet intervalle : 0-1 heure, 1-3
@@ -2070,19 +2070,19 @@ jours etc.
 
 → Partie Tarifs
 
-## **TIME STRUCTURE FACTOR** (FACTEUR DE STRUCTURE TEMPORELLE)
+## **<span lang="en">TIME STRUCTURE FACTOR</span>** (FACTEUR DE STRUCTURE TEMPORELLE)
 
 La valeur d'un INTERVAL TEMPOREL exprimée par une UNITÉs TEMPORELLE.
 
 → Partie Tarifs
 
-## **TIME UNIT** (UNITÉs TEMPORELLE)
+## **<span lang="en">TIME UNIT</span>** (UNITÉs TEMPORELLE)
 
 Unité temporelle de calcul des tarifs progressifs en fonction du temps.
 
 → Partie Tarifs
 
-## **TIMETABLE PASSING TIME** (HEURE DE PASSAGE PLANIFIÉE)
+## **<span lang="en">TIMETABLE PASSING TIME</span>** (HEURE DE PASSAGE PLANIFIÉE)
 
 Donnée temporelle théorique relative au passage d'un véhicule de
 transport public à un POINT SUR PARCOURS donné sur une COURSE et pour un
@@ -2093,21 +2093,21 @@ l’heure de d’arrivée et de départ ainsi que d’informations associées
 
 → Partie horaires
 
-## **TIMING LINK** (TRONÇON HORAIRE)
+## **<span lang="en">TIMING LINK</span>** (TRONÇON HORAIRE)
 
 Paire ordonnée de POINTs HORAIREs qui peut être utilisée pour
 l'enregistrement des temps de parcours.
 
 → Partie Réseaux
 
-## **TIMING PATTERN** (PARCOURS HORAIRE)
+## **<span lang="en">TIMING PATTERN</span>** (PARCOURS HORAIRE)
 
 Vue d'un PARCOURS définie uniquement par des POINTs HORAIRE SUR
 PARCOURS.
 
 → Partie Réseaux
 
-## **TIMING POINT** (POINT HORAIRE)
+## **<span lang="en">TIMING POINT</span>** (POINT HORAIRE)
 
 POINT servant de référence aux données nécessaires à la conception des
 horaires. Un POINT HORAIRE peut aussi être un POINT D’ARRÊT PLANIFIÉ
@@ -2115,7 +2115,7 @@ mais cela n’a rien d’obligatoire ou de systématique.
 
 → Partie Réseaux
 
-## **TOPOGRAPHICAL PLACE** (LIEU TOPOGRAPHIQUE)
+## **<span lang="en">TOPOGRAPHICAL PLACE</span>** (LIEU TOPOGRAPHIQUE)
 
 *(Transmodel)*
 
@@ -2133,7 +2133,7 @@ particulier en cas d'identité de nom.
 
 → Partie Arrêts
 
-## **TRAIN** (TRAIN)
+## **<span lang="en">TRAIN</span>** (TRAIN)
 
 Un véhicule composé d'ÉLÉMENTs DE TRAIN dans un certain ordre,
 c'est-à-dire de voitures reliées et tirées par une locomotive ou une des
@@ -2141,13 +2141,13 @@ voitures.
 
 → Partie horaires
 
-## **TRAIN COMPONENT** (COMPOSANT DE TRAIN)
+## **<span lang="en">TRAIN COMPONENT</span>** (COMPOSANT DE TRAIN)
 
 La position d'un ÉLÉMENT DE TRAIN dans un TRAIN.
 
 → Partie horaires
 
-## **TRAIN COMPONENT LABEL ASSIGNMENT** (AFFECTION DE LABEL DE VOITURE)
+## **<span lang="en">TRAIN COMPONENT LABEL ASSIGNMENT</span>** (AFFECTION DE LABEL DE VOITURE)
 
 L'affectation d'une désignation annoncée pour un véhicule ou un élément
 de véhicule pour passagers. Concrètement, cela permet de connaître le
@@ -2157,19 +2157,19 @@ laquelle il est affecté.
 
 → Partie horaires
 
-## **TRAIN ELEMENT** (ÉLÉMENT DE TRAIN)
+## **<span lang="en">TRAIN ELEMENT</span>** (ÉLÉMENT DE TRAIN)
 
 Une composante élémentaire d'un TRAIN (par exemple voiture, locomotive).
 
 → Partie horaires
 
-## **TRAIN IN COMPOUND TRAIN** (TRAIN DANS UN TRAIN COMPOSÉ)
+## **<span lang="en">TRAIN IN COMPOUND TRAIN</span>** (TRAIN DANS UN TRAIN COMPOSÉ)
 
 La position d'un TRAIN dans un TRAIN COMPOSÉ.
 
 → Partie horaires
 
-## **TRAIN NUMBER** (NUMÉRO DE TRAIN)
+## **<span lang="en">TRAIN NUMBER</span>** (NUMÉRO DE TRAIN)
 
 Spécification spécification des codes attribués à certaines COURSES ou
 PARTIE DE COURSE, lorsqu'elles sont réalisées par des TRAINs ou des
@@ -2178,7 +2178,7 @@ des passagers, suivi des opérations, etc).
 
 → Partie horaires
 
-## **TRAIN STOP ASSIGNMENT** (AFFECTATION D’ARRÊT DE TRAIN)
+## **<span lang="en">TRAIN STOP ASSIGNMENT</span>** (AFFECTATION D’ARRÊT DE TRAIN)
 
 Affection d’un COMPOSANT DE TRAIN à un LIEU D’ARRÊT (ou un de ses
 composant de type ZONE D’EMBARQUEMENT ou POSITION D’EMBARQUEMENT) pour
@@ -2186,7 +2186,7 @@ un POINT D’ARRÊT PLANIFIÉ donné.
 
 → Partie Réseaux
 
-## **TRANSFER RESTRICTION** (RESTRICTION DE CORRESPONDANCE)
+## **<span lang="en">TRANSFER RESTRICTION</span>** (RESTRICTION DE CORRESPONDANCE)
 
 Contrainte qui s’applique aux CORRESPONDANCES (ou CORRESPONDANCES ENTRE
 COURSES) entre deux POINTs D’ARRÊT PLANIFIÉs, en limitant voir
@@ -2194,28 +2194,28 @@ interdisant l’usage pour les passagers.
 
 → Partie Réseaux
 
-## **TRANSFERABILITY** (TRANSFÉRABILITÉ)
+## **<span lang="en">TRANSFERABILITY</span>** (TRANSFÉRABILITÉ)
 
 Le nombre et les caractéristiques des personnes autorisées à utiliser le
 service de transport public à la place du client d'origine.
 
 → Partie Tarifs
 
-## **TRAVELATOR EQUIPMENT** (ÉQUIPEMENT DE TAPIS ROULANT)
+## **<span lang="en">TRAVELATOR EQUIPMENT</span>** (ÉQUIPEMENT DE TAPIS ROULANT)
 
 Spécialisation d'ÉQUIPEMENT D'ACCÈS AU LIEU pour tapis roulants
 (propriétés telles que la vitesse, etc.).
 
 → Partie Accessibilité
 
-## **TROLLEY STAND EQUIPMENT** (ÉQUIPEMENT DE STANDS DE CHARIOTS)
+## **<span lang="en">TROLLEY STAND EQUIPMENT</span>** (ÉQUIPEMENT DE STANDS DE CHARIOTS)
 
 Spécialisation de l'ÉQUIPEMENT DE POINT D'ARRÊT pour les stands de
 chariots.
 
 → Partie Accessibilité
 
-## **TYPE OF ACCESSIBILITY TOOLS** (TYPE D'OUTILS D'ACCESSIBILITÉ)
+## **<span lang="en">TYPE OF ACCESSIBILITY TOOLS</span>** (TYPE D'OUTILS D'ACCESSIBILITÉ)
 
 Classification des OUTILS D'ACCESSIBILITÉ utilisés ou mis à disposition
 par le SERVICE D'ASSISTANCE (fauteuils roulants, cannes, navigateurs
@@ -2223,7 +2223,7 @@ audio, navigateurs visuels, etc.).
 
 → Partie Accessibilité
 
-## **TYPE OF ASSISTANCE SERVICE** (SERVICE DE TYPE D'ASSISTANCE)
+## **<span lang="en">TYPE OF ASSISTANCE SERVICE</span>** (SERVICE DE TYPE D'ASSISTANCE)
 
 Classification de SERVICE D'ASSISTANCE (assistance à l'embarquement, à
 bord, portage, langues étrangères, traduction en langage des signes,
@@ -2231,33 +2231,33 @@ etc.).
 
 → Partie Accessibilité
 
-## **TYPE OF CONCESSION** (TYPE DE CONCESSION)
+## **<span lang="en">TYPE OF CONCESSION</span>** (TYPE DE CONCESSION)
 
 Une classification du PROFIL D'UTILISATEUR par type de personne éligible
 pour y correspondre.
 
 → Partie Tarifs
 
-## **TYPE OF EMERGENCY SERVICE** (SERVICE DE TYPE D'URGENCE)
+## **<span lang="en">TYPE OF EMERGENCY SERVICE</span>** (SERVICE DE TYPE D'URGENCE)
 
 Typologie des services d'urgence (police, premiers secours, borne
 d'appel, vidéosurveillance).
 
 → Partie Accessibilité
 
-## **TYPE OF FARE PRODUCT** (TYPE DE PRODUIT TARIFAIRE)
+## **<span lang="en">TYPE OF FARE PRODUCT</span>** (TYPE DE PRODUIT TARIFAIRE)
 
 Classification de PRODUIT TARIFAIRE.
 
 → Partie Tarifs
 
-## **TYPE OF FLEXIBLE SERVICE** (TYPE DE COURSE FLEXIBLE)
+## **<span lang="en">TYPE OF FLEXIBLE SERVICE</span>** (TYPE DE COURSE FLEXIBLE)
 
 Classification classification des services flexibles.
 
 → Partie horaires
 
-## **TYPE OF GENDER LIMITATION** (SERVICE DE LIMITATION DE SEXE)
+## **<span lang="en">TYPE OF GENDER LIMITATION</span>** (SERVICE DE LIMITATION DE SEXE)
 
 *Note le
 traducteur officiel aurait peut-être pu se relire ici !!*
@@ -2268,19 +2268,19 @@ deux).
 
 → Partie Accessibilité
 
-## **TYPE OF HANDRAIL** (TYPE DE MAIN COURANTE)
+## **<span lang="en">TYPE OF HANDRAIL</span>** (TYPE DE MAIN COURANTE)
 
 Classification de MAIN COURANTE (un côté, deux côtés).
 
 → Partie Accessibilité
 
-## **TYPE OF LINES** (TYPE DE LIGNES)
+## **<span lang="en">TYPE OF LINES</span>** (TYPE DE LIGNES)
 
 Classification pour les lignes
 
 → Partie Réseaux
 
-## **TYPE OF PAYMENT METHOD** (TYPE DE MÉTHODE DE PAIEMENT)
+## **<span lang="en">TYPE OF PAYMENT METHOD</span>** (TYPE DE MÉTHODE DE PAIEMENT)
 
 Une classification du mode de paiement (par exemple, espèces, carte de
 crédit, carte de débit, carte de voyage, carte de voyage sans contact,
@@ -2288,21 +2288,21 @@ téléphone portable, jeton, etc.).
 
 → Partie Tarifs
 
-## **TYPE OF SANITARY FACILITY** (SERVICE D'INSTALLATION SANITAIRE)
+## **<span lang="en">TYPE OF SANITARY FACILITY</span>** (SERVICE D'INSTALLATION SANITAIRE)
 
 Classification d'ÉQUIPEMENT SANITAIRE (toilettes, toilettes pour
 handicapés, douches, table à langer, table à langer pour handicapés)
 
 → Partie Accessibilité
 
-## **TYPE OF STAFFING** (TYPE DE PERSONNEL)
+## **<span lang="en">TYPE OF STAFFING</span>** (TYPE DE PERSONNEL)
 
 Classification de disponibilité du PERSONNEL associé à un SERVICE
 D'ASSISTANCE (plein temps, temps partiel)
 
 → Partie Accessibilité
 
-## **TYPE OF TRAVEL DOCUMENT** (TYPE DE DOCUMENT DE VOYAGE)
+## **<span lang="en">TYPE OF TRAVEL DOCUMENT</span>** (TYPE DE DOCUMENT DE VOYAGE)
 
 Une classification des DOCUMENTS DE VOYAGE exprimant leur fonctionnement
 et les caractéristiques fonctionnelles locales propres à l'opérateur.
@@ -2313,27 +2313,27 @@ utilisés pour définir ces catégories.
 
 → Partie Tarifs
 
-## **TYPE OF USER NEED** (TYPE DE BESOIN D'USAGER)
+## **<span lang="en">TYPE OF USER NEED</span>** (TYPE DE BESOIN D'USAGER)
 
 Classification des BESOINS D'USAGERS.
 
 → Partie Accessibilité
 
-## **USAGE DISCOUNT RIGHT** (DROIT À RÉDUCTION LIÉ À L’USAGE)
+## **<span lang="en">USAGE DISCOUNT RIGHT</span>** (DROIT À RÉDUCTION LIÉ À L’USAGE)
 
 PRODUIT TARIFAIRE permettant à un client de bénéficier de remises lors
 de la consommation d'ÉLÉMENTS VALIDABLES.
 
 → Partie Tarifs
 
-## **USAGE PARAMETER** (PARAMÈTRE D’UTILISATION)
+## **<span lang="en">USAGE PARAMETER</span>** (PARAMÈTRE D’UTILISATION)
 
 Paramètre utilisé pour spécifier l'utilisation d'une OFFRE À LA VENTE ou
 d'un PRODUIT TARIFAIRE.
 
 → Partie Tarifs
 
-## **USAGE VALIDITY PERIOD** (PÉRIODE DE VALIDITÉ D’UTILISATON)
+## **<span lang="en">USAGE VALIDITY PERIOD</span>** (PÉRIODE DE VALIDITÉ D’UTILISATON)
 
 Une limitation dans le temps de la validité d'un PRODUIT TARIFAIRE ou
 d'une OFFRE À LA VENTE. Il peut être composé d'une durée standard (par
@@ -2341,13 +2341,13 @@ exemple 3 jours, 1 mois) et/ou de dates et heures de début/fin fixes.
 
 → Partie Tarifs
 
-## **USER NEED** (BESOIN D'USAGER)
+## **<span lang="en">USER NEED</span>** (BESOIN D'USAGER)
 
 Besoin d'un usager exigeant une APPROPRIATION particulière.
 
 → Partie Accessibilité
 
-## **USER PROFILE** (PROFIL UTILISATEUR)
+## **<span lang="en">USER PROFILE</span>** (PROFIL UTILISATEUR)
 
 Profil social d'un passager, basé sur la tranche d'âge, l'éducation, la
 profession, le statut social, le sexe etc., souvent utilisé pour
@@ -2356,14 +2356,14 @@ femmes etc.
 
 → Partie Tarifs
 
-## **VALIDABLE ELEMENT** (ÉLÉMENT VALIDABLE)
+## **<span lang="en">VALIDABLE ELEMENT</span>** (ÉLÉMENT VALIDABLE)
 
 Une séquence ou un ensemble d'ÉLÉMENTS DE STRUCTURE TARIFAIRE, regroupés
 pour être validés en une seule fois.
 
 → Partie Tarifs
 
-## **VALIDITY CONDITION** (CONDITION DE VALIDITÉ)
+## **<span lang="en">VALIDITY CONDITION</span>** (CONDITION DE VALIDITÉ)
 
 *(Transmodel)*
 
@@ -2375,7 +2375,7 @@ etc.) et de son type d’application (Ex : « pour », « depuis »,
 
 → Partie éléments communs
 
-## **VALIDITY PARAMETER ASSIGNMENT** (AFFECTATION DE PARAMÈTRES DE VALIDITÉ)
+## **<span lang="en">VALIDITY PARAMETER ASSIGNMENT</span>** (AFFECTATION DE PARAMÈTRES DE VALIDITÉ)
 
 Une AFFECTATION DE PARAMÈTRES DE DROIT D'ACCÈS associant un paramètre de
 perception tarifaire à un PRODUIT TARIFAIRE (ou à l'un de ses
@@ -2383,7 +2383,7 @@ composants) ou à une OFFRE À LA VENTE.
 
 → Partie Tarifs
 
-## **VALIDITY TRIGGER** (DÉCLENCHEMENT DE VALIDITÉ)
+## **<span lang="en">VALIDITY TRIGGER</span>** (DÉCLENCHEMENT DE VALIDITÉ)
 
 *(Transmodel)*
 
@@ -2392,7 +2392,7 @@ exemple : crue exceptionnelle, mauvais temps, route barrée pour travaux.
 
 → Partie éléments communs
 
-## **VEHICLE ACCESS EQUIPMENT** (ÉQUIPEMENT D'ACCÈS AU VÉHICULE)
+## **<span lang="en">VEHICLE ACCESS EQUIPMENT</span>** (ÉQUIPEMENT D'ACCÈS AU VÉHICULE)
 
 Spécialisation de l'ÉQUIPEMENT VÉHICULE permettant l'accès aux
 véhicules, qui fournit différentes
@@ -2402,13 +2402,13 @@ d'accès).
 
 → Partie Accessibilité
 
-## **VEHICLE CHARGING EQUIPMENT** (ÉQUIPEMENT DE RECHARGE DE VÉHICULE)
+## **<span lang="en">VEHICLE CHARGING EQUIPMENT</span>** (ÉQUIPEMENT DE RECHARGE DE VÉHICULE)
 
 Spécialisation de l'ÉQUIPEMENT DE PLACE pour la recharge de véhicule.
 
 → Partie Accessibilité
 
-## **VEHICLE JOURNEY** (COURSE)
+## **<span lang="en">VEHICLE JOURNEY</span>** (COURSE)
 
 Le mouvement planifié d'un véhicule de transport public effectué un JOUR
 TYPE donné, depuis un point début à un point fin d'un PARCOURS sur un
@@ -2418,7 +2418,7 @@ d'application.
 
 → Partie horaires
 
-## **VEHICLE MODE** (MODE DE TRANSPORT)
+## **<span lang="en">VEHICLE MODE</span>** (MODE DE TRANSPORT)
 
 *(Transmodel)*
 
@@ -2432,7 +2432,7 @@ ferry, bateau, etc.).
 
 → Partie Réseaux
 
-## **VEHICLE MODEL** (MODÈLE DE VEHICULE)
+## **<span lang="en">VEHICLE MODEL</span>** (MODÈLE DE VEHICULE)
 
 Une classification des véhicules de transport public d'un même TYPE DE
 VÉHICULE, par exemple suivant les spécifications relatives aux
@@ -2440,7 +2440,7 @@ VÉHICULE, par exemple suivant les spécifications relatives aux
 
 → Partie horaires
 
-## **VEHICLE TYPE** (TYPE DE VEHICULE)
+## **<span lang="en">VEHICLE TYPE</span>** (TYPE DE VEHICULE)
 
 Une classification des véhicules de transport public résultant des
 spécifications de la planification des horaires en tenant compte du mode
@@ -2449,7 +2449,7 @@ de transport et de la capacité requise (par exemple bus standard, bus à
 
 → Partie horaires
 
-## **VERSION** (VERSION)
+## **<span lang="en">VERSION</span>** (VERSION)
 
 *(Transmodel)*
 
@@ -2460,7 +2460,7 @@ VERSION du réseau pour la ligne 12 à partir du 01-01-2000.
 
 → Partie éléments communs
 
-## **VIA** (VIA)
+## **<span lang="en">VIA</span>** (VIA)
 
 POINT utilisé comme POINT D'ITINÉRAIRE et permettant de distinguer deux
 cheminements (ITINÉRAIREs) entre une origine et une destination. Il est
@@ -2470,21 +2470,21 @@ un système de vente.
 
 → Partie Réseaux
 
-## **WAITING EQUIPMENT** (ÉQUIPEMENT D'ATTENTE)
+## **<span lang="en">WAITING EQUIPMENT</span>** (ÉQUIPEMENT D'ATTENTE)
 
 Spécialisation de l'ÉQUIPEMENT DE LIEU D'ARRÊT pour ÉQUIPEMENTS
 D'ATTENTE (abri, salle d'attente, etc.).
 
 → Partie Accessibilité
 
-## **WAITING ROOM EQUIPMENT** (ÉQUIPEMENT DE SALLE D'ATTENTE)
+## **<span lang="en">WAITING ROOM EQUIPMENT</span>** (ÉQUIPEMENT DE SALLE D'ATTENTE)
 
 Spécialisation de l'ÉQUIPEMENT D'ATTENTE pour salle d'attente, classée
 par TYPE DE SALLE D'ATTENTE.
 
 → Partie Accessibilité
 
-## **WHEELCHAIR VEHICLE EQUIPMENT** (ÉQUIPEMENT VÉHICULE POUR FAUTEUILS ROULANTS)
+## **<span lang="en">WHEELCHAIR VEHICLE EQUIPMENT</span>** (ÉQUIPEMENT VÉHICULE POUR FAUTEUILS ROULANTS)
 
 Spécialisation de l'ÉQUIPEMENT VÉHICULE permettant l'accès des fauteuils
 roulants à bord d'un VÉHICULE, qui fournit différentes informations (p.
@@ -2492,7 +2492,7 @@ ex : nombre de places pour fauteuils roulants et dimensions de l'accès).
 
 → Partie Accessibilité
 
-## **ZONE** (ZONE)
+## **<span lang="en">ZONE</span>** (ZONE)
 
 *(Transmodel)*
 
