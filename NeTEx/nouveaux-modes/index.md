@@ -1812,7 +1812,7 @@ Information relative aux méthodes de réservation d'un véhicule partagé.
 | «enum» | **_BuyWhen_** | _PurchaseMomentEnum_ | 0:\* | Créneaux d'achat |
 |     | **_LatestBookingTime_** | _MultilingualString_ | 0:1 | Heure au plus tard de réservation |
 |     | **_MinimumBooking­Period_** | _xsd:duration_ | 0:1 | Intervalle minimum avant le début de la commande. |
-|     | **_MaximumBooking­Period_** | _xsd:duration_ | 0:1 | Intervalle minimum avant le début de la commande |
+|     | **_MaximumBooking­Period_** | _xsd:duration_ | 0:1 | Intervalle maximum avant le début de la commande |
 |     | **_BookingUrl_** | _xsd:anyURI_ | 0:1 | url de réservation |
 | «cntd» | **_BookingNote_** | _MultilingualString_ | 0:1 | Information complémentaire |
 
@@ -1902,21 +1902,44 @@ Table 37 - VehicleServicePlaceAssignment - Element
 
 ###### **VehicleSharingPlaceAssignment**
 
-The allocation of a VEHICLE SHARING PARKING AREA to any vehicle sharing or rental service.
+L’attribution d’une ZONE DE STATIONNEMENT POUR VÉHICULES PARTAGÉS à tout service d’autopartage.
 
 | **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
 | --- | --- | --- | --- | --- |
-| ::> | ::> | _VehicleServicePlaceAssignment_ | ::> | VEHICLE SHARING PLACE ASSIGNMENT inherits from VEHICLE SERVICE PLACE ASSIGNMENT. |
-| «PK» | **_id_** | _VehicleSharingPlaceAssignmentIdType_ | 1:1 | Identifier of VEHICLE SHARING PLACE ASSIGNMENT. |
-| «cntd» | **_VehicleCommonServiceRef_** | _VehicleSharingServiceRef_ \| _VehicleRentalServiceRef_ | 0:\* | Reference to a VEHICLE SHARING SERVICE or a VEHICLE RENTAL SERVICE. |
-| «FK» | **_VehicleSharingParkingAreaRef_** | _VehicleSharingParkingAreaRef_ | 1:1 | Reference to a VEHICLE SHARING PARKING AREA.. |
-| «FK» | **_VehicleSharingParkingBayRef_** | _ParkingBayRef_ | 1:1 | Reference to a VEHICLE SHARING PARKING BAY. |
+| ::> | ::> | _VehicleServicePlaceAssignment_ | ::> | VEHICLE SHARING PLACE ASSIGNMENT hérite de  VEHICLE SERVICE PLACE ASSIGNMENT. |
+| «PK» | **_id_** | _VehicleSharingPlaceAssignmentIdType_ | 1:1 | Identifiant de VEHICLE SHARING PLACE ASSIGNMENT. |
+| «cntd» | **_VehicleCommonServiceRef_** | _VehicleSharingServiceRef_ \| _VehicleRentalServiceRef_ | 0:\* | Référence à un VEHICLE SHARING SERVICE |
+| «FK» | **_VehicleSharingParkingAreaRef_** | _VehicleSharingParkingAreaRef_ | 1:1 | Référence à un VEHICLE SHARING PARKING AREA.. |
+| «FK» | **_VehicleSharingParkingBayRef_** | _ParkingBayRef_ | 1:1 | Référence à un VEHICLE SHARING PARKING BAY. |
 
-Table 38 - VehicleSharingPlaceAssignment - Element
+Table 38 - VehicleSharingPlaceAssignment 
 
 ##### Exemple XML VehicleSharingParkingArea
 
 Le fragment de code suivant montre un **stationnement** pour une **station de vélos en libre-service** avec **10 emplacements** :
+
+### Exemple de zones de stationnement pour véhicules partagés
+
+```xml
+<parkingAreas>
+    <VehicleSharingParkingArea version="any" id="ZoneStationnementPartage01">
+        <TotalCapacity>7</TotalCapacity>
+        <ParkingProperties id="ProprietesStationnement01" version="any">
+            <vehicleTypes>
+                <SimpleVehicleTypeRef ref="TypeVehicule01"/>
+            </vehicleTypes>
+        </ParkingProperties>
+    </VehicleSharingParkingArea>
+    <VehicleSharingParkingArea version="any" id="ZoneStationnementPartage02">
+        <TotalCapacity>9</TotalCapacity>
+        <ParkingProperties id="ProprietesStationnement02" version="any">
+            <vehicleTypes>
+                <SimpleVehicleTypeRef ref="TypeVehicule02"/>
+            </vehicleTypes>
+        </ParkingProperties>
+    </VehicleSharingParkingArea>
+</parkingAreas>
+```
 
 Exemple xml 5 : Zone de Stationnement pour véhicule partagé
 
