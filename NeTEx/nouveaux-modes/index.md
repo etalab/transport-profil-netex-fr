@@ -1003,6 +1003,71 @@ Exemple xml 1 : Flotte de vélos
 
 #### Cas d'une flotte de voitures
 
+```xml
+<Fleet version="any" id="FR:Fleet:PARC_AUTO:1">
+    <Name>Flotte de véhicules de service</Name>
+
+    <members>
+        <VehicleRef ref="FR:Vehicle:001"/>
+        <VehicleRef ref="FR:Vehicle:002"/>
+        <VehicleRef ref="FR:Vehicle:003"/>
+    </members>
+
+    <transportTypes>
+        <VehicleTypeRef ref="FR:SimpleVehicleType:VOITURE_DIESEL"/>
+    </transportTypes>
+</Fleet>
+
+
+<Vehicle version="any" id="FR:Vehicle:001">
+    <Name>Renault Trafic - AB-123-CD</Name>
+    <RegistrationNumber>AB-123-CD</RegistrationNumber>
+    <VehicleTypeRef ref="FR:SimpleVehicleType:VOITURE_DIESEL"/>
+    <VehicleModelRef ref="FR:VehicleModel:RENAULT_TRAFFIC"/>
+</Vehicle>
+
+
+<SimpleVehicleType
+    version="any"
+    id="FR:SimpleVehicleType:VOITURE_DIESEL">
+
+    <PropulsionType>combustion</PropulsionType>
+    <FuelType>diesel</FuelType>
+
+    <MaximumRange>845</MaximumRange>
+
+    <TransportMode>car</TransportMode>
+
+    <EuroClass>6</EuroClass>
+
+    <Length>5.0</Length>
+    <Width>1.9</Width>
+    <Height>2.0</Height>
+
+</SimpleVehicleType>
+
+
+<VehicleModel
+    version="any"
+    id="FR:VehicleModel:RENAULT_TRAFFIC">
+
+    <Name>Renault Trafic</Name>
+
+    <CarModelProfileRef
+        ref="FR:CarEquipmentProfile:RENAULT_TRAFFIC"/>
+
+</VehicleModel>
+
+
+<CarModelProfile
+    version="any"
+    id="FR:CarEquipmentProfile:RENAULT_TRAFFIC">
+
+    <Seats>5</Seats>
+
+</CarModelProfile>
+```xml
+
 Exemple xml 2 : Flotte de véhicules
 
 ## Service En ligne
@@ -1979,7 +2044,7 @@ Note : Pour tout complément d'information se référer au profil France Parking
 
 ##### Modèle conceptuel
 
-La définition des équipements de rechargement pour les véhicules partagés électrique peut être rattachée à un emplacement de véhicule en station.
+La définition des équipements de rechargement pour les véhicules partagés électriques peut être rattachée à un emplacement de véhicule en station.
 
 A noter que l'information d'existance de capacité de rechargement électrique est portée au niveau de la Station (Recharging Availability).
 
