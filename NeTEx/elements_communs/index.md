@@ -4356,7 +4356,6 @@ Voici un exemple de cadre du fichier `resource.xml` :
   </dataObjects>
 </PublicationDelivery>
 ```
-Note : Si le jeu de données en NeTEx contient une description détaillée de la flotte de véhicules, alors VEHICLE TYPE est à inclure dans le fichier `fleet.xml`.
 
 Voici un exemple de cadre du fichier `poi.xml` :
 
