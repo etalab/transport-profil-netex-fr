@@ -4284,6 +4284,7 @@ Le présent profil utilise des valeurs précises de *TypeOfFrame* pour spécifie
 - parking.xml : À venir dans la partie Parking du profil
 - poi.xml : TypeOfFrame NETEX_POI, décrit dans la partie Éléments Communs du profil
 - resource.xml : TypeOfFrame NETEX_FRANCE, NETEX_COMMUN et NETEX_CALENDRIER décrits dans la partie Éléments Communs du profil
+- fleet.xml : TypeOfFrame NETEX_FLEET, décrit dans la partie nouveaux modes du profil
 
 Attention : les identifiants sont construits selon les recommandations du présent profil. Par exemple, `NETEX_LIGNE` sera présent dans un fichier
 avec la valeur complète `FR:TypeOfFrame:NETEX_LIGNE:`.
@@ -4310,23 +4311,32 @@ Voici un exemple de cadre du fichier `resource.xml` :
           <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_COMMUN:" />
           <members>
             <!--
-              VALIDITY CONDITION (AVAILABILITY CONDITION et VALIDITY TRIGGER)
+              ALTERNATIVE MODE OF OPERATION
               ALTERNATIVE NAME
+              BOOKING ARRANGEMENT
+              BOOKING METHOD
+              COMMON VEHICLE SERVICE
+              CONNECTION 
+              DATA SOURCE
+              DEFAULT CONNECTION
+              GEOGRAPHICAL INTERVAL
+              JOURNEY INTERCHANGE
+              MOBILITY SERVICE
               NOTICE
               NOTICE ASSIGNMENT
-              RESPONSIBILITY ROLE ASSIGNMENT
+              ONLINE SERVICE
+              ONLINE SERVICE OPERATOR
               ORGANISATION
               POINT PROJECTION
-              ZONE PROJECTION
-              TYPE OF VALUE spécifiques
-              DATA SOURCE
-              SITE CONNECTION
-              VEHICLE TYPE
-              CONNECTION 
-              JOURNEY INTERCHANGE
-              DEFAULT CONNECTION
-              BOOKING ARRANGEMENT
+              RESPONSIBILITY ROLE ASSIGNMENT
               SERVICE FACILITY SET
+              SITE CONNECTION
+              TYPE OF VALUE spécifiques
+              VALIDITY CONDITION (AVAILABILITY CONDITION et VALIDITY TRIGGER)
+              VEHICLE SHARING
+              VEHICLE SHARING TYPE
+              VEHICLE TYPE
+              ZONE PROJECTION              
               -->
           </members>
         </GeneralFrame>
@@ -4346,6 +4356,7 @@ Voici un exemple de cadre du fichier `resource.xml` :
   </dataObjects>
 </PublicationDelivery>
 ```
+Note : Si le jeu de données en NeTEx contient une description détaillée de la flotte de véhicules, alors VEHICLE TYPE est à inclure dans le fichier `fleet.xml`.
 
 Voici un exemple de cadre du fichier `poi.xml` :
 
@@ -4651,6 +4662,7 @@ Les fichiers attendus dans l'archive sont les suivants :
 | parking.xml        | Fichier regroupant les informations sur les parkings |
 | poi.xml            | Fichier regroupant les points d'intérêts et les informations associées |
 | resource.xml       | Fichier contenant toutes les informations qui ne sont pas collectés dans des fichiers thématiques (correspondances, calendriers, commentaires, etc.) |
+| fleet.xml          | Fichier contenant toutes les informations liées aux flottes de véhicules et aux véhicules |
 
 Chaque fichier ne contiendra qu’un seul élément racine : ***PublicationDelivery*** (voir 7.1).
 Le fichier XSD de plus haut niveau à utiliser est *NeTEx_publication.xsd*.

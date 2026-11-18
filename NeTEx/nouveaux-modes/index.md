@@ -2037,3 +2037,47 @@ Définit les restrictions applicables au compte client
 
 # Entêtes NeTEx
 
+Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_FLEET`, seuls les objets de premier niveau suivants sont autorisés : 
+- Fleet
+- ServiceAccessCode
+- SimpleVehicle
+- SimpleVehicleType
+- TransportType
+- Vehicle
+- VehicleAccessAssignment
+- VehicleEquipmentProfile
+- VehicleModel
+- VehicleModelProfile
+- VehicleReleaseEquipment
+- VehicleType
+
+Voici un exemple de cadre du fichier `fleet.xml` :
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="2.0:FR-NETEX-2.5">
+  <PublicationTimestamp>2026-01-01T00:00:00.0Z</PublicationTimestamp>
+  <ParticipantRef>Exemple</ParticipantRef>
+  <dataObjects>
+    <GeneralFrame id="exemple:GeneralFrame:NETEX_FLEET:" version="2.0:FR-NETEX-2.5">
+      <TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_FLEET:" />
+      <members>
+        <!--
+          FLEET
+          SERVICE ACCESS CODE
+          SIMPLE VEHICLE
+          SIMPLE VEHICLE TYPE
+          TRANSPORT TYPE
+          VEHICLE
+          VEHICLE ACCESS ASSIGNMENT
+          VEHICLE EQUIPMENT PROFILE
+          VEHICLE MODEL
+          VEHICLE MODEL PROFILE
+          VEHICLE RELEASE EQUIPMENT
+          VEHICLE TYPE
+          -->
+      </members>
+    </GeneralFrame>
+  </dataObjects>                  
+</PublicationDelivery> 
+```

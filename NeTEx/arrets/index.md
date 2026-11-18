@@ -2502,6 +2502,7 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_ARRET`, seuls les objets de
 - StopPlaceEntrance
 - Entrance
 - AccessSpace
+- VehicleMeetingPlace
 
 Voici un exemple de cadre du fichier `stop.xml` :
 ```xml
@@ -2522,6 +2523,7 @@ Voici un exemple de cadre du fichier `stop.xml` :
           ENTRANCE
           GROUP OF STOP PLACES
           ACCESS SPACE
+          VEHICLE MEETING PLACE
           -->
       </members>
     </GeneralFrame>
