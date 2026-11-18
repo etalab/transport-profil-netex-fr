@@ -2109,7 +2109,6 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_FLEET`, seuls les objets de
 - VehicleModel
 - VehicleModelProfile
 - VehicleReleaseEquipment
-- VehicleType
 
 Voici un exemple de cadre du fichier `fleet.xml` :
 
@@ -2134,7 +2133,6 @@ Voici un exemple de cadre du fichier `fleet.xml` :
           VEHICLE MODEL
           VEHICLE MODEL PROFILE
           VEHICLE RELEASE EQUIPMENT
-          VEHICLE TYPE
           -->
       </members>
     </GeneralFrame>
