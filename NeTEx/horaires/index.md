@@ -2134,6 +2134,8 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_HORAIRES`, seuls les objets
 - COMPOUND TRAIN
 - TRAIN NUMBER
 - TRAIN COMPONENT LABEL ASSIGNMENT
+- VEHICLE JOURNEY
+- PASSING TIME
 
 Voici un exemple de cadre du fichier `line_xyz.xml` :
 ```xml
@@ -2199,6 +2201,8 @@ Voici un exemple de cadre du fichier `line_xyz.xml` :
               COMPOUND TRAIN
               TRAIN NUMBER
               TRAIN COMPONENT LABEL ASSIGNMENT
+              VEHICLE JOURNEY
+              PASSING TIME
             -->
           </members>
         </GeneralFrame>

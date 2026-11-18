@@ -3409,6 +3409,8 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_RESEAU`, seuls les objets d
 - Network
 - GroupOfLines
 - RoutingContraintZone
+- MobilityConstraintZone
+- MobilityServiceConstraintZone
 
 Voici un exemple de cadre du fichier `network.xml` :
 ```xml
@@ -3424,6 +3426,8 @@ Voici un exemple de cadre du fichier `network.xml` :
           NETWORK
           GROUP OF LINES
           ROUTING CONSTRAINT ZONE
+          MOBILITY CONSTRAINT ZONE
+          MOBILITY SERVICE CONSTRAINT ZONE
           -->
       </members>
     </GeneralFrame>
