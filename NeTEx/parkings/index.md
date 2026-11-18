@@ -2391,6 +2391,10 @@ Une GeneralFrame de type **NETEX_PARKING** est utilisée pour échanger la descr
 Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_PARKING`, seuls les objets de premier niveau suivants sont autorisés : 
 - PARKING (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
 - PARKING BAY
+- VEHICLE SHARING PARKING AREA
+- VEHICLE SHARING PARKING ASSIGNMENT
+- VEHICLE SHARING PLACE ASSIGNMENT
+- VEHICLE SHARING PARKING BAY
 
 Voici un exemple de cadre du fichier `parking.xml` :
 
@@ -2406,6 +2410,10 @@ Voici un exemple de cadre du fichier `parking.xml` :
         <!--
           Parking (contiendra par inclusion tous les autres objets comme PARKING AREAs, VEHICLE ENTRANCEs, etc.)
           ParkingBay
+          VehicleSharingParkingArea
+          VehicleSharingParkingAssignment
+          VehicleSharingPlaceAssignment
+          VehicleSharingParkingBay
           -->
       </members>
     </GeneralFrame>

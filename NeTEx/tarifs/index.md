@@ -6045,6 +6045,9 @@ Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_TARIF`, seuls les objets de
 - DiscountingRule
 - FareTable (les SalesOfferPackagePrice sont inclus dans les Cell de la FareTable)
 - DistanceMatrixElement
+- LuggageAllowance
+- PurchaseWindow
+- Cancelling
 
 Il est à noter que les SalesOfferPackagePrice sont à inclure :
 - directement dans la Cell de la FareTable 
@@ -6079,6 +6082,9 @@ Voici un exemple de cadre du fichier `fare.xml` :
           FareTable 
           DistanceMatrixElement
           ParkingTariff
+          LuggageAllowance
+          PurchaseWindow
+          Cancelling
           -->
       </members>
     </GeneralFrame>
