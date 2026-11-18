@@ -24,15 +24,15 @@ CEN/TS 16614-3, Network and Timetable Exchange (NeTEx) - Part 3: Fare exchange f
 
 EN 12896, Road transport and traffic telematics - Public transport - Reference data model (Transmodel)
 
-Le profil France NeTex modes Alternatifs s'appuie sur les profils NeTex France mentionnés ci-après. Les informations décrites dans ces profil nationaux ne sont pas reprises dans ce document.
+Le profil France NeTex modes Alternatifs s'appuie sur les profils NeTex France mentionnés ci-après. Les informations décrites dans ces profils nationaux ne sont pas reprises dans ce document.
 
-NeTEx - Profil France v2.4 - Eléments communs
+NeTEx - Profil France v2.4 - Éléments communs
 
 NeTEx - Profil France v2.4 - Description des arrêts
 
 NeTEx - Profil France v2.4 - Description des réseaux
 
-NeTEx - Profil France v2.4 - Accesibilité
+NeTEx - Profil France v2.4 - Accessibilité
 
 NeTEx - Profil France v2.4 - Tarifs
 
@@ -80,7 +80,7 @@ Trois spécialisations d'un SERVICE DE VéHICULES COMMUNS sont possibles :
 
 - SERVICE DE LOCATION DE VéHICULES : Offre de service de transport liée à la LOCATION DE VéHICULES. Hors périmètre du présent profil,
 - SERVICE DE PARTAGE DE VéHICULES : Offre de service de transport liée au PARTAGE DE VéHICULES.
-- SERVICE DE VEHICULES PARTAGES (co voiturage) : Service de transport mettant en relation conducteur et passager(s) pour effectuer des trajets.
+- SERVICE DE VEHICULES PARTAGES (covoiturage) : Service de transport mettant en relation conducteur et passager(s) pour effectuer des trajets.
 
 **CONVENTIONAL MODE OF OPERATION** (mode d’exploitation conventionnel) (Transmodel)
 
@@ -108,7 +108,7 @@ Service de transport alternatif disponible sur un territoire étendu, par exempl
 
 **MODE OF OPERATION** (mode d’exploitation)
 
-Un des trois types de mode d'exploitation parmi ;
+L’un des trois modes d’exploitation suivants :
 
 - Les modes d'exploitation conventionnels,
 - Les modes d'exploitation alternatifs
@@ -140,7 +140,7 @@ Emplacement où l'on peut stationner un (unique) véhicule.
 
 **PERSONAL MODE OF OPERATION** (mode d’exploitation personnel) (Transmodel)
 
-Mode de d'exploitation privé excluant toute utilisation annoncée publiquement.
+Mode d'exploitation privé excluant toute utilisation annoncée publiquement.
 
 **ServiceAccessCode** (Code d’accès à un service)(NeTEx)
 
@@ -337,7 +337,7 @@ Les attributs et éléments rendus obligatoires dans le cadre de ce profil reste
 
 ### Valeurs de code de profil
 
-Dans la mesure du possible, le profil sélectionne les valeurs de code à utiliser pour caractériser des éléments et les limite à un ensemble de valeurs documentées. NETEX propose plusieurs mécanismes différents pour spécifier les valeurs de code autorisées:
+Dans la mesure du possible, le profil sélectionne les valeurs de code à utiliser pour caractériser des éléments et les limite à un ensemble de valeurs documentées. NeTEx propose plusieurs mécanismes différents pour spécifier les valeurs de code autorisées:
 
 - Des énumérations fixes définies dans le cadre du schéma XSD NeTEx. Le profil impose alors un sous-ensemble des codes NeTEx.
 - Des spécialisations de TYPE OF VALUE, utilisées pour définir des ensembles de codes ouverts pouvant être ajoutés au fil du temps sans modifier le schéma, par exemple, pour enregistrer des classifications d'entités héritées. Le profil lui-même utilise le mécanisme TYPE OF VALUE dans quelques cas pour spécifier des codes normalisés supplémentaires : ceux-ci sont affectés à un CODESPACE «FR_IV_metadata» (<https://netex-cen.eu/FR_IV>) indiqué par un préfixe «FR_IV». (par exemple, «FR_IV: monomodal»).
@@ -627,7 +627,7 @@ Les principaux types de partage de voitures sont :
 - Mise à disposition entre particuliers (club d'autopartage) ;
 - Location de voitures classique.
 
-Seule la gestion du premier type est intégrée au profil France NeTex.
+Seule la gestion du premier type est intégrée au profil France NeTEx.
 
 Les types de voitures pris en compte dans ce document sont :
 
@@ -666,7 +666,7 @@ Plusieurs modèles de paiement existent pour ce service :
 - Paiement au temps d'utilisation, facturant la durée pendant laquelle le véhicule est utilisé et indisponible pour d'autres ;
 - Ou une combinaison des deux (temps et distance).
 
-Le présent profil ne décrit pas les modalités de tarification. Le Profil NeTex France Tarif s'applique pour ces cas d'utilisation.
+Le présent profil ne décrit pas les modalités de tarification. Le Profil NeTEx France Tarif s'applique pour ces cas d'utilisation.
 
 ## Covoiturage
 
@@ -698,7 +698,7 @@ Les paragraphes suivants décrivent les fonctions du covoiturage
 
 #### Tarification
 
-La description du modèle tarifaire en NeTex est disponible dans le Profil NeTex France - Tarifs (voir paragraphe références normatives
+La description du modèle tarifaire en NeTEx est disponible dans le Profil NeTEx France - Tarifs (voir paragraphe références normatives
 
 Le prix que le passager doit payer pour son trajet en covoiturage est censé couvrir une partie des coûts du conducteur (carburant, coûts du véhicule, etc.), mais ne constitue jamais un moyen pour le conducteur de réaliser un bénéfice (contrairement aux taxis et aux voitures avec chauffeur).
 
@@ -712,7 +712,7 @@ Il convient également de noter que la tarification n’a pas toujours lieu : da
 
 #### Preuve de covoiturage
 
-Note : La notion de preuve de covoiturage n'est pas portée par NeTEX. Elle est décrite dans le profil à titre d'information.
+Note : La notion de preuve de covoiturage n'est pas portée par NeTEx. Elle est décrite dans le profil à titre d'information.
 
 Pour être payé ou pour pouvoir bénéficier de certains avantages réservés aux conducteurs en covoiturage (par exemple le stationnement gratuit ou l’accès aux voies réservées aux véhicules à occupation multiple), le conducteur peut avoir besoin d’une preuve de covoiturage.
 
@@ -755,7 +755,7 @@ Les mécanismes de mise en relation des trajets peuvent être très simples (cor
 
 #### Paiement
 
-Se reproter au profil NeTEx France Tarifs pour disposer des informations relatives à la représentation des données tarifaires en NeTEx.
+Se reporter au profil NeTEx France Tarifs pour disposer des informations relatives à la représentation des données tarifaires en NeTEx.
 
 Les services de covoiturage intègrent un mécanisme de paiement sécurisé, jouant le rôle d’intermédiaire entre le conducteur et le voyageur. Les moyens de paiement les plus courants, tels que la carte de crédit, PayPal, le virement bancaire (pour les conducteurs), etc., sont généralement acceptés.
 
@@ -1184,10 +1184,10 @@ Exemple :
 |     |     |     |     |     |
 | --- | --- | --- | --- | --- |
 | **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
-| ::> | ::> | _ParkingArea_ | ::> | VEHICLE POOLING PARKING AREA hérite de from PARKING AREA<br><br>\[non décrit dans PART5 NeTex\] |
+| ::> | ::> | _ParkingArea_ | ::> | VEHICLE POOLING PARKING AREA hérite de from PARKING AREA<br><br>\[non décrit dans PART5 NeTEx\] |
 | «PK» | **_id_** | _VehiclePoolingParkingAreaIdType_ | 1:1 | Identifier of VEHICLE POOLING PARKING AREA. |
 
-Table 14 — Zone de co voiturage
+Table 14 — Zone de covoiturage
 
 #### ParkingBay (Place de stationnement)
 
@@ -1231,7 +1231,7 @@ Un emplacement dédié pour garer soit un véhicule participant à un service de
 | ::> | ::> | _ParkingBay_ | ::> | VEHICLE POOLING PARKING BAY hérite de PARKING BAY. |
 | «PK» | **_id_** | _VehiclePoolingParkingBayIdType_ | 1:1 | Identifiant du VEHICLE POOLING PARKING BAY. |
 
-Table 17 — **Dock de stationnement pour véhicule de co voiturage**
+Table 17 — **Dock de stationnement pour véhicule de covoiturage**
 
 ## Point de rencontre (Covoiturage)
 
@@ -1863,7 +1863,7 @@ Figure 14 : Réservation - MC
 
 Information relative aux méthodes de réservation d'un véhicule partagé.
 
-**_Pour plus de détail sur les valeurs autorisées se reporter au Profil NeTex France Réseaux._**
+**_Pour plus de détail sur les valeurs autorisées se reporter au Profil NeTEx France Réseaux._**
 
 | **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
 | --- | --- | --- | --- | --- |
