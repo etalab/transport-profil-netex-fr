@@ -302,7 +302,7 @@ _Table 1 - Concepts relatifs à la LOM et à la Règlementation Européenne_
 
 ### Tableaux d'attributs
 
-**NOTE** les choix de conventions présentées ici ont pour vocation d'être cohérents avec ceux réalisés dans le cadre du profil SIRI (Île-de-France Mobilités et CEREMA). De plus tous les profils NeTEx partagent les mêmes conventions.
+**NOTE** les choix de conventions présentés ici ont pour vocation d'être cohérents avec ceux réalisés dans le cadre du profil SIRI (Île-de-France Mobilités et CEREMA). De plus tous les profils NeTEx partagent les mêmes conventions.
 
 Les messages constituant ce profil d'échange sont décrits ci-dessous selon un double formalisme: une description sous forme de diagrammes XSD (leur compréhension nécessite une connaissance préalable de XSD: XML Schema Definition) et une description sous forme tabulaire. Les tableaux proposent ces colonnes:
 
@@ -345,7 +345,7 @@ Dans la mesure du possible, le profil sélectionne les valeurs de code à utilis
 
 ### Indication des classes abstraites
 
-NeTEx, et Transmodel, utilisent largement l'héritage de classe; cela simplifie considérablement la spécification en évitant les répétitions puisque les attributs partagés sont déclarés par une superclasse et que des sous-classes viennent ensuite les spécialiser sans avoir à répéter ces attributs et en n'ajoutant que ceux qui lui sont spécifiques. La plupart des superclasses sont «abstraites» - c'est-à-dire qu'il n'existe aucune instance concrète; seules les sous-classes terminales sont «concrètes».
+NeTEx, et Transmodel, utilisent largement l'héritage de classe; cela simplifie considérablement la spécification en évitant les répétitions puisque les attributs partagés sont déclarés par une superclasse et que des sous-classes viennent ensuite les spécialiser sans avoir à répéter ces attributs et en n'ajoutant que ceux qui leur sont spécifiques. La plupart des superclasses sont «abstraites» - c'est-à-dire qu'il n'existe aucune instance concrète; seules les sous-classes terminales sont «concrètes».
 
 Un inconvénient de l'héritage est que si l'on veut comprendre les propriétés d'une classe concrète unique, il faut également examiner toutes ses super-classes. Pour cette raison, le profil inclut les classes abstraites nécessaires pour comprendre les classes concrètes, même si ces classes concrètes ne sont jamais directement instanciées dans un document NeTEx.
 
@@ -359,7 +359,7 @@ Un certain nombre de classes ont des sous-composants qui constituent leur défin
 
 ## Les éléments non définis dans l'offre des services (réseau et horaires)
 
-Sans Objet
+Sans objet
 
 # Concepts de base pour la description des modes de transport alternatif
 
@@ -755,7 +755,7 @@ Les mécanismes de mise en relation des trajets peuvent être très simples (cor
 
 #### Paiement
 
-Se reproter au profil NeTEx France Tarifs pour disposer des informations relatives à la representation des données tarifaires en NeTEx.
+Se reproter au profil NeTEx France Tarifs pour disposer des informations relatives à la représentation des données tarifaires en NeTEx.
 
 Les services de covoiturage intègrent un mécanisme de paiement sécurisé, jouant le rôle d’intermédiaire entre le conducteur et le voyageur. Les moyens de paiement les plus courants, tels que la carte de crédit, PayPal, le virement bancaire (pour les conducteurs), etc., sont généralement acceptés.
 
