@@ -134,11 +134,11 @@ Zone identifiée à l'intérieur d'un parking, et contenant des places de statio
 
 Association qui définit l’allocation d’une capacité de stationnement à une aire de stationnement donnée, en précisant comment une capacité (totale ou partielle) est affectée à un usage, un type de véhicule ou un service spécifique.
 
-**PARKING BAY** (place de stationnement) *(Transmodel)*
+**PARKING BAY** (place de stationnement) (Transmodel)
 
 Emplacement où l'on peut stationner un (unique) véhicule.
 
-**PERSONAL MODE OF OPERATION** (mode d’exploitation personnel) *(Transmodel)*
+**PERSONAL MODE OF OPERATION** (mode d’exploitation personnel) (Transmodel)
 
 Mode de d'exploitation privé excluant toute utilisation annoncée publiquement.
 
@@ -150,13 +150,13 @@ Code définissant une condition ou une règle d’accès applicable à un servic
 
 Ensemble des attributs ou critères permettant de qualifier un profil de service de transport, afin de décrire ses caractéristiques fonctionnelles, opérationnelles ou commerciales et de le distinguer d’autres profils de service.
 
-**SIMPLE VEHICLE TYPE** (type de véhicule simple) *(Transmodel)*
+**SIMPLE VEHICLE TYPE** (type de véhicule simple) (Transmodel)
 
 Définit les exigences applicables à un véhicule utilisé pour fournir des services de modes alternatifs.
 
 Il peut inclure des caractéristiques empruntées à d'autres types de véhicules (par exemple : vélos, trottinettes, scooters).
 
-**TRANSPORT TYPE** (type de transport) *(Transmodel)*
+**TRANSPORT TYPE** (type de transport) (Transmodel)
 
 Un **TRANSPORT TYPE** peut être associé à un **VEHICLE MODEL**, qui décrit un ensemble de propriétés répondant à un **VEHICLE EQUIPMENT PROFILE**.
 
@@ -221,7 +221,7 @@ Association définissant l’affectation d’un lieu à un service de partage de
 
 Zone identifiée à l'intérieur d'un parking dédié au véhicules partagés, et contenant des places de stationnement (PARKING BAYs).
 
-**VEHICLE SHARING PARKING BAY** (place de stationnement pour véhicule partagé) *(Transmodel)*
+**VEHICLE SHARING PARKING BAY** (place de stationnement pour véhicule partagé) (Transmodel)
 
 Emplacement où l'on peut stationner un (unique) véhicule partagé.
 
@@ -237,13 +237,13 @@ Service de transport permettant à des utilisateurs d’accéder à des véhicul
 
 Type définissant la catégorie ou le mode de fonctionnement d’un service de partage de véhicules, caractérisant la manière dont les véhicules sont mis à disposition et utilisés par les usagers.
 
-**VEHICLE TYPE** (type de véhicule) *(Transmodel)*
+**VEHICLE TYPE** (type de véhicule) (Transmodel)
 
 Définit les exigences applicables à un véhicule programmé pour le transport de passagers. Ces exigences peuvent inclure :
 
-- **Exigence de transport de passagers** : capacité en passagers fauteuil roulant, etc.).
+- **Exigence de transport de passagers** : capacité en passagers fauteuil roulant, etc.
 - **Exigence de manœuvrabilité** : contraintes liées à la capacité de manœuvre du véhicule.
-- **Exigence d'équipements** : installations requises à bord (accessibilité, siège bébé, etc.).
+- **Exigence d'équipements** : installations requises à bord (accessibilité, siège bébé, etc.
 
 **VEHICLE TYPE ZONE RESTRICTION** (Type de Zone de restriction de circulation)(Transmodel)
 
@@ -960,9 +960,6 @@ Table 10 - Type de flotte
 ### Exemple de description d’une flotte de vélos
 
 ```xml
-<### Exemple de description d’une flotte de vélos
-
-```xml
 <Fleet version="any" id="FlotteVelos">
     <Name>Flotte de vélos en libre-service</Name>
     <members>
@@ -1066,7 +1063,7 @@ Exemple xml 1 : Flotte de vélos
     <Seats>5</Seats>
 
 </CarModelProfile>
-```xml
+```
 
 Exemple xml 2 : Flotte de véhicules
 
