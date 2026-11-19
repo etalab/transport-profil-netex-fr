@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="NeTEx-fares:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../../../../../../../../Documents/GitHub/TransmodelEcosystem/NeTEx/xsd/NeTEx_publication.xsd">
+	<!-- INFORMATION SUR LE FICHIER D EXEMPLE
+	Exemple provenant du titre T-Libr proposé par la SMT AML, limité à 2 produits tarifaires :
+	- L'abonnement mensuel 1 Zone : T-libr Côtière
+	- L'abonnement mensuel 2 zones : T-libr TCL 1&2 + Côtière
+	Pour ceux 2 produits, nous avons pris les 2 tarifs existants selon les profils usagers :
+	- Tarif plein pour le tout public
+	- Tarif jeunes pour les - de 26 ans
+	La description complète du titre est disponible ici : https://www.t-libr.fr/ (option : mettre le lien vers le dépliant PDF).
+	Dans un esprit de simplification, cet exemple ne prend qu'un canal de distribution : la vente en ligne.-->
+	<!--- =============== ENTÊTE =========== -->
+	<PublicationTimestamp>2026-08-17T00:00:00.0Z</PublicationTimestamp>
+	<ParticipantRef>GT7</ParticipantRef>
+	<!--- =============== DONNÉES =========== -->
+	<dataObjects>
+		<CompositeFrame id="exemple:CompositeFrame:myFrame01" version="1">
+			<frames>
+				<GeneralFrame id="exemple:CompositeFrame:myFrame01" version="1">
+					<TypeOfFrameRef ref="FR:TypeOfFrame:NETEX_TARIF"/>
+					<members>
+						<!-- STRUCTURE TARIFAIRE ET DROITS DE BASE -->
+						<!-- Période pendant laquelle le titre peut être utilisé -->
+						<TimeInterval id="exemple:TimeInterval:01" version="any">
+							<Description>2h de trajet sur l'ensemble de la zone</Description>
+							<Duration>PT2H</Duration>
+							<timeStructureFactors>
+								<TimeStructureFactor id="exemple:TimeStructureFactor:01" version="any">
+									<Name>Entre première et dernière validation</Name>
+									<!--A présenter pour l'IV-->
+									<Description>Time Structure Factor pour "entre première et dernière validation"</Description>
+									<TypeOfFareStructureFactorRef ref="BetweenFirstAndLastValidation"/>
+								</TimeStructureFactor>
+							</timeStructureFactors>
+						</TimeInterval>
+						<FareStructureElement id="exemple:FareStructureElement:01" version="any">
+							<Name>Jusqu'à 2h</Name>
+							<TypeOfFareStructureElementRef ref="FR:TimeInteral:Duration" versionRef="any"/>
+							<TimeIntervalRef ref="exemple:TimeInterval:01"/>
+						</FareStructureElement>
+						<!-- Topologie du titre : détails de l'ensemble des lignes incluses dans le titre -->
+						<FareStructureElement id="exemple:FareStructureElement:02" version="any">
+							<Name>Réseaux de la zone Côtière + TCL 1 et 2</Name>
+							<TypeOfFareStructureElementRef ref="FR:ScopingValidityParameters" versionRef="any"/>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:01" version="any">
+									<IsAllowed>true</IsAllowed>
+									<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology"/>
+									<validityParameters>
+										<!-- Toutes les références utilisées dans cet exemple ont pour vocation de représenter 
+										les réseaux / groupes de lignes qui sont inclus dans le tarif T-Libr. 
+										Ces références sont proposées à titre d'illustration. Elle doivent être modifiées 
+										pour correspondre à celles définies dans l'offre de transport. -->
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TER-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TCL-1"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TCL-2"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:COLIBRI-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TICO-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:CARREGIONAUXAIN-Cotiere"/>
+									</validityParameters>
+									<IncludesGroupingType>OR</IncludesGroupingType>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						<FareStructureElement id="exemple:FareStructureElement:03" version="any">
+							<Name>Réseaux de la zone Côtière uniquement</Name>
+							<TypeOfFareStructureElementRef ref="FR:ScopingValidityParameters" versionRef="any"/>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:02" version="any">
+									<IsAllowed>true</IsAllowed>
+									<TypeOfAccessRightAssignmentRef ref="FR:BaseTopology"/>
+									<validityParameters>
+										<!-- Toutes les références utilisées dans cet exemple ont pour vocation de représenter 
+										les réseaux / groupes de lignes qui sont inclus dans le tarif T-Libr. 
+										Ces références sont proposées à titre d'illustration. Elle doivent être modifiées 
+										pour correspondre à celles définies dans l'offre de transport. -->
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TER-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:COLIBRI-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:TICO-Cotiere"/>
+										<GroupOfLinesRef ref="SMTAML:GroupOfLines:CARREGIONAUXAIN-Cotiere"/>
+									</validityParameters>
+									<IncludesGroupingType>OR</IncludesGroupingType>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						<!-- Conditions d'utilisation -->
+						<FareStructureElement id="exemple:FareStructureElement:04" version="any">
+							<Name>Usage illimté</Name>
+							<TypeOfFareStructureElementRef ref="FR:FrequencyOfUse" versionRef="any"/>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:03" version="any">
+									<limitations>
+										<FrequencyOfUse id="exemple:FrequencyOfUse:01" version="any">
+											<FrequencyOfUseType>unlimited</FrequencyOfUseType>
+										</FrequencyOfUse>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						<FareStructureElement id="exemple:FareStructureElement:05" version="any">
+							<Name>Abonnement mensuel</Name>
+							<TypeOfFareStructureElementRef ref="FR:UsageValidityPeriod" versionRef="any"/>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:04" version="any">
+									<limitations>
+										<UsageValidityPeriod id="exemple:UsageValidityPeriod:1" version="any">
+											<ValidityPeriodType>monthlyPass</ValidityPeriodType>
+											<UsageTrigger>specifiedStartDate</UsageTrigger>
+											<UsageEnd>endOfCalendarPeriod</UsageEnd>
+											<StandardDuration>P1M</StandardDuration>
+											<ActivationMeans>useOfValidator</ActivationMeans>
+										</UsageValidityPeriod>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						<FareStructureElement id="exemple:FareStructureElement:06" version="any">
+							<Name>2e classe tous modes</Name>
+							<TypeOfFareStructureElementRef ref="FR:validityParameters" versionRef="any"/>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:05" version="any">
+									<validityParameters>
+										<FareClass>secondClass</FareClass>
+										<TransportModes>all</TransportModes>
+									</validityParameters>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						<!-- Conditions de voyage -->
+						<FareStructureElement id="exemple:FareStructureElement:07" version="any">
+							<Name>Trajets avec correspondance</Name>
+							<TypeOfFareStructureElementRef ref="FR:Interchanging" versionRef="any"/>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:06" version="any">
+									<LimitationGroupingType>AND</LimitationGroupingType>
+									<limitations>
+										<Interchanging id="exemple:Interchanging:01" version="any">
+											<CanInterchange>true</CanInterchange>
+										</Interchanging>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						<FareStructureElement id="exemple:FareStructureElement:08" version="any">
+							<Name>Non transférable</Name>
+							<TypeOfFareStructureElementRef ref="FR:Transferability" versionRef="any"/>
+							<validityParameterAssignments>
+								<GenericParameterAssignment id="exemple:GenericParameterAssignment:07" version="any">
+									<limitations>
+										<Transferability id="exemple:Transferability:01" version="any">
+											<CanTransfer>true</CanTransfer>
+											<!-- Requis, une utilisation multiple d'un titre est considérée comme un transfert -->
+											<HasTransferFee>false</HasTransferFee>
+											<SharedUsage>singleUser</SharedUsage>
+										</Transferability>
+									</limitations>
+								</GenericParameterAssignment>
+							</validityParameterAssignments>
+						</FareStructureElement>
+						<!-- NOTICES -->
+						<!-- Informations complémentaires pour l'information voyageurs -->
+						<Notice id="exemple:Notice:01" version="any">
+							<Name>Zone Côtière</Name>
+							<Text>La zone Côtière comprend : Les gares TER (Miribel, St-Maurice-de-Beynost, Beynost, Montluel, La Valbonne, Les Echets) + 
+							Tout le réseau Colibri + tout le réseau TICO 
+							+ Cars Régain Ain (Tous les arrêts des lignes A32 et A71 dans la zone T-Libr)</Text>
+							<CanBeAdvertised>true</CanBeAdvertised>
+						</Notice>
+						<Notice id="exemple:Notice:02" version="any">
+							<Name>Moins de 26 ans</Name>
+							<Text>L'achat d'un titre pour personne de moins de 26 ans peut conduire au contrôle de la pièce d'identité.
+							Sont acceptés tous les passagers jusqu'à 26 ans révolus (c'est-à-dire jusqu'à ce qu'ils fêtent leurs 26 ans).</Text>
+							<CanBeAdvertised>true</CanBeAdvertised>
+						</Notice>
+						<!-- DOCUMENTS DE VOYAGE ET AUTRES SUPPORTS DES TITRES -->
+						<TypeOfTravelDocument id="exemple:TypeOfTravelDocument:01" version="any">
+							<Name>Carte</Name>
+							<IsSmartCard>true</IsSmartCard>
+							<HasPhoto>true</HasPhoto>
+							<MediaType>card</MediaType>
+							<MachineReadable>nfc</MachineReadable>
+						</TypeOfTravelDocument>
+						<!-- PROIFLS DES PASSAGERS -->
+						<UserProfile id="exemple:UserProfile:01" version="any">
+							<Name>Adulte - Plein tarif</Name>
+							<Description>Plein tarif adulte sans réduction</Description>
+							<UserType>adult</UserType>
+							<MinimumAge>18</MinimumAge>
+						</UserProfile>
+						<UserProfile id="exemple:UserProfile:02" version="any">
+							<Name>Moins de 26 ans - Tarif réduit</Name>
+							<Description>Tarif réduit, uniquement pour les moins de 26 ans</Description>
+							<noticeAssignments>
+								<NoticeAssignment id="exemple:NoticeAssignment:01" version="any">
+									<NoticeRef ref="exemple:Notice:02"/>
+								</NoticeAssignment>
+							</noticeAssignments>
+							<UserType>youngPerson</UserType>
+							<MinimumAge>4</MinimumAge>
+							<MaximumAge>26</MaximumAge>
+							<ProofRequired>identityDocument</ProofRequired>
+						</UserProfile>
+						<!-- CANAUX DE VENTE -->
+						<DistributionChannel id="exemple:Distributionchannel:01" version="any">
+							<Name>Vente en ligne</Name>
+							<DistributionChannelType>online</DistributionChannelType>
+							<AuthorityRef ref="exemple:Authority:01"/>
+							<PaymentMethods>cardsOnly</PaymentMethods>
+							<DistributionRights>sell refund inform exchange</DistributionRights>
+						</DistributionChannel>
+						<!-- PRODUITS TARIFAIRES -->
+						<PreassignedFareProduct id="exemple:PreassignedFareProduct:01" version="any">
+							<Name>T-Libr 1 Zone - Côtière</Name>
+							<AuthorityRef ref="exemple:Authority:01"/>
+							<ConditionSummary>
+								<FareStructureType>zonalFare</FareStructureType>
+								<TariffBasis>period</TariffBasis>
+								<HasNotices>true</HasNotices>
+								<IsSupplement>false</IsSupplement>
+								<RequiresEntitlement>false</RequiresEntitlement>
+								<GivesEntitlement>false</GivesEntitlement>
+								<HasTravelTimeRestrictions>false</HasTravelTimeRestrictions>
+								<HasZoneRestrictions>true</HasZoneRestrictions>
+								<CanBreakJourney>true</CanBreakJourney>
+							</ConditionSummary>
+							<validableElements>
+								<ValidableElement id="exemple:ValidableElement:01" version="any">
+									<fareStructureElements>
+										<FareStructureElementRef ref="exemple:FareStructureElement:01" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:03" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:04" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:05" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:06" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:07" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:08" version="any"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<ProductType>periodPass</ProductType>
+						</PreassignedFareProduct>
+						<PreassignedFareProduct id="exemple:PreassignedFareProduct:02" version="any">
+							<Name>T-Libr 2 Zones - TCL + Côtière</Name>
+							<AuthorityRef ref="exemple:Authority:01"/>
+							<ConditionSummary>
+								<FareStructureType>zonalFare</FareStructureType>
+								<TariffBasis>period</TariffBasis>
+								<HasNotices>true</HasNotices>
+								<IsSupplement>false</IsSupplement>
+								<RequiresEntitlement>false</RequiresEntitlement>
+								<GivesEntitlement>false</GivesEntitlement>
+								<HasTravelTimeRestrictions>false</HasTravelTimeRestrictions>
+								<HasZoneRestrictions>true</HasZoneRestrictions>
+								<CanBreakJourney>true</CanBreakJourney>
+							</ConditionSummary>
+							<validableElements>
+								<ValidableElement id="exemple:ValidableElement:02" version="any">
+									<fareStructureElements>
+										<FareStructureElementRef ref="exemple:FareStructureElement:01" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:02" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:04" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:05" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:06" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:07" version="any"/>
+										<FareStructureElementRef ref="exemple:FareStructureElement:08" version="any"/>
+									</fareStructureElements>
+								</ValidableElement>
+							</validableElements>
+							<ProductType>periodPass</ProductType>
+						</PreassignedFareProduct>
+						<!-- LES OFFRES A LA VENTE -->
+						<SalesOfferPackageElement id="exemple:SalesOfferPackageElement:01" version="any">
+							<RequiresValidation>true</RequiresValidation>
+							<TypeOfTravelDocumentRef ref="exemple:TypeOfTravelDocument:01"/>
+							<PreassignedFareProductRef ref="exemple:PreassignedFareProduct:01"/>
+						</SalesOfferPackageElement>
+						<SalesOfferPackageElement id="exemple:SalesOfferPackageElement:02" version="any">
+							<RequiresValidation>true</RequiresValidation>
+							<TypeOfTravelDocumentRef ref="exemple:TypeOfTravelDocument:01"/>
+							<PreassignedFareProductRef ref="exemple:PreassignedFareProduct:02"/>
+						</SalesOfferPackageElement>
+						<SalesOfferPackage id="exemple:SalesOfferPackage:01" version="any">
+							<Name>T-Libr 1 Zone - Côtière</Name>
+							<noticeAssignments>
+								<NoticeAssignment id="exemple:NoticeAssignment:02" version="any">
+									<NoticeRef ref="exemple:Notice:01" version="any"/>
+								</NoticeAssignment>
+							</noticeAssignments>
+							<ConditionSummary>
+								<HasNotices>true</HasNotices>
+								<GoesOnCard>true</GoesOnCard>
+								<IsPersonal>true</IsPersonal>
+								<RequiresPhoto>true</RequiresPhoto>
+								<MustCarry>true</MustCarry>
+								<RequiresAccount>false</RequiresAccount>
+								<IsRefundable>false</IsRefundable>
+								<IsExchangable>false</IsExchangable>
+								<AvailableOnSubscription>true</AvailableOnSubscription>
+							</ConditionSummary>
+							<distributionAssignments>
+								<DistributionAssignment id="exemple:DistributionAssignment:01" version="any">
+									<DistributionChannelRef ref="exemple:Distributionchannel:01"/>
+								</DistributionAssignment>
+							</distributionAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElementRef ref="exemple:SalesOfferPackageElement:01"/>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<SalesOfferPackage id="exemple:SalesOfferPackage:02" version="any">
+							<Name>T-Libr 2 Zones - TCL + Côtière</Name>
+							<noticeAssignments>
+								<NoticeAssignment id="exemple:NoticeAssignment:03" version="any">
+									<NoticeRef ref="exemple:Notice:01" version="any"/>
+								</NoticeAssignment>
+							</noticeAssignments>
+							<ConditionSummary>
+								<HasNotices>true</HasNotices>
+								<GoesOnCard>true</GoesOnCard>
+								<IsPersonal>true</IsPersonal>
+								<RequiresPhoto>true</RequiresPhoto>
+								<MustCarry>true</MustCarry>
+								<RequiresAccount>false</RequiresAccount>
+								<IsRefundable>false</IsRefundable>
+								<IsExchangable>false</IsExchangable>
+								<AvailableOnSubscription>true</AvailableOnSubscription>
+							</ConditionSummary>
+							<distributionAssignments>
+								<DistributionAssignment id="exemple:DistributionAssignment:02" version="any">
+									<DistributionChannelRef ref="exemple:Distributionchannel:01"/>
+								</DistributionAssignment>
+							</distributionAssignments>
+							<salesOfferPackageElements>
+								<SalesOfferPackageElementRef ref="exemple:SalesOfferPackageElement:02"/>
+							</salesOfferPackageElements>
+						</SalesOfferPackage>
+						<!-- LA TABLE TARIFAIRE -->
+						<FareTable id="exemple:FareTable:01" version="any">
+							<Name/>
+							<cells>
+								<Cell id="exemple:FareCell:01" version="any">
+									<Name>T-Libr 1 Zone - Côtière - Tarif tout pulic</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:01" version="any">
+										<Amount>40.70</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<SalesOfferPackageRef ref="exemple:SalesOfferPackage:01"/>
+									<UserProfileRef ref="exemple:UserProfile:01" version="any"/>
+								</Cell>
+								<Cell id="exemple:FareCell:02" version="any">
+									<Name>T-Libr 1 Zone - Côtière - Tarif jeunes</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:02" version="any">
+										<Amount>35.20</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<SalesOfferPackageRef ref="exemple:SalesOfferPackage:01"/>
+									<UserProfileRef ref="exemple:UserProfile:02" version="any"/>
+								</Cell>
+								<Cell id="exemple:FareCell:03" version="any">
+									<Name>T-Libr 2 Zones - TCL + Côtière - Tarif tout public</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:03" version="any">
+										<Amount>112.20</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<SalesOfferPackageRef ref="exemple:SalesOfferPackage:02"/>
+									<UserProfileRef ref="exemple:UserProfile:01" version="any"/>
+								</Cell>
+								<Cell id="exemple:FareCell:04" version="any">
+									<Name>T-Libr 2 Zones - TCL + Côtière - Tarif jeunes</Name>
+									<SalesOfferPackagePrice id="exemple:SalesOfferPackagePrice:04" version="any">
+										<Amount>72.10</Amount>
+										<Currency>EUR</Currency>
+									</SalesOfferPackagePrice>
+									<SalesOfferPackageRef ref="exemple:SalesOfferPackage:02"/>
+									<UserProfileRef ref="exemple:UserProfile:02" version="any"/>
+								</Cell>
+							</cells>
+						</FareTable>
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
