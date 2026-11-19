@@ -3206,9 +3206,15 @@ class="hl">.</span>
 
 ## Type de Jour
 
-**Note** : si le TYPE DE JOUR n'est valable que pour une période de temps
-limitée, on le précisera grâce au *ValidBetween* (*FromDate*, *ToDate*)
-disponible au travers de son héritage de *DataManagedObject.*
+Lorsqu'un DayType est référencé par un objet, il est recommandé très fortement
+une association du `DayType` à un `DayTypeAssignment` de manière à préciser les bornes 
+d'application. L'utilisation de *ValidBetween* (*FromDate*, *ToDate*) disponible au travers de son héritage de *DataManagedObject*
+à cette fin n'est pas retenue.
+
+L'implémentation standard dans un cas simple est donc la déclaration d'un calendrier de circulation avec
+1 DayType, 1 DayTypeAssignement et 1 UicOperatingPeriod.
+La gestion des cas complexe est explicitée après la description de UicOperatingPeriod.
+
 
 <div class="table-title">DayType – Model Element</div>
 
@@ -3233,8 +3239,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>::></td>
 <td><em>DataManagedObject</em></td>
 <td>::></td>
-<td><p>DAY TYPE hérite de DATA MANAGED OBJECT.</p>
-<p><span class="hl">On utilisera le </span><em><strong><span class="hl">ValidBetween</span></strong></em><span class="hl"> pour une éventuelle limitation de période</span></p></td>
+<td><p>DAY TYPE hérite de DATA MANAGED OBJECT.</p></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -3303,9 +3308,7 @@ disponible au travers de son héritage de *DataManagedObject.*
 <td>Timeband</td>
 <td>0:*</td>
 <td><p>TRANCHEs HORAIREs du TYPE DE JOUR</p>
-<p><span class="hl">On utilisera ces TRANCHEs HORAIREs uniquement si elles sont multiples (par exemple "</span><em><span class="hl">de 9h à 12h30 et de 14h à 18h30</span></em><span class="hl">") sinon on utilisera <em><strong>EarliestTime</em></strong> et <em><strong>DayLength</em></strong>.</span></p>
-<p><span class="hl">Exclusif avec <em><strong>EarliestTime</strong></em> et <em><strong>DayLength</strong></em></span></p></td>
-</td>
+<p><span class="hl">On utilisera ces TRANCHEs HORAIREs uniquement si elles sont multiples (par exemple "</span><em><span class="hl">de 9h à 12h30 et de 14h à 18h30</span></em><span class="hl">") sinon on utilisera les *EarliestTime* et *DayLength*. Si l'information *timebands* est fournie alors *EarliestTime* et *DayLength* ne seront pas remplis.</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -3536,7 +3539,7 @@ correspondants.
 <td>OperatingPeriodRef</td>
 <td>OperatingDayRef</td>
 <td>1:1</td>
-<td>Référence à une PÉRIODE D'EXPLOITATION assignée: noter que tous les jours de la période s'applique (de ce fait on l'utilisera le plus souvent pour les exclusions de périodes en combinaison avec le champ <em><strong>isAvailable=false</strong></em>)</td>
+<td>Référence à une PÉRIODE D'EXPLOITATION assignée: noter que tous les jours de la période s'applique (de ce fait on l'utilisera le plus souvent pour les exclusions de périodes en combinaison avec le champ <em><strong>isAvailable=false</strong></em>). Le profil France requiert l'utilisation de UicOperatingPeriod (voir ci-dessous), donc ce champ utilise la spécialisation <em><strong>UicOperatingPeriodRef</strong></em>.</td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
@@ -3591,15 +3594,16 @@ nouveau CALENDRIER DE SERVICE).
 
 <div class="table-title">OperatingPeriod – Element</div>
 
-| **Classifi­cation** | **Nom**             |                | **Type**            | **Cardinalité** | **Description**                                     |
-|---------------------|---------------------|----------------|---------------------|-----------------|-----------------------------------------------------|
-| ::>                 | ::>                 |                | *DataManagedObject* | ::>             | OPERATING PERIOD hérite de DATA MANAGED OBJECT.     |
-| «FK»                | ServiceCalendar­Ref |                | CalendarRef         | 0:1             | CALENDRIER DE SERVICE auquel la période appartient. |
-|                     | b                   | ***FromDate*** | dateTime            | 1:1             | Date calendaire de début                            |
-|                     | b                   | ***ToDate***   | dateTime            | 1:1             | Date calendaire de fin                              |
+| **Classifi­cation** | **Nom**             | **Type**            | **Cardinalité** | **Description**                                     |
+|---------------------|--------------------|---------------------|-----------------|-----------------------------------------------------|
+| ::>                 | ::>                | *DataManagedObject* | ::>             | OPERATING PERIOD hérite de DATA MANAGED OBJECT.     |
+| «FK»                | ServiceCalendar­Ref | CalendarRef         | 0:1             | CALENDRIER DE SERVICE auquel la période appartient. |
+|                     | Name               | MultilingualString  |                 | Champ non retenu dans le profil.                    |
+|                     | ShortName          | MultilingualString  |                 | Champ non retenu dans le profil.                    |
+|                     |  ***FromDate***    | dateTime            | 1:1             | Date calendaire de début. Le profil France fait le choix d'utiliser *FromDate* systématiquement. |
+|                     |  ***ToDate***      | dateTime            | 1:1             | Date calendaire de fin (date incluse). Le profil France fait le choix d'utiliser *ToDate* systématiquement.   |
 
-<span class="hl">Note : </span>***<span class="hl">U</span><span
-class="hl">icOperatingPeriod</span>***<span class="hl"> sera toujours
+<span class="hl">Note : </span>***<span class="hl">UicOperatingPeriod</span>***<span class="hl"> sera toujours
 utilisé dans le contexte du profil, afin de rendre le ValidDayBits
 obligatoire (chaîne de bits, une pour chaque jour de la période: qu'elle
 soit valide ou non le jour).</span>
@@ -3608,9 +3612,125 @@ soit valide ou non le jour).</span>
 
 | **Classification** | **Name**           | **Type**                 | **Cardinality** | **Description**                                                                                                                                                                                                           |
 |--------------------|--------------------|--------------------------|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ::>                | ::>                | *<u>OperatingPeriod</u>* | ::>             | UIC OPERATING PERIOD inherits from OPERATING PERIOD.                                                                                                                                                                      |
-|                    | ***ValidDayBits*** | *xsd:normalizedString*   | 1:1             | String of bits (built of "0" and "1"), one for each day in the period: whether valid or not valid on the day. Normally there will be a bit for every day between start and end date. If bit is missing, assume available. |
-|                    | ***DaysOfWeek***   | *DaysOfWeek*             | 0:1             | Days of week to which correspond. (up to first seven) bits                                                                                                                                                                |
+| ::>                | ::>                | *<u>OperatingPeriod</u>* | ::>             | UIC OPERATING PERIOD hérite de OPERATING PERIOD.                                                                                                                                                                      |
+|                    | ***ValidDayBits*** | *xsd:normalizedString*   | 1:1             | Chaine de bits (caractères "0" et "1"), un caractère pour chaque jour de la periode définie, le premier caractère correspondant au premier jour de la periode. Tous les jours doivent être représentés, en y appliquant les informations spécifiées au niveau du DayType associé par le DayTypeAssignement correspondant. |
+|                    | ***DaysOfWeek***   |                          |                 | Champ non retenu dans le profil                       |
+
+
+**Précisions sur l'utilisation du UicOperatingPeriod :** 
+Comme indiqué plus haut au niveau du DayType, il est fortement recommandé ne n'utiliser que des associations 
+1 DayType, 1 DayTypeAssignement et 1 UicOperatingPeriod.
+Dans le cas où un échange implique plusieurs DayTypeAssignement sur un DayType, les règles suivantes seront utilisées pour la fourniture : 
+- Le `DayTypeAssignement` d'ordre 1 doit être associé à un UicOperatingPeriod qui couvre toute la periode, y compris les exceptions ci-après. Le champ `ValidDayBits` contient la représentation de l'intégralité du `DayType` (exceptions incluses) ;
+- Ensuite sont précisées les exceptions par rapport au modèle de base par des `DayTypeAssignement` indiquant des jours en précisant dans l'ordre : 
+  - Les exceptions "positives" (ajout de jours de circulation) en précisant l'attribut "isAvailable=true"
+  - Les exceptions "négatives" (désactivation de jours de circulation) en précisant l'attribut "isAvailable=false"
+
+Une exception positive ne devrait pas être supprimée par une exception négative afin de conserver la meilleur lisibilité possible. En cas de différence entre la modélisation et le résultat obtenu dans le champ `ValidDayBits`, c'est ce dernier qui fait foi.
+
+Cas limite : Ajout d'un jour particulier hors de la periode d'application du `DayType`
+Par exemple, "circulation du lundi au vendredi du 1er au 30 novembre et le 14 décembre 2025".
+Dans ce cas, il est possible :
+- Modélisation 1 : 
+  - initialiser un `DayType` du lundi au vendredi 
+  - associer un `UicOperatingPeriod` sur une periode du 01/11/2025 au 14/12/2025, avec un `ValidDayBits` correspondant au résultat 
+  - ajouter le 14/12/2025 (dimanche)
+  - retirer les lundi au vendredi un par un (01 au 05 et 08 au 12)
+- Modélisation 2 : 
+  - initialiser un `DayType` ne contenant aucun type de jours actif
+  - associer un `UicOperatingPeriod` sur une periode du 01/11/2025 au 14/12/2025, avec un `ValidDayBits` correspondant au résultat 
+  - ajouter tous les jours actifs un par un 
+
+Dans les deux cas, le `ValidDayBits` a pour valeur (avec des espaces pour faciliter la lecture): 
+00 1111100 1111100 1111100 1111100 0000000 0000001
+
+**Exemples de représentations**
+Exemple 1 : 
+Calendirer du lundi au vendredi sauf jour ferié sur la semaine du 5 au 11 mai 2025 (le 8 mai est un jeudi)
+```xml
+<DayType version="any" id="exemple:DayType:Exemple1">
+    <properties>
+        <PropertyOfDay>
+            <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
+        </PropertyOfDay>
+    </properties>
+</DayType>
+
+<DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple1-1">
+    <UicOperatingPeriod ref="exemple:UicOperatingPeriod:Exemple1" version="any"></UicOperatingPeriod>
+    <DayTypeRef ref="exemple:DayType:Exemple1" version="any"></DayTypeRef>
+    <isAvailable>true</isAvailable> <!-- optionnel, true est la valeur par défaut-->
+</DayTypeAssignment>
+
+<DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple1-2">
+    <Date>2025-05-08</Date> <!-- L'activation de la date empêche de spécifier OperatingPeriodRef, mais il est tout de même appliqué dans ValidDayBits -->
+    <DayTypeRef ref="exemple:DayType:Exemple1" version="any"></DayTypeRef>
+    <isAvailable>false</isAvailable>
+</DayTypeAssignment>
+
+<UicOperatingPeriod version="any" id="exemple:UicOperatingPeriod:Exemple1">
+    <FromDate>2025-05-05T00:00:00</FromDate>
+    <ToDate>2025-05-11T23:59:59</ToDate>
+    <ValidDayBits>1110100</ValidDayBits>
+</UicOperatingPeriod>
+```
+
+Exemple 2 : 
+Calendrier uniquement sur le 1er novembre et le 11 novembre 2025
+```xml
+<DayType version="any" id="exemple:DayType:Exemple2">
+</DayType>
+
+<!-- 1er DayTypeAssignment pour associer le DayType et la periode d'application sans activer aucun jour -->
+<DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple2-3">
+    <UicOperatingPeriodRef ref="exemple:UicOperatingPeriod:Exemple2"></UicOperatingPeriodRef>
+    <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
+    <isAvailable>false</isAvailable>
+</DayTypeAssignment>                        
+
+<DayTypeAssignment order="2" version="any" id="exemple:DayTypeAssignment:Exemple2-1">
+    <Date>2025-11-01</Date>
+    <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
+    <isAvailable>true</isAvailable>
+</DayTypeAssignment>
+
+<DayTypeAssignment order="3" version="any" id="exemple:DayTypeAssignment:Exemple2-2">
+    <Date>2025-11-11</Date>
+    <DayTypeRef ref="exemple:DayType:Exemple2" version="any"></DayTypeRef>
+    <isAvailable>true</isAvailable>
+</DayTypeAssignment>
+
+<UicOperatingPeriod version="any" id="exemple:UicOperatingPeriod:Exemple2">
+    <FromDate>2025-11-01T00:00:00</FromDate>
+    <ToDate>2025-11-11T23:59:59</ToDate>
+    <ValidDayBits>10000000001</ValidDayBits>
+</UicOperatingPeriod>
+```
+
+
+Exemple 3 :
+Calendrier sur le 1er novembre avec l'utilisation de DayOfYear
+```xml
+<DayType version="any" id="exemple:DayType:Exemple3">
+    <properties>
+        <PropertyOfDay>
+            <DayOfYear>--11-01</DayOfYear>
+        </PropertyOfDay>
+    </properties>
+</DayType>
+
+<DayTypeAssignment order="1" version="any" id="exemple:DayTypeAssignment:Exemple3">
+    <UicOperatingPeriod ref="exemple:UicOperatingPeriod:Exemple3" version="any"></UicOperatingPeriod>
+    <DayTypeRef ref="exemple:DayType:Exemple3" version="any"></DayTypeRef>
+</DayTypeAssignment>
+
+<UicOperatingPeriod version="any" id="exemple:UicOperatingPeriod:Exemple3">
+    <FromDate>2025-11-01T00:00:00</FromDate>
+    <ToDate>2025-11-30T23:59:59</ToDate>
+    <ValidDayBits>100000000000000000000000000000</ValidDayBits>
+</UicOperatingPeriod>
+```
+
 
 ## Tranche horaire
 
