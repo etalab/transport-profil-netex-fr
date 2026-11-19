@@ -3435,6 +3435,45 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 | «PK»                | id                  | StairFlightIdType | 1:1              | Identifiant du STAIR FLIGHT.                                            |
 |                     | Continuing­Handrail | xsd:boolean       | 0:1              | Signale une main courante continue avec la volée de marches précédente |
 
+Exemple de modélisation recommandée pour un escalier dans le cadre du profil :
+
+![schéma présentant un escalier en 3D, avec 3 SitePathLink dessinés](media/image20.png)
+
+- l'équipement de l'escalier :
+
+```xml
+<StaircaseEquipment id="doc:StaircaseEquipment:1" version="1">
+    <StepColourContrast>true</StepColourContrast>
+    <HandrailType>bothSides</HandrailType>
+    <TopEnd>
+        <ContinuingHandrail>true</ContinuingHandrail>
+        <TexturedSurface>true</TexturedSurface>
+        <VisualContrast>true</VisualContrast>
+    </TopEnd>
+    <BottomEnd>
+        <ContinuingHandrail>true</ContinuingHandrail>
+        <TexturedSurface>false</TexturedSurface>
+        <VisualContrast>true</VisualContrast>
+    </BottomEnd>
+</StaircaseEquipment>
+```
+
+- le tronçon de cheminement de l'escalier :
+
+```xml
+<SitePathLink id="doc:SPL:1" version="1"> 
+    (...)
+    <NumberOfSteps>3</NumberOfSteps>
+    <AccessFeatureType>stairs</AccessFeatureType>
+    <TactileWarningStrip>tactileStripAtEnd</TactileWarningStrip>
+    <placeEquipments>
+            <StaircaseEquipmentRef ref="doc:StaircaseEquipment:1"/>
+    </placeEquipments>
+</SitePathLink>
+```
+
+Le dossier d'exemples annexé au profil propose quelques exemples plus détaillés.
+
 <div class="table-title">EscalatorEquipment (escalator) – Élément</div>
 
 | **Classification** | **Nom**                 | **Type**         | **Cardinalité** | **Description**                                                                                                              |
