@@ -987,7 +987,7 @@ selon un double formalisme: une description sous forme de diagrammes XSD
 Schema Definition) et une description sous forme tabulaire. Les tableaux
 proposent ces colonnes:
 
-| **Classifi­cation** | **Nom** | **Type** | **Cardin­alité** | **Description** |
+| **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
 |---------------------|---------|----------|------------------|-----------------|
 
 -   **Classification** : permet de catégoriser l'attribut. Les
@@ -1075,18 +1075,18 @@ l'implémentation et les échanges.
 
 ## Éléments d'accessibilité de base partagés par toutes les parties du profil France
 
-Tous les objets contenus dans les autres parties du profil France (Éléments Communs, Arrêts, Réseaux, Horaires, Tarifs et Parking) proposent une information de base sur l'accessibilité en utilisant les ÉVALUATIONs D’ACCESSIBILITÉ (ACCESSIBILITY ASSESSMENT).
+Tous les objets contenus dans les autres parties du profil France (Éléments Communs, Arrêts, Réseaux, Horaires, Tarifs et Parking) proposent une information de base sur l'accessibilité en utilisant les ÉVALUATIONs D’ACCESSIBILITÉ (<span lang="en">ACCESSIBILITY ASSESSMENT</span>).
 Celles retenues dans le profil France sont :
 
-- *WheelchairAccess* : on peut s’y déplacer en fauteuil roulant
-- *StepFreeAccess* : on peut s’y déplacer sans franchir de marche ou d'escalier
-- *EscalatorFreeAccess* : on peut s’y déplacer sans utiliser d'escalator
-- *LiftFreeAccess* : on peut s’y déplacer sans utiliser d'ascenseur
-- *AudibleSignalsAvailable* : une information sonore ou une signalétique auditive
+- *<span lang="en">WheelchairAccess</span>* : on peut s’y déplacer en fauteuil roulant
+- *<span lang="en">StepFreeAccess</span>* : on peut s’y déplacer sans franchir de marche ou d'escalier
+- *<span lang="en">EscalatorFreeAccess</span>* : on peut s’y déplacer sans utiliser d'escalator
+- *<span lang="en">LiftFreeAccess</span>* : on peut s’y déplacer sans utiliser d'ascenseur
+- *<span lang="en">AudibleSignalsAvailable</span>* : une information sonore ou une signalétique auditive
  est disponible
-- *VisualSignsAvailable* : une information visuelle ou une signalétique visuelle
+- *<span lang="en">VisualSignsAvailable</span>* : une information visuelle ou une signalétique visuelle
  est disponible
-- *TactileGuidanceAvailable* : il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile
+- *<span lang="en">TactileGuidanceAvailable</span>* : il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile
 
 
 Les valeurs potentiellement portées par chacun de ces indicateurs sont:
@@ -1111,9 +1111,9 @@ les prochains passages)
 <span class="hl">Dans le cadre du profil France il est convenu, lorsque
 "</span>***<span class="hl">Partiel</span>***<span class="hl">" est
 utilisé, de systématiquement remplir le champ "</span>***<span
-class="hl">ValidityCondition->Description</span>***<span class="hl">"
+class="hl"><span lang="en">ValidityCondition->Description</span></span>***<span class="hl">"
 pour préciser comment l'information doit être interprétée. Il est à noter
-que seul le champ </span>***<span class="hl">ValidityCondition</span>***
+que seul le champ </span>***<span class="hl"><span lang="en">ValidityCondition</span></span>***
 <span class="hl"> permet de contenir une description textuelle, sous forme d'un
 texte libre susceptible d'être présenté au public en complément des
 indicateurs ci-dessus.</span>
@@ -1126,7 +1126,7 @@ mais qui dans de nombreuses situations manquera de précisions, d'une
 part vis-à-vis des besoins d'accessibilité et d'autre part en terme de
 précision sur les équipements et cheminements rencontrés.
 
-<div class="table-title">AccessibilityAssessment – Élément (objet inclus)</div>
+<div class="table-title"><span lang="en">AccessibilityAssessment</span> – Élément (objet inclus)</div>
 
 <table>
 <colgroup>
@@ -1138,7 +1138,7 @@ précision sur les équipements et cheminements rencontrés.
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
 <td><strong>Cardinalité</strong></td>
@@ -1147,30 +1147,30 @@ précision sur les équipements et cheminements rencontrés.
 <tr class="even">
 <td>::></td>
 <td>::></td>
-<td><em>DataManagedObject</em></td>
+<td><em><span lang="en">DataManagedObject</span></em></td>
 <td>::></td>
-<td>ACCESSIBILITY ASSESSMENT hérite de DATA MANAGED OBJECT.</td>
+<td><span lang="en">ACCESSIBILITY ASSESSMENT</span> hérite de <span lang="en">DATA MANAGED OBJECT</span>.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>MobilityImpaired­Access</td>
-<td><em>Accessibility­Enumeration</em></td>
+<td><span lang="en">MobilityImpaired</span>­Access</td>
+<td><em><span lang="en">AccessibilityEnumeration</span></em></td>
 <td>1:1</td>
 <td><p>Indication globale d'accessibilité (de la LIGNE ou du LIEU).</p>
-<p>Il peut valoir <em>true</em> (accessible), <em>false</em> (non accessible), <em>partial</em> ou <em>unknown</em></p></td>
+<p>Il peut valoir <em><span lang="en">true</span></em> (accessible), <em><span lang="en">false</span></em> (non accessible), <em><span lang="en">partial</span></em> ou <em><span lang="en">unknown</span></em></p></td>
 </tr>
 <tr class="even">
-<td>«cntd»</td>
-<td>limitations</td>
-<td>AccessibilityLimitation</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">limitations</span></td>
+<td><span lang="en">AccessibilityLimitation</span></td>
 <td>0:1</td>
 <td>Limitations d'accessibilité</td>
 </tr>
 
 <tr class="even">
 <td></td>
-<td><em><strong>Comment</strong></em></td>
-<td><em>MultilingualString</em></td>
+<td><em><strong><span lang="en">Comment</span></strong></em></td>
+<td><em><span lang="en">MultilingualString</span></em></td>
 <td>0:1</td>
 <td><p>Commentaire complémentaire sur l'accessibilité.</p>
 <p><span class="hl">Ce champ a pour vocation à compléter, en termes d'information voyageur, l'information générale de la structure. Il a donc pour vocation à être affiché avec les informations d'accessibilité.</span></p></td>
@@ -1178,55 +1178,55 @@ précision sur les équipements et cheminements rencontrés.
 </tbody>
 </table>
 
-**NOTE** : L'attribut ***MobilityImpairedAccess*** n'a pas été retenu dans le
+**NOTE** : L'attribut ***<span lang="en">MobilityImpairedAccess</span>*** n'a pas été retenu dans le
 cadre des travaux sur le modèle d'arrêt partagé (car considéré comme
 trop générique). Toutefois, ce champ étant obligatoire dans NeTEx, il
 devra être présent dans les échanges. Les valeurs qu'il peut prendre
-étant ***true***/***false***/***unknow***/***partial***, il est
+étant <span lang="en">***true***/***false***/***unknown***/***partial***</span>, il est
 recommandé (pour des raisons de cohérence) que sa valeur soit:
 
--   ***true*** si tous les champs de ***AccessibilityLimitation*** sont
-    à ***true***
+-   ***<span lang="en">true</span>*** si tous les champs de ***<span lang="en">AccessibilityLimitation</span>*** sont
+    à ***<span lang="en">true</span>***
 
--   ***false*** si tous les champs de ***AccessibilityLimitation*** sont
-    à ***false***
+-   ***<span lang="en">false</span>*** si tous les champs de ***<span lang="en">AccessibilityLimitation</span>*** sont
+    à ***<span lang="en">false</span>***
 
--   ***partial*** si seulement certains champs de
-    ***AccessibilityLimitation*** sont à ***true***
+-   ***<span lang="en">partial</span>*** si seulement certains champs de
+    ***<span lang="en">AccessibilityLimitation</span>*** sont à ***<span lang="en">true</span>***
 
--   ***unknow*** dans tous les autres cas
+-   ***<span lang="en">unknown</span>*** dans tous les autres cas
 
-<div class="table-title">AccessibilityLimitation – Élément (objet inclus)</div>
+<div class="table-title"><span lang="en">AccessibilityLimitation</span> – Élément (objet inclus)</div>
 
 | **Classification** | **Nom**                        | **Type**               |     | **Description**                                                                                                                                                                                                          |
 | ------------------ | ------------------------------ | ---------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|                    | ***WheelchairAccess***         | *LimitationStatusEnum* | 1:1 | Indique si on peut s’y déplacer en fauteuil roulant.                                                                                                 |
-|                    | ***StepFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans franchir de marche ou d’escalier.                                                                          |
-|                    | ***EscalatorFreeAccess***      | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’escalator.                                                                                            |
-|                    | ***LiftFreeAccess***           | *LimitationStatusEnum* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’ascenseur.                                                                                            |
-|                    | ***AudibleSignsAvailable***    | *LimitationStatusEnum* | 0:1 | Indique si une information sonore ou une signalétique auditive est disponible.                                                                                                   |
-|                    | ***VisualSignsAvailable***     | *LimitationStatusEnum* | 0:1 | Indique si une information visuelle ou une signalétique visuelle est disponible.                                                                                                   |
-|                    | ***TactileGuidanceAvailable*** | *LimitationStatusEnum* | 0:1 | Indique s'il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile. |
+|                    | ***<span lang="en">WheelchairAccess</span>***         | *<span lang="en">LimitationStatusEnum</span>* | 1:1 | Indique si on peut s’y déplacer en fauteuil roulant.                                                                                                 |
+|                    | ***<span lang="en">StepFreeAccess</span>***           | *<span lang="en">LimitationStatusEnum</span>* | 0:1 | Indique si on peut s’y déplacer sans franchir de marche ou d’escalier.                                                                          |
+|                    | ***<span lang="en">EscalatorFreeAccess</span>***      | *<span lang="en">LimitationStatusEnum</span>* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’escalator.                                                                                            |
+|                    | ***<span lang="en">LiftFreeAccess</span>***           | *<span lang="en">LimitationStatusEnum</span>* | 0:1 | Indique si on peut s’y déplacer sans utiliser d’ascenseur.                                                                                            |
+|                    | ***<span lang="en">AudibleSignsAvailable</span>***    | *<span lang="en">LimitationStatusEnum</span>* | 0:1 | Indique si une information sonore ou une signalétique auditive est disponible.                                                                                                   |
+|                    | ***<span lang="en">VisualSignsAvailable</span>***     | *<span lang="en">LimitationStatusEnum</span>* | 0:1 | Indique si une information visuelle ou une signalétique visuelle est disponible.                                                                                                   |
+|                    | ***<span lang="en">TactileGuidanceAvailable</span>*** | *<span lang="en">LimitationStatusEnum</span>* | 0:1 | Indique s'il y a des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne, comme par exemple une bande de guidage podotactile. |
 
 ## Adéquation aux besoins
 
 <span class="hl">L'adéquation aux besoins n'est pas retenue dans le
-cadre du profill accessibilité.</span>
+cadre du profil accessibilité.</span>
 
 
 ## Les services disponibles
 
-Les SERVICES DISPONIBLES (FACILITY SET) permettent de décrire, pour une
+Les SERVICES DISPONIBLES (<span lang="en">FACILITY SET</span>) permettent de décrire, pour une
 COURSE, un TYPE DE VÉHICULE ou un SITE, l'ensemble des services
 disponibles mais sans en préciser les caractéristiques détaillées, ni le
 nombre, ni la localisation. Il sera ainsi possible d'indiquer qu'un site
-dispose de toilettes (*toilet*), de toilettes accessibles en fauteuil
-roulant (*wheelChairAccessToilet*), ou si un véhicule dispose
-d'équipement audio (*visualDisplays*) et si cet équipement a été conçu
-pour un handicap visuel (*displaysForVisuallyImpaired*).
+dispose de toilettes (*<span lang="en">toilet</span>*), de toilettes accessibles en fauteuil
+roulant (*<span lang="en">wheelChairAccessToilet</span>*), ou si un véhicule dispose
+d'écrans (*<span lang="en">visualDisplays</span>*) et si cet équipement a été conçu
+pour un handicap visuel (*<span lang="en">displaysForVisuallyImpaired</span>*).
 
 On peut voir la liste de ces services comme la façon répondre à la prise
-en compte des besoins (ADÉQUATION AU BESOIN (SUITABILITY)) présentée
+en compte des besoins (ADÉQUATION AU BESOIN (<span lang="en">SUITABILITY</span>)) présentée
 ci-dessus. Mais on peut aussi y voir une certaine redondance.
 
 La description des services disponibles est retenue dans le cadre du
@@ -1237,54 +1237,54 @@ disposant pas de la possibilité de décrire les équipements disponibles.
 ![image](media/image9.svg)
 *SERVICES DISPONIBLES*
 
-SERVICES DISPONIBLES (FACILITY SET) contient une liste de services et
-peut se spécialiser en SERVICES SUR SITE (SITE FACILITY SET) et SERVICES
-À BORD (SERVICE FACILITY) qui lui-même se spécialise en SERVICE
-D'INSTALLATION (ACCOMODATION, qui décrit le type de siège, couchette,
-etc.) et POSSIBILITÉ DE RESTER À BORD (ONBOARD STAY).
+SERVICES DISPONIBLES (<span lang="en">FACILITY SET</span>) contient une liste de services et
+peut se spécialiser en SERVICES SUR SITE (<span lang="en">SITE FACILITY SET</span>) et SERVICES
+À BORD (<span lang="en">SERVICE FACILITY</span>) qui lui-même se spécialise en SERVICE
+D'INSTALLATION (<span lang="en">ACCOMODATION</span>, qui décrit le type de siège, couchette,
+etc.) et POSSIBILITÉ DE RESTER À BORD (<span lang="en">ONBOARD STAY</span>).
 
 ![image](media/image10.svg)
 *SERVICES DISPONIBLES – détail des énumérations*
 
-<div class="table-title">FacilitySet – Élément</div>
+<div class="table-title"><span lang="en">FacilitySet</span> – Élément</div>
 
 
-| **Classifi­cation** | **Nom** | **Type** | **Cardin­alité** | **Description** |
+| **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
 |--|--|--|--|--|
-| ::> | ::> | *DataManagedObject* | ::> | FACILITY SET hérite de DATA MANAGED OBJECT. |
-| «PK» | id | FacilitySetIdType | 1:1 | Identifiant du FACILITY SET. |
-| | ***ProvidedByRef*** | OrganisationRef | 0:1 | ORGANISATION en charge de proposer le FACILITY SET. |
-| | Description | MultilingualString | 0:1 | Description du FACILITY SET. |
-| «FK» | TypeOfFacilityRef | *TypeOfFacilityRef* | 0:1 | Classification du FACILITY SET. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
-| «cntd» | otherFacilities | _*TypeOfEquipment*_ / *TypeTypeOfEquipmentRef* | 0:\* | Types de FACILITY arbitraires définis par l'utilisateur dans FACILITY SET, leur définition renvoie à des TYPES OF EQUIPMENT. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
-| «cntd» | (CommonFacilityGroup) | xxxFacilitList | 0:\* | FACILITIEs sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les FACILITY SETs. Il existe d'autres FACILITIEs spécifiques aux SERVICE FACILITY SET et SITE FACILITY SET. |
+| ::> | ::> | *<span lang="en">DataManagedObject</span>* | ::> | <span lang="en">FACILITY SET</span> hérite de <span lang="en">DATA MANAGED OBJECT</span>. |
+| «PK» | id | <span lang="en">FacilitySetIdType</span> | 1:1 | Identifiant du <span lang="en">FACILITY SET</span>. |
+| | ***<span lang="en">ProvidedByRef</span>*** | <span lang="en">OrganisationRef</span> | 0:1 | ORGANISATION en charge de proposer le <span lang="en">FACILITY SET</span>. |
+| | <span lang="en">Description</span> | <span lang="en">MultilingualString</span> | 0:1 | Description du <span lang="en">FACILITY SET</span>. |
+| «FK» | <span lang="en">TypeOfFacilityRef</span> | *<span lang="en">TypeOfFacilityRef</span>* | 0:1 | Classification du <span lang="en">FACILITY SET</span>. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
+| «<span lang="en">cntd</span>» | <span lang="en">otherFacilities</span> | _*<span lang="en">TypeOfEquipment</span>*_ / *<span lang="en">TypeTypeOfEquipmentRef</span>* | 0:\* | Types de <span lang="en">FACILITY</span> arbitraires définis par l'utilisateur dans <span lang="en">FACILITY SET</span>, leur définition renvoie à des <span lang="en">TYPES OF EQUIPMENT</span>. <span class="hl">Non retenu dans le profil France jusqu'à son harmonisation.</span> |
+| «<span lang="en">cntd</span>» | (<span lang="en">CommonFacilityGroup</span>) | <span lang="en">xxxFacilitList</span> | 0:\* | <span lang="en">FACILITIEs</span> sont définies comme des listes de valeurs énumérées de types fixes qui sont communes à tous les <span lang="en">FACILITY SET</span>s. Il existe d'autres <span lang="en">FACILITIEs</span> spécifiques aux <span lang="en">SERVICE FACILITY</span> SET et <span lang="en">SITE FACILITY SET</span> . |
 
-<div class="table-title">ServiceFacilitySet – Élément</div>
+<div class="table-title"><span lang="en">ServiceFacilitySet</span> – Élément</div>
 
-| **Classifi­cation** | **Nom** | **Type** | **Cardin­alité** | **Description** |
+| **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
 |-|-|-|-|-|
-| ::> | ::> | *FacilitySet* | ::> | SERVICE FACILITY SET hérite de FACILITY SET. |
-| «PK» | id | *ServiceFacilitySetIdType* | 1:1 | Identifiant du SERVICE FACILITY SET. |
-| «cntd» | ***ServiceFacility­Group*** | xxx*FacilityList* | 0:\* | SERVICE FACILITies au sein d’un SERVICE FACILITY SET défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le SERVICE FACILITY SET. |
-| «cntd» | ***accommodations*** | *accommodations* | 0:1 | Accommodations (couchette, etc.) disponibles. |
-| «cntd» | ***onboardStays*** | *onboardStays* | 0:1 | Autorisations de rester à bord. |
+| ::> | ::> | *<span lang="en">FacilitySet</span>* | ::> | <span lang="en">SERVICE FACILITY SET</span> hérite de <span lang="en">FACILITY SET</span>. |
+| «PK» | id | *<span lang="en">ServiceFacilitySetIdType</span>* | 1:1 | Identifiant du <span lang="en">SERVICE FACILITY SET</span>. |
+| «<span lang="en">cntd</span>» | ***<span lang="en">ServiceFacilityGroup</span>*** | <span lang="en">xxx*FacilityList</span>* | 0:\* | SERVICE <span lang="en">FACILITies</span> au sein d’un <span lang="en">SERVICE FACILITY SET</span> défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le <span lang="en">SERVICE FACILITY SET</span>. |
+| «<span lang="en">cntd</span>» | ***<span lang="en">accommodations</span>*** | *<span lang="en">accommodations</span>* | 0:1 | <span lang="en">Accommodations</span> (couchette, etc.) disponibles. |
+| «<span lang="en">cntd</span>» | ***<span lang="en">onboardStays</span>*** | *<span lang="en">onboardStays</span>* | 0:1 | Autorisations de rester à bord. |
 
-<div class="table-title">SiteFacilitySet – Élément</div>
+<div class="table-title"><span lang="en">SiteFacilitySet</span> – Élément</div>
 
-| **Classifi­cation** | **Nom** | | **Type**  | **Cardin­alité** | **Description**  |
+| **Classification** | **Nom** | | **Type**  | **Cardinalité** | **Description**  |
 |-|-|-|-|-|-|
-| ::> | ::>  | | *FacilitySet* | ::>  | SITE FACILITY SET hérite de FACILITY SET.  |
-| «PK»  | id | SiteFacilitySetIdType | | 1:1  | Identifiant du SITE FACILITY SET.  |
-| «cntd»  | *SiteFacility­Group* | xxxFacilityList | | 0:\* | SITE FACILITies dans SITE FACILITY SET défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le SITE FACILITY SET. |
+| ::> | ::>  | | *<span lang="en">FacilitySet</span>* | ::>  | SITE <span lang="en">FACILITY SET</span> hérite de <span lang="en">FACILITY SET</span>.  |
+| «PK»  | id | <span lang="en">SiteFacilitySetIdType</span> | | 1:1  | Identifiant du SITE <span lang="en">FACILITY SET</span>.  |
+| «<span lang="en">cntd</span>»  | *<span lang="en">SiteFacilityGroup</span>* | <span lang="en">xxxFacilityList</span> | | 0:\* | <span lang="en">SITE FACILITies</span> dans <span lang="en">SITE FACILITY SET</span> défini en tant que listes de valeurs énumérées. Il existe des spécificités pour le <span lang="en">SITE FACILITY SET</span>. |
 
-<div class="table-title">Accommodation – Élément</div>
+<div class="table-title"><span lang="en">Accommodation</span> – Élément</div>
 
-| **Classifi­cation** | **Nom** | **Type** | **Cardin­alité** | **Description** |
+| **Classification** | **Nom** | **Type** | **Cardinalité** | **Description** |
 |-|-|-|-|-|
-| | ***Name*** | *MultilingualString* | 0:1  | Nom de l’accomodation |
-| | Accommodation­Facility | AccommodationFacility­Enum | 0:1  | Type d'accommodation  |
-| | ToiletFacility | SanitaryFacilityEnum | 0:1  | Type de toilette pour l’ACCOMMODATION. |
-| | ***PassengerCommsFacilityList*** | *PassengerCommsFacilityListOfEnumerations* | 0:1  | Listes des services de communication. |
+| | ***<span lang="en">Name</span>*** | *<span lang="en">MultilingualString</span>* | 0:1  | Nom de l’<span lang="en">accomodation</span> |
+| | ­<span lang="en">AccommodationFacility</span> | <span lang="en">AccommodationFacilityEnum</span> | 0:1  | Type d'accommodation  |
+| | <span lang="en">ToiletFacility</span> | <span lang="en">SanitaryFacilityEnum</span> | 0:1  | Type de toilette pour l’ACCOMMODATION. |
+| | ***<span lang="en">PassengerCommsFacilityList</span>*** | *<span lang="en">PassengerCommsFacilityListOfEnumerations</span>* | 0:1  | Listes des services de communication. |
 
 
 Les SERVICES DISPONIBLES communs à toutes ces spécialisations et <span
@@ -1292,141 +1292,141 @@ class="hl">retenus dans le cadre du profil sont les suivants </span>:
 
 ***<u>-Information d'accessibilité</u>***
 
-* *audioInformation (information audio)*
+* *<span lang="en">audioInformation</span> (information audio)*
 
-* *audioForHearingImpaired (information audio adaptée pour le
+* *<span lang="en">audioForHearingImpaired</span> (information audio adaptée pour les
 malentendants)*
 
-* *visualDisplays (écran d’affichage)*
+* *<span lang="en">visualDisplays</span> (écran d’affichage)*
 
-* *displaysForVisuallyImpaired (écran d’affichage adapté pour les mal
+* *<span lang="en">displaysForVisuallyImpaired</span> (écran d’affichage adapté pour les mal
 voyants)*
 
-* *largePrintTimetables (grand panneau d’affichage)*
+* *<span lang="en">largePrintTimetables</span> (grand panneau d’affichage)*
 
 ***<u>-Assistance</u>***
 
-* *personalAssistance (assistance personnalisée)*
+* *<span lang="en">personalAssistance</span> (assistance personnalisée)*
 
-* *boardingAssistance (assistance à l’embarquement)*
+* *<span lang="en">boardingAssistance</span> (assistance à l’embarquement)*
 
-* *wheechairAssistance (assistance pour les fauteuils roulants)*
+* *<span lang="en">wheechairAssistance</span> (assistance pour les fauteuils roulants)*
 
-* *unaccompaniedMinorAssistance (assistance pour les mineurs non
+* *<span lang="en">unaccompaniedMinorAssistance</span> (assistance pour les mineurs non
 accompagnés)*
 
-* *conductor (chef de train ou de station disponible)*
+* *<span lang="en">conductor</span> (chef de train ou de station disponible)*
 
-* *information (information disponible)*
+* *<span lang="en">information</span> (information disponible)*
 
 ***<u>-A disposition pour l'accessibilité</u>***
 
-* *wheelchair (fauteuils roulants disponibles)*
+* *<span lang="en">wheelchair</span> (fauteuils roulants disponibles)*
 
-* *walkingstick (cannes disponibles)*
+* *<span lang="en">walkingstick</span> (cannes disponibles)*
 
-* *audioNavigator (navigateurs audios disponibles)*
+* *<span lang="en">audioNavigator</span> (navigateurs audios disponibles)*
 
-* *visualNavigator (navigateurs visuels disponibles)*
+* *<span lang="en">visualNavigator</span> (navigateurs visuels disponibles)*
 
-* *passengerCart (caddies disponibles)*
+* *<span lang="en">passengerCart</span> (caddies disponibles)*
 
-* *pushchair (poussettes disponibles)*
+* *<span lang="en">pushchair</span> (poussettes disponibles)*
 
-* *umbrella (parapluies disponibles)*
+* *<span lang="en">umbrella</span> (parapluies disponibles)*
 
-* *buggy (voiturettes disponibles)*
+* *<span lang="en">buggy</span> (voiturettes disponibles)*
 
 ***<u>-Famille</u>***
 
-* *servicesForChildren (services et activités pour les enfants)*
+* *<span lang="en">servicesForChildren</span> (services et activités pour les enfants)*
 
-* *nurseryService (service de garderie)*
+* *<span lang="en">nurseryService</span> (service de garderie)*
 
 ***<u>-Médical</u>***
 
-* *defibrillator (défibrillateur)*
+* *<span lang="en">defibrillator</span> (défibrillateur)*
 
-* *alcoholTest (test d'alcoolémie)*
+* *<span lang="en">alcoholTest</span> (test d'alcoolémie)*
 
 ***<u>-Mobilité/Accessibilité</u>***
 
-* *lowFloor (plancher bas)*
+* *<span lang="en">lowFloor</span> (plancher bas)*
 
-* *stepFreeAccess (accès sans marches)*
+* *<span lang="en">stepFreeAccess</span> (accès sans marches)*
 
-* *suitableForWheelchairs (adapté aux fauteuils roulants)*
+* *<span lang="en">suitableForWheelchairs</span> (adapté aux fauteuils roulants)*
 
-* *suitableForHeavilyDisabled (adapté aux handicaps lourds ; <span class="hl">
+* *<span lang="en">suitableForHeavilyDisabled</span> (adapté aux handicaps lourds ; <span class="hl">
 note : prendre contact avec le gestionnaire pour plus de précisions</span>)*
 
-* *suitableForPushchairs (adapté aux poussettes)*
+* *<span lang="en">suitableForPushchairs</span> (adapté aux poussettes)*
 
-* *boardingAssistance (assistance à l’embarquement)*
+* *<span lang="en">boardingAssistance</span> (assistance à l’embarquement)*
 
-* *onboardAssistance (assistance à bord)*
+* *<span lang="en">onboardAssistance</span> (assistance à bord)*
 
-* *unaccompaniedMinorAssistance (assistance pour les mineurs non accompagnés)*
+* *<span lang="en">unaccompaniedMinorAssistance</span> (assistance pour les mineurs non accompagnés)*
 
-* *tactilePlatformEdges (marquage podotactile sur le bord des quais)*
+* *<span lang="en">tactilePlatformEdges</span> (marquage podotactile sur le bord des quais)*
 
-* *tactileGuidingStrips (bandes de guidage podotactiles)*
+* *<span lang="en">tactileGuidingStrips</span> (bandes de guidage podotactiles)*
 
-* *raisedKerb (trottoir surélevé)*
-* raisedKerb (quai surélevé)
+* *<span lang="en">raisedKerb</span> (quai surélevé)*
+
 ***<u>-Loisir</u>***
 
-* *freeWifi (Wifi gratuit)*
+* *<span lang="en">freeWifi</span> (Wifi gratuit)*
 
-* *publicWifi (Wifi public)*
+* *<span lang="en">publicWifi</span> (Wifi public)*
 
 * *internet (accès Internet disponible)*
 
-* *powerSupplySockets (prises de courant)*
+* *<span lang="en">powerSupplySockets</span> (prises de courant)*
 
 ***<u>-Information Voyageur</u>***
 
-* *informationDesk (comptoir d’information voyageur)*
+* *<span lang="en">informationDesk</span> (comptoir d’information voyageur)*
 
-* *realTimeDepartures (horaires de départ temps-réel)*
+* *<span lang="en">realTimeDepartures</span> (horaires de départ <span lang="en">temps-réel</span>)*
 
 **<u>-Dispositif d'information voyageur</u>***
 
-* *nextStopIndicator (indicateur des prochains arrêts)*
+* *<span lang="en">nextStopIndicator</span> (indicateur des prochains arrêts)*
 
-* *stopAnnouncements (annonce des arrêts)*
+* *<span lang="en">stopAnnouncements</span> (annonce des arrêts)*
 
-* *passengerInformationDisplay (affichage pour l’information voyageur)*
+* *<span lang="en">passengerInformationDisplay</span> (affichage pour l’information voyageur)*
 
-* *realTimeConnections (information temps-réel sur les correspondances)*
+* *<span lang="en">realTimeConnections</span> (information <span lang="en">temps-réel</span> sur les correspondances)*
 
 ***<u>-Sanitaire</u>***
 
-* *None* *(pas de sanitaires)*
+* *<span lang="en">None</span>* *(pas de sanitaires)*
 
-* *toilet (toilettes)*
+* *<span lang="en">toilet</span> (toilettes)*
 
-* *wheelChairAccessToilet (toilettes accessible pour les fauteuils
+* *<span lang="en">wheelChairAccessToilet</span> (toilettes accessible pour les fauteuils
 roulants)*
 
-* *shower (douches)*
+* *<span lang="en">shower</span> (douches)*
 
-* *washingAndChangeFacilities (espace pour se laver et se changer)*
+* *<span lang="en">washingAndChangeFacilities</span> (espace pour se laver et se changer)*
 
-* *babyChange (espace bébé)*
+* *<span lang="en">babyChange</span> (espace bébé)*
 
-* *wheelchairBabyChange (espace bébé accessible en fauteuil roulant)*
+* *<span lang="en">wheelchairBabyChange</span> (espace bébé accessible en fauteuil roulant)*
 
 ***<u>-Billet et Billettique</u>***
 
-* *ticketMachines (machine de vente de billet)*
+* *<span lang="en">ticketMachines</span> (machine de vente de billet)*
 
-* *ticketOffice (guichet de vente de billet)*
+* *<span lang="en">ticketOffice</span> (guichet de vente de billet)*
 
-* *ticketOnDemandMachines (machine d’impression de billet acheté en
+* *<span lang="en">ticketOnDemandMachines</span> (machine d’impression de billet acheté en
 ligne)*
 
-* *mobileTicketing (billettique mobile – sur smartphone)*
+* *<span lang="en">mobileTicketing</span> (billettique mobile – sur smartphone)*
 
 Les SERVICES DISPONIBLES de type Service (sans redondance des catégories
 précédentes) <span class="hl">retenus dans le cadre du profil sont les
@@ -1434,7 +1434,7 @@ suivants </span>:
 
 ***<u>-Services Réservés</u>***
 
-* *wheelchairOnlyReservations (service réservé pour fauteuil roulant, sur
+* *<span lang="en">wheelchairOnlyReservations</span> (service réservé pour fauteuil roulant, sur
 réservation)*
 
 ***<u>-Accès à la place</u>***
@@ -1443,10 +1443,10 @@ réservation)*
 
 ***<u>-Bagages</u>***
 
-* *extraLargeLuggageRacks (espace pour les bagages très larges – incluant
+* *<span lang="en">extraLargeLuggageRacks</span> (espace pour les bagages très larges – incluant
 les fauteuils roulants notamment)*
 
-* *cyclesAllowed (vélos autorisés en bagage)*
+* *<span lang="en">cyclesAllowed</span> (vélos autorisés en bagage)*
 
 Les SERVICES DISPONIBLES spécifiques aux lieux (sans redondance des
 catégories précédentes) <span class="hl">retenus dans le cadre du profil
@@ -1454,34 +1454,34 @@ sont les suivants </span>:
 
 ***<u>-Urgence</u>***
 
-* *police (police)*
+* *<span lang="en">police</span> (police)*
 
-* *fire (incendie)*
+* *<span lang="en">fire</span> (incendie)*
 
-* *firstAid (premiers secours)*
+* *<span lang="en">firstAid</span> (premiers secours)*
 
-* *sosPoint (point SOS, appel d’urgence)*
+* *<span lang="en">sosPoint</span> (point SOS, appel d’urgence)*
 
 ***<u>-Service Bagage</u>***
 
-* *porterage (porteur)*
+* *<span lang="en">porterage</span> (porteur)*
 
-* *collectAndDeliverToStation (service de collecte et livraison en
+* *<span lang="en">collectAndDeliverToStation</span> (service de collecte et livraison en
 station)*
 
 ***<u>-Parking</u>***
 
-* *carPark (parking auto)*
+* *<span lang="en">carPark</span> (parking auto)*
 
-* *cyclePark (parking vélo)*
+* *<span lang="en">cyclePark</span> (parking vélo)*
 
 ***<u>-Personnel</u>***
 
-* *fullTime (personne présente en permanence)*
+* *<span lang="en">fullTime</span> (personne présente en permanence)*
 
-* *partTime (personne présente à temps partiel)*
+* *<span lang="en">partTime</span> (personne présente à temps partiel)*
 
-* *unmanned (sans personnel)*
+* *<span lang="en">unmanned</span> (sans personnel)*
 
 Les SERVICES DISPONIBLES disponible au niveau de la place, lors du
 voyage (sans redondance des catégories précédentes) <span
@@ -1489,9 +1489,9 @@ class="hl">retenus dans le cadre du profil sont les suivants :</span>
 
 ***<u>Installation</u>***
 
-* *specialSleeper (couchettes spéciales/adaptées)*
+* *<span lang="en">specialSleeper</span> (couchettes spéciales/adaptées)*
 
-* *specialSeating (sièges spéciaux/adaptés)*
+* *<span lang="en">specialSeating</span> (sièges spéciaux/adaptés)*
 
 ## Les Équipements
 
@@ -1510,21 +1510,20 @@ disponibles.</span>
 ### Équipements localisés
 
 Le schéma UML ci-dessous présente la structure des ÉQUIPEMENTs. Il
-propose deux spécialisations : SERVICE LOCAL (LOCAL SERVICE) et
-ÉQUIPEMENT INSTALLÉ (INSTALLED EQUIPMENT).
+propose deux spécialisations : SERVICE LOCAL (<span lang="en">LOCAL SERVICE</span>) et
+ÉQUIPEMENT INSTALLÉ (<span lang="en">INSTALLED EQUIPMENT</span>).
 
 ![image](media/image11.svg)
 *Structure générique des ÉQUIPEMENT*
 
-L'ÉQUIPEMENT INSTALLÉ (INSTALLED EQUIPMENT) peut lui-même être
-spécialisé en ÉQUIPEMENT DE LIEU (PLACE EQUIPMENT), ÉQUIPEMENT POUR
-PASSAGER (PASSENGER EQUIPMENT) ou ÉQUIPEMENT DE VÉHICULE (ACTUAL VEHICLE
-EQUIPMENT). On notera que l'ÉQUIPEMENT POUR PASSAGER est particulier car
+L'ÉQUIPEMENT INSTALLÉ (<span lang="en">INSTALLED EQUIPMENT</span>) peut lui-même être
+spécialisé en ÉQUIPEMENT DE LIEU ( <span lang="en">PLACE EQUIPMENT</span>), ÉQUIPEMENT POUR
+PASSAGER (<span lang="en">PASSENGER EQUIPMENT</span>) ou ÉQUIPEMENT DE VÉHICULE (<span lang="en">ACTUAL VEHICLE EQUIPMENT</span>). On notera que l'ÉQUIPEMENT POUR PASSAGER est particulier car
 il peut soit être localisé dans un lieu (LIEU D'ARRÊT) soit dans un
 VÉHICULE (par exemple pour des équipements sanitaires comme les toilettes
 que le trouvera aussi bien en station que dans une rame de TGV).
 
-<div class="table-title">Equipment – Élément</div>
+<div class="table-title"><span lang="en">Equipment</span> – Élément</div>
 
 <table>
 <colgroup>
@@ -1536,44 +1535,44 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td>::></td>
 <td>::></td>
-<td><em>DataManagedObject</em></td>
+<td><em><span lang="en">DataManagedObject</span></em></td>
 <td>::></td>
-<td>EQUIPEMENT hérite de DATA MANAGED OBJECT.</td>
+<td>ÉQUIPEMENT hérite de <span lang="en">DATA MANAGED OBJECT</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>EquipmentIdType</td>
+<td><span lang="en">EquipmentIdType</span></td>
 <td>1:1</td>
-<td>Identifiant de l’EQUIPEMENT.</td>
+<td>Identifiant de l’ÉQUIPEMENT.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Name</td>
-<td>MultilingualString</td>
+<td><span lang="en">Name</span></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
-<td>Nom de l’EQUIPEMENT.</td>
+<td>Nom de l’ÉQUIPEMENT.</td>
 </tr>
 <tr class="odd">
 <td>«AK»</td>
-<td>PrivateCode</td>
-<td><em>PrivateCode</em></td>
+<td><span lang="en">PrivateCode</span></td>
+<td><em><span lang="en">PrivateCode</span></em></td>
 <td>0:1</td>
-<td>Identifiant alternatif de l’EQUIPEMENT.</td>
+<td>Identifiant alternatif de l’ÉQUIPEMENT.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>PublicCode</strong></em></td>
-<td><em>PublicCode</em></td>
+<td><em><strong><span lang="en">PublicCode</span></strong></em></td>
+<td><em><span lang="en">PublicCode</span></em></td>
 <td>0:1</td>
 <td><p>Code public de l’équipement, et qui figure généralement sur l’équipement, typiquement sous la forme d’une étiquette.</p>
 <p><span class="hl">Pourra contenir des codes comme, par exemple, les codes MIR de la RATP</span></p>
@@ -1581,61 +1580,61 @@ que le trouvera aussi bien en station que dans une rame de TGV).
 </tr>
 <tr class="odd">
 <td></td>
-<td>Image</td>
-<td>xsd:anyURI</td>
+<td><span lang="en">Image</span>­</td>
+<td>xsd:<span lang="en">anyURI</span></td>
 <td>0:1</td>
-<td><p>Image de l’EQUIPEMENT.</p>
+<td><p>Image de l’ÉQUIPEMENT.</p>
 <p><span class="hl">Pourra aussi référencer des documents audio, des pages web, etc</span></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
-<td>TypeOfEquipment­Ref</td>
-<td>TypeOfEquipmentRef</td>
+<td><span lang="en">TypeOfEquipmentRef</span></td>
+<td><span lang="en">TypeOfEquipmentRef</span></td>
 <td>0:1</td>
-<td>Référence du type l’EQUIPEMENT.</td>
+<td>Référence du type l’ÉQUIPEMENT.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Description</td>
-<td>MultilingualString</td>
+<td><span lang="en">Description</span></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
-<td>Description de l’EQUIPEMENT.<br />
+<td>Description de l’ÉQUIPEMENT.<br />
 <span class="hl">Doit pouvoir être présenté au public</span></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Note</td>
-<td>MultilingualString</td>
+<td><span lang="en">Note</span></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
-<td>Note concernat l’EQUIPEMENT.<br />
+<td>Note concernant l’ÉQUIPEMENT.<br />
 <span class="hl">Doit pouvoir être présenté au public</span></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>OutOfService</strong></em></td>
-<td>boolean</td>
+<td><em><strong><span lang="en">OutOfService</span></strong></em></td>
+<td><span lang="en">boolean</span></td>
 <td>0:1</td>
-<td><p>Indique si l’équipement est hors service pour une durée prolongée. Une véritable information de disponibilité en temps réel pourra être fournie avec le service SIRI Facility Monitoring.</p>
-<p><span class="hl">Quand </span><em><strong><span class="hl">OutOfService</span></strong></em><span class="hl"> est utilisé, l'utilisation du ValidityCondition devient obligatoire pour, en particulier, indiquer la période prévue d'indisponibilité (et donc la date prévue de retour en fonctionnement)</span></p></td>
+<td><p>Indique si l’équipement est hors service pour une durée prolongée. Une véritable information de disponibilité en temps réel pourra être fournie avec le service SIRI <span lang="en">Facility Monitoring</span>.</p>
+<p><span class="hl">Quand </span><em><strong><span class="hl"><span lang="en">OutOfService</span></span></strong></em><span class="hl"> est utilisé, l'utilisation du <span lang="en">ValidityCondition</span> devient obligatoire pour, en particulier, indiquer la période prévue d'indisponibilité (et donc la date prévue de retour en fonctionnement)</span></p></td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">TypeOfEquipment – Élément</div>
+<div class="table-title"><span lang="en">TypeOfEquipment</span> – Élément</div>
 
 |                     |                    |                       |                  |                                               |
 |---------------------|--------------------|-----------------------|------------------|-----------------------------------------------|
-| **Classifi­cation** | **Nom**           | **Type**              | **Cardin­alité** | **Description**                               |
-| ::>                 | ::>                | *TypeOfEntity*        | ::>              | TYPE OF EQUIPMENT hérite de TYPE OF ENTITY. |
-| «PK»                | id                 | TypeOfEquipmentIdType | 1:1              | Identifiant du TYPE OF EQUIPMENT.              |
-|                     | Functional­Purpose | MultilingualString    | 1:1              | Objectif fonctionnel du TYPE OF EQUIPMENT.    |
+| **Classification** | **Nom**           | **Type**              | **Cardinalité** | **Description**                               |
+| ::>                 | ::>                | *<span lang="en">TypeOfEntity</span>*        | ::>              | <span lang="en">TYPE OF EQUIPMENT</span> hérite de <span lang="en">TYPE OF ENTITY</span>. |
+| «PK»                | id                 | <span lang="en">TypeOfEquipmentIdType</span> | 1:1              | Identifiant du <span lang="en">TYPE OF EQUIPMENT</span>.              |
+|                     | <span lang="en">FunctionalPurpose</span> | <span lang="en">MultilingualString</span>    | 1:1              | Objectif fonctionnel du <span lang="en">TYPE OF EQUIPMENT</span>.    |
 
-<div class="table-title">PlaceEquipment – Élément</div>
+<div class="table-title"><span lang="en">PlaceEquipment</span> – Élément</div>
 
 |                     |          |                     |                  |                                                  |
 |---------------------|----------|---------------------|------------------|--------------------------------------------------|
-| **Classifi­cation** | **Nom** | **Type**            | **Cardin­alité** | **Description**                                  |
-| ::>                 | ::>      | *DataManagedObject* | ::>              | PLACE EQUIPMENT hérite de DATA MANAGED OBJECT. |
+| **Classification** | **Nom** | **Type**            | **Cardinalité** | **Description**                                  |
+| ::>                 | ::>      | *<span lang="en">DataManagedObject</span>* | ::>              | <span lang="en">PLACE EQUIPMENT</span> hérite de <span lang="en">DATA MANAGED OBJECT</span>. |
 
 Le LIEUX D'ARRÊT contient des espaces dédiés pour positionner les
 équipements : ce sont les LIEUX D'ÉQUIPEMENT (ce sont de COMPOSANTS DE
@@ -1648,29 +1647,29 @@ On aura donc, par exemple, dans une gare, un espace où l'on trouvera des
 titre banlieue et un distributeur de boisson. Chaque ÉQUIPEMENT aura sa
 position et ses caractéristiques propres.
 
-<div class="table-title">EquipmentPlace – Élément</div>
+<div class="table-title"><span lang="en">EquipmentPlace</span> – Élément</div>
 
 |                     |                           |                   |                  |                                                                                                                                 |
 |---------------------|---------------------------|-------------------|------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Nom**                  | **Type**          | **Cardin­alité** | **Description**                                                                                                                 |
-| ::>                 | ::>                       | *Place*           | ::>              | EQUIPMENT PLACE hérite de PLACE.                                                                                              |
-| «PK»                | id                        | EquipmentPlaceId  | 0:1              | Identifiant de l’EQUIPMENT PLACE.                                                                                               |
-| «cntd»              | ***equipment­Positions*** | EquipmentPosition | 0:\*             | EQUIPMENT POSITIONs au sein EQUIPMENT PLACE (notez que plusieurs équipement peuvent être placés dans un même lieu d’équipement) |
-|                     | ***placeEquipments***     | Equipment         | 0:\*             | Liste des EQUIPMENTs au sein de l’EQUIPMENT PLACE.                                                                              |
+| **Classification** | **Nom**                  | **Type**          | **Cardinalité** | **Description**                                                                                                                 |
+| ::>                 | ::>                       | *<span lang="en">Place</span>*           | ::>              | <span lang="en">EQUIPMENT PLACE</span> hérite de <span lang="en">PLACE</span>.                                                                                              |
+| «PK»                | id                        | <span lang="en">EquipmentPlaceId</span>  | 0:1              | Identifiant de l’<span lang="en">EQUIPMENT PLACE</span>.                                                                                               |
+| «<span lang="en">cntd</span>»              | ***<span lang="en">equipment</span>­Positions*** | <span lang="en">EquipmentPosition</span> | 0:\*             | <span lang="en">EQUIPMENT POSITIONs</span> au sein <span lang="en">EQUIPMENT PLACE</span> (notez que plusieurs équipement peuvent être placés dans un même lieu d’équipement) |
+|                     | ***<span lang="en">placeEquipments</span>***     | <span lang="en">Equipment</span>         | 0:\*             | Liste des <span lang="en">EQUIPMENTs</span> au sein de l’<span lang="en">EQUIPMENT</span> PLACE</span>.                                                                              |
 
-10 — *EquipmentPosition – Élément*
+10 — *<span lang="en">EquipmentPosition</span> – Élément*
 
 |                     |                          |                         |                  |                                                                                                                                                                                                                                                                                                                             |
 |---------------------|--------------------------|-------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Nom**                 | **Type**                | **Cardin­alité** | **Description**                                                                                                                                                                                                                                                                                                             |
-| ::>                 | ::>                      | *DataManagedObject*     | ::>              | EQUIPMENT POSITION hérite de DATA MANAGED OBJECT.                                                                                                                                                                                                                                                                          |
-| «PK»                | id                       | EquipmentPositionIdType | 0:1              | Identifiant de l’EQUIPMENT POSITION.                                                                                                                                                                                                                                                                                        |
-|                     | ***EquipmentRef***       | *EquipmentRef*          | 1:1              | Référence à l’EQUIPMENT dont on fournit la position.                                                                                                                                                                                                                                                                        |
-|                     | Description              | MultilingualString      | 0:1              | Description de la postion de l'équipement.                                                                                                                                                                                                                                                                                  |
-|                     | ***Location***           | *Location*              | 0:1              | Position de l’EQUIPMENT (position géographique).                                                                                                                                                                                                                                                                             |
-| «FK»                | ***ReferencePoint­Ref*** | *PointRef*              | 0:1              | Point de référence pour un positionnement relatif de l’équipement (réalisé par les 2 attributs suivants : XOffset et YOffset). S’il est absent on utilisera le coin supérieur gauche de l’EQUIPMENT PLACE. S’il est présent, il correspondra à une entrée ou un élément facilement identifiable au sein de l’EQUIPMENT PLACE. |
-|                     | ***XOffset***            | *LengthType*            | 0:1              | Position nord/sud ou décalage vertical par rapport au point de référence                                                                                                                                                                                                                                                    |
-|                     | ***YOffset***            | *LengthType*            | 0:1              | Position est/ouest ou décalage horizontal par rapport au point de référence                                                                                                                                                                                                                                                 |
+| **Classification** | **Nom**                 | **Type**                | **Cardinalité** | **Description**                                                                                                                                                                                                                                                                                                             |
+| ::>                 | ::>                      | *<span lang="en">DataManagedObject</span>*     | ::>              | <span lang="en">EQUIPMENT POSITION</span> hérite de <span lang="en">DATA MANAGED OBJECT</span>.                                                                                                                                                                                                                                                                          |
+| «PK»                | id                       | <span lang="en">EquipmentPositionIdType</span> | 0:1              | Identifiant de l’<span lang="en">EQUIPMENT POSITION</span>.                                                                                                                                                                                                                                                                                        |
+|                     | ***<span lang="en">EquipmentRef</span>***       | *<span lang="en">EquipmentRef</span>*          | 1:1              | Référence à l’<span lang="en">EQUIPMENT</span> dont on fournit la position.                                                                                                                                                                                                                                                                        |
+|                     | <span lang="en">Description</span>              | <span lang="en">MultilingualString</span>      | 0:1              | Description de la position de l'équipement.                                                                                                                                                                                                                                                                                  |
+|                     | ***<span lang="en">Location</span>***           | *<span lang="en">Location</span>*              | 0:1              | Position de l’<span lang="en">EQUIPMENT</span> (position géographique).                                                                                                                                                                                                                                                                             |
+| «FK»                | ***<span lang="en">ReferencePointRef</span>*** | *<span lang="en">PointRef</span>*              | 0:1              | Point de référence pour un positionnement relatif de l’équipement (réalisé par les 2 attributs suivants : <span lang="en">XOffset</span> et <span lang="en">YOffset</span>). S’il est absent on utilisera le coin supérieur gauche de l’<span lang="en">EQUIPMENT PLACE</span>. S’il est présent, il correspondra à une entrée ou un élément facilement identifiable au sein de l’<span lang="en">EQUIPMENT PLACE</span>. |
+|                     | ***<span lang="en">XOffset</span>***            | *<span lang="en">LengthType</span>*            | 0:1              | Position nord/sud ou décalage vertical par rapport au point de référence                                                                                                                                                                                                                                                    |
+|                     | ***<span lang="en">YOffset</span>***            | *<span lang="en">LengthType</span>*            | 0:1              | Position est/ouest ou décalage horizontal par rapport au point de référence                                                                                                                                                                                                                                                 |
 
 La figure ci-dessous regroupe en une seule fois tous les équipements
 disponibles: il faut la voir comme un panorama, mais le grand nombre
@@ -1678,7 +1677,7 @@ d'ÉQUIPEMENT rend le résultat très dense. Aussi il est détaillé dans les
 figures suivantes.
 
 *NOTE : Dans cette figure et celles qui suivent, les objets encadrés en
-bleu foncé (comme RAMP EQUIPMENT) sont ceux qui ont été spécifiquement
+bleu foncé (comme <span lang="en">RAMP EQUIPMENT</span>) sont ceux qui ont été spécifiquement
 retenus par le projet CAMERA avec pour vocation de répondre à la
 réglementation en terme d'information sur l'accessibilité. Pour mémoire,
 l'étude CAMERA porte uniquement sur les modes de surface et ne couvre
@@ -1702,29 +1701,29 @@ assurer un rôle dans l'accessibilité.
 
 | **Groupe**        | **Sous-groupe**     | **Équipement**                                                             | **Principaux attributs relatifs à l’accessibilité**                                                        |
 |-------------------|---------------------|----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Place­Equipment   | Access­Equipment    | ***RoughSurface** (surface accidentée)*                                    | Type de surface                                                                                            |
-|                   |                     | ***EntranceEquipment** (entrée)*                                           | Dimensions, franchissable en fauteuil roulant, modes d’ouverture, capteur acoustique, automatique.         |
-|                   |                     | ***StairEquipment** (escalier)*                                            | Rampe, hauteur de la rampe, hauteur des marches, nombre de marches.                                        |
-|                   |                     | ***LiftEquipment** (ascenseur)*                                            | Dimensions, accessible en fauteuil roulant, diamètre de giration (pour fauteuil roulant).                    |
-|                   |                     | ***EscalatorEquipment** (escalator)*                                       | Largeur, dénivelé                                                                                          |
-|                   |                     | ***TravelatorEquipment** (tapis roulant)*                                  | Largeur, longueur.                                                                                         |
-|                   |                     | ***RampEquipment** (rampe)*                                                | Dimensions, pente, rampe et main courante, bande de guidage/interception.                                  |
-|                   |                     | ***QueuingEquipment** (gestion de queue)*                                  |                                                                                                            |
-|                   |                     | ***CrossingEquipment** (passage piéton et croisement)*                     | Bande podotactile, information sonore, capteurs, aide acoustique, bateau.                                  |
-|                   | SignEquipment       | ***PlaceSign** (signalétique dans un lieu)*                               | Information sur le nom de l’arrêt                                                                          |
-|                   |                     | ***HeadingSign** (girouette de véhicule)*                                  |                                                                                                            |
-|                   |                     | ***GeneralSign** (signalétique générale)*                                  |                                                                                                            |
-|                   | Ticketing           | ***TicketingEquipment** (équipement billettique)*                          | Comptoir abaissé                                                                                           |
-|                   |                     | ***TicketValidatorEquipment** (validateur billettique)*                    |                                                                                                            |
-|                   | StopPlace           | ***LuggageLockerEquipment** (consigne et casiers)*                         |                                                                                                            |
-|                   |                     | ***ShelterEquipment** (abris)*                                             | Nombre de sièges, dimensions, présence de marches, largeur et profondeur de l’espace pour fauteuil roulant. |
-|                   |                     | ***TrolleyStandEquipment** (emplacement pour chariots et caddies)*         |                                                                                                            |
-|                   |                     | ***WaitingRoomEquipment** (salle d’attente)*                               | Nombre de sièges, dimensions, présence de marches, largeur et profondeur de l’espace pour fauteuil roulant. |
-|                   | Passenger­Equipment | ***PassengerInfoEquipment** (équipement d’information voyageur)*           | Informations d’accessibilité                                                                               |
-|                   |                     | ***PassengerSafetyEquipment** (équipement pour la sécurité des voyageurs)* | Caméras, bouton d’urgence, téléphone d’ugence, hauteur des appareils d’urgence, annonces sonores.          |
-|                   |                     | ***SanitaryEquipment** (sanitaires)*                                       | Genre, type de sanitaires, diamètre de giration pour fauteuil roulant.                                        |
-| **Local Service** | Customer            | ***AssistanceService** (service d’assistance)*                             | Aide à l’embarquement et autres aides disponibles.                                                          |
-|                   |                     | ***MeetingpointService** (point de rendez-vous)*                           |                                                                                                            |
+| <span lang="en">PlaceEquipment</span>   | <span lang="en">AccessEquipment</span>    | ***<span lang="en">RoughSurface</span>** (surface accidentée)*                                    | Type de surface                                                                                            |
+|                   |                     | ***<span lang="en">EntranceEquipment</span>** (entrée)*                                           | Dimensions, franchissable en fauteuil roulant, modes d’ouverture, capteur acoustique, automatique.         |
+|                   |                     | ***<span lang="en">StairEquipment</span>** (escalier)*                                            | Rampe, hauteur de la rampe, hauteur des marches, nombre de marches.                                        |
+|                   |                     | ***<span lang="en">LiftEquipment</span>** (ascenseur)*                                            | Dimensions, accessible en fauteuil roulant, diamètre de giration (pour fauteuil roulant).                    |
+|                   |                     | ***<span lang="en">EscalatorEquipment</span>** (escalator)*                                       | Largeur, dénivelé                                                                                          |
+|                   |                     | ***<span lang="en">TravelatorEquipment</span>** (tapis roulant)*                                  | Largeur, longueur.                                                                                         |
+|                   |                     | ***<span lang="en">RampEquipment</span>** (rampe)*                                                | Dimensions, pente, rampe et main courante, bande de guidage/interception.                                  |
+|                   |                     | ***<span lang="en">QueuingEquipment</span>** (gestion de queue)*                                  |                                                                                                            |
+|                   |                     | ***<span lang="en">CrossingEquipment</span>** (passage piéton et croisement)*                     | Bande podotactile, information sonore, capteurs, aide acoustique, bateau.                                  |
+|                   | <span lang="en">SignEquipment</span>       | ***<span lang="en">PlaceSign</span>** (signalétique dans un lieu)*                               | Information sur le nom de l’arrêt                                                                          |
+|                   |                     | ***<span lang="en">HeadingSign</span>** (girouette de véhicule)*                                  |                                                                                                            |
+|                   |                     | ***<span lang="en">GeneralSign</span>** (signalétique générale)*                                  |                                                                                                            |
+|                   | <span lang="en">Ticketing</span>           | ***<span lang="en">TicketingEquipment</span>** (équipement billettique)*                          | Comptoir abaissé                                                                                           |
+|                   |                     | ***<span lang="en">TicketValidatorEquipment</span>** (validateur billettique)*                    |                                                                                                            |
+|                   | <span lang="en">StopPlace</span>           | ***<span lang="en">LuggageLockerEquipment</span>** (consigne et casiers)*                         |                                                                                                            |
+|                   |                     | ***<span lang="en">ShelterEquipment</span>** (abris)*                                             | Nombre de sièges, dimensions, présence de marches, largeur et profondeur de l’espace pour fauteuil roulant. |
+|                   |                     | ***<span lang="en">TrolleyStandEquipment</span>** (emplacement pour chariots et caddies)*         |                                                                                                            |
+|                   |                     | ***<span lang="en">WaitingRoomEquipment</span>** (salle d’attente)*                               | Nombre de sièges, dimensions, présence de marches, largeur et profondeur de l’espace pour fauteuil roulant. |
+|                   | <span lang="en">PassengerEquipment</span> | ***<span lang="en">PassengerInfoEquipment</span>** (équipement d’information voyageur)*           | Informations d’accessibilité                                                                               |
+|                   |                     | ***<span lang="en">PassengerSafetyEquipment</span>** (équipement pour la sécurité des voyageurs)* | Caméras, bouton d’urgence, téléphone d’urgence, hauteur des appareils d’urgence, annonces sonores.          |
+|                   |                     | ***<span lang="en">SanitaryEquipment</span>** (sanitaires)*                                       | Genre, type de sanitaires, diamètre de giration pour fauteuil roulant.                                        |
+| **<span lang="en">Local Service</span>** | <span lang="en">Customer</span>            | ***<span lang="en">AssistanceService</span>** (service d’assistance)*                             | Aide à l’embarquement et autres aides disponibles.                                                          |
+|                   |                     | ***<span lang="en">MeetingpointService</span>** (point de rendez-vous)*                           |                                                                                                            |
 
 ![image](media/image12-1.png)
 *ÉQUIPEMENTs de lieux*
@@ -1732,25 +1731,25 @@ assurer un rôle dans l'accessibilité.
 Les ÉQUIPEMENTs DE LIEU sont les suivants (voir en annexe pour la
 sélection du profil) :
 
--   Équipement de gestion de queue (QUEING EQUIPMENT)
+-   Équipement de gestion de queue (<span lang="en">QUEING EQUIPMENT</span>)
 
--   Passage piéton (CROSSING EQUIPMENT)
+-   Passage piéton (<span lang="en">CROSSING EQUIPMENT</span>)
 
--   Équipement d'entrée (ENTRANCE EQUIPMENT)
+-   Équipement d'entrée (<span lang="en">ENTRANCE EQUIPMENT</span>)
 
--   Surfaces au sol spéciales (ROUGH EQUIPMENT)
+-   Surfaces au sol spéciales (<span lang="en">ROUGH EQUIPMENT</span>)
 
--   Escalier (STAIRCASE EQUIPMENT)
+-   Escalier (<span lang="en">STAIRCASE EQUIPMENT</span>)
 
--   Escalator (ESCALATOR EQUIPMENT)
+-   Escalator (<span lang="en">ESCALATOR EQUIPMENT</span>)
 
--   Éclairage (PLACE LIGHTING)
+-   Éclairage (<span lang="en">PLACE LIGHTING</span>)
 
--   Rampe d'accès (RAMP EQUIPMENT)
+-   Rampe d'accès (<span lang="en">RAMP EQUIPMENT</span>)
 
--   Ascenseur (LIFT EQUIPMENT)
+-   Ascenseur (<span lang="en">LIFT EQUIPMENT</span>)
 
--   Tapis roulant (TRAVELATOR EQUIPMENT)
+-   Tapis roulant (<span lang="en">TRAVELATOR EQUIPMENT</span>)
 
 Quand nécessaire, la description d'une rampe (escalier, etc.) peut être
 associée à l'équipement.
@@ -1761,42 +1760,42 @@ associée à l'équipement.
 Les ÉQUIPEMENTs proposés par NeTEx pour les passagers sont les suivants
 (voir en annexe pour la sélection du profil) :
 
--   Valideur de billet (TICKET VALIDATOR EQUIPMENT)
+-   Valideur de billet (<span lang="en">TICKET VALIDATOR EQUIPMENT</span>)
 
--   Équipement billettique (TICKETING EQUIPMENT)
+-   Équipement billettique (<span lang="en">TICKETING EQUIPMENT</span>)
 
--   Équipement de sécurité (PASSENGER SAFETY EQUIPMENT) comme des
+-   Équipement de sécurité (<span lang="en">PASSENGER SAFETY EQUIPMENT</span>) comme des
     caméras vidéo ou des boutons d'appel
 
--   <u>Équipement d'information voyageur (PASSENGER INFORMATION
-    EQUIPMENT) comme un afficheur ou un indicateur d'arrêt suivent,
+-   <u>Équipement d'information voyageur (<span lang="en">PASSENGER INFORMATION
+     EQUIPMENT</span>) comme un afficheur ou un indicateur d'arrêt suivent,
     etc.</u>
 
--   Poubelle (RUBBISH DISPOSAL)
+-   Poubelle (<span lang="en">RUBBISH DISPOSAL</span>)
 
--   Équipement sanitaire (SANITARY EQUIPMENT)
+-   Équipement sanitaire (<span lang="en">SANITARY EQUIPMENT</span>)
 
 Les ÉQUIPEMENTs sur site sont les suivants (voir en annexe pour la
 sélection du profil) :
 
--   Consigne à bagages (LUGGAGE LOCKER EQUIPMENT)
+-   Consigne à bagages (<span lang="en">LUGGAGE LOCKER EQUIPMENT</span>)
 
--   Point pour chariots à bagage (TROLLEY STAND EQUIPMENT)
+-   Point pour chariots à bagage (<span lang="en">TROLLEY STAND EQUIPMENT</span>)
 
--   Abris (SHELTER EQUIPMENT)
+-   Abris (<span lang="en">SHELTER EQUIPMENT</span>)
 
--   Siège (SEATING EQUIPMENT)
+-   Siège (<span lang="en">SEATING EQUIPMENT</span>)
 
--   Salle d'attente (WAITING ROOM EQUIPMENT)
+-   Salle d'attente (<span lang="en">WAITING ROOM EQUIPMENT</span>)
 
 Les ÉQUIPEMENTs de signalétique sont les suivants (voir en annexe pour
 la sélection du profil) :
 
--   Poteau ou indication du nom du lieu (PLACE SIGN)
+-   Poteau ou indication du nom du lieu (<span lang="en">PLACE SIGN</span>)
 
--   Panneau de guidage (HEADING SIGN)
+-   Panneau de guidage (<span lang="en">HEADING SIGN</span>)
 
--   Affichage et indicateurs (GENERAL SIGN)
+-   Affichage et indicateurs (<span lang="en">GENERAL SIGN</span>)
 
 ![image](media/image12-3.png)
 *SERVICE LOCAL*
@@ -1804,59 +1803,59 @@ la sélection du profil) :
 Les SERVICE LOCAUX sont les suivants (voir en annexe pour la sélection
 du profil) :
 
--   Service d'assistance (ASSISTANCE SERVICE), précisant les équipements
+-   Service d'assistance (<span lang="en">ASSISTANCE SERVICE</span>), précisant les équipements
     mis à disposition (fauteuil roulant, etc.), le personnel
     d'assistance, le type de service et le cas échéant le type de
     service d'urgence
 
--   Les services de billetterie (TICKETING SERVICE)
+-   Les services de billetterie (<span lang="en">TICKETING SERVICE</span>)
 
--   Les services liés aux bagages (LUGGAGE SERVICE)
+-   Les services liés aux bagages (<span lang="en">LUGGAGE SERVICE</span>)
 
--   Les services liés aux bagages perdus (LEFT LUGGAGE SERVICE)
+-   Les services liés aux bagages perdus (<span lang="en">LEFT LUGGAGE SERVICE</span>)
 
--   Les services de réclamation (COMPLAINTS SERVICE)
+-   Les services de réclamation (<span lang="en">COMPLAINTS SERVICE</span>)
 
--   Les services d'objets perdus (LOST PROPERTY SERVICE)
+-   Les services d'objets perdus (<span lang="en">LOST PROPERTY SERVICE</span>)
 
--   Les services de rendez-vous (MEETING POINT SERVICE)
+-   Les services de rendez-vous (<span lang="en">MEETING POINT SERVICE</span>)
 
--   Les services de communication (COMMUNICATION SERVICE)
+-   Les services de communication (<span lang="en">COMMUNICATION SERVICE</span>)
 
--   Les services de restauration (CATERING SERVICE)
+-   Les services de restauration (<span lang="en">CATERING SERVICE</span>)
 
--   Les services de vente de détail (RETAIL SERVICE)
+-   Les services de vente de détail (<span lang="en">RETAIL SERVICE</span>)
 
--   Les services financiers (MONEY SERVICE)
+-   Les services financiers (<span lang="en">MONEY SERVICE</span>)
 
--   Les services de location (HIRE SERVICE)
+-   Les services de location (<span lang="en">HIRE SERVICE</span>)
 
 ### Équipements non localisés
 
 NeTEx offre la possibilité de décrire des équipements sans les
 localiser : cela permet de décrire l'équipement et ses caractéristiques,
 et permet d'indiquer que cet équipement est disponible en station mais
-sans en dire plus (voir l'élément ***unlocalisedEquipment*** dans
-***StopPlace*** dans le profil Arrêts). N'importe lequel des équipements
+sans en dire plus (voir l'élément ***<span lang="en">unlocalisedEquipment</span>*** dans
+***<span lang="en">StopPlace</span>*** dans le profil Arrêts). N'importe lequel des équipements
 décrit ci-dessus peut être référencé comme non localisé (on ne passera
-donc plus par les LIEUx D’ÉQUIPEMENT (EQUIPMENT PLACE) et POSITION
-D’ÉQUIPEMENT (EQUIPMENT LOCATION)). Le reste reste inchangé.
+donc plus par les LIEUx D’ÉQUIPEMENT (<span lang="en">EQUIPMENT PLACE</span>) et POSITION
+D’ÉQUIPEMENT (<span lang="en">EQUIPMENT LOCATION</span>)). Le reste reste inchangé.
 
 ## Les Cheminements
 
-Les CHEMINEMENTs (NAVIGATION PATH) décrivent des chemins physiques pour
+Les CHEMINEMENTs (<span lang="en">NAVIGATION PATH</span>) décrivent des chemins physiques pour
 aller d'un point à un autre en marchant. Ils peuvent se situer au sein
 de LIEU D'ARRÊT mais aussi à l'extérieur en cas de correspondance en
 particulier (on peut même définir un CHEMINEMENT entre deux lieux dont
 aucun n'est un LIEU D'ARRÊT).
 
 Les constituants de base de CHEMINEMENT sont de TRONÇONs DE CHEMINEMENT.
-Aux extrémités de ces tronçons (PATH LINK END) on peut associer des
+Aux extrémités de ces tronçons (<span lang="en">PATH LINK END</span>) on peut associer des
 éléments de site (zone d'embarquement, salle d'échange, lieu
-d'équipement, etc.). Les tronçons sont assemblés en SEQUENCES DE
+d'équipement, etc.). Les tronçons sont assemblés en SÉQUENCES DE
 TRONÇONS qui elles-mêmes s'assemblent en CHEMINEMENTs (la séparation en
 deux niveaux d'assemblage permet d'éviter les redéfinitions et de
-partager des SEQUENCES DE TRONÇONS entre plusieurs CHEMINEMENTs).
+partager des SÉQUENCES DE TRONÇONS entre plusieurs CHEMINEMENTs).
 
 La figure ci-dessous en donne une illustration.
 
@@ -1870,7 +1869,7 @@ Le schéma UML ci-dessous décrit la structure des cheminements dans NeTEx
 *Structure générique des CHEMINEMENTs*
 
 On notera, en plus des concepts introduits plus haut, la notion de
-JONCTION DE TRONÇON (PATH JUNCTION) qui permet de créer de "carrefours"
+JONCTION DE TRONÇON (<span lang="en">PATH JUNCTION</span>) qui permet de créer de "carrefours"
 où plusieurs TRONÇONs DE CHEMINEMENT se rejoignent. Les EXTRÉMITÉs DE
 TRONÇON, en plus de pouvoir être associés à un ÉLÉMENT DE SITE peuvent
 être associés à un niveau (pour notifier un changement d'étage par
@@ -1884,7 +1883,7 @@ Le schéma ci-dessus reprend le précédent et se concentre sur la relation
 entre les CHEMINEMENTs et les ÉQUIPEMENTs : cette relation est en effet
 cruciale dans le contexte de l'accessibilité et permet de bien situer
 les différents ÉQUIPEMENTs sur le parcours du voyageur. Cette relation
-passe là aussi par l'ÉLÉMÉNT DE SITE.
+passe là aussi par l'ÉLÉMENT DE SITE.
 
 ![image](media/image16.svg)
 *CHEMINEMENTs pour les correspondances*
@@ -1892,27 +1891,27 @@ passe là aussi par l'ÉLÉMÉNT DE SITE.
 Enfin, le schéma ci-dessus montre comment les CHEMINEMENTs sont affectés
 aux correspondances : deux solutions sont possibles dans NeTEx, mais le
 profil pour l'accessibilité ne retiendra que la possibilité de lier un
-TRANSFER et un NAVIGATION PATH (relation *traversedWith* sur la figure,
+<span lang="en">TRANSFER</span> et un <span lang="en">NAVIGATION PATH</span> (relation *<span lang="en">traversedWith</span>* sur la figure,
 c'est en effet la solution la plus générique), implémentée au travers du
-champ ***Transfers*** du NAVIGATION PATH (voir plus bas).
+champ ***<span lang="en">Transfers</span>*** du <span lang="en">NAVIGATION PATH</span> (voir plus bas).
 
-Il est important de prendre en compte le fait que les PathLink décrits
+Il est important de prendre en compte le fait que les <span lang="en">PathLink</span> décrits
 ci-dessous peuvent être segmentés autant que nécessaire : ainsi si la
 nature du cheminement évolue et que l'on souhaite le renseigner au
-travers d'un changement des attributs portés par le PathLink (par
+travers d'un changement des attributs portés par le <span lang="en">PathLink</span> (par
 exemple un changement d'éclairage, un changement de pente, etc.), il
 suffit de le "couper" à partir de l'endroit où l'on souhaite faire
 apparaître les nouvelles informations. Il n'y a pas de limite minimale à
-la taille que peut représenter un PathLink, mais il reste toutefois
+la taille que peut représenter un <span lang="en">PathLink</span>, mais il reste toutefois
 recommandé de ne pas trop les subdiviser (et donc de ne pas les faire
 trop petits) pour éviter de surcharger l'utilisateur en information et
 aussi pour limiter le volume d'information à gérer par les systèmes.
 
 <span class="hl">À noter qu’en présence de bandes de guidage, il est obligatoire de créer un 
-ou plusieurs objets SitePathLink pour les modéliser avec l'attribut *TactileGuidingStrip* dûment renseigné. 
+ou plusieurs objets <span lang="en">SitePathLink</span> pour les modéliser avec l'attribut *<span lang="en">TactileGuidingStrip</span>* dûment renseigné. 
 Sa définition détaillée est en Table 11 plus bas. </span>
 
-<div class="table-title">SitePathLink – Élément</div>
+<div class="table-title"><span lang="en">SitePathLink</span> – Élément</div>
 
 <table style="width:100%;">
 <colgroup>
@@ -1924,7 +1923,7 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
 <td><strong>Cardinalité</strong></td>
@@ -1933,140 +1932,140 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>Link</em></td>
+<td><em><span lang="en">Link</span></em></td>
 <td><em>::></em></td>
-<td>PATH LINK hérite de LINK.</td>
+<td><span lang="en">PATH LINK</span> hérite de <span lang="en">LINK</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>PathLinkIdType</td>
+<td><span lang="en">PathLinkIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du PATH LINK.</td>
+<td>Identifiant du <span lang="en">PATH LINK</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Distance</td>
-<td>DistanceType</td>
+<td><span lang="en">Distance</span></td>
+<td><span lang="en">DistanceType</span></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><p>Longueur du tronçon de cheminement.</p>
 <p><span class="hl">L'attribut Distance, hérité de LINK, est rendu obligatoire pour les tronçons de cheminement par le profil pour l'accessibilité. Il s'agit de la distance parcourue le long du tronçon de cheminement et non de la distance à vol d'oiseau entre les points de départ et d'arrivée.</span></p></td>
 </tr>
 <tr class="odd">
-<td>«cntd»</td>
-<td>LineString</td>
-<td>gmlLineString</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">LineString</span></td>
+<td><span lang="en">gmlLineString</span></td>
 <td><p>0:1</p>
 <p><span class="hl">1:1</span></p></td>
 <td><p>Géométrie du tronçon de cheminement.</p>
-<p><span class="hl">Dans le contexte du profil pour l'accessibilité, la géométrie des PATH LINKs sera systématiquement décrite avec l'attribut <em><strong>LineString</strong></em> (GML) hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notament au niveau des extrémités, des centroïdes des objets référencés par <em><strong>From</strong></em> et <em><strong>To</strong></em> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du LineString devront coïncider avec ceux des autres PATH LINK connectés dans le cadre d'un NAVIGATION PATH.</span></p></td>
+<p><span class="hl">Dans le contexte du profil pour l'accessibilité, la géométrie des <span lang="en">PATH LINKs</span> sera systématiquement décrite avec l'attribut <em><strong><span lang="en">LineString</span></strong></em> (GML) hérité de LINK. Il est important de bien noter que cette géométrie peut être différente, notamment au niveau des extrémités, des centroïdesdes objets référencés par <em><strong><span lang="en">From</span></strong></em> et <em><strong><span lang="en">To</span></strong></em> (qui sont généralement des centroïdes de zone, relativement imprécis). De plus les extrémités du <span lang="en">LineString</span> devront coïncider avec ceux des autres <span lang="en">PATH LINK</span> connectés dans le cadre d'un <span lang="en">NAVIGATION PATH</span>.</span></p></td>
 </tr>
 <tr class="even">
 <td>«FK»</td>
-<td>From</td>
-<td>PathLinkEnd</td>
+<td><span lang="en">From</span></td>
+<td><span lang="en">PathLinkEnd</span></td>
 <td>1:1</td>
-<td>Point ou lieu de départ du PATH LINK. Voir tableau suivant</td>
+<td>Point ou lieu de départ du <span lang="en">PATH LINK</span>. Voir tableau suivant</td>
 </tr>
 <tr class="odd">
 <td>«FK»</td>
-<td>To</td>
-<td>PathLinkEnd</td>
+<td><span lang="en">To</span></td>
+<td><span lang="en">PathLinkEnd</span></td>
 <td>1:1</td>
-<td><p>Point ou lieu de fin du PATH LINK. Voir tableau suivant</p>
-<p><em><strong><span class="hl">From</span></strong></em><span class="hl"> et </span><em><strong><span class="hl">To</span></strong></em><span class="hl"> peuvent référencer le même espace, mais avec des </span><em><strong><span class="hl">LineString </span></strong><span class="hl">(voir ci-dessus)</span></em><span class="hl"> différentes. On utilisera notament cette particularité pour traverser des équipements long (comme un tapis roulant) situés dans un EQUIPMENT PLACE (ZONE).</span></p></td>
+<td><p>Point ou lieu de fin du <span lang="en">PATH LINK</span>. Voir tableau suivant</p>
+<p><span class="hl"><em><strong><span lang="en">From</span></strong></em> et <em><strong><span lang="en">To</span></strong></em> peuvent référencer le même espace, mais avec des <em><strong><span lang="en">LineString</span></strong>(voir ci-dessus)</em> différentes. On utilisera notamment cette particularité pour traverser des équipements long (comme un tapis roulant) situés dans un <span lang="en">EQUIPMENT PLACE</span> (ZONE).</span></p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Description</td>
-<td>MultilingualString</td>
+<td><span lang="en">Description</span></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
-<td>Description du PATH LINK.</td>
+<td>Description du <span lang="en">PATH LINK</span>.</td>
 </tr>
 <tr class="odd">
-<td>«cntd»</td>
-<td>Accessibility­Assesment</td>
-<td>AccessibilityAssesment</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">AccessibilityAssesment</span></td>
+<td><span lang="en">AccessibilityAssesment</span></td>
 <td>0:1</td>
-<td><p>ACCESSIBILITY du PATH LINK.</p><p>Voir le détail en Annexe.</p></td>
+<td><p><span lang="en">ACCESSIBILITY</span> du <span lang="en">PATH LINK</span>.</p><p>Voir le détail en Annexe.</p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>PublicUse</td>
-<td>xsd:boolean</td>
+<td><span lang="en">PublicUse</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td><p>Indique si le cheminement est ouvert au public.</p>
-<p><span class="hl">Public (true) par défaut (si l'attribut n'est pas fourni)</span></p></td>
+<p><span class="hl">Public (<span lang="en">true</span>) par défaut (si l'attribut n'est pas fourni)</span></p></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Covered</td>
-<td>CoveredEnum</td>
+<td><span lang="en">Covered</span></td>
+<td><span lang="en">CoveredEnum</span></td>
 <td>0:1</td>
 <td>Type de couverture.
-<p><span class="hl">La valeur <em>mixed</em> est déconseillée dans le cadre du profil pour l'accessibilité : il convient dans ce cas de segmenter en plusieurs SitePathLink avec chacun un type de couverture propre.</span></p></td>
+<p><span class="hl">La valeur <em><span lang="en">mixed</span></em> est déconseillée dans le cadre du profil pour l'accessibilité : il convient dans ce cas de segmenter en plusieurs <span lang="en">SitePathLink</span> avec chacun un type de couverture propre.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Gated</td>
-<td>GatedEnum</td>
+<td><span lang="en">Gated</span></td>
+<td><span lang="en">GatedEnum</span></td>
 <td>0:1</td>
 <td>Type de porte ou portillon d’accès</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Lighting</td>
-<td>LightingEnum</td>
+<td><span lang="en">Lighting</span></td>
+<td><span lang="en">LightingEnum</span></td>
 <td>0:1</td>
 <td><p>Nature de l’éclairage</p>
 <ul>
-<li><p><em>wellLit</em> : adapté pour les déficients visuels</p></li>
-<li><p><em>poorlyLit</em> : éclairé mais non adapté pour les déficients visuels</p></li>
-<li><p><em>unlit</em> : non éclairé</p></li>
-<li><p><em>unknown</em> : information non disponible</p></li>
+<li><p><em><span lang="en">wellLit</span></em> : adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">poorlyLit</span></em> : éclairé mais non adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">unlit</span></em> : non éclairé</p></li>
+<li><p><em><span lang="en">unknown</span></em> : information non disponible</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>AllAreasWheelchair</td>
-<td>xsd:boolean</td>
+<td><span lang="en">AllAreasWheelchair</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique si le cheminement est pratiquable en fauteuil roulant.</td>
 </tr>
 <tr class="odd">
-<td>«cntd»</td>
-<td>facilities</td>
-<td>SiteFacilitySet</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">facilities</span></td>
+<td><span lang="en">SiteFacilitySet</span></td>
 <td>0:*</td>
-<td>FACILITIES associées au PATH LINK.</td>
+<td><span lang="en">FACILITIES</span> associées au <span lang="en">PATH LINK</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Towards</td>
-<td>MultilingualString</td>
+<td><span lang="en">Towards</span></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
-<td>Direction indiquée quand le cheminement est effectué dans le sens FROM vers TO (sens direct).</td>
+<td>Direction indiquée quand le cheminement est effectué dans le sens <span lang="en">FROM</span> vers <span lang="en">TO</span> (sens direct).</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Back</td>
-<td>MultilingualString</td>
+<td><span lang="en">Back</span></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
-<td>Direction indiquée quand le cheminement est effectué dans le sens TO vers FROM.</td>
+<td>Direction indiquée quand le cheminement est effectué dans le sens <span lang="en">TO</span> vers <span lang="en">FROM</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>NumberOfSteps</td>
-<td>xsd:integer</td>
+<td><span lang="en">NumberOfSteps</span></td>
+<td>xsd:<span lang="en">integer</span></td>
 <td>0:1</td>
 <td>Nombre de marches rencontrées sur le cheminement.
 <p><span class="hl">Il s'agit du nombre de marches total de l'escalier si le tronçon de cheminement correspond à un escalier, ou du nombre de ressauts ou marches isolées sinon.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>MinimumWidth</td>
-<td>LengthType</td>
+<td><span lang="en">MinimumWidth</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td><p>Largeur minimale du cheminement</p>
 <p><span class="hl">La largeur renseignée doit tenir compte des éventuels obstacles présents le long du tronçon de cheminement.</span></p>
@@ -2074,218 +2073,218 @@ Sa définition détaillée est en Table 11 plus bas. </span>
 </tr>
 <tr class="odd">
 <td></td>
-<td>AllowedUse</td>
-<td>DirectionOfUseEnum</td>
+<td><span lang="en">AllowedUse</span></td>
+<td><span lang="en">DirectionOfUseEnum</span></td>
 <td>0:1</td>
 <td>Indique si le cheminement est empruntable dans les deux sens.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Transition</td>
-<td>TransitionEnum</td>
+<td><span lang="en">Transition</span></td>
+<td><span lang="en">TransitionEnum</span></td>
 <td>0:1</td>
 <td><p>Type de transition du cheminement :</p>
 <ul>
-<li><p><em>up (montée)</em></p></li>
-<li><p><em>down (descente)</em></p></li>
-<li><p><em>level (pas de changement de niveau)</em></p></li>
-</ul><p><span class="hl">Les valeurs <em>upAndDown</em> (montée puis descente) et <em>downAndUp</em> (descente puis montée) sont déconseillées dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs SitePathLink avec chacun un type de transition propre.</span></p></td>
+<li><p><em><span lang="en">up</span> (montée)</em></p></li>
+<li><p><em><span lang="en">down</span> (descente)</em></p></li>
+<li><p><em><span lang="en">level</span> (pas de changement de niveau)</em></p></li>
+</ul><p><span class="hl">Les valeurs <em><span lang="en">upAndDown</span></em> (montée puis descente) et <em><span lang="en">downAndUp</span></em> (descente puis montée) sont déconseillées dans le cadre du profil pour l'accessibilité : il convient dans ces cas de segmenter en plusieurs <span lang="en">SitePathLink</span> avec chacun un type de transition propre.</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Gradient</td>
-<td>xsd:integer</td>
+<td><span lang="en">Gradient</span></td>
+<td>xsd:<span lang="en">integer</span></td>
 <td>0:1</td>
-<td><p>Pente en degrés (dans le sens direct, from/to, du cheminement)</p>
+<td><p>Pente en degrés (dans le sens direct, <span lang="en">from/to</span>, du cheminement)</p>
 <p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</span></p>   
 </td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>TiltAngle</td>
-<td>xsd:integer</td>
+<td><span lang="en">TiltAngle</span></td>
+<td>xsd:<span lang="en">integer</span></td>
 <td>0:1</td>
-<td><p>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, from/to, du cheminement)</p>
+<td><p>Dévers (inclinaison latérale) de +20 a -20 degrés (dans le sens direct, <span lang="en">from/to</span>, du cheminement)</p>
 <p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les trottoirs.</span></p>   
 </td>
 </tr>
 <tr class="even">
 <td></td>
-<td>TiltType</td>
-<td>TiltTypeEnum</td>
+<td><span lang="en">TiltType</span></td>
+<td><span lang="en">TiltTypeEnum</span></td>
 <td>0:1</td>
 <td><p>Valeur codée du dévers</p>
 <ul>
-<li><p><em>strongLeftTilt (dévers fort à gauche)</em></p></li>
-<li><p><em>mediumLeftTilt (dévers moyen à gauche)</em></p></li>
-<li><p><em>nearlyFlat (preque plat)</em></p></li>
-<li><p><em>mediumRightTilt (dévers moyen à droite)</em></p></li>
-<li><p><em>strongRightTilt (dévers fort à droite)</em></p></li>
+<li><p><em><span lang="en">strongLeftTilt</span> (dévers fort à gauche)</em></p></li>
+<li><p><em><span lang="en">mediumLeftTilt</span> (dévers moyen à gauche)</em></p></li>
+<li><p><em><span lang="en">nearlyFlat</span> (presque plat)</em></p></li>
+<li><p><em><span lang="en">mediumRightTilt</span> (dévers moyen à droite)</em></p></li>
+<li><p><em><span lang="en">strongRightTilt</span> (dévers fort à droite)</em></p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>AccessFeatureType</td>
-<td>AccessFeatureEnum</td>
+<td><span lang="en">AccessFeatureType</span></td>
+<td><span lang="en">AccessFeatureEnum</span></td>
 <td>0:1</td>
-<td><p>Type de caractéristique associée au PATH LINK:</p>
+<td><p>Type de caractéristique associée au <span lang="en">PATH LINK</span> :</p>
 <ul>
 <li><p><em>lift (ascenseur)</em></p></li>
-<li><p><em>escalator (escalator)</em></p></li>
-<li><p><em>freightElevator (monte charge)</em></p></li>
-<li><p><em>travelator (tapis roulant)</em></p></li>
-<li><p><em>ramp (rampe)</em></p></li>
-<li><p><em>stairs (escalier)</em></p></li>
-<li><p><em>seriesOfStairs (série d’escalier)</em></p></li>
-<li><p><em>shuttle (navette)</em></p></li>
-<li><p><em>crossing (passge piéton, carrefour)</em></p></li>
-<li><p><em>barrier (barrière)</em></p></li>
-<li><p><em>narrowEntrance (passage étroit)</em></p></li>
-<li><p><em>hall (hall)</em></p></li>
-<li><p><em>concourse (hall, convergence de couloirs et accès)</em></p></li>
-<li><p><em>confinedSpace (espace confiné)</em></p></li>
-<li><p><em>queueManagement (gestion de queue)</em></p></li>
-<li><p><em>openSpace (espace ouvert)</em></p></li>
-<li><p><em>street (rue)</em></p></li>
-<li><p><em>pavement (trottoir)</em></p></li>
-<li><p><em>footpath (chemin piéton)</em></p></li>
-<li><p><em>passage (passage)</em></p></li>
+<li><p><em><span lang="en">escalator</span> (escalator)</em></p></li>
+<li><p><em><span lang="en">freightElevator</span> (monte charge)</em></p></li>
+<li><p><em><span lang="en">travelator</span> (tapis roulant)</em></p></li>
+<li><p><em><span lang="en">ramp</span> (rampe)</em></p></li>
+<li><p><em><span lang="en">stairs</span> (escalier)</em></p></li>
+<li><p><em><span lang="en">seriesOfStairs</span> (série d’escalier)</em></p></li>
+<li><p><em><span lang="en">shuttle</span> (navette)</em></p></li>
+<li><p><em><span lang="en">crossing</span> (passage piéton, carrefour)</em></p></li>
+<li><p><em><span lang="en">barrier</span> (barrière)</em></p></li>
+<li><p><em><span lang="en">narrowEntrance</span> (passage étroit)</em></p></li>
+<li><p><em><span lang="en">hall</span> (hall)</em></p></li>
+<li><p><em><span lang="en">concourse</span> (hall, convergence de couloirs et accès)</em></p></li>
+<li><p><em><span lang="en">confinedSpace</span> (espace confiné)</em></p></li>
+<li><p><em><span lang="en">queueManagement</span> (gestion de queue)</em></p></li>
+<li><p><em><span lang="en">openSpace</span> (espace ouvert)</em></p></li>
+<li><p><em><span lang="en">street</span> (rue)</em></p></li>
+<li><p><em><span lang="en">pavement</span> (trottoir)</em></p></li>
+<li><p><em><span lang="en">footpath</span> (chemin piéton)</em></p></li>
+<li><p><em><span lang="en">passage</span> (passage)</em></p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>PassageType</td>
-<td>PassageTypeEnum</td>
+<td><span lang="en">PassageType</span></td>
+<td><span lang="en">PassageTypeEnum</span></td>
 <td>0:1</td>
-<td><p>Précision du type de caractéristique associée au PATH LINK:</p>
+<td><p>Précision du type de caractéristique associée au <span lang="en">PATH LINK</span> :</p>
 <p>:</p>
 <ul>
-<li><p><em>pathway (sentier, en surface)</em></p></li>
-<li><p><em>corridor (couloir)</em></p></li>
-<li><p><em>overpass (passerelle, pont)</em></p></li>
-<li><p><em>underpass (passage sous-terrain)</em></p></li>
-<li><p><em>tunnel (tunnel)</em></p></li>
+<li><p><em><span lang="en">pathway</span> (sentier, en surface)</em></p></li>
+<li><p><em><span lang="en">corridor</span> (couloir)</em></p></li>
+<li><p><em><span lang="en">overpass</span> (passerelle, pont)</em></p></li>
+<li><p><em><span lang="en">underpass</span> (passage sous-terrain)</em></p></li>
+<li><p><em><span lang="en">tunnel</span> (tunnel)</em></p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>FlooringType</td>
-<td>FlooringTypeEnum</td>
+<td><span lang="en">FlooringType</span></td>
+<td><span lang="en">FlooringTypeEnum</span></td>
 <td>0:1</td>
 <td><p>Type de surface au sol</p>
 <ul>
-<li><p><em>Carpet (tapis)</em></p></li>
-<li><p><em>Concrete (béton)</em></p></li>
-<li><p><em>Asphalt (asphalte)</em></p></li>
-<li><p><em>Cork (liège)</em></p></li>
-<li><p><em>FibreglassGrating (taillebotis en fibre de verre)</em></p></li>
-<li><p><em>GlazedCeramicTiles (carreaux de céramique émaillés)</em></p></li>
-<li><p><em>PlasticMatting (matière plastique)</em></p></li>
-<li><p><em>CeramicTiles (carrelage)</em></p></li>
-<li><p><em>Rubber (caoutchouc)</em></p></li>
-<li><p><em>SteelPlate (plaques métalique)</em></p></li>
-<li><p><em>Vinyl (vinyle)</em></p></li>
-<li><p><em>Wood (bois)</em></p></li>
-<li><p><em>Stone (pierre)</em></p></li>
-<li><p><em>Grass (gazon)</em></p></li>
-<li><p><em>Earth (terre)</em></p></li>
-<li><p><em>Gravel (graviers)</em></p></li>
-<li><p><em>Uneven (inégal)</em></p></li>
-<li><p><em>Unknown (inconnu)</em></p></li>
-<li><p><em>Other (autre)</em></p></li>
+<li><p><em><span lang="en">Carpet</span> (tapis)</em></p></li>
+<li><p><em><span lang="en">Concrete</span> (béton)</em></p></li>
+<li><p><em><span lang="en">Asphalt</span> (asphalte)</em></p></li>
+<li><p><em><span lang="en">Cork</span> (liège)</em></p></li>
+<li><p><em><span lang="en">FibreglassGrating</span> (taillebotis en fibre de verre)</em></p></li>
+<li><p><em><span lang="en">GlazedCeramicTiles</span> (carreaux de céramique émaillés)</em></p></li>
+<li><p><em><span lang="en">PlasticMatting</span> (matière plastique)</em></p></li>
+<li><p><em><span lang="en">CeramicTiles</span> (carrelage)</em></p></li>
+<li><p><em><span lang="en">Rubber</span> (caoutchouc)</em></p></li>
+<li><p><em><span lang="en">SteelPlate</span> (plaques métalique)</em></p></li>
+<li><p><em><span lang="en">Vinyl</span> (vinyle)</em></p></li>
+<li><p><em><span lang="en">Wood</span> (bois)</em></p></li>
+<li><p><em><span lang="en">Stone</span> (pierre)</em></p></li>
+<li><p><em><span lang="en">Grass</span> (gazon)</em></p></li>
+<li><p><em><span lang="en">Earth</span> (terre)</em></p></li>
+<li><p><em><span lang="en">Gravel</span> (graviers)</em></p></li>
+<li><p><em><span lang="en">Uneven</span> (inégal)</em></p></li>
+<li><p><em><span lang="en">Unknown</span> (inconnu)</em></p></li>
+<li><p><em><span lang="en">Other</span> (autre)</em></p></li>
 </ul>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>RightSideBorder</em></td>
-<td><em>BorderTypeEnum</em></td>
+<td><em><span lang="en">RightSideBorder</span></em></td>
+<td><em><span lang="en">BorderTypeEnum</span></em></td>
 <td>0:1</td>
-<td><p>Type de bordure sur le côté droit (dans le sens direct, from/to, du cheminement)</p>
+<td><p>Type de bordure sur le côté droit (dans le sens direct, <span lang="en">from/to</span>, du cheminement)</p>
 <ul>
-<li><p><em>Wall (mur)</em></p></li>
-<li><p><em>Grass (gazon)</em></p></li>
-<li><p><em>Dirt (terre)</em></p></li>
-<li><p><em>Barrier (barière)</em></p></li>
-<li><p><em>Road (route)</em></p></li>
-<li><p><em>CyclingLane (piste cyclable)</em></p></li>
-<li><p><em>Step (marche)</em></p></li>
-<li><p><em>Rail (rail)</em></p></li>
-<li><p><em>Plants (plantes)</em></p></li>
-<li><p><em>Trees (arbres)</em></p></li>
-<li><p><em>Mud (boue)</em></p></li>
-<li><p><em>SolidEdge (bord solide)</em></p></li>
-<li><p><em>Water (eau)</em></p></li>
-<li><p><em>Gravel (gravier)</em></p></li>
-<li><p><em>NoPhysicalBorder (pas de bordure matérialisée)</em></p></li>
-<li><p><em>OtherPhysicalBorder (autre type de bordure)</em></p></li>
-<li><p><em>Unknown (inconnu)</em></p></li>
+<li><p><em><span lang="en">Wall</span> (mur)</em></p></li>
+<li><p><em><span lang="en">Grass</span> (gazon)</em></p></li>
+<li><p><em><span lang="en">Dirt</span> (terre)</em></p></li>
+<li><p><em><span lang="en">Barrier</span> (barrière)</em></p></li>
+<li><p><em><span lang="en">Road</span> (route)</em></p></li>
+<li><p><em><span lang="en">CyclingLane</span> (piste cyclable)</em></p></li>
+<li><p><em><span lang="en">Step</span> (marche)</em></p></li>
+<li><p><em><span lang="en">Rail</span> (rail)</em></p></li>
+<li><p><em><span lang="en">Plants</span> (plantes)</em></p></li>
+<li><p><em><span lang="en">Trees</span> (arbres)</em></p></li>
+<li><p><em><span lang="en">Mud</span> (boue)</em></p></li>
+<li><p><em><span lang="en">SolidEdge</span> (bord solide)</em></p></li>
+<li><p><em><span lang="en">Water</span> (eau)</em></p></li>
+<li><p><em><span lang="en">Gravel</span> (gravier)</em></p></li>
+<li><p><em><span lang="en">NoPhysicalBorder</span> (pas de bordure matérialisée)</em></p></li>
+<li><p><em><span lang="en">OtherPhysicalBorder</span> (autre type de bordure)</em></p></li>
+<li><p><em><span lang="en">Unknown</span> (inconnu)</em></p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>LeftSideBorder</em></td>
-<td><em>BorderTypeEnum</em></td>
+<td><em><span lang="en">LeftSideBorder</span></em></td>
+<td><em><span lang="en">BorderTypeEnum</span></em></td>
 <td>0:1</td>
-<td>Type de bordure sur le côté droit (dans le sens direct, from/to, du cheminement)</td>
+<td>Type de bordure sur le côté droit (dans le sens direct, <span lang="en">from/to</span>, du cheminement)</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>TactileWarningStrip</em></td>
-<td><em>TactileWarningEnum</em></td>
+<td><em><span lang="en">TactileWarningStrip</span></em></td>
+<td><em><span lang="en">TactileWarningEnum</span></em></td>
 <td>0:1</td>
-<td><p>Indique s’il y a des bandes d’interception podotactiles (dans le sens direct, from/to, du cheminement) :</p>
+<td><p>Indique s’il y a des bandes d’interception podotactiles (dans le sens direct, <span lang="en">from/to</span>, du cheminement) :</p>
 <ul>
-<li><p><em>TactileStripAtBeginning (bande au depart)</em></p></li>
-<li><p><em>TactileStripAtEnd (bande à l’arrivée)</em></p></li>
-<li><p><em>TactileStripAtBothEnds (bandes aux deux extrémités)</em></p></li>
-<li><p><em>noTactileStrip (pas de bandes d’interception)</em></p></li>
-<li><p><em>unknown (inconnu)</em></p></li>
+<li><p><em><span lang="en">TactileStripAtBeginning</span> (bande au départ)</em></p></li>
+<li><p><em><span lang="en">TactileStripAtEnd</span> (bande à l’arrivée)</em></p></li>
+<li><p><em><span lang="en">TactileStripAtBothEnds</span> (bandes aux deux extrémités)</em></p></li>
+<li><p><em><span lang="en">noTactileStrip</span> (pas de bandes d’interception)</em></p></li>
+<li><p><em><span lang="en">unknown</span> (inconnu)</em></p></li>
 </ul>
 <p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les escaliers et passages piétons.</span></p>   
 </td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>TactileGuidingStrip</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">TactileGuidingStrip</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td><p>Indique s’il y a des bandes de guidage podotactiles.</p>
 <p><span class="hl">En cas de présence de bandes de guidage podotactiles, il 
 est obligatoire de renseigner les tronçons de cheminement correspondants.</span></p></td>
 </tr>
 <tr class="even">
-<td>«cntd»</td>
-<td>TransferDuration</td>
-<td>TransferDuration</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">TransferDuration</span></td>
+<td><span lang="en">TransferDuration</span></td>
 <td>0:1</td>
 <td><p>Temps moyens pour franchir le cheminement (4 valeurs disponibles) :</p>
 <ul>
-<li><p><em>DefaultDuration (durée moyenne)</em></p></li>
-<li><p><em>FrequentTravellerDuration (durée pour un voyageur habitué)</em></p></li>
-<li><p><em>OccasionalTravellerDuration (durée pour un voyageur occasionel)</em></p></li>
-<li><p><em>MobilityRestrictedTravellerDuration (durée pour un voyageur à mobilité réduite)</em></p></li>
+<li><p><em><span lang="en">DefaultDuration</span> (durée moyenne)</em></p></li>
+<li><p><em><span lang="en">FrequentTravellerDuration</span> (durée pour un voyageur habitué)</em></p></li>
+<li><p><em><span lang="en">OccasionalTravellerDuration</span> (durée pour un voyageur occasionnel)</em></p></li>
+<li><p><em><span lang="en">MobilityRestrictedTravellerDuration</span> (durée pour un voyageur à mobilité réduite)</em></p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>placeEquipments</em></td>
-<td>Equipment</td>
+<td><em><span lang="en">placeEquipments</span></em></td>
+<td><span lang="en">Equipment</span></td>
 <td>0:1</td>
-<td>Liste des AccessEquipment (équipements d’accès) dont dépend le tronçon de cheminement.</td>
+<td>Liste des <span lang="en">AccessEquipment</span> (équipements d’accès) dont dépend le tronçon de cheminement.</td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">PathLinkEnd – Élément</div>
+<div class="table-title"><span lang="en">PathLinkEnd</span> – Élément</div>
 
 |                     |             |                    |                  |                                                          |
 |---------------------|-------------|--------------------|------------------|----------------------------------------------------------|
-| **Classifi­cation** | **Nom**    | **Type**           | **Cardin­alité** | **Description**                                          |
-| «FK»                | PlaceRef    | PlaceOrJunctionRef | 1:1              | Point ou lieu à l’extrémité du PATH LINK.                |
-| «FK»                | LevelRef    | LevelRef           | 0:1              | Niveau auquel le PATH LINKse connecte.                  |
-| «FK»                | EntranceRef | EntranceRef        | 0:1              | Entrée (ou sortie) associée à l’extrémité du PATH LINK. |
+| **Classification** | **Nom**    | **Type**           | **Cardinalité** | **Description**                                          |
+| «FK»                | <span lang="en">PlaceRef</span>    | <span lang="en">PlaceOrJunctionRef</span> | 1:1              | Point ou lieu à l’extrémité du <span lang="en">PATH LINK</span>.                |
+| «FK»                | <span lang="en">LevelRef</span>    | <span lang="en">LevelRef</span>           | 0:1              | Niveau auquel le <span lang="en">PATH LINK</span> se connecte.                  |
+| «FK»                | <span lang="en">EntranceRef</span> | <span lang="en">EntranceRef</span>        | 0:1              | Entrée (ou sortie) associée à l’extrémité du <span lang="en">PATH LINK</span>. |
 
-<div class="table-title">PathJunction (croisement/jonction de cheminement) – Élément</div>
+<div class="table-title"><span lang="en">PathJunction</span> (croisement/jonction de cheminement) – Élément</div>
 
 <table>
 <colgroup>
@@ -2297,10 +2296,10 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
@@ -2308,99 +2307,99 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 <td><em>::></em></td>
 <td><em>Point</em></td>
 <td><em>::></em></td>
-<td>PATH JUNCTION hérite de POINT.</td>
+<td><span lang="en">PATH JUNCTION</span> hérite de POINT.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>PathJunctionIdType</td>
+<td><span lang="en">PathJunctionIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du PATH JUNCTION.</td>
+<td>Identifiant du <span lang="en">PATH JUNCTION</span>.</td>
 </tr>
 
 <tr class="odd">
 <td></td>
-<td>PublicUse</td>
-<td>PublicUseEnum</td>
+<td><span lang="en">PublicUse</span></td>
+<td><span lang="en">PublicUseEnum</span></td>
 <td>0:1</td>
-<td>Indique si le PATH JUNCTION est accessible au public</td>
+<td>Indique si le <span lang="en">PATH JUNCTION</span> est accessible au public</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Covered</td>
-<td>CoveredEnum</td>
+<td><span lang="en">Covered</span></td>
+<td><span lang="en">CoveredEnum</span></td>
 <td>0:1</td>
 <td>Type de couverture</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Gated</td>
-<td>GatedEnum</td>
+<td><span lang="en">Gated</span></td>
+<td><span lang="en">GatedEnum</span></td>
 <td>0:1</td>
 <td>Type de porte ou portillon d’accès</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Lighting</td>
-<td>LightingEnum</td>
+<td><span lang="en">Lighting</span></td>
+<td><span lang="en">LightingEnum</span></td>
 <td>0:1</td>
 <td><p>Nature de l’éclairage</p>
 <ul>
-<li><p><em>wellLit</em> : adapté pour les déficients visuels</p></li>
-<li><p><em>poorlyLit</em> : éclairé mais non adapté pour les déficients visuels</p></li>
-<li><p><em>unlit</em> : non éclairé</p></li>
-<li><p><em>unknown</em> : information non disponible</p></li>
+<li><p><em><span lang="en">wellLit</span></em> : adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">poorlyLit</span></em> : éclairé mais non adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">unlit</span></em> : non éclairé</p></li>
+<li><p><em><span lang="en">unknown</span></em> : information non disponible</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>AllAreasWheelchair</td>
-<td>xsd:boolean</td>
+<td><span lang="en">AllAreasWheelchair</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique si le cheminement est pratiquable en fauteuil roulant.</td>
 </tr>
 
 <tr class="odd">
-<td>«cntd»</td>
-<td>facilities</td>
-<td>SiteFacilitySet</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">facilities</span></td>
+<td><span lang="en">SiteFacilitySet</span></td>
 <td>0:*</td>
-<td>FACILITIES associées au PATH JUNCTION.</td>
+<td><span lang="en">FACILITIES</span> associées au <span lang="en">PATH JUNCTION</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Label</strong></em></td>
-<td><em>MultilingualString</em></td>
+<td><em><strong><span lang="en">Label</span></strong></em></td>
+<td><em><span lang="en">MultilingualString</span></em></td>
 <td>0:1</td>
-<td>Label additionel associé au PATH JUNCTION.</td>
+<td>Label additionnel associé au <span lang="en">PATH JUNCTION</span>.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>SiteComponentRef</strong></em></td>
-<td><em>SiteComponentRef</em></td>
+<td><em><strong><span lang="en">SiteComponentRef</span></strong></em></td>
+<td><em><span lang="en">SiteComponentRef</span></em></td>
 <td>0:1</td>
-<td>Le PATH JUNCTION se situe au sein du SITE COMPONENT référencé.</td>
+<td>Le <span lang="en">PATH JUNCTION</span> se situe au sein du <span lang="en">SITE COMPONENT</span> référencé.</td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">PathLinkInSequence – Élément</div>
+<div class="table-title"><span lang="en">PathLinkInSequence</span> – Élément</div>
 
 |                     |                   |                      |                  |                                                                                                                                                             |
 |---------------------|-------------------|----------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Nom**          | **Type**             | **Cardin­alité** | **Description**                                                                                                                                             |
-| *::>*               | *::>*             | *VersionedChild*     | *::>*            | PATH LINK IN SEQUENCE hérite de VERSIONED CHILD                                                                                                             |
-| «PK»                | id                | LinkInSequenceIdType | 1:1              | Identifiant du PATH LINK IN SEQUENCE.                                                                                                                       |
-| «FK»                | PathLinkRef       | PathLinkRef          | 1:1              | Référence à un PATH LINK.                                                                                                                                   |
+| **Classification** | **Nom**          | **Type**             | **Cardinalité** | **Description**                                                                                                                                             |
+| *::>*               | *::>*             | *<span lang="en">VersionedChild</span>*     | *::>*            | <span lang="en">PATH LINK IN SEQUENCE</span> hérite de <span lang="en">VERSIONED CHILD</span>                                                                                                             |
+| «PK»                | id                | <span lang="en">LinkInSequenceIdType</span> | 1:1              | Identifiant du <span lang="en">PATH LINK IN SEQUENCE</span>.                                                                                                                       |
+| «FK»                | <span lang="en">PathLinkRef</span>       | <span lang="en">PathLinkRef</span>          | 1:1              | Référence à un <span lang="en">PATH LINK</span>.                                                                                                                                   |
 |                     |                   |                      |                  |                                                                                                                                                             |
-|                     | ***Reverse***     | xsd:boolean          | 0:1              | Indique si, dans le cadre de la séquence, on emprunte le cheminent en sens inverse (de *To* vers *From*). La valeur par défault est *false* (sens direct). |
+|                     | ***<span lang="en">Reverse</span>***     | xsd:<span lang="en">boolean</span>          | 0:1              | Indique si, dans le cadre de la séquence, on emprunte le cheminent en sens inverse (de *<span lang="en">To</span>* vers *<span lang="en">From</span>*). La valeur par défaut est *<span lang="en">false</span>* (sens direct). |
 |                     |                   |                      |                  |                                                                                                                                                             |
 |                     |                   |                      |                  |                                                                                                                                                             |
-|                     | ***Instruction*** | *MultilingualString* | 0:1              | Instruction de guidage sur le cheminement.                                                                                                                  |
-|                     | Label             | MultilingualString   | 0:1              | Label associé au PATH LINK IN SEQUENCE.                                                                                                                     |
+|                     | ***<span lang="en">Instruction</span>*** | *<span lang="en">MultilingualString</span>* | 0:1              | Instruction de guidage sur le cheminement.                                                                                                                  |
+|                     | <span lang="en">Label</span>             | <span lang="en">MultilingualString</span>   | 0:1              | Label associé au <span lang="en">PATH LINK IN SEQUENCE</span>.                                                                                                                     |
 |                     |                   |                      |                  |                                                                                                                                                             |
 
-<div class="table-title">NavigationPath – Élément</div>
+<div class="table-title"><span lang="en">NavigationPath</span> – Élément</div>
 
 <table>
 <colgroup>
@@ -2412,98 +2411,98 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>LinkSequence</em></td>
+<td><em><span lang="en">LinkSequence</span></em></td>
 <td><em>::></em></td>
-<td>NAVIGATION PATH hérite de LINK SEQUENCE.</td>
+<td><span lang="en">NAVIGATION PATH</span> hérite de <span lang="en">LINK SEQUENCE</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>NavigationPathIdType</td>
+<td><span lang="en">NavigationPathIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du NAVIGATION PATH.</td>
+<td>Identifiant du <span lang="en">NAVIGATION PATH</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>From</td>
-<td>PathLinkEnd</td>
+<td><span lang="en">From</span></td>
+<td><span lang="en">PathLinkEnd</span></td>
 <td>0:1</td>
-<td>Point de départ du NAVIGATION PATH. Obligatoire si le détail des PATH LINKs n’est pas fourni.</td>
+<td>Point de départ du <span lang="en">NAVIGATION PATH</span>. Obligatoire si le détail des <span lang="en">PATH LINKs</span> n’est pas fourni.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>To</td>
-<td>PathLinkEnd</td>
+<td><span lang="en">To</span></td>
+<td><span lang="en">PathLinkEnd</span></td>
 <td>0:1</td>
-<td>Destination du NAVIGATION PATH. Obligatoire si le détail des PATH LINKs n’est pas fourni.</td>
+<td>Destination du <span lang="en">NAVIGATION PATH</span>. Obligatoire si le détail des <span lang="en">PATH LINKs</span> n’est pas fourni.</td>
 </tr>
 
 <tr class="even">
 <td></td>
-<td>NavigationType</td>
-<td>NavigationTypeEnum</td>
+<td><span lang="en">NavigationType</span></td>
+<td><span lang="en">NavigationTypeEnum</span></td>
 <td>0:1</td>
-<td><p>Type de NAVIGATION PATH:</p>
+<td><p>Type de <span lang="en">NAVIGATION PATH</span>:</p>
 <ul>
 <li><blockquote>
-<p><em>hallToQuay (hall vers quai)</em></p>
+<p><em><span lang="en">hallToQuay</span> (hall vers quai)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>hallToStreet (hall vers rue)</em></p>
+<p><em><span lang="en">hallToStreet</span> (hall vers rue)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>quayToHall (quai vers hall)</em></p>
+<p><em><span lang="en">quayToHall</span> (quai vers hall)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>quayToQuay (quai vers quai)</em></p>
+<p><em><span lang="en">quayToQuay</span> (quai vers quai)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>quayToStreet (qui vers rue)</em></p>
+<p><em><span lang="en">quayToStreet</span> (qui vers rue)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>streetToHall (rue vers hal)</em></p>
+<p><em><span lang="en">streetToHall</span> (rue vers hall)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>streetToQuay (rue vers quai)</em></p>
+<p><em><span lang="en">streetToQuay</span> (rue vers quai)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>streetToSpace (rue vers espace/esplanade)</em></p>
+<p><em><span lang="en">streetToSpace</span> (rue vers espace/esplanade)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>spaceToStreet (vers esplanade vers rue)</em></p>
+<p><em><span lang="en">spaceToStreet</span> (vers esplanade vers rue)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>spaceToHall (vers esplanade vers hall)</em></p>
+<p><em><span lang="en">spaceToHall</span> (vers esplanade vers hall)</em></p>
 </blockquote></li>
 <li><blockquote>
-<p><em>hallToSpace (hall vers vers esplanade)</em></p>
+<p><em><span lang="en">hallToSpace</span> (hall vers vers esplanade)</em></p>
 </blockquote></li>
-<li><p><em>spaceToSpace</em> (<em>esplanade vers esplanade)</em></p></li>
+<li><p><em><span lang="en">spaceToSpace</span></em> (<em>esplanade vers esplanade)</em></p></li>
 </ul></td>
 </tr>
 
 <tr class="even">
-<td>«cntd»</td>
-<td>pathLinksIn­Sequence</td>
-<td>PathLinkInSequence</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">pathLinksInSequence</span></td>
+<td><span lang="en">PathLinkInSequence</span></td>
 <td>0:*</td>
-<td>PATH LINKs faisant partie du NAVIGATION PATH.</td>
+<td><span lang="en">PATH LINKs</span> faisant partie du <span lang="en">NAVIGATION PATH</span>.</td>
 </tr>
 <tr class="odd">
-<td>«cntd»</td>
-<td>transfers</td>
-<td>TransferRef</td>
+<td>«<span lang="en">cntd</span>»</td>
+<td><span lang="en">transfers</span></td>
+<td><span lang="en">TransferRef</span></td>
 <td>0:*</td>
-<td>TRANSFERs (correspondance) et ACCESS LINKs correspondant au NAVIGATION PATH et dont il décrit le cheminement détaillé (voir Profil Réseaux pour les TRANSFERs et ACCESS LINKs).</td>
+<td><span lang="en">TRANSFERs</span> (correspondance) et <span lang="en">ACCESS LINKs</span> correspondant au <span lang="en">NAVIGATION PATH</span> et dont il décrit le cheminement détaillé (voir Profil Réseaux pour les <span lang="en">TRANSFERs</span> et <span lang="en">ACCESS LINKs</span>).</td>
 </tr>
 </tbody>
 </table>
@@ -2516,24 +2515,24 @@ présentées ici.*
 
 Pour rappel, la liste des fichiers d'un export NeTEx profil France est décrite dans Éléments Communs.
 
-Une GeneralFrame de type **NETEX_ACCESSIBILITY** est utilisée pour échanger la description l'accessibilité 
-dans le fichier `accessibility.xml`. 
+Une <span lang="en">GeneralFrame</span> de type **<span lang="en">NETEX_ACCESSIBILITY</span>** est utilisée pour échanger la description l'accessibilité 
+dans le fichier <span lang="en">`accessibility.xml`</span>. 
 
 
-## TypeOfFrame : type spécifique *NETEX_ACCESSIBILITY*
+## <span lang="en">TypeOfFrame</span> : type spécifique *<span lang="en">NETEX_ACCESSIBILITY</span>*
 
-Lorsqu'une FRAME a pour TypeOfFrame la valeur `NETEX_ACCESSIBILITY`, seuls les objets de premier niveau suivants sont autorisés : 
-- SitePathLink
-- PathLink
-- PathJunction
-- NavigationPath
-- FacilitySet
-- AccessEquipment, et tous les équipements qui en héritent
-- PlaceEquipment, et tous les équipements qui en héritent
-- SignEquipment, et tous les équipements qui en héritent
-- PassengerEquipment, et tous les équipements qui en héritent
-- SiteEquipment, et tous les équipements qui en héritent
-- LocalService, et tous les équipements qui en héritent
+Lorsqu'une <span lang="en">FRAME</span> a pour <span lang="en">TypeOfFrame</span> la valeur <span lang="en">`NETEX_ACCESSIBILITY`</span>, seuls les objets de premier niveau suivants sont autorisés : 
+- <span lang="en">SitePathLink</span>
+- <span lang="en">PathLink</span>
+- <span lang="en">PathJunction</span>
+- <span lang="en">NavigationPath</span>
+- <span lang="en">FacilitySet</span>
+- <span lang="en">AccessEquipment</span>, et tous les équipements qui en héritent
+- <span lang="en">PlaceEquipment</span>, et tous les équipements qui en héritent
+- <span lang="en">SignEquipment</span>, et tous les équipements qui en héritent
+- <span lang="en">PassengerEquipment</span>, et tous les équipements qui en héritent
+- <span lang="en">SiteEquipment</span>, et tous les équipements qui en héritent
+- <span lang="en">LocalService</span>, et tous les équipements qui en héritent
 
 Les équipements sont précisés dans l'annexe 8 de ce document.
 
@@ -2574,22 +2573,22 @@ chaque type d'équipement.
 
 Dans un certain nombre de cas, des attributs complémentaires ont été
 demandés pour le profil accessibilité. Pour répondre à cette demande, on
-utilise le mécanisme d'extension par clef-valeur proposé par NeTEx (KeyList, voir
+utilise le mécanisme d'extension par clef-valeur proposé par NeTEx (<span lang="en">KeyList</span>, voir
 le profil Éléments Commun pour plus de détail sur ce mécanisme). Les
 tableaux contenants ces extensions sont présentées à la suite des
 descriptions des objets qu'ils complètent.
 
-## Passenger Service Equipment
+## <span lang="en">Passenger Service Equipment</span>
 
-<div class="table-title">PassengerEquipment (équipement pour les passagers) –</div>
+<div class="table-title"><span lang="en">PassengerEquipment</span> (équipement pour les passagers) –</div>
 Élément
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| ::>                | ::>      | *Equipment*   | ::>             | PASSENGER EQUIPMENT hérite de EQUIPMENT.                                                           |
-|                    | Fixed    | *xsd:*boolean | 0:1             | Indique si l’EQUIPMENT est fixe au sein d’une PLACE ou s’il est à bord d’un VEHICLE (donc mobile). |
+| ::>                | ::>      | *<span lang="en">Equipment</span>*   | ::>             | <span lang="en">PASSENGER EQUIPMENT</span> hérite de <span lang="en">EQUIPMENT</span>.                                                           |
+|                    | <span lang="en">Fixed</span>    | *xsd:*<span lang="en">boolean</span> | 0:1             | Indique si l’<span lang="en">EQUIPMENT</span> est fixe au sein d’une <span lang="en">PLACE</span> ou s’il est à bord d’un <span lang="en">VEHICLE</span> (donc mobile). |
 
-<div class="table-title">PassengerSafetyEquipment (équipement pour la sécurité des</div>
+<div class="table-title"><span lang="en">PassengerSafetyEquipment</span> (équipement pour la sécurité des</div>
 passagers)* *–* Élément
 
 <table>
@@ -2602,128 +2601,128 @@ passagers)* *–* Élément
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>PassengerEquipment</em></td>
+<td><em><span lang="en">PassengerEquipment</span></em></td>
 <td><em>::></em></td>
-<td>PASSENGER SAFETY EQUIPMENT hérite de PASSENGER EQUIPMENT.</td>
+<td><span lang="en">PASSENGER SAFETY EQUIPMENT</span> hérite de <span lang="en">PASSENGER EQUIPMENT</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>PassengerSafet­y­FacilityIdType</td>
+<td><span lang="en">PassengerSafet­yFacilityIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du PASSENGER SAFETY EQUIPMENT.</td>
+<td>Identifiant du <span lang="en">PASSENGER SAFETY EQUIPMENT</span>.</td>
 </tr>
 
 
 <tr class="even">
 <td></td>
-<td><em><strong>PanicButton</strong></em></td>
-<td>xsd:boolean</td>
+<td><em><strong><span lang="en">PanicButton</span></strong></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
-<td>Indique si un bouton « panic » est disponible</td>
+<td>Indique si un bouton « <span lang="en">panic</span> » est disponible</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>SosPanel</strong></em></td>
-<td>xsd:boolean</td>
+<td><em><strong><span lang="en">SosPanel</span></strong></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique si un dispositif d’appel d’urgence est disponible</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>HeightOfSosPanel</strong></em></td>
-<td>LengthType</td>
+<td><em><strong><span lang="en">HeightOfSosPanel</span></strong></em></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur du dispositif d’appel d’urgence</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>Lighting</strong></em></td>
-<td><em>LightingEnum</em></td>
+<td><em><strong><span lang="en">Lighting</span></strong></em></td>
+<td><em><span lang="en">LightingEnum</span></em></td>
 <td>0:1</td>
 <td><p>Type d’éclairage.</p>
 <ul>
-<li><p><em>wellLit</em> : adapté pour les déficients visuels</p></li>
-<li><p><em>poorlyLit</em> : éclairé mais non adapté pour les déficients visuels</p></li>
-<li><p><em>unlit</em> : non éclairé</p></li>
-<li><p><em>unknown</em> : information non disponible</p></li>
+<li><p><em><span lang="en">wellLit</span></em> : adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">poorlyLit</span></em> : éclairé mais non adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">unlit</span></em> : non éclairé</p></li>
+<li><p><em><span lang="en">unknown</span></em> : information non disponible</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Acoustic­Announcements</strong></em></td>
-<td>xsd:boolean</td>
+<td><em><strong><span lang="en">AcousticAnnouncements</span></strong></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique s’il y a des annonces acoustiques</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>Acoustic­AnnouncementsTrigger</strong></em></td>
-<td>AcousticAnnouncementsTriggerEnum</td>
+<td><em><strong><span lang="en">AcousticAnnouncementsTrigger</span></strong></em></td>
+<td><span lang="en">AcousticAnnouncementsTriggerEnum</span></td>
 <td>0:1</td>
 <td><p>Mode de déclenchement des annonces acoustiques</p>
 <ul>
-<li><p><em>onDemand</em> (à la demande)</p></li>
-<li><p><em>automatic</em> (automatique)</p></li>
+<li><p><em><span lang="en">onDemand</span></em> (à la demande)</p></li>
+<li><p><em><span lang="en">automatic</span></em> (automatique)</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>AnnouncementsTriggeringMethod</strong></em></td>
-<td>AnnouncementsTriggeringMethodEnum</td>
+<td><em><strong><span lang="en">AnnouncementsTriggeringMethod</span></strong></em></td>
+<td><span lang="en">AnnouncementsTriggeringMethodEnum</span></td>
 <td>0:1</td>
 <td><p>Méthode de déclenchement des annonces acoustiques</p>
 <ul>
-<li><p><em>presenceDetector</em> (détecteur de présence)</p></li>
-<li><p><em>app</em> (application sur smartphone)</p></li>
-<li><p><em>internetPage</em> (Page internet via <em><strong>Image</strong>-xsd:anyURI</em> hérité de EQUIPMENT)</p></li>
-<li><p><em>specificDevice (</em>télécommande<em>)</em></p></li>
-<li><p><em>pushButton </em>(bouton poussoir)</p></li>
+<li><p><em><span lang="en">presenceDetector</span></em> (détecteur de présence)</p></li>
+<li><p><em><span lang="en">app</span></em> (application sur smartphone)</p></li>
+<li><p><em><span lang="en">internetPage</span></em> (Page internet via <em><strong>Image</strong>-xsd:<span lang="en">anyURI</span></em> hérité de <span lang="en">EQUIPMENT</span>)</p></li>
+<li><p><em><span lang="en">specificDevice</span> (</em>télécommande<em>)</em></p></li>
+<li><p><em><span lang="en">pushButton</span> </em>(bouton poussoir)</p></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">SanitaryEquipment (sanitaires) – Élément</div>
+<div class="table-title"><span lang="en">SanitaryEquipment</span> (sanitaires) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                       | *PassengerEquipment*   | *::>*            | SANITARY EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
-| «PK»                | id                          | SanitaryEquipmentIdType| 0:1              | Identifiant du SANITARY EQUIPMENT.                                                          |
-|                     | **AccessibilityAssessment** | *AccessibilityAssessment*| 0:1            | <p>Caractéristiques d’accessibilité des sanitaires.</p><p>Voir le détail en Annexe.</p>     |
-|                     | Gender                      | GenderLimitationEnum   | 0:1              | Limitation de genre (homme/femme) pour l’utilisation des sanitaires.                        |
-|                     | SanitaryFacilityList        | SanitaryFacilityEnum   | 0:*              | <p>Type de sanitaire</p><ul><li><p><em>toilet</em> (toilettes)</p></li><li><p><em>wheelChairAccessToilet</em>(toilettes accessibles en fauteuil roulant)</p></li><li><p><em>shower</em> (douche)</p></li><li><p><em>washingAndChangeFacilities</em> (espace pour se nettoyer et se changer)</p></li><li><p><em>babyChange</em>(espace bébé)</p></li><li><p><em>wheelchairBabyChange</em> (espace bébé accessible en fauteuil roulant)</p></li></ul>                                                          |
-|                     | Wheelchair­TurningCircle     | LengthType             | 0:1              | Diamètre de giration pour les fauteuils roulants                                           |
-|                     | SharpsDisposal              | xsd:boolean            | 0:1              | Disponibilité d’une poubelle pour objets tranchants                                        |
-|                     | Staffing                    | StaffingEnum           | 0:1              | Présence de personnel                                                                      |
-|                     | KeyScheme                   | xsd:normalizedString   | 0:1              | <span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br /><span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span>         |
-|                     | CallButtonAvailable         | xsd:boolean            | 0:1              | Présence d’un bouton d’appel                                                               |
-|                     | SupportBarHeigth            | xsd:decimal            | 0:1              | Hauteur de la barre de support (quand il y en a une)                                       |
-|                     | LockedAccess                | xsd:boolean            | 0:1              | Indique si les toilettes peuvent être verrouillées et donc une clé (ou un outil équivalent) est nécessaire pour y accéder. |
-|                     | HandWashing                 | xsd:boolean            | 0:1              | Indique s'il y a le nécessaire pour se laver les mains avec du savon                       |
-|                     | DrinkingWater               | xsd:boolean            | 0:1              | Indique si de l'eau potable est disponible                                                 |
-|                     | ToiletsType                 | ToiletsTypeEnumeration | 0:1              | Indique le type de toilettes.<ul><li><em>seated</em> (position assise sur un siège avec une cuvette)</li><li><em>urinal</em> (urinoir utilisable uniquement debout)</li><li><em>squat</em> (position accroupie, sans siège ni cuvette)</li><li><em>seatedAndUrinal</em> (des sièges avec cuvette et des urinoirs sont disponibles)</li></ul> |
+| *::>*               | *::>*                       | *<span lang="en">PassengerEquipment</span>*   | *::>*            | <span lang="en">SANITARY EQUIPMENT</span> hérite de <span lang="en">ACCESS EQUIPMENT</span>                                               |
+| «PK»                | id                          | <span lang="en">SanitaryEquipmentIdType</span>| 0:1              | Identifiant du <span lang="en">SANITARY EQUIPMENT</span>.                                                          |
+|                     | **<span lang="en">AccessibilityAssessment</span>** | *<span lang="en">AccessibilityAssessment</span>*| 0:1            | <p>Caractéristiques d’accessibilité des sanitaires.</p><p>Voir le détail en Annexe.</p>     |
+|                     | <span lang="en">Gender</span>                      | <span lang="en">GenderLimitationEnum</span>   | 0:1              | Limitation de genre (homme/femme) pour l’utilisation des sanitaires.                        |
+|                     | <span lang="en">SanitaryFacilityList</span>        | <span lang="en">SanitaryFacilityEnum</span>   | 0:*              | <p>Type de sanitaire</p><ul><li><p><em><span lang="en">toilet</span></em> (toilettes)</p></li><li><p><em><span lang="en">wheelChairAccessToilet</span></em>(toilettes accessibles en fauteuil roulant)</p></li><li><p><em><span lang="en">shower</span></em> (douche)</p></li><li><p><em><span lang="en">washingAndChangeFacilities</span></em> (espace pour se nettoyer et se changer)</p></li><li><p><em><span lang="en">babyChange</span></em>(espace bébé)</p></li><li><p><em><span lang="en">wheelchairBabyChange</span></em> (espace bébé accessible en fauteuil roulant)</p></li></ul>                                                          |
+|                     | <span lang="en">WheelchairTurningCircle</span>     | <span lang="en">LengthType</span>             | 0:1              | Diamètre de giration pour les fauteuils roulants                                           |
+|                     | <span lang="en">SharpsDisposal</span>              | xsd:<span lang="en">boolean</span>            | 0:1              | Disponibilité d’une poubelle pour objets tranchants                                        |
+|                     | <span lang="en">Staffing</span>                    | <span lang="en">StaffingEnum</span>           | 0:1              | Présence de personnel                                                                      |
+|                     | <span lang="en">KeyScheme</span>                   | xsd:<span lang="en">normalizedString</span>   | 0:1              | <span class="hl">Texte libre décrivant les conditions d'accessibilité : peut notamment compléter les informations comme</span><br /><span class="hl">- Espaces usage, barres de transfert, position du cercle de retournement, lave main (présence, hauteur), position du papier toilette, etc.</span>         |
+|                     | <span lang="en">CallButtonAvailable</span>         | xsd:<span lang="en">boolean</span>            | 0:1              | Présence d’un bouton d’appel                                                               |
+|                     | <span lang="en">SupportBarHeigth</span>            | xsd:<span lang="en">decimal</span>            | 0:1              | Hauteur de la barre de support (quand il y en a une)                                       |
+|                     | <span lang="en">LockedAccess</span>                | xsd:<span lang="en">boolean</span>            | 0:1              | Indique si les toilettes peuvent être verrouillées et donc une clé (ou un outil équivalent) est nécessaire pour y accéder. |
+|                     | <span lang="en">HandWashing</span>                 | xsd:<span lang="en">boolean</span>            | 0:1              | Indique s'il y a le nécessaire pour se laver les mains avec du savon                       |
+|                     | <span lang="en">DrinkingWater</span>               | xsd:<span lang="en">boolean</span>            | 0:1              | Indique si de l'eau potable est disponible                                                 |
+|                     | <span lang="en">ToiletsType</span>                 | <span lang="en">ToiletsTypeEnumeration</span> | 0:1              | Indique le type de toilettes.<ul><li><em><span lang="en">seated</span></em> (position assise sur un siège avec une cuvette)</li><li><em><span lang="en">urinal</span></em> (urinoir utilisable uniquement debout)</li><li><em><span lang="en">squat</span></em> (position <span lang="en">accroupie</span>, sans siège ni cuvette)</li><li><em><span lang="en">seatedAndUrinal</span></em> (des sièges avec cuvette et des urinoirs sont disponibles)</li></ul> |
 
-<div class="table-title">RubbishDisposalEquipment (poubelles) – Élément</div>
+<div class="table-title"><span lang="en">RubbishDisposalEquipment</span> (poubelles) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                | *PassengerEquipment*            | *::>*            | RUBBISH DISPOSAL EQUIPMENT hérite de PASSENGER EQUIPMENT |
-| «PK»                | id                   | RubbishDisposal­EquipmentIdType | 1:1              | Identifiant du RUBBISH DISPOSAL EQUIPMENT.                   |
-|                     | ***SharpsDisposal*** | xsd:boolean                     | 0:\*             | Disponibilité d’une poubelle pour objets tranchants          |
+| *::>*               | *::>*                | *<span lang="en">PassengerEquipment</span>*            | *::>*            | <span lang="en">RUBBISH DISPOSAL EQUIPMENT</span> hérite de <span lang="en">PASSENGER EQUIPMENT</span> |
+| «PK»                | id                   | <span lang="en">RubbishDisposalEquipmentIdType</span> | 1:1              | Identifiant du <span lang="en">RUBBISH DISPOSAL EQUIPMENT</span>.                   |
+|                     | ***<span lang="en">SharpsDisposal</span>*** | xsd:<span lang="en">boolean</span>                     | 0:\*             | Disponibilité d’une poubelle pour objets tranchants          |
 
-## Waiting Equipment
+## <span lang="en">Waiting Equipment</span>
 
-<div class="table-title">LuggageLockerEquipment (casiers à bagages) – Élément</div>
+<div class="table-title"><span lang="en">LuggageLockerEquipment</span> (casiers à bagages) – Élément</div>
 
 <table>
 <colgroup>
@@ -2735,171 +2734,171 @@ passagers)* *–* Élément
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>SiteEquipment</em></td>
+<td><em><span lang="en">SiteEquipment</span></em></td>
 <td><em>::></em></td>
-<td>LUGGAGE LOCKER EQUIPMENT hérite de SITE EQUIPMENT</td>
+<td><span lang="en">LUGGAGE LOCKER EQUIPMENT</span> hérite de <span lang="en">SITE EQUIPMENT</span></td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>LockerEquipmentIdType</td>
+<td><span lang="en">LockerEquipmentIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du LOCKER EQUIPMENT.</td>
+<td>Identifiant du <span lang="en">LOCKER EQUIPMENT</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>NumberOfLockers</td>
-<td>xsd:integer</td>
+<td><span lang="en">NumberOfLockers</span></td>
+<td>xsd:<span lang="en">integer</span></td>
 <td>0:1</td>
 <td>Nombre de casiers</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>LockerWidth</td>
-<td>LengthType</td>
+<td><span lang="en">LockerWidth</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Largeur des casiers</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>LockerHeight</td>
-<td>LengthType</td>
+<td><span lang="en">LockerHeight</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur des casiers</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>LockerDepth</td>
-<td>LengthType</td>
+<td><span lang="en">LockerDepth</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Profondeur des casiers</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>LockerType</strong></em></td>
-<td>LuggageLockerEnum</td>
+<td><em><strong><span lang="en">LockerType</span></strong></em></td>
+<td><span lang="en">LuggageLockerEnum</span></td>
 <td>0:1</td>
 <td><p>Type de casier à bagages</p>
 <ul>
-<li><p><em>leftLuggageOffice</em> (consigne)</p></li>
-<li><p><em>lockers</em> (casier)</p></li>
-<li><p><em>bikeRack</em> (porte vélo)</p></li>
-<li><p><em>bikeCarriage</em> (garage à vélos)</p></li>
-<li><p><em>other</em> (autre)</p></li>
+<li><p><em><span lang="en">leftLuggageOffice</span></em> (consigne)</p></li>
+<li><p><em><span lang="en">lockers</span></em> (casier)</p></li>
+<li><p><em><span lang="en">bikeRack</span></em> (porte vélo)</p></li>
+<li><p><em><span lang="en">bikeCarriage</span></em> (garage à vélos)</p></li>
+<li><p><em><span lang="en">other</span></em> (autre)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>WheelcahairAccepted</strong></em></td>
-<td><em>xsd:boolean</em></td>
+<td><em><strong><span lang="en">WheelcahairAccepted</span></strong></em></td>
+<td><em>xsd:<span lang="en">boolean</span></em></td>
 <td>0:1</td>
 <td>Signale si le casier/emplacement peut contenir un fauteuil roulant</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>LockingType</strong></em></td>
-<td><em>LockingTypeEnum</em></td>
+<td><em><strong><span lang="en">LockingType</span></strong></em></td>
+<td><em><span lang="en">LockingTypeEnum</span></em></td>
 <td>0:1</td>
 <td><p>Type de verrou :</p>
 <ul>
-<li><p><em>key</em> (clé)</p></li>
-<li><p><em>keyboard</em> (clavier)</p></li>
-<li><p><em>mechanicalNumbering</em> (numérotation mécanique)</p></li>
-<li><p><em>contactless</em> (sans contact)</p></li>
-<li><p><em>phoneApp</em> (application sur téléphone)</p></li>
+<li><p><em><span lang="en">key</span></em> (clé)</p></li>
+<li><p><em><span lang="en">keyboard</span></em> (clavier)</p></li>
+<li><p><em><span lang="en">mechanicalNumbering</span></em> (numérotation mécanique)</p></li>
+<li><p><em><span lang="en">contactless</span></em> (sans contact)</p></li>
+<li><p><em><span lang="en">phoneApp</span></em> (application sur téléphone)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>BlindAccessible</strong></em></td>
-<td><em>xsd:boolean</em></td>
+<td><em><strong><span lang="en">BlindAccessible</span></strong></em></td>
+<td><em>xsd:<span lang="en">boolean</span></em></td>
 <td>0:1</td>
 <td>Indique si une personne malvoyante peut utiliser le mécanisme</td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">TrolleyStandEquipment (stand de chariots) – Élément</div>
+<div class="table-title"><span lang="en">TrolleyStandEquipment</span> (stand de chariots) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*     | *SiteEquipment*        | *::>*            | TROLLEY STAND EQUIPMENT hérite de SITE EQUIPMENT. |
-| «PK»                | id        | TrolleyEquipmentIdType | 1:1              | Identifiant du TROLLEY STAND EQUIPMENT.           |
-|                     | FreeToUse | xsd:boolean            | 0:1              | Indique si le chariot est libre d’accès           |
+| *::>*               | *::>*     | *<span lang="en">SiteEquipment</span>*        | *::>*            | <span lang="en">TROLLEY STAND EQUIPMENT</span> hérite de <span lang="en">SITE EQUIPMENT</span>. |
+| «PK»                | id        | <span lang="en">TrolleyEquipmentIdType</span> | 1:1              | Identifiant du <span lang="en">TROLLEY STAND EQUIPMENT</span>.           |
+|                     | <span lang="en">FreeToUse</span> | xsd:<span lang="en">boolean</span>            | 0:1              | Indique si le chariot est libre d’accès           |
 
-<div class="table-title">WaitingEquipment (espace d’attente) – Élément</div>
+<div class="table-title"><span lang="en">WaitingEquipment</span> (espace d’attente) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                 | *SiteEquipment* | *::>*            | WAITING EQUIPMENT hérite de SITE EQUIPMENT.               |
-|                     | Seats                 | xsd:integer     | 0:1              | Nombre de sièges dans la zone                             |
-|                     | Width                 | LengthType      | 0:1              | Largeur de l’espace d’attente                             |
-|                     | Length                | LengthType      | 0:1              | Largeur de l’espace d’attente                             |
-|                     | StepFree              | xsd:boolean     | 0:1              | Signale si l’espace d’attente contient des marches ou non |
-|                     | WheelchairAreaWidth   | LengthType      | 0:1              | Largeur de l’espace dédié aux fauteuils roulants          |
-|                     | WheelchairArea­Length | LengthType      | 0:1              | Longueur de l’espace dédié aux fauteuils roulants         |
-|                     | SmokingAllowed        | xsd:boolean     | 0:1              | Signale s’il est autorisé de fumer ou non                 |
-|                     | ***Heated***          | xsd:boolean     | 0:1              | Signale si l’espace est chauffé                         |
-|                     | ***AirConditioned***  | xsd:boolean     | 0:1              | Signale si l’espace est climatisé                       |
+| *::>*               | *::>*                 | *<span lang="en">SiteEquipment</span>* | *::>*            | <span lang="en">WAITING EQUIPMENT</span> hérite de <span lang="en">SITE EQUIPMENT</span>.               |
+|                     | <span lang="en">Seats</span>                 | xsd:<span lang="en">integer</span>     | 0:1              | Nombre de sièges dans la zone                             |
+|                     | <span lang="en">Width</span>                 | <span lang="en">LengthType</span>      | 0:1              | Largeur de l’espace d’attente                             |
+|                     | <span lang="en">Length</span>                | <span lang="en">LengthType</span>      | 0:1              | Largeur de l’espace d’attente                             |
+|                     | <span lang="en">StepFree</span>              | xsd:<span lang="en">boolean</span>     | 0:1              | Signale si l’espace d’attente contient des marches ou non |
+|                     | <span lang="en">WheelchairAreaWidth</span>   | <span lang="en">LengthType</span>      | 0:1              | Largeur de l’espace dédié aux fauteuils roulants          |
+|                     | <span lang="en">WheelchairAreaLength</span> | <span lang="en">LengthType</span>      | 0:1              | Longueur de l’espace dédié aux fauteuils roulants         |
+|                     | <span lang="en">SmokingAllowed</span>        | xsd:<span lang="en">boolean</span>     | 0:1              | Signale s’il est autorisé de fumer ou non                 |
+|                     | ***<span lang="en">Heated</span>***          | xsd:<span lang="en">boolean</span>     | 0:1              | Signale si l’espace est chauffé                         |
+|                     | ***<span lang="en">AirConditioned</span>***  | xsd:<span lang="en">boolean</span>     | 0:1              | Signale si l’espace est climatisé                       |
 
-<div class="table-title">SeatingEquipment (sièges) – Élément</div>
+<div class="table-title"><span lang="en">SeatingEquipment</span> (sièges) – Élément</div>
 
 | **Classification** | **Nom**       | **Type**               | **Cardinalité** | **Description**                               |
 | ------------------ | ------------- | ---------------------- | --------------- | --------------------------------------------- |
-| *::>*              | *::>*         | *WaitingEquipment*     | *::>*           | SEATING EQUIPMENT hérite de WAITING EQUIPMENT |
-| «PK»               | id            | SeatingEquipmentIdType | 1:1             | Identifiant du SEATING EQUIPMENT.             |
-|                    | Armrest       | xsd:boolean            | 0:1             | Signale si le siège dispose d’un accoudoir    |
-|                    | Backrest      | xsd:boolean            | 0:1             | Signale si le siège dispose d’un dossier      |
-|                    | SeatingHeight | xsd:decimal            | 0:1             | Hauteur de l’assise                           |
+| *::>*              | *::>*         | *<span lang="en">WaitingEquipment</span>*     | *::>*           | <span lang="en">SEATING EQUIPMENT</span> hérite de <span lang="en">WAITING EQUIPMENT</span> |
+| «PK»               | id            | <span lang="en">SeatingEquipmentIdType</span> | 1:1             | Identifiant du <span lang="en">SEATING EQUIPMENT</span>.             |
+|                    | <span lang="en">Armrest</span>       | xsd:<span lang="en">boolean</span>            | 0:1             | Signale si le siège dispose d’un accoudoir    |
+|                    | <span lang="en">Backrest</span>      | xsd:<span lang="en">boolean</span>            | 0:1             | Signale si le siège dispose d’un dossier      |
+|                    | <span lang="en">SeatingHeight</span> | xsd:<span lang="en">decimal</span>            | 0:1             | Hauteur de l’assise                           |
 
-<div class="table-title">ShelterEquipment (abris) – Élément</div>
+<div class="table-title"><span lang="en">ShelterEquipment</span> (abris) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                          | *WaitingEquipment*     | *::>*            | SHELTER EQUIPMENT hérite de WAITING EQUIPMENT.               |
-| «PK»                | id                             | ShelterEquipmentIdType | 1:1              | Identifiant du SHELTER EQUIPMENT.                            |
-|                     | Enclosed                       | xsd:boolean            | 0:1              | Whether shelter is enclosed for protection from weather etc. |
-|                     | ***DistanceFrom­NearestKerb*** | LengthType             | 0:1              | Distance of shelter from kerb.                               |
+| *::>*               | *::>*                          | *<span lang="en">WaitingEquipment</span>*     | *::>*            | <span lang="en">SHELTER EQUIPMENT</span> hérite de <span lang="en">WAITING EQUIPMENT</span>.               |
+| «PK»                | id                             | <span lang="en">ShelterEquipmentIdType</span> | 1:1              | Identifiant du <span lang="en">SHELTER EQUIPMENT</span>.                            |
+|                     | <span lang="en">Enclosed</span>                       | xsd:<span lang="en">boolean</span>            | 0:1              | <span lang="en">Whether shelter is enclosed for protection from weather etc.</span> |
+|                     | ***<span lang="en">DistanceFromNearestKerb</span>*** | <span lang="en">LengthType</span>             | 0:1              | <span lang="en">Distance of shelter from kerb</span>.                               |
 
-<div class="table-title">WaitingRoomEquipment (salles d’attente) – Élément</div>
+<div class="table-title"><span lang="en">WaitingRoomEquipment</span> (salles d’attente) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*           | *WaitingEquipment*          | *::>*            | WAITING ROOM EQUIPMENT hérite de WAITING EQUIPMENT            |
-| «PK»                | id              | WaitingRoom­EquipmentIdType | 1:1              | Identifiant du WAITING ROOM EQUIPMENT.                        |
-|                     | TypeOfFareClass | FareClassEnum               | 1:1              | Classe tarifaire nécessaire pour utilisaer la salle d’attente |
+| *::>*               | *::>*           | *<span lang="en">WaitingEquipment</span>*          | *::>*            | <span lang="en">WAITING ROOM EQUIPMENT</span> hérite de <span lang="en">WAITING EQUIPMENT</span>            |
+| «PK»                | id              | <span lang="en">WaitingRoomEquipmentIdType</span> | 1:1              | Identifiant du <span lang="en">WAITING ROOM EQUIPMENT</span>.                        |
+|                     | <span lang="en">TypeOfFareClass</span> | <span lang="en">FareClassEnum</span>               | 1:1              | Classe tarifaire nécessaire pour utiliser la salle d’attente |
 |                     |                 |                             |                  |                                                               |
-|                     | Facilities      | SanitaryEquipment           | 0:1              | Sanitaires disponibles dans la salle                          |
+|                     | <span lang="en">Facilities</span>      | <span lang="en">SanitaryEquipment</span>           | 0:1              | Sanitaires disponibles dans la salle                          |
 |                     |                 |                             |                  |                                                               |
 
-## Access Equipment
+## Access <span lang="en">Equipment</span>
 
-<span class="hl">Dans le cas des entrées de gare, l'attribut *Width* est rendu obligatoire par l'arrêté du 28 mai 2024. Voir le détail dans la table ci-après.</span>
+<span class="hl">Dans le cas des entrées de gare, l'attribut *<span lang="en">Width</span>* est rendu obligatoire par l'arrêté du 28 mai 2024. Voir le détail dans la table ci-après.</span>
 
-<div class="table-title">AccessEquipment (équipement d’accès) – Élément</div>
+<div class="table-title"><span lang="en">AccessEquipment</span> (équipement d’accès) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                 | *PlaceEquipment*           | *::>*            | ACCESS EQUIPMENT hérite de PLACE EQUIPMENT.                             |
-| «PK»                | id                    | PlaceAccessEquipmentIdType | 1:1              | Identifiant du ACCESS EQUIPMENT.                                        |
-|                     | ***Width***           | meters                     | 0:1              | Largeur de la porte our l’espace d’entrée                               |
-|                     | ***DirectionOfUse***  | DirectionOfUseEnum         | 0:1              | Direction dans laquelle on peut emprunter l’accès (les deux par defaut) |
-|                     | ***SafeForGuideDog*** | *xsd:boolean*              | 0:1              | Signale si l’accès est sans risqué pour un chien guide.                 |
+| *::>*               | *::>*                 | *<span lang="en">PlaceEquipment</span>*           | *::>*            | <span lang="en">ACCESS EQUIPMENT</span> hérite de <span lang="en">PLACE EQUIPMENT</span>.                             |
+| «PK»                | id                    | <span lang="en">PlaceAccessEquipmentIdType</span> | 1:1              | Identifiant du <span lang="en">ACCESS EQUIPMENT</span>.                                        |
+|                     | ***<span lang="en">Width</span>***           | <span lang="en">meters</span>                     | 0:1              | Largeur de la porte pour l’espace d’entrée                               |
+|                     | ***<span lang="en">DirectionOfUse</span>***  | <span lang="en">DirectionOfUseEnum</span>         | 0:1              | Direction dans laquelle on peut emprunter l’accès (les deux par défaut) |
+|                     | ***<span lang="en">SafeForGuideDog</span>*** | *xsd:<span lang="en">boolean</span>*              | 0:1              | Signale si l’accès est sans risqué pour un chien guide.                 |
 
 <span class="hl">En cas de présence de bandes d’interception podotactiles, il est
-obligatoire renseigner l’attribut *TactileWarningStrip* dans tout *CrossingEquipment*. 
+obligatoire renseigner l’attribut *<span lang="en">TactileWarningStrip</span>* dans tout *<span lang="en">CrossingEquipment</span>*. 
 Voir la table ci-après pour la description de cet élément.</span>
 
-<div class="table-title">CrossingEquipment (croisements et traversées) – Élément</div>
+<div class="table-title"><span lang="en">CrossingEquipment</span> (croisements et traversées) – Élément</div>
 
 <table>
 <colgroup>
@@ -2911,65 +2910,65 @@ Voir la table ci-après pour la description de cet élément.</span>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>PlaceAccessEquipment</em></td>
+<td><em><span lang="en">PlaceAccessEquipment</span></em></td>
 <td><em>::></em></td>
-<td>CROSSING hérite de ACCESS EQUIPMENT.</td>
+<td><span lang="en">CROSSING</span> hérite de <span lang="en">ACCESS EQUIPMENT</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>CrossingIdType</td>
+<td><span lang="en">CrossingIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du CROSSING.</td>
+<td>Identifiant du <span lang="en">CROSSING</span>.</td>
 </tr>
 <tr class="even">
-<td>enum</td>
-<td><em>CrossingType</em></td>
-<td>CrossingTypeEnum</td>
+<td><span lang="en">enum</span></td>
+<td><em><span lang="en">CrossingType</span></em></td>
+<td><span lang="en">CrossingTypeEnum</span></td>
 <td>0:1</td>
-<td><p>Type de CROSSING:</p>
+<td><p>Type de <span lang="en">CROSSING</span>:</p>
 <ul>
-<li><p><em>levelCrossing</em> (passage à niveau)</p></li>
-<li><p><em>barrowCrossing</em> (passage à niveau sans barrière)</p></li>
-<li><p><em>roadCrossing</em> (passage piéton, traversée de route)</p></li>
-<li><p><em>roadCrossingWithIsland</em> (passage piéton avec îlot en centre de voirie)</p></li>
-<li><p><em>other</em> (autre)</p></li>
+<li><p><em><span lang="en">levelCrossing</span></em> (passage à niveau)</p></li>
+<li><p><em><span lang="en">barrowCrossing</span></em> (passage à niveau sans barrière)</p></li>
+<li><p><em><span lang="en">roadCrossing</span></em> (passage piéton, traversée de route)</p></li>
+<li><p><em><span lang="en">roadCrossingWithIsland</span></em> (passage piéton avec îlot en centre de voirie)</p></li>
+<li><p><em><span lang="en">other</span></em> (autre)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>ZebraCrossing</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">ZebraCrossing</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
-<td>Signale la présence de zebras</td>
+<td>Signale la présence de zébras</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>PedestrianLights</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">PedestrianLights</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale la présence de feu pour les piétons</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>AcousticDeviceSensors</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">AcousticDeviceSensors</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale la présence de capteurs de signaux</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>AcousticCrossingAids</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">AcousticCrossingAids</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td><p>Signale la présence d’une aide acoustique à la traversée</p>
 <p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</span></p> 
@@ -2977,82 +2976,82 @@ Voir la table ci-après pour la description de cet élément.</span>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>TactileGuidanceStrips</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">TactileGuidanceStrips</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale la présence de bandes de guidage podotactiles</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>VisualGuidanceBands</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">VisualGuidanceBands</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale la présence de bandes de guidage visuel</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>DroppedKerb</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">DroppedKerb</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale la présence de bateaux (abaissement du trottoir) des deux côtés.</td>
 </tr>
 <tr class="even">
-<td>enum</td>
-<td><em>MarkingStatus</em></td>
-<td>MarkingStatusEnumeration</td>
+<td><span lang="en">enum</span></td>
+<td><em><span lang="en">MarkingStatus</span></em></td>
+<td><span lang="en">MarkingStatusEnumeration</span></td>
 <td>0:1</td>
 <td>État du marquage au sol de la traversée piétonne
 <ul>
-<li><p><em>good</em> (bon état)</p></li>
-<li><p><em>worn</em> (dégradation sans gravité)</p></li>
-<li><p><em>hazardous</em> (dégradation entraînant un problème de sécurité immédiat)</p></li>
-<li><p><em>none</em> (pas de marquage au sol)</p></li>
-<li><p><em>unknown</em> (inconnu)</p></li>
+<li><p><em><span lang="en">good</span></em> (bon état)</p></li>
+<li><p><em><span lang="en">worn</span></em> (dégradation sans gravité)</p></li>
+<li><p><em><span lang="en">hazardous</span></em> (dégradation entraînant un problème de sécurité immédiat)</p></li>
+<li><p><em><span lang="en">none</span></em> (pas de marquage au sol)</p></li>
+<li><p><em><span lang="en">unknown</span></em> (inconnu)</p></li>
 </ul>
 </td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em>VibratingCrossingAids</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">VibratingCrossingAids</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale la présence d'un équipement délivrant des vibrations lorsque la traversée est permise.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em>BumpCrossing</em></td>
-<td>xsd:boolean</td>
+<td><em><span lang="en">BumpCrossing</span></em></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique si la traversée est convexe ou bombée (elle monte puis descend).</td>
 </tr>
 <tr class="odd">
-<td>enum</td>
-<td><em>VisualObstacle</em></td>
-<td>VisualObstacleEnumeration</td>
+<td><span lang="en">enum</span></td>
+<td><em><span lang="en">VisualObstacle</span></em></td>
+<td><span lang="en">VisualObstacleEnumeration</span></td>
 <td>0:1</td>
 <td> Indique la présence et le type de masque visuel. Il s'agit d'un élément, positionné jusqu'à 5 mètres en amont de la traversée, et qui gêne le piéton pour voir et être vu au moment de traverser
 <ul>
-<li><p><em>carParking</em> (stationnement voiture)</p></li>
-<li><p><em>vegetation</em> (végétation)</p></li>
-<li><p><em>building</em> (bâti)</p></li>
-<li><p><em>streetFurniture</em> (mobilier urbain)</p></li>
-<li><p><em>other</em> (autre)</p></li>
-<li><p><em>none</em> (aucun)</p></li>
+<li><p><em><span lang="en">carParking</span></em> (stationnement voiture)</p></li>
+<li><p><em><span lang="en">vegetation</span></em> (végétation)</p></li>
+<li><p><em><span lang="en">building</span></em> (bâti)</p></li>
+<li><p><em><span lang="en">streetFurniture</span></em> (mobilier urbain)</p></li>
+<li><p><em><span lang="en">other</span></em> (autre)</p></li>
+<li><p><em><span lang="en">none</span></em> (aucun)</p></li>
 </ul>
 </td>
 </tr>
 <tr class="odd">
-<td>enum</td>
-<td><em>TactileWarningStrip</em></td>
-<td><em>TactileWarningEnum</em></td>
+<td><span lang="en">enum</span></td>
+<td><em><span lang="en">TactileWarningStrip</span></em></td>
+<td><em><span lang="en">TactileWarningEnum</span></em></td>
 <td>0:1</td>
-<td><p>Signale la présence de bandes d’interception podotactiles (dans le sens du PATHLINK associé) :</p>
+<td><p>Signale la présence de bandes d’interception podotactiles (dans le sens du <span lang="en">PATHLINK</span> associé) :</p>
 <ul>
-<li><p><em>TactileStripAtBeginning</em> (bande d’interception au début)</p></li>
-<li><p><em>TactileStripAtEnd</em> (bande d’interception à la fin)</p></li>
-<li><p><em>TactileStripAtBothEnds</em> (bandes d’interception des deux côtés)</p></li>
-<li><p><em>noTactileStrip</em> (pas de bande d’interception)</p></li>
-<li><p><em>unknown</em> (inconnu)</p></li>
+<li><p><em><span lang="en">TactileStripAtBeginning</span></em> (bande d’interception au début)</p></li>
+<li><p><em><span lang="en">TactileStripAtEnd</span></em> (bande d’interception à la fin)</p></li>
+<li><p><em><span lang="en">TactileStripAtBothEnds</span></em> (bandes d’interception des deux côtés)</p></li>
+<li><p><em><span lang="en">noTactileStrip</span></em> (pas de bande d’interception)</p></li>
+<li><p><em><span lang="en">unknown</span></em> (inconnu)</p></li>
 </ul>
 <p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les passages piétons.</span></p> 
 </td>
@@ -3061,74 +3060,74 @@ Voir la table ci-après pour la description de cet élément.</span>
 </table>
 
 <span class="hl">Il faudra porter une attention toute particulière aux éléments de
-description des *EntranceEquipment* (entrées), notamment sur le détail des types de porte 
-et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
-*NecessaryForceToOpen* détaillés dans la table ci-après.</span>
+description des *<span lang="en">EntranceEquipment</span>* (entrées), notamment sur le détail des types de porte 
+et plus particulièrement les attributs *<span lang="en">RevolvingDoor</span>*, *<span lang="en">AutomaticDoor</span>*,
+*<span lang="en">NecessaryForceToOpen</span>* détaillés dans la table ci-après.</span>
 
-<div class="table-title">EntranceEquipment (entrées) – Élément</div>
+<div class="table-title"><span lang="en">EntranceEquipment</span> (entrées) – Élément</div>
 
-| **Classifi­cation**  | **Nom**                     | **Type**               | **Cardin­alité**  | **Description**                                                                            |
+| **Classification**  | **Nom**                     | **Type**               | **Cardinalité**  | **Description**                                                                            |
 | ------------------- | --------------------------- | ---------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
-| *::>*               | *::>*                       | PlaceAccessEquipment   | *::>*            | ENTRANCE EQUIPMENT hérite de ACCESS EQUIPMENT                                              |
-| «PK»                | id                          | EntranceEquipmentIdType| 1:1              | Identifiant du ENTRANCE EQUIPMENT                                                          |
-|                     | Door                        | xsd:boolean            | 0:1              | Signale la présence d’une porte (*false* indique qu’il n’y a pas de porte)                 |
-|                     | KeptOpen                    | xsd:boolean            | 0:1              | Signale si la porte est conservée en position ouverte (pendant les heures d’ouverture)     |
-|                     | RevolvingDoor               | xsd:boolean            | 0:1              | Signale une porte tambour (en complément de **Door**)                                      |
-|                     | Barrier                     | xsd:boolean            | 0:1              | Signale la présence d’une barrière physique pour le franchissement de la porte             |
-|                     | NumberOfGates               | xsd:integer            | 0:1              | Nombre de portes (ou passages)                                                             |
-|                     | Staffing                    | xsd:boolean            | 0:1              | Signale la présence d’agents du personnel à l’entrée                                       |
-|                     | EntranceRequires­Staffing    | xsd:boolean            | 0:1              | Signale que le passage requiert la présence d’agents du personnel                          |
-|                     | EntranceRequiresTicket      | xsd:boolean            | 0:1              | Signale que le passage requiert un ticket                                                  |
-|                     | AcousticSensor              | xsd:boolean            | 0:1              | Signale la présence de capteurs acoustiques                                                |
-|                     | AutomaticDoor               | xsd:boolean            | 0:1              | Signale que la porte est à ouverture/fermeture automatique<br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
-|                     | DropKerbOutside             | xsd:boolean            | 0:1              | Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage      |
-|                     | GlassDoor                   | xsd:boolean            | 0:1              | Signale la présence d’une porte vitrée                                                     |
-|                     | WheelchairPassable          | xsd:boolean            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant.                              |
-|                     | WheelchairUnaided           | xsd:boolean            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant sans aide.                    |
-|                     | EntranceAttention           | EntranceAttention­Enum  | 0:1              | Nature de la sonnette ou du signal d’appel <li><p><em>doorbell</em> (sonnette)</p></li> <li><p><em>helpPoint</em> (point d'aide)</p></li><li><p><em>intercom</em> (intercom)</p></li><li><p><em>none</em> (aucun)</p></li><li><p><em>other</em> (autre)</p></li>                 |
-|                     | AudioOrVideoIntercom        | xsd:boolean            | 0:1              | Signale la necessité d’une communication audio ou vidéo pour pouvoir entrer                |
-|                     | Airlock                     | xsd:boolean            | 0:1              | Signale la présence d’un sas                                                               |
-|                     | DoorstepMark                | xsd:boolean            | 0:1              | Signale la présente d’une marque de seuil (de franchissement) podotactile.                 |
-|                     | AudioPassthroughIndicator   | xsd:boolean            | 0:1              | Signale la présente d’un signal sonore de franchissement.                                  |
-|                     | NecessaryForceToOpen        | NecessaryForceEnum     | 0:1              | Force nécessaire pour l’ouverture de la porte <li><p><em>noForce</em> (aucune force nécessaire)</p></li> <li><p><em>lightForce</em> (force légère)</p></li><li><p><em>mediumForce</em> (force moyenne)</p></li><li><p><em>heavyForce</em> (force importante)</p></li><li><p><em>unknown</em> (inconnu)</p></li><br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
-|                     | DoorHandleOutside           | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'extérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
-|                     | DoorHandleInside            | DoorTypeEnumeration    | 0:1              | Caractéristiques de la poignée de porte à l'intérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em>button</em> (bouton)</p></li><li><p><em>grabRail</em> (poignée de tirage)</p></li><li><p><em>windowLever</em> (levier de fenêtre)</p></li><li><p><em>vertical</em> (bâton de maréchal, barre verticale)</p></li><li><p><em>knob</em> (poignée ronde)</p></li><li><p><em>crashBar</em> (barre antipanique)</p></li><li><p><em>other</em> (autre type de poignée)</p></li><li><p><em>none</em> (pas de poignée)</p></li>                |
-|                     | RampDoorbell                | xsd:boolean            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
-|                     | Recognizable                | xsd:boolean            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *false* lorsque l'entrée est difficile à repérer.                              |
-|                     | TurningSpacePosition        | EntranceTurningSpacePositionEnumeration   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em>outside</em> (à l'extérieur)</p></li> <li><p><em>inside</em> (à l'intérieur)</p></li><li><p><em>insideAndOutside</em> (à l'intérieur et à l'extérieur)</p></li><li><p><em>none</em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
-|                     | WheelchairTurningCircle     | LengthType            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considèrera le diamètre du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
+| *::>*               | *::>*                       | <span lang="en">PlaceAccessEquipment</span>   | *::>*            | <span lang="en">ENTRANCE EQUIPMENT</span> hérite de <span lang="en">ACCESS EQUIPMENT</span>                                              |
+| «PK»                | id                          | <span lang="en">EntranceEquipmentIdType</span>| 1:1              | Identifiant du <span lang="en">ENTRANCE EQUIPMENT</span>                                                          |
+|                     | <span lang="en">Door</span>                        | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présence d’une porte (*<span lang="en">false</span>* indique qu’il n’y a pas de porte)                 |
+|                     | <span lang="en">KeptOpen</span>                    | xsd:<span lang="en">boolean</span>            | 0:1              | Signale si la porte est conservée en position ouverte (pendant les heures d’ouverture)     |
+|                     | <span lang="en">RevolvingDoor</span>               | xsd:<span lang="en">boolean</span>            | 0:1              | Signale une porte tambour (en complément de **<span lang="en">Door</span>**)                                      |
+|                     | <span lang="en">Barrier</span>                     | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présence d’une barrière physique pour le franchissement de la porte             |
+|                     | <span lang="en">NumberOfGates</span>               | xsd:<span lang="en">integer</span>            | 0:1              | Nombre de portes (ou passages)                                                             |
+|                     | <span lang="en">Staffing</span>                    | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présence d’agents du personnel à l’entrée                                       |
+|                     | <span lang="en">EntranceRequiresStaffing</span>    | xsd:<span lang="en">boolean</span>            | 0:1              | Signale que le passage requiert la présence d’agents du personnel                          |
+|                     | <span lang="en">EntranceRequiresTicket</span>      | xsd:<span lang="en">boolean</span>            | 0:1              | Signale que le passage requiert un ticket                                                  |
+|                     | <span lang="en">AcousticSensor</span>              | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présence de capteurs acoustiques                                                |
+|                     | <span lang="en">AutomaticDoor</span>               | xsd:<span lang="en">boolean</span>            | 0:1              | Signale que la porte est à ouverture/fermeture automatique<br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | <span lang="en">DropKerbOutside</span>             | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présence de bateaux (abaissement du trottoir) au franchissement du passage      |
+|                     | <span lang="en">GlassDoor</span>                   | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présence d’une porte vitrée                                                     |
+|                     | <span lang="en">WheelchairPassable</span>          | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant.                              |
+|                     | <span lang="en">WheelchairUnaided</span>           | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la possibilité de franchissement en fauteuil roulant sans aide.                    |
+|                     | <span lang="en">EntranceAttention</span>           | <span lang="en">EntranceAttentionEnum</span>  | 0:1              | Nature de la sonnette ou du signal d’appel <li><p><em><span lang="en">doorbell</span></em> (sonnette)</p></li> <li><p><em><span lang="en">helpPoint</span></em> (point d'aide)</p></li><li><p><em><span lang="en">intercom</span></em> (<span lang="en">intercom</span>)</p></li><li><p><em><span lang="en">none</span></em> (aucun)</p></li><li><p><em><span lang="en">other</span></em> (autre)</p></li>                 |
+|                     | <span lang="en">AudioOrVideoIntercom</span>        | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la nécessité d’une communication audioou vidéo pour pouvoir entrer                |
+|                     | <span lang="en">Airlock</span>                     | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présence d’un sas                                                               |
+|                     | <span lang="en">DoorstepMark</span>                | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présente d’une marque de seuil (de franchissement) podotactile.                 |
+|                     | <span lang="en">AudioPassthroughIndicator</span>   | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la présente d’un signal sonore de franchissement.                                  |
+|                     | <span lang="en">NecessaryForceToOpen</span>        | <span lang="en">NecessaryForceEnum</span>     | 0:1              | Force nécessaire pour l’ouverture de la porte <li><p><em><span lang="en">noForce</span></em> (aucune force nécessaire)</p></li> <li><p><em><span lang="en">lightForce</span></em> (force légère)</p></li><li><p><em><span lang="en">mediumForce</span></em> (force moyenne)</p></li><li><p><em><span lang="en">heavyForce</span></em> (force importante)</p></li><li><p><em><span lang="en">unknown</span></em> (inconnu)</p></li><br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les entrées de gare.</span>                 |
+|                     | <span lang="en">DoorHandleOutside</span>           | <span lang="en">DoorTypeEnumeration</span>    | 0:1              | Caractéristiques de la poignée de porte à l'extérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em><span lang="en">button</span></em> (bouton)</p></li><li><p><em><span lang="en">grabRail</span></em> (poignée de tirage)</p></li><li><p><em><span lang="en">windowLever</span></em> (levier de fenêtre)</p></li><li><p><em><span lang="en">vertical</span></em> (bâton de maréchal, barre verticale)</p></li><li><p><em><span lang="en">knob</span></em> (poignée ronde)</p></li><li><p><em><span lang="en">crashBar</span></em> (barre antipanique)</p></li><li><p><em><span lang="en">other</span></em> (autre type de poignée)</p></li><li><p><em><span lang="en">none</span></em> (pas de poignée)</p></li>                |
+|                     | <span lang="en">DoorHandleInside</span>            | <span lang="en">DoorTypeEnumeration</span>    | 0:1              | Caractéristiques de la poignée de porte à l'intérieur <li><p><em>lever</em> (poignée classique)</p></li> <li><p><em><span lang="en">button</span></em> (bouton)</p></li><li><p><em><span lang="en">grabRail</span></em> (poignée de tirage)</p></li><li><p><em><span lang="en">windowLever</span></em> (levier de fenêtre)</p></li><li><p><em><span lang="en">vertical</span></em> (bâton de maréchal, barre verticale)</p></li><li><p><em><span lang="en">knob</span></em> (poignée ronde)</p></li><li><p><em><span lang="en">crashBar</span></em> (barre antipanique)</p></li><li><p><em><span lang="en">other</span></em> (autre type de poignée)</p></li><li><p><em><span lang="en">none</span></em> (pas de poignée)</p></li>                |
+|                     | <span lang="en">RampDoorbell</span>                | xsd:<span lang="en">boolean</span>            | 0:1              | Lorsqu'il y a une rampe amovible pour accéder à l'entrée, indique la présence d’une sonnette au droit de la rampe                 |
+|                     | <span lang="en">Recognizable</span>                | xsd:<span lang="en">boolean</span>            | 0:1              | Indique si l’entrée est facilement repérable dans son environnement en tenant compte de l'architecture, de la signalisation et du contraste visuel. On met *<span lang="en">false</span>* lorsque l'entrée est difficile à repérer.                              |
+|                     | <span lang="en">TurningSpacePosition</span>        | <span lang="en">EntranceTurningSpacePositionEnumeration</span>   | 0:1              | Indique la présence, à proximité immédiate de la porte, d'un espace pour la manœuvrer correctement (au minimum un diamètre d'1,5m). <li><p><em><span lang="en">outside</span></em> (à l'extérieur)</p></li> <li><p><em><span lang="en">inside</span></em> (à l'intérieur)</p></li><li><p><em><span lang="en">insideAndOutside</span></em> (à l'intérieur et à l'extérieur)</p></li><li><p><em><span lang="en">none</span></em> (pas d'espace de manœuvre)</p></li> <br><br><span class="hl">Voir l'annexe informative pour plus d'informations sur le remplissage de l'attribut.</span>                                  |
+|                     | <span lang="en">WheelchairTurningCircle</span>     | <span lang="en">LengthType</span>            | 0:1              | Diamètre de giration pour les fauteuils roulants <br><span class="hl">On considérera le diamètre du plus petit espace de manœuvre (intérieur ou extérieur).</span>                              |
 
-<div class="table-title">QueueingEquipment (gestion de queue) – Élément</div>
+<div class="table-title"><span lang="en">QueueingEquipment</span> (gestion de queue) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                       | *PlaceAccessEquipment* | *::>*            | QUEUING EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
-| «PK»                | *id*                        | QueuingEqupmentIdType  | 0:1              | Identifiant du QUEUING EQUIPMENT.                                                          |
-|                     | *RailedQueue*               | xsd:boolean            | 0:1              | Indique que la queue est guidée par une barrière ou une rampe                              |
-|                     | *TicketedQueue*             | xsd:boolean            | 0:1              | Indique que l’ordre dans la queue est géré par un système de tickets                       |
-|                     | ***DisabledPriority***      | xsd:boolean            | 0:1              | Indique une priorité d’accès aux personnes handicapées (et généralement femmes enceintes). |
-|                     | ***QueuingSeatedPossible*** | xsd:boolean            | 0:1              | Indique la possibilité d’être assis en faisant la queue                                    |
+| *::>*               | *::>*                       | *<span lang="en">PlaceAccessEquipment</span>* | *::>*            | <span lang="en">QUEUING EQUIPMENT</span> hérite de <span lang="en">ACCESS EQUIPMENT</span>                                               |
+| «PK»                | *id*                        | <span lang="en">QueuingEqupmentIdType</span>  | 0:1              | Identifiant du <span lang="en">QUEUING EQUIPMENT</span>.                                                          |
+|                     | *<span lang="en">RailedQueue</span>*               | xsd:<span lang="en">boolean</span>            | 0:1              | Indique que la queue est guidée par une barrière ou une rampe                              |
+|                     | *<span lang="en">TicketedQueue</span>*             | xsd:<span lang="en">boolean</span>            | 0:1              | Indique que l’ordre dans la queue est géré par un système de tickets                       |
+|                     | ***<span lang="en">DisabledPriority</span>***      | xsd:<span lang="en">boolean</span>            | 0:1              | Indique une priorité d’accès aux personnes handicapées (et généralement femmes enceintes). |
+|                     | ***<span lang="en">QueuingSeatedPossible</span>*** | xsd:<span lang="en">boolean</span>            | 0:1              | Indique la possibilité d’être assis en faisant la queue                                    |
 
-<div class="table-title">RampEquipment (rampes) – Élément</div>
+<div class="table-title"><span lang="en">RampEquipment</span> (rampes) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                       | *PlaceAccessEquipment*       | *::>*            | RAMP EQUIPMENT hérite de ACCESS EQUIPMENT                                               |
-| «PK»                | *id*                        | RampIdType                  | 0:1              | Identifiant du RAMP EQUIPMENT                                                           |
-|                     | *Length*                    | LengthType                   | 0:1              | Longueur de la rampe                                                                    |
-|                     | *Gradient*                  | xsd:integer                  | 0:1              | Inclinaison de la rampe                                                                 |
-| «enum»              | *GradientType*              | GradientType                 | 0:1              | Inclinaison de la rampe en valeurs codées : <br><ul><li><em>verySteep</em> (très pentu)</li><li><em>steep</em> (pentu)</li><li><em>medium</em> (pente moyenne)</li><li><em>gentle</em> (pente légère)</li><li><em>level</em> (plat)</li></ul>                                             |
-|                     | *Pedestal*                  | LengthType                   | 0:1              | Indique si la rampe repose sur un pied central                                          |
-|                     | *HandrailHeight*            | xsd:boolean                  | 0:1              | Hauteur de la main courante                                                             |
-| «enum»              | *HandrailType*              | HandrailEnumeration          | 0:1              | Type de main courante : <br><ul><li><p><em>none</em> (aucune)</p></li><li><p><em>oneSide</em> (d’un côté uniquement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li></ul>                          |
-|                     | *TactileGuidance­Strips*     | xsd:boolean                  | 0:1              | Indique si la rampe dispose d’une bande de guidage podotactile                          |
-|                     | *VisualGuidance­Bands*       | xsd:boolean                  | 0:1              | Indique si la rampe dispose de bandes de guidage visuelles                              |
-|                     | *Temporary*                 | xsd:boolean                  | 0:1              | Signale que la rampe est temporaire                                                     |
-|                     | *RestStopDistance*          | xsd:boolean                  | 0:1              | Distance maximale entre deux paliers de repos <br><span class="hl">Il est recommandé d'implanter un palier de repos en bas et en haut de chaque rampe, ainsi que tous les 10 mètres en cas de longue rampe.</span>  |
-| «enum»              | *SafetyEdge*                | SafetyEdgeEnum               | 0:1              | Indique la présence d'une bordure chasse-roue. Il s'agit d'une bordure latérale visant à bloquer la roue du fauteuil roulant pour éviter les chutes. <br><ul><li><em>oneSide </em>(d’un côté uniquement)</li><li><em>bothSides </em>(des deux côtés)</li><li><em>none </em>(pas de chasse-roue)</li></ul>   |
-| «enum»              | *TurningSpace*              | RampTurningSpacePositionEnum | 0:1              | Indique la présence d'une aire de rotation (ou espace de manœuvre) UFR en bas et/ou en haut de la rampe : <br><ul><li><em>bottom </em>(en bas uniquement)</li><li><em>top </em>(en haut uniquement)</li><li><em>topAndBottom </em>(en haut et en bas)</li><li><em>none</em> (pas d'aire de rotation)</li><li><em>level</em> (plat)</li></ul>      |
+| *::>*               | *::>*                       | *<span lang="en">PlaceAccessEquipment</span>*       | *::>*            | <span lang="en">RAMP EQUIPMENT</span> hérite de <span lang="en">ACCESS EQUIPMENT</span>                                               |
+| «PK»                | *id*                        | <span lang="en">RampIdType</span>                  | 0:1              | Identifiant du <span lang="en">RAMP EQUIPMENT</span>                                                           |
+|                     | *<span lang="en">Length</span>*                    | <span lang="en">LengthType</span>                   | 0:1              | Longueur de la rampe                                                                    |
+|                     | *<span lang="en">Gradient</span>*                  | xsd:<span lang="en">integer</span>                  | 0:1              | Inclinaison de la rampe                                                                 |
+| «<span lang="en">enum</span>»              | *<span lang="en">GradientType</span>*              | <span lang="en">GradientType</span>                 | 0:1              | Inclinaison de la rampe en valeurs codées : <br><ul><li><em><span lang="en">verySteep</span></em> (très pentu)</li><li><em><span lang="en">steep</span></em> (pentu)</li><li><em><span lang="en">medium</span></em> (pente moyenne)</li><li><em><span lang="en">gentle</span></em> (pente légère)</li><li><em><span lang="en">level</span></em> (plat)</li></ul>                                             |
+|                     | *<span lang="en">Pedestal</span>*                  | <span lang="en">LengthType</span>                   | 0:1              | Indique si la rampe repose sur un pied central                                          |
+|                     | *<span lang="en">HandrailHeight</span>*            | xsd:<span lang="en">boolean</span>                  | 0:1              | Hauteur de la main courante                                                             |
+| «<span lang="en">enum</span>»              | *<span lang="en">HandrailType</span>*              | <span lang="en">HandrailEnumeration</span>          | 0:1              | Type de main courante : <br><ul><li><p><em><span lang="en">none</span></em> (aucune)</p></li><li><p><em><span lang="en">oneSide</span></em> (d’un côté uniquement)</p></li><li><p><em><span lang="en">bothSides</span></em> (des deux côtés)</p></li></ul>                          |
+|                     | *<span lang="en">TactileGuidanceStrips</span>*     | xsd:<span lang="en">boolean</span>                  | 0:1              | Indique si la rampe dispose d’une bande de guidage podotactile                          |
+|                     | *<span lang="en">VisualGuidanceBands</span>*       | xsd:<span lang="en">boolean</span>                  | 0:1              | Indique si la rampe dispose de bandes de guidage visuelles                              |
+|                     | *<span lang="en">Temporary</span>*                 | xsd:<span lang="en">boolean</span>                  | 0:1              | Signale que la rampe est temporaire                                                     |
+|                     | *<span lang="en">RestStopDistance</span>*          | xsd:<span lang="en">boolean</span>                  | 0:1              | Distance maximale entre deux paliers de repos <br><span class="hl">Il est recommandé d'implanter un palier de repos en bas et en haut de chaque rampe, ainsi que tous les 10 mètres en cas de longue rampe.</span>  |
+| «<span lang="en">enum</span>»              | *<span lang="en">SafetyEdge</span>*                | <span lang="en">SafetyEdgeEnum</span>               | 0:1              | Indique la présence d'une bordure chasse-roue. Il s'agit d'une bordure latérale visant à bloquer la roue du fauteuil roulant pour éviter les chutes. <br><ul><li><em><span lang="en">oneSide</span> </em>(d’un côté uniquement)</li><li><em><span lang="en">bothSides</span> </em>(des deux côtés)</li><li><em><span lang="en">none</span> </em>(pas de chasse-roue)</li></ul>   |
+| «<span lang="en">enum</span>»              | *<span lang="en">TurningSpace</span>*              | <span lang="en">RampTurningSpacePositionEnum</span> | 0:1              | Indique la présence d'une aire de rotation (ou espace de manœuvre) UFR en bas et/ou en haut de la rampe : <br><ul><li><em><span lang="en">bottom</span> </em>(en bas uniquement)</li><li><em>top </em>(en haut uniquement)</li><li><em><span lang="en">topAndBottom</span> </em>(en haut et en bas)</li><li><em><span lang="en">none</span></em> (pas d'aire de rotation)</li><li><em><span lang="en">level</span></em> (plat)</li></ul>      |
 
-<div class="table-title">PlaceLighting (éclairage) – Élément</div>
+<div class="table-title"><span lang="en">PlaceLighting</span> (éclairage) – Élément</div>
 
 <table>
 <colgroup>
@@ -3140,65 +3139,65 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>PlaceEquipment</em></td>
+<td><em><span lang="en">PlaceEquipment</span></em></td>
 <td><em>::></em></td>
-<td>PLACE LIGHTING hérite de PLACE EQUIPMENT</td>
+<td><span lang="en">PLACE LIGHTING</span> hérite de <span lang="en">PLACE EQUIPMENT</span></td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>PlaceLightingIdType</td>
+<td><span lang="en">PlaceLightingIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du PLACE LIGHTING.</td>
+<td>Identifiant du <span lang="en">PLACE LIGHTING</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Lighting</td>
-<td><em>LightingEnum</em></td>
+<td><span lang="en">Lighting</span></td>
+<td><em><span lang="en">LightingEnum</span></em></td>
 <td>0:1</td>
 <td><p>Type d’éclairage</p>
 <ul>
-<li><p><em>wellLit</em> : adapté pour les déficients visuels</p></li>
-<li><p><em>poorlyLit</em> : éclairé mais non adapté pour les déficients visuels</p></li>
-<li><p><em>unlit</em> : non éclairé</p></li>
-<li><p><em>unknown</em> : information non disponible</p></li>
+<li><p><em><span lang="en">wellLit</span></em> : adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">poorlyLit</span></em> : éclairé mais non adapté pour les déficients visuels</p></li>
+<li><p><em><span lang="en">unlit</span></em> : non éclairé</p></li>
+<li><p><em><span lang="en">unknown</span></em> : information non disponible</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>AlwaysLit</td>
-<td>xsd:boolean</td>
+<td><span lang="en">AlwaysLit</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique si le lieu est éclairé en permanence.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>LightingMethod</strong></em></td>
-<td><em>LightingMethodEnum</em></td>
+<td><em><strong><span lang="en">LightingMethod</span></strong></em></td>
+<td><em><span lang="en">LightingMethodEnum</span></em></td>
 <td>0:1</td>
 <td><p>Méthode d’activation de l’éclairage :</p>
 <ul>
-<li><p><em>movementDetector</em> (détecteur de movements)</p></li>
-<li><p><em>stepingDetector</em> (capteur au sol)</p></li>
-<li><p><em>switchOnTheWall</em> (interrupteur sur le mur)</p></li>
-<li><p><em>atDoorOpening</em> (à l’ouverture de la porte)</p></li>
-<li><p><em>onlyAtNight</em> (seulement la nuit, activation automatique)</p></li>
-<li><p><em>other</em> (autre)</p></li>
+<li><p><em><span lang="en">movementDetector</span></em> (détecteur de mouvements)</p></li>
+<li><p><em><span lang="en">stepingDetector</span></em> (capteur au sol)</p></li>
+<li><p><em><span lang="en">switchOnTheWall</span></em> (interrupteur sur le mur)</p></li>
+<li><p><em><span lang="en">atDoorOpening</span></em> (à l’ouverture de la porte)</p></li>
+<li><p><em><span lang="en">onlyAtNight</span></em> (seulement la nuit, activation automatique)</p></li>
+<li><p><em><span lang="en">other</span></em> (autre)</p></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">RoughSurface (surface irrégulière) – Élément</div>
+<div class="table-title"><span lang="en">RoughSurface</span> (surface irrégulière) – Élément</div>
 
 <table>
 <colgroup>
@@ -3210,50 +3209,50 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>PlaceEquipment</em></td>
+<td><em><span lang="en">PlaceEquipment</span></em></td>
 <td><em>::></em></td>
-<td>ROUGH SURFACE hérite de PLACE EQUIPMENT.</td>
+<td><span lang="en">ROUGH SURFACE</span> hérite de <span lang="en">PLACE EQUIPMENT</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>SurfaceIdType</td>
+<td><span lang="en">SurfaceIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du ROUGH SURFACE.</td>
+<td>Identifiant du <span lang="en">ROUGH SURFACE</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>SurfaceType</td>
-<td>SurfaceEnum</td>
+<td><span lang="en">SurfaceType</span></td>
+<td><span lang="en">SurfaceEnum</span></td>
 <td>1:1</td>
-<td><p>Type of Surface.</p>
+<td><p>Type de Surface.</p>
 <ul>
-<li><p><em>asphalt</em> (asphalte)</p></li>
-<li><p><em>bricks</em> (brique)</p></li>
-<li><p><em>cobbles</em> (pavés)</p></li>
-<li><p><em>earth</em> (terre)</p></li>
-<li><p><em>grass</em> (gazon)</p></li>
-<li><p><em>looseSurface</em> (surface instable)</p></li>
-<li><p><em>pavingStones</em> (pierres)</p></li>
-<li><p><em>roughSurface</em> (surface irrégulière)</p></li>
-<li><p><em>smooth</em> (lisse)</p></li>
-<li><p><em>other</em> (autre)</p></li>
+<li><p><em><span lang="en">asphalt</span></em> (asphalte)</p></li>
+<li><p><em><span lang="en">bricks</span></em> (brique)</p></li>
+<li><p><em><span lang="en">cobbles</span></em> (pavés)</p></li>
+<li><p><em><span lang="en">earth</span></em> (terre)</p></li>
+<li><p><em><span lang="en">grass</span></em> (gazon)</p></li>
+<li><p><em><span lang="en">looseSurface</span></em> (surface instable)</p></li>
+<li><p><em><span lang="en">pavingStones</span></em> (pierres)</p></li>
+<li><p><em><span lang="en">roughSurface</span></em> (surface irrégulière)</p></li>
+<li><p><em><span lang="en">smooth</span></em> (lisse)</p></li>
+<li><p><em><span lang="en">other</span></em> (autre)</p></li>
 </ul></td>
 </tr>
 
 </tbody>
 </table>
 
-<div class="table-title">StaircaseEquipment (escalier) – Élément </div>
+<div class="table-title"><span lang="en">StaircaseEquipment</span> (escalier) – Élément </div>
 
 <table>
 <colgroup>
@@ -3265,241 +3264,241 @@ et plus particulièrement les attributs *RevolvingDoor*, *AutomaticDoor*,
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>StairEquipment</em></td>
+<td><em><span lang="en">StairEquipment</span></em></td>
 <td><em>::></em></td>
-<td>STAIRCASE hérite de STAIR EQUIPMENT (qui hérite de ACCESS EQUIPMENT).</td>
+<td><span lang="en">STAIRCASE</span> hérite de <span lang="en">STAIR EQUIPMENT</span> (qui hérite de <span lang="en">ACCESS EQUIPMENT</span>).</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>StaircaseIdType</td>
+<td><span lang="en">StaircaseIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du STAIRCASE.</td>
+<td>Identifiant du <span lang="en">STAIRCASE</span>.</td>
 </tr>
 <tr class="even">
-<td rowspan="13">StairGroup</td>
-<td>Depth</td>
-<td>LengthType</td>
+<td rowspan="13"><span lang="en">StairGroup</span></td>
+<td><span lang="en">Depth</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur (profondeur) de l’escalier</td>
 </tr>
 <tr class="odd">
-<td>NumberOfSteps</td>
-<td>xsd:integer</td>
+<td><span lang="en">NumberOfSteps</span></td>
+<td>xsd:<span lang="en">integer</span></td>
 <td>0:1</td>
 <td>Nombre de marches</td>
 </tr>
 <tr class="even">
-<td>StepHeight</td>
-<td>LengthType</td>
+<td><span lang="en">StepHeight</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur des marches (individuellement)</td>
 </tr>
 <tr class="odd">
-<td>StepLength</td>
-<td>LengthType</td>
+<td><span lang="en">StepLength</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Profondeur de la marche</td>
 </tr>
 <tr class="even">
-<td>StepColourContrast</td>
-<td>xsd:boolean</td>
+<td><span lang="en">StepColourContrast</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td><p>Indique la présence d'une bande visuellement contrastée permettant de bien distinguer le bord des marches.</p>
 <p><span class="hl">Les bandes doivent être présentes sur chaque marche, sur l'intégralité de la largeur des marches et d'une profondeur de 2 cm.</span></p>
 </td>
 </tr>
 <tr class="odd">
-<td>StepCondition</td>
-<td>StepConditionEnumeration</td>
+<td><span lang="en">StepCondition</span></td>
+<td><span lang="en">StepConditionEnumeration</span></td>
 <td>0:1</td>
 <td><p>Indique la régularité des marches</p><p>Valeurs possibles : </p>
 <ul>
-<li><p><em>even</em> (l'escalier dispose de marches régulières, toutes de même hauteur et profondeur)</p></li>
-<li><p><em>uneven</em> (les marches ne sont pas toutes de même taille, certaines peuvent être légèrement en pente)</p></li>
-<li><p><em>rough</em> (les marches sont de taille très différentes, certaines peuvent être manquantes ou fortement en pente)</p></li>
+<li><p><em><span lang="en">even</span></em> (l'escalier dispose de marches régulières, toutes de même hauteur et profondeur)</p></li>
+<li><p><em><span lang="en">uneven</span></em> (les marches ne sont pas toutes de même taille, certaines peuvent être légèrement en pente)</p></li>
+<li><p><em><span lang="en">rough</span></em> (les marches sont de taille très différentes, certaines peuvent être manquantes ou fortement en pente)</p></li>
 </ul>
 </td>
 </tr>
 <tr class="even">
-<td>HandrailType</td>
-<td><em>HandrailEnum</em></td>
+<td><span lang="en">HandrailType</span></td>
+<td><em><span lang="en">HandrailEnum</span></em></td>
 <td>0:1</td>
 <td><p>Type de main courante</p>
 <ul>
-<li><p><em>none</em> (aucun)</p></li>
-<li><p><em>oneSide</em> (d’un côté seulement)</p></li>
-<li><p><em>bothSides</em> (des deux côtés)</p></li>
+<li><p><em><span lang="en">none</span></em> (aucun)</p></li>
+<li><p><em><span lang="en">oneSide</span></em> (d’un côté seulement)</p></li>
+<li><p><em><span lang="en">bothSides</span></em> (des deux côtés)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td>HandrailHeight</td>
-<td>LengthType</td>
+<td><span lang="en">HandrailHeight</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur de la main courante (à partir de la marche)</td>
 </tr>
 <tr class="even">
-<td>LowerHandrailHeight</td>
-<td>LengthType</td>
+<td><span lang="en">LowerHandrailHeight</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur d’une éventuelle seconde main courante abaissée</td>
 </tr>
 <tr class="odd">
-<td>TactileWriting</td>
-<td>xsd:boolean</td>
+<td><span lang="en">TactileWriting</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique si du texte peut être lu de manière tactile sur la main courante de l'escalier</td>
 </tr>
 <tr class="even">
-<td>StairRamp</td>
-<td>StairRampEnumeration</td>
+<td><span lang="en">StairRamp</span></td>
+<td><span lang="en">StairRampEnumeration</span></td>
 <td>0:1</td>
 <td><p>Indique la présence d'une rampe (à vélo, à bagage, etc) au sein de l'escalier</p><p>Valeurs possibles : </p>
 <ul>
-<li><p><em>bicycle</em> (goulotte ou rampe sur le côté des marches, qui peut être utilisée pour pousser un vélo)</p></li>
-<li><p><em>luggage</em> (rampe à valise, permettant de pousser des bagages)</p></li>
-<li><p><em>stroller</em> (rampe à poussette : une paire de rampes peu larges, avec des petites marches entre les deux)</p></li>
-<li><p><em>other</em> (un autre type de rampe dans l'escalier)</p></li>
-<li><p><em>none</em> (pas de rampe dans l'escalier)</p></li>
+<li><p><em><span lang="en">bicycle</span></em> (goulotte ou rampe sur le côté des marches, qui peut être utilisée pour pousser un vélo)</p></li>
+<li><p><em><span lang="en">luggage</span></em> (rampe à valise, permettant de pousser des bagages)</p></li>
+<li><p><em><span lang="en">stroller</span></em> (rampe à poussette : une paire de rampes peu larges, avec des petites marches entre les deux)</p></li>
+<li><p><em><span lang="en">other</span></em> (un autre type de rampe dans l'escalier)</p></li>
+<li><p><em><span lang="en">none</span></em> (pas de rampe dans l'escalier)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td>TopEnd</td>
-<td>StairEnd</td>
+<td><span lang="en">TopEnd</span></td>
+<td><span lang="en">StairEnd</span></td>
 <td>0:1</td>
 <td><p>Caractérisation de l’extrémité haute de l’escalier</p>
 <p><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les bandes d'éveil de vigilance en haut des escaliers.</span></p>
 </td>
 </tr>
 <tr class="even">
-<td>BottomEnd</td>
-<td>StairEnd</td>
+<td><span lang="en">BottomEnd</span></td>
+<td><span lang="en">StairEnd</span></td>
 <td>0:1</td>
 <td>Caractérisation de l’extrémité basse de l’escalier</td>
 </tr>
 <tr class="odd">
-<td rowspan="5">StaircaseGroup</td>
-<td>Continuous­Handrail</td>
-<td>xsd:boolean</td>
+<td rowspan="5"><span lang="en">StaircaseGroup</span></td>
+<td><span lang="en">ContinuousHandrail</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique si la main courante est continue et sans rupture sur toute la longueur de l’escalier, y compris entre les volées de marches</td>
 </tr>
 <tr class="even">
-<td>WithoutRiser</td>
-<td>xsd:boolean</td>
+<td><span lang="en">WithoutRiser</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale des marches ouvertes (pas de contremarches)</td>
 </tr>
 <tr class="odd">
-<td>SpiralStair</td>
-<td>xsd:boolean</td>
+<td><span lang="en">SpiralStair</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale un escalier en spirale</td>
 </tr>
 <tr class="even">
-<td>NumberOfFlights</td>
-<td>xsd:integer</td>
+<td><span lang="en">NumberOfFlights</span></td>
+<td>xsd:<span lang="en">integer</span></td>
 <td>0:1</td>
 <td>Nombre de volées de marches</td>
 </tr>
 <tr class="odd">
-<td>flights</td>
-<td>StairFlight</td>
+<td><span lang="en">flights</span></td>
+<td><span lang="en">StairFlight</span></td>
 <td>0:\*</td>
 <td>Description des volées de marches constituant l’escalier</td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">StairEnd (extrémités d’escaliers) – Élément</div>
+<div class="table-title"><span lang="en">StairEnd</span> (extrémités d’escaliers) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-|                     | Continuing­Handrail | xsd:boolean | 0:1              | Indique si la main courante de l'escalier se prolonge au-delà des marches. <br> <span class="hl">La prolongation doit être au moins égale à la largeur d'une marche.</span>                                                                                                            |
-|                     | TexturedSurface     | xsd:boolean | 0:1              | Signale une surface au sol texturée. <br> <span class="hl">On indiquera ainsi la présence d'une bande d'éveil à la vigilance (BEV).</span>                                                                                                                                             |
-|                     | VisualContrast      | xsd:boolean | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur.  <br> <span class="hl">On indiquera ainsi par exemple la présence de contremarches d'une couleur différente du reste de l'escalier pour la première et la dernière marche.</span> |
+|                     | <span lang="en">ContinuingHandrail</span> | xsd:<span lang="en">boolean</span> | 0:1              | Indique si la main courante de l'escalier se prolonge au-delà des marches. <br> <span class="hl">La prolongation doit être au moins égale à la largeur d'une marche.</span>                                                                                                            |
+|                     | <span lang="en">TexturedSurface</span>     | xsd:<span lang="en">boolean</span> | 0:1              | Signale une surface au sol texturée. <br> <span class="hl">On indiquera ainsi la présence d'une bande d'éveil à la vigilance (BEV).</span>                                                                                                                                             |
+|                     | <span lang="en">VisualContrast</span>      | xsd:<span lang="en">boolean</span> | 0:1              | Indique un signalement (du début ou de la fin de l’escalier suivant le cas) par contraste de couleur.  <br> <span class="hl">On indiquera ainsi par exemple la présence de contremarches d'une couleur différente du reste de l'escalier pour la première et la dernière marche.</span> |
 
-<div class="table-title">StairFlight (volées de marche d’escalier) – Élément</div>
+<div class="table-title"><span lang="en">StairFlight</span> (volées de marche d’escalier) – Élément</div>
 
-| Classifi­cation  | Nom           | Type                   | Cardin­alité  | Description                                   |
+| Classification  | Nom           | Type                   | Cardinalité  | Description                                   |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| «PK»                | id                  | StairFlightIdType | 1:1              | Identifiant du STAIR FLIGHT.                                            |
-|                     | Continuing­Handrail | xsd:boolean       | 0:1              | Signale une main courante continue avec la volée de marches précédente |
+| «PK»                | id                  | <span lang="en">StairFlightIdType</span> | 1:1              | Identifiant du <span lang="en">STAIR FLIGHT</span>.                                            |
+|                     | <span lang="en">ContinuingHandrail</span> | xsd:<span lang="en">boolean</span>       | 0:1              | Signale une main courante continue avec la volée de marches précédente |
 
-<div class="table-title">EscalatorEquipment (escalator) – Élément</div>
+<div class="table-title"><span lang="en">EscalatorEquipment</span> (escalator) – Élément</div>
 
 | **Classification** | **Nom**                 | **Type**         | **Cardinalité** | **Description**                                                                                                              |
 | ------------------ | ----------------------- | ---------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| *::>*              | *::>*                   | *StairEquipment* | *::>*           | ESCALATOR hérite de STAIR EQUIPMENT                                                                                          |
-| «PK»               | id                      | EscalatorIdtype  | 1:1             | Identifiant de l'ESCALATOR.                                                                                                  |
-|                    | TactileActuators        | xsd:boolean      | 0:1             | Signale une mise en marche par détecteur (tactile ou autre)                                                                  |
-|                    | EnergySaving            | xsd:boolean      | 0:1             | Signale un escalator à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé)                               |
-|                    | DogsMustBeCarried       | xsd:boolean      | 0:1             | Signale si les chiens doivent être pris dans les bras (ou transportés d’une autre manière) pour pouvoir franchir l’escalator |
-|                    | EscalatorWithLanding    | xsd:boolean      | 0:1             | Signale un escalator avec une zone plate au début ou à la fin                                                                |
-|                    | MonitoringRemoteControl | xsd:boolean      | 0:1             | Signale la présence d'un système de contrôle à distance du fonctionnement de l'équipement                                    |
+| *::>*              | *::>*                   | *<span lang="en">StairEquipment</span>* | *::>*           | <span lang="en">ESCALATOR</span> hérite de <span lang="en">STAIR EQUIPMENT</span>                                                                                          |
+| «PK»               | id                      | <span lang="en">EscalatorIdtype</span>  | 1:1             | Identifiant de l'ESCALATOR.                                                                                                  |
+|                    | <span lang="en">TactileActuators</span>        | xsd:<span lang="en">boolean</span>      | 0:1             | Signale une mise en marche par détecteur (tactile ou autre)                                                                  |
+|                    | <span lang="en">EnergySaving</span>            | xsd:<span lang="en">boolean</span>      | 0:1             | Signale un escalator à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé)                               |
+|                    | <span lang="en">DogsMustBeCarried</span>       | xsd:<span lang="en">boolean</span>      | 0:1             | Signale si les chiens doivent être pris dans les bras (ou transportés d’une autre manière) pour pouvoir franchir l’escalator |
+|                    | <span lang="en">EscalatorWithLanding</span>    | xsd:<span lang="en">boolean</span>      | 0:1             | Signale un escalator avec une zone plate au début ou à la fin                                                                |
+|                    | <span lang="en">MonitoringRemoteControl</span> | xsd:<span lang="en">boolean</span>      | 0:1             | Signale la présence d'un système de contrôle à distance du fonctionnement de l'équipement                                    |
 
-<div class="table-title">TravelatorEquipment (tapis roulant) – Élément</div>
+<div class="table-title"><span lang="en">TravelatorEquipment</span> (tapis roulant) – Élément</div>
 
 | **Classification** | **Nom**                 | **Type**               | **Cardinalité** | **Description**                                                                                    |
 | ------------------ | ------------------------ | ---------------------- | --------------- | -------------------------------------------------------------------------------------------------- |
-| *::>*              | *::>*                    | *PlaceAccessEquipment* | *::>*           | TRAVELATOR hérite de ACCESS EQUIPMENT                                                              |
-| «PK»               | id                       | TravelatorIdtype       | 1:1             | Identifiant du TRAVELATOR.                                                                         |
-|                    | TactileActuators         | xsd:boolean            | 0:1             | Signale une mise en marche par détecteur (tactile ou autre)                                        |
-|                    | EnergySaving             | xsd:boolean            | 0:1             | Signale un tapis roulant à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé) |
-|                    | Speed                    | SpeedType              | 0:1             | Vitesse du tapis roulant                                                                           |
-|                    | Length                   | LengthType             | 0:1             | Longueur du tapis roulant                                                                          |
-|                    | Gradient                 | xsd:Integer            | 0:1             | Pente (en degrés entiers) du tapis roulant                                                         |
-|                    | IntegrateAnEscalatorPart | xsd:boolean            | 0:1             | Signale la présence d’une partie en escalator                                                      |
+| *::>*              | *::>*                    | *<span lang="en">PlaceAccessEquipment</span>* | *::>*           | <span lang="en">TRAVELATOR</span> hérite de <span lang="en">ACCESS EQUIPMENT</span>                                                              |
+| «PK»               | id                       | <span lang="en">TravelatorIdtype</span>       | 1:1             | Identifiant du <span lang="en">TRAVELATOR</span>.                                                                         |
+|                    | <span lang="en">TactileActuators</span>         | xsd:<span lang="en">boolean</span>            | 0:1             | Signale une mise en marche par détecteur (tactile ou autre)                                        |
+|                    | <span lang="en">EnergySaving</span>             | xsd:<span lang="en">boolean</span>            | 0:1             | Signale un tapis roulant à économie d’énergie (ralentissement ou arrêt quand il n’est pas utilisé) |
+|                    | <span lang="en">Speed</span>                    | <span lang="en">SpeedType</span>              | 0:1             | Vitesse du tapis roulant                                                                           |
+|                    | <span lang="en">Length</span>                   | <span lang="en">LengthType</span>             | 0:1             | Longueur du tapis roulant                                                                          |
+|                    | <span lang="en">Gradient</span>                 | xsd:<span lang="en">Integer</span>            | 0:1             | Pente (en degrés entiers) du tapis roulant                                                         |
+|                    | <span lang="en">IntegrateAnEscalatorPart</span> | xsd:<span lang="en">boolean</span>            | 0:1             | Signale la présence d’une partie en escalator                                                      |
 
-<div class="table-title">LiftEquipment (ascenseur) – Élément</div>
+<div class="table-title"><span lang="en">LiftEquipment</span> (ascenseur) – Élément</div>
 
 | **Classification** | **Nom**                     | **Type**             | **Cardinalité** | **Description**                                                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------ | --------------------------- | -------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| *::>*              | *::>*                       | PlaceAccessEquipment | *::>*           | LIFT hérite de ACCESS EQUIPMENT                                                                                                                                                                                                                                                                                                                                                                       |
-| «PK»               | id                          | LiftIdType           | 1:1             | identifiant du LiftEquipement                                                                                                                                                                                                                                                                                                                                                                         |
-|                    | Depth                       | LengthType           | 0:1             | Profondeur de l’ascenseur      <br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</span>                                                                                                                                                                                                                                                         |
-|                    | MaximumLoad                 | WeightType           | 0:1             | Charge maximale                                                                                                                                                                                                                                                                                                                                                                                       |
-|                    | WheelchairPassable          | xsd:boolean          | 0:1             | Signale si l’utilisation en fauteuil roulant est possible                                                                                                                                                                                                                                                                                                                                             |
-|                    | WheelchairTurningCircle     | LengthType           | 0:1             | Diamètre de giration pour les fauteuils roulants dans l’ascenseur                                                                                                                                                                                                                                                                                                                                     |
-|                    | InternalWidth               | LengthType           | 0:1             | Largeur à l'intérieur de la cabine                                                                                                                                                                                                                                                                                                                                                                    |
-|                    | HandrailType                | HandrailEnum         | 0:1             | Type de main courante <li><p><em>none</em> (aucun)</p></li> <li><p><em>oneSide</em> (d’un côté seulement)</p></li><li><p><em>bothSides</em> (des deux côtés)</p></li>                                                                                                                                                                                                                                 |
-|                    | HandrailHeight              | LengthType           | 0:1             | Hauteur de la main courante                                                                                                                                                                                                                                                                                                                                                                           |
-|                    | CallButtonHeight            | LengthType           | 0:1             | Hauteur du bouton d’appel de l’ascenseur (à partir du sol)                                                                                                                                                                                                                                                                                                                                             |
-|                    | DirectionButtonHeight       | LengthType           | 0:1             | Hauteur des boutons d’appel directionels de l’ascenseur (à partir du sol), valeur la plus haute                                                                                                                                                                                                                                                                                                       |
-|                    | LowerHandrailHeight         | LengthType           | 0:1             | Hauteur de la main courante (à partir du sol)                                                                                                                                                                                                                                                                                                                                                         |
-|                    | RaisedButtons               | xsd:boolean          | 0:1             | Signale si les boutons sont en relief                                                                                                                                                                                                                                                                                                                                                                 |
-|                    | BrailleButtons              | xsd:boolean          | 0:1             | Signale si les boutons sont marqués en braille. À utiliser aussi pour les marques tactiles (non braille)                                                                                                                                                                                                                                                                                              |
-|                    | MirrorOnOppositeSide        | xsd:boolean          | 0:1             | Signale la présence d’un miroir en face de l’ascenseur                                                                                                                                                                                                                                                                                                                                                |
-|                    | Attendant                   | xsd:boolean          | 0:1             | Signale s’il y a un préposé à l’ascenseur                                                                                                                                                                                                                                                                                                                                                             |
-|                    | Automatic                   | xsd:boolean          | 0:1             | Signale s’il s’agit d’un ascenseur automatique                                                                                                                                                                                                                                                                                                                                                        |
-|                    | AlarmButton                 | xsd:boolean          | 0:1             | Signale si l’ascenseur dispose d’un bouton d’alarme                                                                                                                                                                                                                                                                                                                                                   |
-|                    | TactileActuators            | xsd:boolean          | 0:1             | Signale si l'ascenseur a des actionneurs tactiles                                                                                                                                                                                                                                                                                                                                                     |
-|                    | AudioAnnouncements          | xsd:boolean          | 0:1             | Signale si l'ascenseur dispose d’un mécanisme d’annonces sonores                                                                                                                                                                                                                                                                                                                                      |
-|                    | ReachedFloorAnnouncement    | xsd:boolean          | 0:1             | Signale si l'ascenseur est équipé d'un système d'annonce sonore et/ou d'affichage visuel de l'étage atteint (il peut s'agir soit d'un numéro de niveau, soit de l'indication des services à cet étage) <li><em>visual</em> (affichage visuel)</li><li><em>audio</em> (annonce sonore)</li><li><em>visualAndAudio</em> (annonce sonore et affichage visuel)</li><li><em>none</em> (aucun système)</li> |
-|                    | MagneticInductionLoop       | xsd:boolean          | 0:1             | Signale la presence d’une boucle d’induction magnétique                                                                                                                                                                                                                                                                                                                                               |
-|                    | SignageToLift               | xsd:boolean          | 0:1             | Signale si l’accès à l'ascenseur est fléché/signalé                                                                                                                                                                                                                                                                                                                                                   |
-|                    | TactileGroundFloorButton    | xsd:boolean          | 0:1             | Signale la presence d’une marque tactile spécifique sur le bouton du rez-de-chaussée                                                                                                                                                                                                                                                                                                                  |
-|                    | ExternalFloorSelection      | xsd:boolean          | 0:1             | Signale que la sélection de l’étage de destination se fait à l’extérieur de l’ascenseur                                                                                                                                                                                                                                                                                                               |
-|                    | ButtonsHeight               | LengthType           | 0:1             | Hauteur (taille) des boutons                                                                                                                                                                                                                                                                                                                                                                          |
-|                    | GroundMarkalignedWithButton | xsd:boolean          | 0:1             | Signale la présence de marquage podotactile pour repérer les boutons                                                                                                                                                                                                                                                                                                                                  |
+| *::>*              | *::>*                       | <span lang="en">PlaceAccessEquipment</span> | *::>*           | <span lang="en">LIFT</span> hérite de <span lang="en">ACCESS EQUIPMENT</span>                                                                                                                                                                                                                                                                                                                                                                       |
+| «PK»               | id                          | <span lang="en">LiftIdType</span>           | 1:1             | identifiant du <span lang="en">LIFT EQUIPMENT</span>                                                                                                                                                                                                                                                                                                                                                                         |
+|                    | <span lang="en">Depth</span>                       | <span lang="en">LengthType</span>           | 0:1             | Profondeur de l’ascenseur      <br><span class="hl">Cet élément est rendu obligatoire par l'arrêté du 28 mai 2024 pour les ascenseurs.</span>                                                                                                                                                                                                                                                         |
+|                    | <span lang="en">MaximumLoad</span>                 | <span lang="en">WeightType</span>           | 0:1             | Charge maximale                                                                                                                                                                                                                                                                                                                                                                                       |
+|                    | <span lang="en">WheelchairPassable</span>          | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si l’utilisation en fauteuil roulant est possible                                                                                                                                                                                                                                                                                                                                             |
+|                    | <span lang="en">WheelchairTurningCircle</span>     | <span lang="en">LengthType</span>           | 0:1             | Diamètre de giration pour les fauteuils roulants dans l’ascenseur                                                                                                                                                                                                                                                                                                                                     |
+|                    | <span lang="en">InternalWidth</span>               | <span lang="en">LengthType</span>           | 0:1             | Largeur à l'intérieur de la cabine                                                                                                                                                                                                                                                                                                                                                                    |
+|                    | <span lang="en">HandrailType</span>                | <span lang="en">HandrailEnum</span>         | 0:1             | Type de main courante <li><p><em><span lang="en">none</span></em> (aucun)</p></li> <li><p><em><span lang="en">oneSide</span></em> (d’un côté seulement)</p></li><li><p><em><span lang="en">bothSides</span></em> (des deux côtés)</p></li>                                                                                                                                                                                                                                 |
+|                    | <span lang="en">HandrailHeight</span>              | <span lang="en">LengthType</span>           | 0:1             | Hauteur de la main courante                                                                                                                                                                                                                                                                                                                                                                           |
+|                    | <span lang="en">CallButtonHeight</span>            | <span lang="en">LengthType</span>           | 0:1             | Hauteur du bouton d’appel de l’ascenseur (à partir du sol)                                                                                                                                                                                                                                                                                                                                             |
+|                    | <span lang="en">DirectionButtonHeight</span>       | <span lang="en">LengthType</span>           | 0:1             | Hauteur des boutons d’appel directionnels de l’ascenseur (à partir du sol), valeur la plus haute                                                                                                                                                                                                                                                                                                       |
+|                    | <span lang="en">LowerHandrailHeight</span>         | <span lang="en">LengthType</span>           | 0:1             | Hauteur de la main courante (à partir du sol)                                                                                                                                                                                                                                                                                                                                                         |
+|                    | <span lang="en">RaisedButtons</span>               | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si les boutons sont en relief                                                                                                                                                                                                                                                                                                                                                                 |
+|                    | <span lang="en">BrailleButtons</span>              | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si les boutons sont marqués en braille. À utiliser aussi pour les marques tactiles (non braille)                                                                                                                                                                                                                                                                                              |
+|                    | <span lang="en">MirrorOnOppositeSide</span>        | xsd:<span lang="en">boolean</span>          | 0:1             | Signale la présence d’un miroir en face de l’ascenseur                                                                                                                                                                                                                                                                                                                                                |
+|                    | <span lang="en">Attendant</span>                   | xsd:<span lang="en">boolean</span>          | 0:1             | Signale s’il y a un préposé à l’ascenseur                                                                                                                                                                                                                                                                                                                                                             |
+|                    | <span lang="en">Automatic</span>                   | xsd:<span lang="en">boolean</span>          | 0:1             | Signale s’il s’agit d’un ascenseur automatique                                                                                                                                                                                                                                                                                                                                                        |
+|                    | <span lang="en">AlarmButton</span>                 | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si l’ascenseur dispose d’un bouton d’alarme                                                                                                                                                                                                                                                                                                                                                   |
+|                    | <span lang="en">TactileActuators</span>            | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si l'ascenseur a des actionneurs tactiles                                                                                                                                                                                                                                                                                                                                                     |
+|                    | <span lang="en">AudioAnnouncements</span>          | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si l'ascenseur dispose d’un mécanisme d’annonces sonores                                                                                                                                                                                                                                                                                                                                      |
+|                    | <span lang="en">ReachedFloorAnnouncement</span>    | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si l'ascenseur est équipé d'un système d'annonce sonore et/ou d'affichage visuel de l'étage atteint (il peut s'agir soit d'un numéro de niveau, soit de l'indication des services à cet étage) <li><em><span lang="en">visual</span></em> (affichage visuel)</li><li><em><span lang="en">audio</span></em> (annonce sonore)</li><li><em><span lang="en">visualAndAudio</span></em> (annonce sonore et affichage visuel)</li><li><em><span lang="en">none</span></em> (aucun système)</li> |
+|                    | <span lang="en">MagneticInductionLoop</span>       | xsd:<span lang="en">boolean</span>          | 0:1             | Signale la présence d’une boucle d’induction magnétique                                                                                                                                                                                                                                                                                                                                               |
+|                    | <span lang="en">SignageToLift</span>               | xsd:<span lang="en">boolean</span>          | 0:1             | Signale si l’accès à l'ascenseur est fléché/signalé                                                                                                                                                                                                                                                                                                                                                   |
+|                    | <span lang="en">TactileGroundFloorButton</span>    | xsd:<span lang="en">boolean</span>          | 0:1             | Signale la présence d’une marque tactile spécifique sur le bouton du rez-de-chaussée                                                                                                                                                                                                                                                                                                                  |
+|                    | <span lang="en">ExternalFloorSelection</span>      | xsd:<span lang="en">boolean</span>          | 0:1             | Signale que la sélection de l’étage de destination se fait à l’extérieur de l’ascenseur                                                                                                                                                                                                                                                                                                               |
+|                    | <span lang="en">ButtonsHeight</span>               | <span lang="en">LengthType</span>           | 0:1             | Hauteur (taille) des boutons                                                                                                                                                                                                                                                                                                                                                                          |
+|                    | <span lang="en">GroundMarkalignedWithButton</span> | xsd:<span lang="en">boolean</span>          | 0:1             | Signale la présence de marquage podotactile pour repérer les boutons                                                                                                                                                                                                                                                                                                                                  |
 
 Remarque : <span class="hl">plusieurs modélisations sont possibles pour les ascenseurs. Dans le cadre du profil, voici celle qui est préconisée :
 
-- un LIFT EQUIPMENT
-- un SITE PATH LINK pour chaque niveau traversé. Cet objet a une géométrie linéaire mais verticale (les coordonnées des points de départ et d'arrivée sont identiques, à l'exception de l'altitude éventuelle) <span>
+- un <span lang="en">LIFT EQUIPMENT</span>
+- un <span lang="en">SITE PATH LINK</span> pour chaque niveau traversé. Cet objet a une géométrie linéaire mais verticale (les coordonnées des points de départ et d'arrivée sont identiques, à l'exception de l'altitude éventuelle) <span>
 
 exemple :
 
-![schéma présentant une coupe d'un ascenseur, avec 3 SitePathLink dessinés](media/image19.png)
+![schéma présentant une coupe d'un ascenseur, avec 3 <span lang="en">SitePathLink</span> dessinés](media/image19.png)
 
 - l'équipement de l'ascenseur :
 
@@ -3519,11 +3518,11 @@ exemple :
 </SitePathLink>
 ```
 
-Si d'autres étages sont desservis, d'autres tronçons de cheminements avec AccessFeatureType=lift sont nécessaires.
+Si d'autres étages sont desservis, d'autres tronçons de cheminements avec <span lang="en">AccessFeatureType=lift</span> sont nécessaires.
 
-## Sign Equipment
+## <span lang="en">Sign Equipment</span>
 
-<div class="table-title">SignEquipment (signalétique) – Élément</div>
+<div class="table-title"><span lang="en">SignEquipment</span> (signalétique) – Élément</div>
 
 <table>
 <colgroup>
@@ -3535,132 +3534,132 @@ Si d'autres étages sont desservis, d'autres tronçons de cheminements avec Acce
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
-<td><strong>Naom</strong></td>
+<td><strong>Classification</strong></td>
+<td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>PlaceEquipment</em></td>
+<td><em><span lang="en">PlaceEquipment</span></em></td>
 <td><em>::></em></td>
-<td>SIGN hérite de PLACE EQUIPMENT.</td>
+<td><span lang="en">SIGN</span> hérite de <span lang="en">PLACE  EQUIPMENT</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>SignIdType</td>
+<td><span lang="en">SignIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du SIGN.</td>
+<td>Identifiant du <span lang="en">SIGN</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>AsBraille</td>
-<td>xsd:boolean</td>
+<td><span lang="en">AsBraille</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Indique la présence d’une inscription en braille</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Height</td>
-<td>LengthType</td>
+<td><span lang="en">Height</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur (dimension) du panneau ou signe.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Width</td>
-<td>LengthType</td>
+<td><span lang="en">Width</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Largeur (dimension) du panneau ou signe.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>HeightFromFloor</td>
-<td>LengthType</td>
+<td><span lang="en">HeightFromFloor</span></td>
+<td><span lang="en">LengthType</span></td>
 <td>0:1</td>
 <td>Hauteur à laquelle le panneau ou signe se situe (depuis le sol)</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Placement</td>
-<td>xsd:string</td>
+<td><span lang="en">Placement</span></td>
+<td>xsd:<span lang="en">string</span></td>
 <td>0:1</td>
 <td>Description textuelle de la position du panneau ou signe.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>BrandGraphic</td>
-<td>xsd:anyUrl</td>
+<td><span lang="en">BrandGraphic</span></td>
+<td>xsd:<span lang="en">anyUrl</span></td>
 <td>0:1</td>
 <td>URL d’information sur la marque associée au panneau ou au signe.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>SignGraphic</td>
-<td>xsd:anyUrl</td>
+<td><span lang="en">SignGraphic</span></td>
+<td>xsd:<span lang="en">anyUrl</span></td>
 <td>0:1</td>
 <td><p>URL associée d’information associée au panneau ou au signe.</p>
 <p><span class="hl">Doit être conforme à l'accessibilité RGAA</span></p></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>MachineReadable</td>
-<td>xsd:boolean</td>
+<td><span lang="en">MachineReadable</span></td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
 <td>Signale si la signalétique peut être lue par un machine (smartphone, tablette, etc.)</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>AudioAnnoucementType</strong></em></td>
-<td><em>AudioAnnoucementTypeEnum _</em></td>
+<td><em><strong><span lang="en">AudioAnnoucementType</span></strong></em></td>
+<td><em><span lang="en">AudioAnnoucementTypeEnum</span></em></td>
 <td>0:1</td>
 <td><p>Signale si la signalétique est ou peut être lue par un dispositif audio :</p>
 <ul>
-<li><p><em>cyclicReading</em> (lecture automatique à intervalles réguliers)</p></li>
-<li><p><em>whenSomebodyIsDetected</em> (lecture automatique quand une présence est détectée)</p></li>
-<li><p><em>throughAnApp</em> (via une app)</p></li>
-<li><p><em>throughASpecificDevice</em> (via un terminal spécifique)</p></li>
+<li><p><em><span lang="en">cyclicReading</span></em> (lecture automatique à intervalles réguliers)</p></li>
+<li><p><em><span lang="en">whenSomebodyIsDetected</span></em> (lecture automatique quand une présence est détectée)</p></li>
+<li><p><em><span lang="en">throughAnApp</span></em> (via une app)</p></li>
+<li><p><em><span lang="en">throughASpecificDevice</span></em> (via un terminal spécifique)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>FontSize</strong></em></td>
-<td><em>FontSizeEnum</em></td>
+<td><em><strong><span lang="en">FontSize</span></strong></em></td>
+<td><em><span lang="en">FontSizeEnum</span></em></td>
 <td>0:1</td>
 <td><p>Taille de la police de caractères :</p>
 <ul>
-<li><p><em>verySmall</em> (très petite)</p></li>
-<li><p><em>Small</em> (petite)</p></li>
-<li><p><em>Meduim</em> (moyenne)</p></li>
-<li><p><em>Big</em> (grande)</p></li>
-<li><p><em>VeryBig</em> (très grande)</p></li>
+<li><p><em><span lang="en">verySmall</span></em> (très petite)</p></li>
+<li><p><em><span lang="en">Small</span></em> (petite)</p></li>
+<li><p><em><span lang="en">Medium</span></em> (moyenne)</p></li>
+<li><p><em><span lang="en">Big</span></em> (grande)</p></li>
+<li><p><em><span lang="en">VeryBig</span></em> (très grande)</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>Contrast</strong></em></td>
-<td><em>PercentageType</em></td>
+<td><em><strong><span lang="en">Contrast</span></strong></em></td>
+<td><em><span lang="en">PercentageType</span></em></td>
 <td>0:1</td>
 <td>Différence de luminosité entre le fond et les caractères (un ratio d’au moins 3 est attendu)</td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">HeadingSign (panneau de direction) – Élément</div>
+<div class="table-title"><span lang="en">HeadingSign</span> (panneau de direction) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                 | *SignEquipment*    | *::>*            | HEADING SIGN hérite de SIGN EQUIPMENT.                                   |
-| «PK»                | id                    | HeadingSignIdType  | 1:1              | Identifiant du HEADING SIGN.                                             |
-|                     | PlaceName             | MultilingualString | 0:1              | Nom du lieu indiqué sur le paneau                                        |
-|                     | LineName              | MultilingualString | 0:1              | Nom de la ligne de transport en commun concernée par le panneau         |
-|                     | DirectionName         | MultilingualString | 0:1              | Direction que le paneau indique (texte)                                  |
-| «FK»                | DestinationDisplayRef | LineRef            | 0:1              | DESTINATION DISPLAY referencée par le HEADING SIGN (référence technique) |
+| *::>*               | *::>*                 | *<span lang="en">SignEquipment</span>*    | *::>*            | <span lang="en">HEADING SIGN</span> hérite de <span lang="en">SIGN EQUIPMENT</span>.                                   |
+| «PK»                | id                    | <span lang="en">HeadingSignIdType</span>  | 1:1              | Identifiant du <span lang="en">HEADING SIGN</span>.                                             |
+|                     | <span lang="en">PlaceName</span>             | <span lang="en">MultilingualString</span> | 0:1              | Nom du lieu indiqué sur le panneau                                        |
+|                     | <span lang="en">LineName</span>              | <span lang="en">MultilingualString</span> | 0:1              | Nom de la ligne de transport en commun concernée par le panneau         |
+|                     | <span lang="en">DirectionName</span>         | <span lang="en">MultilingualString</span> | 0:1              | Direction que le panneau indique (texte)                                  |
+| «FK»                | <span lang="en">DestinationDisplayRef</span> | <span lang="en">LineRef</span>            | 0:1              | <span lang="en">DESTINATION DISPLAY</span> référencée par le <span lang="en">HEADING SIGN</span> (référence technique) |
 
-<div class="table-title">GeneralSign (affichage générique) – Élément</div>
+<div class="table-title"><span lang="en">GeneralSign</span> (affichage générique) – Élément</div>
 
 <table>
 <colgroup>
@@ -3672,100 +3671,100 @@ Si d'autres étages sont desservis, d'autres tronçons de cheminements avec Acce
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>SignEquipment</em></td>
+<td><em><span lang="en">SignEquipment</span></em></td>
 <td><em>::></em></td>
-<td>GENERAL SIGN hérite de SIGN EQUIPMENT.</td>
+<td><span lang="en">GENERAL SIGN</span> hérite de <span lang="en">SIGN EQUIPMENT</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>GeneralSignIdType</td>
+<td><span lang="en">GeneralSignIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du GENERAL SIGN.</td>
+<td>Identifiant du <span lang="en">GENERAL SIGN</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Content</td>
-<td>MultilingualString</td>
+<td><span lang="en">Content</span></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
 <td>Contenu textuel de l’affichage</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>SignContentType</strong></em></td>
-<td><em>SignContentEnum</em></td>
+<td><em><strong><span lang="en">SignContentType</span></strong></em></td>
+<td><em><span lang="en">SignContentEnum</span></em></td>
 <td>0:1</td>
-<td><p>Type of contenu :</p>
+<td><p>Type de contenu :</p>
 <ul>
-<li><p><em>Entrance</em> (entrée)</p></li>
-<li><p><em>exit</em> (sortie)</p></li>
-<li><p><em>emergencyExit</em> (sortie de secours)</p></li>
-<li><p><em>transportMode</em> (mode de transport)</p></li>
-<li><p><em>noSmoking</em> (interdiction de fumer)</p></li>
-<li><p><em>tickets</em> (billets)</p></li>
-<li><p><em>assistance</em> (assistance)</p></li>
-<li><p><em>sosPhone</em> (téléphone de secours)</p></li>
-<li><p><em>touchPoint</em> (point de contact)</p></li>
-<li><p><em>meetingPoint</em> (point de rendez-vous)</p></li>
-<li><p><em>TransportModePoint</em> (point associé à une mode de transport)</p></li>
-<li><p><em>Other</em> (autre)</p></li>
+<li><p><em><span lang="en">entrance</span></em> (entrée)</p></li>
+<li><p><em><span lang="en">exit</span></em> (sortie)</p></li>
+<li><p><em><span lang="en">emergencyExit</span></em> (sortie de secours)</p></li>
+<li><p><em><span lang="en">transportMode</span></em> (mode de transport)</p></li>
+<li><p><em><span lang="en">noSmoking</span></em> (interdiction de fumer)</p></li>
+<li><p><em><span lang="en">tickets</span></em> (billets)</p></li>
+<li><p><em><span lang="en">assistance</span></em> (assistance)</p></li>
+<li><p><em><span lang="en">sosPhone</span></em> (téléphone de secours)</p></li>
+<li><p><em><span lang="en">touchPoint</span></em> (point de contact)</p></li>
+<li><p><em><span lang="en">meetingPoint</span></em> (point de rendez-vous)</p></li>
+<li><p><em><span lang="en">TransportModePoint</span></em> (point associé à une mode de transport)</p></li>
+<li><p><em><span lang="en">Other</span></em> (autre)</p></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">PlaceSign (panneau d’indication de lieu) – Élément</div>
+<div class="table-title"><span lang="en">PlaceSign</span> (panneau d’indication de lieu) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*     | *SignEquipment*    | *::>*            | PLACE SIGN hérite de SIGN EQUIPMENT. |
-| «PK»                | id        | SignIdType         | 1:1              | Identifiant du PLACE SIGN.           |
-|                     | PlaceName | MultilingualString | 1:1              | Nom du lieu indiqué                  |
+| *::>*               | *::>*     | *<span lang="en">SignEquipment</span>*    | *::>*            | <span lang="en">PLACE SIGN</span> hérite de <span lang="en">SIGN EQUIPMENT</span>. |
+| «PK»                | id        | <span lang="en">SignIdType</span>         | 1:1              | Identifiant du <span lang="en">PLACE SIGN</span>.           |
+|                     | <span lang="en">PlaceName</span> | <span lang="en">MultilingualString</span> | 1:1              | Nom du lieu indiqué                  |
 
-## Ticketing Equipment
+## <span lang="en">Ticketing Equipment</span>
 
-<div class="table-title">TicketValidatorEquipment (validateur) – Élément</div>
+<div class="table-title"><span lang="en">TicketValidatorEquipment</span> (validateur) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                           | *PassengerEquipment*  | *::>*            | TICKET VALIDATOR EQUIPMENT hérite de PASSENGER EQUIPMENT                                                         |
-| «PK»                | id                              | TicketValidatorIdType | 1:1              | Identifiant du TICKET VALIDATOR EQUIPMENT.                                                                       |
-|                     | ValidatorList                   | TicketValidatorEnum   | 0:\*             | Type of TICKET VALIDATOR.                                                                                        |
-|                     | ***AudioValidationFeedback***   | xsd:boolean           | 0:1              | Indique s’il y a une confirmation audio de la validation du titre                                                |
-|                     | ***VisualValidationFeedback***  | xsd:boolean           | 0:1              | Indique s’il y a une confirmation visuelle de la validation du titre                                             |
-|                     | ***TactileValidationFeedback*** | xsd:boolean           | 0:1              | Indique s’il y a une confirmation tactile de la validation du titre                                              |
-|                     | ***ValidationGuidance***        | MultilingualString    | 0:1              | Texte libre décrivant les modalités de validation (comment valider le titre, comment trouver le valideur, etc.). |
+| *::>*               | *::>*                           | *<span lang="en">PassengerEquipment</span>*  | *::>*            | <span lang="en">TICKET VALIDATOR EQUIPMENT</span> hérite de <span lang="en">PASSENGER EQUIPMENT</span>                                                         |
+| «PK»                | id                              | <span lang="en">TicketValidatorIdType</span> | 1:1              | Identifiant du <span lang="en">TICKET VALIDATOR EQUIPMENT</span>.                                                                       |
+|                     | <span lang="en">ValidatorList</span>                   | <span lang="en">TicketValidatorEnum</span>   | 0:\*             | Type de <span lang="en">TICKET VALIDATOR</span>.                                                                                        |
+|                     | ***<span lang="en">AudioValidationFeedback</span>***   | xsd:<span lang="en">boolean</span>           | 0:1              | Indique s’il y a une confirmation audio de la validation du titre                                                |
+|                     | ***<span lang="en">VisualValidationFeedback</span>***  | xsd:<span lang="en">boolean</span>           | 0:1              | Indique s’il y a une confirmation visuelle de la validation du titre                                             |
+|                     | ***<span lang="en">TactileValidationFeedback</span>*** | xsd:<span lang="en">boolean</span>           | 0:1              | Indique s’il y a une confirmation tactile de la validation du titre                                              |
+|                     | ***<span lang="en">ValidationGuidance</span>***        | <span lang="en">MultilingualString</span>    | 0:1              | Texte libre décrivant les modalités de validation (comment valider le titre, comment trouver le valideur, etc.). |
 
-<div class="table-title">TicketingEquipment (équipement billettique) – Élément</div>
+<div class="table-title"><span lang="en">TicketingEquipment</span> (équipement billettique) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                           | *PassengerEquipment*     | *::>*            | TICKETING EQUIPMENT hérite de PASSENGER EQUIPMENT.                              |
-| «PK»                | id                              | TicketingEquipmentIdType | 1:1              | Identifiant du TICKETING EQUIPMENT.                                             |
-|                     | TicketMachines                  | xsd:boolean              | 0:1              | Signale la disponibilité de machines de vente de titres de transport            |
-|                     | NumberOfMachines                | xsd:integer              | 0:1              | Nombre de machines                                                              |
-|                     | HeightOfMachine­Interface       | LengthType               | 0:1              | Hauteur a laquelle se trouve l’interface de la machine                          |
-|                     | ***TicketCounter***             | xsd:boolean              | 0:1              | Signale la disponibilité d’un guichet                                           |
-|                     | InductionLoops                  | xsd:boolean              | 0:1              | Signale la présence d’un détecteur à boucle d’induction                         |
-|                     | LowCounterAccess                | xsd:boolean              | 0:1              | Signale la présence d’un comptoir abaissé pour l’accessibilité                  |
-|                     | HeightOfLow­Counter             | LengthType               | 0:1              | Hauteur du comptoir (comptoir abaissé pour l’accessibilité)                     |
-|                     | ***TactileInterfaceAvailable*** | xsd:boolean              | 0:1              | Signale la disponibilité d’une interface tactile                                |
-|                     | ***AudioInterfaceAvailable***   | xsd:boolean              | 0:1              | Signale la disponibilité d’une interface audio (permettant un usage en aveugle) |
-|                     | ***DisabledPriority***          | xsd:boolean              | 0:1              | Signale la une priorité handicapés (sans faire la queue)                        |
-|                     | ***WheelchairSuitable***        | xsd:boolean              | 0:1              | Signale la possibilité d’être utilise à partir d’un fauteuil roulant            |
+| *::>*               | *::>*                           | *<span lang="en">PassengerEquipment</span>*     | *::>*            | <span lang="en">TICKETING EQUIPMENT</span> hérite de <span lang="en">PASSENGER EQUIPMENT</span>.                              |
+| «PK»                | id                              | <span lang="en">TicketingEquipmentIdType</span> | 1:1              | Identifiant du <span lang="en">TICKETING EQUIPMENT</span>.                                             |
+|                     | <span lang="en">TicketMachines</span>                  | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la disponibilité de machines de vente de titres de transport            |
+|                     | <span lang="en">NumberOfMachines</span>                | xsd:<span lang="en">integer</span>              | 0:1              | Nombre de machines                                                              |
+|                     | <span lang="en">HeightOfMachine</span>­Interface       | <span lang="en">LengthType</span>               | 0:1              | Hauteur a laquelle se trouve l’interface de la machine                          |
+|                     | ***<span lang="en">TicketCounter</span>***             | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la disponibilité d’un guichet                                           |
+|                     | <span lang="en">InductionLoops</span>                  | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la présence d’un détecteur à boucle d’induction                         |
+|                     | <span lang="en">LowCounterAccess</span>                | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la présence d’un comptoir abaissé pour l’accessibilité                  |
+|                     | <span lang="en">HeightOfLowCounter</span>             | <span lang="en">LengthType</span>               | 0:1              | Hauteur du comptoir (comptoir abaissé pour l’accessibilité)                     |
+|                     | ***<span lang="en">TactileInterfaceAvailable</span>*** | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la disponibilité d’une interface tactile                                |
+|                     | ***<span lang="en">AudioInterfaceAvailable</span>***   | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la disponibilité d’une interface audio (permettant un usage en aveugle) |
+|                     | ***<span lang="en">DisabledPriority</span>***          | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la une priorité handicapés (sans faire la queue)                        |
+|                     | ***<span lang="en">WheelchairSuitable</span>***        | xsd:<span lang="en">boolean</span>              | 0:1              | Signale la possibilité d’être utilise à partir d’un fauteuil roulant            |
 
-## Local Service
+## <span lang="en">Local Service</span>
 
-<div class="table-title">AssistanceService (service d’assistance) – Élément</div>
+<div class="table-title"><span lang="en">AssistanceService</span> (service d’assistance) – Élément</div>
 
 <table>
 <colgroup>
@@ -3777,151 +3776,151 @@ Si d'autres étages sont desservis, d'autres tronçons de cheminements avec Acce
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>LocalService</em></td>
+<td><em><span lang="en">LocalService</span></em></td>
 <td><em>::></em></td>
-<td>ASSISTANCE SERVICE hérite de LOCAL SERVICE.</td>
+<td><span lang="en">ASSISTANCE SERVICE</span> hérite de <span lang="en">LOCAL SERVICE</span>.</td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>AssistanceServiceIdType</td>
+<td><span lang="en">AssistanceServiceIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du ASSISTANCE SERVICE.</td>
+<td>Identifiant du <span lang="en">ASSISTANCE SERVICE</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td><em><strong>AssistanceFacilityList</strong></em></td>
-<td><em>AssistanceFacilityEnume</em></td>
+<td><em><strong><span lang="en">AssistanceFacilityList</span></strong></em></td>
+<td><em><span lang="en">AssistanceFacilityEnume</span></em></td>
 <td>0:*</td>
-<td><p>Type of assistance fournie :</p>
+<td><p>Type d'assistance fournie :</p>
 <ul>
-<li><p><em>personalAssistance</em> (personnel d’assistance)</p></li>
-<li><p><em>boardingAssistance <span class="hl">(le champ Description sera utilisé pour préciser l'assistant à l'embarquement/débarquement, notament dans le cas des correspondances multimodales)</span></em></p></li>
-<li><p><em>wheechairAssistance</em> (assistance pour les fauteuils roulants)</p></li>
-<li><p><em>unaccompaniedMinorAssistance</em> (assistance pour les mineurs non accompagnés)</p></li>
-<li><p><em>wheelchairUse</em> (utilisation de fauteil roulant)</p></li>
-<li><p><em>conductor</em> (controleur)</p></li>
+<li><p><em><span lang="en">personalAssistance</span></em> (personnel d’assistance)</p></li>
+<li><p><em><span lang="en">boardingAssistance</span> <span class="hl">(le champ Description sera utilisé pour préciser l'assistant à l'embarquement/débarquement, notamment dans le cas des correspondances multimodales)</span></em></p></li>
+<li><p><em><span lang="en">wheechairAssistance</span></em> (assistance pour les fauteuils roulants)</p></li>
+<li><p><em><span lang="en">unaccompaniedMinorAssistance</span></em> (assistance pour les mineurs non accompagnés)</p></li>
+<li><p><em><span lang="en">wheelchairUse</span></em> (utilisation de fauteuil roulant)</p></li>
+<li><p><em><span lang="en">conductor</span></em> (controleur)</p></li>
 <li><p><em>information</em> (information)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>AssistanceAvailability</strong></em></td>
-<td><em>AssistanceAvailabilityEnum</em></td>
+<td><em><strong><span lang="en">AssistanceAvailability</span></strong></em></td>
+<td><em><span lang="en">AssistanceAvailabilityEnum</span></em></td>
 <td>0:1</td>
 <td><p>Disponibilité du service d’assistance</p>
 <ul>
-<li><p><em>none :</em> pas d’assistance disponible</p></li>
-<li><p><em>available :</em> assistance normalement disponible</p></li>
-<li><p><em>availableIfBooked :</em> assistance disponible sur réservation</p></li>
-<li><p><em>availableAtCertainTimes :</em> assistance disponible à certaines heures seulement.</p></li>
-<li><p><em>unknown :</em> inconnu.</p></li>
+<li><p><em><span lang="en">none</span> :</em> pas d’assistance disponible</p></li>
+<li><p><em><span lang="en">available</span> :</em> assistance normalement disponible</p></li>
+<li><p><em><span lang="en">availableIfBooked</span> :</em> assistance disponible sur réservation</p></li>
+<li><p><em><span lang="en">availableAtCertainTimes</span> :</em> assistance disponible à certaines heures seulement.</p></li>
+<li><p><em><span lang="en">unknown</span> :</em> inconnu.</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Staffing</td>
-<td>StaffingEnum</td>
+<td><span lang="en">Staffing</span></td>
+<td><span lang="en">StaffingEnum</span></td>
 <td>0:1</td>
 <td><p>Signale si le personnel est disponible</p>
 <ul>
-<li><p><em>fullTime</em> (à plein temps)</p></li>
-<li><p><em>partTime</em> (à temps partiel)</p></li>
+<li><p><em><span lang="en">fullTime</span></em> (à plein temps)</p></li>
+<li><p><em><span lang="en">partTime</span></em> (à temps partiel)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>AccessibilityTools</td>
-<td>AccessibilityToolEnum</td>
+<td><span lang="en">AccessibilityTools</span></td>
+<td><span lang="en">AccessibilityToolEnum</span></td>
 <td>0:*</td>
 <td><p>Dispositif et équipement d’accessibilité disponibles</p>
 <ul>
-<li><p><em>wheelchair </em>: fauteuil roulant</p></li>
-<li><p><em>walkingstick </em>: canne</p></li>
-<li><p><em>audioNavigator</em> : navigateur audio</p></li>
-<li><p><em>visualNavigator</em> navigateur visuel</p></li>
-<li><p><em>passengerCart </em>: chariot</p></li>
-<li><p><em>pushchair</em> : poussette</p></li>
-<li><p><em>umbrella </em>: parapluie</p></li>
-<li><p><em>buggy</em> : voiturette</p></li>
+<li><p><em><span lang="en">wheelchair</span> </em>: fauteuil roulant</p></li>
+<li><p><em><span lang="en">walkingstick</span> </em>: canne</p></li>
+<li><p><em><span lang="en">audioNavigator</span></em> : navigateur audio</p></li>
+<li><p><em><span lang="en">visualNavigator</span></em> navigateur visuel</p></li>
+<li><p><em><span lang="en">passengerCart</span> </em>: chariot</p></li>
+<li><p><em><span lang="en">pushchair</span></em> : poussette</p></li>
+<li><p><em><span lang="en">umbrella</span> </em>: parapluie</p></li>
+<li><p><em><span lang="en">buggy</span></em> : voiturette</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>Accessibility­Trained­Staff</td>
-<td>xsd:boolean</td>
+<td><span lang="en">AccessibilityTrained­Staff</td>
+<td>xsd:<span lang="en">boolean</span></td>
 <td>0:1</td>
-<td>Indique que le personnel a été formé à la prise en compte des problèmatiques d’accessibilité</td>
+<td>Indique que le personnel a été formé à la prise en compte des problématiques d’accessibilité</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>Emergency­Services</td>
-<td>EmergencyServicesEnum</td>
+<td><span lang="en">Emergency</span>­Services</td>
+<td><span lang="en">EmergencyServicesEnum</span></td>
 <td>0:*</td>
 <td><p>Services d’urgence disponibles</p>
 <ul>
-<li><p><em>police</em> : police</p></li>
-<li><p><em>fire<u> </u></em>: incendie/pompiers</p></li>
-<li><p><em>firstAid</em> : premiers secours</p></li>
-<li><p><em>sosPoint</em> : point SOS (appel d’urgence)</p></li>
-<li><p><em>other</em><u> </u>: autre</p></li>
+<li><p><em><span lang="en">police</span></em> : police</p></li>
+<li><p><em><span lang="en">fire</span></em>: incendie/pompiers</p></li>
+<li><p><em><span lang="en">firstAid</span></em> : premiers secours</p></li>
+<li><p><em><span lang="en">sosPoint</span></em> : point SOS (appel d’urgence)</p></li>
+<li><p><em><span lang="en">other</span></em><u> </u>: autre</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>SafetyFacilityList</strong></em></td>
-<td><em>SafetyFacilityList</em></td>
+<td><em><strong><span lang="en">SafetyFacilityList</span></strong></em></td>
+<td><em><span lang="en">SafetyFacilityList</span></em></td>
 <td>0:1</td>
 <td><p>Dispositifs de sécurité disponibles</p>
 <ul>
-<li><p><em>ccTv</em> : caméras</p></li>
-<li><p><em>mobileCoverage</em> : couverture téléphone portable</p></li>
-<li><p><em>sosPoints</em> : point SOS (appel d’urgence)</p></li>
-<li><p><em>staffed</em> : personel</p></li>
+<li><p><em><span lang="en">ccTv</span></em> : caméras</p></li>
+<li><p><em><span lang="en">mobileCoverage</span></em> : couverture téléphone portable</p></li>
+<li><p><em><span lang="en">sosPoints</span></em> : point SOS (appel d’urgence)</p></li>
+<li><p><em><span lang="en">staffed</span></em> : personnel</p></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">LuggageService (service de bagages) – Élément</div>
+<div class="table-title"><span lang="en">LuggageService</span> (service de bagages) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                      | *LocalService*       | *::>*            | LUGGAGE SERVICE hérite de LOCAL SERVICE.                                                        |
-| «PK»                | id                         | LuggageServiceIdType | 1:1              | Identifiant du LUGGAGE SERVICE.                                                                 |
-|                     | LuggageTrolleys            | xsd:boolean          | 0:1              | Signale si des chariots à bagage sont disponibles                                               |
-|                     | Wheelchair­LuggageTrolleys | xsd:boolean          | 0:1              | Signale si des chariots à bagage adaptés pour les personnes en fauteuil roulant sont disponibles |
-|                     | ***MaximumBagWidth***      | *LengthType*         | 0:1              | Largeur maximale des bagages                                                                    |
-|                     | ***MaximumBagHeight***     | *LengthType*         | 0:1              | Hauteur maximale des bagages                                                                    |
-|                     | ***MaximumBagDepth***      | *LengthType*         | 0:1              | Profondeur maximale des bagages                                                                 |
-|                     | ***LuggageMaximalWeigth*** | *xsd:decimal*        | 0:1              | Poid maximal des bagages                                                                        |
+| *::>*               | *::>*                      | *<span lang="en">LocalService</span>*       | *::>*            | <span lang="en">LUGGAGE SERVICE</span> hérite de <span lang="en">LOCAL SERVICE</span>.                                                        |
+| «PK»                | id                         | <span lang="en">LuggageServiceIdType</span> | 1:1              | Identifiant du <span lang="en">LUGGAGE SERVICE</span>.                                                                 |
+|                     | <span lang="en">LuggageTrolleys</span>            | xsd:<span lang="en">boolean</span>          | 0:1              | Signale si des chariots à bagage sont disponibles                                               |
+|                     | <span lang="en">WheelchairLuggageTrolleys</span> | xsd:<span lang="en">boolean</span>          | 0:1              | Signale si des chariots à bagage adaptés pour les personnes en fauteuil roulant sont disponibles |
+|                     | ***<span lang="en">MaximumBagWidth</span>***      | *<span lang="en">LengthType</span>*         | 0:1              | Largeur maximale des bagages                                                                    |
+|                     | ***<span lang="en">MaximumBagHeight</span>***     | *<span lang="en">LengthType</span>*         | 0:1              | Hauteur maximale des bagages                                                                    |
+|                     | ***<span lang="en">MaximumBagDepth</span>***      | *<span lang="en">LengthType</span>*         | 0:1              | Profondeur maximale des bagages                                                                 |
+|                     | ***<span lang="en">LuggageMaximalWeigth</span>*** | *xsd:<span lang="en">decimal</span>*        | 0:1              | Poids maximal des bagages                                                                        |
 
-<div class="table-title">CustomerService (service clientèle) – Élément</div>
+<div class="table-title"><span lang="en">CustomerService</span> (service clientèle) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*    | *LocalService*   | *::>*            | CUSTOMER SERVICE hérite de LOCAL SERVICE |
-|                     | Email    | EmailAddressType | 0:1              | Email du service client                  |
-|                     | Phone    | PhoneNumberType  | 0:1              | Téléphone du service client              |
-|                     | InfoLink | InfoLink         | 0:1              | Lien URL pour accèder au service client  |
+| *::>*               | *::>*    | *<span lang="en">LocalService</span>*   | *::>*            | <span lang="en">CUSTOMER SERVICE</span> hérite de <span lang="en">LOCAL SERVICE</span>|
+|                     | <span lang="en">Email</span>    | <span lang="en">EmailAddressType</span> | 0:1              | Email du service client                  |
+|                     | <span lang="en">Phone</span>    | <span lang="en">PhoneNumberType</span>  | 0:1              | Téléphone du service client              |
+|                     | <span lang="en">InfoLink</span> | <span lang="en">InfoLink</span>         | 0:1              | Lien URL pour accèder au service client  |
 
-<div class="table-title">LostPropertyService (objets trouvés) – Élément</div>
+<div class="table-title"><span lang="en">LostPropertyService</span> (objets trouvés) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*    | *LocalService*            | *::>*            | LOST PROPERTY SERVICE hérite de CUSTOMER SERVICE. |
-|                     | id       | LostPropertyServiceIdType | 1:1              | Identifiant du LOST PROPERTY SERVICE.             |
+| *::>*               | *::>*    | *<span lang="en">LocalService</span>*            | *::>*            | <span lang="en">LOST PROPERTY SERVICE</span> hérite de <span lang="en">CUSTOMER SERVICE</span>. |
+|                     | id       | <span lang="en">LostPropertyServiceIdType</span> | 1:1              | Identifiant du <span lang="en">LOST PROPERTY SERVICE</span>.                                    |
 
-<div class="table-title">MeetingPoint (point rencontre et rendez-vous) – Élément</div>
+<div class="table-title"><span lang="en">MeetingPoint</span> (point rencontre et rendez-vous) – Élément</div>
 
 <table>
 <colgroup>
@@ -3933,62 +3932,62 @@ Si d'autres étages sont desservis, d'autres tronçons de cheminements avec Acce
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>LocalService</em></td>
+<td><em><span lang="en">LocalService</span></em></td>
 <td><em>::></em></td>
-<td>MEETING POINT SERVICE hérite de CUSTOMER SERVICE</td>
+<td><span lang="en">MEETING POINT SERVICE</span> hérite de <span lang="en">CUSTOMER SERVICE</span></td>
 </tr>
 <tr class="odd">
 <td>«PK»</td>
 <td>id</td>
-<td>MeetingServiceIdType</td>
+<td><span lang="en">MeetingServiceIdType</span></td>
 <td>1:1</td>
-<td>Identifiant du MEETING POINT SERVICE.</td>
+<td>Identifiant du <span lang="en">MEETING POINT SERVICE</span>.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>MeetingPointType</td>
-<td>MeetingPointEnum</td>
+<td><span lang="en">MeetingPointType</span></td>
+<td><span lang="en">MeetingPointEnum</span></td>
 <td>1:1</td>
 <td><p>Type de point de rendez-vous</p>
 <ul>
-<li><p><em>meetingPoint</em> : point de rendez-vous</p></li>
-<li><p><em>groupMeeting</em> : point de rendez-vous pour les groupes</p></li>
-<li><p><em>schoolMeetingPoint</em> : point de rendez-vous pour les scolaires</p></li>
-<li><p><em>other</em> : autre</p></li>
+<li><p><em><span lang="en">meetingPoint</span></em> : point de rendez-vous</p></li>
+<li><p><em><span lang="en">groupMeeting</span></em> : point de rendez-vous pour les groupes</p></li>
+<li><p><em><span lang="en">schoolMeetingPoint</span></em> : point de rendez-vous pour les scolaires</p></li>
+<li><p><em><span lang="en">other</span></em> : autre</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td><em><strong>Label</strong></em></td>
-<td>MultilingualString</td>
+<td><em><strong><span lang="en">Label</span></strong></em></td>
+<td><span lang="en">MultilingualString</span></td>
 <td>0:1</td>
-<td>Lable (texte) permettant d’identifier le point de rendez-vous</td>
+<td>Label (texte) permettant d’identifier le point de rendez-vous</td>
 </tr>
 </tbody>
 </table>
 
-<div class="table-title">TicketingService (service de vente de billets) – Élément</div>
+<div class="table-title"><span lang="en">TicketingService</span> (service de vente de billets) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*                 | *LocalService*         | *::>*            | TICKETING SERVICE hérite de LOCAL SERVICE.                       |
-| «PK»                | id                    | TicketingServiceIdType | 1:1              | Identifiant du TICKETING SERVICE.                                |
-|                     | TicketCounter­Service | xsd:boolean            | 0:1              | Signale la possibilité d’achat de titre de transport au comptoir |
-|                     | OnboardPurchase       | xsd:boolean            | 0:1              | Signale la possibilité d’achat de titre à bord                   |
-|                     | MobileDevice­Tickets  | xsd:boolean            | 0:1              | Signale la possibilité d’achat de titre sur smartphone           |
+| *::>*               | *::>*                 | *<span lang="en">LocalService</span>*         | *::>*            | <span lang="en">TICKETING SERVICE</span> hérite de <span lang="en">LOCAL SERVICE</span>.                       |
+| «PK»                | id                    | <span lang="en">TicketingServiceIdType</span> | 1:1              | Identifiant du <span lang="en">TICKETING SERVICE</span>.                                |
+|                     | <span lang="en">TicketCounterService</span>­ | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la possibilité d’achat de titre de transport au comptoir |
+|                     | <span lang="en">OnboardPurchase</span>       | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la possibilité d’achat de titre à bord                   |
+|                     | <span lang="en">MobileDevice­Tickets</span>  | xsd:<span lang="en">boolean</span>            | 0:1              | Signale la possibilité d’achat de titre sur smartphone           |
 
 ## Commercial Service
 
-<div class="table-title">HireService (service de location) – Élément</div>
+<div class="table-title"><span lang="en">HireService</span> (service de location) – Élément</div>
 
 <table>
 <colgroup>
@@ -4000,325 +3999,325 @@ Si d'autres étages sont desservis, d'autres tronçons de cheminements avec Acce
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Classifi­cation</strong></td>
+<td><strong>Classification</strong></td>
 <td><strong>Nom</strong></td>
 <td><strong>Type</strong></td>
-<td><strong>Cardin­alité</strong></td>
+<td><strong>Cardinalité</strong></td>
 <td><strong>Description</strong></td>
 </tr>
 <tr class="even">
 <td><em>::></em></td>
 <td><em>::></em></td>
-<td><em>LocalService</em></td>
+<td><em><span lang="en">LocalService</span></em></td>
 <td><em>::></em></td>
-<td>HIRE SERVICE hérite de LOCAL SERVICE</td>
+<td><span lang="en">HIRE SERVICE</span> hérite de <span lang="en">LOCAL SERVICE</span></td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>TypeOfService</td>
-<td>HireFacilityEnum</td>
+<td><span lang="en">TypeOfService</span></td>
+<td><span lang="en">HireFacilityEnum</span></td>
 <td>1:*</td>
 <td><p>Classifications des services de location:</p>
 <ul>
-<li><p><em>Unknown</em> : inconnu</p></li>
-<li><p><em>carHire</em> : location de chariots</p></li>
-<li><p><em>motorCycleHire</em> : location de cycles motorisés</p></li>
-<li><p><em>cycleHire</em> : location de cycles</p></li>
-<li><p><em>taxi</em> : taxi</p></li>
-<li><p><em>recreationDeviceHire</em> : location pour les loisirs</p></li>
+<li><p><em><span lang="en">unknown</span></em> : inconnu</p></li>
+<li><p><em><span lang="en">carHire</span></em> : location de chariots</p></li>
+<li><p><em><span lang="en">motorCycleHire</span></em> : location de cycles motorisés</p></li>
+<li><p><em><span lang="en">cycleHire</span></em> : location de cycles</p></li>
+<li><p><em><span lang="en">taxi</span></em> : taxi</p></li>
+<li><p><em><span lang="en">recreationDeviceHire</span></em> : location pour les loisirs</p></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-## Parking Equipment
+## <span lang="en">Parking Equipment</span>
 
 Notez que les parkings automobiles sont décrits en tant que tels et
-indépendament des équipements.
+indépendamment des équipements.
 
-<div class="table-title">CycleStorageEquipment (parcs à vélos) – Élément</div>
+<div class="table-title"><span lang="en">CycleStorageEquipment</span> (parcs à vélos) – Élément</div>
 
-| **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
+| **Classification** | **Nom**             | **Type**         | **Cardinalité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
-| *::>*               | *::>*          | *PlaceEquipment*   | *::>*            | CYCLE STORAGE EQUIPMENT hérite de PLACE EQUIPMENT. |
-| «PK»                | id             | CycleStorageIdType | 1:1              | Identifiant du CYCLE STORAGE EQUIPMENT.            |
-|                     | NumberOfSpaces | xsd:integer        | 0:1              | Nombre maximal de places disponibles             |
+| *::>*               | *::>*          | *<span lang="en">PlaceEquipment</span>*   | *::>*            | <span lang="en">CYCLE STORAGE EQUIPMENT</span> hérite de <span lang="en">PLACE EQUIPMENT</span>. |
+| «PK»                | id             | <span lang="en">CycleStorageIdType</span> | 1:1              | Identifiant du <span lang="en">CYCLE STORAGE EQUIPMENT</span>.            |
+|                     | <span lang="en">NumberOfSpaces</span> | xsd:<span lang="en">integer</span>        | 0:1              | Nombre maximal de places disponibles             |
 
-# Annexe (informative) - Détail des évaluations d'accessibilité (AccessibilityAssessment)
+# Annexe (informative) - Détail des évaluations d'accessibilité (<span lang="en">AccessibilityAssessment</span>)
 
 Il n’existait pas encore de critères unifiés au niveau national pour les évaluations d’accessibilité. 
 Voici une proposition de définition aidant à choisir entre les valeurs disponibles (oui/non/partiel) 
-dans chaque cas. En cas de doute, se référer systématiquement à la règlementation en vigueur 
+dans chaque cas. En cas de doute, se référer systématiquement à la réglementation en vigueur 
 (principalement l’arrêté du 15 janvier 2007 modifié) relatif l'accessibilité de la voirie et des espaces 
 publics et l’arrêté du 20 avril 2017 relatif à l’accessibilité des établissements recevant du public (ERP).
 
-## Définition des *AccessibilityLimitation* retenus pour le TRONÇON DE CHEMINEMENT (SITE PATH LINK)
+## Définition des *<span lang="en">AccessibilityLimitation</span>* retenus pour le TRONÇON DE CHEMINEMENT (<span lang="en">SITE PATH LINK</span>)
 
-**WheelchairAccess** : le sol est plat, de revêtement lisse et stable ; l’espace est assez large 
+**<span lang="en">WheelchairAccess</span>** : le sol est plat, de revêtement lisse et stable ; l’espace est assez large 
 et sans obstacle permanent bloquant.
 
 En particulier :
 - lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer ;
-- on utilisera les valeurs de références suivantes pour la valeur true : dévers de moins de 2%,
+- on utilisera les valeurs de références suivantes pour la valeur <span lang="en">true</span> : dévers de moins de 2%,
  pente de moins de 5% et largeur d’au moins 1,40m ;
 - si le dévers est de moins de 5%, ou la pente de moins de 8%, ou la largeur d’au moins 90 cm,
- on pourra utiliser *partial* ;
-- on pourra également utiliser *partial* pour qualifier une rampe conforme à la réglementation
+ on pourra utiliser *<span lang="en">partial</span>* ;
+- on pourra également utiliser *<span lang="en">partial</span>* pour qualifier une rampe conforme à la réglementation
  française mais pas à cette définition ;
-- *false* sera systématiquement utilisé pour les *AccessFeatureType* suivants :
-* stairs
-* seriesOfStairs
-* escalator
-* travelator
+- *<span lang="en">false</span>* sera systématiquement utilisé pour les *<span lang="en">AccessFeatureType</span>* suivants :
+* <span lang="en">stairs</span>
+* <span lang="en">seriesOfStairs</span>
+* <span lang="en">escalator</span>
+* <span lang="en">travelator</span>
 
 
-**AllAreasWheelchairAccessible** vaudra *true* si **WheelchairAccess** vaut *true*, 
-et *false* si **WheelchairAccess** est *false*.
+**<span lang="en">AllAreasWheelchairAccessible</span>** vaudra *<span lang="en">true</span>* si **<span lang="en">WheelchairAccess</span>** vaut *<span lang="en">true</span>*, 
+et *<span lang="en">false</span>* si **<span lang="en">WheelchairAccess</span>** est *<span lang="en">false</span>*.
 Pour plus de détails, renseigner aussi :
-- TiltAngle, TiltType
-- Gradient, GradientType
-- FlooringType
-- MinimumWidth
+- <span lang="en">TiltAngle</span>, <span lang="en">TiltType</span>
+- <span lang="en">Gradient</span>, <span lang="en">GradientType</span>
+- <span lang="en">FlooringType</span>
+- <span lang="en">MinimumWidth</span>
 
-On utilisera la définition suivante pour **AccessFeatureType** valant *lift* : 
+On utilisera la définition suivante pour **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">lift</span>* : 
 L’ascenseur dispose d’une profondeur d’au moins 1,25m et de portes coulissantes 
 d’une largeur de passage d’au moins 80cm.
-**LiftEquipment/WheelchairPassable** vaudra *true* si **WheelchairAccess** vaut *true*, 
-et *false* si **WheelchairAccess** est *false*.
+**<span lang="en">LiftEquipment/WheelchairPassable</span>** vaudra *<span lang="en">true</span>* si **<span lang="en">WheelchairAccess</span>** vaut *<span lang="en">true</span>*, 
+et *<span lang="en">false</span>* si **<span lang="en">WheelchairAccess</span>** est *<span lang="en">false</span>*.
 Pour plus de détails, renseigner aussi :
-- LiftEquipment/Depth
-- LiftEquipment/InternalWidth
-- LiftEquipment/WheelchairTurningCircle
+- <span lang="en">LiftEquipment/Depth</span>
+- <span lang="en">LiftEquipment/InternalWidth</span>
+- <span lang="en">LiftEquipment/WheelchairTurningCircle</span>
 
 
-**StepFreeAccess** : il n’y a pas de marche infranchissable.
+**<span lang="en">StepFreeAccess</span>** : il n’y a pas de marche infranchissable.
 En particulier, ça sera 
-- *true* s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
-- *partial* s’il y a une marche de moins de 4 cm
-- *false* s’il y a une marche de plus de 4cm
+- *<span lang="en">true</span>* s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- *<span lang="en">partial</span>* s’il y a une marche de moins de 4 cm
+- *<span lang="en">false</span>* s’il y a une marche de plus de 4cm
 
-Pour **AccessFeatureType** valant *crossing*, on considèrera les éventuelles marches 
+Pour **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">crossing</span>*, on considérera les éventuelles marches 
 à toutes les extrémités. 
-**StepFreeAccess** prendra la valeur *false* pour les **AccessFeatureType** suivants :
-- stairs
-- seriesOfStairs
+**<span lang="en">StepFreeAccess</span>** prendra la valeur *<span lang="en">false</span>* pour les **<span lang="en">AccessFeatureType</span>** suivants :
+- <span lang="en">stairs</span>
+- <span lang="en">seriesOfStairs</span>
 
-**StepFreeAccess** prendra la valeur *true* pour les **AccessFeatureType** suivants :
-- escalator
-- travelator
-- lift
-- ramp
+**<span lang="en">StepFreeAccess</span>** prendra la valeur *<span lang="en">true</span>* pour les **<span lang="en">AccessFeatureType</span>** suivants :
+- <span lang="en">escalator</span>
+- <span lang="en">travelator</span>
+- <span lang="en">lift</span>
+- <span lang="en">ramp</span>
 
-**NumberOfSteps** vaudra 0 si **StepFreeAccess** vaut *true*.
-**CrossingEquipment/DroppedKerb** vaudra *true* si **StepFreeAccess** vaut *true*, 
-et *false* si **WheelchairAccess** est *false*.
-
-
-**EscalatorFreeAccess** : ce n'est pas un escalator.
-En particulier, **EscalatorFreeAccess** prendra la valeur *false* pour **AccessFeatureType** valant *escalator*, 
-et la valeur *true* dans tous les autres cas. 
-En d'autres termes, si le SitePathLink est un escalator, la valeur vaut **true** ; sinon elle vaut **false**.
+**<span lang="en">NumberOfSteps</span>** vaudra 0 si **<span lang="en">StepFreeAccess</span>** vaut *<span lang="en">true</span>*.
+**<span lang="en">CrossingEquipment/DroppedKerb</span>** vaudra *<span lang="en">true</span>* si **<span lang="en">StepFreeAccess</span>** vaut *<span lang="en">true</span>*, 
+et *<span lang="en">false</span>* si **<span lang="en">WheelchairAccess</span>** est *<span lang="en">false</span>*.
 
 
-**LiftFreeAccess** : ce n'est pas un ascenseur.
-En particulier, **LiftFreeAccess** prendra la valeur *false* pour **AccessFeatureType** valant *lift*, 
-et la valeur true dans tous les autres cas. 
-En d'autres termes, si le SitePathLink est un ascenseur, la valeur vaut **true** ; sinon elle vaut **false**.
+**<span lang="en">EscalatorFreeAccess</span>** : ce n'est pas un escalator.
+En particulier, **<span lang="en">EscalatorFreeAccess</span>** prendra la valeur *<span lang="en">false</span>* pour **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">escalator</span>*, 
+et la valeur *<span lang="en">true</span>* dans tous les autres cas. 
+En d'autres termes, si le <span lang="en">SitePathLink</span> est un <span lang="en">escalator</span>, la valeur vaut **<span lang="en">true</span>** ; sinon elle vaut **<span lang="en">false</span>**.
 
 
-**AudibleSignalsAvailable**
-- Pour les **AccessFeatureType** valant *hall* ou *concourse* : il existe un système de guidage 
+**<span lang="en">LiftFreeAccess</span>** : ce n'est pas un ascenseur.
+En particulier, **<span lang="en">LiftFreeAccess</span>** prendra la valeur *<span lang="en">false</span>* pour **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">lift</span>*, 
+et la valeur <span lang="en">true</span> dans tous les autres cas. 
+En d'autres termes, si le <span lang="en">SitePathLink</span> est un ascenseur, la valeur vaut **<span lang="en">true</span>** ; sinon elle vaut **<span lang="en">false</span>**.
+
+
+**<span lang="en">AudibleSignalsAvailable</span>**
+- Pour les **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">hall</span>* ou *<span lang="en">concourse</span>* : il existe un système de guidage 
  sonore en bon état de fonctionnement le long de ce cheminement.
-- Pour les **AccessFeatureType** valant *crossing* : il y a des feux sonores d’aide à la
+- Pour les **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">crossing</span>* : il y a des feux sonores d’aide à la
  traversée en bon état en marche
-- Pour les **AccessFeatureType** valant *lift* : l’ascenseur est équipé d’un mécanisme
+- Pour les **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">lift</span>* : l’ascenseur est équipé d’un mécanisme
  d’annonces sonores de l’étage en bon état de marche
 
-**CrossingEquipment/AcousticCrossingAids** et **LiftEquipment/AudioAnnouncements** vaudra *true* 
-si **AudibleSignalsAvailable** vaut *true*, et *false* si **AudibleSignalsAvailable** est *false*.
+**<span lang="en">CrossingEquipment/AcousticCrossingAids</span>** et **<span lang="en">LiftEquipment/AudioAnnouncements</span>** vaudra *<span lang="en">true</span>* 
+si **<span lang="en">AudibleSignalsAvailable</span>** vaut *<span lang="en">true</span>*, et *<span lang="en">false</span>* si **<span lang="en">AudibleSignalsAvailable</span>** est *<span lang="en">false</span>*.
 
 
-**VisualSignsAvailable**
-- Pour les **AccessFeatureType** valant *hall* ou *concourse* : il existe des panneaux
- directionnels le long de ce cheminement
-- Pour les **AccessFeatureType** valant *crossing* : il y a un marquage au sol en bon état de
- type zébra guidant la traversée 
-- Pour les **AccessFeatureType** valant *lift* : l’ascenseur est équipé d’un panneau
+**<span lang="en">VisualSignsAvailable</span>**
+- Pour les **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">hall</span* ou *<span lang="en">concourse</span>* : il existe des panneaux
+ <span lang="en">directionnels</span> le long de ce cheminement
+- Pour les **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">crossing</span>* : il y a un marquage au sol en bon état de
+ type <span lang="en">zébra</span> guidant la traversée 
+- Pour les **<span lang="en">AccessFeatureType</span>** valant *<span lang="en">lift</span>* : l’ascenseur est équipé d’un panneau
  d’affichage en cabine indiquant l’étage.
 
-**CrossingEquipment/ZebraCrossing** vaudra *true* si **VisualSignsAvailable** vaut *true*, 
-et *false* si **VisualSignsAvailable** est *false*.
+**<span lang="en">CrossingEquipment/ZebraCrossing</span>** vaudra *<span lang="en">true</span>* si **<span lang="en">VisualSignsAvailable</span>** vaut *<span lang="en">true</span>*, 
+et *<span lang="en">false</span>* si **<span lang="en">VisualSignsAvailable</span>** est *<span lang="en">false</span>*.
 
-**TactileGuidanceAvailable** : il y a des bandes de guidage, ou il y a un élément linéaire 
+**<span lang="en">TactileGuidanceAvailable</span>** : il y a des bandes de guidage, ou il y a un élément linéaire 
 au sol qui peut être détecté et suivi avec une canne (mur, caniveau, etc).
 
-S'il y a des bandes de guidage podotactile, on renseignera également l'attribut **TactileGuidingStrip**.
+S'il y a des bandes de guidage podotactile, on renseignera également l'attribut **<span lang="en">TactileGuidingStrip</span>**.
 
-## Définition des AccessibilityLimitation retenus pour les sanitaires (SANITARY EQUIPMENT)
+## Définition des <span lang="en">AccessibilityLimitation</span> retenus pour les sanitaires (<span lang="en">SANITARY EQUIPMENT</span>)
 
-**WheelchairAccess** : un usager en fauteuil roulant peut se positionner sur la cuvette 
+**<span lang="en">WheelchairAccess</span>** : un usager en fauteuil roulant peut se positionner sur la cuvette 
 et atteindre et utiliser tous les équipements (lumière, lave-main, etc.)
 Cela signifie notamment qu’il faut un espace d’au moins 1,50 m à côté de la cuvette, 
 une barre d’appui, un lave-main accessible, etc.
 
-## Définition des *AccessibilityLimitation* retenus pour les zones d'embarquement (QUAY)
+## Définition des *<span lang="en">AccessibilityLimitation</span>* retenus pour les zones d'embarquement (<span lang="en">QUAY</span>)
 
-**WheelchairAccess** : le sol est plat, de revêtement lisse et stable, assez large pour faire demi-tour en fauteuil (1,50m) et sans obstacle permanent bloquant
+**<span lang="en">WheelchairAccess</span>** : le sol est plat, de revêtement lisse et stable, assez large pour faire demi-tour en fauteuil (1,50m) et sans obstacle permanent bloquant
 
 En particulier :
 
 - lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer
-- on utilisera les valeurs de références suivantes pour la valeur true : dévers de moins de 2%, pente de moins de 5%
-- si le dévers est de moins de 5%, ou la pente de moins de 8%, ou la largeur d’au moins 90 cm, on pourra utiliser partial
+- on utilisera les valeurs de références suivantes pour la valeur <span lang="en">true</span> : dévers de moins de 2%, pente de moins de 5%
+- si le dévers est de moins de 5%, ou la pente de moins de 8%, ou la largeur d’au moins 90 cm, on pourra utiliser <span lang="en">partial</span>
 
-**AudibleSignalsAvailable** : il y a des annonces sonores, en général des prochains passages, indiquant au moins les lignes desservies ainsi que leur direction.
+**<span lang="en">AudibleSignalsAvailable</span>** : il y a des annonces sonores, en général des prochains passages, indiquant au moins les lignes desservies ainsi que leur direction.
 
-**VisualSignsAvailable** : il y a au moins le nom de l'arrêt, les lignes desservies ainsi que leur direction, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+**<span lang="en">VisualSignsAvailable</span>** : il y a au moins le nom de l'arrêt, les lignes desservies ainsi que leur direction, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
 
-**TactileGuidanceAvailable** : il y a des bandes de guidage podotactile menant à la porte permettant d'embarquer dans le véhicule, et elle sont connectées à des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne (mur, bandes de guidage, etc).
+**<span lang="en">TactileGuidanceAvailable</span>** : il y a des bandes de guidage podotactile menant à la porte permettant d'embarquer dans le véhicule, et elle sont connectées à des éléments linéaires au sol qui peuvent être détectés et suivis avec une canne (mur, bandes de guidage, etc).
 
-## Définition des *AccessibilityLimitation* retenus pour les entrées (ENTRANCE)
+## Définition des *<span lang="en">AccessibilityLimitation</span>* retenus pour les entrées (<span lang="en">ENTRANCE</span>)
 
-Ces définitions concernent tous les éléments qui héritent de ENTRANCE : accès de lieu d'arrêt (STOP PLACE ENTRANCE), accès piéton d'un parking (PARKING PASSENGER ENTRANCE), accès de point d'intérêt (POINT OF INTEREST ENTRANCE), etc.
+Ces définitions concernent tous les éléments qui héritent de <span lang="en">ENTRANCE</span> : accès de lieu d'arrêt (<span lang="en">STOP PLACE ENTRANCE</span>), accès piéton d'un parking (<span lang="en">PARKING PASSENGER ENTRANCE</span>), accès de point d'intérêt (<span lang="en">POINT OF INTEREST ENTRANCE</span>), etc.
 
-**WheelchairAccess** : il y a une largeur de passage d’au moins 80 cm et pas de marche infranchissable. S’il y a une porte, elle s’ouvre sans forcer (moins de 50 Newton).
+**<span lang="en">WheelchairAccess</span>** : il y a une largeur de passage d’au moins 80 cm et pas de marche infranchissable. S’il y a une porte, elle s’ouvre sans forcer (moins de 50 Newton).
 
-On utilisera les mêmes valeurs de référence pour la hauteur de la marche éventuelle que pour StepFreeAccess (voir ci-après).
+On utilisera les mêmes valeurs de référence pour la hauteur de la marche éventuelle que pour <span lang="en">StepFreeAccess</span> (voir ci-après).
 
-**StepFreeAccess** : il n’y a pas de marche infranchissable.
-
-En particulier, ça sera :
-
-- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
-- partial s’il y a une marche de moins de 4 cm
-- false s’il y a une marche de plus de 4 cm
-
-**TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette entrée.
-
-## Définition des *AccessibilityLimitation* retenus pour les lieux d'arrêts (STOP PLACE)
-
-**WheelchairAccess** : chaque quai est pratiquable en fauteuil roulant et il existe un cheminement pratiquable en fauteuil roulant entre chaque zone d'embarquement et au moins un accès.
-
-Se référer aux définitions plus précises de *WheelchairAccess* pour les zones d'embarquement (Quay), les accès de lieu d'arrêt (StopPlaceEntrance) et les cheminements (SitePathLink).
-
-**StepFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans franchir de marche.
+**<span lang="en">StepFreeAccess</span>** : il n’y a pas de marche infranchissable.
 
 En particulier, ça sera :
 
-- true s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
-- partial s’il y a une marche de moins de 4 cm
-- false s’il y a une marche de plus de 4 cm
+- <span lang="en">true</span> s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- <span lang="en">partial</span> s’il y a une marche de moins de 4 cm
+- <span lang="en">false</span> s’il y a une marche de plus de 4 cm
 
-**EscalatorFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un escalator.
+**<span lang="en">TactileGuidanceAvailable</span>** : des bandes de guidage podotactile partent de cette entrée.
 
-**LiftFreeAccess** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un ascenseur.
+## Définition des *<span lang="en">AccessibilityLimitation</span>* retenus pour les lieux d'arrêts (<span lang="en">STOP PLACE</span>)
 
-**AudibleSignalsAvailable** : il y a des annonces sonores.
+**<span lang="en">WheelchairAccess</span>** : chaque quai est pratiquable en fauteuil roulant et il existe un cheminement pratiquable en fauteuil roulant entre chaque zone d'embarquement et au moins un accès.
 
-**VisualSignsAvailable** : il y a au moins le nom du lieu d'arrêt, les lignes desservies, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+Se référer aux définitions plus précises de *<span lang="en">WheelchairAccess</span>* pour les zones d'embarquement (<span lang="en">Quay</span>), les accès de lieu d'arrêt (<span lang="en">StopPlaceEntrance</span>) et les cheminements (<span lang="en">SitePathLink</span>).
 
-**TactileGuidanceAvailable** : il y a un réseau de bandes de guidage podotactile qui relient chaque zone d'embarquement à au moins un accès.
+**<span lang="en">StepFreeAccess</span>** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans franchir de marche.
 
-## Définition des *AccessibilityLimitation* retenus pour les places de stationnement (PARKING BAY)
+En particulier, ça sera :
 
-**WheelchairAccess** : le sol est plat, de revêtement lisse et stable ; la largeur est d'au moins 3.30m et on peut rejoindre la place depuis le trottoir sans franchir de marche.
+- <span lang="en">true</span> s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- <span lang="en">partial</span> s’il y a une marche de moins de 4 cm
+- <span lang="en">false</span> s’il y a une marche de plus de 4 cm
+
+**<span lang="en">EscalatorFreeAccess</span>** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un escalator.
+
+**<span lang="en">LiftFreeAccess</span>** : il est possible d’atteindre chaque zone d'embarquement depuis au moins un accès sans passer par un ascenseur.
+
+**<span lang="en">AudibleSignalsAvailable</span>** : il y a des annonces sonores.
+
+**<span lang="en">VisualSignsAvailable</span>** : il y a au moins le nom du lieu d'arrêt, les lignes desservies, et un tableau ou écran d'affichage (présentant les horaires, le plan du réseau, des lignes desservies ou des abords). Les textes écrits sont conformes aux recommandations en vigueur en terme de taille de caractère, de lisibilité de la police et de contraste visuel par rapport à l'arrière plan (voir arrêté du 15 janvier 2007 pour plus de détails).
+
+**<span lang="en">TactileGuidanceAvailable</span>** : il y a un réseau de bandes de guidage podotactile qui relient chaque zone d'embarquement à au moins un accès.
+
+## Définition des *<span lang="en">AccessibilityLimitation</span>* retenus pour les places de stationnement (<span lang="en">PARKING BAY</span>)
+
+**<span lang="en">WheelchairAccess</span>** : le sol est plat, de revêtement lisse et stable ; la largeur est d'au moins 3.30m et on peut rejoindre la place depuis le trottoir sans franchir de marche.
 
 En particulier :
 
 - lisse et stable signifie que le revêtement ne cause pas de secousse ou de risques de s’enfoncer ;
 - plat signifie dévers de moins de 2% et pente de moins de 2%
 
-**StepFreeAccess** : il est possible de rejoindre la place directement depuis le trottoir sans rencontrer de marche infranchissable.
+**<span lang="en">StepFreeAccess</span>** : il est possible de rejoindre la place directement depuis le trottoir sans rencontrer de marche infranchissable.
 
 En particulier, ça sera :
 
-- *true* s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
-- *partial* s’il y a une marche de moins de 4 cm
-- *false* s’il y a une marche de plus de 4cm
+- *<span lang="en">true</span>* s’il n’y a pas de marche ou s’il y a une marche de moins de 2 cm
+- *<span lang="en">partial</span>* s’il y a une marche de moins de 4 cm
+- *<span lang="en">false</span>* s’il y a une marche de plus de 4cm
 
-**VisualSignsAvailable** : 
+**<span lang="en">VisualSignsAvailable</span>** : 
 - dans le cas général : la place de stationnement est délimitée par un marquage au sol
 - dans le cas d'un stationnement réservé aux PMR : un marquage au sol et une signalisation verticale conformes à la réglementation indiquent la place de stationnement
 
 En particulier, ça sera :
 
-- *true* s'il y a un panneau de signalisation (panneaux B6d et M6h) et un pictogramme UFR blanc peint au sol sur les limites ou le long de l'emplacement. Voir l'arrêté du 7 juin 1977 modifié et l'instruction interministérielle sur la signalisation routière pour plus de détails.
-- *partial* s'il y a un panneau ou un pictogramme
-- *false* si les deux sont absents
+- *<span lang="en">true</span>* s'il y a un panneau de signalisation (panneaux B6d et M6h) et un pictogramme UFR blanc peint au sol sur les limites ou le long de l'emplacement. Voir l'arrêté du 7 juin 1977 modifié et l'instruction interministérielle sur la signalisation routière pour plus de détails.
+- *<span lang="en">partial</span>* s'il y a un panneau ou un pictogramme
+- *<span lang="en">false</span>* si les deux sont absents
 
-**TactileGuidanceAvailable** : des bandes de guidage podotactile partent de cette place de stationnement.
+**<span lang="en">TactileGuidanceAvailable</span>** : des bandes de guidage podotactile partent de cette place de stationnement.
 
-## Définition des *AccessibilityLimitation* pour les véhicules
+## Définition des *<span lang="en">AccessibilityLimitation</span>* pour les véhicules
 
-**WheelchairAccess** : Il existe un espace assez large pour accueillir les personnes en fauteuil roulant à bord, et on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
+**<span lang="en">WheelchairAccess</span>** : Il existe un espace assez large pour accueillir les personnes en fauteuil roulant à bord, et on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
 
-**AudibleSignalsAvailable** : des annonces sonores d'information voyageur sont diffusées dans le véhicule. Il peut s'agir d'annonces à la porte avant rappelant la ligne et la destination, ou d'annonce à bord indiquant le prochain arrêt.
+**<span lang="en">AudibleSignalsAvailable</span>** : des annonces sonores d'information voyageur sont diffusées dans le véhicule. Il peut s'agir d'annonces à la porte avant rappelant la ligne et la destination, ou d'annonce à bord indiquant le prochain arrêt.
 
-**VisualSignsAvailable** : il y a un système d'affichage visuel de l'information voyageur. Il peut s'agir d'un affichage à l'extérieur (à l'avant et à l'arrière) indiquant la ligne et la destination, ou d'affichage à bord indiquant le prochain arrêt. Des critères de visibilité s'appliquent concernant le contraste, la taille et la police des caractères.
+**<span lang="en">VisualSignsAvailable</span>** : il y a un système d'affichage visuel de l'information voyageur. Il peut s'agir d'un affichage à l'extérieur (à l'avant et à l'arrière) indiquant la ligne et la destination, ou d'affichage à bord indiquant le prochain arrêt. Des critères de visibilité s'appliquent concernant le contraste, la taille et la police des caractères.
 
-**StepFreeAccess** : on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
+**<span lang="en">StepFreeAccess</span>** : on peut rentrer dans le véhicule de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc).
 
 Les autres évaluations d'accessibilité ne sont pas retenues pour le véhicule.
 
-## Définition des *AccessibilityLimitation* retenus pour la course commerciale (SERVICE JOURNEY)
+## Définition des *<span lang="en">AccessibilityLimitation</span>* retenus pour la course commerciale (<span lang="en">SERVICE JOURNEY</span>)
 
 On considère que l'évaluation d'accessibilité est remplie pour la course commerciale lorsque 100% des véhicules susceptibles d'opérer cette course commerciale remplissent cette évaluation d'accessibilité. Se rapporter aux définitions sur les véhicules pour connaitre les critères pour chaque évaluation d'accessibilité.
 
-Si certains véhicules ne sont pas équipés, on peut utiliser la valeur "partial", en renseignant un commentaire pour donner plus de détails.
+Si certains véhicules ne sont pas équipés, on peut utiliser la valeur "<span lang="en">partial</span>", en renseignant un commentaire pour donner plus de détails.
 
-## Définition des *AccessibilityLimitation* retenus pour la ligne (LINE)
+## Définition des *<span lang="en">AccessibilityLimitation</span>* retenus pour la ligne (<span lang="en">LINE</span>)
 
-De manière générale, ces critères sont pour une évaluation d'accessibilité de l'ensemble de la ligne. Pour des informations plus fines sur les arrêts desservis par la ligne et/ou les véhicules utilisés, se reporter directement à ces objets. Si les informations des arrêts et/ou des véhicules de la ligne font état d'une accessibilité partielle sur l'un des critères ci-dessous, la valeur "partial" est à privilégier au niveau de la ligne, accompagnée d'un commentaire. 
+De manière générale, ces critères sont pour une évaluation d'accessibilité de l'ensemble de la ligne. Pour des informations plus fines sur les arrêts desservis par la ligne et/ou les véhicules utilisés, se reporter directement à ces objets. Si les informations des arrêts et/ou des véhicules de la ligne font état d'une accessibilité partielle sur l'un des critères ci-dessous, la valeur "<span lang="en">partial</span>" est à privilégier au niveau de la ligne, accompagnée d'un commentaire. 
 
-**WheelchairAccess** : La ligne est officiellement ouverte aux personnes en fauteuil roulant par l'opérateur ou l'autorité organisatrice. Cela signifie en général que le personnel est formé à la prise en charge des personnes en situation de handicap, que les supports d'information voyageur  (aux arrêts et à bord des véhicules) l'indiquent et que le matériel roulant est équipé en conséquence selon des critères dépendant de la politique locale.
+**<span lang="en">WheelchairAccess</span>** : La ligne est officiellement ouverte aux personnes en fauteuil roulant par l'opérateur ou l'autorité organisatrice. Cela signifie en général que le personnel est formé à la prise en charge des personnes en situation de handicap, que les supports d'information voyageur  (aux arrêts et à bord des véhicules) l'indiquent et que le matériel roulant est équipé en conséquence selon des critères dépendant de la politique locale.
 
-**AudibleSignalsAvailable** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne diffusent des annonces sonores. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
+**<span lang="en">AudibleSignalsAvailable</span>** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne diffusent des annonces sonores. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
 
-**VisualSignsAvailable** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne disposent un système d'affichage visuel de l'information voyageur. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
+**<span lang="en">VisualSignsAvailable</span>** : Tous les véhicules circulant sur cette ligne et tous les arrêts desservis par cette ligne disposent un système d'affichage visuel de l'information voyageur. Se rapporter aux critères sur le véhicule et sur l'arrêt pour en savoir plus.
 
-**StepFreeAccess** : On peut embarquer de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc) dans n'importe quel véhicule circulant sur cette ligne.
+**<span lang="en">StepFreeAccess</span>** : On peut embarquer de plain-pied ou à l'aide d'un système d'embarquement (palette, rampe amovible, etc) dans n'importe quel véhicule circulant sur cette ligne.
 
-Pour les critères qui portent sur tous les véhicules / sur tous les arrêts, on peut utiliser la valeur "partial" si certains véhicules ou arrêts ne sont pas équipés, en renseignant un commentaire pour donner plus de détails.
+Pour les critères qui portent sur tous les véhicules / sur tous les arrêts, on peut utiliser la valeur "<span lang="en">partial</span>" si certains véhicules ou arrêts ne sont pas équipés, en renseignant un commentaire pour donner plus de détails.
 
 Les autres évaluations d'accessibilité ne sont pas retenues pour la ligne dans le cadre du profil.
 
 Remarque : ces définitions sont également valables pour les lignes de transport à la demande (lignes flexibles ou mixtes). Pour plus de détails sur la description du transport à la demande, se référer à la partie Réseaux du profil.
 
-## Espace de manœuvre pour les entrées (ENTRANCE EQUIPMENT)
+## Espace de manœuvre pour les entrées (<span lang="en">ENTRANCE EQUIPMENT</span>)
 
-L'espace de manœuvre (ou aire de rotation) désigne à un espace situé juste devant la porte, permettant de la manœuvrer correctement et de faire demi-tour en fauteuil roulant afin de l'emprunter. Un diamètre d'1,50 m est attendu et on peut en retrouver de chaque côté de la porte (attribut **TurningSpacePosition**).
+L'espace de manœuvre (ou aire de rotation) désigne à un espace situé juste devant la porte, permettant de la manœuvrer correctement et de faire demi-tour en fauteuil roulant afin de l'emprunter. Un diamètre d'1,50 m est attendu et on peut en retrouver de chaque côté de la porte (attribut **<span lang="en">TurningSpacePosition</span>**).
 
 ![Diamètre de giration](./media/image18.jpg)
 
 
 # Bibliographie
 
-EN 15531-1, Public transport - Service interface for real-time
+<span lang="en">EN 15531-1, Public transport - Service interface for real-time
 information relating to public transport operations - Part 1: Context
-and framework
+and framework</span>
 
-EN 15531-2, Public transport - Service interface for real-time
+<span lang="en">EN 15531-2, Public transport - Service interface for real-time
 information relating to public transport operations - Part 2:
-Communications infrastructure3
+Communications infrastructure3</span>
 
-EN 15531-3, Public transport - Service interface for real-time
+<span lang="en">EN 15531-3, Public transport - Service interface for real-time
 information relating to public transport operations - Part 3: Functional
-service interfaces4
+service interfaces4</span>
 
-CEN/TS 15531-4, Public transport - Service interface for real-time
+<span lang="en">CEN/TS 15531-4, Public transport - Service interface for real-time
 information relating to public transport operations - Part 4: Functional
-service interfaces: Facility Monitoring
+service interfaces: Facility Monitoring</span>
 
-CEN/TS 15531-5, Public transport - Service interface for real-time
+<span lang="en">CEN/TS 15531-5, Public transport - Service interface for real-time
 information relating to public transport operations - Part 5: Functional
-service interfaces - Situation Exchange
+service interfaces - Situation Exchange</span>
 
-Etude CAMERA:
+Étude CAMERA:
 <http://www.predim.org/IMG/pdf/rapport_etude_camera_2015.pdf> *(note:
 cette étude ne porte que sur les modes de surface)*
 
-EN 28701, Intelligent transport systems - Public transport -
-Identification of Fixed Objects in Public Transport (IFOPT)
+<span lang="en">EN 28701, Intelligent transport systems - Public transport -
+Identification of Fixed Objects in Public Transport (IFOPT)</span>
 
 Standard CNIG Accessibilité du cheminement en voirie : 
 http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessibilite_v2022-05.pdf 
