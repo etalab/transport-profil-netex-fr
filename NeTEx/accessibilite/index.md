@@ -1860,8 +1860,8 @@ partager des SEQUENCES DE TRONÇONS entre plusieurs CHEMINEMENTs).
 
 La figure ci-dessous en donne une illustration.
 
-![image](media/image13.png)
-*vue schématiques des CHEMINEMENTs*
+![Le CHEMINEMENT est constitué de SÉQUENCEs DE TRONÇONS. Une SÉQUENCE DE TRONÇONS est constituée de plusieurs PATH LINKs, qui commencent et se terminent sur des EXTRÉMITÉS DE TRONÇONS.](media/image13.png)
+*vue schématique des CHEMINEMENTs*
 
 Le schéma UML ci-dessous décrit la structure des cheminements dans NeTEx
 (et Transmodel).
@@ -3499,7 +3499,7 @@ Remarque : <span class="hl">plusieurs modélisations sont possibles pour les asc
 
 exemple :
 
-![schéma présentant une coupe d'un ascenseur, avec 3 SitePathLink dessinés](media/image19.png)
+![Schéma présentant une coupe d'un ascenseur desservant 2 étages : 3 tronçons de cheminements sont dessinés, l'un représente le trajet vertical de l'ascenseur, les deux autres sont les cheminements à chaque étage pour entrer et sortir de l'ascenseur.](media/image19.png)
 
 - l'équipement de l'ascenseur :
 
@@ -4288,7 +4288,7 @@ Remarque : ces définitions sont également valables pour les lignes de transpor
 
 L'espace de manœuvre (ou aire de rotation) désigne à un espace situé juste devant la porte, permettant de la manœuvrer correctement et de faire demi-tour en fauteuil roulant afin de l'emprunter. Un diamètre d'1,50 m est attendu et on peut en retrouver de chaque côté de la porte (attribut **TurningSpacePosition**).
 
-![Diamètre de giration](./media/image18.jpg)
+![Croquis d'une vue de haut d'un fauteuil roulant qui tourne sur lui-même : un diamètre de 1,50m est nécessaire pour effectuer un tour complet.](./media/image18.jpg)
 
 
 # Bibliographie

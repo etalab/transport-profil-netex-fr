@@ -2318,8 +2318,17 @@ date proposé par le mécanisme de référence de NeTEx.
 La liste des modes utilisés est la suivante (version anglaise d'origine
 et traduction):
 
-![image](media/image3-1.png)
-*Modes*
+- <span lang="en">*air*</span> : aérien
+- <span lang="en">*bus*</span> : bus
+- <span lang="en">*coach*</span> : car
+- <span lang="en">*funicular*</span> : funiculaire
+- <span lang="en">*metro*</span> : métro
+- <span lang="en">*rail*</span> : ferré
+- <span lang="en">*trolleyBus*</span> : trolley
+- <span lang="en">*tram*</span> : tramway
+- <span lang="en">*water*</span> : maritime ou fluvial
+- <span lang="en">*cableway*</span> : transport par câble (télécabine, téléphérique, etc.)
+- <span lang="en">*other*</span> : autre, non utilisé dans le cadre du profil français
 
 ### Les sous modes
 
@@ -2329,7 +2338,7 @@ d'exploitation qui est mis en place (navette, train régional, etc.). La
 figure ci-dessous présente l'ensemble des modes normalisés.
 
 ![image](media/image4.png)
-*Sous modes*
+*Sous-modes*
 
 Par souci de clarté, les sous-modes ont été classés en relation avec un
 mode, toutefois le sous-mode "***tramTrain***" peut être utilisé

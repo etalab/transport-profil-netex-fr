@@ -610,7 +610,7 @@ La structure proposée est représentée par la figure ci-dessous. C'est
 une structure d'imbrication hiérarchique forte, qui s'appuie sur une
 base modale.
 
-![image](media/image1.png)
+![Structuration de l'arrêt en 4 niveaux : le groupe de lieu, le lieu d'arrêt multimodal, le pôle monomodal ou le lieu d'arrêt monomodal (aussi appelé l'arrêt commercial), et la zone d'embarquement.](media/image1.png)
 *Structuration des arrêts*
 
 Le typage proposé de chaque niveau (voir les définitions) est
@@ -633,28 +633,19 @@ acteurs.
 
 Quatre niveaux hiérarchiques d’arrêt sont disponibles :
 
--   Groupe de Lieux
-
-
-
--   Lieu d’arrêt multimodal
-
-
-
--   Lieu d’arrêt monomodal et pôle monomodal
-
-
-
--   Zone d’embarquement (Quai de train, voie à quai, poteau de Bus, de
+- Groupe de Lieu
+- Lieu d’arrêt multimodal
+- Lieu d’arrêt monomodal et pôle monomodal
+- Zone d’embarquement (Quai de train, voie à quai, poteau de Bus, de
     Tram …. )
 
 La figure ci-dessous fournit une vue arborescente de cette
 structuration, et y fait de plus apparaître la notion d'accès.
 
-![image](media/image2.png)
+![Le groupe de lieu contient des lieux d'arrêts multimodaux. Le lieu d'arrêt multimodal peut contenir des accès, des lieux d'arrêts monomodaux et des pôles monomodaux. Le Pôle monomodal peut contenir des lieux d'arrêts monomodaux. Le lieu d'arrêt monomodal peut contenir des accès et des zones d'embarquement.](media/image2.png)
 *Structuration des arrêts: vue hiérarchique complète*
 
-L'accès de lieux peut être rattaché uniquement aux Lieux d’arrêt
+L'accès de lieu peut être rattaché uniquement aux Lieux d’arrêt
 monomodaux ou aux Lieux d’arrêt multimodaux (voir sa définition
 ci-dessous).
 
