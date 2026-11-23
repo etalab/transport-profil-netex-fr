@@ -1658,7 +1658,7 @@ position et ses caractéristiques propres.
 | «cntd»              | ***equipment­Positions*** | EquipmentPosition | 0:\*             | EQUIPMENT POSITIONs au sein EQUIPMENT PLACE (notez que plusieurs équipement peuvent être placés dans un même lieu d’équipement) |
 |                     | ***placeEquipments***     | Equipment         | 0:\*             | Liste des EQUIPMENTs au sein de l’EQUIPMENT PLACE.                                                                              |
 
-10 — *EquipmentPosition – Élément*
+<div class="table-title">EquipmentPosition – Élément</div>
 
 |                     |                          |                         |                  |                                                                                                                                                                                                                                                                                                                             |
 |---------------------|--------------------------|-------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2386,19 +2386,14 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 
 <div class="table-title">PathLinkInSequence – Élément</div>
 
-|                     |                   |                      |                  |                                                                                                                                                             |
-|---------------------|-------------------|----------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Classifi­cation** | **Nom**          | **Type**             | **Cardin­alité** | **Description**                                                                                                                                             |
-| *::>*               | *::>*             | *VersionedChild*     | *::>*            | PATH LINK IN SEQUENCE hérite de VERSIONED CHILD                                                                                                             |
-| «PK»                | id                | LinkInSequenceIdType | 1:1              | Identifiant du PATH LINK IN SEQUENCE.                                                                                                                       |
-| «FK»                | PathLinkRef       | PathLinkRef          | 1:1              | Référence à un PATH LINK.                                                                                                                                   |
-|                     |                   |                      |                  |                                                                                                                                                             |
-|                     | ***Reverse***     | xsd:boolean          | 0:1              | Indique si, dans le cadre de la séquence, on emprunte le cheminent en sens inverse (de *To* vers *From*). La valeur par défault est *false* (sens direct). |
-|                     |                   |                      |                  |                                                                                                                                                             |
-|                     |                   |                      |                  |                                                                                                                                                             |
-|                     | ***Instruction*** | *MultilingualString* | 0:1              | Instruction de guidage sur le cheminement.                                                                                                                  |
-|                     | Label             | MultilingualString   | 0:1              | Label associé au PATH LINK IN SEQUENCE.                                                                                                                     |
-|                     |                   |                      |                  |                                                                                                                                                             |
+| **Classification** | **Nom**     | **Type**             | **Cardinalité** | **Description**                                                                                                                                            |
+| ------------------ | ----------- | -------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| *::>*              | *::>*       | *VersionedChild*     | *::>*           | PATH LINK IN SEQUENCE hérite de VERSIONED CHILD                                                                                                            |
+| «PK»               | id          | LinkInSequenceIdType | 1:1             | Identifiant du PATH LINK IN SEQUENCE.                                                                                                                      |
+| «FK»               | PathLinkRef | PathLinkRef          | 1:1             | Référence à un PATH LINK.                                                                                                                                  |
+|                    | Reverse     | xsd:boolean          | 0:1             | Indique si, dans le cadre de la séquence, on emprunte le cheminent en sens inverse (de *To* vers *From*). La valeur par défault est *false* (sens direct). |
+|                    | Instruction | MultilingualString   | 0:1             | Instruction de guidage sur le cheminement.                                                                                                                 |
+|                    | Label       | MultilingualString   | 0:1             | Label associé au PATH LINK IN SEQUENCE.                                                                                                                    |
 
 <div class="table-title">NavigationPath – Élément</div>
 
@@ -2454,39 +2449,39 @@ est obligatoire de renseigner les tronçons de cheminement correspondants.</span
 <td>0:1</td>
 <td><p>Type de NAVIGATION PATH:</p>
 <ul>
-<li><blockquote>
+<li>
 <p><em>hallToQuay (hall vers quai)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>hallToStreet (hall vers rue)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>quayToHall (quai vers hall)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>quayToQuay (quai vers quai)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>quayToStreet (qui vers rue)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>streetToHall (rue vers hal)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>streetToQuay (rue vers quai)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>streetToSpace (rue vers espace/esplanade)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>spaceToStreet (vers esplanade vers rue)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>spaceToHall (vers esplanade vers hall)</em></p>
-</blockquote></li>
-<li><blockquote>
+</li>
+<li>
 <p><em>hallToSpace (hall vers vers esplanade)</em></p>
-</blockquote></li>
+</li>
 <li><p><em>spaceToSpace</em> (<em>esplanade vers esplanade)</em></p></li>
 </ul></td>
 </tr>
@@ -2581,16 +2576,16 @@ descriptions des objets qu'ils complètent.
 
 ## Passenger Service Equipment
 
-<div class="table-title">PassengerEquipment (équipement pour les passagers) –</div>
-Élément
+<div class="table-title">PassengerEquipment (équipement pour les passagers) – Élément</div>
+
 
 | **Classifi­cation** | **Nom**             | **Type**         | **Cardin­alité** | **Description**                        |
 | --------------- | ------------- | ---------------------- | ------------ | --------------------------------------------- |
 | ::>                | ::>      | *Equipment*   | ::>             | PASSENGER EQUIPMENT hérite de EQUIPMENT.                                                           |
 |                    | Fixed    | *xsd:*boolean | 0:1             | Indique si l’EQUIPMENT est fixe au sein d’une PLACE ou s’il est à bord d’un VEHICLE (donc mobile). |
 
-<div class="table-title">PassengerSafetyEquipment (équipement pour la sécurité des</div>
-passagers)* *–* Élément
+<div class="table-title">PassengerSafetyEquipment (équipement pour la sécurité des passagers) - Élément</div>
+
 
 <table>
 <colgroup>
@@ -4066,10 +4061,10 @@ En particulier :
 - on pourra également utiliser *partial* pour qualifier une rampe conforme à la réglementation
  française mais pas à cette définition ;
 - *false* sera systématiquement utilisé pour les *AccessFeatureType* suivants :
-* stairs
-* seriesOfStairs
-* escalator
-* travelator
+    * stairs
+    * seriesOfStairs
+    * escalator
+    * travelator
 
 
 **AllAreasWheelchairAccessible** vaudra *true* si **WheelchairAccess** vaut *true*, 
@@ -4321,12 +4316,12 @@ EN 28701, Intelligent transport systems - Public transport -
 Identification of Fixed Objects in Public Transport (IFOPT)
 
 Standard CNIG Accessibilité du cheminement en voirie : 
-http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessibilite_v2022-05.pdf 
+<http://cnig.gouv.fr/IMG/documents_wordpress/2022/05/220504_Standard_CNIG_Accessibilite_v2022-05.pdf>
 (v2021-10 rev. 2022-05)
 
 Documentation collaborative sur la cartographie des cheminements piétons
 et de l'accessibilité dans OpenStreetMap : 
-https://wiki.openstreetmap.org/wiki/FR:Cheminements_pi%C3%A9tons
+<https://wiki.openstreetmap.org/wiki/FR:Cheminements_pi%C3%A9tons>
 
 Règles de conversion vers le présent profil, depuis OpenStreetMap et depuis le standard CNIG Accessibilité :
-https://doc.transport.data.gouv.fr/documentation/normes-europeennes/accessibilite
+<https://doc.transport.data.gouv.fr/documentation/normes-europeennes/accessibilite>
