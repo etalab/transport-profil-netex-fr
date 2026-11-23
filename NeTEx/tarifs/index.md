@@ -8995,7 +8995,7 @@ failed to validate it.</em></p></li>
 <tr class="even">
 <td>« enum »</td>
 <td><em><strong>SameStationRentryPolicy</strong></em></td>
-<td><em>SameStationRentryPolicyEnum</em></td>
+<td><em>SameStationReentryPolicyEnumeration</em></td>
 <td>0:1</td>
 <td><p>Policy for allowing re-entry at the same station within a certain
 time. See below.</p>
