@@ -5920,7 +5920,7 @@ grille tarifaire (***FareTable***) à une note (***Notice***) et à
 l’information sur la réduction correspondant (via un ***FarePrice***),
 ici de 30%.
 
-![](media/image26.png) *Exemple de tarif particulier pouvant justifier
+![Extrait d'une brochure tarifaire présentant un tarif entreprise : pour les salariés, les agents des administrations et les autres professionnels, sur des voyages réguliers ou occasionnels, 30% de réduction à l'achat d'un carnet de 10 billets, valable dans les deux sens.](media/image26.png) *Exemple de tarif particulier pouvant justifier
 l’usage d’une note pour le simplifier*
 
 <span class="mark">Autre élément important dans le cadre de ce profil :
